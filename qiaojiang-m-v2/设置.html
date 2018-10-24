@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>设置</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+    <div class="wrap mg0 wrap-gray">
+        <!-- 头部 start -->
+        <div class="header-list">
+            <div class="fl">
+                <span class="ico-aleft" onclick="window.history.go(-1);"></span>
+            </div>
+        </div>
+        <!-- 头部 end -->
+
+        <div class="record">
+            <div class="vip-qb">
+                <div class="h1">设置</div>
+            </div>
+        </div>
+
+        <div class="user-list user-set-list">
+            <ul>
+                <li>
+                    <div class="fr">
+                        <div class="btn_fath cl on">
+                            <div class="move" data-state="on"></div>
+                            <div class="btnSwitch btn1">开</div>
+                            <div class="btnSwitch btn2 ">关</div>
+                        </div>
+                    </div>
+                    <p>只在WI-Fi网络播放视频</p>
+                </li>
+                <li>
+                    <div class="fr">
+                        <div class="btn_fath cl off">
+                            <div class="move" data-state="off"></div>
+                            <div class="btnSwitch btn1">开</div>
+                            <div class="btnSwitch btn2 ">关</div>
+                        </div>
+                    </div>
+                    <p>只在Wi-Fi网络下下载视频</p>
+                </li>
+            </ul>
+            <ul>
+                <li class="cache">
+                    <div class="fr">1.99G</div>
+                    <p>清理缓存</p>
+                </li>
+                <li>
+                    <a href="关于巧匠.html">
+                        <p>关于巧匠</p>
+                        <div class="ico-aright"></div>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li class="exit">
+                    <p>安全退出</p>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 清理缓存弹窗 start -->
+        <div class="cache-list">
+            <ul>
+                <li class="yellow">确定清除本地缓存</li>
+                <li>取消</li>
+            </ul>
+        </div>
+        <!-- 清理缓存弹窗 end -->
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script src="js/page.js"></script>
+</body>
+</html>

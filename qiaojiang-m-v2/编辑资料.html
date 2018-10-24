@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑资料</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/page.css">
+    <link rel="stylesheet" href="css/cropper.min.css">
+</head>
+<body>
+    <div class="wrap mg0 wrap-gray">
+        <!-- 头部 start -->
+        <div class="header-list">
+            <div class="fl">
+                <span class="ico-aleft" onclick="window.history.go(-1);"></span>
+            </div>
+            <div class="fr">
+                <a href="javascript:;" class="btn-txt">完成</a>
+            </div>
+            <h2 class="gray">编辑资料</h2>
+        </div>
+        <!-- 头部 end -->
+
+        <!-- 个人信息 start -->
+        <div class="data-info">
+            <div class="img">
+                <img src="images/user.png" alt="">
+                <div class="bg"><span class="ico-uppic"></span></div>
+                <input type="file" id="avatarInput">
+            </div>
+            <p>头像会用作公开资料</p>
+        </div>
+        <!-- 个人信息 end -->
+
+        <div class="data-list">
+            <ul>
+                <li>
+                    <p>昵称</p>
+                    <div class="item"><input class="txt" type="text" value="魏佺"></div>
+                </li>
+                <li>
+                    <p>QQ</p>
+                    <div class="item"><input class="txt" type="text" value="2523980054"></div>
+                </li>
+                <li>
+                    <p>性别</p>
+                    <div class="item">
+                        <input id="picker1" class="txt" type="text" value="男" readonly="readonly" onfocus="this.blur()">
+                        <div class="ico-aright"></div>
+                    </div>
+                </li>
+                <li>
+                    <p>邮箱</p>
+                    <div class="item"><input class="txt" type="text" value="2523980054@qq.com"></div>
+                </li>
+                <li>
+                    <p>所在城市</p>
+                    <div class="item">
+                        <input id="picker2" class="txt" type="text" value="北京市/东城市" readonly="readonly" onfocus="this.blur()">
+                        <div class="ico-aright"></div>
+                    </div>
+                </li>
+                <li>
+                    <p>职业</p>
+                    <div class="item"><input class="txt" type="text" value="网页设计师"></div>
+                </li>
+            </ul>
+        </div>
+
+        <!-- 上传头像弹窗 start -->
+        <div class="avatar-box">
+            <div class="avatar-wrapper"></div>
+            <a class="avatar-save bg-blue" href="javascript:;">确定</a>
+        </div>
+        <!-- 上传头像弹窗 end -->
+        <div id="mask"></div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- 上传头像 start-->
+    <script src="js/cropper.js"></script>
+    <!-- 上传头像 end-->
+
+    <!-- 城市联动 start-->
+    <script src="js/picker.min.js"></script>
+    <script src="js/city.js"></script>
+    <script src="js/index.js"></script>
+    <!-- 城市联动 end-->
+
+    <script src="js/page.js"></script>
+</body>
+</html>

@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>视频播放页</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/page.css">
+    <!-- <link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet"> -->
+    <link href="css/player.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrap mg0 play-wrap">
+        <!-- 视频播放区域 start -->
+        <div class="play">
+            <video id="my-video" class="video-js">
+                <source src="http://vjs.zencdn.net/v/oceans.mp4" type="video/mp4"></source>
+                <source src="http://vjs.zencdn.net/v/oceans.webm" type="video/webm"></source>
+                <source src="http://vjs.zencdn.net/v/oceans.ogv" type="video/ogg"></source>
+            </video>
+
+            <div class="vjs-header">
+                <div class="fr">
+                    <span class="ico-multiple"></span>
+                </div>
+                <h2>灵感聚集地·魏佺</h2>
+            </div>
+
+            <div class="vjs-back">
+                <span class="ico-aleft"></span>
+            </div>
+
+            <div class="vjs-wait">
+                <img src="http://r.fod4.com/s=w600/http://t.fod4.com/c/25c17d6eb2/original_custom_e997bde63bb80deb7d351e0f0a098bde_31056.jpg">
+                <div class="iplay"><span class="ico-play"></span></div>
+            </div>
+            <!-- 操作提示框 start -->
+            <div class="operate-tips">
+                <ul>
+                    <li>
+                        <span class="ico-brightnessges">
+                            <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span>
+                        </span>
+                        <p>屏幕左侧</p>
+                        <p class="yellow">亮度</p>
+                    </li>
+                    <li>
+                        <span class="ico-speedges">
+                        <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span>
+                        </span>
+                        <p>左右滑动</p>
+                        <p class="yellow">快进/后退</p>
+                    </li>
+                    <li>
+                        <span class="ico-playges">
+                            <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span>
+                        </span>
+                        <p>双击</p>
+                        <p class="yellow">播放/暂停</p>
+                    </li>
+                    <li>
+                        <span class="ico-volumeges">
+                            <span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span><span class="path5"></span><span class="path6"></span><span class="path7"></span><span class="path8"></span><span class="path9"></span><span class="path10"></span>
+                        </span>
+                        <p>屏幕右侧</p>
+                        <p class="yellow">音量</p>
+                    </li>
+                </ul>
+            </div>
+            <!-- 操作提示框 end -->
+
+            <!-- 水印 -->
+            <img src="ico/watermark.png" alt="水印" class="watermark">
+            <!-- 亮度 -->
+            <div class="vjs-tips2 vjs-tips-adjust vjs-tips-brightness">
+                <img src="ico/brightness.png">
+                <div class="progress"><span style="width: 50%"></span></div>
+            </div>
+            <!-- 声音 -->
+            <div class="vjs-tips2 vjs-tips-adjust vjs-tips-voice" style="display: block">
+                <img src="ico/voice.png">
+                <div class="progress"><span style="width: 50%"></span></div>
+            </div>
+
+            <div class="vjs-tips tips-becomevip">
+                <a href="javascript:;" class="yellow">成为VIP会员</a>
+            </div>
+
+            <div class="vjs-tips tips-novip">
+                <span class="yellow">您暂无VIP会员，</span>每天仅免费学习一个免费教程！
+            </div>
+
+            <div class="vjs-tips2 tips-overfreenum">
+                <div class="vjs-tips2-box">
+                    <p>您今天免费学习次数已用完啦~</p>
+                    <a href="javascript:;" class="btn bg-yellow">开通VIP</a>
+                    <a href="javascript:;" class="btn bg-green">分享解锁当前视频</a>
+                </div>
+            </div>
+
+            <div class="vjs-tips2 tips-nowifi">
+                <div class="vjs-tips2-box">
+                    <p>正在使用非WI-FI网络，播放将产生流量费用<br>继续播放吗？</p>
+                    <a href="javascript:;" class="btn bg-green">继续播放</a>
+                </div>
+            </div>
+
+            <div class="vjs-tips2 tips-nonetwork">
+                <div class="vjs-tips2-box">
+                    <p>您无法连接到网络，请确认网络连接后再<br>重试</p>
+                    <a href="javascript:;" class="btn bg-green">点击重试</a>
+                </div>
+            </div>
+
+            <div class="vjs-tips-rate">
+                <ul>
+                    <li data-rate="0.7">0.7X</li>
+                    <li data-rate="1.0" class="cur">1.0X</li>
+                    <li data-rate="1.5">1.5X</li>
+                    <li data-rate="2.0">2.0X</li>
+                </ul>
+            </div>
+        </div>
+        <!-- 视频播放区域 end -->
+        <!-- 视频信息 start -->
+        <div class="play-info">
+            <div class="title">
+                <span class="btn bg-yellow">会员</span>
+                <h1>海报调色合成构图海报调色合成构图海报调色合成构图</h1>
+            </div>
+            <p><span class="num">软件：PS、AI</span><span class="num">2.1万人在学</span></p>
+            <div class="funcs">
+                <a href="javascript:;" class="zan"><span class="ico-praise"></span><span class="num">234</span></a>
+                <a href="javascript:;" class="dui"><span class="ico-oppose"></span><span class="num">24</span></a>
+                <a href="javascript:;" class="down"><span class="ico-downvid"></span></a>
+                <a href="javascipt:;" class="collect"><span class="ico-collect"></span></a>
+                <a href="javascipt:;" id="play-share"><span class="ico-share"></span></a>
+            </div>
+            <div class="user-info">
+                <div class="fr">
+                    <!-- 关注图标 -->
+                    <a href="javascript:;" class="btn-gz"><span class="ico-follow"></span>关注</a>
+                    <!-- 已关注图标 -->
+                    <!-- <a href="javascript:;" class="btn-gz cur"><span class="ico-follow2"></span>已关注</a> -->
+                </div>
+                <div class="fl img"><a href="#"><img src="ico/zyjs-img1.png" alt=""></a></div>
+                <div class="name"><a href="#">巧匠课堂</a></div>
+                <div class="info"><span>粉丝：23456</span><span>教程：106</span></div>
+            </div>
+        </div>
+        <!-- 视频信息 end -->
+
+        <div class="box play-box">
+            <ul class="nav nav-tab" id="play-nav">
+                <li class="cur"><a href="javascript:;">课程介绍</a></li>
+                <li><a href="javascript:;">目录</a></li>
+                <li><a href="javascript:;">问答交流<span></span></a></li>
+                <span class="line"></span>
+            </ul>
+            <div id="play-ct">
+                <!-- 课程介绍 start -->
+                <div class="play-ct show">
+                    <div class="play-info2">
+                        <img src="images/p-img2.jpg" alt="">
+                        <p>Adobe Photoshop Lightroom软件是当今数字拍摄工作流程中不可或缺的一部分。其增强的校正工具、强大的组织功能以及灵活加快图片后期处理。</p>
+                        <p>&nbsp;</p>
+                        <p style="font-size: 30px"><strong>知识点总结</strong></p>
+                        <p>&nbsp;</p>
+                        <p>01：拍摄水下色混技巧</p>
+                        <p>02：后期合成及图层顺序</p>
+                        <p>03：蒙版的使用与擦除</p>
+                        <p>04：抠图的技巧</p>
+                        <p>05：图层的分类与分组</p>
+                    </div>
+                    <!-- 为你推荐 start -->
+                    <div class="box box-recommend">
+                        <div class="tit">
+                            <a class="fr more" href="视频.html">查看更多</a>
+                            <h2><a href="视频.html">相关推荐</a></h2>
+                        </div>
+                        <div class="cl list2">
+                            <ul>
+                                <li>
+                                    <a class="fl img" href="视频播放页.html">
+                                        <img src="images/img1.jpg" width="346" height="250" alt="">
+                                        <span class="tips bg-green">免费</span>
+                                        <span class="time">01:15</span>
+                                    </a>
+                                    <h3><a href="#">玉米飞船合成手绘</a></h3>
+                                    <p>
+                                        <span>海报设计</span>
+                                        <span class="num">2.1万人在学</span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <a class="fl img" href="视频播放页.html">
+                                        <img src="images/img1.jpg" width="346" height="250" alt="">
+                                        <span class="tips bg-yellow">会员</span>
+                                        <span class="time">01:15</span>
+                                    </a>
+                                    <h3><a href="#">玉米飞船合成手绘</a></h3>
+                                    <p>
+                                        <span>海报设计</span>
+                                        <span class="num">2.1万人在学</span>
+                                    </p>
+                                </li>
+                                <li>
+                                    <a class="fl img" href="视频播放页.html">
+                                        <img src="images/img1.jpg" width="346" height="250" alt="">
+                                        <span class="tips bg-yellow">会员</span>
+                                        <span class="time">01:15</span>
+                                    </a>
+                                    <h3><a href="#">玉米飞船合成手绘</a></h3>
+                                    <p>
+                                        <span>海报设计</span>
+                                        <span class="num">2.1万人在学</span>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- 为你推荐 end -->
+                </div>
+                <!-- 课程介绍 end -->
+                <!-- 目录 start -->
+                <div class="play-ct">
+                    <ul class="play-catalog">
+                        <li class="cur"><a href="#"><span class="fr bg-yellow sk">可试看</span><span class="ico ico-play"></span><p>我是在正在播放的播放状态</p></a></li>
+                        <li class="cur"><a href="#"><span class="fr bg-yellow sk">可试看</span><span class="ico ico-pause"></span><p>我是在正在播放的暂停状态</p></a></li>
+                        <li><a href="#"><span class="ico ico-play"></span><p>无人机海报构图</p></a></li>
+                        <li><a href="#"><span class="ico ico-play"></span><p>无人机海报构图</p></a></li>
+                        <li><a href="#"><span class="ico ico-play"></span><p>无人机海报构图</p></a></li>
+                        <li><a href="#"><span class="ico ico-play"></span><p>无人机海报构图</p></a></li>
+                        <li><a href="#"><span class="ico ico-play"></span><p>无人机海报构图</p></a></li>
+                        <li><a href="#"><span class="ico ico-play"></span><p>无人机海报构图</p></a></li>
+                    </ul>
+                </div>
+                <!-- 目录 end -->
+                <!-- 问答交流 start -->
+                <div class="play-ct">
+                    <div class="play-ask">
+                        <div class="cl demand-list" id="wrapper">
+                            <ul>
+                                <li>
+                                    <div class="play-cont">
+                                        <div class="fl img"><img src="images/user.png" alt=""></div>
+                                        <div class="cont">
+                                            <div class="tt">
+                                                <div class="fr">
+                                                    <div class="laud"><span class="ico ico-laud"></span>2</div>
+                                                    <div class="reply"><span class="ico ico-reply"></span></div>
+                                                </div>
+                                                <span class="blue">潜云</span>
+                                            </div>
+                                            <div class="ct">
+                                                我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式
+                                                <div class="show-img"><img src="images/xq-img1.png" alt="" data-img="images/xq-img1.png"></div>
+                                            </div>
+                                            <div class="time">2017-03-04 10:32:16</div>
+                                        </div>
+                                    </div>
+                                    <div class="play-cont replay-cont">
+                                        <div class="fl img"><img src="ico/user.png" alt=""></div>
+                                        <div class="cont">
+                                            <div class="tt">
+                                                <div class="fr">
+                                                    <div class="laud"><span class="ico ico-laud"></span>2</div>
+                                                </div>
+                                                <span class="blue">巧匠-远如期</span>回复<span class="blue">潜云</span>
+                                            </div>
+                                            <div class="ct">
+                                                我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式
+                                            </div>
+                                            <div class="time">2017-03-04 10:32:16 <div class="reply"><span class="ico ico-reply"></span></div></div>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="fl img"><img src="images/user.png" alt=""></div>
+                                    <div class="cont">
+                                        <div class="tt">
+                                            <div class="fr">
+                                                <div class="laud"><span class="ico ico-laud"></span>2</div>
+                                                <div class="reply"><span class="ico ico-reply"></span></div>
+                                            </div>
+                                            <span class="blue">潜云</span>
+                                        </div>
+                                        <div class="ct">我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式、AI软件、产品精修、电商代码、手绘课程、双12活动页面、透视就那么多课程都希望能出，大家记得点我点够20什么课程都有了</div>
+                                        <div class="time">2017-03-04 10:32:16</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="fl img"><img src="images/user.png" alt=""></div>
+                                    <div class="cont">
+                                        <div class="tt">
+                                            <div class="fr">
+                                                <div class="laud"><span class="ico ico-laud"></span>2</div>
+                                                <div class="reply"><span class="ico ico-reply"></span></div>
+                                            </div>
+                                            <span class="blue">潜云</span>
+                                        </div>
+                                        <div class="ct">
+                                            我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式
+                                            <div class="show-img"><img src="images/notice-img2.png" alt="" data-img="images/notice-img2.png"></div>
+                                        </div>
+                                        <div class="time">2017-03-04 10:32:16</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="fl img"><img src="images/user.png" alt=""></div>
+                                    <div class="cont">
+                                        <div class="tt">
+                                            <div class="fr">
+                                                <div class="laud"><span class="ico ico-laud"></span>2</div>
+                                                <div class="reply"><span class="ico ico-reply"></span></div>
+                                            </div>
+                                            <span class="blue">潜云</span>
+                                        </div>
+                                        <div class="ct">我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式</div>
+                                        <div class="time">03月31日 22:07</div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="fl img"><img src="images/user.png" alt=""></div>
+                                    <div class="cont">
+                                        <div class="tt">
+                                            <div class="fr">
+                                                <div class="laud"><span class="ico ico-laud"></span>2</div>
+                                                <div class="reply"><span class="ico ico-reply"></span></div>
+                                            </div>
+                                            <span class="blue">潜云</span>
+                                        </div>
+                                        <div class="ct">我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式</div>
+                                        <div class="time">03月31日 22:07</div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- 发表需求悬浮 start -->
+                        <div class="demand-fixed">
+                            <div class="demand-fixed-box">
+                                <!-- 未登录覆盖输入框 start -->
+                                <!-- <div class="demand-input">请<a class="blue" href="登录.html">登录</a>后参与评论</div> -->
+                                <!-- 未登录覆盖输入框 end -->
+                                <!-- 输入框 start -->
+                                <textarea class="text" name="" placeholder="据说认真评论的都成大神了" id="text"></textarea>
+                                <span class="ico ico-pic"><input class="file" type="file" id="uploadImg"></span>
+                                <!-- 输入框 end -->
+                            </div>
+                            <button type="submit" class="btn">发表</button>
+                        </div>
+                        <!-- 发表需求悬浮 end -->
+                    </div>
+                </div>
+                <!-- 问答交流 end -->
+            </div>
+        </div>
+        <div id="mask" style="display: "></div>
+
+        <!-- 下载列表弹窗 start -->
+        <div class="box down-tips">
+            <div class="tit">
+                <span class="fr ico-close2"></span>
+                <h2>缓存视频</h2>
+            </div>
+            <div class="cl list2">
+                <ul>
+                    <li>
+                        <div class="cbox"><span class="ico ico-gou"><input type="checkbox" name="history"></span></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-green">免费</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                        <span class="time">01:15</span>
+                    </li>
+                    <li>
+                        <div class="cbox"><span class="ico ico-cache yellow"><input type="checkbox" name="history"></span><div class="num">30%</div></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-yellow">会员</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                        <span class="time">01:15</span>
+                    </li>
+                    <li>
+                        <div class="cbox"><span class="ico ico-cache"><input type="checkbox" name="history"></span></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-yellow">会员</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                        <span class="time">01:15</span>
+                    </li>
+                    <li>
+                        <div class="cbox"><span class="ico ico-gou"><input type="checkbox" name="history"></span></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-green">免费</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                        <span class="time">01:15</span>
+                    </li>
+                    <li>
+                        <div class="cbox"><span class="ico ico-gou"><input type="checkbox" name="history"></span></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-yellow">会员</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                        <span class="time">01:15</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="cl list2">
+                <ul>
+                    <li>
+                        <div class="cbox"><span class="ico ico-gou"><input type="checkbox" name="history"></span></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-green">免费</span>
+                            <span class="time">01:15</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                    </li>
+                    <li>
+                        <div class="cbox"><span class="ico ico-gou"><input type="checkbox" name="history"></span></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-yellow">会员</span>
+                            <span class="time">01:15</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                    </li>
+                    <li>
+                        <div class="cbox"><span class="ico ico-gou"><input type="checkbox" name="history"></span></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-yellow">会员</span>
+                            <span class="time">01:15</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                    </li>
+                    <li>
+                        <div class="cbox"><span class="ico ico-gou"><input type="checkbox" name="history"></span></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-green">免费</span>
+                            <span class="time">01:15</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                    </li>
+                    <li>
+                        <div class="cbox"><span class="ico ico-gou"><input type="checkbox" name="history"></span></div>
+                        <a class="fl img" href="视频播放页.html">
+                            <img src="images/img1.jpg" width="346" height="250" alt="">
+                            <span class="tips bg-yellow">会员</span>
+                            <span class="time">01:15</span>
+                        </a>
+                        <h3><a href="#">玉米飞船合成手绘</a></h3>
+                    </li>
+                </ul>
+            </div>
+            <ul class="down-tips-fixed">
+                <li class="cur">全部缓存</li>
+                <li>查看缓存视频<span></span></li>
+            </ul>
+        </div>
+        <!-- 下载列表弹窗 end -->
+
+        <!--弹窗开通学习 start -->
+        <div class="popup-box popup-vip">
+            <div class="ico popup-close"></div>
+            <div class="tit">亲爱的学员</div>
+            <p>这是付费课程，<span class="yellow">开通VIP就可以<br>免费学习</span>本站的所有视频课程了~</p>
+            <div class="btn-box">
+                <a href="#" class="btn bg-yellow"><span class="ico ico-vip"></span>开通VIP</a>
+                <a href="#" class="btn bg-green"><span class="ico ico-get"></span>免费获取</a>
+            </div>
+        </div>
+        <!--弹窗开通学习 end -->
+
+        <!--弹窗开通下载 start -->
+        <div class="popup-box popup-vip-down">
+            <div class="ico popup-close"></div>
+            <div class="tit">亲爱的学员</div>
+            <p>本课程资料属于VIP专属资料~ <br><span class="yellow">开通VIP即可下载~</span></p>
+            <div class="btn-box">
+                <a href="登录.html" class="btn bg-blue"><span class="ico ico-dl"></span>立即开通</a>
+            </div>
+        </div>
+        <!--弹窗开通下载 end -->
+
+        <!--弹窗登录观看 start -->
+        <div class="popup-box popup-play" style="display: ">
+            <div class="ico popup-close"></div>
+            <div class="ico ico-play"></div>
+            <p>hi~课程需要登陆后才能观看哟</p>
+            <div class="btn-box">
+                <a href="登录.html" class="btn bg-blue"><span class="ico ico-dl"></span>立即开通</a>
+                <a href="登录.html" class="btn bg-green"><span class="ico ico-wx"></span>微信登录</a>
+            </div>
+        </div>
+        <!--弹窗登录观看 end -->
+
+        <!--弹窗点击赠送 start -->
+        <div class="popup-box popup-largess">
+            <div class="ico popup-close"></div>
+            <div class="tit">
+                我们的友谊比天高比金坚，这部巧匠的VIP视频就免费送给你看啦http://www.qiaojiang.tv/video/364.html
+                <div style="height:0;width:0;"><textarea id="contents" style="height:0;width:0;overflow:hidden">我们的友谊比天高比金坚，这部巧匠的VIP视频就免费送给你看啦http://www.qiaojiang.tv/video/364.html</textarea></div>
+            </div>
+            <p>复制下方链接 发送给好友即可</p>
+            <div class="btn-box">
+                <a href="javascript:;" class="btn bg-blue btn-copy">复制链接</a>
+            </div>
+        </div>
+        <!--弹窗点击赠送 end -->
+
+        <!--弹窗赠送视频 start -->
+        <div class="popup-box popup-receive">
+            <div class="ico popup-close"></div>
+            <div class="ico ico-video"></div>
+            <div class="tit">好友“不枉此行”送了你一部VIP视频</div>
+            <p>有效期至：2017年5月18日</p>
+            <div class="btn-box">
+                <a href="#" class="btn bg-blue">立即观看</a>
+            </div>
+        </div>
+        <!--弹窗赠送视频 end -->
+
+        <!--弹窗已经过期 start -->
+        <div class="popup-box popup-overdue">
+            <div class="ico popup-close"></div>
+            <div class="tit">好友“不枉此行”赠送的VIP视频已经过期</div>
+            <p>您可以再次让好友赠送，或者直接开通VIP，可享受<br>全站视频免费观看</p>
+            <div class="btn-box">
+                <a href="#" class="btn bg-yellow">开通VIP</a>
+            </div>
+        </div>
+        <!--弹窗已经过期 end -->
+
+        <!--弹窗确定学习吗？ start -->
+        <div class="popup-box popup-study">
+            <div class="ico popup-close"></div>
+            <div class="ico ico-study"></div>
+            <div class="tit">确定学习吗？</div>
+            <p>你是非VIP会员，每天仅限免费学习一个教程，成为VIP<br>可无限制学习巧匠课堂所有视频</p>
+            <div class="links"><a href="#">立即开通VIP ></a></div>
+            <div class="btn-box">
+                <a href="#" class="btn bg-gray">再瞧瞧</a>
+                <a href="#" class="btn bg-blue">确认学习</a>
+            </div>
+        </div>
+        <!--弹窗确定学习吗？ end -->
+
+        <!--弹窗确定学习吗？ start -->
+        <div class="popup-box popup-becomevip">
+            <div class="ico popup-close"></div>
+            <div class="ico ico-becomevip"></div>
+            <div class="tit">成为VIP吧~</div>
+            <p> 你不是VIP会员，每日最多只能看1个视频。成为VIP可<br>无限制学习巧匠课堂所有视频啦~</p>
+            <div class="btn-box">
+                <a href="#" class="btn bg-yellow">开通VIP</a>
+            </div>
+        </div>
+        <!--弹窗确定学习吗？ end -->
+
+        <!-- 分享 start -->
+        <div class="play-share">
+            <div class="play-share-box">
+                <a href="javascript:;" data-id="share-weixin">
+                    <span class="ico ico-wx"></span>
+                    <p>微信</p>
+                </a>
+                <a href="javascript:;" data-id="share-sqq">
+                    <span class="ico ico-qq"></span>
+                    <p>QQ</p>
+                </a>
+                <a href="javascript:;" data-id="share-sina">
+                    <span class="ico ico-weibo"></span>
+                    <p>新浪微博</p>
+                </a>
+                <a href="javascript:;" data-id="share-qzone">
+                    <span class="ico ico-qzone"></span>
+                    <p>QQ空间</p>
+                </a>
+            </div>
+            <a href="javascript:;" class="play-share-cancel">取消</a>
+        </div>
+        <div class="bdsharebuttonbox" style="display: none;">
+            <a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信" id="share-weixin"></a>
+            <a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友" id="share-sqq"></a>
+            <a href="#" class="bds_tsina" data-cmd="tsina" title="分享到新浪微博" id="share-sina"></a>
+            <a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" id="share-qzone"></a>
+        </div>
+        <script>
+            window._bd_share_config = {
+                "common": {
+                    "bdSnsKey": {},
+                    "bdText": "",
+                    "bdMini": "2",
+                    "bdMiniList": false,
+                    "bdPic": "",
+                    "bdStyle": "0",
+                    "bdSize": "16"
+                },
+                "share": {}
+            };
+            with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+        </script>
+        <!-- 分享 end -->
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- 上拉加载 -->
+    <script src="js/dropload.js"></script>
+
+    <!-- 播放器 -->
+    <!-- <script src="js/video.min.js"></script> -->
+    <!-- <script src="js/videojs-contrib-hls.min.js"></script> -->
+    <script src="http://www.qiaojiang.tv/Public/Static/videojs/js/video.min.js?tRKbH"></script>
+    <script src="http://www.qiaojiang.tv/Public/Static/videojs/js/videojs-contrib-hls.min.js?tRKbH"></script>
+    <script src="js/player.js"></script>
+
+    <script src="js/page.js"></script>
+    <script>
+    $(function() {
+        // 上拉加载
+        var curpage = 1;  // 页数
+        var totalpage = 5; // 总页数
+        // dropload
+        var dropload = $('#wrapper').dropload({
+            scrollArea: window,
+            domDown: {
+                domClass: 'dropload-down',
+                domRefresh: '<div class="dropload-refresh">上拉加载更多</div>',
+                domLoad: '<div class="dropload-load"><div class="loading"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div><div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div></div>正在加载</div>',
+                domNoData: '<div class="dropload-noData">已无数据</div>'
+            },
+            loadDownFn: function (me) {
+                // 判断是否只有一页或者加载完毕
+                if(totalpage <= 1 || curpage == totalpage) {
+                    me.lock();
+                    me.noData();
+                    me.resetload();
+                    return;
+                }
+                // 加载页面
+                setTimeout(function () {
+                    var li;
+                    for (i=0; i<6; i++) {
+                        li = '<li>'
+                                + '<div class="fl img"><img src="images/user.png" alt=""></div>'
+                                + '<div class="cont">'
+                                    + '<div class="tt">'
+                                        + '<div class="fr"><div class="laud"><span class="ico ico-laud"></span>2</div><div class="reply"><span class="ico ico-reply"></span></div></div>'
+                                        + '<span class="blue">潜云</span>'
+                                    + '</div>'
+                                    + '<div class="ct">我是翻页增加的</div>'
+                                    + '<div class="time">03月31日 22:07</div>'
+                                + '</div>'
+                            + '</li>';
+                        $('#wrapper ul').append(li);
+                    }
+                    curpage = parseInt(curpage) + 1;
+                    me.resetload();
+                }, 500);
+            }
+        });
+    });
+    </script>
+</body>
+</html>
