@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>列表页-巧匠学院</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" href="css/iconfont.css">
+        <link rel="stylesheet" href="css/page.css">
+    </head>
+    <body>
+        <!-- 头部 start -->
+        <div class="header">
+            <a href="#" class="logo fl"><img src="images/logo.png" height="50" width="193" alt="巧匠学院"></a>
+            <div class="fl nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li class="cur">
+                        <a href="列表页.html">全部课程<span class="qjfont qj-xiangxiajiantou"></span></a></a>
+                        <ul class="nav-sub">
+                            <li><a href="列表页.html">全部课程</a></li>
+                            <li><a href="列表页.html">学习路径</a></li>
+                            <li><a href="列表页.html">系列课程</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">软件入门<span class="qjfont qj-xiangxiajiantou"></span></a>
+                        <div class="nav-sub rjrm-sub">
+                            <ul class="fl">
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft1"></span>
+                                        <span class="name">Photoshop</span>
+                                    </a>
+                                    <p>ps新手入门</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft2"></span>
+                                        <span class="name">Illustrator</span>
+                                    </a>
+                                    <p>Ai新手入门</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft3"></span>
+                                        <span class="name">Cinema 4D</span>
+                                    </a>
+                                    <p>C4D新手入门</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft4"></span>
+                                        <span class="name">After Effects</span>
+                                    </a>
+                                    <p>AE新手入门</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft5"></span>
+                                        <span class="name">Premiere</span>
+                                    </a>
+                                    <p>PR新手入门</p>
+                                </li>
+                            </ul>
+                            <div class="fr">
+                                <div class="kt-vip">
+                                    <span class="in1 in1-vip"></span>
+                                    <p><a href="#" class="fr btn">开通会员</a>巧匠VIP</p>
+                                </div>
+                                <div class="kc">
+                                    <p>共<span class="yellow">1588</span>课程<br><span class="yellow">45</span>万人已学习<br>投资自己才能逆袭未来</p>
+                                </div>
+                                <a href="#" class="more">更多入门课程<span class="in1 in1-arrow"></span></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="经验文章首页.html">经验文章<span class="nico nico-new"></span></a>
+                    </li>
+                    <li class="nav-more"><a href="VIP特权.html">VIP特权</a></li>
+                    <li class="nav-more"><a href="关于巧匠">关于巧匠</a></li>
+                    <li>
+                        <a href="javascript:;">更多<span class="qjfont qj-xiangxiajiantou"></span></a>
+                        <ul class="nav-sub">
+                            <li class="nav-more"><a href="VIP特权.html">VIP特权</a></li>
+                            <li class="nav-more"><a href="关于巧匠">关于巧匠</a></li>
+                            <li><a href="需求页-我的需求.html">需求</a></li>
+                            <li><a href="讲师列表.html">老师</a></li>
+                            <li><a href="学员作品.html">学员作品</a></li>
+                            <li><a href="QQ群联盟.html">QQ群联盟</a></li>
+                            <li><a href="公告首页.html">公告</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="fl search">
+                <input type="text" class="fl txt" placeholder="搜索感兴趣的课程/讲师">
+                <button class="fl btn"><span class="qjfont qj-fangdajing"></span></button>
+                <div class="search-tip">
+                    <dl class="search-tip-his">
+                        <dt><a href="javascript:;" class="fr clear-his"><span class="qjfont qj-shanchu"></span></a>历史搜索</dt>
+                        <dd><a href="#">PS合成教程</a></dd>
+                        <dd><a href="#">年货节</a></dd>
+                        <dd><a href="#">春节banner</a></dd>
+                    </dl>
+                    <dl class="search-tip-hot">
+                        <dt>热门搜索</dt>
+                        <dd><a href="#">PS合成教程</a></dd>
+                        <dd><a href="#">年货节</a></dd>
+                        <dd><a href="#">春节banner</a></dd>
+                        <dd><a href="#">春节banner</a></dd>
+                        <dd><a href="#">春节banner</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- 登录前 start -->
+            <div class="tips fr">
+                <a href="javascript:;" onclick="$('.popup-play').show();$('.mask').show();loginLine();" class="qq">登录</a>
+                <a href="javascript:;" onclick="$('.popup-play').show(); $('.popup-play').find('.popup-play-tit li:eq(1)').click();$('.mask').show();loginLine();" class="wx">注册</a>
+            </div>
+            <!-- 登录前 end -->
+            <!-- 登录后 非vip start -->
+            <div class="user-info fr" style="display: none">
+                <a href="消息页.html" class="fl message"><span class="ico4 ico-message"></span>消息<span class="num">30</span></a>
+                <a href="#" target="_blank" class="fl img">
+                    <img src="images/drb-img.png" height="38" width="38" alt="">
+                    <!-- 非vip start -->
+                    <img src="images/icon-novip.png" alt="vip" class="vip">
+                    <!-- 非vip end -->
+                    <!-- vip start -->
+                    <img src="images/icon.png" alt="vip" class="vip">
+                    <!-- vip end -->
+                </a>
+                <div class="vip-tip">
+                    <!-- 非vip start -->
+                    <div class="fr kt">
+                        <div class="id">ID：5210</div>
+                        <a href="VIP页面.html" class="btn">我要开通</a>
+                    </div>
+                    <div class="info">
+                        <a href="#"><img src="images/v-img2.jpg" height="52" width="52" alt="" class="vip-tip-img fl"></a>
+                        <div class="name"><a href="#" target="_blank">巧匠-潜云</a><img src="images/icon-novip.png" alt="vip" class="vip"></div>
+                        <div class="date">你还不是会员</div>
+                    </div>
+                    <div class="privilege">
+                        <ul class="cl">
+                            <li>
+                                <a href="#"><span class="ico1803 ico1"></span>我的订阅<span class="dot dot-green"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico2"></span>我的消息<span class="dot dot-red"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico3"></span>观看历史</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico4"></span>我的收藏</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="exit"><a href="#" class="fr">退出</a><a href="#">个人中心</a></div>
+                    <!-- 非vip end -->
+
+                    <!-- vip start -->
+                    <div class="fr kt">
+                        <div class="id">ID：5210</div>
+                        <a href="VIP页面.html" class="btn btn-green">续费会员</a>
+                    </div>
+                    <div class="info">
+                        <a href="#"><img src="images/v-img2.jpg" height="52" width="52" alt="" class="vip-tip-img fl"></a>
+                        <div class="name"><a href="#" target="_blank">巧匠-潜云</a><img src="images/icon.png" alt="vip" class="vip"></div>
+                        <div class="date">2017-09-26到期</div>
+                    </div>
+                    <div class="privilege">
+                        <ul class="cl">
+                            <li>
+                                <a href="#"><span class="ico1803 ico1"></span>我的订阅<span class="dot dot-green"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico2"></span>我的消息<span class="dot dot-red"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico3"></span>观看历史</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico4"></span>我的收藏</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="exit"><a href="#" class="fr">退出</a><a href="#">个人中心</a></div>
+                    <!-- vip end -->
+
+                    <!-- 永久vip start -->
+                    <div class="fr kt">
+                        <div class="id">ID：5210</div>
+                    </div>
+                    <div class="info">
+                        <a href="#"><img src="images/v-img2.jpg" height="52" width="52" alt="" class="vip-tip-img fl"></a>
+                        <div class="name"><a href="#" target="_blank">巧匠-潜云</a><img src="images/icon.png" alt="vip" class="vip"></div>
+                        <div class="date">永久VIP</div>
+                    </div>
+                    <div class="privilege">
+                        <ul class="cl">
+                            <li>
+                                <a href="#"><span class="ico1803 ico1"></span>我的订阅<span class="dot dot-green"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico2"></span>我的消息<span class="dot dot-red"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico3"></span>观看历史</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico4"></span>我的收藏</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="exit"><a href="#" class="fr">退出</a><a href="#">个人中心</a></div>
+                    <!-- 永久vip end -->
+                </div>
+            </div>
+            <!-- 登录后 非vip end -->
+            <a href="#" class="fr app">
+                <span class="nico nico-app"></span>
+                <span class="txt">巧匠APP<br><span class="yellow">立即下载</span></span>
+            </a>
+        </div>
+        <!-- 头部 end -->
+        <!-- 筛选 start -->
+        <div class="select">
+            <!-- adv start -->
+            <div class="wrap list-img">
+                <a href="http://www.qiaojiang.tv/uservip/" target="_blank">
+                    <img class="bdr4" src="images/v-imgadv.jpg" alt="">
+                </a>
+            </div>
+            <!-- adv end -->
+            <div class="wrap pos"><a href="#">首页</a> > <span">视频教程</span></div>
+            <ul class="cl">
+                <li><strong>类型：</strong></li>
+                <li class="cur"><a href="#">全部</a></li>
+                <li><a href="#">理论基础</a></li>
+                <li><a href="#">字体设计</a></li>
+                <li><a href="#">修图课程</a></li>
+                <li><a href="#">鼠绘手绘</a></li>
+                <li><a href="#">海报设计</a></li>
+                <li><a href="#">特效技巧</a></li>
+                <li><a href="#">文字排版</a></li>
+                <li><a href="#">C4D</a></li>
+                <li><a href="#">视觉营销</a></li>
+                <li><a href="#">AE教程</a></li>
+            </ul>
+            <ul class="cl">
+                <li><strong>费用：</strong></li>
+                <li class="cur"><a href="#">全部</a></li>
+                <li><a href="#">免费视频</a></li>
+                <li><a href="#">VIP视频</a></li>
+            </ul>
+            <ul class="cl">
+                <li><strong>级别：</strong></li>
+                <li class="cur"><a href="#">全部</a></li>
+                <li><a href="#">初级</a></li>
+                <li><a href="#">中级</a></li>
+                <li><a href="#">高级</a></li>
+            </ul>
+            <ul class="cl">
+                <li><strong>软件：</strong></li>
+                <li class="cur"><a href="/video/">全部</a></li>
+                <li><a href="/video/3ps/">PS</a></li>
+                <li><a href="/video/3ai/">AI</a></li>
+                <li><a href="/video/3c4d/">C4D</a></li>
+                <li><a href="/video/3dw/">DW</a></li>
+                <li><a href="/video/3ae/">AE</a></li>
+                <li><a href="/video/3au/">AU</a></li>
+                <li><a href="/video/3pr/">PR</a></li>
+                <li><a href="/video/3lr/">LR</a></li>
+                <li><a href="/video/3max/">3DMAX</a></li>
+                <li><a href="/video/3SAI/">SAI</a></li>
+                <li><a href="/video/3other/">其他</a></li>
+            </ul>
+        </div>
+        <!-- 筛选 end -->
+
+        <!-- 最新课程 start -->
+        <div class="box-zxkc">
+            <div class="wrap">
+                <p class="tab-list">
+                    <a href="javascript:;" class="cur">全部</a>
+                    <a href="#">最新</a>
+                    <a href="#">最热</a>
+                </p>
+                <ul class="cl list">
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <span class="ico1803 icon-ksk">可试看</span>
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">高级&nbsp;&nbsp;&nbsp;&nbsp;3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                            <span class="bg-blue">已更新</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <span class="ico1803 icon-ksk">可试看</span>
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">中级&nbsp;&nbsp;&nbsp;&nbsp;C4D,OTHER</div>
+                            <span class="bg-green">免费</span>
+                            <span class="bg-blue">连载</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy dis">已订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">31.4万人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="播放页.html" target="_blank">
+                            <div class="img"><img src="images/index-img1.jpg" height="210" width="290" alt=""></div>
+                        </a>
+                        <div class="h3">
+                            <a href="#" target="_blank"><span class="fr ico ico-edit"></span></a>
+                            <h3><a href="播放页.html" target="_blank">用PS做破碎飘散的效果</a></h3>
+                        </div>
+                        <div class="info">
+                            <div class="fr">初级&nbsp;&nbsp;&nbsp;&nbsp;PS,3DMAX</div>
+                            <span class="bg-yellow">会员</span>
+                        </div>
+                        <div class="other">
+                            <div class="fl lecturer">
+                                <a href="javascript:;">
+                                    <img src="images/drb-img.png" width="30" height="30">潜云
+                                </a>
+                                <div class="lecturer-box">
+                                    <div class="avatar">
+                                        <img src="images/drb-img.png" width="83" height="83">
+                                        <span class="ico1803 ico-lecturer"></span>
+                                        <span class="name">魏佺</span>
+                                    </div>
+                                    <ul>
+                                        <li>视频数<span>567</span></li>
+                                        <li>粉丝数<span>5667</span><div class="line"></div></li>
+                                    </ul>
+                                    <a href="javascript:;" class="btn-dy">+ 订阅</a>
+                                </div>
+                            </div>
+                            <div class="fr">5473人在学</div>
+                        </div>
+                    </li>
+                </ul>
+                <!-- 翻页 start -->
+                <div class="page-zxkc">
+                    <div class="page">
+                        <a href="#" class="prev">上一页</a>
+                        <!-- <a href="#" class="sy">首页</a> -->
+                        <strong class="cur">1</strong>
+                        <a href="#">2</a>
+                        <a href="#">3</a>
+                        <a href="#">4</a>
+                        <a href="#">5</a>
+                        <a href="#">6</a>
+                        <strong>···</strong>
+                        <a href="#">88</a>
+                        <a href="#">89</a>
+                        <a href="#" class="next">下一页</a>
+                    </div>
+                </div>
+                <!-- 翻页 end -->
+            </div>
+        </div>
+        <!-- 最新课程 end -->
+
+        <!-- 学员评价 start -->
+        <div class="list-xypj">
+            <div class="wrap">
+                <div class="tit"><!-- <a href="javascript:;" class="btn-switch">换一组</a> --><h2>学员评价</h2></div>
+                <div class="silder-box2">
+                    <div class="silder">
+                        <ul class="cl list">
+                            <li>
+                                <div class="img"><img src="images/list-img1.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="img"><img src="images/list-img2.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="img"><img src="images/list-img3.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="img"><img src="images/list-img4.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="img"><img src="images/list-img4.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="img"><img src="images/list-img1.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="img"><img src="images/list-img2.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="img"><img src="images/list-img3.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="img"><img src="images/list-img4.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                            <li>
+                                <div class="img"><img src="images/list-img4.jpg" width="286" height="325" alt=""></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 学员评价 end -->
+
+        <!--footer start -->
+        <div class="footer">
+            <div class="cl wrap">
+                <div class="ft-logo">
+                    <img src="images/ft-logo.png" height="45" width="180" alt="巧匠学院">
+                </div>
+                <div class="ft-menu">
+                    <dl>
+                        <dt>频道</dt>
+                        <dd><a href="#">原创作品</a></dd>
+                        <dd><a href="#">经验教程</a></dd>
+                        <dd><a href="#">灵感欣赏</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>关于</dt>
+                        <dd><a href="#">关于我们</a></dd>
+                        <dd><a href="#">加入我们</a></dd>
+                        <dd><a href="#">免责声明</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>联系</dt>
+                        <dd><a href="#">联系我们</a></dd>
+                        <dd><a href="#">在线客服</a></dd>
+                    </dl>
+                </div>
+                <div class="ft-about">
+                    <img src="images/ewm.jpg" height="132" width="132" alt="">
+                    <dl>
+                        <dt>平台简介</dt>
+                        <dd>致设计(zhisheji.com）,中国最大的电商设计师交流平台。最活跃的电商设计师学习交流分享社区。集原创作品+灵感图库+经验教程+设计专访+设计培训+社群活动为一体，全方位服务电商设计师。成立3年来，聚集20万电商设计师，定期线下设计沙龙...</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="ft-copy">
+            <div class="cl wrap">
+                <div class="fl">致设计 (中国最大的电商交流平台)© 2001-2015 Comsenz Inc</div>
+                <div class="fr">GMT+8, 2016-7-12 20:18, Processed in 0.100872 second(s), Total 7, Slave 7 queries, Gzip On, Memcache On.</div>
+            </div>
+        </div>
+        <!--footer end -->
+
+        <!-- 免费直播浮窗 start -->
+        <style>
+            .popup-mfzb1 {
+                overflow: hidden;
+                position: fixed;
+                left: 0;
+                bottom: 30px;
+                z-index: 999;
+                padding-left: 50px;
+            }
+            .popup-mfzb1 img {
+                display: block;
+                width: 218px;
+                cursor: pointer;
+            }
+            .popup-mfzb2 {
+                position: fixed;
+                left: -100%;
+                bottom: 0;
+                z-index: 999;
+                width: 100%;
+                height: 120px;
+                background: rgb(175,53,207);
+                background: -moz-linear-gradient(top, rgba(175,53,207,1) 0%, rgba(138,35,178,1) 70%);
+                background: -webkit-linear-gradient(top, rgba(175,53,207,1) 0%,rgba(138,35,178,1) 70%);
+                background: linear-gradient(to bottom, rgba(175,53,207,1) 0%,rgba(138,35,178,1) 70%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#af35cf', endColorstr='#8a23b2',GradientType=0 );
+            }
+            .popup-mfzb2 .wrap {
+                overflow: hidden;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                width: 100%;
+                height: 214px;
+            }
+            .popup-mfzb2 .close {
+                position: relative;
+                width: 1220px;
+                margin: 0 auto;
+                height: 0;
+            }
+            .popup-mfzb2 img {
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                display: block;
+                width: 1920px;
+                max-width: none;
+                margin: 0 0 0 -960px;
+            }
+            .popup-mfzb2 .qjfont {
+                position: absolute;
+                right: -70px;
+                bottom: 30px;
+                font-size: 30px;
+                color: #ccc;
+                cursor: pointer;
+            }
+            .popup-mfzb2 .qjfont:hover {
+                color: #999;
+            }
+            .left-out {
+                -webkit-animation: left-out 1s ease-in-out 0s 1 both;
+                animation: left-out 1s ease-in-out 0s 1 both;
+            }
+            @-moz-keyframes left-out {
+                0% {
+                    opacity: 1;
+                    -moz-transform: translateX(0);
+                }
+                100% {
+                    -moz-transform: translateX(-100%);
+                }
+            }
+            @-ms-keyframes left-out {
+                0% {
+                    opacity: 1;
+                    -ms-transform: translateX(0);
+                }
+                100% {
+                    -ms-transform: translateX(-100%);
+                }
+            }
+            @-webkit-keyframes left-out {
+                0% {
+                    opacity: 1;
+                    -webkit-transform: translateX(0);
+                }
+                100% {
+                    -webkit-transform: translateX(-100%);
+                }
+            }
+            @keyframes left-out {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(-100%);
+                }
+            }
+            .left-in {
+                -webkit-animation: left-in 1s ease-in-out 0s 1 both;
+                animation: left-in 1s ease-in-out 0s 1 both;
+            }
+            @-moz-keyframes left-in {
+                0% {
+                    opacity: 1;
+                    -moz-transform: translateX(0);
+                }
+                100% {
+                    -moz-transform: translateX(100%);
+                }
+            }
+            @-ms-keyframes left-in {
+                0% {
+                    opacity: 1;
+                    -ms-transform: translateX(0);
+                }
+                100% {
+                    -ms-transform: translateX(100%);
+                }
+            }
+            @-webkit-keyframes left-in {
+                0% {
+                    opacity: 1;
+                    -webkit-transform: translateX(0);
+                }
+                100% {
+                    -webkit-transform: translateX(100%);
+                }
+            }
+            @keyframes left-in {
+                0% {
+                    transform: translateX(0);
+                }
+                100% {
+                    transform: translateX(100%);
+                }
+            }
+
+            .left-in2 {
+                -webkit-animation: left-in2 1s ease-in-out 0s 1 both;
+                animation: left-in2 1s ease-in-out 0s 1 both;
+            }
+            @-moz-keyframes left-in2 {
+                0% {
+                    -moz-transform: translateX(-100%);
+                }
+                100% {
+                    -moz-transform: translateX(0);
+                }
+            }
+            @-ms-keyframes left-in2 {
+                0% {
+                    -ms-transform: translateX(-100%);
+                }
+                100% {
+                    -ms-transform: translateX(0);
+                }
+            }
+            @-webkit-keyframes left-in2 {
+                0% {
+                    -webkit-transform: translateX(-100%);
+                }
+                100% {
+                    -webkit-transform: translateX(0);
+                }
+            }
+            @keyframes left-in2 {
+                0% {
+                    transform: translateX(-100%);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+            }
+
+            .left-out2 {
+                -webkit-animation: left-out2 1s ease-in-out 0s 1 both;
+                animation: left-out2 1s ease-in-out 0s 1 both;
+            }
+            @-moz-keyframes left-out2 {
+                0% {
+                    opacity: 1;
+                    -moz-transform: translateX(100%);
+                }
+                100% {
+                    -moz-transform: translateX(0);
+                }
+            }
+            @-ms-keyframes left-out2 {
+                0% {
+                    opacity: 1;
+                    -ms-transform: translateX(100%);
+                }
+                100% {
+                    -ms-transform: translateX(0);
+                }
+            }
+            @-webkit-keyframes left-out2 {
+                0% {
+                    opacity: 1;
+                    -webkit-transform: translateX(100%);
+                }
+                100% {
+                    -webkit-transform: translateX(0);
+                }
+            }
+            @keyframes left-out2 {
+                0% {
+                    transform: translateX(100%);
+                }
+                100% {
+                    transform: translateX(0);
+                }
+            }
+        </style>
+        <div class="popup-mfzb1">
+            <img src="images/fixed-mfzb1.png" alt="">
+        </div>
+        <div class="popup-mfzb2">
+            <div class="wrap">
+                <a href="https://jq.qq.com/?_wv=1027&k=540eW1C" target="_blank"><img src="images/fixed-mfzb2.png" alt=""></a>
+            </div>
+            <div class="close"><span class="qjfont qj-guanbi1"></span></div>
+        </div>
+        <!-- 免费直播浮窗 end -->
+
+        <!--js调用 start -->
+        <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="js/mySystem.js"></script>
+        <script src="js/page.js" type="text/javascript"></script>
+        <!--js调用 end -->
+
+        <script type="text/javascript">
+            $('.popup-mfzb1').on('click', function() {
+                $('.popup-mfzb1').removeClass('left-in2').addClass('left-out');
+                setTimeout(function() {
+                    $('.popup-mfzb2').removeClass('left-out2').addClass('left-in');
+                }, 1000);
+            });
+            $('.popup-mfzb2').on('click', '.qj-guanbi1', function() {
+                setTimeout(function() {
+                    $('.popup-mfzb1').removeClass('left-out').addClass('left-in2');
+                }, 1000);
+                $('.popup-mfzb2').removeClass('left-in').addClass('left-out2');
+            });
+            setTimeout(function() {
+                $('.popup-mfzb1').trigger('click');
+                setTimeout(function() {
+                    $('.popup-mfzb2 .qj-guanbi1').trigger('click');
+                }, 3000);
+            }, 1000);
+        </script>
+    </body>
+</html>
