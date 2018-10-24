@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+	<title>致设计</title>
+	<link rel="stylesheet" href="css/style.css"> <!-- Resource style -->
+</head>
+<body>
+	<div class="header">
+		<a href="index.html" class="btnGoback">返回</a>
+		<h1>致设计</h1>
+		<div class="subMenu">
+			<a href=""><i class="icon-20 icon-search"></i></a>
+			<a href=""><i class="icon-20 icon-info"></i></a>
+		</div>
+	</div>
+	<div class="login-logo">
+		<i></i>
+	</div>
+	<form>
+		<div class="login-item">
+			<i class="login-20 login-user"></i>
+			<input type="text" placeholder="用户名或邮箱">
+		</div>
+		<div class="login-item">
+			<i class="login-20 login-lar"></i>
+			<input type="password" placeholder="登录密码">
+		</div>
+		<!-- <input class="login-submit" type="submit" value="登录" /> -->
+		<a href="javascript:void(0);" class="login-submit">登录</a>
+	</form>
+	<a href="register.html" class="login-btn"><i class="login-20 login-qq"></i> QQ登录</a>
+	<p class="login-reg"><a href="">立即注册</a></p>
+	<p class="login-stio">帐号或密码错误，试试用QQ登录吧</p>
+
+
+
+	<script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$(function(){
+			$(".login-item input").focus(function(){
+				$(this).parent(".login-item").addClass("login-onItem");
+			}).blur(function(){
+				$(this).parent(".login-item").removeClass("login-onItem");
+			});
+			$(".login-submit").click(function(){
+				$(".login-item").each(function(){
+					var ths = $(this);
+					if(ths.find("input").val() == ""){
+						$(".login-stio").addClass("login-son");
+						ths.addClass("login-onEorror");
+					}else{
+						$(".login-stio").removeClass("login-son");
+						ths.removeClass("login-onEorror");
+						window.location.href = "login-succss.html";
+					}
+				});
+			})
+		})
+	</script>
+</body>
+</html>
