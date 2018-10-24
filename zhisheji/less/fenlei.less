@@ -1,0 +1,148 @@
+@charset "utf-8";
+@import url(../../common/common-pc.less);
+
+@page-w: 1220px;
+@yellow: #ff8d01;
+@yellow-h: #fd9932;
+@blue: #0084ff;
+@blue-h: #0f92fb;
+@green: #21bb1d;
+@green-h: #41cb56;
+@red: #f65658;
+@red-h: #fd4043;
+.w148 {
+    width: 148px !important;
+}
+.zsj {
+    &-box {
+        &-fenlei {
+            padding: 20px 0 0;
+            .fenlei-select {
+                font-size: 0;
+                ul {
+                    margin-right: -10px;
+                }
+                li {
+                    .dis(ib);
+                    vertical-align: top;
+                    padding: 0 9px 0 0;
+                    &:hover {
+                        .fenlei-select-sub {
+                            .dis(b);
+                        }
+                    }
+                }
+                a {
+                    .dis(ib);
+                    vertical-align: top;
+                    padding: 0 28px;
+                    margin-bottom: 20px;
+                    .height(30px);
+                    text-align: center;
+                    font-size: 14px;
+                    color: #666;
+                    &:hover {
+                        color: @blue;
+                    }
+                    &.cur {
+                        .bdr(4px);
+                        color: #fff;
+                        background: @blue;
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+                &-sub {
+                    .dis(n);
+                    .pos(a);
+                    left: 0;
+                    z-index: 980;
+                    width: 100%;
+                    background: #fff;
+                    border-top: 1px solid #f7f7f7;
+                    .wrap {
+                        padding: 10px 0 11px;
+                        div {
+                            margin-right: -48px;
+                        }
+                        a {
+                            .dis(ib);
+                            .height(38px);
+                            margin: 0 48px 0 0;
+                            padding: 0;
+                            text-align: center;
+                            font-size: 14px;
+                            color: #999;
+                            .bdr(4px);
+                            border: 0;
+                            &:hover, &.cur {
+                                color: @blue;
+                            }
+                        }
+                    }
+                }
+            }
+            .tit {
+                width: 100%;
+                padding: 0;
+                z-index: 9999;
+                background: #fff;
+                text-align: center;
+                line-height: 56px;
+                .tab-list {
+                    top: 54px;
+                    margin-left: -20px;
+                    &-li {
+                        a {
+                            color: #555;
+                            &:hover {
+                                color: @blue;
+                            }
+                        }
+                    }
+                }
+                .tab-li {
+                    float: none;
+                    .dis(ib);
+                    vertical-align: top;
+                    margin: 0 30px;
+                    text-align: left;
+                    border-bottom: 3px solid #fff;
+                    > a, > em {
+                        color: #999;
+                        &:hover {
+                            color: @blue;
+                        }
+                    }
+                    .icon-arrow-bottom {
+                        color: #999;
+                    }
+                    &:hover {
+                        > a, > em {
+                            color: @blue;
+                        }
+                        .icon-arrow-bottom {
+                            color: @blue;
+                        }
+                    }
+                    &-cur {
+                        &.tab-link {
+                            border-bottom: 3px solid @blue;
+                        }
+                        .icon-arrow-bottom {
+                            color: @blue;
+                        }
+                        > a, > em {
+                            color: @blue;
+                            font-weight: 700;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+.page-fenlei {
+    padding: 20px 0 50px;
+}
