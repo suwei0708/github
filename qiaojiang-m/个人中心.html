@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>个人中心</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- 头部 start -->
+        <div class="header">
+            <a class="ico-back" href="javascript:history.back(-1);"></a>
+            <h1>个人中心</h1>
+            <span class="ico ico-so"></span>
+        </div>
+        <!-- 头部 end -->
+
+        <!-- 用户展示 start -->
+        <!-- 非会员区别 与会员区别是两种状态不同显示 start -->
+        <div class="user-info">
+            <img src="ico/user.png" alt="" class="fl img">
+            <div class="name">魏佺 <span class="vip-no"></span></div>
+            <div class="id">ID:9999</div>
+        </div>
+        <div class="user-list">
+            <ul>
+                <li>
+                    <span class="ico"></span><p>你还不是会员</p>
+                    <a href="#" class="btn bg-yellow">开通会员</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 非会员区别 end -->
+        <!-- 会员区别 这个style=margin-top不要，是静态页视觉区分 start -->
+        <div class="user-info" style="margin-top: 20px;">
+            <img src="ico/user.png" alt="" class="fl img">
+            <div class="name">魏佺 <span class="vip"></span></div>
+            <div class="id">ID:9999</div>
+        </div>
+        <!-- 会员区别  end -->
+        <div class="user-list">
+            <ul>
+                <li>
+                    <span class="fr">到期时间：2017年12月2日</span>
+                    <span class="ico"></span><p>我的会员</p>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="公告.html">
+                        <span class="ico"></span><p>公告</p><span class="num bg-yellow">3</span>
+                        <span class="arrow-r"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="基本资料.html">
+                        <span class="ico"></span><p>基本资料</p>
+                        <span class="arrow-r"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="我的消息.html">
+                        <span class="ico"></span><p>我的消息</p><span class="num bg-yellow">30</span>
+                        <span class="arrow-r"></span>
+                    </a>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="观看历史.html">
+                        <span class="ico"></span><p>观看历史</p>
+                        <span class="arrow-r"></span>
+                    </a>
+                </li>
+                <li class="history">
+                    <ul>
+                        <li>
+                            <a href="视频播放页.html">
+                                <img src="images/img1.jpg" alt="">
+                                <h3>玉米飞船合成手绘</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="视频播放页.html">
+                                <img src="images/img1.jpg" alt="">
+                                <h3>玉米飞船合成手绘</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="视频播放页.html">
+                                <img src="images/img1.jpg" alt="">
+                                <h3>玉米飞船合成手绘</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="视频播放页.html">
+                                <img src="images/img1.jpg" alt="">
+                                <h3>玉米飞船合成手绘</h3>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="视频播放页.html">
+                                <img src="images/img1.jpg" alt="">
+                                <h3>玉米飞船合成手绘</h3>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <a href="我的收藏.html">
+                        <span class="ico"></span><p>我的收藏</p>
+                        <span class="arrow-r"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="登录.html">
+                        <span class="ico"></span><p>退出登录</p>
+                        <span class="arrow-r"></span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- 用户展示 end -->
+        <!-- footer start -->
+        <div class="footer">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="fico fico-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="视频教程.html">
+                        <span class="fico fico-video"></span>
+                        <p>视频</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="VIP特权.html">
+                        <span class="fico fico-vip"></span>
+                        <p>VIP特权</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="全部需求.html">
+                        <span class="fico fico-demand"></span>
+                        <p>需求</p>
+                    </a>
+                </li>
+                <li class="cur">
+                    <a href="个人中心.html">
+                        <span class="fico fico-my"></span>
+                        <p>我的</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- footer end -->
+        <!-- 搜索框 start -->
+        <div class="so" id="so">
+            <div class="so-bg">
+                <div class="fl so-box"><span class="ico ico-so"></span><input type="search" class="txt" autofocus="autofocus"><span class="ico ico-close"></span></div>
+                <a href="javascript:;" id="so-cancel">取消</a>
+                <a href="javascript:;" id="so-btn">搜索</a>
+            </div>
+            <div class="so-hot">
+                <div class="tit">热门搜索</div>
+                <ul class="list">
+                    <li><a href="搜索结果页.html">专题</a></li>
+                    <li><a href="搜索结果页.html">专题</a></li>
+                    <li><a href="搜索结果页.html">详情页</a></li>
+                    <li><a href="搜索结果页.html">专题</a></li>
+                    <li><a href="搜索结果页.html">专题</a></li>
+                    <li><a href="搜索结果页.html">淘宝首页</a></li>
+                    <li><a href="搜索结果页.html">详情页</a></li>
+                    <li><a href="搜索结果页.html">专题</a></li>
+                    <li><a href="搜索结果页.html">无线端</a></li>
+                </ul>
+            </div>
+        </div>
+        <!-- 搜索框 end -->
+        <div id="mask"></div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/page.js"></script>
+</body>
+</html>
