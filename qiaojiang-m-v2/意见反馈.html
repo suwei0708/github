@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>意见反馈</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+    <div class="wrap mg0 wrap-gray">
+        <!-- 头部 start -->
+        <div class="header-list">
+            <div class="fl">
+                <span class="ico-aleft" onclick="window.history.go(-1);"></span>
+            </div>
+        </div>
+        <!-- 头部 end -->
+
+        <div class="record">
+            <div class="vip-qb">
+                <div class="h1">意见反馈</div>
+            </div>
+        </div>
+
+        <div class="feedback">
+            <div class="textarea">
+                <textarea name="" class="txt"></textarea>
+                <div class="tips">可描述下您出现此问题的详情场景，便于我们更好的为您解决问题噢<span class="yellow">（必填）</span></div>
+            </div>
+            <div class="contact">
+                <p>联系方式</p>
+                <input type="text" class="txt">
+                <div class="tips">手机号、邮箱、QQ<span class="yellow">（选填）</span></div>
+            </div>
+            <div class="upimg">
+                <div class="file"><div id="preview"></div><input type="file" onchange="previewImage(this)"><span class="ico-uppic"></span></div>
+                <div class="tips">上传图片<span class="yellow">（选填，提供问题截图）</span></div>
+            </div>
+            <div class="btn-box">
+                <a class="btn bg-yellow" href="意见反馈成功.html">提交</a>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <script src="js/page.js"></script>
+</body>
+</html>
