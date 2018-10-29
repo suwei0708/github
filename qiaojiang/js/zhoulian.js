@@ -216,6 +216,7 @@ $(function() {
 
     $('#fm_teb_box_right').on('click', '.fm_teb_pad li', function() {
         var _this = $(this);
+        if(_this.hasClass('select_on')) {return false;}
         _this.addClass('select_on').siblings().removeClass('select_on');
         $('#fm_teb_box_right').find('.fm_teb_cont').find('li').hide().eq(_this.index()).show();
         cropperImg = $('#fm_teb_box_right').find('.fm_teb_item').eq(_this.index()).find('img');

@@ -788,13 +788,18 @@
                 });
             });
             // 奖品滚动
-            $('#roll1').rollSlide({
-                orientation: 'left',
-                num: 1,
-                v: 1000,
-                space: 3000,
-                isRoll: true
-            });
+            if($('#roll1').find('li').length <= 4) {
+                $('#roll1').find('.qjfont').hide();
+            }
+            else {
+                $('#roll1').rollSlide({
+                    orientation: 'left',
+                    num: 1,
+                    v: 1000,
+                    space: 3000,
+                    isRoll: true
+                });
+            }
         </script>
         <!--js调用 end -->
     </body>
