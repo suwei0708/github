@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>赞排行-致设计</title>
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <link rel="stylesheet" type="text/css" href="http://cache.zhisheji.com/data/cache/style_4_common.css?KUi">
+    <link rel="stylesheet" type="text/css" href="http://cache.zhisheji.com/data/cache/style_4_forum_forumdisplay.css?KUi">
+    <script src="http://cache.zhisheji.com/static/js/common.js?KUi" type="text/javascript"></script>
+    <script src="http://cache.zhisheji.com/template/iscwo_design_2013/img/css/jquery-1.4.1.min.js" type="text/javascript"></script>
+    <script language="javascript">var jq = jQuery.noConflict();</script>
+    <script src="http://cache.zhisheji.com/template/iscwo_design_2013/img/css/jquery.easing.js?KUi" type="text/javascript"></script>
+    <script src="http://cache.zhisheji.com/template/iscwo_design_2013/img/css/index.js?KUi" type="text/javascript"></script>
+    <!--[if IE 6]>
+    <script src="http://cache.zhisheji.com/template/iscwo_design_2013/img/css/DD_belatedPNG.js" type="text/javascript"></script>
+    <script>DD_belatedPNG.fix('span,.sylist_tx,.sylist_txcover,.yyicon2,.report');</script>
+    <![endif]-->
+    <script type="text/javascript">window.onerror=function(){return true;}</script>
+    <link rel="stylesheet" type="text/css" href="http://cache.zhisheji.com/template/iscwo_design_2013/img/newcss/style_new.css?KUi">
+
+    <!-- start 页面调用css js -->
+    <link rel="stylesheet" href="css/page.css">
+    <!-- end 页面调用css js -->
+</head>
+<body id="nv_forum" onkeydown="if(event.keyCode==27) return false;" style="background: rgb(255, 255, 255);">
+    <!-- start 头部 -->
+    <div class="zd_header_wrap">
+        <div class="zd_header fixed">
+            <h2>
+            <a href="http://www.zhisheji.com/" title="致设计">淘宝美工学习培训</a>
+            </h2>
+            <div class="zd_search_wrap">
+                <form id="scbar_form" method="post" autocomplete="off" action="http://www.zhisheji.com/plugin.php?id=zsj_search" target="_self">
+                    <input type="hidden" name="mod" id="scbar_mod" value="search">
+                    <input type="hidden" name="formhash" value="fd1d3532">
+                    <input type="hidden" name="srchtype" value="title">
+                    <input type="hidden" name="srhfid" value="36">
+                    <input type="hidden" name="searchsubmit" id="searchsubmit" value="true">
+                    <input type="hidden" name="type" id="type1">
+                    <input type="hidden" name="srhlocality" value="forum::forumdisplay">
+                    <input type="hidden" name="searchtype1" id="searchtype1" value="">
+                    <div class="zd_sort">
+                        <span>全站</span>
+                        <i class="icon_16_1 icon_jh"></i>
+                        <div class="zd_sort_tips">
+                            <a href="javascript:void(0);" id="sea1_0">全站</a>
+                            <a href="javascript:void(0);" id="sea1_2">原创</a>
+                            <a href="javascript:void(0);" id="sea1_41">欣赏</a>
+                            <a href="javascript:void(0);" id="sea1_36">学经验</a>
+                            <a href="javascript:void(0);" id="sea1_43">专访</a>
+                            <a href="javascript:void(0);" id="topsel_s">设计师</a>
+                        </div>
+                    </div>
+                    <div class="zd_input_wrap">
+                        <input class="zd_input" type="text" name="words1" id="words1" value="">
+                        <div class="zd_s_tips">
+                            <a href="javascript:void(0)" myval="天猫">天猫</a>
+                            <a href="javascript:void(0)" myval="无线端">无线端</a>
+                        </div>
+                        <div class="zd_hot_search" style="display: none;">
+                            <dl>
+                                <dt>热门搜索</dt><dd><a href="javascript:void(0)" myval="天猫"><span>1.</span>天猫</a></dd>
+                                <dd><a href="javascript:void(0)" myval="无线端"><span>2.</span>无线端</a></dd>
+                                <dd><a href="javascript:void(0)" myval="详情页"><span>3.</span>详情页</a></dd>
+                                <dd><a href="javascript:void(0)" myval="促销"><span>4.</span>促销</a></dd>
+                                <dd><a href="javascript:void(0)" myval="钻展"><span>5.</span>钻展</a></dd>
+                                <dd><a href="javascript:void(0)" myval="淘宝首页"><span>6.</span>淘宝首页</a></dd>
+                                <dd><a href="javascript:void(0)" myval="图片合成"><span>7.</span>图片合成</a></dd>
+
+                            </dl>
+                            <dl style="display:none;">
+                                <dt>历史搜索</dt>
+                                <dd><a href="">五一劳动节</a></dd>
+                                <dd><a href="">双十一海报</a></dd>
+                                <dd><a href="">端午节</a></dd>
+                            </dl>
+                        </div>
+                    </div>
+                    <button class="zd_s_btn" onclick="return subsearch()"><i class="icon_16_1 icon_faj"></i></button>
+                </form>
+            </div>
+
+            <!-- 消息设置 -->
+            <div class="design_tips">
+                <a rel="nofollow" href="http://www.zhisheji.com/connect.php?mod=login&amp;op=init&amp;referer=http://www.zhisheji.com/member.php%3Fmod=connect&amp;statfrom=login_simple" class="design_tip_btn1">
+                    <i class="icon_25 icon_tqq"></i><b>快速登录</b>
+                </a>
+                <a rel="nofollow" href="http://www.zhisheji.com/member.php?mod=logging&amp;action=login" onclick="showWindow('login', this.href);return false;" class="design_tip_btn2">登录</a>
+                <a rel="nofollow" href="http://www.zhisheji.com/member.php?mod=register&amp;referer=http://www.zhisheji.com/jiaocheng/" class="design_tip_btn2">注册</a>
+            </div>
+        </div>
+    </div>
+    <div class="zd_nav_wrap">
+        <div class="zd_nav">
+            <ul class="zd_nav_ul fixed"><li id="mn_www" class="zd_nav_li" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+                <a href="http://www.zhisheji.com" class="zd_nav_a" title="首页">首页</a>
+            </li>
+            <li id="mn_F2" class="zd_nav_li" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})" initialized="true">
+                <a href="/yuanchuang/2_dateline/" class="zd_nav_a" title="原创作品">原创作品</a>
+            </li>
+            <li id="mn_F36" class="zd_nav_li" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+                <a href="/jiaocheng/" class="zd_nav_a" title="经验教程">经验教程</a>
+            </li>
+            <li id="mn_N35c6" class="zd_nav_li" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+                <a href="http://www.zhisheji.com/zsj_one-rank.html" class="zd_nav_a" title="人气榜">人气榜</a>
+            </li>
+            <li id="mn_F41" class="zd_nav_li" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+                <a href="/xinshang/" class="zd_nav_a" title="欣赏">欣赏</a>
+            </li>
+            <li id="mn_Nc80f" class="zd_nav_li" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+                <a href="zsj_moneychange-zsj_moneychange.html" class="zd_nav_a" title="商城">商城</a>
+            </li>
+            <li id="mn_Nd579" class="zd_nav_li" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+                <a href="http://tuku.zhisheji.com" class="zd_nav_a" title="图库" target="_blank">图库</a>
+            </li>
+            <li id="mn_N9776" class="zd_nav_li" onmouseover="showMenu({'ctrlid':this.id,'ctrlclass':'hover','duration':2})">
+                <a href="#" class="zd_nav_a" title="更多">更多<i class="icon_16_1 icon_jhb"></i>
+                </a>
+            </li>
+
+        </ul>
+        <ul class="p_pop h_pop" id="mn_F2_menu" style="position: absolute; z-index: 301; left: 439.5px; top: 155px; display: none;" initialized="true" ctrlid="mn_F2" ctrlclass="hover">
+            <li><a href="http://www.zhisheji.com/yuanchuang/1_dateline/" hidefocus="true" class="">大神作品</a></li>
+            <li><a href="http://www.zhisheji.com/yuanchuang/dianpu/" hidefocus="true">店铺首页</a></li>
+            <li><a href="http://www.zhisheji.com/yuanchuang/jiaocheng/" hidefocus="true">原创教程</a></li>
+            <li><a href="http://www.zhisheji.com/yuanchuang/xiangqing/" hidefocus="true">详情页</a></li>
+            <li><a href="http://www.zhisheji.com/yuanchuang/zhuanti/" hidefocus="true">专题页</a></li><li>
+            <a href="http://www.zhisheji.com/yuanchuang/banner/" hidefocus="true">banner/钻展</a></li>
+            <li><a href="http://www.zhisheji.com/yuanchuang/zhitongche/" hidefocus="true">直通车</a></li>
+            <li><a href="http://www.zhisheji.com/yuanchuang/sheying/" hidefocus="true" title="摄影后期">摄影后期</a></li>
+            <li><a href="http://www.zhisheji.com/yuanchuang/jianli/" hidefocus="true">个人简历</a></li>
+            <li><a href="http://www.zhisheji.com/yuanchuang/other/" hidefocus="true">其他</a></li></ul>
+            <ul class="p_pop h_pop" id="mn_N9776_menu" style="display: none">
+                <li><a href="http://www.zhisheji.com/toutiao/" hidefocus="true">头条</a></li>
+                <li><a href="http://www.zhisheji.com/zhuanfang/" hidefocus="true">专访</a></li>
+                <li><a href="http://dh.zhisheji.com" hidefocus="true">导航</a></li>
+                <li style="display:none;"><a href="http://www.zhisheji.com/sucai/" hidefocus="true">素材</a></li>
+                <li style="display:none;"><a href="http://www.zhisheji.com/daima/" hidefocus="true">代码</a></li>
+                <li style="display:none;">
+                    <a href="http://www.zhisheji.com/zhengming/" hidefocus="true">争鸣</a></li>
+                    <li><a href="http://www.zhisheji.com/gonggao/" hidefocus="true">公告</a></li>
+                    <li><a href="http://www.zhisheji.com/plugin.php?id=zsj_exercise:zsj_exercise" hidefocus="true">练习</a></li>
+                </ul>
+                <div class="p_pop h_pop" id="mn_userapp_menu" style="display: none"></div><div class="zd_nav_up">
+                <div class="zd_nav_up">
+                    <a rel="nofollow" href="http://www.zhisheji.com/forum.php?mod=post&amp;action=newthread&amp;fid=2" target="_blank" class="zd_nav_ua"><i class="icon_26 icon_up"></i> 发布作品</a>
+                    <div class="zd_nav_utips">
+                        <a rel="nofollow" href="http://www.zhisheji.com/forum.php?mod=post&amp;action=newthread&amp;fid=2" target="_blank" title="上传原创作品">上传原创作品</a>
+                        <a rel="nofollow" href="http://www.zhisheji.com/forum.php?mod=post&amp;action=newthread&amp;fid=36" target="_blank" title="上传经验教程">上传经验教程</a>
+                        <a rel="nofollow" href="http://www.zhisheji.com/forum.php?mod=post&amp;action=newthread&amp;fid=41" target="_blank" title="上传设计欣赏">上传设计欣赏</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div style="background:#f6f6f6;height:15px"></div>
+        <!-- end 20160415 头部菜单 -->
+    </div>
+    <!-- end 头部 -->
+
+
+    <!-- start 榜单内容 -->
+    <div class="popularity-wrap">
+        <div class="popularity-banner"><a href="#" target="_blank"></a></div>
+
+        <!-- start 导航 -->
+        <div class="wrap popularity-nav">
+            <ul class="fl">
+                <li><a class="first" href="人气榜.html">人气榜<span class="triangle"></span></a></li>
+                <li><a class="cur" href="赞排行.html">赞排行<span class="triangle"></span></a></li>
+                <li><a href="评论榜.html">评论榜<span class="triangle"></span></a></li>
+            </ul>
+            <div class="fr po-rank show-tip">
+                <span class="poico"></span>
+                如何快速获赞
+                <div class="po-rank-text tip-ct">
+                    <span class="triangle"></span>
+                    <p>1. 最重要的肯定是上传优秀作品啦</p>
+                    <p>2. 把作品地址发送到QQ群里，这样能快速获得赞哦</p>
+                    <p>3. 作品被首页推荐，编辑精选后平均每个作品能获得10-100个赞</p>
+                    <p>4. 把作品分享到QQ空间也能获得不少赞哦</p>
+                </div>
+            </div>
+
+            <div class="wrap popularity-subnav">
+                <ul class="fl">
+                    <li><a class="cur" href="#">周排行</a></li>
+                    <li><a href="#">月排行</a></li>
+                    <li><a href="#">总排行</a></li>
+                </ul>
+                <div class="fr">
+                    <span class="txt">排名老上不去？ 把作品链接发到QQ群里去试试</span>
+                </div>
+            </div>
+        </div>
+        <!-- end 导航 -->
+
+        <div class="wrap popularity-list">
+            <div class="popularity-info">
+                <div class="fl rank">55</div>
+                <div class="fl img"><img src="http://cache.zhisheji.com/uc_server/data/avatar/000/02/40/22_avatar_middle.jpg?1478140576" alt=""></div>
+                <div class="fl info">
+                    <div class="name"><span>潜云</span><img src="images/popularity-vip.png" alt=""> <img src="images/popularity-expert.png" alt=""></div>
+                    <div class="slogan">知识分享才有价值！</div>
+                    <div class="total">粉丝数：4033863<span class="yellow">获赞数：800</span></div>
+                </div>
+                <div class="fl list">
+                    <dl>
+                        <dt><span class="ranking">8</span><span class="poico poico-up"></span></dt>
+                        <dd>
+                            <span class="ranking">周排行</span>
+                            <span class="border-box">上升<span class="yellow">5020264</span>名<span class="triangle"><em></em></span></span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><span class="ranking">533</span><span class="poico poico-flat"></span></dt>
+                        <dd>
+                            <span class="ranking">月排行</span>
+                            <span class="border-box">暂无变动<span class="triangle"><em></em></span></span>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt><span class="ranking">55</span><span class="poico poico-down"></span></dt>
+                        <dd>
+                            <span class="ranking">总排行</span>
+                            <span class="border-box">下降<span class="yellow">33</span>名<span class="triangle"><em></em></span></span>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+            <ul>
+                <li class="item">
+                    <div class="fl rank"><span class="yellow">1</span></div>
+                    <div class="fl img"><img src="http://cache.zhisheji.com/uc_server/data/avatar/000/02/40/22_avatar_middle.jpg?1478140576" alt=""></div>
+                    <div class="fl info">
+                        <div class="name"><span>潜云</span><img src="images/popularity-vip.png" alt=""><img src="images/popularity-expert.png" alt=""></div>
+                        <div class="total">粉丝数：4033863<span class="yellow">获赞数：800</span></div>
+                        <div class="btn-box">
+                            <a href="javascript:;" class="btn btn-blue">关 注</a>
+                            <a href="javascript:;" class="btn">私 信</a>
+                        </div>
+                    </div>
+                    <ul class="fl list">
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                    </ul>
+                </li>
+                <li class="item">
+                    <div class="fl rank"><span class="yellow">2</span></div>
+                    <div class="fl img"><img src="http://cache.zhisheji.com/uc_server/data/avatar/000/02/40/22_avatar_middle.jpg?1478140576" alt=""></div>
+                    <div class="fl info">
+                        <div class="name"><span>潜云</span><img src="images/popularity-vip.png" alt=""><img src="images/popularity-expert.png" alt=""></div>
+                        <div class="total">粉丝数：4033863<span class="yellow">获赞数：800</span></div>
+                        <div class="btn-box">
+                            <a href="javascript:;" class="btn btn-blue">关 注</a>
+                            <a href="javascript:;" class="btn">私 信</a>
+                        </div>
+                    </div>
+                    <ul class="fl list">
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                    </ul>
+                </li>
+                <li class="item">
+                    <div class="fl rank"><span class="yellow">3</span></div>
+                    <div class="fl img"><img src="http://cache.zhisheji.com/uc_server/data/avatar/000/02/40/22_avatar_middle.jpg?1478140576" alt=""></div>
+                    <div class="fl info">
+                        <div class="name"><span>潜云</span><img src="images/popularity-vip.png" alt=""><img src="images/popularity-expert.png" alt=""></div>
+                        <div class="total">粉丝数：4033863<span class="yellow">获赞数：800</span></div>
+                        <div class="btn-box">
+                            <a href="javascript:;" class="btn btn-blue">关 注</a>
+                            <a href="javascript:;" class="btn">私 信</a>
+                        </div>
+                    </div>
+                    <ul class="fl list">
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                    </ul>
+                </li>
+                <li class="item">
+                    <div class="fl rank">4</div>
+                    <div class="fl img"><img src="http://cache.zhisheji.com/uc_server/data/avatar/000/02/40/22_avatar_middle.jpg?1478140576" alt=""></div>
+                    <div class="fl info">
+                        <div class="name"><span>潜云</span><img src="images/popularity-vip.png" alt=""><img src="images/popularity-expert.png" alt=""></div>
+                        <div class="total">粉丝数：4033863<span class="yellow">获赞数：800</span></div>
+                        <div class="btn-box">
+                            <a href="javascript:;" class="btn btn-blue">关 注</a>
+                            <a href="javascript:;" class="btn">私 信</a>
+                        </div>
+                    </div>
+                    <ul class="fl list">
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                    </ul>
+                </li>
+                <li class="item">
+                    <div class="fl rank">5</div>
+                    <div class="fl img"><img src="http://cache.zhisheji.com/uc_server/data/avatar/000/02/40/22_avatar_middle.jpg?1478140576" alt=""></div>
+                    <div class="fl info">
+                        <div class="name"><span>潜云</span><img src="images/popularity-vip.png" alt=""><img src="images/popularity-expert.png" alt=""></div>
+                        <div class="total">粉丝数：4033863<span class="yellow">获赞数：800</span></div>
+                        <div class="btn-box">
+                            <a href="javascript:;" class="btn btn-blue">关 注</a>
+                            <a href="javascript:;" class="btn">私 信</a>
+                        </div>
+                    </div>
+                    <ul class="fl list">
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                    </ul>
+                </li>
+                <li class="item">
+                    <div class="fl rank">6</div>
+                    <div class="fl img"><img src="http://cache.zhisheji.com/uc_server/data/avatar/000/02/40/22_avatar_middle.jpg?1478140576" alt=""></div>
+                    <div class="fl info">
+                        <div class="name"><span>潜云</span><img src="images/popularity-vip.png" alt=""><img src="images/popularity-expert.png" alt=""></div>
+                        <div class="total">粉丝数：4033863<span class="yellow">获赞数：800</span></div>
+                        <div class="btn-box">
+                            <a href="javascript:;" class="btn btn-blue">关 注</a>
+                            <a href="javascript:;" class="btn">私 信</a>
+                        </div>
+                    </div>
+                    <ul class="fl list">
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                        <li><a href="#"><img src="http://img.zhisheji.com/Fo2mmjkTqSah2Df9tqSeYAA-eyGJ?imageMogr2/thumbnail/600x/crop/!459x287a0a16" alt=""></a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="tcdPageCode"><div class="pg"><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=1" class="prev">&nbsp;&nbsp;</a><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=1">1</a><strong>2</strong><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=3">3</a><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=4">4</a><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=5">5</a><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=6">6</a><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=7">7</a><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=8">8</a><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=9">9</a><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=10">10</a><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=800" class="last">... 800</a><label><input type="text" name="custompage" class="px" size="2" title="输入页码，按回车快速跳转" value="2" onkeydown="if(event.keyCode==13) {window.location='plugin.php?id=zsj_one:rank&amp;pai=zong&amp;dingpai=hot&amp;page='+this.value;; doane(event);}"><span title="共 800 页"> / 800 页</span></label><a href="zsj_one-rank.html?pai=zong&amp;dingpai=hot&amp;page=3" class="nxt">下一页</a></div></div>
+        </div>
+
+        <div class="wrap popularity-raiserank">
+            <div class="tit">
+                <a href="#" class="fr btn btn-blue">发布作品</a>
+                <h2>如何快速获赞？</h2>
+            </div>
+            <div class="ct">
+                <p>1. 最重要的肯定是上传优秀作品啦</p>
+                <p>2. 把作品地址发送到QQ群里，这样能快速获得赞哦</p>
+                <p>3. 作品被首页推荐，编辑精选后平均每个作品能获得10-100个赞</p>
+                <p>4. 把作品分享到QQ空间也能获得不少赞哦</p>
+            </div>
+        </div>
+    </div>
+    <!-- end 榜单内容 -->
+
+
+    <!-- start 页尾 -->
+    <div class="design_footer fixed">
+        <div class="design_fbox fixed">
+            <div class="design_f_logo"><img src="http://cache.zhisheji.com/template/iscwo_design_2013/img/newimg/logo02.jpg" alt=""></div>
+            <div class="design_f_menu">
+                <div class="design_fm">
+                    <h2>频道</h2>
+                    <a href="http://www.zhisheji.com/yuanchuang/">原创作品</a>
+                    <a href="http://www.zhisheji.com/jiaocheng/">经验教程</a>
+                    <a href="http://www.zhisheji.com/xinshang/">灵感欣赏</a>
+                    <a href="http://www.zhisheji.com/mapsearch/">热门搜索</a>
+                </div>
+                <div class="design_fm">
+                    <h2>关于</h2>
+                    <a rel="nofollow" href="http://www.zhisheji.com/portal.php?mod=topic&amp;topicid=6">公司简介</a>
+                    <a rel="nofollow" href="http://www.zhisheji.com/portal.php?mod=topic&amp;topicid=7">联系我们</a>
+                    <a rel="nofollow" href="http://www.zhisheji.com/portal.php?mod=topic&amp;topicid=8">招聘英才</a>
+                    <a rel="nofollow" href="http://www.zhisheji.com/portal.php?mod=topic&amp;topicid=9">版权声明</a>
+                </div>
+                <div class="design_fm">
+                    <h2>联系</h2>
+                    <a rel="nofollow" href="tencent://message/?uin=2044694834&amp;在线咨询&amp;Menu=yes">在线客服</a>
+                </div>
+            </div>
+            <div class="design_f_about">
+                <h2>平台简介</h2>
+                <p>致设计(zhisheji.com）,专业的电商设计师交流平台。最活跃的电商设计师学习交流分享社区。集原创作品+灵感图库+经验教程+设计专访+设计培训+社群活动为一体，全方位服务电商设计师。成立3年来，聚集20万电商设计师，定期线下设计沙龙，覆盖北京、上海、广州、杭州等城市，在电商设计领域收到广泛关注和好评。 我们是80，90电商设计师，不是<a style="color:#888" href="http://www.zhisheji.com/">淘宝美工</a>---致设计</p>
+            </div>
+        </div>
+    </div>
+    <div class="design_footer01 fixed">
+        <div class="design_fbox fixed">
+            <div class="design_f_02">©2016致设计 (专业电商设计平台)</div>
+            <div class="design_f_03">
+                , Processed in 0.606684 second(s), 116 queries
+                , Gzip On, Yac On.
+            </div>
+        </div>
+    </div>
+    <!-- end 页尾 -->
+
+    <script src="http://www.zhisheji.com/template/iscwo_design_2013/common/2015newpostcss/js/jquery10.min.js" type="text/javascript"></script>
+    <script language="javascript">var jq = jQuery.noConflict();</script>
+
+    <!-- start 页面调用css js -->
+    <script src="js/page.js" type="text/javascript"></script>
+    <!-- end 页面调用css js -->
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>下载</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- 头部 start -->
+        <div class="header-list">
+            <div class="fl">
+                <span class="ico-aleft" onclick="window.history.go(-1);"></span>
+            </div>
+            <div class="fr">
+                <a href="javascript:;" class="record-editor">编辑</a>
+            </div>
+        </div>
+        <!-- 头部 end -->
+
+        <!-- 离线缓存 start -->
+        <div class="record">
+            <div class="vip-qb" id="wrapper">
+                <div class="h1">离线缓存</div>
+                <ul class="swipe-del">
+                    <li class="wait">
+                        <div class="cbox"><span class="ico ico-cbox"><input type="checkbox" name="history"></span></div>
+                        <div class="img">
+                            <a href="视频播放页.html">
+                                <img src="images/img1.jpg" alt="">
+                                <span class="tips bg-green">免费</span>
+                            </a>
+                        </div>
+                        <div class="info">
+                            <div class="info-box">
+                                <p class="status">等待缓存</p>
+                                <h3><a href="视频播放页.html">灵感聚集地·魏佺</a></h3>
+                                <p class="speed"><span class="size">200M</span></p>
+                            </div>
+                        </div>
+                        <a class="btn-delete">删除</a>
+                    </li>
+                    <li class="down">
+                        <div class="cbox"><span class="ico ico-cbox"><input type="checkbox" name="history"></span></div>
+                        <div class="img">
+                            <a href="视频播放页.html">
+                                <img src="images/img1.jpg" alt="">
+                                <span class="tips bg-yellow">会员</span>
+                            </a>
+                        </div>
+                        <div class="info">
+                            <div class="info-box">
+                                <p class="status">正在缓存</p>
+                                <h3><a href="视频播放页.html">合成知多少·细节把控系列</a></h3>
+                                <div class="bar"><span style="width: 30%;"></span></div>
+                                <p class="speed">99.9k/s + <span class="yellow">VIP加速99.9k/s</span> <span class="size">600M</span></p>
+                            </div>
+                        </div>
+                        <a class="btn-delete">删除</a>
+                    </li>
+                    <li>
+                        <div class="cbox"><span class="ico ico-cbox"><input type="checkbox" name="history"></span></div>
+                        <div class="img"><a href="视频播放页.html"><img src="images/img1.jpg" alt=""></a></div>
+                        <div class="info">
+                            <div class="info-box">
+                                <h3><a href="视频播放页.html">合成知多少·细节把控系列</a></h3>
+                                <p class="speed">600M</p>
+                            </div>
+                        </div>
+                        <a class="btn-delete">删除</a>
+                    </li>
+                    <li class="pause">
+                        <div class="cbox"><span class="ico ico-cbox"><input type="checkbox" name="history"></span></div>
+                        <div class="img"><img src="images/img1.jpg" alt=""></div>
+                        <div class="info">
+                            <div class="info-box">
+                                <h3>合成知多少·细节把控系列</h3>
+                                <div class="bar"><span style="width: 30%;"></span></div>
+                                <p class="speed"><span class="yellow">已暂停</span> <span class="size">600M</span></p>
+                            </div>
+                        </div>
+                        <a class="btn-delete">删除</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- 删除按钮浮窗 start -->
+            <div class="record-del-fixed">
+                <ul>
+                    <li>全选</li>
+                    <li>删除（<span class="num">0</span>）</li>
+                </ul>
+            </div>
+            <!-- 删除按钮浮窗 end -->
+        </div>
+        <!-- 离线缓存 end -->
+        <!-- footer start -->
+        <div class="footer">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="ico-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="视频.html">
+                        <span class="ico-video"></span>
+                        <p>视频</p>
+                    </a>
+                </li>
+                <li class="cur">
+                    <a href="下载.html">
+                        <span class="ico-down"></span>
+                        <p>下载</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="我的.html">
+                        <span class="ico-my"></span>
+                        <p>我的</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- footer end -->
+    </div>
+
+     <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- 上拉加载 -->
+    <script src="js/dropload.js"></script>
+
+    <script src="js/page.js"></script>
+    <script>
+    $(function() {
+        // 上拉加载
+        var curpage = 1;  // 页数
+        var totalpage = 5; // 总页数
+        // dropload
+        var dropload = $('#wrapper').dropload({
+            scrollArea: window,
+            domDown: {
+                domClass: 'dropload-down',
+                domRefresh: '<div class="dropload-refresh">上拉加载更多</div>',
+                domLoad: '<div class="dropload-load"><div class="loading"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div><div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div></div>正在加载</div>',
+                domNoData: '<div class="dropload-noData">已无数据</div>'
+            },
+            loadDownFn: function (me) {
+                // 判断是否只有一页或者加载完毕
+                if(totalpage <= 1 || curpage == totalpage) {
+                    me.lock();
+                    me.noData();
+                    me.resetload();
+                    return;
+                }
+                // 加载页面
+                setTimeout(function () {
+                    var li;
+                    for (i=0; i<6; i++) {
+                        li = `<li>
+                                <div class="cbox"><span class="ico ico-cbox"><input type="checkbox" name="history"></span></div>
+                                <div class="img"><img src="images/img1.jpg" alt=""></div>
+                                <div class="info">
+                                    <div class="info-box">
+                                        <h3>合成知多少·细节把控系列</h3>
+                                        <p class="speed">600M</p>
+                                    </div>
+                                </div>
+                                <a class="btn-delete">删除</a>
+                            </li>`;
+                        $('#wrapper ul').append(li);
+                    }
+                    curpage = parseInt(curpage) + 1;
+                    me.resetload();
+                }, 500);
+            }
+        });
+    });
+    </script>
+</body>
+</html>

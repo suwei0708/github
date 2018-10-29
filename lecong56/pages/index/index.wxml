@@ -1,0 +1,31 @@
+<!--index.wxml-->
+<import src="../../common/footer.wxml" />
+<view class="container pdb98">
+    <swiper indicator-dots="true" autoplay="true" interval="5000" duration="500" indicator-color="#037071" indicator-active-color="#fff" circular="true" class='swiper'>
+        <swiper-item wx:for="{{imgUrls}}" wx:key="*this">
+            <navigator url='/pages/list/list'><image src="{{item}}" class="slide-image" width="355" height="150" /></navigator> 
+        </swiper-item>
+    </swiper>
+    <view class='main bdr10'>
+        <image class='logo' src='/images/logo.png'></image>
+        <form bindsubmit="formSubmit1" class='form'>
+            <input class='text' name="tocity" type="text" placeholder="请填写发往城市"/>
+            <button class='btn' form-type="submit">查找专线</button>
+        </form>
+        <form bindsubmit="formSubmit2" class='form'>
+            <input class='text' name="sevicecity" type="text" placeholder="请填写服务城市"/>
+            <button class='btn' form-type="submit">查找师傅</button>
+        </form>
+        <form bindsubmit="formSubmit3" class='form'>
+            <input class='text' name="cartype" type="text" placeholder="请填写车辆类型"/>
+            <button class='btn' form-type="submit">查找货车</button>
+        </form>
+    </view>
+    <view class='list bdr10'>
+        <navigator  class='li' open-type='redirect' url=''><image src='/images/iimg1.jpg' class='bdr10'></image></navigator>
+        <navigator  class='li' open-type='redirect' url=''><image src='/images/iimg2.jpg' class='bdr10'></image></navigator>
+        <navigator  class='li' open-type='redirect' url=''><image src='/images/iimg3.jpg' class='bdr10'></image></navigator>
+        <navigator  class='li' open-type='redirect' url=''><image src='/images/iimg4.jpg' class='bdr10'></image></navigator>
+    </view>
+    <template is="footer" data="{{router: 'index'}}"/>
+</view>

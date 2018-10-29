@@ -1,0 +1,78 @@
+/**index.wxss**/
+.swiper {
+    width: 750rpx;
+    height: 400rpx;
+    margin-bottom: -83rpx;
+}
+.swiper image {
+    width: 750rpx;
+    height: 400rpx;
+}
+.swiper .wx-swiper-dots {
+    position: absolute;
+    bottom: 115rpx;
+}
+
+.main {
+    position: relative;
+    z-index: 2;
+    width: 710rpx;
+    padding: 70rpx 0 132rpx;
+    margin: 0 auto;
+    background: #fff;
+}
+.main .logo {
+    display: block;
+    width: 264rpx;
+    height: 83rpx;
+    margin: 0 auto 68rpx;
+}
+.form {
+    display: block;
+    margin: 20rpx 35rpx 0;
+    font-size: 0;
+    background: #eee;
+}
+.form .text {
+    display: inline-block;
+    vertical-align: top;
+    width: 416rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    padding-left: 30rpx;
+    background: #eee;
+    font-size: 26rpx;
+    color: #999;
+    border: 0;
+}
+
+.form .btn {
+    display: inline-block;
+    vertical-align: top;
+    width: 195rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    padding: 0;
+    background: #2bb999;
+    font-size: 26rpx;
+    color: #fff;
+}
+.form .btn:after{ border: none; }
+.list {
+    width: 700rpx;
+    padding: 0 0 30rpx;
+    margin: 20rpx auto 30rpx;
+    background: #fff;
+    font-size: 0;
+}
+.list image {
+    width: 308rpx;
+    height: 308rpx;
+}
+.list .li {
+    display: inline-block;
+    vertical-align: top;
+    overflow: hidden;
+    width: 308rpx;
+    margin: 30rpx 0 0 30rpx;
+}

@@ -1,0 +1,79 @@
+<!--pages/details/details.wxml-->
+<import src="../../common/footer2.wxml" />
+<view class="container pdb98">
+    <swiper autoplay="true" interval="5000" duration="500" indicator-color="#037071" indicator-active-color="#fff" circular="true" class='swiper'>
+        <swiper-item wx:for="{{imgUrls}}" wx:key="*this">
+            <navigator url='/pages/list/list'><image src="{{item}}" class="slide-image" width="355" height="150" /></navigator> 
+        </swiper-item>
+    </swiper>
+
+    <view class='title'>旺源物流<image src='/images/icon-s.png'></image> <image src='/images/icon-b.png'></image></view>
+
+    <view class='nav flex-wrp'>
+        <navigator class='li flex1 cur'>联系方式</navigator>
+        <navigator class='li flex1'>公司简介</navigator>
+        <navigator class='li flex1'>参考报价</navigator>
+        <navigator class='li flex1'>企业相册</navigator>
+        <navigator class='li flex1'>参考报价</navigator>
+    </view>
+
+    <view class='list'>
+        <view class='li bdr10'>
+            <view class='tit'>
+                <view class='fr'>
+                    <text class='distance'>16KM</text>
+                    <view class='yellow' bindtap='daohang' data-name="乐从富饶物流园A座25仓" data-latitude="22.906008" data-longitude="113.093278"><image src='/images/icon-dh.png'></image>导航</view>
+                </view>
+                <view class='name'>
+                    <image src='/images/icon-tit.png'></image>
+                    <text>旺源物流 总部</text>
+                </view>
+            </view>
+            <view class='ct'>
+                <view class='p p-half'><image src='/images/icon-yw.png'></image>业务：<text>18751156908</text></view>
+                <view class='p p-half'><image src='/images/icon-qq.png'></image>QQ：<text>1186298837</text></view>
+                <view class='p p-half'><image src='/images/icon-cd.png'></image>查单：<text>0575-22136078</text></view>
+                <view class='p p-half'><image src='/images/icon-qq.png'></image>QQ：<text>1186298837</text></view>
+                <view class='p p-half'><image src='/images/icon-ts.png'></image>投诉：<text>18751156908</text></view>
+                <view class='p p-half'><image src='/images/icon-wx.png'></image>微信：<text>18751156908</text></view>
+                <view class='p'><image src='/images/icon-dz.png'></image>地址：<text>乐从镇龙威材料城南区A3座14仓</text></view>
+            </view>
+        </view>
+
+        <view class='li bdr10'>
+            <view class='tit'>
+                <view class='fr'>
+                    <text class='distance'>168KM</text>
+                    <view class='yellow' bindtap='daohang' data-name="乐从富饶物流园A座25仓" data-latitude="22.906008" data-longitude="113.093278"><image src='/images/icon-dh.png'></image>导航</view>
+                </view>
+                <view class='name'>
+                    <image src='/images/icon-tit.png'></image>
+                    <text>旺源物流 北京分部</text>
+                </view>
+            </view>
+            <view class='ct'>
+                <view class='p'><image src='/images/icon-tel2.png'></image>查货电话：<text>18751156908</text></view>
+                <view class='p'><image src='/images/icon-dz.png'></image>提货地址：<text>乐从镇龙威材料城南区A3座14仓</text></view>
+            </view>
+        </view>
+
+        <view class='li bdr10'>
+            <view class='tit'>
+                <view class='fr'>
+                    <text class='distance'>168KM</text>
+                    <view class='yellow' bindtap='daohang' data-name="乐从富饶物流园A座25仓" data-latitude="22.906008" data-longitude="113.093278"><image src='/images/icon-dh.png'></image>导航</view>
+                </view>
+                <view class='name'>
+                    <image src='/images/icon-tit.png'></image>
+                    <text>旺源物流 天津分部</text>
+                </view>
+            </view>
+            <view class='ct'>
+                <view class='p'><image src='/images/icon-tel2.png'></image>查货电话：<text>18751156908</text></view>
+                <view class='p'><image src='/images/icon-dz.png'></image>提货地址：<text>乐从镇龙威材料城南区A3座14仓</text></view>
+            </view>
+        </view>
+    </view>
+    
+    <template is="footer2"/>
+</view>

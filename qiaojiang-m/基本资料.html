@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>基本资料</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <!-- 头像裁剪css -->
+    <link rel="stylesheet" href="css/cropper.min.css">
+    <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- 头部 start -->
+        <div class="header">
+            <a class="ico-back" href="javascript:history.back(-1);"></a>
+            <h1>基本资料</h1>
+            <a href="javascript:;" class="btn">保存</a>
+        </div>
+        <!-- 头部 end -->
+
+        <!-- 基本资料 start -->
+        <div class="data-list">
+            <ul>
+                <li>
+                    <p>头像</p>
+                    <div class="item"><span class="img"><input type="file" id="avatarInput"><img src="images/user.png" alt=""></span></div>
+                </li>
+                <li>
+                    <p>昵称</p>
+                    <div class="item"><input class="txt" type="text" value="魏佺"></div>
+                </li>
+                <li>
+                    <p>QQ</p>
+                    <div class="item"><input class="txt" type="text" value="2523980054"></div>
+                </li>
+                <li>
+                    <p>性别</p>
+                    <div class="item"><input id="picker1" class="txt" type="text" value="男" readonly="readonly" onfocus="this.blur()"><span class="arrow-r"></span></div>
+                </li>
+            </ul>
+            <ul>
+                <li>
+                    <p>所在城市</p>
+                    <div class="item"><input id="picker2" class="txt" type="text" value="北京市/东城市" readonly="readonly" onfocus="this.blur()"><span class="arrow-r"></span></div>
+                </li>
+                <li>
+                    <p>职业</p>
+                    <div class="item"><input class="txt" type="text" value="网页设计师"></div>
+                </li>
+                <li>
+                    <p>邮箱</p>
+                    <div class="item"><input class="txt" type="text" value="2523980054@qq.com"></div>
+                </li>
+            </ul>
+        </div>
+        <!-- 基本资料 end -->
+        <!-- footer start -->
+        <div class="footer">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="fico fico-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="视频教程.html">
+                        <span class="fico fico-video"></span>
+                        <p>视频</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="VIP特权.html">
+                        <span class="fico fico-vip"></span>
+                        <p>VIP特权</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="全部需求.html">
+                        <span class="fico fico-demand"></span>
+                        <p>需求</p>
+                    </a>
+                </li>
+                <li class="cur">
+                    <a href="个人中心.html">
+                        <span class="fico fico-my"></span>
+                        <p>我的</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- footer end -->
+        <!-- 上传头像弹窗 start -->
+        <div class="avatar-box">
+            <div class="avatar-wrapper"></div>
+            <a class="avatar-save bg-blue" href="javascript:;">确定</a>
+        </div>
+        <!-- 上传头像弹窗 end -->
+        <div id="mask"></div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <!-- 上传头像 start-->
+    <script src="js/cropper.js"></script>
+    <!-- 上传头像 end-->
+    <!-- 城市联动 start-->
+    <script src="js/picker.min.js"></script>
+    <script src="js/city.js"></script>
+    <script src="js/index.js"></script>
+    <!-- 城市联动 end-->
+    <script src="js/page.js"></script>
+</body>
+</html>

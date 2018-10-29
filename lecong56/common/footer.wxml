@@ -1,0 +1,19 @@
+<template name="footer">
+    <view class='footer flex-wrp'>
+        <navigator class='li flex1 {{router == "index" ? "cur" : ""}}' open-type='redirect' url='/pages/index/index'>
+            <image src='/images/icon-home.png'></image>
+            <image src='/images/icon-home-cur.png'></image>
+            <text>首页</text>
+        </navigator>
+        <navigator class='li flex1 {{router == "log" ? "cur" : ""}}' open-type='redirect' url='/pages/index/index'>
+            <image src='/images/icon-log.png'></image>
+            <image src='/images/icon-log-cur.png'></image>
+            <text>日志</text>
+        </navigator>
+        <button class='li flex1'>
+            <image src='/images/icon-share.png'></image>
+            <image src='/images/icon-share-cur.png'></image>
+            <text>分享</text>
+        </button>
+    </view>
+</template>
