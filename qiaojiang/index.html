@@ -6824,7 +6824,7 @@
 
         <!--弹窗砍价 start -->
         <div class="popup-box popup-kanjia" style="display: block">
-            <div class="ico ico-close"></div>
+            <div class="ico ico-close" onclick="$(this).off('click'); $('.popup-kanjia, .mask').hide();"></div>
             <a href="http://www.qiaojiang.tv/kanjia" target="_blank"><img src="images/kanjia.png" height="505" width="1076" alt=""></a>
         </div>
         <!--弹窗砍价 end -->
