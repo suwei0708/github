@@ -1,0 +1,43 @@
+
+<div class="tt">
+    <ul>
+        <li><a class="cur" href="javascript:;">全部</a></li>
+        <li><a href="javascript:;">赞</a></li>
+        <li><a href="javascript:;">评论</a></li>
+        <li><a href="javascript:;">粉丝</a></li>
+    </ul>
+</div>
+<div class="list">
+    <ul>
+
+
+
+
+    </ul>
+    <div class="more"><a href="home.php?mod=space&amp;do=notice&amp;view=all">暂无消息</a></div>
+</div>
+<div class="list" style="display: none">
+    <ul>
+
+    </ul>
+    <div class="more"><a href="home.php?mod=space&amp;do=notice&amp;view=zan">暂无消息</a></div>
+</div>
+<div class="list" style="display: none">
+    <ul>
+
+    </ul>
+    <div class="more"><a href="home.php?mod=space&amp;do=notice&amp;view=mypost">暂无消息</a></div>
+</div>
+<div class="list" style="display: none">
+    <ul>
+            </ul>
+    <div class="more"><a href="zsj_one-myfollow.html?cmd=follower">暂无消息</a></div>
+</div>
+        <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
+<script>
+            $('.tt').on('click', 'a', function () {
+                $(this).addClass('cur').parent().siblings().find('a').removeClass('cur');
+                $(this).parents('.tt').nextAll('.list').hide().eq($(this).parent().index()).show();
+                return false;
+            });
+</script>

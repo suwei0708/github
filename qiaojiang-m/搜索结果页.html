@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>搜索结果页</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- 搜索框 start -->
+        <div class="so" id="so2">
+            <div class="so-bg">
+                <div class="fl so-box"><span class="ico ico-so"></span><input type="search" class="txt"><span class="ico ico-close"></span></div>
+                <a href="javascript:;" id="so-btn2">搜索</a>
+            </div>
+        </div>
+        <!-- 搜索框 end -->
+        <!-- 搜索结果页 start -->
+        <div class="box so-result">
+            <div class="tit">
+                <h2>搜索到26条结果</h2>
+            </div>
+            <div class="cl list" id="wrapper">
+                <ul>
+                    <li>
+                        <a href="视频播放页.html">
+                            <img src="images/img1.jpg" alt="">
+                            <h3>玉米飞船合成手绘</h3>
+                            <p>
+                                <span class="btn bg-yellow">会员</span>
+                                <span class="num">56 评论</span>
+                                <span class="num">56666 人在学</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="视频播放页.html">
+                            <img src="images/img1.jpg" alt="">
+                            <h3>玉米飞船合成手绘</h3>
+                            <p>
+                                <span class="btn bg-green">免费</span>
+                                <span class="num">56 评论</span>
+                                <span class="num">56666 人在学</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="视频播放页.html">
+                            <img src="images/img1.jpg" alt="">
+                            <h3>玉米飞船合成手绘</h3>
+                            <p>
+                                <span class="btn bg-yellow">会员</span>
+                                <span class="num">56 评论</span>
+                                <span class="num">56666 人在学</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="视频播放页.html">
+                            <img src="images/img1.jpg" alt="">
+                            <h3>玉米飞船合成手绘</h3>
+                            <p>
+                                <span class="btn bg-green">免费</span>
+                                <span class="num">56 评论</span>
+                                <span class="num">56666 人在学</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="视频播放页.html">
+                            <img src="images/img1.jpg" alt="">
+                            <h3>玉米飞船合成手绘</h3>
+                            <p>
+                                <span class="btn bg-yellow">会员</span>
+                                <span class="num">56 评论</span>
+                                <span class="num">56666 人在学</span>
+                            </p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="视频播放页.html">
+                            <img src="images/img1.jpg" alt="">
+                            <h3>玉米飞船合成手绘</h3>
+                            <p>
+                                <span class="btn bg-green">免费</span>
+                                <span class="num">56 评论</span>
+                                <span class="num">56666 人在学</span>
+                            </p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 搜索结果页 end -->
+        <!-- footer start -->
+        <div class="footer">
+            <ul>
+                <li>
+                    <a href="index.html">
+                        <span class="fico fico-home"></span>
+                        <p>首页</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="视频教程.html">
+                        <span class="fico fico-video"></span>
+                        <p>视频</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="VIP特权.html">
+                        <span class="fico fico-vip"></span>
+                        <p>VIP特权</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="全部需求.html">
+                        <span class="fico fico-demand"></span>
+                        <p>需求</p>
+                    </a>
+                </li>
+                <li class="cur">
+                    <a href="个人中心.html">
+                        <span class="fico fico-my"></span>
+                        <p>我的</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!-- footer end -->
+        <div id="mask"></div>
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- 上拉加载 -->
+    <script src="js/dropload.js"></script>
+
+    <script src="js/page.js"></script>
+    <script>
+    $(function() {
+        // 上拉加载
+        var curpage = 1;  // 页数
+        var totalpage = 5; // 总页数
+        // dropload
+        var dropload = $('#wrapper').dropload({
+            scrollArea: window,
+            domDown: {
+                domClass: 'dropload-down',
+                domRefresh: '<div class="dropload-refresh" style="color:#888">上拉加载更多</div>',
+                domLoad: '<div class="dropload-load" style="color:#888"><span class="loading"></span>加载中</div>',
+                domNoData: '<div class="dropload-noData" style="color:#888">已无数据</div>'
+            },
+            loadDownFn: function (me) {
+                // 判断是否只有一页或者加载完毕
+                if(totalpage <= 1 || curpage == totalpage) {
+                    me.lock();
+                    me.noData();
+                    me.resetload();
+                    return;
+                }
+                // 加载页面
+                setTimeout(function () {
+                    var li;
+                    for (i=0; i<6; i++) {
+                        li = '<li>'
+                                    + '<a href="视频播放页.html">'
+                                        + '<img src="images/img1.jpg" alt="">'
+                                        + '<h3>加载更多玉米飞船合成手绘</h3>'
+                                        + '<p>'
+                                            + '<span class="btn bg-green">免费</span>'
+                                            + '<span class="num">56 评论</span>'
+                                            + '<span class="num">56666 人在学</span>'
+                                        + '</p>'
+                                    + '</a>'
+                                + '</li>';
+                        $('#wrapper ul').append(li);
+                    }
+                    curpage = parseInt(curpage) + 1;
+                    me.resetload();
+                }, 500);
+            }
+        });
+    });
+    </script>
+</body>
+</html>

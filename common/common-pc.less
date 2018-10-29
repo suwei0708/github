@@ -1,0 +1,815 @@
+@charset "utf-8";
+.dis(b) {
+    display: block;
+}
+.dis(i) {
+    display: inline;
+}
+.dis(ib) {
+    display: inline-block;
+    *display:inline;
+    *zoom:1;
+}
+.dis(n) {
+    display: none;
+}
+.height(@h) {
+    .ov(h);
+    height: @h;
+    line-height: @h;
+}
+
+.dis(flex) {
+    display: -webkit-box;      /* OLD - iOS 6-, Safari 3.1-6 */
+    display: -ms-flexbox;      /* TWEENER - IE 10 */
+    display: -moz-flexbox;      /* firefox */
+    display: -webkit-flex;     /* NEW - Chrome */
+    display: flex;
+}
+
+// flexbox
+.flex(@x:1) {
+    -webkit-box-flex: @x;      /* OLD - iOS 6-, Safari 3.1-6 */
+    -webkit-flex: @x;          /* Chrome */
+    -moz-flex: @x;              /* firefox */
+    -ms-flex: @x;              /* IE 10 */
+    flex: @x;
+}
+.order(@x:1) {
+    -webkit-box-ordinal-group: @x;   /* OLD - iOS 6-, Safari 3.1-6 */
+    -moz-flex-order: @x;              /* firefox */
+    -ms-flex-order: @x;              /* TWEENER - IE 10 */
+    -webkit-order: @x;               /* NEW - Chrome */
+    order: @x;                       /* NEW, Spec - Opera 12.1, Firefox 20+ */
+}
+.align(@x) {
+    -webkit-box-align: @x;  /* 一排子元素对齐方式 */
+    -webkit-align-items: @x;
+    -moz-flex-align: @x;
+    -ms-flex-align: @x;
+    align-items: @x;
+}
+.align(start) {
+    -webkit-box-align: start;  /* 一排子元素对齐方式 */
+    -webkit-align-items: flex-start;
+    -moz-flex-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+}
+.align(end) {
+    -webkit-box-align: end;  /* 一排子元素对齐方式 */
+    -webkit-align-items: flex-end;
+    -moz-flex-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+}
+.justify(start) {
+    -webkit-box-pack: start;
+    -webkit-justify-content: flex-start;
+    -moz-flex-pack: start;
+    -ms-flex-pack: start;
+    justify-content: start
+}
+.justify(end) {
+    -webkit-box-pack: end;
+    -webkit-justify-content: flex-end;
+    -moz-flex-pack: end;
+    -ms-flex-pack: end;
+    justify-content: end
+}
+.justify(center) {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -moz-flex-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+.justify(space-between) {
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -moz-flex-pack: justify;
+    -ms-flex-pack: justify;
+    justify-content: space-between
+}
+.justify(space-around) {
+    -webkit-justify-content: space-around;
+    -moz-flex-pack: distribute;
+    -ms-flex-pack: distribute;
+    justify-content: space-around
+}
+.flex-direction(row) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: row;
+    -moz-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row
+}
+.flex-direction(row-reverse) {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: row-reverse;
+    -moz-flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse
+}
+.flex-direction(column) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -moz-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+.flex-direction(column-reverse) {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: reverse;
+    -webkit-flex-direction: column-reverse;
+    -moz-flex-direction: column-reverse;
+    -ms-flex-direction: column-reverse;
+    flex-direction: column-reverse
+}
+.flex-wrap(nowrap) {
+    -webkit-box-lines: single;
+    -webkit-flex-wrap: nowrap;
+    -moz-flex-wrap: nowrap;
+    -ms-flex-wrap: nowrap;
+    flex-wrap: nowrap
+}
+.flex-wrap(wrap) {
+    -webkit-box-lines: multiple;
+    -webkit-flex-wrap: wrap;
+    -moz-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap
+}
+
+// 超出
+.ov(h) {
+    overflow: hidden;
+}
+.ov(a) {
+    overflow: auto;
+}
+.ov(v) {
+    overflow: visible;
+}
+.ov(i) {
+    overflow: inherit;
+}
+.ovx(a) {
+    overflow-x: auto;
+}
+.ovx(h) {
+    overflow-x: hidden;
+}
+.ovy(a) {
+    overflow-y: auto;
+}
+.ovy(h) {
+    overflow-y: hidden;
+}
+
+// 定位
+.pos(r) {
+    position: relative;
+}
+.pos(a) {
+    position: absolute;
+}
+.pos(f) {
+    position: fixed;
+}
+.pos(s) {
+    position: static;
+}
+
+// 万能清浮动
+.cl {
+    *zoom: 1;
+    &:after {
+        .dis(b);
+        clear: both;
+        height: 0;
+        content: "\200B";
+    }
+}
+.cl() {
+    *zoom: 1;
+    &:after {
+        .dis(b);
+        clear: both;
+        height: 0;
+        content: "\200B";
+    }
+}
+
+// 文字浮凸效果
+.text-embossed(@bg-color) {
+    color: lighten(@bg-color, 3%);
+}
+.text-embossed(@bg-color, @fg-color) {
+    color: @fg-color;
+}
+.text-embossed(...) {
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.5), 0 -1px 0 rgba(255, 255, 255, 0.5);
+}
+
+// 文字下陷效果
+.text-debossed(@bg-color) {
+    @color: darken(@bg-color, 3%);
+    color: rgba(red(@color), green(@color), blue(@color), 0.8);
+}
+.text-debossed(@bg-color, @fg-color) {
+    @color: darken(@fg-color, 3%);
+    color: rgba(red(@color), green(@color), blue(@color), 0.8);
+}
+.text-debossed(@bg-color, ...) {
+    text-shadow: 0 1px 1px @bg-color, 0 0 0 #000, 0 1px 0 rgba(255, 255, 255, 0.8);
+}
+
+// 3D文本效果
+.text-3d(@color) {
+    color: @color;
+    text-shadow: 0 1px 0 @color - #272727,
+                 0 2px 0 @color - #303030,
+                 0 3px 0 @color - #393939,
+                 0 4px 0 @color - #424242,
+                 0 5px 0 @color - #5b5b5b,
+                 0 6px 1px rgba(0, 0, 0, 0.1),
+                 0 0 5px rgba(0, 0, 0, 0.1),
+                 1px 1px 3px rgba(0, 0, 0, 0.3),
+                 3px 3px 5px rgba(0, 0, 0, 0.2),
+                 5px 5px 10px rgba(0, 0, 0, 0.25),
+                 0 10px 10px rgba(0, 0, 0, 0.2),
+                 0 20px 20px rgba(0, 0, 0, 0.15);
+}
+
+// 文本发光效果
+.text-glow(@radius: 5px) when (isnumber(@radius)) {
+    text-shadow: 0 0 @radius;
+}
+.text-glow(@color, @radius: 5px) when (iscolor(@color)) {
+    text-shadow: 0 0 @radius @color;
+}
+
+// 文本模糊效果
+.text-blurry(@color, @radius: 0.15em) {
+    color: transparent;
+    text-shadow: 0 0 @radius @color;
+    // 0.1px of spread distance made the shadow visible under IE10
+    text-shadow: 0 0 @radius 0.1px @color;
+}
+
+// 透明度
+.opacity(@x:.8) {
+    filter: ~"alpha(opacity="@x * 100~")";
+    opacity: @x;
+}
+
+
+// 三角
+.triangle(bottom, @w:5px, @c:#ccc){
+    font-size: 0;
+    border-width: @w;
+    border-color: @c transparent transparent transparent;
+    border-style: solid;
+    border-bottom: 0;
+}
+.triangle(top, @w:5px, @c:#ccc){
+    font-size: 0;
+    border-width: @w;
+    border-color: transparent transparent @c transparent;
+    border-style: solid;
+    border-top: 0;
+}
+.triangle(left, @w:5px, @c:#ccc){
+    font-size: 0;
+    border-width: @w;
+    border-color: transparent @c transparent transparent;
+    border-style: solid;
+    border-left: 0;
+}
+.triangle(right, @w:5px, @c:#ccc){
+    font-size: 0;
+    border-width: @w;
+    border-color: transparent transparent transparent @c;
+    border-style: solid;
+    border-right: 0;
+}
+.triangle(lefttop, @w:5px, @c:#ccc){
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-top: @w solid @c;
+    border-right: @w solid transparent;
+}
+.triangle(righttop, @w:5px, @c:#ccc){
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-top: @w solid @c;
+    border-left: @w solid transparent;
+}
+.triangle(leftbottom, @w:5px, @c:#ccc){
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-bottom: @w solid @c;
+    border-right: @w solid transparent;
+}
+.triangle(rightbottom, @w:5px, @c:#ccc){
+    font-size: 0;
+    width: 0;
+    height: 0;
+    border-bottom: @w solid @c;
+    border-left: @w solid transparent;
+}
+
+// Known issue:
+// 不支持Opera 14及以前版本，Opera 15起支持-webkit-user-select。
+.user-select(@type) {
+    -webkit-user-select: @type;
+        -ms-user-select: @type;
+        -moz-user-select: @type;
+            user-select: @type;
+}
+
+// 圆角
+.bdr(@x:5px) {
+    -webkit-border-radius: @x;
+    -ms-border-radius: @x;
+    -moz-border-radius: @x;
+    border-radius: @x;
+}
+.bdr(@x, @y) {
+    -webkit-border-radius: @x @y;
+    -ms-border-radius: @x @y;
+    -moz-border-radius: @x @y;
+    border-radius: @x @y;
+}
+.bdr(@x, @y, @c, @d) {
+    -webkit-border-radius: @x @y @c @d;
+    -ms-border-radius: @x @y @c @d;
+    -moz-border-radius: @x @y @c @d;
+    border-radius: @x @y @c @d;
+}
+.bdr2(@radius-x, @radius-y) {
+    .bdr(@radius-x ~`"/"` @radius-y);
+}
+
+// Drop shadows
+@default-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+.box-shadow(@shadow: @default-box-shadow, ...) {
+    @shadows: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
+    -webkit-box-shadow: @shadows;
+    -ms-box-shadow: @shadows;
+    -moz-box-shadow: @shadows;
+            box-shadow: @shadows;
+}
+.text-shadow(@shadow: @default-box-shadow, ...) {
+    @shadows: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
+    -webkit-text-shadow: @shadows;
+    -ms-box-shadow: @shadows;
+    -moz-box-shadow: @shadows;
+            text-shadow: @shadows;
+}
+
+
+// 超出显示省略
+.text-e(@x: 1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: @x;
+    -webkit-box-orient: vertical;
+}
+
+// Transitions
+// Reference:
+// * https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties
+
+.transition(@transition, ...) {
+    @transitions: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
+    @webkit-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-webkit-$1")`;
+    @moz-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-moz-$1")`;
+    @ms-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-ms-$1")`;
+    @o-transitions: ~`"@{transitions}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-o-$1")`;
+    -webkit-transition: @webkit-transitions;
+       -moz-transition: @ms-transitions;
+        -ms-transition: @ms-transitions;
+            transition: @transitions;
+}
+.transition-property(@property: all, ...) {
+    @properties: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    @webkit-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-webkit-$1")`;
+    @moz-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-moz-$1")`;
+    @ms-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-ms-$1")`;
+    @o-properties: ~`"@{properties}".replace(/(transform|perspective|border(?:-\w+)*?-radius|box-shadow)/g, "-o-$1")`;
+    -webkit-transition-property: @webkit-properties;
+       -moz-transition-property: @ms-properties;
+        -ms-transition-property: @ms-properties;
+            transition-property: @properties;
+}
+.transition-duration(@duration: 0s, ...) {
+    @durations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-transition-duration: @durations;
+       -moz-transition-duration: @durations;
+        -ms-transition-duration: @durations;
+            transition-duration: @durations;
+}
+.transition-timing-function(@timing-function: ease, ...) {
+    @timing-functions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-transition-timing-function: @timing-functions;
+       -moz-transition-timing-function: @timing-functions;
+        -ms-transition-timing-function: @timing-functions;
+            transition-timing-function: @timing-functions;
+}
+.transition-delay(@delay: 0s, ...) {
+    @delays: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-transition-delay: @delays;
+       -moz-transition-delay: @delays;
+        -ms-transition-delay: @delays;
+            transition-delay: @delays;
+}
+
+// Animations
+//
+// Reference:
+// * https://developer.mozilla.org/en-US/docs/Web/CSS/animation
+
+
+.animation(@animation, ...) {
+    @animations: ~`(function() { var args = "@{arguments}".replace(/[[\]]/g, ""); if(!args.match(/[^,]\s+[^,]/)) { args = args.replace(/,(?=[^()]*\))/g, "%est%").replace(/,/g, "").replace(/%est%/g, ","); } return args;})()`;
+    -webkit-animation: @animations;
+       -moz-animation: @animations;
+        -ms-animation: @animations;
+            animation: @animations;
+}
+.animation-name(@name: none, ...) {
+    @names: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-name: @names;
+       -moz-animation-name: @names;
+        -ms-animation-name: @names;
+            animation-name: @names;
+}
+.animation-duration(@duration: 0s, ...) {
+    @durations: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-duration: @durations;
+       -moz-animation-duration: @durations;
+        -ms-animation-duration: @durations;
+            animation-duration: @durations;
+}
+.animation-timing-function(@timing-function: ease, ...) {
+    @timing-functions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-timing-function: @timing-functions;
+       -moz-animation-timing-function: @timing-functions;
+        -ms-animation-timing-function: @timing-functions;
+            animation-timing-function: @timing-functions;
+}
+.animation-iteration-count(@count: 1, ...) {
+    @counts: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-iteration-count: @counts;
+       -moz-animation-iteration-count: @counts;
+        -ms-animation-iteration-count: @counts;
+            animation-iteration-count: @counts;
+}
+.animation-direction(@direction: normal, ...) {
+    @directions: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-direction: @directions;
+       -moz-animation-direction: @directions;
+        -ms-animation-direction: @directions;
+            animation-direction: @directions;
+}
+.animation-play-state(@state: normal, ...) {
+    @states: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-play-state: @states;
+       -moz-animation-play-state: @states;
+        -ms-animation-play-state: @states;
+            animation-play-state: @states;
+}
+.animation-delay(@delay: 0s, ...) {
+    @delays: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-delay: @delays;
+       -moz-animation-delay: @delays;
+        -ms-animation-delay: @delays;
+            animation-delay: @delays;
+}
+.animation-fill-mode(@mode: none, ...) {
+    @modes: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-animation-fill-mode: @modes;
+       -moz-animation-fill-mode: @modes;
+        -ms-animation-fill-mode: @modes;
+            animation-fill-mode: @modes;
+}
+
+
+//
+// Transformations
+//
+// Reference:
+// * https://developer.mozilla.org/en-US/docs/Web/CSS/transform
+// * http://dev.w3.org/csswg/css-transforms/#transform
+
+.transform(...) {
+    -webkit-transform: @arguments;
+       -moz-transform: @arguments;
+        -ms-transform: @arguments;
+            transform: @arguments;
+}
+
+// Known issue:
+// IE不支持，Opera 15起以`-webkit`前缀方式支持
+
+.transform-style(@style) {
+    -webkit-transform-style: @style;
+       -moz-transform-style: @style;
+        -ms-transform-style: @style;
+            transform-style: @style;
+}
+
+//
+// Known issue:
+// Opera 15起以`-webkit`前缀方式支持三值语法，之前以`-o`前缀方式支持
+
+.transform-origin(@origin) {
+    -webkit-transform-origin: @origin;
+       -moz-transform-origin: @origin;
+        -ms-transform-origin: @origin;
+            transform-origin: @origin;
+}
+
+//
+// Known issue:
+// IE9、Opera 14及以下不支持，Opera 15起以`-webkit`前缀方式支持
+
+.backface-visibility(@visibility) {
+    -webkit-backface-visibility: @visibility;
+       -moz-backface-visibility: @visibility;
+        -ms-backface-visibility: @visibility;
+            backface-visibility: @visibility;
+}
+
+//
+// Known issue:
+// IE9、Opera 14及以下不支持，Opera 15起以`-webkit`前缀方式支持
+
+.perspective(@d) {
+    -webkit-perspective: @d;
+       -moz-perspective: @d;
+        -ms-perspective: @d;
+            perspective: @d;
+}
+
+//
+// 单个变换函数的快捷方法
+
+.transform-single(@transform-function, @rest...) {
+    @args: ~`"@{rest}".replace(/[\[\]]/g, "")`;
+    -webkit-transform: ~`"@{transform-function}(@{args})"`;
+       -moz-transform: ~`"@{transform-function}(@{args})"`;
+        -ms-transform: ~`"@{transform-function}(@{args})"`;
+            transform: ~`"@{transform-function}(@{args})"`;
+}
+
+//2D transform  functions
+
+.matrix(@a, @b, @c, @d, @tx, @ty) {
+    .transform-single(matrix, @arguments);
+}
+
+.translate(@tx) {
+    .transform-single(translate, @arguments);
+}
+.translate(@tx, @ty) {
+    .transform-single(translate, @arguments);
+}
+
+.translateX(@tx) {
+    .transform-single(translateX, @arguments);
+}
+
+.translateY(@ty) {
+    .transform-single(translateY, @arguments);
+}
+
+.scale(@sx) {
+    .transform-single(scale, @arguments);
+}
+.scale(@sx, @sy) {
+    .transform-single(scale, @arguments);
+}
+
+.scaleX(@sx) {
+    .transform-single(scaleX, @arguments);
+}
+
+.scaleY(@sy) {
+    .transform-single(scaleY, @arguments);
+}
+
+.rotate(@angle) {
+    .transform-single(rotate, @arguments);
+}
+
+// TODO: see https://github.com/twitter/bootstrap/blob/master/less/mixins.less#L300
+.skew(@ax) {
+    .transform-single(skew, @arguments);
+}
+.skew(@ax, @ay) {
+    .transform-single(skew, @arguments);
+}
+
+.skewX(@ax) {
+    .transform-single(skewX, @arguments);
+}
+
+.skewY(@ay) {
+    .transform-single(skewY, @arguments);
+}
+
+//3D transform  functions
+
+.maxtrix3d(@a1, @b1, @c1, @d1, @a2, @b2, @c2, @d2,
+           @a3, @b3, @c3, @d3, @a4, @b4, @c4, @d4) {
+    .transform-single(matrix3d, @arguments);
+}
+
+.translate3d(@tx, @ty, @tz) {
+    .transform-single(translate3d, @arguments);
+}
+
+.translateZ(@tz) {
+    .transform-single(translateZ, @arguments);
+}
+
+.scale3d(@sx, @sy, @sz) {
+    .transform-single(scale3d, @arguments);
+}
+
+.scaleZ(@sz) {
+    .transform-single(scaleZ, @arguments);
+}
+
+.rotate3d(@x, @y, @z, @angle) {
+    .transform-single(rotate3d, @arguments);
+}
+
+.rotateX(@angle) {
+    .transform-single(rotateX, @arguments);
+}
+
+.rotateY(@angle) {
+    .transform-single(rotateY, @arguments);
+}
+
+.rotateZ(@angle) {
+    .transform-single(rotateZ, @arguments);
+}
+
+// TODO: transform: perspective() needs a better name
+// (which will not conflict with the original perspective property mixin)
+// .perspective(@d) {
+//     .transform-single(perspective, @d);
+// }
+
+//
+// CSS3 Background
+
+// FF 3.6 and under need "padding" instead of "padding-box"
+.background-clip(@clip, ...) {
+    @clips: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-background-clip: @clips;
+       -moz-background-clip: @clips;
+        -ms-background-clip: @clips;
+            background-clip: @clips;
+}
+
+// Background sizing
+.background-size(@size, ...) {
+    @sizes: ~`"@{arguments}".replace(/[\[\]]/g, "")`;
+    -webkit-background-size: @sizes;
+       -moz-background-size: @sizes;
+        -ms-background-size: @sizes;
+            background-size: @sizes;
+}
+
+//
+// Gradients
+
+// General linear-gradient
+.linear-gradient(@direction, @color-stop...) {
+    @dir: ~`"@{direction}".replace(/[\[\],]/g, "")`;
+    @is-old-side-or-corner: ~`/^(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
+    @is-standard-side-or-corner: ~`/^to\s+(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
+    @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
+    .output() when (@is-old-side-or-corner) {
+        @standard-direction: ~`"to @{dir}".replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
+        background-image: -webkit-linear-gradient(@dir, @color-stops); // Chrome 10+
+        background-image: linear-gradient(@standard-direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    }
+    .output() when (@is-standard-side-or-corner) {
+        @old-direction: ~`"@{dir}".replace(/^to\s+/, "").replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
+        background-image: -webkit-linear-gradient(@old-direction, @color-stops); // Chrome 10+
+        background-image: linear-gradient(@dir, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    }
+    .output() when not (@is-old-side-or-corner) and not (@is-standard-side-or-corner) {
+        background-image: -webkit-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Chrome 10+
+        background-image: linear-gradient(@direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    }
+    .output();
+    background-repeat: repeat;
+}
+
+// Horizontal gradient with better browser compatibility
+.horizontal-gradient(@start-color, @end-color) {
+    background-image: -webkit-gradient(linear, left top, right top, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(left, @start-color, @end-color); // Safari 5.1+, Chrome 10+
+    background-image: linear-gradient(to right, @start-color, @end-color); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.Gradient(startColorstr='%d', endColorstr='%d', GradientType=1)", argb(@start-color), argb(@end-color))); // IE9 and down
+}
+
+// Vertical gradient with better browser compatibility
+.vertical-gradient(@start-color, @end-color) {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@start-color), to(@end-color)); // Safari 4+, Chrome 2+
+    background-image: -webkit-linear-gradient(top, @start-color, @end-color); // Safari 5.1+, Chrome 10+
+    background-image: linear-gradient(to bottom, @start-color, @end-color); // Standard, IE10
+    background-repeat: repeat-x;
+    filter: e(%("progid:DXImageTransform.Microsoft.Gradient(startColorstr='%d', endColorstr='%d', GradientType=0)", argb(@start-color), argb(@end-color))); // IE9 and down
+}
+
+// General repeating linear-gradient
+.repeating-linear-gradient(@direction, @color-stop...) {
+    @dir: ~`"@{direction}".replace(/[\[\],]/g, "")`;
+    @is-old-side-or-corner: ~`/^(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
+    @is-standard-side-or-corner: ~`/^to\s+(?:top|right|bottom|left)(?:\s+(?:top|right|bottom|left))?$/.test("@{dir}") ? "true" : "false"`;
+    @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
+    .output() when (@is-old-side-or-corner) {
+        @standard-direction: ~`"to @{dir}".replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
+        background-image: -webkit-repeating-linear-gradient(@dir, @color-stops); // Chrome 10+
+        background-image: repeating-linear-gradient(@standard-direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    }
+    .output() when (@is-standard-side-or-corner) {
+        @old-direction: ~`"@{dir}".replace(/^to\s+/, "").replace("top", "b#ottom").replace("right", "l#eft").replace("bottom", "t#op").replace("left", "r#ight").replace(/#/g, "")`;
+        background-image: -webkit-repeating-linear-gradient(@old-direction, @color-stops); // Chrome 10+
+        background-image: repeating-linear-gradient(@dir, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    }
+    .output() when not (@is-old-side-or-corner) and not (@is-standard-side-or-corner) {
+        background-image: -webkit-repeating-linear-gradient(mod(abs(convert(@direction, deg) - 450), 360), @color-stops); // Chrome 10+
+        background-image: repeating-linear-gradient(@direction, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    }
+    .output();
+}
+
+// General radial gradient (without size in specific dimensions)
+.radial-gradient(@shape, @color-stop...) {
+    @shape-string: ~"@{shape}";
+    @position: ~`(function() { var pos = /(?:^|\s)at\s+(\S+)(?:\s+(\S+)\s*$)?/g.exec("@{shape-string}"); return pos? (pos[2]? pos[1] + ' ' + pos[2] : pos[1]) : 'false'; })()`;
+    @contour-and-size: ~`(function() { var cs = /^(circle|ellipse|(?:(?:circle|ellipse)\s+)?(?:closest|farthest)-(?:corner|side))(?=$|\s+at)/.exec("@{shape-string}"); return cs? cs[1] : 'false'; })()`;
+    @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
+
+    .output() when not (@position = false) and (@contour-and-size = false) {
+        background-image: -webkit-radial-gradient(@position, @color-stops); // Chrome 10+
+        background-image: radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    }
+    .output() when not (@contour-and-size = false) and (@position = false) {
+        background-image: -webkit-radial-gradient(@contour-and-size, @color-stops); // Chrome 10+
+        background-image: radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    }
+    .output() when not (@position = false) and not (@contour-and-size = false) {
+        background-image: -webkit-radial-gradient(@position, @contour-and-size, @color-stops); // Chrome 10+
+        background-image: radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    } // Standard, IE10+
+    .output() when (@position = false) and (@contour-and-size = false) {
+        background-image: -webkit-radial-gradient(@shape, @color-stops); // Chrome 10+
+        background-image: radial-gradient(circle, @shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.10+, IE 10+
+    }
+    .output();
+}
+
+// General repeating radial gradient (without size in specific dimensions)
+.repeating-radial-gradient(@shape, @color-stop...) {
+    @shape-string: ~"@{shape}";
+    @position: ~`(function() { var pos = /(?:^|\s)at\s+(\S+)(?:\s+(\S+)\s*$)?/g.exec("@{shape-string}"); return pos? (pos[2]? pos[1] + ' ' + pos[2] : pos[1]) : 'false'; })()`;
+    @contour-and-size: ~`(function() { var cs = /^(circle|ellipse|(?:(?:circle|ellipse)\s+)?(?:closest|farthest)-(?:corner|side))(?=$|\s+at)/.exec("@{shape-string}"); return cs? cs[1] : 'false'; })()`;
+    @color-stops: ~`"@{color-stop}".replace(/[\[\]]/g, "")`;
+
+    .output() when not (@position = false) and (@contour-and-size = false) {
+        background-image: -webkit-repeating-radial-gradient(@position, @color-stops); // Chrome 10+
+        background-image: repeating-radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.50+, IE 10+
+    }
+    .output() when not (@contour-and-size = false) and (@position = false) {
+        background-image: -webkit-repeating-radial-gradient(@contour-and-size, @color-stops); // Chrome 10+
+        background-image: repeating-radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.50+, IE 10+
+    }
+    .output() when not (@position = false) and not (@contour-and-size = false) {
+        background-image: -webkit-repeating-radial-gradient(@position, @contour-and-size, @color-stops); // Chrome 10+
+        background-image: repeating-radial-gradient(@shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.50+, IE 10+
+    }
+    .output() when (@position = false) and (@contour-and-size = false) {
+        background-image: -webkit-repeating-radial-gradient(@shape, @color-stops); // Chrome 10+
+        background-image: repeating-radial-gradient(circle, @shape, @color-stops); // Chrome 26+, Firefox 16+, Opera 12.50+, IE 10+
+    }
+    .output();
+}

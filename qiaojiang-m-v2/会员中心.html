@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>会员中心</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+    <div class="wrap wrap-gray">
+        <!-- 头部 start -->
+        <div class="header-list">
+            <div class="fl">
+                <span class="ico-aleft" onclick="window.history.go(-1);"></span>
+            </div>
+        </div>
+        <!-- 头部 end -->
+
+        <!-- 会员中心 start -->
+        <div class="member">
+            <div class="h1">会员中心</div>
+            <ul class="member-list">
+                <li class="bg-yellow cur">
+                    <div class="tit"><span class="ico-gou2"></span><span class="ico-member2"></span>终身VIP</div>
+                    <div class="slogan">全站视频、素材，无限学习、下载</div>
+                    <div class="info">限量，每日仅限前6位</div>
+                    <div class="tags">限时特惠</div>
+                    <div class="price"><strong>498</strong>元/终身</div>
+                </li>
+                <li class="bg-blue">
+                    <div class="tit"><span class="ico-gou2"></span><span class="ico-member2"></span>一年VIP</div>
+                    <div class="slogan">超过72%的用户选择此套餐</div>
+                    <div class="info">每天仅需0.73元</div>
+                    <div class="tags">限时特惠</div>
+                    <div class="price"><strong>268</strong>元/终身</div>
+                </li>
+            </ul>
+            <div class="btn-box fixed-btn">
+                <a href="javascript:;" class="btn">为自己充值</a>
+                ￥<span class="price">498</span>
+            </div>
+        </div>
+        <div class="privilege">
+            <div class="tit">VIP特权</div>
+            <ul class="cl">
+                <li>
+                    <span class="icon1"></span>
+                    <p>VIP视频</p>
+                </li>
+                <li>
+                    <span class="icon2"></span>
+                    <p>VIP视频</p>
+                </li>
+                <li>
+                    <span class="icon3"></span>
+                    <p>VIP视频</p>
+                </li>
+                <li>
+                    <span class="icon4"></span>
+                    <p>VIP视频</p>
+                </li>
+                <li>
+                    <span class="icon5"></span>
+                    <p>VIP视频</p>
+                </li>
+            </ul>
+        </div>
+        <!-- 会员中心 end -->
+    </div>
+
+     <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- 上拉加载 -->
+    <script src="js/dropload.js"></script>
+
+    <script src="js/page.js"></script>
+    <script>
+    $(function() {
+        // 上拉加载
+        var curpage = 1;  // 页数
+        var totalpage = 5; // 总页数
+        // dropload
+        var dropload = $('#wrapper').dropload({
+            scrollArea: window,
+            domDown: {
+                domClass: 'dropload-down',
+                domRefresh: '<div class="dropload-refresh">上拉加载更多</div>',
+                domLoad: '<div class="dropload-load"><div class="loading"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div><div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div></div>正在加载</div>',
+                domNoData: '<div class="dropload-noData">已无数据</div>'
+            },
+            loadDownFn: function (me) {
+                // 判断是否只有一页或者加载完毕
+                if(totalpage <= 1 || curpage == totalpage) {
+                    me.lock();
+                    me.noData();
+                    me.resetload();
+                    return;
+                }
+                // 加载页面
+                setTimeout(function () {
+                    var li;
+                    for (i=0; i<6; i++) {
+                        li = `<li>
+                                <div class="cbox"><span class="ico ico-cbox"><input type="checkbox" name="history"></span></div>
+                                <div class="img"><img src="images/img1.jpg" alt=""></div>
+                                <div class="info">
+                                    <div class="info-box">
+                                        <h3>合成知多少·细节把控系列</h3>
+                                        <p class="speed">600M</p>
+                                    </div>
+                                </div>
+                                <a class="btn-delete">删除</a>
+                            </li>`;
+                        $('#wrapper ul').append(li);
+                    }
+                    curpage = parseInt(curpage) + 1;
+                    me.resetload();
+                }, 500);
+            }
+        });
+    });
+    </script>
+</body>
+</html>

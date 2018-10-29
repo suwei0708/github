@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="zh" class="no-js">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>致设计</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="header">
+        <a href="index.html" class="btnGoback">返回</a>
+        <span class="personal-header">倩云</span>
+        <div class="subMenu">
+            <a href="javascript:void(0);" id="btn-share"><i class="icon-20 icon-topShare"></i></a>
+        </div>
+    </div>
+    <div class="kong"></div>
+
+    <div class="personal-info">
+        <div class="personal-img"><img src="images/tx.jpg" width="70" height="70"></div>
+        <p><b>知识分享才有价值！</b></p>
+        <p>人气：<span>324221</span>排名：<span>324221</span>粉丝：<span>324221</span></p>
+        <div class="personal-btn">
+            <!-- <a href="">
+                <i class="personal-16 personal-gz"></i>已关注
+            </a>
+            <a href="">
+                <i class="personal-16 personal-sx"></i>私信
+            </a> -->
+            <a href="modify.html">修改资料</a>
+        </div>
+    </div>
+
+
+    <div class="result-nav">
+        <ul>
+            <li><a href="personal.html">原创作品</a></li>
+            <li><a href="">欣赏</a></li>
+            <li><a href="">学经验</a></li>
+            <li><a href="javascript:void(0);" class="on">个人资料</a></li>
+        </ul>
+    </div>
+
+
+    <!-- start 个人资料 -->
+    <div class="personal-data">
+        <div class="personal-item fixed">
+            <div class="personal-title">昵称</div>
+            <div class="personal-con">倩云</div>
+        </div>
+        <div class="personal-item fixed">
+            <div class="personal-title">QQ</div>
+            <div class="personal-con">43453422</div>
+        </div>
+        <div class="personal-item fixed">
+            <div class="personal-title">电话</div>
+            <div class="personal-con">13800138000</div>
+        </div>
+    </div>
+
+    <div class="personal-data">
+        <div class="personal-item fixed">
+            <div class="personal-title">公司</div>
+            <div class="personal-con">北京巧匠教育咨询有限公司</div>
+        </div>
+        <div class="personal-item fixed">
+            <div class="personal-title">城市</div>
+            <div class="personal-con">北京·北京市</div>
+        </div>
+    </div>
+
+    <div class="personal-data">
+        <div class="personal-item fixed">
+            <div class="personal-title">签名</div>
+            <div class="personal-con">盛大的撒的撒的撒</div>
+        </div>
+    </div>
+    <!-- end 个人资料 -->
+
+    <!-- start 分享 -->
+    <div class="dlun-share">
+        <div class="dlun-share-box fixed">
+            <a href="javascript:;" data-id="share-huaban">
+                <div><i class="i-share share-1"></i></div>
+                <span>花瓣</span>
+            </a>
+            <a href="javascript:;" data-id="share-qzone">
+                <div><i class="i-share share-2"></i></div>
+                <span>QQ空间</span>
+            </a>
+            <a href="javascript:;" data-id="share-sqq">
+                <div><i class="i-share share-3"></i></div>
+                <span>QQ</span>
+            </a>
+            <a href="javascript:;" data-id="share-weixin">
+                <div><i class="i-share share-4"></i></div>
+                <span>微信</span>
+            </a>
+        </div>
+        <a class="dlun-share-a">取消</a>
+    </div>
+    <div class="bdsharebuttonbox" style="display: none;"><a href="#" class="bds_huaban" data-cmd="huaban" title="分享到花瓣" id="share-huaban"></a><a href="#" class="bds_qzone" data-cmd="qzone" title="分享到QQ空间" id="share-qzone"></a><a href="#" class="bds_sqq" data-cmd="sqq" title="分享到QQ好友" id="share-sqq"></a><a href="#" class="bds_weixin" data-cmd="weixin" title="分享到微信" id="share-weixin"></a></div>
+    <script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"0","bdSize":"16"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+    <!-- end 分享 -->
+
+    <script src="js/jquery-2.1.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function(){
+            $("#showNav").click(function(){
+                $(".r-n-box").toggle("r-n-on");
+            });
+            $("#btn-share").click(function(){
+                $(".dlun-share").addClass("dlun-share-on");
+                setTimeout(function(){
+                    $(".dlun-share").addClass("dlun-share-slow");
+                },10);
+            });
+            $(".dlun-share").click(function(){
+                $(".dlun-share").removeClass("dlun-share-slow");
+                setTimeout(function(){
+                    $(".dlun-share").removeClass("dlun-share-on");
+                },600);
+            });
+            // $(".dlun-share-box").click(function(event){
+            //  event.stopPropagation();
+            // });
+
+            // 分享js
+            $('.dlun-share').on('click', 'a', function() {
+                $('#' + $(this).data('id'))[0].click();
+            });
+        })
+    </script>
+</body>
+</html>

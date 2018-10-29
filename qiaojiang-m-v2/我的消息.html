@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>我的消息</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/page.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-- 头部 start -->
+        <div class="header-list">
+            <div class="fl">
+                <span class="ico-aleft" onclick="window.history.go(-1);"></span>
+            </div>
+        </div>
+        <!-- 头部 end -->
+
+        <!-- 我的消息 start -->
+        <div class="record">
+            <div class="vip-qb">
+                <div class="h1">我的消息</div>
+            </div>
+        </div>
+        <div class="box demand message">
+            <ul class="nav">
+                <li class="cur"><a href="javascript:;">全部</a></li>
+                <li><a href="javascript:;">评论</a></li>
+                <li><a href="javascript:;">系统消息</a></li>
+            </ul>
+            <div class="cl demand-list" id="wrapper">
+                <ul>
+                    <li>
+                        <div class="fl img"><img src="images/user.png" alt=""></div>
+                        <div class="cont">
+                            <div class="fr"><img src="images/img1.jpg" alt=""></div>
+                            <div class="tt"><a href="#">魏佺</a></div>
+                            <div class="ct">
+                                我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式
+                                <div class="show-img"><img src="images/xq-img1.png" alt="" data-img="images/xq-img1.png"></div>
+                            </div>
+                            <div class="time">2017-03-04 10:32:16</div>
+                        </div>
+
+                        <div class="replay-cont">
+                                <div class="tt">
+                                    <a class="gray" href="#">OOCCFF/小丑</a>回复<span class="gray">魏佺</span>
+                                </div>
+                                <div class="ct">
+                                    我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式
+                                    <div class="show-img"><img src="images/xq-img1.png" alt="" data-img="images/xq-img1.png"></div>
+                                    <span class="arrow"></span>
+                                </div>
+                                <div class="time">03月31日 22:07</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fl img"><img src="ico/user.png" alt=""></div>
+                        <div class="cont">
+                            <div class="tt">
+                                <span class="gray">系统消息</span>
+                            </div>
+                            <div class="ct">您抽奖获得VIP<span class="blue">3</span>天vip，到期时间1970-01-01 08:00:00</div>
+                            <div class="time">2017-03-04 10:32:16</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fl img"><img src="images/user.png" alt=""></div>
+                        <div class="cont">
+                            <div class="tt"><a href="#">魏佺</a></div>
+                            <div class="ct">
+                                我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式
+                                <div class="show-img"><img src="images/notice-img2.png" alt="" data-img="images/notice-img2.png"></div>
+                            </div>
+                            <div class="time">03月31日 22:07</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fl img"><img src="images/user.png" alt=""></div>
+                        <div class="cont">
+                            <div class="tt"><a href="#">魏佺</a></div>
+                            <div class="ct">我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式</div>
+                            <div class="time">03月31日 22:07</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="fl img"><img src="images/user.png" alt=""></div>
+                        <div class="cont">
+                            <div class="tt"><a href="#">魏佺</a></div>
+                            <div class="ct">我想学习C4D、AE交互特效、字体设计、鼠绘、字体特效混合模式</div>
+                            <div class="time">03月31日 22:07</div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- 我的消息 end -->
+    </div>
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+
+    <!-- 点击小图展示大图 -->
+    <script src="js/pinchzoom.js"></script>
+
+    <!-- 上拉加载 -->
+    <script src="js/dropload.js"></script>
+
+    <script src="js/page.js"></script>
+    <script>
+    $(function() {
+        // 上拉加载
+        var curpage = 1;  // 页数
+        var totalpage = 5; // 总页数
+        // dropload
+        var dropload = $('#wrapper').dropload({
+            scrollArea: window,
+            domDown: {
+                domClass: 'dropload-down',
+                domRefresh: '<div class="dropload-refresh">上拉加载更多</div>',
+                domLoad: '<div class="dropload-load"><div class="loading"><div class="bar1"></div><div class="bar2"></div><div class="bar3"></div><div class="bar4"></div><div class="bar5"></div><div class="bar6"></div><div class="bar7"></div><div class="bar8"></div><div class="bar9"></div><div class="bar10"></div><div class="bar11"></div><div class="bar12"></div></div>正在加载</div>',
+                domNoData: '<div class="dropload-noData">已无数据</div>'
+            },
+            loadDownFn: function (me) {
+                // 判断是否只有一页或者加载完毕
+                if(totalpage <= 1 || curpage == totalpage) {
+                    me.lock();
+                    me.noData();
+                    me.resetload();
+                    return;
+                }
+                // 加载页面
+                setTimeout(function () {
+                    var li;
+                    for (i=0; i<6; i++) {
+                        li = `<li>
+                                <div class="fl img"><img src="images/user.png" alt=""></div>
+                                <div class="cont">
+                                    <div class="tt"><a href="#">魏佺</a></div>
+                                    <div class="ct">我是加载的</div>
+                                    <div class="time">03月31日 22:07</div>
+                                </div>
+                            </li>`;
+                        $('#wrapper ul').append(li);
+                    }
+                    curpage = parseInt(curpage) + 1;
+                    me.resetload();
+                }, 500);
+            }
+        });
+    });
+    </script>
+</body>
+</html>

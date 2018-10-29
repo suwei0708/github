@@ -1,0 +1,124 @@
+/* pages/details/details.wxss */
+.swiper {
+    width: 750rpx;
+    height: 400rpx;
+}
+.swiper image {
+    width: 750rpx;
+    height: 400rpx;
+}
+.title {
+    line-height: 90rpx;
+    background: #fff;
+    text-align: center;
+    font-size: 34rpx;
+    color: #202020;
+}
+.title image {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -3rpx 0 0 15rpx;
+    width: 39rpx;
+    height: 46rpx;
+}
+.nav {
+    padding: 0 20rpx;
+    margin: 16rpx 0 0;
+    height: 90rpx;
+    line-height: 87rpx;
+    background: #fff;
+}
+.nav .li {
+    font-size: 30rpx;
+    color: #666;
+    text-align: center;
+}
+.nav .cur {
+    color: #3aa953;
+    border-bottom: 3rpx solid #3aa953;
+}
+
+.list {
+    padding-bottom: 24rpx;
+}
+.list .li{
+    margin: 24rpx 32rpx 0;
+    background: #fff;
+    -webkit-box-shadow: 0 0 32rpx rgba(54, 54, 54, 0.15);
+    box-shadow: 0 0 32rpx rgba(54, 54, 54, 0.15);
+}
+.list .tit {
+    padding-top: 13rpx;
+    line-height: 56rpx;
+}
+.list .name {
+    position: relative;
+    height: 56rpx;
+}
+.list .name image {
+    position: absolute;
+    top: 0;
+    left: -12rpx;
+    z-index: 2;
+    width: 289rpx;
+    height: 66rpx;
+}
+.list .name text {
+    position: absolute;
+    top: 0;
+    left: 15rpx;
+    z-index: 3;
+    display: block;
+    color: #fff;
+    font-size: 28rpx;
+}
+.list .tit .fr {
+    position: relative;
+    z-index: 2;
+    padding-right: 22rpx;
+    font-size: 26rpx;
+}
+.list .ct {
+    font-size: 0;
+}
+.list .distance {
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 12rpx;
+    color: #369f1f;
+}
+.list .fr .yellow {
+    display: inline-block;
+    vertical-align: middle;
+}
+.list .fr image {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20rpx;
+    height: 20rpx;
+    margin: -6rpx 10rpx 0 0;
+}
+.list .ct {
+    padding: 13rpx 0;
+}
+.list .p {
+    line-height: 54rpx;
+    font-size: 26rpx;
+    color: #333;
+}
+.list .p text {
+    color: #666;
+}
+.list .p image {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -3rpx 15rpx 0 20rpx;
+    width: 22rpx;
+    height: 22rpx;
+}
+.list .p-half {
+    overflow: hidden;
+    display: inline-block;
+    vertical-align: top;
+    width: 50%;
+}

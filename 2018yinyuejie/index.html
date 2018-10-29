@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>听老狼把青春唱完</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script>
+    var deviceWidth =  parseInt(window.screen.width);var deviceScale = deviceWidth/750;var ua = navigator.userAgent;if (/Android (\d+\.\d+)/.test(ua)){var version = parseFloat(RegExp.$1);if(version>2.3){document.write('<meta name="viewport" content="width=750,initial-scale='+deviceScale+', minimum-scale = '+deviceScale+', maximum-scale = '+deviceScale+', target-densitydpi=device-dpi">');}else{document.write('<meta name="viewport" content="width=750,initial-scale=0.75,maximum-scale=0.75,minimum-scale=0.75,target-densitydpi=device-dpi" />');}} else {document.write('<meta name="viewport" content="width=750, user-scalable=no">');}
+    </script>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/Swiper/4.1.6/css/swiper.min.css">
+    <link rel="stylesheet" href="static/css/page.css">
+</head>
+<body>
+<div style="display: none;"><img src="static/img/share.jpg"></div>
+<section class="loading">
+    <div>
+        <div class="lyj">
+            <img src="static/img/p0/lyj.png" class="lyj-bg">
+            <img src="static/img/p0/lyj-l.png" class="lyj-l rotate duration20">
+            <img src="static/img/p0/lyj-r.png" class="lyj-r rotate duration20">
+        </div>
+        <div class="text">Loading <span id="percentage">0%</span></div>
+    </div>
+</section>
+<div id="content">
+    <!-- 主题滑动页面 -->
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
+            <article class="swiper-slide page0 swiper-no-swiping">
+                <img src="static/img/p0/bg.jpg" class="bg">
+                <img src="static/img/p0/logo.png" class="logo" data-anim="fade-in delay2">
+                <img src="static/img/p0/text1.png" class="text" data-anim="bottom-in delay5">
+                <div class="lyj">
+                    <img src="static/img/p0/lyj.png" class="lyj-bg">
+                    <img src="static/img/p0/lyj-l.png" class="lyj-l" data-anim="rotate duration20">
+                    <img src="static/img/p0/lyj-r.png" class="lyj-r" data-anim="rotate duration20">
+                </div>
+                <img src="static/img/p0/btn.png" class="btn" data-anim="scale-in-out">
+            </article>
+            <article class="swiper-slide page1">
+                <img src="static/img/p1/bg.jpg" class="bg">
+                <img src="static/img/mask.png" class="mask" data-anim="fade-in-out delay3000">
+            </article>
+            <article class="swiper-slide page2">
+                <img src="static/img/p2/bg.jpg" class="bg">
+                <img src="static/img/mask.png" class="mask" data-anim="fade-in-out delay3000">
+            </article>
+            <article class="swiper-slide page3">
+                <img src="static/img/p3/bg.jpg" class="bg">
+                <img src="static/img/mask.png" class="mask" data-anim="fade-in-out delay3000">
+            </article>
+            <article class="swiper-slide page4">
+                <img src="static/img/p4/bg.jpg" class="bg">
+                <img src="static/img/mask.png" class="mask" data-anim="fade-in-out delay3000">
+            </article>
+            <article class="swiper-slide page5 swiper-no-swiping">
+                <img src="static/img/p5/bg.jpg" class="bg">
+                <img src="static/img/p5/text.png" class="text" data-anim="fade-in">
+                <img src="static/img/p5/bike.png" class="bike" data-anim="left-in">
+                <ul class="option">
+                    <li data-anim="bottom-in2"></li>
+                    <li data-anim="bottom-in2 delay5"></li>
+                    <li data-anim="bottom-in2 delay10"></li>
+                    <li data-anim="bottom-in2 delay15"></li>
+                </ul>
+                <div class="option-result">
+                    <div class="result">
+                        <img src="static/img/p5/option-0.png">
+                        <img src="static/img/p5/option-1.png">
+                        <img src="static/img/p5/option-2.png">
+                        <img src="static/img/p5/option-3.png">
+                        <img src="static/img/p5/btn.png" class="btn">
+                    </div>
+                </div>
+            </article>
+            <article class="swiper-slide page6 swiper-no-swiping">
+                <img src="static/img/p5/bg.jpg" class="bg">
+                <img src="static/img/p6/text.png" class="text" data-anim="fade-in">
+                <img src="static/img/p6/time.png" class="time" data-anim="fade-in delay5">
+                <form id="form" data-anim="fade-in delay10">
+                    <input class="input" type="text" placeholder="姓名" name="name">
+                    <input class="input" type="number" placeholder="手机号码" name="mobile">
+                    <button class="btn"></button>
+                </form>
+                <img src="static/img/p6/notice.png" class="notice" data-anim="fade-in delay15">
+                <img src="static/img/p6/var.png" class="var" data-anim="fade-in delay20">
+                <div class="result">
+                    <img src="static/img/p6/suc.png" class="suc">
+                </div>
+            </article>
+            <article class="swiper-slide page7 swiper-no-swiping">
+                <img src="static/img/p7/bg.jpg" class="bg">
+                <div class="share" data-anim="fade-in delay20">
+                    <img src="static/img/p7/share.png">
+                </div>
+            </article>
+        </div>
+        <div class="finger-box fade-in delay20">
+            <img src="static/img/finger-bg.png">
+            <img src="static/img/finger.png" class="finger left-right">
+        </div>
+        <div class="anim1 anim1-in"></div>
+        <div class="anim1 anim1-out"></div>
+        <div class="anim2 anim2-in"></div>
+        <div class="anim2 anim2-out"></div>
+        <div class="anim3 anim3-in"></div>
+        <div class="anim3 anim3-out"></div>
+        <div class="anim4 anim4-in"></div>
+        <div class="anim4 anim4-out"></div>
+    </section>
+
+    <section class="global-ctrl" id="g-ctrl">
+        <!-- 音乐播放控制 -->
+        <div class="player-btn">
+            <div>
+                <audio class="bg-music" loop="true" src="static/img/bg.mp3" preload></audio>
+                <audio id="music1" loop="true" src="static/img/music1.mp3" preload></audio>
+                <audio id="music2" loop="true" src="static/img/music2.mp3" preload></audio>
+                <audio id="music3" loop="true" src="static/img/music3.mp3" preload></audio>
+                <audio id="music4" loop="true" src="static/img/music4.mp3" preload></audio>
+                <audio id="music5" loop="true" src="static/img/music5.mp3" preload></audio>
+            </div>
+        </div>
+    </section>
+</div>
+
+<!-- 基础JS脚本部分 -->
+<script src="https://cdn.bootcss.com/jquery/1.10.2/jquery.min.js"></script>
+<script src="static/js/imgpreload.min.js"></script>
+<script src="https://cdn.bootcss.com/Swiper/4.1.6/js/swiper.min.js"></script>
+<!-- 当前页面自定义JS -->
+<script src="static/js/page.min.js"></script>
+
+<!-- 微信分享文字自定义 -->
+<script src="static/js/weixin.js"></script>
+<script>
+$(function() {
+    var path = window.location.href;
+    var baseUrl = path.substr(0, path.lastIndexOf('/') + 1);
+    var wxData = {
+        imgUrl: baseUrl + 'static/img/share.jpg',
+        link: baseUrl + 'index.html?_rand=' + Math.round(Math.random() * 999),
+        title: '一路向北，来听老狼把青春唱完',
+        desc: '春风十里，邀请最好的你，一路向北，听老狼的绝版民谣'
+    };
+    weixin.bindData(wxData);
+});
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?397b676cb941823a1840dfb7d8c17253";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>

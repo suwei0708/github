@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
+<head>
+    <meta charset="UTF-8">
+    <title>快乐老人黄历</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- 页面适配js -->
+    <script src="js/flexible.js"></script>
+    <link rel="stylesheet" href="css/page.css">
+
+    <script type="text/javascript">
+        function handleResponse(response){
+            if(response.appid) {
+                app.weixinShare(response);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="wrap" id="app">
+        <div class="header">
+            <a href="javascript:;" class="logo"></a>
+            <h1>快乐老人黄历</h1>
+        </div>
+
+        <div class="main">
+            <ul class="fl main-l">
+                <li v-text="res.data.week"></li>
+                <li v-text="res.data.constellation"></li>
+            </ul>
+            <ul class="fr main-r" v-html="res.data.perpetual"></ul>
+            <div class="main-mid">
+                <p v-text="res.data.year"></p>
+                <strong v-text="res.data.day"></strong>
+                <p v-text="res.date"></p>
+                <strong v-text="res.day2"></strong>
+                <a href="javascript:;" class="arrow arrow-l" @click="prevday()"></a>
+                <a href="javascript:;" class="arrow arrow-r" @click="nextday()"></a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="content-box">
+                <div class="taboo">
+                    <div class="fl taboo-l"><span class="bg-red">宜</span></div>
+                    <ul class="taboo-r" v-html="res.data.should"></ul>
+                </div>
+                <div class="taboo">
+                    <div class="fl taboo-l"><span class="bg-black">忌</span></div>
+                    <ul class="taboo-r" v-html="res.data.bogey"></ul>
+                </div>
+                <a class="btn-cs" :class="{'btn-dis': !isShow}" href="javascript:;" @click="testFate">点击此处测今日运势</a>
+
+                <div class="result" v-if="!isShow">
+                    <dl>
+                        <dt>每日易卦：<span v-text="fate.hexagrams"></span></dt>
+                        <dd><span class="red" v-html="'【吉凶指数：' + fate.stars + fate.fortune + '】'"></span></dd>
+                        <dd v-html="fate.answer"></dd>
+                    </dl>
+                    <dl>
+                        <dt>大师提点</dt>
+                        <dd v-html="fate.remind"></dd>
+                    </dl>
+                </div>
+
+                <div class="goodluck">
+                    <dl v-html="'<dt>吉神宜趋</dt>' + res.data.discussed"></dl>
+                    <dl v-html="'<dt>凶煞宜忌</dt>' + res.data.demon"></dl>
+                </div>
+
+                <div class="info" v-html="res.data.comprehensive"></div>
+            </div>
+        </div>
+
+        <div class="hourtaboo" v-html="'<div class=tit>时辰宜忌</div>' + res.data.taboo"></div>
+        <a class="backtop" href="javascript:;" @click="backTop" v-show="backToTop"></a>
+        <div class="arrow-big" v-show="backToTop">
+            <a href="javascript:;" class="arrow-big-l" @click="prevday()"></a>
+            <a href="javascript:;" class="arrow-big-r" @click="nextday()"></a>
+        </div>
+        <img src="images/ecode.jpg" width="100%" class="ecode" alt="">
+    </div>
+
+    <!-- <script src="js/jquery-3.2.1.min.js"></script> -->
+    <script src="js/vue.js"></script>
+    <script src="js/axios.min.js"></script>
+    <script src="https://res.wx.qq.com/open/js/jweixin-1.2.0.js"></script>
+    <script src="js/page.js"></script></body>
+</html>
