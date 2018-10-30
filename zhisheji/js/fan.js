@@ -76,7 +76,7 @@ jqpost(function(){
             jqpost(".txtb").prepend(html);
             addClick();
         }else{
-            alert("不能输入相同的作品标签")
+            alertMsg("不能输入相同的作品标签")
         };
 		counttags();
     });
@@ -94,11 +94,9 @@ jqpost(function(){
             ths = jqpost(this);
         if(jqpost('#parent'+jqpost(this).attr('f-id')).length !== 0){
 			jqpost('#subid').val(ths.attr('data-id'));
-            jqpost('#typeid').val(ths.attr('f-id'));
             ths.parents(".select-box").find(".select-val-txt").text(parent+' > '+txt);
         }else{
 			jqpost('#subid').val(0);
-            jqpost('#typeid').val(ths.attr('data-id'));
             ths.parents(".select-box").find(".select-val-txt").text(txt);
         }
         // 转载显示的内容
@@ -188,7 +186,7 @@ jqpost(function(){
 
     // 上传附件关闭
     jqpost('.upload-enclosure').on('click', '.upload-enclosure-close', function() {
-        jqpost(this).parents('.upload-enclosure').removeClass('upload-enclosure-suc').find('.tips').css({display: 'inline-block'});;
+        jqpost(this).parents('.upload-enclosure').removeClass('upload-enclosure-suc').find('.tips').css({display: 'inline-block'});
         jqpost(this).parents('.upload-enclosure-list').remove();
     });
 
@@ -226,7 +224,7 @@ jqpost(function(){
                 data = 0,
                 html = "<div class='f-tab'>"+ name +"<i class='icon-x'></i></div>";
             if(jqpost(".f-tab").length >= 7) {
-                alert("最多7个标签");
+                alertMsg("最多7个标签");
                 return false;
             }
             jqpost(".f-tab").each(function(){
@@ -240,10 +238,10 @@ jqpost(function(){
                         jqpost(".txtb").prepend(html);
                         addClick();
                     }else{
-                        alert("请输入2-5字")
+                        alertMsg("请输入2-5字")
                     };
                 }else{
-                    alert("不能输入相同的作品标签")
+                    alertMsg("不能输入相同的作品标签")
                 };
             };
             jqpost("#hxbe").val('');
@@ -262,7 +260,7 @@ function imgBtn2(){
             html = jqpost(this).parents(".pro-item").html(),
             val = jqpost(this).parents(".pro-item").find("textarea").attr("value");
         if(num == 0){
-            alert("已经到顶");
+            alertMsg("已经到顶");
         }else{
             html = "<div class='pro-item fixed'>"+ html +"</div>";
             jqpost(".pro-item").eq(num-1).before(html);
@@ -279,7 +277,7 @@ function imgBtn2(){
             wrap = jqpost(this).parents(".pro-item"),
             html = jqpost(this).parents(".pro-item").html();
         if(num == last){
-            alert("已经到底");
+            alertMsg("已经到底");
         }else{
             html = "<div class='pro-item fixed'>"+ html +"</div>";
             jqpost(".pro-item").eq(num+1).after(html);

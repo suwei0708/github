@@ -546,6 +546,23 @@
         </ul>
         <!--右边悬浮 end -->
 
+        <!-- 绑定手机提示弹窗 start -->
+        <div class="popup-box popup-tipphone" style="display: block">
+            <div class="popup">
+                <div class="popup-tit">
+                    绑定手机
+                </div>
+                <span class="popup-close icon-close"></span>
+                <div class="popup-ct">
+                    <div class="ct">应国家法规对于帐号实名的要求，为确保您帐号<br>安全及正常使用，进行下一步操作前，<br>需要先完成手机绑定</div>
+                    <div class="popup-btn-box">
+                        <a href="javascript:;" class="btn btn-blue">去绑定手机</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- 绑定手机提示弹窗 end -->
+
         <!-- 通用js start-->
         <script src="http://test.zhisheji.com/template/zsj_pc2017/post/js/jquery.js?j7J"></script>
         <script language="javascript">var jqpost = jQuery.noConflict();</script>
@@ -607,7 +624,7 @@
         jQuery(function() {
             //本来是这样的:UE.getEditor('editor');  传入参数后就是下面那样子了，toolbars里的就是工具的图标
             UE.getEditor('editor', {
-                zIndex: 999,
+                zIndex: 988,
                 autoFloatEnabled: false,
                 autoHeightEnabled: false,
                 initialFrameWidth : 880,
