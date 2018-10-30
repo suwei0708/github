@@ -2218,6 +2218,9 @@
         }
     }
     // 新评论
+    #all-comment {
+        padding: 0 40px;
+    }
     &-new {
         margin-top: 20px;
         background: #fff;
@@ -2284,7 +2287,7 @@
                     color: @blue;
                 }
             }
-            .btn-praise, .btn-replay {
+            .btn-praise, .btn-replay, .btn-del {
                 margin-left: 60px;
                 span {
                     font-size: 12px;
@@ -2312,68 +2315,68 @@
         }
         h3 {
             line-height: 20px;
-            margin: 40px 0 -13px;
+            // margin: 40px 0 -13px;
             padding: 0 40px;
         }
-        li {
-            padding: 48px 40px 35px;
-        }
-        .tt {
-            a {
-                font-size: 14px;
-            }
-            img {
-                .dis(ib);
-                vertical-align: middle;
-                width: 18px;
-                margin: -3px 0 0 6px;
-            }
-            strong {
-                a {
-                    color: #333;
-                }
-            }
-        }
-        .info {
-            width: auto;
-            line-height: 24px;
-            margin-right: 160px;
-            img {
-                width: 34px;
-            }
-            .times {
-                margin-right: -160px;
-                line-height: 20px;
-                padding-top: 25px;
-                font-size: 12px;
-                color: #999;
-            }
-            strong {
-                img {
-                    display: inline-block;
-                    vertical-align: middle;
-                    width: 18px;
-                    margin: -3px 0 0 6px;
-                }
-                a {
-                    color: #333;
-                }
-            }
-        }
+        // li {
+        //     padding: 48px 40px 35px;
+        // }
+        // .tt {
+        //     a {
+        //         font-size: 14px;
+        //     }
+        //     img {
+        //         .dis(ib);
+        //         vertical-align: middle;
+        //         width: 18px;
+        //         margin: -3px 0 0 6px;
+        //     }
+        //     strong {
+        //         a {
+        //             color: #333;
+        //         }
+        //     }
+        // }
+        // .info {
+        //     width: auto;
+        //     line-height: 24px;
+        //     margin-right: 160px;
+        //     img {
+        //         width: 34px;
+        //     }
+        //     .times {
+        //         margin-right: -160px;
+        //         line-height: 20px;
+        //         padding-top: 25px;
+        //         font-size: 12px;
+        //         color: #999;
+        //     }
+        //     strong {
+        //         img {
+        //             display: inline-block;
+        //             vertical-align: middle;
+        //             width: 18px;
+        //             margin: -3px 0 0 6px;
+        //         }
+        //         a {
+        //             color: #333;
+        //         }
+        //     }
+        // }
         .com-box {
-            .btn-box {
-                margin: 0;
-                line-height: 1;
-            }
-            .reply-form {
-                width: 1074px;
-                .text {
-                    width: 1072px - 40px;
-                    height: 83px - 30px;
-                    padding: 15px 20px;
-                    border: 1px solid #ddd;
-                }
-            }
+        //     .btn-box {
+        //         margin: 0;
+        //         line-height: 1;
+        //     }
+        //     .reply-form {
+        //         width: 1074px;
+        //         .text {
+        //             width: 1072px - 40px;
+        //             height: 83px - 30px;
+        //             padding: 15px 20px;
+        //             border: 1px solid #ddd;
+        //         }
+        //     }
             .btn-del, .btn-jubao {
                 .dis(n);
             }
@@ -2395,65 +2398,69 @@
             }
         }
         .reply-box {
-            width: 1074px - 40px;
-            padding: 22px 18px;
-            .reply-form {
-                width: 1074px - 40px;
-                .text {
-                    width: 1072px - 80px - 44px !important;
-                    height: 83px - 30px;
-                    padding: 15px 20px;
-                    border: 1px solid #ddd;
-                }
-                .btn-box {
-                    a:hover {
-                        color: #666;
-                    }
-                    .btn-sure:hover {
-                        color: #fff;
-                    }
-                }
-            }
-            .info {
-                .pos(r);
-                width: auto;
-                margin-right: 132px;
-                margin-left: 54px;
-                .btn-replay {
-                    .pos(a);
-                    top: 2px;
-                    right: -120px;
-                    color: #999;
-                    &:hover {
-                        color: #666;
-                    }
-                }
-                .btn-del, .btn-jubao {
-                    .pos(a);
-                    top: 2px;
-                    right: -60px;
-                    color: #999;
-                    font-size: 14px;
-                    &:hover {
-                        color: #666;
-                    }
-                }
-            }
-            .time {
-                margin-left: 10px;
-                font-size: 12px;
-                color: #999;
-            }
-            .avatar {
-                img {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
+        //     width: 1074px - 40px;
+        //     padding: 22px 18px;
+        //     .reply-form {
+        //         width: 1074px - 40px;
+        //         .text {
+        //             width: 1072px - 80px - 44px !important;
+        //             height: 83px - 30px;
+        //             padding: 15px 20px;
+        //             border: 1px solid #ddd;
+        //         }
+        //         .btn-box {
+        //             a:hover {
+        //                 color: #666;
+        //             }
+        //             .btn-sure:hover {
+        //                 color: #fff;
+        //             }
+        //         }
+        //     }
+        //     .info {
+        //         .pos(r);
+        //         width: auto;
+        //         margin-right: 132px;
+        //         margin-left: 54px;
+        //         .btn-replay {
+        //             .pos(a);
+        //             top: 2px;
+        //             right: -120px;
+        //             color: #999;
+        //             &:hover {
+        //                 color: #666;
+        //             }
+        //         }
+        //         .btn-del, .btn-jubao {
+        //             .pos(a);
+        //             top: 2px;
+        //             right: -60px;
+        //             color: #999;
+        //             font-size: 14px;
+        //             &:hover {
+        //                 color: #666;
+        //             }
+        //         }
+        //     }
+        //     .time {
+        //         margin-left: 10px;
+        //         font-size: 12px;
+        //         color: #999;
+        //     }
+        //     .avatar {
+        //         img {
+        //             width: 40px;
+        //             height: 40px;
+        //         }
+        //     }
         }
         .num-box {
             right: 20px;
             bottom: 5px;
+            font-size: 0;
+            .num {
+                font-size: 12px;
+            }
         }
     }
 }
@@ -3342,7 +3349,7 @@
     margin-bottom: -10px;
     position: relative;
     cursor: pointer;
-    z-index: 999;
+    z-index: 988;
 }
 .select-val, .timepicker-box {
     .pos(r);
