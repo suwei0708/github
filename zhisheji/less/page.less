@@ -1120,7 +1120,7 @@
         }
     }
     .picview {
-        width: 950px;
+        width: 800px;
         margin: 0 0 0 100px;
         a {
             color: @blue;
@@ -1248,18 +1248,41 @@
                         width: 18px;
                     }
                 }
+                .adress {
+                    overflow: hidden;
+                    height: 20px;
+                    line-height: 20px;
+                    font-size: 12px;
+                    color: #999;
+                }
                 .btn {
+                    .dis(ib);
+                    vertical-align: middle;
+                    width: 84px;
+                    height: 28px;
+                    line-height: 28px;
+                    margin: 8px 0 0;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 14px;
+                    .bdr(4px);
                     &-upload, &-letter {
                         .dis(ib);
                         vertical-align: middle;
-                        // width: 130px;
-                        width: 95px;
-                        line-height: 36px;
-                        margin: 16px 0 0;
+                        width: 84px;
+                        height: 28px;
+                        line-height: 28px;
+                        margin: 8px 0 0;
                         color: #fff;
                         text-align: center;
                         font-size: 14px;
                         .bdr(4px);
+                    }
+                    &-upload {
+                        width: 130px;
+                        height: 36px;
+                        line-height: 36px;
+                        margin: 16px 0 0;
                     }
                     &-blue {
                         background: @blue;
@@ -3156,6 +3179,9 @@
 }
 .form-item {
     padding: 20px 0;
+}
+.form-enclosure {
+    padding: 10px 0 0;
 }
 .f-title {
     width: 230px;
