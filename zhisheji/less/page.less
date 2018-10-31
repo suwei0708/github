@@ -1249,10 +1249,11 @@
                     }
                 }
                 .btn {
-                    &-upload {
+                    &-upload, &-letter {
                         .dis(ib);
                         vertical-align: middle;
-                        width: 130px;
+                        // width: 130px;
+                        width: 95px;
                         line-height: 36px;
                         margin: 16px 0 0;
                         color: #fff;
@@ -1266,6 +1267,14 @@
                         &:hover {
                             background: @blue-h;
                             border: 1px solid @blue-h;
+                        }
+                    }
+                    &-letter {
+                        color: #666;
+                        margin-left: 10px;
+                        border: 1px solid #ddd;
+                        &:hover {
+                            border: 1px solid #999;
                         }
                     }
                 }
@@ -1335,7 +1344,6 @@
             width: 600px;
             height: 338px;
             background: #111;
-            .bdr(4px);
             span {
                 .pos(a);
                 left: 34px;
@@ -1368,6 +1376,7 @@
                 }
             }
             .line-link {
+                padding-top: 30px;
                 span {
                     color: @blue;
                 }
@@ -3708,6 +3717,9 @@
 .fileupload1-box:hover {
     background: @blue-h;
 }
+#progress {
+    margin-top: 40px;
+}
 .progress {
     .pos(r);
     height: 6px;
@@ -3899,7 +3911,6 @@ button.btn_xztp:hover {
         width: 880px;
     }
     .fileinput-button {
-        margin-bottom: 40px;
         p {
             .dis(ib);
             vertical-align: middle;
