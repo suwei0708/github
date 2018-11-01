@@ -151,6 +151,9 @@
 
 .top-gg {
     margin: 20px auto 0;
+    img {
+        .bdr(4px);
+    }
 }
 
 /* 通用盒子 */
@@ -1121,7 +1124,7 @@
     }
     .picview {
         width: 800px;
-        margin: 0 0 0 100px;
+        margin: 0 auto;
         a {
             color: @blue;
             &:hover {
@@ -1135,10 +1138,11 @@
         ul {
             margin: 0;
         }
-        li {
+        .cpimgbox {
             position: relative;
-            left: -100px;
+            left: 50%;
             width: 1220px;
+            margin-left: -610px;
             cursor: pointer;
             text-align: center;
         }
@@ -1176,7 +1180,7 @@
         .times {
             line-height: 32px;
             color: #aaa;
-            font-size: 14px;
+            font-size: 12px;
         }
         .infos {
             padding: 6px 0 0;
@@ -1196,20 +1200,20 @@
                 color: #ccc;
             }
             em {
-                font-size: 14px;
+                font-size: 12px;
                 margin-right: 40px;
                 color: #aaa;
                 span {
                     .dis(ib);
                     vertical-align: middle;
-                    margin: -3px 16px 0 0;
+                    margin: -3px 20px 0 0;
                     color: #ccc;
-                    font-size: 15px;
+                    font-size: 13px;
                     &.icon-view {
-                        font-size: 18px;
+                        font-size: 16px;
                     }
                     &.icon-praise2 {
-                        font-size: 16px;
+                        font-size: 15px;
                     }
                 }
             }
@@ -1914,6 +1918,20 @@
                     color: @red;
                 }
             }
+            &.btn-praise {
+                .pos(r);
+                .add {
+                    .dis(n);
+                    position: absolute;
+                    top: -14px;
+                    right: 0;
+                    font-size: 11px;
+                    height: 14px;
+                    line-height: 14px;
+                    color: @blue;
+                    white-space: nowrap;
+                }
+            }
         }
     }
     .avatar {
@@ -2254,9 +2272,6 @@
         }
     }
     // 新评论
-    #all-comment {
-        padding: 0 40px;
-    }
     &-new {
         margin-top: 20px;
         background: #fff;
@@ -2329,6 +2344,9 @@
                     font-size: 12px;
                     color: #ccc;
                 }
+                .icon-praise2 {
+                    font-size: 14px;
+                }
                 &:hover {
                     span {
                         color: @blue;
@@ -2351,68 +2369,68 @@
         }
         h3 {
             line-height: 20px;
-            // margin: 40px 0 -13px;
+            margin: 40px 0 -13px;
             padding: 0 40px;
         }
-        // li {
-        //     padding: 48px 40px 35px;
-        // }
-        // .tt {
-        //     a {
-        //         font-size: 14px;
-        //     }
-        //     img {
-        //         .dis(ib);
-        //         vertical-align: middle;
-        //         width: 18px;
-        //         margin: -3px 0 0 6px;
-        //     }
-        //     strong {
-        //         a {
-        //             color: #333;
-        //         }
-        //     }
-        // }
-        // .info {
-        //     width: auto;
-        //     line-height: 24px;
-        //     margin-right: 160px;
-        //     img {
-        //         width: 34px;
-        //     }
-        //     .times {
-        //         margin-right: -160px;
-        //         line-height: 20px;
-        //         padding-top: 25px;
-        //         font-size: 12px;
-        //         color: #999;
-        //     }
-        //     strong {
-        //         img {
-        //             display: inline-block;
-        //             vertical-align: middle;
-        //             width: 18px;
-        //             margin: -3px 0 0 6px;
-        //         }
-        //         a {
-        //             color: #333;
-        //         }
-        //     }
-        // }
+        li {
+            padding: 48px 40px 35px;
+        }
+        .tt {
+            a {
+                font-size: 14px;
+            }
+            img {
+                .dis(ib);
+                vertical-align: middle;
+                width: 18px;
+                margin: -3px 0 0 6px;
+            }
+            strong {
+                a {
+                    color: #333;
+                }
+            }
+        }
+        .info {
+            width: auto;
+            line-height: 24px;
+            margin-right: 160px;
+            img {
+                width: 34px;
+            }
+            .times {
+                margin-right: -160px;
+                line-height: 20px;
+                padding-top: 25px;
+                font-size: 12px;
+                color: #999;
+            }
+            strong {
+                img {
+                    display: inline-block;
+                    vertical-align: middle;
+                    width: 18px;
+                    margin: -3px 0 0 6px;
+                }
+                a {
+                    color: #333;
+                }
+            }
+        }
         .com-box {
-        //     .btn-box {
-        //         margin: 0;
-        //         line-height: 1;
-        //     }
-        //     .reply-form {
-        //         width: 1074px;
-        //         .text {
-        //             width: 1072px - 40px;
-        //             height: 83px - 30px;
-        //             padding: 15px 20px;
-        //             border: 1px solid #ddd;
-        //         }
-        //     }
+            .btn-box {
+                margin: 0;
+                line-height: 1;
+            }
+            .reply-form {
+                width: 1074px;
+                .text {
+                    width: 1072px - 40px;
+                    height: 83px - 30px;
+                    padding: 15px 20px;
+                    border: 1px solid #ddd;
+                }
+            }
             .btn-del, .btn-jubao {
                 .dis(n);
             }
@@ -2434,61 +2452,61 @@
             }
         }
         .reply-box {
-        //     width: 1074px - 40px;
-        //     padding: 22px 18px;
-        //     .reply-form {
-        //         width: 1074px - 40px;
-        //         .text {
-        //             width: 1072px - 80px - 44px !important;
-        //             height: 83px - 30px;
-        //             padding: 15px 20px;
-        //             border: 1px solid #ddd;
-        //         }
-        //         .btn-box {
-        //             a:hover {
-        //                 color: #666;
-        //             }
-        //             .btn-sure:hover {
-        //                 color: #fff;
-        //             }
-        //         }
-        //     }
-        //     .info {
-        //         .pos(r);
-        //         width: auto;
-        //         margin-right: 132px;
-        //         margin-left: 54px;
-        //         .btn-replay {
-        //             .pos(a);
-        //             top: 2px;
-        //             right: -120px;
-        //             color: #999;
-        //             &:hover {
-        //                 color: #666;
-        //             }
-        //         }
-        //         .btn-del, .btn-jubao {
-        //             .pos(a);
-        //             top: 2px;
-        //             right: -60px;
-        //             color: #999;
-        //             font-size: 14px;
-        //             &:hover {
-        //                 color: #666;
-        //             }
-        //         }
-        //     }
-        //     .time {
-        //         margin-left: 10px;
-        //         font-size: 12px;
-        //         color: #999;
-        //     }
-        //     .avatar {
-        //         img {
-        //             width: 40px;
-        //             height: 40px;
-        //         }
-        //     }
+            width: 1074px - 40px;
+            padding: 22px 18px;
+            .reply-form {
+                width: 1074px - 40px;
+                .text {
+                    width: 1072px - 80px - 44px !important;
+                    height: 83px - 30px;
+                    padding: 15px 20px;
+                    border: 1px solid #ddd;
+                }
+                .btn-box {
+                    a:hover {
+                        color: #666;
+                    }
+                    .btn-sure:hover {
+                        color: #fff;
+                    }
+                }
+            }
+            .info {
+                .pos(r);
+                width: auto;
+                margin-right: 132px;
+                margin-left: 54px;
+                .btn-replay {
+                    .pos(a);
+                    top: 2px;
+                    right: -120px;
+                    color: #999;
+                    &:hover {
+                        color: #666;
+                    }
+                }
+                .btn-del, .btn-jubao {
+                    .pos(a);
+                    top: 2px;
+                    right: -60px;
+                    color: #999;
+                    font-size: 14px;
+                    &:hover {
+                        color: #666;
+                    }
+                }
+            }
+            .time {
+                margin-left: 10px;
+                font-size: 12px;
+                color: #999;
+            }
+            .avatar {
+                img {
+                    width: 40px;
+                    height: 40px;
+                }
+            }
         }
         .num-box {
             right: 20px;
@@ -2662,7 +2680,8 @@
     overflow: hidden;
 }
 .cpshowimg img {
-    max-width: none;
+    max-width: 1220px !important;
+    width: auto !important;
     position: absolute;
 }
 /* 回复框 */
@@ -3993,7 +4012,6 @@ button.btn_xztp:hover {
     padding: 10px 0;
     width: 212px + 36px;
     height: auto;
-    max-height: 425px;
     .select-btn-on, .select-btn:hover {
         background-image: none;
     }
