@@ -34,9 +34,6 @@
             }
         }
 
-
-
-
         //返回顶部
         $('#goBack').on('click', function() {
             $('body, html').animate({
@@ -59,7 +56,6 @@
             centerObj('.popup-login .popup');
             centerObj('.popup-establish .popup');
         });
-
 
         $('.popup-perfect').on('click', '.btn-blue', function() {
             $('.popup-perfect').hide();
@@ -140,8 +136,8 @@
                                      if ($('.content-box').length) {
                                          tipSave('suc', '收藏成功！');
                                          $(".popup-collect").remove();
-                                         $('.content-box, .fix-topbar').find('.collect').addClass('dis').find('.text').html('已收藏');
-                                         $('.content-box').find('.collect').find('.num').html(+$('.content-box').find('.collect').find('.num').html() + 1);
+                                         $('.content-box, .fix-topbar,.ct-share').find('.collect').addClass('dis').find('.text').html('已收藏');
+                                         $('.content-box,.fix-topbar,.ct-share').find('.collect').find('.num').html(+$('.content-box').find('.collect').find('.num').html() + 1);
                                      }
                                  }else{
                                      $(".h-login .btn-lg").click();
@@ -346,25 +342,21 @@
             }
         };
 
-        // 20180920修改分享
         $('.bdsharebuttonbox').on('mouseover', '.bds_weixin', function() {
-            var _this = $(this);
-            var timer = setInterval(function() {
+            if (!$('#bdshare_weixin_qrcode_dialog').length) {
                 $('.bds_weixin')[0].click();
-                if ($('#bdshare_weixin_qrcode_dialog').length) {
-                    clearInterval(timer);
-                    $('#bdshare_weixin_qrcode_dialog').css({
-                        left: _this.offset().left - 262 / 2 + 15,
-                        top: _this.offset().top - 300
-                    }).show();
-                    $('.bd_weixin_popup_foot').html('扫码分享到朋友圈');
-                    $('#bdshare_weixin_qrcode_dialog').css({
-                        opacity: 1,
-                        'height': 'auto'
-                    });
-                }
-            }, 500);
-            $('.bds_weixin')[0].click();
+            }
+            $('#bdshare_weixin_qrcode_dialog').hide();
+            var _this = $(this);
+            setTimeout(function() {
+                $('#bdshare_weixin_qrcode_dialog').css({
+                    left: _this.offset().left - 262 / 2 + 15,
+                    top: _this.offset().top - 327
+                }).show();
+                $('#bdshare_weixin_qrcode_dialog').css({
+                    opacity: 1
+                });
+            }, 100);
         })
         .on('mouseleave', '.bds_weixin', function() {
             $('#bdshare_weixin_qrcode_dialog').hide();
@@ -374,6 +366,17 @@
             $('#bdshare_weixin_qrcode_dialog').css({
                 opacity: 0
             });
+            $('#bdshare_weixin_qrcode_dialog').hide();
+            var _this = $(this);
+            setTimeout(function() {
+                $('#bdshare_weixin_qrcode_dialog').css({
+                    left: _this.offset().left - 262 / 2 + 15,
+                    top: _this.offset().top - 327
+                }).show();
+                $('#bdshare_weixin_qrcode_dialog').css({
+                    opacity: 1
+                });
+            }, 100);
             return false;
         });
 
@@ -384,12 +387,22 @@
                 dataType: 'jsonp',
                 jsonp: "jsoncallback",
                 success: function(data) {
-                    location.href='/';
+                    $(".h-user").append('<iframe id="loginoutf" name="loginoutf" src="http://old.zhisheji.com/plugin.php?id=zsj_search:loginout" style="display: none"></iframe>')
+                    setTimeout(function(){ location.href='/';}, 800);
                 }
             });
         });
     });
-
+    $(".header").on("click","#search_btn",function(){
+        var text=$.trim($(".header .txt").val())
+        if(text==""){
+            $(".header .txt").focus();
+        }else{
+            $.post(hosturl+"search/getpy/",{key:text},function(data){
+                location.href=hosturl+'search/'+data+".html";
+            })
+        }
+    })
     // 登录框下划线
     $('body').on('focus', '.popup-box-line .txt', function() {
         $(this).parents('.item').addClass('item-line');
@@ -397,7 +410,7 @@
     .on('blur', '.popup-box-line .txt', function() {
         $(this).parents('.item').removeClass('item-line');
     });
-    
+
     // radio美化
     if($('.radio').length) {
         $.each($('.radio'), function(index, val) {
@@ -410,33 +423,42 @@
 
     // 评论通用点赞
     $('.ct-comment').on('click', '.btn-praise', function() {
-        if(!$(this).hasClass('praise-ok')) {
-            $(this).addClass('praise-ok').find('.num').text(+$(this).find('.num').text() + 1);
+        var _this = $(this);
+        if(!_this.hasClass('praise-ok')) {
+            var pid = _this.attr('pid');
+            var tid = _this.attr('tid');
+            $.post('/userinfo/msgdz/',{pid:pid,tid:tid},function(data){
+                data = JSON.parse(data);
+                tipSave(data.icon, data.msg,1000);
+                if(data.icon=='suc'){
+                    if(!_this.find('.add').length) {
+                        _this.append('<span class="add">+1</span>');
+                    }
+                    _this.find('.add').fadeIn();
+                    setTimeout(function() {
+                        _this.find('.add').fadeOut();
+                    }, 800);
+                    var num = 0;
+                    if(_this.find('.num').length) {
+                        var num = _this.find('.num').text();
+                    }
+                    else {
+                        _this.append('<span class="num"></span>');
+                    }
+                    num = parseInt(num) + 1;
+                   _this.addClass('praise-ok').find('.num').html(num);
+                }
+            });
         }
     });
 
-    // 评论举报
-    $('.ct-comment').on('click', '.btn-jubao', function() {
-        $('.popup-report').show();
-        centerObj('.popup-report .popup');
-    });
+    // 点击body表情消失
+    if($('.ct-comment').length) {
+        $('body').on('click', function() {
+            $('.sllt').hide();
+        });
+    }
 
-    // 评论删除
-    $('.ct-comment').on('click', '.btn-del', function() {
-        if($(this).parents('.reply-box').length) {
-            // 删除回复
-            if($(this).parents('.reply-box').find('.com-box').length == 1) {
-                $(this).parents('.reply-box').remove();
-            }
-            else {
-                $(this).parents('.com-box').remove();
-            }
-        }
-        else {
-            // 删除评论
-            $(this).parents('li').remove();
-        }
-    });
 })(jQuery);
 
 // alert和confirm美化
@@ -458,9 +480,9 @@
         }
         //生成Html
     var GenerateHtml = function(type, title, msg) {
-        var _html = '<div id="sw-con"><a id="sw-close" href="javascript:;"><span class="icon-close"></span></a>';
+        var _html = '<div id="sw-con">';
         if (title) {
-            _html += '<div id="sw-tit">' + title + '</div>';
+            _html += '<div id="sw-tit">' + title + '</div><a id="sw-close" href="javascript:;"><span class="icon-close"></span></a>';
         }
         _html += '<div id="sw-msg">' + msg + '</div><div id="sw-btn-box">';
 
@@ -606,7 +628,6 @@ function checkboxSelect(obj) {
         });
     });
 };
-
 //清空两边空格
 function trimform(obj) {
     obj.find("input").each(function(){
@@ -1043,13 +1064,31 @@ function tipPhone() {
     })(jQuery);
 }
 
-document.onkeydown = function (e) {
-    if (!e) e = window.event;
-    if ((e.keyCode || e.which) == 13) {
-        if($("#postform").length==0) {
-            $("#search_btn").click();
+$('body').on('click', '.txt', function() {
+    if(!$("#scbar_form1").length){
+    document.onkeydown = function (e) {
+        if (!e) e = window.event;
+        if ((e.keyCode || e.which) == 13) {
+            if($("#postform").length==0) {
+                $("#search_btn").click();
+            }
+        }
+        else if ((e.keyCode || e.which) == 27) {
+            if($("#cpfm").length>0) {
+                $("#cpfm").find(".hdr .cancel").click();
+            }
         }
     }
+    }
+});
+
+function showRgister() {
+    jQuery('.popup-register').show();
+    centerObj('.popup-register .popup');
+}
+
+function alertMsg(txt) {
+    jQuery.msgBox.Alert(null, txt);
 }
 function hasScrollbar() {
     return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
