@@ -3161,12 +3161,15 @@ input, textarea {
                .ct-comment-box {
                    padding: 0 40px;
                }
+               h2 {
+                    margin-bottom: 10px;
+               }
                .input {
                    margin-top: 0;
-                   width: 1140px;
+                   width: 830px;
                    height: 86px;
                    .textarea {
-                       width: 1138px - 40px;
+                       width: 1138px - 40px - 310px;
                        height: 84px - 30px;
                        padding: 15px 20px;
                        line-height: 22px;
@@ -3178,7 +3181,7 @@ input, textarea {
                        }
                    }
                    .tips {
-                       width: 1138px - 30px;
+                       width: 1138px - 30px - 310px;
                        height: 84px - 30px;
                        .bdr(4px);
                        background: #f7f8fa;
@@ -3389,6 +3392,9 @@ input, textarea {
                            color: #999;
                            &:hover {
                                color: #666;
+                           }
+                           span {
+                            .dis(n);
                            }
                        }
                        .btn-del, .btn-jubao {
