@@ -86,7 +86,6 @@ jqpost(function(){
     }).mouseout(function(){
         jqpost(this).find('.select-txt').hide();
     });
-
     // 复选框
     jqpost(".select-ai").click(function(){
         var txt = jqpost(this).text(),
@@ -96,6 +95,7 @@ jqpost(function(){
 			jqpost('#subid').val(ths.attr('data-id'));
             ths.parents(".select-box").find(".select-val-txt").text(parent+' > '+txt);
         }else{
+            jqpost('#typeid').val(ths.attr('data-id'));
 			jqpost('#subid').val(0);
             ths.parents(".select-box").find(".select-val-txt").text(txt);
         }
@@ -117,7 +117,7 @@ jqpost(function(){
         ths = jqpost(this);
 
         jqpost('#zply').val(ths.attr('data-id'));
-        ths.parents(".select-box").find(".select-val").text(txt);
+        ths.parents(".select-box").find(".select-val-txt").text(txt);
 
         jqpost('.select-txt').hide();
     });
@@ -134,15 +134,15 @@ jqpost(function(){
         var _this = jqpost(this);
         var three = _this.text();
         var two = _this.parents('.select-sub').parent('li').children('a').text();
-
         if(_this.parents('.select-sub').length) {
             jqpost('.select-txt-multistage').find('.cur').removeClass('cur');
             _this.parent().addClass('cur');
             _this.parents('.select-sub').parent().addClass('cur');
+            $('#typeid').val(_this.attr('data-id'));
+            $('#subid').val(_this.attr('f-id'));
             if(_this.parents('.children').length) {
                 var one = _this.parents('.first').children('li > a').text();
                 _this.parents('.select-box').find('.select-val-txt').text(one + '-' + two + '-' + three);
-
             }
             else {
                 _this.parents('.select-box').find('.select-val-txt').text(two + '-' + three);
@@ -150,6 +150,8 @@ jqpost(function(){
             _this.parents('.select-txt-multistage').hide();
         }
         else if (!_this.parent('li').find('.select-sub').length && !_this.parent('li').find('.children').length) {
+            $('#typeid').val(_this.attr('data-id'));
+            $('#subid').val(0);
             jqpost('.select-txt-multistage').find('.cur').removeClass('cur');
             _this.parent().addClass('cur');
             _this.parents('.select-box').find('.select-val-txt').text(three);
@@ -186,8 +188,9 @@ jqpost(function(){
 
     // 上传附件关闭
     jqpost('.upload-enclosure').on('click', '.upload-enclosure-close', function() {
-        jqpost(this).parents('.upload-enclosure').removeClass('upload-enclosure-suc').find('.tips').css({display: 'inline-block'});
-        jqpost(this).parents('.upload-enclosure-list').remove();
+        jqpost(this).parents('.upload-enclosure').find(".btn-enclosure").css({display: 'inline-block'});
+        jqpost(this).parents('.upload-enclosure').find(".tips").css({display: 'inline-block'});
+        jqpost(this).parents('.upload-enclosure-list').hide();
     });
 
     // 细节点评美化
@@ -201,6 +204,30 @@ jqpost(function(){
         return false;
     });
     jqpost('.upload-video').on('click', '.btn-gray-line .btn-sure', function() {
+        var url=jqpost(this).parents('.pro-input').find("textarea").val()
+        if(url!=""&&$(".upload-video-list li").length<4){
+            if(url.indexOf('src=')>0){
+                if(url.indexOf('swf')>0){
+                  var urll=url.replace("\"","").replace("\'","")
+                  var words = urll.split('allowFullScreen')
+                  var word=words[0].split("src=")
+                  url=word[1];
+                }else{
+                    tipSave('fail', '请复制html代码！');
+                    return false;
+                }
+            }
+            var str="";
+            str+='<li><div class="fr upload-video-close"><span class="icon-guanbi"></span></div>'
+            str+='<span class="fll icon-play"></span>'
+            str+='<input type="hidden" value="'+url+'" name="videonamelist[]" size="45">'
+            str+='<input type="hidden" class="videopath" value="'+url+'" name="videopathlist[]" size="45">'
+            str+='<div class="fll name">'+url+'</div>'
+            str+='<div class="upload-tips-box">'
+            str+='<div class="upload-tips upload-tips-suc">'
+            str+='<span class="tips-text">导入成功</span></div> </div></li>'
+            $(".upload-video-list ul").append(str);
+        }
         jqpost(this).parents('.pro-input').hide();
         return false;
     });

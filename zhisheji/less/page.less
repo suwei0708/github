@@ -1107,6 +1107,7 @@
 
     .line-link {
         // width: 800px;
+        padding-top: 20px;
         margin: 0 auto;
         a {
             color: @blue;
@@ -1249,7 +1250,7 @@
                         .dis(ib);
                         vertical-align: middle;
                         margin: -3px 0 0 6px;
-                        width: 18px;
+                        width: 17px;
                     }
                 }
                 .adress {
@@ -1294,6 +1295,16 @@
                         &:hover {
                             background: @blue-h;
                             border: 1px solid @blue-h;
+                        }
+                        &.dis {
+                            border: 1px solid #ddd;
+                            color: #666;
+                            background: none;
+                            &:hover {
+                                border: 1px solid #ddd;
+                                color: #666;
+                                background: none;
+                            }
                         }
                     }
                     &-letter {
@@ -1839,6 +1850,9 @@
                 a {
                     color: #333;
                 }
+                img {
+                    width: 17px;
+                }
             }
             .adress {
                 padding-bottom: 3px;
@@ -2382,7 +2396,7 @@
             img {
                 .dis(ib);
                 vertical-align: middle;
-                width: 18px;
+                width: 17px;
                 margin: -3px 0 0 6px;
             }
             strong {
