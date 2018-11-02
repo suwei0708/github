@@ -86,7 +86,6 @@ jqpost(function(){
     }).mouseout(function(){
         jqpost(this).find('.select-txt').hide();
     });
-
     // 复选框
     jqpost(".select-ai").click(function(){
         var txt = jqpost(this).text(),
@@ -96,6 +95,7 @@ jqpost(function(){
 			jqpost('#subid').val(ths.attr('data-id'));
             ths.parents(".select-box").find(".select-val-txt").text(parent+' > '+txt);
         }else{
+            jqpost('#typeid').val(ths.attr('data-id'));
 			jqpost('#subid').val(0);
             ths.parents(".select-box").find(".select-val-txt").text(txt);
         }
@@ -117,7 +117,7 @@ jqpost(function(){
         ths = jqpost(this);
 
         jqpost('#zply').val(ths.attr('data-id'));
-        ths.parents(".select-box").find(".select-val").text(txt);
+        ths.parents(".select-box").find(".select-val-txt").text(txt);
 
         jqpost('.select-txt').hide();
     });
@@ -134,15 +134,15 @@ jqpost(function(){
         var _this = jqpost(this);
         var three = _this.text();
         var two = _this.parents('.select-sub').parent('li').children('a').text();
-
         if(_this.parents('.select-sub').length) {
             jqpost('.select-txt-multistage').find('.cur').removeClass('cur');
             _this.parent().addClass('cur');
             _this.parents('.select-sub').parent().addClass('cur');
+            $('#typeid').val(_this.attr('data-id'));
+            $('#subid').val(_this.attr('f-id'));
             if(_this.parents('.children').length) {
                 var one = _this.parents('.first').children('li > a').text();
                 _this.parents('.select-box').find('.select-val-txt').text(one + '-' + two + '-' + three);
-
             }
             else {
                 _this.parents('.select-box').find('.select-val-txt').text(two + '-' + three);
@@ -150,6 +150,8 @@ jqpost(function(){
             _this.parents('.select-txt-multistage').hide();
         }
         else if (!_this.parent('li').find('.select-sub').length && !_this.parent('li').find('.children').length) {
+            $('#typeid').val(_this.attr('data-id'));
+            $('#subid').val(0);
             jqpost('.select-txt-multistage').find('.cur').removeClass('cur');
             _this.parent().addClass('cur');
             _this.parents('.select-box').find('.select-val-txt').text(three);

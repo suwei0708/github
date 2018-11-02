@@ -428,25 +428,29 @@
             var pid = _this.attr('pid');
             var tid = _this.attr('tid');
             $.post('/userinfo/msgdz/',{pid:pid,tid:tid},function(data){
-                data = JSON.parse(data);
-                tipSave(data.icon, data.msg,1000);
-                if(data.icon=='suc'){
-                    if(!_this.find('.add').length) {
-                        _this.append('<span class="add">+1</span>');
+                if(data.length>100){
+                    $(".h-login .btn-lg").click();
+                    return false;
+                }else {
+                    data = JSON.parse(data);
+                    if (data.icon == 'suc') {
+                        if (!_this.find('.add').length) {
+                            _this.append('<span class="add">+1</span>');
+                        }
+                        _this.find('.add').fadeIn();
+                        setTimeout(function () {
+                            _this.find('.add').fadeOut();
+                        }, 800);
+                        var num = 0;
+                        if (_this.find('.num').length) {
+                            var num = _this.find('.num').text();
+                        }
+                        else {
+                            _this.find('.icon-praise2').after('<span class="num"></span>');
+                        }
+                        num = parseInt(num) + 1;
+                        _this.addClass('praise-ok').find('.num').html(num);
                     }
-                    _this.find('.add').fadeIn();
-                    setTimeout(function() {
-                        _this.find('.add').fadeOut();
-                    }, 800);
-                    var num = 0;
-                    if(_this.find('.num').length) {
-                        var num = _this.find('.num').text();
-                    }
-                    else {
-                        _this.append('<span class="num"></span>');
-                    }
-                    num = parseInt(num) + 1;
-                   _this.addClass('praise-ok').find('.num').html(num);
                 }
             });
         }

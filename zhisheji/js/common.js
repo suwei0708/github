@@ -884,11 +884,10 @@
                 var num = _this.find('.num').text();
             }
             else {
-                _this.append('<span class="num"></span>');
+                _this.find('.icon-praise2').after('<span class="num"></span>');
             }
             num = parseInt(num) + 1;
             $(this).addClass('praise-ok').find('.num').text(num);
-
         }
     });
 
