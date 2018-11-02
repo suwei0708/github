@@ -1,0 +1,92 @@
+@charset "utf-8";
+@import url(../../common/common-pc.less);
+
+@page-w: 1200px;
+@green: #0ec5a1;
+@green-h: #0fd9b0;
+@yellow: #ff7200;
+@red: #ca0204;
+@blue: #2386ee;
+@blue-h: #3594f9;
+// 通用
+#sld {
+    @h: 380px;
+    .pos(r);
+    width: @page-w;
+    height: @h;
+    margin: 0 auto;
+
+    .slides_container {
+        width: @page-w;
+        height: @h;
+        overflow: visible !important;
+        li {
+            width: @page-w;
+            height: @h;
+        }
+        img {
+            .pos(a);
+            top: 0;
+            left: 50%;
+            width: 1920px;
+            max-width: none;
+            margin-left:  -1920px / 2;
+        }
+    }
+    .pagination {
+        position: absolute;
+        bottom: 26px;
+        z-index: 6;
+        width: 100%;
+        height: 12px;
+        text-align: center;
+
+        li {
+            .dis(i);
+        }
+        a {
+            .dis(ib);
+            vertical-align: top;
+            .ov(h);
+            width: 12px;
+            height: 12px;
+            margin: 0 4px;
+            background: #054e3d;
+            font-size: 0;
+            .bdr(12px);
+        }
+        .cur {
+            a {
+                width: 38px;
+                background: #9ee7d6;
+            }
+        }
+    }
+    .ico-prev {
+        .pos(a);
+        top: 50%;
+        font-size: 30px;
+        color: #9ee7d6;
+        margin-top: -15px;
+        font-family: "jdfont" !important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        left: -55px;
+    }
+    .ico-next {
+        .pos(a);
+        top: 50%;
+        font-size: 30px;
+        color: #9ee7d6;
+        margin-top: -15px;
+        font-family: "jdfont" !important;
+        font-style: normal;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        right: -55px;
+    }
+}
+.header {
+
+}
