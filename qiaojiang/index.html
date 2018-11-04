@@ -108,8 +108,8 @@
                         </ul>
                     </div>
                 </div>
-                <input type="text" class="fl txt" placeholder="搜索感兴趣的课程/讲师">
-                <button class="fl btn"><span class="qjfont qj-fangdajing"></span></button>
+                <input type="text" class="fl txt" id="searchkey" placeholder="搜索感兴趣的课程/讲师">
+                <button class="fl btn" id="bsearch"><span class="qjfont qj-fangdajing"></span></button>
                 <div class="search-tip">
                     <dl class="search-tip-his">
                         <dt><a href="javascript:;" class="fr clear-his"><span class="qjfont qj-shanchu"></span></a>最近搜索</dt>
@@ -6823,12 +6823,12 @@
         <!-- 砍价弹窗 end -->
 
         <!--弹窗砍价 start -->
-        <div class="popup-box popup-kanjia" style="display: block">
+        <div class="popup-box popup-kanjia" style="display: none">
             <div class="ico ico-close" onclick="$(this).off('click'); $('.popup-kanjia, .mask').hide();"></div>
             <a href="http://www.qiaojiang.tv/kanjia" target="_blank"><img src="images/kanjia.png" height="505" width="1076" alt=""></a>
         </div>
         <!--弹窗砍价 end -->
-        <div class="mask" style="display: block"></div>
+        <div class="mask" style="display: none"></div>
 
         <!--js调用 start -->
         <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>

@@ -445,11 +445,13 @@ $(function() {
         $('.search-tip').show();
         $('.search-hot').hide();
     });
-    $('.search').on('mouseleave', function() {
-        $('.search-tip').hide();
-        $('.search-hot').show();
-        $('.search .txt').blur();
+    $('.search').on('blur', '.txt', function() {
+        setTimeout(function() {
+            $('.search-tip').hide();
+            $('.search-hot').show();
+        }, 200);
     });
+
     $('.search-tip').on('click', 'a', function() {
         $('.search .txt').val($(this).text())
     });
@@ -1155,8 +1157,7 @@ $("#qj_reg").on("click", function() {
         $("#islogin").html(data);
         $('.popup-play').find('.popup-play-tit li:eq(1)').click();
     })
-});
-
+})
 
 // 保存成功失败 status为suc或者fail，cont为提示的内容
 function tipSave(status, cont, times, classes) {
@@ -1189,7 +1190,7 @@ function tipSave(status, cont, times, classes) {
         var tipTimer = setInterval(function() {
             if (jQuery('.tip-num').html() == 1) {
                 jQuery('.alert-tip').hide();
-            $('.alert-mask').hide();
+                $('.alert-mask').hide();
                 clearInterval(tipTimer);
             }
             jQuery('.tip-num').html(jQuery('.tip-num').html() - 1);
