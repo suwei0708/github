@@ -452,10 +452,11 @@ $(function() {
         $('.search-tip').show();
         $('.search-hot').hide();
     });
-    $('.search').on('mouseleave', function() {
-        $('.search-tip').hide();
-        $('.search-hot').show();
-        $('.search .txt').blur();
+    $('.search').on('blur', '.txt', function() {
+        setTimeout(function() {
+            $('.search-tip').hide();
+            $('.search-hot').show();
+        }, 200);
     });
     $('.search-tip').on('click', 'a', function() {
         $('.search .txt').val($(this).text())
@@ -473,6 +474,7 @@ $(function() {
 
     //搜索按钮
     $("#bsearch").click(function() {
+        console.log(1)
         var val = $("#searchkey").val();
         if (val != "") {
             $.get("/Video/Getpy/?key=" + encodeURI(val), function(data) {
