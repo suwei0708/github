@@ -1,5 +1,8 @@
 (function($) {
 $(function() {
+    /*
+     * 旅游频道
+    */
     // 轮播图banner
     if($('#sld-banner').length) {
         $('#sld-banner').slides({
@@ -9,19 +12,6 @@ $(function() {
             pause: 2500,
             hoverPause: true,
             effect: 'fade'
-        });
-    };
-    /*
-     * 旅游频道
-    */
-    // 旅游轮播图1
-    if($('#ly-sld1').length) {
-        $('#ly-sld1').slides({
-            generatePagination: false,
-            generateNextPrev: false,
-            play: 3000,
-            pause: 2500,
-            hoverPause: true
         });
     };
 
@@ -53,13 +43,7 @@ $(function() {
     });
 
     // 显示更多
-    $.each($('.ly-morepics'), function(index) {
-        var num = 5;
-        if($(this).parents('.ly-pics').hasClass('ly-tuwen')) {
-            num = 7
-        }
-        $(this).parents('.ly-pics').find('li:gt(' + num + ')').hide();
-    });
+    $('.ly-pics').find('li:gt(6)').hide();
 
     $('.ly-morepics').on('click', function() {
         if($(this).text() == '显示更多') {
@@ -68,11 +52,7 @@ $(function() {
         }
         else {
             $(this).text('显示更多');
-            var num = 5;
-            if($(this).parents('.ly-pics').hasClass('ly-tuwen')) {
-                num = 7
-            }
-            $(this).parents('.ly-pics').find('li:gt(' + num + ')').hide();
+            $(this).parents('.ly-pics').find('li:gt(6)').hide();
         }
     });
 });
@@ -89,5 +69,4 @@ function fixedNav(navPos) {
         });
     }
 }
-
 })(jQuery);

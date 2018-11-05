@@ -244,26 +244,6 @@ body {
     }
 }
 
-#ly-sld1 {
-    @w: 400px;
-    @h: 134px;
-    .ov(h);
-    .pos(r);
-    width: @w;
-    height: @h;
-
-    .slides_container {
-        width: @w;
-        height: @h;
-        img {
-            width: @w;
-        }
-    }
-    // .pagination {
-    //     right: 21px;
-    //     bottom: 13px;
-    // }
-}
 .ly {
     // 头部
     &-header {
@@ -296,7 +276,7 @@ body {
                 margin: 20px 0 0 0;
             }
             .link {
-                .ov(h);
+                // .ov(h);
                 height: 31px;
                 line-height: 45px;
                 padding-right: 12px;
@@ -310,11 +290,44 @@ body {
                     }
                 }
                 .hover {
+                    .pos(r);
+                    z-index: 80;
                     .dis(ib);
                     vertical-align: top;
                     color: #666;
                     font-size: 18px;
                     cursor: pointer;
+                    &-box {
+                        .dis(n);
+                        .pos(a);
+                        left: 50%;
+                        margin-left: -49px;
+                        width: 98px;
+                        text-align: center;
+                        color: #fff;
+                        background: #ccddf1;
+                        img {
+                            padding: 8px 0;
+                            width: 84px;
+                            height: 84px;
+                        }
+                        p {
+                            padding: 4px 0;
+                            line-height: 16px;
+                            font-size: 12px;
+                            color: @ly-a;
+                            border-bottom: 2px solid #ebf1f9;
+                            &.bottom {
+                                border: none;
+                                border-top: 2px solid #ebf1f9;
+                            }
+                        }
+                    }
+                    &:hover {
+                        .hover-box {
+                            .dis(b);
+                        }
+                    }
                 }
             }
             .inputbox {
@@ -423,6 +436,7 @@ body {
         }
         li {
             .pos(r);
+            z-index: 70;
             .dis(ib);
             vertical-align: top;
             width: 150px;
@@ -496,27 +510,35 @@ body {
     }
     // 顶部新闻
     &-news {
-        padding-bottom: 10px;
+        padding-bottom: 16px;
+        border-bottom: 2px solid @ly-a;
         h2 {
-            .height(46px);
-            font-size: 28px;
+            .height(54px);
+            font-size: 38px;
             font-weight: 700;
-            text-align: center;
+            padding-left: 163px;
+            background: url(../images/toutiao.png) no-repeat 0 0;
             .text-e(1);
             a {
-                color: @ly-a;
+                color: #424242;
                 &:hover {
                     color: @red;
                 }
             }
         }
-        p {
+        ul {
+            padding-top: 35px;
+            .cl();
+        }
+        li {
+            float: left;
+            width: 33.33%;
             padding-top: 7px;
-            line-height: 36px;
-            max-height: 36px * 2;
-            font-size: 14px;
+            line-height: 28px;
+            max-height: 28px * 1;
+            font-size: 16px;
             color: #424242;
-            .text-e(2);
+            .text-e(1);
             a {
                 color: #424242;
                 &:hover {
@@ -527,8 +549,9 @@ body {
     }
     // 图文公用
     &-pics {
-        border-top: 2px solid @ly-a;
+        padding: 14px 0;
         li {
+            padding: 20px 0;
             .img {
                 .ov(h);
                 img {
@@ -558,58 +581,124 @@ body {
                 font-size: 14px;
                 color: #424242;
             }
+            &.tuwen {
+                .img {
+                    margin-right: 15px;
+                    width: 223px;
+                    height: 153px;
+                    img {
+                        width: 223px;
+                        height: 153px;
+                    }
+                }
+                h3 {
+                    max-height: 42px * 1;
+                    .text-e(1);
+                }
+                p {
+                    padding: 7px 0 0;
+                    max-height: 30px * 3;
+                    .text-e(3);
+                }
+            }
+            &.datu {
+                .img {
+                    margin-right: 15px;
+                    width: 465px;
+                    height: 254px;
+                    img {
+                        width: 465px;
+                        height: 254px;
+                    }
+                }
+                h3 {
+                    max-height: 42px * 2;
+                    .text-e(2);
+                }
+                p {
+                    padding: 7px 0 0;
+                    max-height: 30px * 5;
+                    .text-e(5);
+                }
+            }
+            &.zutu {
+                margin-right: -20px;
+                .img {
+                    margin-right: 20px;
+                    width: 246px;
+                    height: 199px;
+                    img {
+                        width: 246px;
+                        height: 199px;
+                    }
+                }
+                h3 {
+                    .pos(r);
+                    padding-left: 12px;
+                    max-height: 42px;
+                    .text-e(1);
+                    margin-bottom: 12px;
+                    &:before {
+                        content: '';
+                        .pos(a);
+                        top: 5px;
+                        left: 3px;
+                        width: 4px;
+                        height: 31px;
+                        background: #c79330;
+                    }
+                }
+            }
         }
     }
     // 图文 1754
-    &-tuwen {
-        padding: 17px 0 0;
-        li {
-            padding: 32px 0;
-            .img {
-                margin-right: 15px;
-                width: 223px;
-                height: 153px;
-                img {
-                    width: 223px;
-                    height: 153px;
-                }
-            }
-            h3 {
-                max-height: 42px * 1;
-                .text-e(1);
-            }
-            p {
-                padding: 7px 0 0;
-                max-height: 30px * 3;
-                .text-e(3);
-            }
-        }
-    }
+    // &-tuwen {
+    //     .tuwen {
+    //         .img {
+    //             margin-right: 15px;
+    //             width: 223px;
+    //             height: 153px;
+    //             img {
+    //                 width: 223px;
+    //                 height: 153px;
+    //             }
+    //         }
+    //         h3 {
+    //             max-height: 42px * 1;
+    //             .text-e(1);
+    //         }
+    //         p {
+    //             padding: 7px 0 0;
+    //             max-height: 30px * 3;
+    //             .text-e(3);
+    //         }
+    //     }
+    // }
     // 大图 1754
-    &-datu {
-        padding: 25px 0 0;
-        li {
-            padding: 17px 0;
-            .img {
-                margin-right: 15px;
-                width: 465px;
-                height: 254px;
-                img {
-                    width: 465px;
-                    height: 254px;
-                }
-            }
-            h3 {
-                max-height: 42px * 2;
-                .text-e(2);
-            }
-            p {
-                padding: 7px 0 0;
-                max-height: 30px * 5;
-                .text-e(5);
-            }
-        }
-    }
+    // &-datu {
+    //     padding: 25px 0 0;
+    //     li {
+    //         padding: 17px 0;
+    //         .img {
+    //             margin-right: 15px;
+    //             width: 465px;
+    //             height: 254px;
+    //             img {
+    //                 width: 465px;
+    //                 height: 254px;
+    //             }
+    //         }
+    //         h3 {
+    //             max-height: 42px * 2;
+    //             .text-e(2);
+    //         }
+    //         p {
+    //             padding: 7px 0 0;
+    //             max-height: 30px * 5;
+    //             .text-e(5);
+    //         }
+    //     }
+    // }
     // 组图 1754
     &-zutu {
         padding: 19px 0 0;
