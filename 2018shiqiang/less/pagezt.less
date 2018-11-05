@@ -1,0 +1,501 @@
+@charset "utf-8";
+@import url(../../common/common-pc.less);
+
+@page-w: 1200px;
+@brown: #ce9c6b;
+@yellow: #ffd89b;
+@gray: #0d0d0d;
+@bg: #020202;
+
+body {
+    background: @bg;
+}
+@font-face {
+    font-family: "avant";
+    src: url("../fonts/avant.eot"); /* IE9 */
+    src: url("../fonts/avant.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+
+    url("../fonts/avant.woff") format("woff"), /* chrome、firefox */
+    url("../fonts/avant.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+ */
+
+    url("../fonts/avant.svg#avant") format("svg"); /* iOS 4.1- */
+    font-style: normal;
+    font-weight: normal;
+}
+@font-face {
+    font-family: 'sybold';
+    src: url('../fonts/sybold.otf') format('truetype');
+}
+@font-face {
+    font-family: 'synormal';
+    src: url('../fonts/synormal.otf') format('truetype');
+}
+@font-face {
+    font-family: 'sylight';
+    src: url('../fonts/sylight.otf') format('truetype');
+}
+@font-face {
+    font-family: 'syreg';
+    src: url('../fonts/syreg.otf') format('truetype');
+}
+.avant {
+    font-family: 'avant';
+}
+.anim {
+    -webkit-transition: all .6s cubic-bezier(.215, .61, .355, 1) 0s;
+    transition: all .6s cubic-bezier(.215, .61, .355, 1) 0s;
+}
+.w300 {
+    width: 300px;
+}
+.w900 {
+    width: 900px;
+}
+.zt {
+    &btn {
+        .dis(ib);
+        vertical-align: top;
+        text-align: center;
+        &-yellow {
+            background: @yellow !important;
+            color: @bg !important;
+        }
+        &-black {
+            background: @gray !important;
+            color: @yellow !important;
+        }
+    }
+    &icon {
+        .dis(ib);
+        vertical-align: middle;
+        background: url(../images/zticon.png) no-repeat;
+    }
+    // banner
+    &-banner {
+        padding: 730px 0 0;
+        background: url(../images/banner.jpg) no-repeat center 0;
+        border-bottom: 1px solid #1f1f1f;
+    }
+    // 导航
+    &-nav {
+        .pos(r);
+        height: 81px;
+        font-size: 18px;
+        a {
+            .dis(ib);
+            vertical-align: top;
+            line-height: 80px;
+            color: #666;
+            &:hover, &.cur {
+                color: @brown;
+                border-bottom: 1px solid @brown;
+            }
+        }
+        .fll {
+            a {
+                margin: 0 120px 0 15px;
+            }
+        }
+        .fr {
+            a {
+                margin: 0 0 0 86px;
+            }
+        }
+        .ztbtn-box {
+            .pos(a);
+            top: -10px;
+            left: 50%;
+            .dis(ib);
+            vertical-align: top;
+            margin-left: -214px;
+            font-size: 0;
+            .ztbtn {
+                width: 214px;
+                .height(102px);
+                font-size: 19px;
+                font-weight: 700;
+                .anim();
+                &:hover {
+                    border: none;
+                    .translate(0, -10px);
+                }
+                &-yellow {
+                    .zticon {
+                        width: 18px;
+                        height: 18px;
+                        margin: -3px 0 0 12px;
+                        background-position: -10px -111px;
+                    }
+                }
+                &-black {
+                    .zticon {
+                        width: 17px;
+                        height: 17px;
+                        margin: -3px 12px 0 0;
+                        background-position: -10px -74px;
+                    }
+                }
+            }
+        }
+    }
+    // 关于十强
+    &-about {
+        padding: 110px 0 60px;
+        .tit {
+            line-height: 52px;
+            font-size: 52px;
+            color: @brown;
+            p {
+                line-height: 50px;
+                margin-top: 25px;
+                font-size: 26px;
+                color: #f1f1f1;
+            }
+        }
+        .list {
+            p {
+                line-height: 35px;
+                color: #999;
+                text-align: justify;
+            }
+            .ztbtn {
+                width: 195px;
+                .height(50px);
+                margin-top: 52px;
+                font-size: 16px;
+                border: 3px solid @brown;
+                color: @brown;
+                .zticon {
+                    width: 31px;
+                    height: 12px;
+                    margin: -3px 0 0 52px;
+                    background-position: -10px -10px;
+                    -webkit-transition: transform .6s cubic-bezier(.215, .61, .355, 1) 0s;
+                    transition: transform .6s cubic-bezier(.215, .61, .355, 1) 0s;
+                }
+                &:hover {
+                    border: 3px solid @yellow;
+                    color: @yellow;
+                    .zticon {
+                        .translate(10px, 0);
+                        background-position: -10px -42px;
+                    }
+                }
+            }
+        }
+    }
+    // 大赛规则
+    &-rule {
+        padding: 60px 0;
+        .tit {
+            line-height: 52px;
+            font-size: 52px;
+            color: @brown;
+            p {
+                line-height: 50px;
+                margin-top: 25px;
+                font-size: 26px;
+                color: #f1f1f1;
+            }
+        }
+        .list {
+            font-size: 0;
+            li {
+                .dis(ib);
+                vertical-align: top;
+                width: 449px - 64 - 48;
+                height: 520px - 46;
+                padding: 46px 64px 0 48px;
+                border-left: 1px solid @bg;
+                border-bottom: 1px solid @bg;
+                background: @gray;
+                .title {
+                    line-height: 60px;
+                    padding-bottom: 17px;
+                    font-size: 22px;
+                    color: #fff;
+                    img {
+                        .dis(b);
+                        width: 55px;
+                        height: 55px;
+                    }
+                }
+                p {
+                    color: #999;
+                    font-size: 16px;
+                    line-height: 31px;
+                    padding: 0 0 0 22px;
+                    background: url(../images/dot.png) no-repeat 0 15px;
+                }
+                .ztbtn {
+                    margin: 122px 0 0 22px;
+                    color: @brown;
+                    font-size: 16px;
+                    .zticon {
+                        width: 31px;
+                        height: 12px;
+                        margin: -3px 0 0 36px;
+                        background-position: -10px -10px;
+                        -webkit-transition: transform .6s cubic-bezier(.215, .61, .355, 1) 0s;
+                        transition: transform .6s cubic-bezier(.215, .61, .355, 1) 0s;
+                    }
+                    &:hover {
+                        // color: @yellow;
+                        .zticon {
+                            .translate(10px, 0);
+                            // background-position: -10px -42px;
+                        }
+                    }
+                }
+                &.li2 {
+                    height: 330px - 46px;
+                }
+            }
+        }
+    }
+    &-tit {
+        .pos(r);
+        line-height: 52px;
+        font-size: 52px;
+        color: @brown;
+        &:after {
+            content: '';
+            .pos(a);
+            top: 50%;
+            left: 50%;
+            margin: 0 0 0 -200px;
+            width: 400px;
+            height: 1px;
+            background: #262626;
+        }
+        > div {
+            .dis(ib);
+            vertical-align: top;
+        }
+        p {
+            float: right;
+            line-height: 50px;
+            margin-top: 27px;
+            font-size: 26px;
+            color: #f1f1f1;
+            font-family: 'sylight';
+        }
+    }
+    // 大赛日程
+    &-times {
+        padding: 60px 0 90px;
+        .list {
+            margin-top: 70px;
+            font-size: 0;
+            height: 137px;
+            background: url(../images/box-bg.png) no-repeat 0 0;
+            ul {
+                padding-left: 35px;
+            }
+            li {
+                .dis(ib);
+                vertical-align: top;
+                padding: 40px 0 0;
+                width: 156px;
+                line-height: 32px;
+                margin: 0 34px;
+                text-align: center;
+                color: #999;
+                font-size: 16px;
+                p {
+                    color: #ccc;
+                    font-size: 20px;
+                }
+                &.cur {
+                    .pos(r);
+                    top: -24px;
+                    padding: 64px 0 0;
+                    height: 186px - 64;
+                    background: @yellow;
+                    color: @bg;
+                    p {
+                        color: @bg;
+                    }
+                }
+            }
+        }
+    }
+
+    // 大赛评委
+    &-judges {
+        padding: 60px 0 90px;
+        .list {
+            margin-top: 70px;
+            font-size: 0;
+            li {
+                .pos(r);
+                .dis(ib);
+                vertical-align: top;
+                width: 400px;
+                height: 402px;
+                border-left: 1px solid @bg;
+                border-bottom: 1px solid @bg;
+                .img {
+                    width: 400px;
+                    height: 402px;
+                }
+                .bg {
+                    .pos(a);
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        .pos(a);
+                        top: 33px;
+                        top: 148px;
+                        left: 33px;
+                        width: 20px;
+                    }
+                }
+                .info {
+                    .pos(a);
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 132px;
+                    background: url(../images/person-bg.png) no-repeat 0 0;
+                    strong {
+                        .dis(b);
+                        line-height: 40px;
+                        margin: 34px 0 0 32px;
+                        color: @yellow;
+                        font-size: 30px;
+                        font-family: 'synormal';
+                    }
+                    p {
+                        margin: 0 0 0 32px;
+                        line-height: 35px;
+                        color: #999;
+                        font-size: 18px;
+                        font-family: 'sylight';
+                    }
+                }
+                .slogan {
+                    .dis(n);
+                    .pos(a);
+                    top: 35px;
+                    left: 35px;
+                    font-size: 30px;
+                    font-family: 'sybold';
+                }
+                &.li1 {
+                    .slogan {
+                        font-size: 36px;
+                    }
+                }
+                &:hover {
+                    .bg {
+                        background: @yellow;
+                    }
+                    .slogan {
+                        .dis(b);
+                    }
+                    .info {
+                        background: none;
+                        strong, p {
+                            color: @bg
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    // 大赛奖品
+    &-prize {
+        height: 678px;
+        margin-top: 160px;
+        background: @gray;
+        .fll {
+            .pos(r);
+            top: -34px;
+        }
+        .fr {
+            width: 644px;
+        }
+        .prize-box {
+            .pos(r);
+            width: 321px;
+            height: 712px - 94;
+            padding: 94px 71px 0;
+            background: @yellow;
+            img {
+                .dis(b);
+                width: 321px;
+                height: 329px;
+                margin-bottom: 28px;
+            }
+            .title {
+                line-height: 60px;
+                color: @gray;
+                font-size: 20px;
+                font-family: 'syreg';
+            }
+            p {
+                line-height: 30px;
+                color: #050505;
+                font-size: 18px;
+                font-family: 'sylight';
+            }
+            .btn-box {
+                .pos(a);
+                bottom: 79px;
+                left: 81px;
+                font-size: 0;
+                a {
+                    .dis(ib);
+                    vertical-align: top;
+                    width: 42px;
+                    height: 40px;
+                    margin-right: 18px;
+                    background: url(../images/arrow.png) no-repeat;
+                    &.prev {
+                        background-position: 0 0;
+                        &:hover {
+                            background-position: 0 -49px;
+                        }
+                    }
+                    &.next {
+                        background-position: -60px 0;
+                        &:hover {
+                            background-position: -60px -49px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .zt-tit {
+            margin-top: 80px;
+            &:after {
+                width: 230px;
+                margin: 0 0 0 -95px;
+            }
+        }
+        .list {
+            margin-top: 80px;
+            font-size: 0;
+            ul {
+                margin-right: -29px;
+            }
+            li {
+                .pos(r);
+                .dis(ib);
+                vertical-align: top;
+                width: 139px;
+                height: 138px;
+                margin: 0 29px 42px 0;
+                .img {
+                    width: 139px;
+                    height: 138px;
+                }
+            }
+        }
+    }
+}
