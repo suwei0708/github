@@ -1,5 +1,8 @@
 (function($) {
 $(function() {
+    /*
+     * 首页
+    */
     // 大赛时间
     var nowDate = new Date();
     var year = nowDate.getFullYear(); //得到年份
@@ -58,20 +61,8 @@ $(function() {
         }
     });
 
-    // 点击分享
-    $('body').on('click', '.ztpopup-btn .btn-share', function() {
-        $('#qzone')[0].click();
-    });
 
-    // 十强公布倒计时
-    if($('#times').length) {
-        var downcount = $('#times').data('downcount');
-        $('#times').downCount({
-            date: downcount
-        });
-    };
-
-    // 首页参选
+    // 参选
     $('.ztbtn-canxuan').on('click', function() {
         var cxStatus = rnd(0, 1); //随机生成0，1
         if(cxStatus == 0) {
@@ -84,10 +75,157 @@ $(function() {
         }
     });
 
+    /*
+     * 参选设计师
+    */
+    var voteNum = 3; //投票次数
+    $('.list-election').on('click', '.ztbtn', function() {
+        if(!$(this).hasClass('ztbtn-dis')) {
+            if(voteNum == 0) {
+                // 投票次数用完
+                $.ztMsg.Alert('tan', '今天的投票数用完啦！明天再来哦~');
+            }
+            else {
+                $(this).addClass('ztbtn-dis').html('投票成功');
+                // 投票次数减1
+                voteNum--;
+                // 票数加1
+                $(this).parents('li').find('.num').html(+$(this).parents('li').find('.num').html() + 1);
+            }
+        };
+    });
+
+    // 点击竞猜
+    $('.list-myelection').on('click', '.ztbtn', function() {
+        var guessNum = $('.list-myelection').find('.ztbtn-dis').length;
+        if(guessNum == 10) {
+            $.ztMsg.Alert('tan', '竞猜人数已满足十位，请等待结果公布。');
+            return false;
+        }
+
+        if(!$(this).hasClass('ztbtn-dis')) {
+            $(this).addClass('ztbtn-dis');
+        }
+        else {
+            $(this).removeClass('ztbtn-dis');
+        };
+
+        // 竞猜个数判断，由于分页需要后台判断，这里前端做个展示
+        guessNum = $('.list-myelection').find('.ztbtn-dis').length;
+        $('.zt-election .tit').find('.num').html(guessNum);
+        // 选中10个判断为成功，点击关闭按钮跳转到成功页面
+        if(guessNum == 10) {
+            $.ztMsg.Alert('gou', '竞猜成功，请等待结果公布。');
+        }
+    });
+
+    /*
+     * 竞猜
+    */
+    // 十强公布倒计时
+    if($('#times').length) {
+        console.log(222)
+        var downcount = $('#times').data('downcount');
+        $('#times').downCount({
+            date: downcount
+        });
+    };
+
+    /*
+     * 个人拉票页
+    */
+    // 复制拉票链接
+    $('#contents').css('opacity', 0);
+    $('.vote-copy').on('click', function() {
+        $('#contents').val('我正在参加2018年度十强设计师竞选，求支持~ ' + window.location.href);
+        copyToClipboard();
+        tipSave('suc', '复制成功');
+    });
+
+    // 个人拉票页通知滚动
+    notices();
+    function notices() {
+        if($('.notices li').length <= 1) {
+            return false;
+        }
+        //1文字轮播(2-5页中间)开始
+        $('.notices li:eq(0)').clone(true).appendTo($('.notices ul'));//克隆第一个放到最后(实现无缝滚动)
+        var liHeight = $('.notices').height();//一个li的高度
+        //获取li的总高度再减去一个li的高度(再减一个Li是因为克隆了多出了一个Li的高度)
+        var totalHeight = ($('.notices li').length *  $('.notices li').eq(0).height()) -liHeight;
+        $('.notices ul').height(totalHeight);//给ul赋值高度
+        var index = 0;
+        var autoTimer = 0;//全局变量目的实现左右点击同步
+        var clickEndFlag = true; //设置每张走完才能再点击
+        function tab() {
+            $('.notices ul').stop().animate({
+                top: -index * liHeight
+            }, 400, function() {
+                clickEndFlag = true; //图片走完才会true
+                if (index == $('.notices li').length - 1) {
+                    $('.notices ul').css({
+                        top: 0
+                    });
+                    index = 0;
+                }
+            })
+        }
+        function next() {
+            index++;
+            if(index > $('.notices li').length - 1) {//判断index为最后一个Li时index为0
+                index = 0;
+            }
+            tab();
+        }
+
+        //自动轮播
+        autoTimer = setInterval(next,3000);
+        $('.notices a').hover(function(){
+            clearInterval(autoTimer);
+        },function() {
+            autoTimer = setInterval(next,3000);
+        })
+
+        //鼠标放到左右方向时关闭定时器
+        $('.notices').hover(function(){
+            clearInterval(autoTimer);
+        },function(){
+            autoTimer = setInterval(next,3000);
+        });
+    }
+
+    // 个人拉票页投票
+    $('.vote-btn').on('click', function() {
+        if(!$(this).hasClass('vote-btn-dis')) {
+            if(voteNum == 0) {
+                // 投票次数用完
+                $.ztMsg.Alert('tan', '今天的投票数用完啦！明天再来哦~');
+            }
+            else {
+                $(this).addClass('vote-btn-dis').find('p').html('投票成功');
+                // 投票次数减1
+                voteNum--;
+                // 票数加1
+                $(this).parents('.zt-personal').find('.info .num').html(+$(this).parents('.zt-personal').find('.info .num').html() + 1);
+                // TA的支持者增加头像和昵称
+                var html = '<li>'
+                               +'<a href="#" target="_blank"><img src="http://www.zhisheji.com/uc_server/data/avatar/000/14/64/10_avatar_middle.jpg" width="78" height="78" alt=""></a>'
+                               +'<p><a href="#" target="_blank">新出炉小笼包</a></p>'
+                           +'</li>';
+                $('.supporter .list ul').find('li:last').remove();
+                $('.supporter .list ul').prepend(html);
+                // 滚动通知增加
+                var html = '新增点击 刚刚给 狂奔的蜗牛 投了宝贵的一票';
+                $('.notices ul').find('li').eq($('.notices').find('li').length - 2).html(html);
+            }
+        }
+    });
+
 });
 })(jQuery);
 
 // alert和confirm美化，调用方法
+// icon根据提示符号显示，有gou(勾),tan(叹号),zan(赞),liwu(礼物); msg为提示信息，btntxt为按钮文字，不填无按钮
 // $.ztMsg.Alert('icon', 'msg', 'btntxt');
 // $.ztMsg.Confirm('icon', 'msg', 'btntxt', func);
 (function() {
@@ -164,7 +302,17 @@ function showFixNav() {
     }
     else {
         $('.fixed-nav').hide();
-    }
+    };
+
+    $.each($('.fixed-nav').find('li'), function(i) {
+        if(i >= $('.fixed-nav').find('li').length - 1) {
+            return false;
+        }
+        if($(window).scrollTop() >= $('#scroll' + i).offset().top) {
+            $(this).addClass('cur').siblings().removeClass('cur');
+            console.log(i)
+        }
+    });
 }
 
 function rnd(n, m) {
@@ -222,14 +370,15 @@ function copyToClipboard(){
                 minutes = (minutes.length >= 2) ? minutes : '0' + minutes;
                 seconds = (seconds.length >= 2) ? seconds : '0' + seconds;
 
-            container.find('.num-bg:eq(0)').html('<span class="num' + days.slice(days.length-2,days.length-1) + '"></span>');
-            container.find('.num-bg:eq(1)').html('<span class="num' + days.slice(days.length-1,days.length) + '"></span>');
-            container.find('.num-bg:eq(2)').html('<span class="num' + hours.slice(hours.length-2,hours.length-1) + '"></span>');
-            container.find('.num-bg:eq(3)').html('<span class="num' + hours.slice(hours.length-1,hours.length) + '"></span>');
-            container.find('.num-bg:eq(4)').html('<span class="num' + minutes.slice(minutes.length-2,minutes.length-1) + '"></span>');
-            container.find('.num-bg:eq(5)').html('<span class="num' + minutes.slice(minutes.length-1,minutes.length) + '"></span>');
-            container.find('.num-bg:eq(6)').html('<span class="num' + seconds.slice(seconds.length-2,seconds.length-1) + '"></span>');
-            container.find('.num-bg:eq(7)').html('<span class="num' + seconds.slice(seconds.length-1,seconds.length) + '"></span>');
+            container.find('.num-bg:eq(0)').html(days.slice(days.length-2,days.length-1));
+            container.find('.num-bg:eq(1)').html(days.slice(days.length-1,days.length));
+            container.find('.num-bg:eq(2)').html(hours.slice(hours.length-2,hours.length-1));
+            container.find('.num-bg:eq(3)').html(hours.slice(hours.length-1,hours.length));
+            container.find('.num-bg:eq(4)').html(minutes.slice(minutes.length-2,minutes.length-1));
+            container.find('.num-bg:eq(5)').html(minutes.slice(minutes.length-1,minutes.length));
+            container.find('.num-bg:eq(6)').html(seconds.slice(seconds.length-2,seconds.length-1));
+            container.find('.num-bg:eq(7)').html(seconds.slice(seconds.length-1,seconds.length));
+            console.log(222)
         };
         // start
         var interval = setInterval(countdown, 1000);

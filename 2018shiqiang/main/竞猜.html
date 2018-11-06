@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>参选设计师-2018年度十强设计师</title>
+        <title>竞猜-2018年度十强设计师</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="http://www.zhisheji.com/home/css/common.css">
@@ -106,10 +106,10 @@
             <div class="wrap zt-nav" id="navlink">
                 <div class="fll">
                     <a href="index.html#navlink">首页</a>
-                    <a href="参选设计师.html#navlink" class="cur">参选设计师</a>
+                    <a href="参选设计师.html#navlink">参选设计师</a>
                 </div>
                 <div class="fr">
-                    <a href="竞猜.html#navlink">竞猜</a>
+                    <a href="竞猜.html#navlink" class="cur">竞猜</a>
                     <a href="抽奖.html#navlink">抽奖</a>
                     <a href="往期十强.html#navlink">往期十强</a>
                 </div>
@@ -122,18 +122,69 @@
         </div>
 
         <div class="wrap">
-            <!-- 参选设计师 start -->
-            <div class="zt-election">
-                <div class="tt">
-                    <ul class="fr">
-                        <li><a href="#navlink" class="cur">最新参选</a></li>
-                        <li><a href="#navlink">最新推荐</a></li>
-                        <li><a href="#navlink">推荐最多</a></li>
-                    </ul>
-                    <div class="person">已有<strong class="num">1954</strong>名设计师参与本次评选</div>
-                    <div class="person">已累计<strong class="num">1844779</strong>名设计师参与了投票点评</div>
+            <!-- 竞猜倒计时 start -->
+            <div class="zt-guess-time">
+                <div class="tit">···十强公布倒计时···</div>
+                <div class="list">
+                    <div class="times" id="times" data-downcount="12/25/2018 00:00:00">
+                        <div class="item">
+                            <span class="num-bg">0</span>
+                            <span class="num-bg">0</span>
+                            <div class="txt">DAY<br>天</div>
+                        </div>
+                        <div class="dot"></div>
+                        <div class="item">
+                            <span class="num-bg">0</span>
+                            <span class="num-bg">0</span>
+                            <div class="txt">HOUR<br>时</div>
+                        </div>
+                        <div class="dot"></div>
+                        <div class="item">
+                            <span class="num-bg">0</span>
+                            <span class="num-bg">0</span>
+                            <div class="txt">MINUTE<br>分</div>
+                        </div>
+                        <div class="dot"></div>
+                        <div class="item">
+                            <span class="num-bg">0</span>
+                            <span class="num-bg">0</span>
+                            <div class="txt">SECOND<br>秒</div>
+                        </div>
+                    </div>
                 </div>
-                <div class="list list-election">
+            </div>
+            <!-- 竞猜倒计时 end -->
+            <!-- 竞猜规则 start -->
+            <div class="cl zt-rule zt-guess-rule">
+                <div class="fll tit">
+                    <div class="avant">guess<br>Top ten</div>
+                    <p>十强竞猜</p>
+                </div>
+                <div class="fr list">
+                    <ul>
+                        <li>
+                            <div class="title">
+                                <img src="../images/icon-cxxz.png" width="55" height="55" alt="">
+                                竞猜规则
+                            </div>
+                            <p>成功竞猜 3 位的送致设计抱枕；成功竞猜 6 位的送致设计2018设计年鉴一本；</p>
+                            <p>成功竞猜 10 位的赠送致设计周边礼包一份。</p>
+                            <p>所有用户都有一次机会可以参与竞猜，竞猜截至日期2018年12月30日，奖品将会在竞猜结束后的2个工作日内发货</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- 竞猜规则 end -->
+
+            <!-- 我的竞猜 start -->
+            <div class="zt-election">
+                <div class="tit">
+                    <div class="avant">Guess</div>
+                    <div class="fr more">*当前显示为人气最高的前100位</div>
+                    <h3>我的竞猜</h3>
+                    <span>点击勾选10位即可，当前已勾选 <span class="num">0</span> 位。</span>
+                </div>
+                <div class="list list-myelection">
                     <ul>
                         <li>
                             <div class="img"><a href="个人拉票页.html#navlink" target="_blank"><img src="http://www.zhisheji.com/uc_server/data/avatar/000/14/64/10_avatar_middle.jpg" height="95" width="95" alt=""></a></div>
@@ -301,7 +352,7 @@
                 </div>
                 <!-- 翻页 end -->
             </div>
-            <!-- 参选设计师 end -->
+            <!-- 我的竞猜 end -->
         </div>
         <!-- 专题内容 end -->
 
