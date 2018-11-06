@@ -218,32 +218,6 @@ body {
 }
 
 // 旅游频道
-#sld-banner {
-    @h: 457px;
-    .pos(r);
-    width: 1000px;
-    height: @h;
-    margin: 0 auto;
-
-    .slides_container {
-        width: 1000px;
-        height: @h;
-        overflow: visible !important;
-        li {
-            width: 1000px;
-            height: @h;
-        }
-        img {
-            .pos(a);
-            top: 0;
-            left: 50%;
-            width: 1920px;
-            max-width: none;
-            margin-left:  -1920px / 2;
-        }
-    }
-}
-
 .ly {
     // 头部
     &-header {
@@ -270,7 +244,17 @@ body {
             padding: 15px 0;
             .logo {
                 .dis(b);
-                height: 50px;
+                height: 60px;
+            }
+            .slogan {
+                .dis(b);
+                height: 60px;
+                line-height: 80px;
+                color: #999;
+                font-size: 14px;
+                img {
+                    height: 60px;
+                }
             }
             .so-box {
                 margin: 20px 0 0 0;
@@ -430,7 +414,8 @@ body {
                 color: #002552;
                 font-size: 16px;
                 &:hover {
-                    color: @red;
+                    color: #fff;
+                    background: #96b9e3;
                 }
             }
         }
@@ -453,34 +438,50 @@ body {
         }
     }
     &-sldbanner {
+        .pos(r);
         .ov(h);
-        .pagination {
-            .dis(n);
-        }
-        .slides_container {
-            li {
-                a {
-                    width: 100%;
-                    height: 450px;
-                    display: table;
+        .swiper-wrapper {
+            @h: 457px;
+            .pos(r);
+            width: 1200px;
+            height: @h;
+            margin: 0 auto;
+            .swiper-slide {
+                img {
+                    .pos(a);
+                    top: 0;
+                    left: 50%;
+                    width: 1920px;
+                    max-width: none;
+                    margin-left:  -1920px / 2;
+                }
+                &-active {
+                    z-index: 10;
                 }
             }
             .title {
-                .pos(r);
-                z-index: 90;
-                display: table-cell;
-                vertical-align: middle;
-                font-size: 60px;
-                color: #fff;
-                text-align: center;
-                span {
-                    .dis(ib);
+                width: 100%;
+                height: 450px;
+                display: table;
+                a {
+                    .pos(r);
+                    z-index: 90;
+                    display: table-cell;
                     vertical-align: middle;
+                    font-size: 42px;
+                    color: #fff;
+                    text-align: center;
+                    span {
+                        .dis(ib);
+                        vertical-align: middle;
+                    }
                 }
+
             }
             .btn {
+                .dis(n);
                 .pos(a);
-                left: 430px;
+                left: 530px;
                 bottom: 24px;
                 z-index: 99;
                 width: 140px;
@@ -493,19 +494,26 @@ body {
                 font-size: 19px;
             }
         }
-        .prev, .next {
+        .swiper-prev, .swiper-next {
+            .dis(n);
             .pos(a);
             bottom: 26px;
-            left: 380px;
+            left: 480px;
             z-index: 99;
             width: 30px;
             height: 39px;
+            cursor: pointer;
             background: url(../images/ly-arrow.png) no-repeat 0 0;
         }
-        .next {
+        .swiper-next {
             left: auto;
-            right: 380px;
+            right: 480px;
             background-position: 0 -40px;
+        }
+        &:hover {
+            .swiper-prev, .swiper-next, .btn {
+                .dis(b);
+            }
         }
     }
     // 顶部新闻
@@ -549,8 +557,9 @@ body {
     }
     // 图文公用
     &-pics {
-        padding: 14px 0;
+        padding: 14px 0 0;
         li {
+            .pos(r);
             padding: 20px 0;
             .img {
                 .ov(h);
@@ -581,6 +590,25 @@ body {
                 font-size: 14px;
                 color: #424242;
             }
+            .source {
+                line-height: 22px;
+                font-size: 14px;
+                color: #999;
+            }
+            .column {
+                .pos(a);
+                right: 0;
+                bottom: 20px;
+                line-height: 18px;
+                font-size: 12px;
+                color: @ly-a;
+                a {
+                    color: @ly-a;
+                    &:hover {
+                        color: @red;
+                    }
+                }
+            }
             &.tuwen {
                 .img {
                     margin-right: 15px;
@@ -596,8 +624,8 @@ body {
                     .text-e(1);
                 }
                 p {
-                    padding: 7px 0 0;
-                    max-height: 30px * 3;
+                    line-height: 25px;
+                    max-height: 25px * 3;
                     .text-e(3);
                 }
             }
@@ -617,9 +645,8 @@ body {
                     .text-e(2);
                 }
                 p {
-                    padding: 7px 0 0;
-                    max-height: 30px * 6;
-                    .text-e(6);
+                    max-height: 30px * 5;
+                    .text-e(5);
                 }
             }
             &.zutu {
@@ -736,13 +763,20 @@ body {
         }
     }
     &-morepics {
-        padding-top: 12px;
+        padding-top: 8px;
         line-height: 34px;
-        font-size: 22px;
-        color: #424242;
         border-bottom: 2px solid @ly-a;
         text-align: center;
-        cursor: pointer;
+        .more {
+            font-size: 22px;
+            color: #424242;
+            cursor: pointer;
+        }
+        .shou {
+            font-size: 13px;
+            color: #396295;
+            cursor: pointer;
+        }
     }
     &-tit {
         height: 35px;
@@ -1016,9 +1050,9 @@ body {
     }
     // 沸点
     &-boil {
-        .pos(f);
+        .pos(a);
         top: 50%;
-        right: 30px;
+        right: 0;
         z-index: 99;
         width: 212px;
         height: 380px;
