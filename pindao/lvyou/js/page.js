@@ -4,15 +4,18 @@ $(function() {
      * 旅游频道
     */
     // 轮播图banner
-    if($('#sld-banner').length) {
-        $('#sld-banner').slides({
-            generatePagination: true,
-            generateNextPrev: true,
-            play: 3000,
-            pause: 2500,
-            hoverPause: true,
-            effect: 'fade'
-        });
+    if($('.swiper-container').length) {
+        var mySwiper = new Swiper('.swiper-container', {
+            autoplay: true,//可选选项，自动滑动
+            // mousewheel: true,
+            width: 1200,
+            loop : true,
+            effect : 'fade',
+            navigation: {
+                nextEl: '.swiper-next',
+                prevEl: '.swiper-prev',
+            },
+        })
     };
 
     // 返回顶部
@@ -43,17 +46,15 @@ $(function() {
     });
 
     // 显示更多
-    $('.ly-pics').find('li:gt(6)').hide();
+    var liLen = $('.ly-pics').find('li').length - 1;
+    console.log(liLen);
+    var html = $('.ly-pics').find('ul').html();
 
-    $('.ly-morepics').on('click', function() {
-        if($(this).text() == '显示更多') {
-            $(this).text('收起');
-            $(this).parents('.ly-pics').find('li').show();
-        }
-        else {
-            $(this).text('显示更多');
-            $(this).parents('.ly-pics').find('li:gt(6)').hide();
-        }
+    $('.ly-morepics').on('click', '.more', function() {
+        $('.ly-pics').find('ul').append(html);
+    });
+    $('.ly-morepics').on('click', '.shou', function() {
+        $('.ly-pics').find('li:gt(' + liLen + ')').hide();
     });
 });
 
