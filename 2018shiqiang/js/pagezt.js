@@ -104,10 +104,10 @@ $(function() {
         }
 
         if(!$(this).hasClass('ztbtn-dis')) {
-            $(this).addClass('ztbtn-dis');
+            $(this).addClass('ztbtn-dis').html('竞猜成功');
         }
         else {
-            $(this).removeClass('ztbtn-dis');
+            $(this).removeClass('ztbtn-dis').html('竞猜TA');
         };
 
         // 竞猜个数判断，由于分页需要后台判断，这里前端做个展示
@@ -124,7 +124,6 @@ $(function() {
     */
     // 十强公布倒计时
     if($('#times').length) {
-        console.log(222)
         var downcount = $('#times').data('downcount');
         $('#times').downCount({
             date: downcount
@@ -195,14 +194,14 @@ $(function() {
     }
 
     // 个人拉票页投票
-    $('.vote-btn').on('click', function() {
-        if(!$(this).hasClass('vote-btn-dis')) {
+    $('.vote-box').on('click', '.ztbtn', function() {
+        if(!$(this).hasClass('ztbtn-dis')) {
             if(voteNum == 0) {
                 // 投票次数用完
                 $.ztMsg.Alert('tan', '今天的投票数用完啦！明天再来哦~');
             }
             else {
-                $(this).addClass('vote-btn-dis').find('p').html('投票成功');
+                $(this).addClass('ztbtn-dis').find('p').html('投票成功');
                 // 投票次数减1
                 voteNum--;
                 // 票数加1
@@ -221,13 +220,56 @@ $(function() {
         }
     });
 
+    /*
+     * 抽奖
+    */
+    // 我的奖品
+    $('.mylucydraw').on('click', function() {
+        $('.ztpopup-lucydraw').show();
+        var _widht = document.documentElement.clientWidth; //屏幕宽
+        var _height = document.documentElement.clientHeight; //屏幕高
+        var boxWidth = jQuery('.ztpopup-lucydraw .ztpopup-box').outerWidth();
+        var boxHeight = jQuery('.ztpopup-lucydraw .ztpopup-box').outerHeight();
+        //让提示框居中
+        jQuery('.ztpopup-lucydraw .ztpopup-box').css({
+            top: (_height - boxHeight) / 2 + 'px',
+            left: (_widht - boxWidth) / 2 + 'px'
+        });
+    });
+    // 获奖名单滚动
+    if($('.zt-luckdraw-win').length) {
+        $('.zt-luckdraw-win .list').myScroll({
+            speed: 40, //数值越大，速度越慢
+            rowHeight: 100, //li的高度
+            number: 4 //每排滚动个数
+        });
+    };
+
+    luck.init('luck');
+    $('#luck-num').html(luck.num);
+    $("#luck-btn").on('click', function(){
+        // 每次抽取获得中奖位置
+        luck.prize = parseInt(Math.random() * 8);
+        if(luck.num > 0) {
+            // 抽奖次数大于0
+            luck.num--;
+            $('#luck-num').html(luck.num);
+            luck.speed = 100;
+            roll();
+            return false;
+        }
+        else {
+            // 抽奖次数用完
+            $.ztMsg.Alert('tan', '抽奖次数用完啦，去竞猜十强赢奖品吧~', '竞猜十强', '竞猜.html#navlink');
+        }
+    });
 });
 })(jQuery);
 
 // alert和confirm美化，调用方法
 // icon根据提示符号显示，有gou(勾),tan(叹号),zan(赞),liwu(礼物); msg为提示信息，btntxt为按钮文字，不填无按钮
-// $.ztMsg.Alert('icon', 'msg', 'btntxt');
-// $.ztMsg.Confirm('icon', 'msg', 'btntxt', func);
+// $.ztMsg.Alert('icon', 'msg', 'btntxt', 'btnlink');
+// $.ztMsg.Confirm('icon', 'msg', 'btntxt', 'btnlink', func);
 (function() {
     jQuery.ztMsg = {
         Alert: function(icon, msg, btntxt, btnlink) {
@@ -294,6 +336,125 @@ $(function() {
         });
     }
 })();
+
+// 抽奖js
+var luck = {
+    index: -1,   // 当前转动到哪个位置，起点位置
+    count: 8,    // 总共有多少个位置
+    timer: 0,    // setTimeout的ID，用clearTimeout清除
+    speed: 20,   // 初始转动速度
+    times: 10,    // 转动次数
+    cycle: 50,   // 转动基本次数：即至少需要转动多少次再进入抽奖环节
+    num: 3,      // 抽奖次数
+    prize: 0,   //中奖位置
+    prizeData: [
+        {
+            icon: 'liwu',
+            msg: '恭喜！抽中美工云享 1 年VIP体验卡！<br />兑换码：****************',
+            btntxt: '立即使用',
+            btnlink: ''
+        },
+        {
+            icon: 'tan',
+            msg: '很遗憾，没有抽中，再试一次吧！',
+            btntxt: '再试一次'
+        },
+        {
+            icon: 'liwu',
+            msg: '恭喜！抽中巧匠课堂VIP 5折体验卡！<br />兑换码：****************',
+            btntxt: '立即使用',
+            btnlink: 'https://www.qiaojiang.tv/rh'
+        },
+        {
+            icon: 'zan',
+            msg: '恭喜！抽中致设计笔记本+鼠标垫，可到我的奖品查看。',
+            btntxt: '查看我的奖品'
+        },
+        {
+            icon: 'tan',
+            msg: '很遗憾，没有抽中，再试一次吧！',
+            btntxt: '再试一次'
+        },
+        {
+            icon: 'liwu',
+            msg: '恭喜！抽中万素网VIP 1年体验卡！<br />兑换码：****************',
+            btntxt: '立即使用',
+            btnlink: ''
+        },
+        {
+            icon: 'liwu',
+            msg: '恭喜！抽中模库网VIP 1年体验卡！<br />兑换码：****************',
+            btntxt: '立即使用',
+            btnlink: 'http://51mockup.com/plugin.php?id=dc_vip&action=key'
+        },
+        {
+            icon: 'zan',
+            msg: '恭喜！抽中致设计公仔U盘！可到我的奖品查看。',
+            btntxt: '查看我的奖品',
+        },
+
+    ],
+    init:function(id){
+        if ($('#'+id).find('.luck-unit').length > 0) {
+            $luck = $('#'+id);
+            $units = $luck.find('.luck-unit');
+            this.obj = $luck;
+            this.count = $units.length;
+            $luck.find('.luck-unit-'+this.index).addClass('active');
+        };
+    },
+
+    roll:function(){
+        var index = this.index;
+        var count = this.count;
+        var luck = this.obj;
+        $(luck).find('.luck-unit-'+index).removeClass('active');
+        index += 1;
+        if (index > count) {
+            index = 0;
+        };
+        $(luck).find('.luck-unit-' + index).addClass('active');
+        this.index = index;
+        return false;
+    },
+    stop:function(index){
+        // this.prize = index;
+        return false;
+    }
+};
+
+function roll(){
+    luck.times += 1;
+    luck.roll();
+    if (luck.times > luck.cycle + 10 && luck.prize == luck.index) {
+        clearTimeout(luck.timer);
+        luck.times = 0;
+        // 中奖弹出窗
+        luck.prizeData[luck.prize]
+        // 抽奖次数用完
+        $.ztMsg.Alert(luck.prizeData[luck.prize].icon, luck.prizeData[luck.prize].msg, luck.prizeData[luck.prize].btntxt, luck.prizeData[luck.prize].btnlink);
+    }
+    else {
+        if (luck.times < luck.cycle) {
+            luck.speed -= 10;
+        }else if(luck.times == luck.cycle) {
+            var index = Math.random()*(luck.count)|0;
+            // luck.prize = index;
+        }else{
+            if(luck.times > luck.cycle + 10 && ((luck.prize == 0 && luck.index == 7) || luck.prize == luck.index + 1)) {
+                luck.speed += 110;
+            }else {
+                luck.speed += 20;
+            }
+        }
+        if (luck.speed < 40) {
+            luck.speed = 40;
+        };
+
+        luck.timer = setTimeout(roll,luck.speed);
+    }
+    return false;
+}
 
 // 悬浮滚动
 function showFixNav() {
@@ -383,4 +544,56 @@ function copyToClipboard(){
         // start
         var interval = setInterval(countdown, 1000);
     };
+})(jQuery);
+
+// 无缝滚动插件
+(function($) {
+   $.fn.myScroll = function(options) {
+        //默认配置
+        var defaults = {
+            speed: 40, //滚动速度,值越大速度越慢
+            rowHeight: 24, //每行的高度,
+            number: 1 //滚动每排个数
+        };
+        var opts = $.extend({}, defaults, options),
+            intId = [];
+        if($(this).find('ul').height() <= $(this).height()) {return false;}
+        $(this).append($(this).find('ul').clone()).wrapInner('<div class="sw-scroll"></div>');
+        function marquee(obj, step, num) {
+            obj.find('.sw-scroll').animate({
+                marginTop: '-=1'
+            }, 0, function() {
+                var s = Math.abs(parseInt($(this).css("margin-top")));
+                var end = Math.ceil(obj.find('ul:eq(0) li').length / num) * step;
+                if (s >= end) {
+                    $(this).find('ul').eq(0).appendTo(obj.find('.sw-scroll'));
+                    $(this).css('margin-top', 0);
+                }
+            });
+        }
+        this.each(function(i) {
+            var sh = opts["rowHeight"],
+                speed = opts["speed"],
+                _this = $(this),
+                num = opts["number"];
+            intId[i] = setInterval(function() {
+                if (_this.find("ul").height() <= _this.height()) {
+                    clearInterval(intId[i]);
+                } else {
+                    marquee(_this, sh, num);
+                }
+            }, speed);
+            _this.hover(function() {
+                clearInterval(intId[i]);
+            }, function() {
+                intId[i] = setInterval(function() {
+                    if (_this.find("ul").height() <= _this.height()) {
+                        clearInterval(intId[i]);
+                    } else {
+                        marquee(_this, sh, num);
+                    }
+                }, speed);
+            });
+        });
+    }
 })(jQuery);

@@ -1133,7 +1133,7 @@
             }
         }
         img {
-            // max-width: 950px !important;
+            max-width: 800px !important;
             vertical-align: baseline;
         }
         ul {
@@ -1148,11 +1148,11 @@
             text-align: center;
         }
     }
-    // .picview-article {
-    //     img {
-    //         max-width: 1220px !important;
-    //     }
-    // }
+    .picview-article {
+        img {
+            max-width: 1220px !important;
+        }
+    }
 
     &-tit {
         padding: 50px 0 22px;
@@ -1354,15 +1354,15 @@
     .ct-video {
         .pos(r);
         padding: 72px 0 0;
-        // width: 600px;
+        width: 600px;
         margin: 0 auto;
         text-align: center;
-        // video {
-        //     width: 600px;
-        //     height: 338px;
-        //     vertical-align: top;
-        //     .bdr(4px);
-        // }
+        video, embed {
+            width: 600px;
+            height: 338px;
+            vertical-align: top;
+            .bdr(4px);
+        }
         p {
             padding: 15px 0 50px;
             font-size: 14px;
@@ -2300,9 +2300,9 @@
             width: 1140px;
             height: 86px;
             .textarea {
-                width: 1138px - 40px;
+                width: 1138px - 60px;
                 height: 84px - 30px;
-                padding: 15px 20px;
+                padding: 15px 40px 15px 20px;
                 line-height: 22px;
                 border: 1px solid #ddd;
                 font-size: 14px;
