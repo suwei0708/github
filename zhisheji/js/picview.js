@@ -38,7 +38,8 @@ var _zsj = {
             var sublist = jQuery('<div class="sublist"><ul></ul><span class="toogle-thumb icon-apps"></span></div>');
             v.append(sublist);
             jQuery.each(ct.find('img'), function(index) {
-                sublist.find('ul').append('<li><img src="' + jQuery(this).attr('src') + '"/></li>');
+                var subSrc = (typeof jQuery(this).data('org') == 'undefined' ? jQuery(this).attr('src') : jQuery(this).data('org'));
+                sublist.find('ul').append('<li><img src="' + subSrc + '"/></li>');
             });
 
             sublist.find('li').eq(i).addClass('cur');

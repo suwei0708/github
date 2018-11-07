@@ -623,7 +623,7 @@
         <script>
         jQuery(function() {
             //本来是这样的:UE.getEditor('editor');  传入参数后就是下面那样子了，toolbars里的就是工具的图标
-            UE.getEditor('editor', {
+            var editor = UE.getEditor('editor', {
                 zIndex: 988,
                 autoFloatEnabled: false,
                 autoHeightEnabled: false,
@@ -632,6 +632,17 @@
                 toolbars: [
                    ['fullscreen', 'fontsize', 'bold', 'italic', 'underline', 'forecolor', 'link', 'removeformat', 'justifyleft', 'justifycenter', 'justifyright', 'insertimage', 'insertvideo', 'drafts']
                 ]
+            });
+            editor.addListener("contentChange",function(){
+                console.log(editor.getContent());
+                var content = jQuery.parseHTML(editor.getContent());
+                var imgs = jQuery(content).find('img');
+                jQuery.each(imgs, function(i) {
+                    console.log(jQuery(this).attr('src').indexOf('http://img.zhisheji.com/uploads/') < 0);
+                    if(jQuery(this).attr('src').indexOf('http://img.zhisheji.com/uploads/') < 0) {
+                        jQuery(this).attr('src', 'https://static.zcool.cn/git_z/z/images/svg/ueditorzwt.svg');
+                    }
+                });
             });
         })
         </script>

@@ -79,6 +79,14 @@ body {
     width: 75px; height: 75px;
     background-position: -20px -353px;
 }
+.arrow-r {
+    .dis(ib);
+    vertical-align: middle;
+    width: 7px;
+    height: 11px;
+    margin: -3px 0 0 8px;
+    background: url(../images/arrow-r.png) no-repeat 0 0;
+}
 .zt {
     &btn {
         .dis(ib);
@@ -170,6 +178,7 @@ body {
             }
         }
     }
+    /* 首页 */
     // 关于十强
     &-about {
         padding: 60px 0 60px;
@@ -315,8 +324,8 @@ body {
         }
         p {
             float: right;
-            line-height: 50px;
-            margin-top: 27px;
+            line-height: 52px;
+            margin-top: 25px;
             font-size: 26px;
             color: #f1f1f1;
             font-family: 'sylight';
@@ -684,7 +693,7 @@ body {
         }
     }
 
-    // 参选设计师 我的竞猜
+    /* 参选设计师 竞猜 */
     &-election {
         padding: 0 0 60px;
         .tt {
@@ -791,6 +800,7 @@ body {
                     .height(38px);
                     margin: 0 5px;
                     font-size: 24px;
+                    font-family: "sylight";
                     a {
                         color: #fff;
                         &:hover {
@@ -997,7 +1007,8 @@ body {
             }
         }
     }
-    // 个人拉票页
+
+    /* 个人拉票页 */
     &-personal {
         padding: 10px 0 0;
         .info {
@@ -1058,7 +1069,7 @@ body {
                     margin: -3px 22px 0 0;
                 }
             }
-            .vote-btn {
+            .ztbtn {
                 .pos(a);
                 top: 50%;
                 left: 50%;
@@ -1237,6 +1248,145 @@ body {
                     }
                 }
             }
+        }
+    }
+
+    /* 抽奖 */
+    &-luckdraw {
+        // 抽奖规则
+        &-rule {
+            .tit {
+                .avant {
+                    line-height: 60px;
+                }
+            }
+            .list {
+                width: 598px;
+                li {
+                    width: auto;
+                    height: 340px;
+                }
+            }
+        }
+        // 抽奖环节
+        &-turntable {
+            padding: 60px 0;
+            .table {
+                width: 696px;
+                margin: 0 auto;
+                border-spacing: 0;
+                border-collapse: collapse;
+                font-size: 0;
+                .luck-unit {
+                    .pos(r);
+                    width: 230px;
+                    height: 230px;
+                }
+                .active {
+                    &:after {
+                        content: '';
+                        .pos(a);
+                        top: 0;
+                        right: 0;
+                        bottom: 0;
+                        left: 0;
+                        border: 3px solid @yellow;
+                    }
+                }
+                .luck-btn {
+                    .pos(r);
+                    .dis(b);
+                    width: 230px;
+                    height: 230px;
+                    cursor: pointer;
+                    background: url(../images/lucky.jpg) no-repeat 0 0;
+                    .luck-num {
+                        .pos(a);
+                        top: 150px;
+                        left: 0;
+                        width: 100%;
+                        line-height: 24px;
+                        text-align: center;
+                        color: @bg;
+                        font-size: 18px;
+                        font-family: 'symed';
+                    }
+                }
+            }
+            #luck {
+                padding-top: 30px;
+            }
+            .mylucydraw {
+                width: 696px;
+                margin: 0 auto;
+                text-align: right;
+                font-size: 18px;
+                line-height: 40px;
+                font-family: 'sylight';
+                a {
+                    color: @brown;
+                    &:hover {
+                        color: @yellow;
+                        .arrow-r {
+                            background-position: 0 -20px;
+                        }
+                    }
+                }
+            }
+        }
+        // 获奖名单
+        &-win {
+            padding: 60px 0;
+            .zt-tit {
+                p {
+                    margin: 0;
+                }
+            }
+            .list {
+                .ov(h);
+                height: 200px;
+                margin: 20px 0 0;
+                font-size: 0;
+                ul {
+                    margin-right: -63px;
+                }
+                li {
+                    .dis(ib);
+                    vertical-align: middle;
+                    width: 250px;
+                    margin: 48px 63px 0 0;
+                    img {
+                        display: inline-block;
+                        width: 52px;
+                        height: 52px;
+                        .bdr(50%);
+                    }
+                    p {
+                        .height(24px);
+                        font-size: 14px;
+                        margin-left: 62px;
+                        color: #666;
+                        &.name {
+                            padding-top: 2px;
+                            font-size: 16px;
+                            a {
+                                color: #666;
+                                &:hover {
+                                    color: @brown;
+                                }
+                            }
+                        }
+                        span {
+                            margin-left: 5px;
+                            color: @brown;
+                        }
+                    }
+                }
+            }
+        }
+        // 奖品提供商
+        .zt-media {
+            padding: 60px 0 80px;
         }
     }
 }
@@ -1591,6 +1741,41 @@ body {
     &-zan {
         .ztpopup-box {
             width: 600px;
+        }
+    }
+    &-lucydraw {
+        .pos(f);
+        top: 0;
+        left: 0;
+        z-index: 990;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        background: rgba(0, 0, 0, .9);
+        .ztpopup-box {
+            width: 690px;
+            padding: 60px 0 65px;
+            .tipicon {
+                margin-bottom: 42px;
+            }
+            li {
+                font-size: 18px;
+                color: #999;
+                font-family: 'sylight';
+                line-height: 56px;
+                border-bottom: 1px solid #1b1b1b;
+                text-align: left;
+                a {
+                    font-size: 16px;
+                    color: @brown;
+                    &:hover{
+                        color: @yellow;
+                    }
+                }
+            }
+            .ztpopup-ct {
+                padding: 0 80px;
+            }
         }
     }
 }
