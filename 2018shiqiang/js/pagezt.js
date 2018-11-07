@@ -32,9 +32,7 @@ $(function() {
         $('.zt-prize').find('.prize-box').addClass('hide').eq(prizeIndex).removeClass('hide');
     })
     .on('click', '.next', function() {
-        console.log(prizeIndex, prizeLen);
         prizeIndex == prizeLen ? prizeIndex = 0 : prizeIndex++;
-        console.log(prizeIndex, prizeLen, 2);
         $('.zt-prize').find('.list li').removeClass('cur').eq(prizeIndex).addClass('cur');
         $('.zt-prize').find('.prize-box').addClass('hide').eq(prizeIndex).removeClass('hide');
     });
@@ -48,7 +46,6 @@ $(function() {
     }
     $('.fixed-nav').on('click', 'a', function() {
         var index = +$(this).parent('li').index();
-        console.log(index)
         if(index == 6) {
             $('html, body').animate({
                 scrollTop: 0
@@ -67,11 +64,11 @@ $(function() {
         var cxStatus = rnd(0, 1); //随机生成0，1
         if(cxStatus == 0) {
             // 参选成功
-            $.ztMsg.Alert('zan', '参与成功！开始为自己拉票吧~', '进入我的参赛主页', '个人拉票页.html#navlink');
+            $.ztMsg.Alert('gou', '参与成功！开始为自己拉票吧~', '进入我的参赛主页', '个人拉票页.html#navlink');
         }
         else {
             // 参选失败
-            $.ztMsg.Confirm('zan', '需要 3 个或以上原创作品才能参加哟~', '去上传', 'http://www.zhisheji.com/zuopin/product/add/2/0');
+            $.ztMsg.Confirm('tan', '需要 3 个或以上原创作品才能参加哟~', '去上传', 'http://www.zhisheji.com/zuopin/product/add/2/0');
         }
     });
 
@@ -295,11 +292,11 @@ $(function() {
         }
         else {
             if (type == 'alert') {
-                _html += '<div class="ztpopup-btn"><a class="btn" id="zt-ok" href="' + btnlink + '">' + btntxt +'</a></div>';
+                _html += '<div class="ztpopup-btn"><a class="ztbtn" id="zt-ok" href="' + btnlink + '">' + btntxt +'</a></div>';
             }
             else if (type == 'confirm') {
-                _html += '<div class="ztpopup-btn"><a class="btn-sure" id="zt-ok" href="' + btnlink + '">' + btntxt +'</a>';
-                _html += '<a class="btn-cancel" id="zt-no" href="javascript:;">再看看</a></div>';
+                _html += '<div class="ztpopup-btn"><a class="ztbtn-sure" id="zt-ok" href="' + btnlink + '">' + btntxt +'</a>';
+                _html += '<a class="ztbtn-cancel" id="zt-no" href="javascript:;">再看看</a></div>';
             }
         }
         _html += '</div></div>';
@@ -471,7 +468,6 @@ function showFixNav() {
         }
         if($(window).scrollTop() >= $('#scroll' + i).offset().top) {
             $(this).addClass('cur').siblings().removeClass('cur');
-            console.log(i)
         }
     });
 }
@@ -539,7 +535,6 @@ function copyToClipboard(){
             container.find('.num-bg:eq(5)').html(minutes.slice(minutes.length-1,minutes.length));
             container.find('.num-bg:eq(6)').html(seconds.slice(seconds.length-2,seconds.length-1));
             container.find('.num-bg:eq(7)').html(seconds.slice(seconds.length-1,seconds.length));
-            console.log(222)
         };
         // start
         var interval = setInterval(countdown, 1000);
