@@ -92,6 +92,9 @@ $(function() {
         };
     });
 
+    /*
+     * 竞猜
+    */
     // 点击竞猜
     $('.list-myelection').on('click', '.ztbtn', function() {
         var guessNum = $('.list-myelection').find('.ztbtn-dis').length;
@@ -116,9 +119,6 @@ $(function() {
         }
     });
 
-    /*
-     * 竞猜
-    */
     // 十强公布倒计时
     if($('#times').length) {
         var downcount = $('#times').data('downcount');
@@ -346,6 +346,7 @@ var luck = {
     prize: 0,   //中奖位置
     prizeData: [
         {
+            name: '美工云VIP1年',
             icon: 'liwu',
             msg: '恭喜！抽中美工云享 1 年VIP体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
@@ -357,12 +358,14 @@ var luck = {
             btntxt: '再试一次'
         },
         {
+            name: '巧匠课堂VIP5折卡',
             icon: 'liwu',
             msg: '恭喜！抽中巧匠课堂VIP 5折体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
             btnlink: 'https://www.qiaojiang.tv/rh'
         },
         {
+            name: '致设计笔记本+鼠标垫',
             icon: 'zan',
             msg: '恭喜！抽中致设计笔记本+鼠标垫，可到我的奖品查看。',
             btntxt: '查看我的奖品'
@@ -373,18 +376,21 @@ var luck = {
             btntxt: '再试一次'
         },
         {
+            name: '万素网VIP1年',
             icon: 'liwu',
             msg: '恭喜！抽中万素网VIP 1年体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
             btnlink: ''
         },
         {
+            name: '模库网VIP1年',
             icon: 'liwu',
             msg: '恭喜！抽中模库网VIP 1年体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
             btnlink: 'http://51mockup.com/plugin.php?id=dc_vip&action=key'
         },
         {
+            name: '致设计公仔U盘',
             icon: 'zan',
             msg: '恭喜！抽中致设计公仔U盘！可到我的奖品查看。',
             btntxt: '查看我的奖品',
@@ -427,9 +433,18 @@ function roll(){
         clearTimeout(luck.timer);
         luck.times = 0;
         // 中奖弹出窗
-        luck.prizeData[luck.prize]
-        // 抽奖次数用完
         $.ztMsg.Alert(luck.prizeData[luck.prize].icon, luck.prizeData[luck.prize].msg, luck.prizeData[luck.prize].btntxt, luck.prizeData[luck.prize].btnlink);
+        // 实时中奖信息更新
+        if(luck.prizeData[luck.prize].name) {
+            var html = '<li><a href="#" target="_blank" class="fll">'
+                            + '<img src="http://www.zhisheji.com/uc_server/data/avatar/000/14/64/10_avatar_middle.jpg" width="52" height="52" alt="">'
+                        + '</a>'
+                        + '<p class="name"><a href="#" target="_blank">刚出炉小笼包</a></p>'
+                        + '<p>获得了<span>' + luck.prizeData[luck.prize].name + '</span></p></li>'
+            $.each($('.zt-luckdraw-win .list').find('ul'), function(i) {
+                $(this).prepend(html).find('li').last().remove();
+            });
+        }
     }
     else {
         if (luck.times < luck.cycle) {
