@@ -124,6 +124,7 @@ body {
             line-height: 80px;
             color: #666;
             font-family: 'sylight';
+            .anim();
             &:hover, &.cur {
                 color: @brown;
                 border-bottom: 3px solid @brown;
@@ -379,6 +380,7 @@ body {
             margin-top: 70px;
             font-size: 0;
             li {
+                .ov(h);
                 .pos(r);
                 .dis(ib);
                 vertical-align: top;
@@ -386,6 +388,15 @@ body {
                 height: 402px;
                 border-left: 1px solid @bg;
                 border-bottom: 1px solid @bg;
+                &:after {
+                    content: '';
+                    .pos(a);
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 132px;
+                    background: url(../images/person-bg.png) no-repeat 0 0;
+                }
                 .img {
                     width: 400px;
                     height: 402px;
@@ -393,9 +404,11 @@ body {
                 .bg {
                     .pos(a);
                     top: 0;
-                    left: 0;
+                    left: -100%;
+                    z-index: 5;
                     width: 100%;
                     height: 100%;
+                    .anim();
                     img {
                         .dis(n);
                         .pos(a);
@@ -404,13 +417,14 @@ body {
                         width: 20px;
                     }
                 }
-                .info {
+                .info, .info2 {
                     .pos(a);
                     bottom: 0;
                     left: 0;
+                    z-index: 4;
                     width: 100%;
                     height: 132px;
-                    background: url(../images/person-bg.png) no-repeat 0 0;
+                    .anim();
                     strong {
                         .dis(b);
                         line-height: 40px;
@@ -428,7 +442,6 @@ body {
                     }
                 }
                 .slogan {
-                    .dis(n);
                     .pos(a);
                     top: 35px;
                     left: 35px;
@@ -448,15 +461,16 @@ body {
                 }
                 &:hover {
                     .bg {
+                        left: 0;
                         background: @yellow;
                         img {
                             .dis(b);
                         }
                     }
-                    .slogan {
-                        .dis(b);
-                    }
                     .info {
+                        left: 100%;
+                    }
+                    .info2 {
                         background: none;
                         strong, p {
                             color: @bg
@@ -603,6 +617,7 @@ body {
                 margin-right: -2px;
             }
             li {
+                .ov(h);
                 .pos(r);
                 .dis(ib);
                 vertical-align: top;
@@ -613,12 +628,12 @@ body {
                 border-right: 1px solid @bg;
                 border-bottom: 1px solid @bg;
                 .ecode {
-                    .dis(n);
                     .pos(a);
                     top: 0;
-                    left: 0;
+                    left: -100%;
                     width: 100%;
                     height: 100%;
+                    .anim();
                 }
                 .img {
                     margin-top: 60px;
@@ -640,7 +655,7 @@ body {
                 }
                 &:hover {
                     .ecode {
-                        .dis(b);
+                        left: 0;
                     }
                 }
             }
@@ -648,6 +663,7 @@ body {
         .item {
             padding: 70px 0 0;
             p {
+                .height(45px);
                 .pos(r);
                 .dis(ib);
                 vertical-align: top;
@@ -673,22 +689,32 @@ body {
                     width: 240px;
                     text-align: right;
                 }
-                img {
-                    .dis(n);
-                    height: 45px;
-                    &.gray {
-                        .dis(i);
-                    }
-                }
-                a:hover {
+                a {
+                    .pos(r);
+                    .dis(ib);
                     img {
-                        .dis(i);
+                        .pos(a);
+                        top: 0;
+                        left: 0;
+                        .dis(b);
                         height: 45px;
-                        &.gray {
-                            .dis(n);
+                        .opacity(0);
+                        .anim();
+                    }
+                    .gray {
+                        .pos(s);
+                        .opacity(1);
+                    }
+                    &:hover {
+                        img {
+                            .opacity(1);
+                        }
+                        .gray {
+                            .opacity(0);
                         }
                     }
                 }
+
             }
         }
     }
@@ -698,6 +724,7 @@ body {
         padding: 0 0 60px;
         .tt {
             padding: 34px 0 0;
+            margin-bottom: -1px;
             ul {
                 margin-top: 100px;
                 font-size: 0;
@@ -713,6 +740,7 @@ body {
                         line-height: 33px;
                         color: #666;
                         font-size: 16px;
+                        .anim();
                         &:hover {
                             color: @brown;
                         }
@@ -749,7 +777,7 @@ body {
             h3 {
                 .dis(ib);
                 vertical-align: baseline;
-                font-size: 35px;
+                font-size: 26px;
                 color: #f1f1f1;
                 font-family: 'sylight';
             }
@@ -828,6 +856,7 @@ body {
                         color: #999;
                         background: #333;
                         font-family: "syreg";
+                        .anim();
                         &:hover {
                             color: #0d0d0d;
                             background: @yellow;
@@ -924,10 +953,12 @@ body {
                 }
             }
             .list {
-                width: 712px;
+                width: 847px;
                 li {
                     width: auto;
+                    padding: 46px 80px 0 121px;
                     height: 374px;
+                    border: none;
                 }
             }
         }
@@ -949,14 +980,13 @@ body {
             h3 {
                 .dis(ib);
                 vertical-align: top;
-                padding-bottom: 15px;
                 font-size: 26px;
                 color: #f1f1f1;
                 font-family: 'sylight';
             }
         }
         .list {
-            padding: 10px 0 90px;
+            padding: 0 0 92px;
             font-size: 0;
             ul {
                 margin-right: -48px;
@@ -984,6 +1014,7 @@ body {
                     font-family: 'sylight';
                     a {
                         color: @brown;
+                        .anim();
                         &:after {
                             content: '';
                             .dis(ib);
@@ -1080,6 +1111,7 @@ body {
                 cursor: pointer;
                 text-align: center;
                 .bdr(50%);
+                .anim();
                 &:hover {
                     background: @yellow;
                 }
@@ -1238,6 +1270,7 @@ body {
                         font-family: 'sylight';
                         a {
                             color: #666;
+                            .anim();
                             &:hover {
                                 color: @yellow;
                             }
@@ -1629,14 +1662,15 @@ body {
         }
         a {
             color: #666;
+            .anim();
             &:hover {
-                color: #ccc;
+                color: @yellow;
                 font-family: 'syreg';
             }
             &.backtop {
                 font-family: 'syreg';
                 &:hover {
-                    color: @brown;
+                    color: @yellow;
                     .arrow-top {
                         background-position: 0 -20px;
                     }
@@ -1645,7 +1679,7 @@ body {
         }
         &.cur {
             a {
-                color: #ccc;
+                color: @yellow;
                 font-family: 'syreg';
             }
         }

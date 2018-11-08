@@ -28,6 +28,26 @@ $(function() {
             $.ztMsg.Confirm('tan', '需要 3 个或以上原创作品才能参加哟~', '去上传', 'http://www.zhisheji.com/zuopin/product/add/2/0');
         }
     });
+
+    /*
+     * 参选设计师
+    */
+    var voteNum = 3; //投票次数
+    $('.list-election').on('click', '.ztbtn', function() {
+        if(!$(this).hasClass('ztbtn-dis')) {
+            if(voteNum == 0) {
+                // 投票次数用完
+                $.ztMsg.Alert('tan', '今天的投票数用完啦！明天再来哦~');
+            }
+            else {
+                $(this).addClass('ztbtn-dis').html('投票成功');
+                // 投票次数减1
+                voteNum--;
+                // 票数加1
+                $(this).parents('li').find('.num').html(+$(this).parents('li').find('.num').html() + 1);
+            }
+        };
+    });
 });
 
 /*复制代码到剪切板*/

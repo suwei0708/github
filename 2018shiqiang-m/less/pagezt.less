@@ -194,7 +194,7 @@ body {
                 margin: -3px 0 0 10px;
                 width: 21px;
                 height: 21px;
-                background: url(../images/sy-arrow.png) no-repeat 0 0;
+                background: url(../images/sy-arrow.png) no-repeat 0 0 / cover;
             }
         }
     }
@@ -513,7 +513,7 @@ body {
 
     /* 参选设计师 */
     &-election {
-        .pds(t, 35);
+        .pd(35, 0, 50);
         .tt {
             ul {
                 font-size: 0;
@@ -612,6 +612,143 @@ body {
             }
         }
     }
+
+    /* 个人拉票页 */
+    &-personal {
+        .info {
+            .pd(60, 0, 25);
+            text-align: center;
+            .img {
+                .ov(h);
+                .wh(118);
+                margin: 0 auto;
+                .mgs(b, 12);
+                img {
+                    .wh(118);
+                    .bdr(50%);
+                }
+            }
+            h2 {
+                .lh(48);
+                .fz(30);
+                color: #ccc;
+                font-weight: 700;
+            }
+            p {
+                .lh(36);
+                .fz(24);
+                color: #666;
+                .num {
+                    color: @yellow;
+                }
+            }
+        }
+
+        .vote-box {
+            .pos(r);
+            .pds(b, 55);
+            .ztbtn {
+                .dis(b);
+                .mg(0, 40);
+                .lhh(80);
+                background: @brown;
+                color: #020202;
+                .fz(30);
+                cursor: pointer;
+                text-align: center;
+                .bdr(10 / @font);
+                &-dis {
+                    background: @yellow;
+                }
+            }
+            .bdsharebuttonbox {
+                padding: 35px 0 0;
+                text-align: center;
+                font-size: 0;
+                p {
+                    .lhh(40);
+                    .fz(26);
+                    .mgs(b, 20);
+                    color: #666;
+                }
+                a {
+                    float: none;
+                    background: none;
+                    .w(67);
+                    height: auto;
+                    .dis(ib);
+                    text-indent: 0;
+                    .mg(0, 40);
+                    img {
+                        .wh(67);
+                        .dis(b);
+                    }
+                }
+                span {
+                    .dis(b);
+                    .lhh(58);
+                    .fz(22);
+                    color: #666;
+                }
+            }
+        }
+
+        .works {
+            .pd(0, 0, 70, 30);
+            .list {
+                .pd(40, 0, 0, 0);
+                font-size: 0;
+                text-align: center;
+                ul {
+                    white-space: nowrap;
+                    .ovx(a);
+                }
+                li {
+                    .dis(ib);
+                    .mgs(r, 25);
+                    vertical-align: middle;
+                    img {
+                        .w(320);
+                        .h(195);
+                    }
+                }
+            }
+        }
+
+        .supporter {
+            .pd(0, 0, 60);
+            .zt-tit {
+                .pd(0, 30);
+            }
+            .list {
+                .pds(t, 20);
+                font-size: 0;
+                li {
+                    .dis(ib);
+                    vertical-align: middle;
+                    width: 20%;
+                    .mgs(t, 30);
+                    text-align: center;
+                    img {
+                        .dis(b);
+                        .wh(78);
+                        margin: 0 auto;
+                        .mgs(b, 10);
+                        .bdr(50%);
+                    }
+                    p {
+                        .lhh(42);
+                        .mg(0, 5);
+                        .fz(24);
+                        color: #999;
+                        a {
+                            color: #999;
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
 // 弹窗
@@ -639,10 +776,12 @@ body {
         .pos(a);
         .b(-115);
         left: 50%;
+        .wh(53);
         .translateX(-50%);
         span {
-            .fz(52);
-            color: #666;
+            .dis(b);
+            .wh(53);
+            background: url(../images/close.png) no-repeat 0 0 / cover;
         }
     }
     &-ct {
@@ -675,5 +814,47 @@ body {
                 .bdr(10 / @font);
             }
         }
+    }
+}
+
+// 下拉
+.dropload-down, {
+    position: relative;
+    height: 0;
+    overflow: hidden;
+    .fz(22);
+    .mg(40, 0, 0);
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+.dropload-load, .dropload-down, .dropload-noData, .dropload-refresh, .dropload-update {
+    .lhh(42);
+    text-align: center;
+    color: #666;
+    .fz(22);
+}
+.dropload-load  {
+    img {
+        .dis(ib);
+        vertical-align: middle;
+        .mg(-3, 10, 0, 0);
+        -webkit-animation: loading 1s linear infinite;
+        animation: loading 1s linear infinite;
+    }
+}
+@-webkit-keyframes loading {
+    from {
+        -webkit-transform: rotate(0);
+    }
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+@keyframes loading {
+    from {
+        transform: rotate(0);
+    }
+    to {
+        transform: rotate(360deg);
     }
 }
