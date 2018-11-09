@@ -194,6 +194,9 @@ body {
                 color: #f1f1f1;
                 font-family: 'sylight';
             }
+            .avant {
+                line-height: 60px;
+            }
         }
         .list {
             p {
@@ -957,7 +960,7 @@ body {
                 li {
                     width: auto;
                     padding: 46px 80px 0 121px;
-                    height: 374px;
+                    height: 376px - 46;
                     border: none;
                 }
             }
@@ -1285,22 +1288,55 @@ body {
     &-luckdraw {
         // 抽奖规则
         &-rule {
-            .tit {
+            padding: 0;
+            .zt-tit {
+                font-size: 0;
+                &:after {
+                    .dis(n);
+                }
                 .avant {
-                    line-height: 60px;
+                    vertical-align: baseline;
+                    font-size: 52px;
+                }
+                p {
+                    float: none;
+                    .dis(ib);
+                    vertical-align: baseline;
+                    margin: 0 0 0 10px;
                 }
             }
             .list {
-                width: 598px;
+                padding: 111px 0 0;
+                width: 461px;
                 li {
                     width: auto;
-                    height: 340px;
+                    .dis(b);
+                    *display: block;
+                    height: 462px - 60;
+                    padding: 60px 64px 0;
+                    border: none;
+                    .title {
+                        padding: 0 0 25px;
+                        img {
+                            .dis(ib);
+                            vertical-align: baseline;
+                            margin-right: 9px;
+                        }
+                    }
+                    p {
+                        line-height: 34px;
+                        background-position: 0 16px;
+                    }
+                    .ztbtn {
+                        margin: 100px 0 0 22px;
+                    }
                 }
             }
         }
         // 抽奖环节
         &-turntable {
-            padding: 60px 0;
+            padding: 50px 0;
+
             .table {
                 width: 696px;
                 margin: 0 auto;
@@ -1343,9 +1379,6 @@ body {
                     }
                 }
             }
-            #luck {
-                padding-top: 30px;
-            }
             .mylucydraw {
                 width: 696px;
                 margin: 0 auto;
@@ -1366,10 +1399,21 @@ body {
         }
         // 获奖名单
         &-win {
-            padding: 60px 0;
+            padding: 50px 0;
             .zt-tit {
+                font-size: 0;
+                &:after {
+                    .dis(n);
+                }
+                .avant {
+                    vertical-align: baseline;
+                    font-size: 52px;
+                }
                 p {
-                    margin: 0;
+                    float: none;
+                    .dis(ib);
+                    vertical-align: baseline;
+                    margin: 0 0 0 40px;
                 }
             }
             .list {
@@ -1416,7 +1460,23 @@ body {
         }
         // 奖品提供商
         .zt-media {
-            padding: 60px 0 80px;
+            padding: 50px 0 80px;
+            .zt-tit {
+                font-size: 0;
+                &:after {
+                    .dis(n);
+                }
+                .avant {
+                    vertical-align: baseline;
+                    font-size: 52px;
+                }
+                p {
+                    float: none;
+                    .dis(ib);
+                    vertical-align: baseline;
+                    margin: 0 0 0 40px;
+                }
+            }
         }
     }
 }

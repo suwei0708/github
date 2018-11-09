@@ -221,7 +221,7 @@ $(function() {
      * 抽奖
     */
     // 我的奖品
-    $('.mylucydraw').on('click', function() {
+    $('.ztbtn-myluckdraw').on('click', function() {
         $('.ztpopup-lucydraw').show();
         var _widht = document.documentElement.clientWidth; //屏幕宽
         var _height = document.documentElement.clientHeight; //屏幕高
@@ -269,9 +269,9 @@ $(function() {
 // $.ztMsg.Confirm('icon', 'msg', 'btntxt', 'btnlink', func);
 (function() {
     jQuery.ztMsg = {
-        Alert: function(icon, msg, btntxt, btnlink) {
+        Alert: function(icon, msg, btntxt, btnlink, callback) {
             GenerateHtml('alert', icon, msg, btntxt, btnlink);
-            btnOk();
+            btnOk(callback);
             btnNo();
         },
         Confirm: function(icon, msg, btntxt, btnlink, callback) {
@@ -350,50 +350,62 @@ var luck = {
             icon: 'liwu',
             msg: '恭喜！抽中美工云享 1 年VIP体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
-            btnlink: ''
+            btnlink: '',
+            func: null
         },
         {
             icon: 'tan',
             msg: '很遗憾，没有抽中，再试一次吧！',
-            btntxt: '再试一次'
+            btntxt: '再试一次',
+            func: null
         },
         {
             name: '巧匠课堂VIP5折卡',
             icon: 'liwu',
             msg: '恭喜！抽中巧匠课堂VIP 5折体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
-            btnlink: 'https://www.qiaojiang.tv/rh'
+            btnlink: 'https://www.qiaojiang.tv/rh',
+            func: null
         },
         {
             name: '致设计笔记本+鼠标垫',
             icon: 'zan',
             msg: '恭喜！抽中致设计笔记本+鼠标垫，可到我的奖品查看。',
-            btntxt: '查看我的奖品'
+            btntxt: '查看我的奖品',
+            func: function() {
+                $('.ztbtn-myluckdraw').trigger('click');
+            }
         },
         {
             icon: 'tan',
             msg: '很遗憾，没有抽中，再试一次吧！',
-            btntxt: '再试一次'
+            btntxt: '再试一次',
+            func: null
         },
         {
             name: '万素网VIP1年',
             icon: 'liwu',
             msg: '恭喜！抽中万素网VIP 1年体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
-            btnlink: ''
+            btnlink: '',
+            func: null
         },
         {
             name: '模库网VIP1年',
             icon: 'liwu',
             msg: '恭喜！抽中模库网VIP 1年体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
-            btnlink: 'http://51mockup.com/plugin.php?id=dc_vip&action=key'
+            btnlink: 'http://51mockup.com/plugin.php?id=dc_vip&action=key',
+            func: null
         },
         {
             name: '致设计公仔U盘',
             icon: 'zan',
             msg: '恭喜！抽中致设计公仔U盘！可到我的奖品查看。',
             btntxt: '查看我的奖品',
+            func: function() {
+                $('.ztbtn-myluckdraw').trigger('click');
+            }
         },
 
     ],
@@ -433,7 +445,7 @@ function roll(){
         clearTimeout(luck.timer);
         luck.times = 0;
         // 中奖弹出窗
-        $.ztMsg.Alert(luck.prizeData[luck.prize].icon, luck.prizeData[luck.prize].msg, luck.prizeData[luck.prize].btntxt, luck.prizeData[luck.prize].btnlink);
+        $.ztMsg.Alert(luck.prizeData[luck.prize].icon, luck.prizeData[luck.prize].msg, luck.prizeData[luck.prize].btntxt, luck.prizeData[luck.prize].btnlink, luck.prizeData[luck.prize].func);
         // 实时中奖信息更新
         if(luck.prizeData[luck.prize].name) {
             var html = '<li><a href="#" target="_blank" class="fll">'
