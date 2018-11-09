@@ -48,6 +48,33 @@ $(function() {
             }
         };
     });
+
+    /*
+     * 个人主页
+    */
+    // 投票
+    $('.vote-box').on('click', '.ztbtn', function() {
+        if(!$(this).hasClass('ztbtn-dis')) {
+            if(voteNum == 0) {
+                // 投票次数用完
+                $.ztMsg.Alert('tan', '今天的投票数用完啦！明天再来哦~');
+            }
+            else {
+                $(this).addClass('ztbtn-dis').find('p').html('投票成功');
+                // 投票次数减1
+                voteNum--;
+                // 票数加1
+                $(this).parents('.zt-personal').find('.info .num').html(+$(this).parents('.zt-personal').find('.info .num').html() + 1);
+                // TA的支持者增加头像和昵称
+                var html = '<li>'
+                               +'<a href="#" target="_blank"><img src="http://www.zhisheji.com/uc_server/data/avatar/000/14/64/10_avatar_middle.jpg" width="78" height="78" alt=""></a>'
+                               +'<p><a href="#" target="_blank">新出炉小笼包</a></p>'
+                           +'</li>';
+                $('.supporter .list ul').find('li:last').remove();
+                $('.supporter .list ul').prepend(html);
+            }
+        }
+    });
 });
 
 /*复制代码到剪切板*/
