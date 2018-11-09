@@ -63,11 +63,15 @@ $(function() {
     $('.ztbtn-canxuan').on('click', function() {
         var cxStatus = rnd(0, 1); //随机生成0，1
         if(cxStatus == 0) {
-            // 参选成功
+            $('.ztbtn-canxuan').off('click');
+            // 参选成功弹窗提示
             $.ztMsg.Alert('gou', '参与成功！开始为自己拉票吧~', '进入我的参赛主页', '个人拉票页.html#navlink');
+            // 参选成功文字变化和增加链接
+            $('.ztbtn-canxuan').html('我的主页<span class="zticon"></span>').removeClass('ztbtn-canxuan').attr('href', '个人拉票页.html#navlink');
+            return false;
         }
         else {
-            // 参选失败
+            // 参选失败弹窗提示
             $.ztMsg.Confirm('tan', '需要 3 个或以上原创作品才能参加哟~', '去上传', 'http://www.zhisheji.com/zuopin/product/add/2/0');
         }
     });
