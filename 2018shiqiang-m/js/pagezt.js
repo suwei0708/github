@@ -20,8 +20,12 @@ $(function() {
     $('.ztbtn-canxuan').on('click', function() {
         var cxStatus = rnd(0, 1); //随机生成0，1
         if(cxStatus == 0) {
+            $('.ztbtn-canxuan').off('click');
             // 参选成功
-            $.ztMsg.Alert('gou', '参与成功！开始为自己拉票吧~', '进入我的参赛主页', '个人拉票页.html#navlink');
+            $.ztMsg.Alert('gou', '参与成功！开始为自己拉票吧~', '进入我的参赛主页', '个人主页.html');
+            // 参选成功文字变化和增加链接
+            $('.ztbtn-canxuan').html('我的主页<span class="zticon"></span>').removeClass('ztbtn-canxuan').attr('href', '个人主页.html');
+            return false;
         }
         else {
             // 参选失败
