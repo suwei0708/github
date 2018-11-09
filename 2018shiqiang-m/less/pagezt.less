@@ -664,7 +664,7 @@ body {
             .bdsharebuttonbox {
                 padding: 35px 0 0;
                 text-align: center;
-                font-size: 0;
+                // font-size: 0;
                 p {
                     .lhh(40);
                     .fz(26);
@@ -672,23 +672,48 @@ body {
                     color: #666;
                 }
                 a {
+                    .pos(r);
                     float: none;
-                    background: none;
-                    .w(67);
-                    height: auto;
                     .dis(ib);
-                    text-indent: 0;
                     .mg(0, 40);
-                    img {
+                    .w(67);
+                    .h(125);
+                    background: none;
+                    &:before {
+                        .pos(a);
+                        top: 0;
+                        left: 0;
+                        content: '';
                         .wh(67);
-                        .dis(b);
+                    }
+                    &.icon-swx {
+                        &:before {
+                            background: url(../images/weixin.png) no-repeat 0 0 / cover;
+                        }
+                    }
+                    &.icon-swb {
+                        &:before {
+                            background: url(../images/weibo.png) no-repeat 0 0 / cover;
+                        }
+                    }
+                    &.icon-sqq {
+                        &:before {
+                            background: url(../images/qq.png) no-repeat 0 0 / cover;
+                        }
+                    }
+                    &.icon-sqzone {
+                        &:before {
+                            background: url(../images/qzone.png) no-repeat 0 0 / cover;
+                        }
                     }
                 }
                 span {
                     .dis(b);
+                    .mgs(t, 67);
                     .lhh(58);
                     .fz(22);
                     color: #666;
+                    text-indent: 0;
                 }
             }
         }
