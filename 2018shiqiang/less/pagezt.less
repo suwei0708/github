@@ -724,7 +724,7 @@ body {
 
     /* 参选设计师 竞猜 */
     &-election {
-        padding: 0 0 60px;
+        padding: 0 0 80px;
         .tt {
             padding: 34px 0 0;
             margin-bottom: -1px;
@@ -959,7 +959,7 @@ body {
                 width: 847px;
                 li {
                     width: auto;
-                    padding: 46px 80px 0 121px;
+                    padding: 46px 80px 0 109px;
                     height: 376px - 46;
                     border: none;
                 }
@@ -969,27 +969,30 @@ body {
 
     /* 往期十强 */
     &-tendes {
-        padding: 70px 0 0;
+        padding: 32px 0 0;
         .tit {
+            padding-top: 20px;
             .pos(r);
             line-height: 40px;
             font-size: 0;
             .avant {
+                .dis(ib);
                 padding: 0 0 30px;
+                margin-right: 30px;
                 line-height: 52px;
                 font-size: 52px;
                 color: @brown;
             }
             h3 {
                 .dis(ib);
-                vertical-align: top;
+                vertical-align: bototm;
                 font-size: 26px;
                 color: #f1f1f1;
                 font-family: 'sylight';
             }
         }
         .list {
-            padding: 0 0 92px;
+            padding: 0 0 80px;
             font-size: 0;
             ul {
                 margin-right: -48px;
@@ -1189,7 +1192,24 @@ body {
             }
         }
         .works {
-            padding: 50px 0 42px;
+            padding: 50px 0 1px;
+            .zt-tit {
+                font-size: 0;
+                .avant {
+                    .dis(ib);
+                    vertical-align: bottom;
+                    font-size: 52px;
+                }
+                p {
+                    float: none;
+                    .dis(ib);
+                    vertical-align: bottom;
+                    margin: 0 0 0 30px;
+                }
+                &:after {
+                    .dis(n);
+                }
+            }
             .list {
                 padding: 90px 0 60px;
                 font-size: 0;
@@ -1244,7 +1264,24 @@ body {
             }
         }
         .supporter {
-            padding: 60px 0;
+            padding: 60px 0 80px;
+            .zt-tit {
+                font-size: 0;
+                .avant {
+                    .dis(ib);
+                    vertical-align: bottom;
+                    font-size: 52px;
+                }
+                p {
+                    float: none;
+                    .dis(ib);
+                    vertical-align: bottom;
+                    margin: 0 0 0 30px;
+                }
+                &:after {
+                    .dis(n);
+                }
+            }
             .list {
                 margin: 0 auto;
                 padding: 20px 0 0;
@@ -1328,7 +1365,29 @@ body {
                         background-position: 0 16px;
                     }
                     .ztbtn {
-                        margin: 100px 0 0 22px;
+                        width: 195px;
+                        .height(50px);
+                        font-size: 16px;
+                        margin: 62px 0 0 22px;
+                        border: 3px solid @brown;
+                        color: @brown;
+                        font-family: 'syreg';
+                        .zticon {
+                            width: 31px;
+                            height: 12px;
+                            margin: -3px 0 0 52px;
+                            background-position: -10px -10px;
+                            -webkit-transition: transform .6s cubic-bezier(.215, .61, .355, 1) 0s;
+                            transition: transform .6s cubic-bezier(.215, .61, .355, 1) 0s;
+                        }
+                        &:hover {
+                            border: 3px solid @yellow;
+                            color: @yellow;
+                            .zticon {
+                                .translate(10px, 0);
+                                background-position: -10px -42px;
+                            }
+                        }
                     }
                 }
             }
@@ -1379,23 +1438,6 @@ body {
                     }
                 }
             }
-            .mylucydraw {
-                width: 696px;
-                margin: 0 auto;
-                text-align: right;
-                font-size: 18px;
-                line-height: 40px;
-                font-family: 'sylight';
-                a {
-                    color: @brown;
-                    &:hover {
-                        color: @yellow;
-                        .arrow-r {
-                            background-position: 0 -20px;
-                        }
-                    }
-                }
-            }
         }
         // 获奖名单
         &-win {
@@ -1413,7 +1455,7 @@ body {
                     float: none;
                     .dis(ib);
                     vertical-align: baseline;
-                    margin: 0 0 0 40px;
+                    margin: 0 0 0 30px;
                 }
             }
             .list {
@@ -1474,7 +1516,7 @@ body {
                     float: none;
                     .dis(ib);
                     vertical-align: baseline;
-                    margin: 0 0 0 40px;
+                    margin: 0 0 0 30px;
                 }
             }
         }
@@ -1483,7 +1525,7 @@ body {
 
 // 评论
 .ct-comment-new {
-    padding: 0 0 60px;
+    padding: 0 0 80px;
     background: none;
     h2 {
         height: 40px;
@@ -1690,16 +1732,16 @@ body {
     margin-top: -220px;
     background: @bg;
     border: 2px solid @gray;
-    .title {
+    .ztbtn {
         .pos(r);
         top: -14px;
         left: -10px;
+        .dis(b);
         width: 158px;
         .height(67px);
         background: @yellow;
         color: @bg;
         text-align: center;
-        cursor: pointer;
         .zticon {
             width: 18px;
             height: 18px;
