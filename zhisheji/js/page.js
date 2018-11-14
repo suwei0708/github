@@ -70,6 +70,17 @@ $(function() {
         $(this).parents('.column-list').hide();
     });
 
+
+    $('.so-box').on('focus', '.txt', function() {
+        $(this).parents('.so-box').addClass('hover').find('.so-dropdown').show();
+    })
+    .on('blur', '.txt', function() {
+        var _this = $(this);
+        setTimeout(function() {
+            _this.parents('.so-box').removeClass('hover').find('.so-dropdown').hide();
+        });
+    });
+
     // 点击回复
     $('.ct-comment').on('click', '.btn-replay', function() {
         var replayForm = $(this).parents('.com-box').find('.reply-form');
