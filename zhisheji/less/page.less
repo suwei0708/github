@@ -865,8 +865,6 @@
     }
     &-nav {
         border-top: 1px solid #eee;
-        border-bottom: 1px solid #eee;
-        margin-top: 40px;
         .cl();
         line-height: 70px;
         .tab {
@@ -929,6 +927,7 @@
                         font-size: 14px;
                         color: #666;
                         &:hover {
+                            color: @blue;
                             background: #f6f6f6;
                         }
                     }
@@ -963,22 +962,27 @@
         }
     }
     &-tit {
+        margin-top: 30px;
+        padding-left: 80px;
+        text-align: center;
+        font-size: 0;
         li {
-            float: left;
-            margin-right: 47px;
+            .dis(ib);
+            vertical-align: top;
+            margin: 0 32px;
+            line-height: 56px;
             font-size: 16px;
             a {
                 .dis(b);
                 color: #666;
-                border-bottom: 2px solid #fff;
-                &.cur, &:hover {
-                    .pos(r);
-                    bottom: -1px;
-                    .ov(h);
-                    height: 68px;
-                    line-height: 68px;
+                border-bottom: 3px solid #fff;
+                &.cur, &:hover, &.cur:hover {
                     color: @blue;
+                    font-weight: 700;
                     border-bottom: 3px solid @blue;
+                }
+                &:hover {
+                    font-weight: 400;
                 }
             }
         }
