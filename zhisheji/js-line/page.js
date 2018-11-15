@@ -25,9 +25,13 @@ $(function() {
         var _this=$(this);
         if(!$(this).hasClass('dis')) {
             $.get("/userinfo/actfollow/add/"+followid,function(data){
-                if(data==1){
-                    _this.addClass('dis').removeClass("btn-blue").html('已关注');
+                if(data==0){
+                    _this.addClass('dis').html('已关注'); //.removeClass("btn-blue")
                     $('.at-gz').find('.btn-gz').html('已关注作者');
+                }
+                else if(data==1){
+                    _this.addClass('dis').html('相互关注'); //.removeClass("btn-blue")
+                    $('.at-gz').find('.btn-gz').html('已相互关注');
                 }
                 else{
                     $(".h-login .btn-lg").click();
@@ -36,7 +40,7 @@ $(function() {
         }
         else {
             $.get("/userinfo/actfollow/del/"+followid,function(data){
-                if(data==1){
+                if(data==0||data==1){
                     _this.removeClass('dis').addClass("btn-blue").html('关注');
                     $('.at-gz').find('.btn-gz').html('+ 关注作者');
                 }
@@ -87,16 +91,28 @@ $(function() {
         $(this).parents('.column-list').hide();
     });
 
+    $('.so-box').on('focus', '.txt', function() {
+        $(this).parents('.so-box').addClass('hover').find('.so-dropdown').show();
+    })
+    .on('blur', '.txt', function() {
+        var _this = $(this);
+        setTimeout(function() {
+            _this.parents('.so-box').removeClass('hover').find('.so-dropdown').hide();
+        }, 200);
+    });
+
     // 点击回复
     $('.ct-comment').on('click', '.btn-replay', function() {
-        //var replayForm = $(this).parent().nextAll('.reply-form');
-
-        var replayForm = $(this).parent().nextAll('.info');
+        var replayForm
+           replayForm = $(this).parents('.info');
         if($(this).parent('.time').length){
             replayForm=$(this).parent('.time');
+        }else{
+            $(this).parents('.com-box').find(".btn-replay").addClass("btn-replay-blue").html('<span class="icon-comment"></span> 收起');
         }
         if(replayForm.nextAll('.reply-form').length>0) {
             replayForm.nextAll('.reply-form').remove();
+            $(this).parents('.com-box').find(".btn-replay").removeClass("btn-replay-blue").html('<span class="icon-comment"></span> 回复');
         }
         else {
             replayForm.after($("#tmp").html());
@@ -106,6 +122,7 @@ $(function() {
     // 点击取消
     $('.ct-comment').on('click', '.btn-cancel', function() {
         var replayForm = $(this).parents('.reply-form');
+        $(this).parents('.com-box').find(".btn-replay").removeClass("btn-replay-blue").html('<span class="icon-comment"></span> 回复');
         replayForm.remove();
     });
 
@@ -134,6 +151,8 @@ $(function() {
             $.msgBox.Alert(null, '回复内容不能为空');
             return false;
         }
+        $(this).attr("disabled","disabled");
+        var __this=$(this);
         // 判断回复盒子是否存在，不存在创造追加
         if(!$(this).parents('li').find('.reply-box').length) {
             $(this).parents('li').append('<div class="reply-box"></div>');
@@ -143,16 +162,23 @@ $(function() {
         var combox=$(this).parents(".com-box");
         var message=$.trim($(this).parents('.reply-form').find('.text').val());
         $.post("/userinfo/savepost",{tid:combox.attr("tid"),pid:combox.attr("pid"),tuid:combox.attr("tuid"),fid:combox.attr("fid"),tusername:combox.attr("tusername"),message:message},function(data) {
-            var obj = JSON.parse(data)
-            if(data.msg=="尚未实名认证"){
-                tipPhone();
-            }
-            replyform.find(".btn-cancel").click();
-            if (obj.success == 1) {
-                replybox.append(obj.tmp);
+            if(data.length>1000){
+                $(".h-login .btn-lg").click();
+                return false;
+            }else {
+                var obj = JSON.parse(data)
+                __this.removeAttr("disabled");
+                if (data.msg == "尚未实名认证") {
+                    tipPhone();
+                }
+                replyform.find(".btn-cancel").click();
+                if (obj.success == 1) {
+                    replybox.append(obj.tmp);
+                }
             }
         });
     });
+
 
     // 判断评论框字数是否输入
     $('.ct-comment-box .textarea').bind('input propertychange', function() {
@@ -180,13 +206,13 @@ $(function() {
     });
 
     // 内容页点赞、收藏
-    $('.praise-box, .fix-topbar').on('click', '.praise', function() {
+    $('.content-box, .fix-topbar,.praise-box').on('click', '.praise', function() {
         var tid=$(this).attr("tid");
         var _this=$(this)
         if(!$(this).hasClass('praise-ok')) {
             $.get("/userinfo/actrecommend/add/"+tid,function(data){
                 if(data==1){
-                    $('.praise-box, .fix-topbar').find('.praise').addClass('praise-ok').find('.num').html(+_this.find('.num').text() + 1);
+                    $('.content-box, .fix-topbar,.praise-box').find('.praise').addClass('praise-ok').find('.num').html(+_this.find('.num').text() + 1);
                     // 最新点赞增加头像
                     var avator=$(".h-avatar img").eq(0).attr('src');
                     var href=$(".h-avatar a").eq(0).attr('href');
@@ -202,19 +228,17 @@ $(function() {
             })
 
         }
-    })
-    // 点击编辑跳转链接
-    .on('click', '.edit', function() {
-        window.location.href = $(this).data('src');
-    });
+    }).on('click', '.edit', function() {
+            window.location.href = $(this).data('src');
+        });
     $('.ct-share, .fix-topbar').on('click', '.collect', function() {
         if($(this).hasClass('dis')) {
             var tid=$(".praise").attr("tid");
             $.get("/userinfo/actfav/del/"+tid+"/0",function(data){
                 if(data==1){
                     tipSave('suc', '取消收藏成功！');
-                    $('.content-box, .fix-topbar').find('.collect').removeClass('dis').find('.text').html('收藏');
-                    $('.content-box, .fix-topbar').find('.collect .num').html(+$('.content-box .collect').find('.num').html() - 1);
+                    $('.ct-share, .fix-topbar').find('.collect').removeClass('dis').find('.text').html('收藏');
+                    $('.ct-share, .fix-topbar').find('.collect .num').html(+$('.ct-share .collect').find('.num').html() - 1);
                 }else{
                     $(".h-login .btn-lg").click();
                 }
@@ -225,6 +249,7 @@ $(function() {
             $('.popup-collect').show(); centerObj('.popup-collect .popup');
         }
     })
+
 
     // 点赞后的关注
     $('.at-gz').on('click', '.btn-gz', function() {
@@ -288,6 +313,9 @@ $(function() {
 
     // 细节点评提示框
     $('.content .cpimgbox').on('mouseover', 'img', function() {
+            if(is_message==1){
+                return false;
+            }
         var _this = $(this).parents('.cpimgbox');
         if(!_this.find('.tips').length) {
             _this.append('<a href="javascript:;" class="tips"></a>');
@@ -342,8 +370,14 @@ $(function() {
             }
             else {
                 cropperImg = _this.parents('.cpimgbox').find('img');
-                $("#picurl").val(cropperImage.attr("src"));
                 var cropperImage = cropperImg.clone();
+                if(cropperImage.attr("src")!="undefined"&&cropperImage.attr("src")!="") {
+                    $("#picurl").val(cropperImage.attr("src"));
+                }else if(cropperImage.attr("mysrc")!="undefined"&&cropperImage.attr("mysrc")!=""){
+                    $("#picurl").val(cropperImage.attr("mysrc"));
+                }else{
+                    $("#picurl").val(cropperImage.attr("data-path"));
+                }
                 cropperImg.after(cropperImage);
                 cropperImg.hide();
                 if(jcropApi || !cropperImg){
@@ -406,27 +440,28 @@ $(function() {
         $("#cp_y").val(Y);
         $("#cp_w").val(w);
         $("#cp_h").val(h);
-        console.log(jcropApi.tellSelect()); //获取选框的值（实际尺寸）
+        //console.log(jcropApi.tellSelect()); //获取选框的值（实际尺寸）
         clearSelect();
-
         $(".ct-comment-box .btn-comment").click();
+        $(".newhf").hide();
+        $("#cpsubmit").show();
     });
 
-    // 点赞提交评论
-    $('#allcomment').on('click', '.com-box .btn-praise', function() {
-           var pid=$(this).attr('pid');
-           var tid=$(this).attr("tid");
-           var _this=$(this);
-           var num=_this.find(".num").text();
-           $.post("/userinfo/msgdz/",{pid:pid,tid:tid},function(data){
-               data = JSON.parse(data);
-               tipSave(data.icon, data.msg,1000);
-               if(data.icon=="suc"){
-                    num=parseInt(num)+1;
-                   _this.find(".num").html(num);
-               }
-           })
-    })
+    // // 点赞提交评论
+    // $('#mycomment,#all-comment').on('click', '.com-box .btn-praise', function() {
+    //        var pid=$(this).attr('pid');
+    //        var tid=$(this).attr("tid");
+    //        var _this=$(this);
+    //        var num=_this.find(".num").text();
+    //        $.post("/userinfo/msgdz/",{pid:pid,tid:tid},function(data){
+    //            data = JSON.parse(data);
+    //            tipSave(data.icon, data.msg,1000);
+    //            if(data.icon=="suc"){
+    //                 num=parseInt(num)+1;
+    //                _this.find(".num").html(num);
+    //            }
+    //        })
+    // })
 
         //删除个人评论页
         $('body').on('click', '#all-comments .btn-del', function() {
@@ -496,23 +531,41 @@ $(function() {
             return false;
         }
         if(location.href.indexOf("space-uid")>0){
+            if(!$.trim(_this.find('.textarea').val())) {
+                $.msgBox.Alert(null, '评论不能为空！');
+                return false;
+            }
             var combox=$(".ct-comment-box");
             var message=$.trim(_this.find('.textarea').val());
             $.post("/userinfo/savepost",{tid:combox.attr("tid"),pid:combox.attr("pid"),tuid:combox.attr("tuid"),fid:combox.attr("fid"),tusername:combox.attr("tusername"),message:message},function(data){
-                var obj=JSON.parse(data)
-                if(obj.msg=="尚未实名认证"){
-                    tipPhone();
-                }
-                if(obj.success==1){
-                    _this.find('.textarea').val('');
-                    _this.find('.btn-comment').addClass('dis');
-                    _this.find('.num').html('500');
-                    var page = $(".page-words .page .cur").text();
-                    gopages(page);
+
+                if(data.length>1000){
+                    $(".h-login .btn-lg").click();
+                    return false;
+                }else {
+                    var obj=JSON.parse(data)
+                    if (obj.msg == "尚未实名认证") {
+                        tipPhone();
+                    }
+                    if (obj.success == 1) {
+                        _this.find('.textarea').val('');
+                        _this.find('.btn-comment').addClass('dis');
+                        _this.find('.num').html('500');
+                        if ($(".page-words").length > 0) {
+                            var page = $(".page-words .page .cur").text();
+                            gopages(page);
+                        } else {
+                            var page = $(".page-comment .page .cur").text();
+                            gopage(page);
+                        }
+                    }
                 }
             })
-        }
-        else {
+        }else {
+            if (!$.trim(_this.find('.textarea').val())) {
+                 $.msgBox.Alert(null, '评论不能为空！');
+                return false;
+            }
 
             var cp_x=$("#cp_x").val();
             var cp_y=$("#cp_y").val();
@@ -542,6 +595,8 @@ $(function() {
                 }
                 if (obj.icon = "suc") {
                     _this.find('.textarea').val('');
+                    _this.find('.btn-comment').addClass('dis');
+                    _this.find('.num').html('500');
                     gopage(1);
                 } else {
                     tipSave(data.icon, data.msg, 1000);
@@ -603,7 +658,6 @@ $(function() {
             });
             $('.pro-input').hide();
         });
-        // 20180921修改高度
         $('#img-wrap').on('click', '.pro-describe', function() {
             $('#img-wrap').find('.pro-input').hide();
             $(this).parents('.pro-item').find('.pro-input').show();
@@ -637,17 +691,7 @@ $(function() {
             trageImage();
         });
     }
-    // loginhead();
-    $(".header").on("click","#search_btn",function(){
-        var text=$.trim($(".header .txt").val())
-        if(text==""){
-            $(".header .txt").focus();
-        }else{
-            $.post(hosturl+"search/getpy/",{key:text},function(data){
-                    location.href=hosturl+'search/'+data+".html";
-            })
-        }
-    })
+    loginhead();
 
     $(".myavator").each(function(){
         var _this=$(this);
