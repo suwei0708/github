@@ -785,27 +785,28 @@
 /* 搜索结果 */
 .so {
     &-box {
+        .pos(r);
+        z-index: 986;
         .cl();
-        width: 598px;
-        height: 48px;
-        line-height: 48px;
+        width: 694px;
+        height: 54px;
+        line-height: 54px;
         margin: 40px auto 0;
         border: 1px solid #ddd;
         .bdr(4px);
         .column {
-            .pos(r);
-            z-index: 90;
-            width: 110px;
+            width: 115px;
+            height: 55px;
             text-align: center;
             border-right: 1px solid #ddd;
             font-size: 14px;
-            color: #666;
+            color: #555;
             cursor: pointer;
             .icon-arrow-bottom {
                 vertical-align: middle;
                 margin: -3px 0 0 5px;
                 font-size: 15px;
-                color: #666;
+                color: #a7a7a7;
             }
             em {
                 font-style: normal;
@@ -813,39 +814,42 @@
             &-list {
                 .dis(n);
                 .pos(a);
-                top: 48px;
+                top: 55px;
                 left: 0;
-                width: 110px;
+                padding: 8px 0;
+                width: 116px;
                 background: #fff;
                 .box-shadow(0 0 11px #ccc);
                 text-align: left;
+                .bdr(0, 0, 4px, 4px);
                 li {
                     .dis(b);
                     height: 42px;
                     line-height: 42px;
                     padding: 0 0 0 20px;
                     font-size: 14px;
-                    color: #666;
+                    color: #555;
                     &:hover {
+                        color: @blue;
                         background: #f6f6f6;
                     }
                 }
             }
         }
         .txt {
-            width: 426px;
-            height: 28px;
-            line-height: 28px;
-            padding: 10px 0 10px 15px;
+            width: 523px - 25;
+            height: 34px;
+            line-height: 34px;
+            padding: 10px 0 10px 25px;
             border: 0;
             font-size: 14px;
-            color: #666;
+            color: #555;
         }
         .btn {
             .ov(h);
-            .dis(i);
-            padding: 15px;
-            *padding: 15px 8px 15px 11px;
+            .dis(ib);
+            vertical-align: top;
+            padding: 19px 19px 0;
             border: 0;
             background: none;
             cursor: pointer;
@@ -854,12 +858,85 @@
                 width: 16px;
                 height: 16px;
                 font-size: 16px;
-                color: @blue;
+                color: #ccc;
             }
             &:hover {
                 .icon-so {
-                    color: @blue-h;
+                    color: @blue;
                 }
+            }
+        }
+        &.hover {
+            border: 1px solid @blue;
+            .column {
+                border-right: 1px solid @blue;
+            }
+        }
+    }
+    &-dropdown {
+        .dis(n);
+        .pos(a);
+        top: 56px;
+        left: 117px;
+        width: 578px;
+        z-index: 98;
+        padding-bottom: 20px;
+        line-height: 30px;
+        background: #fff;
+        .box-shadow(0 0 11px #ccc);
+        text-align: left;
+        .bdr(0, 0, 4px, 4px);
+        dl {
+            padding: 10px 0;
+            margin: 0 20px 0 24px;
+        }
+        dt {
+            marign: 12px 0 0;
+            font-size: 14px;
+            color: #ccc;
+            .ico {
+                font-size: 14px;
+                color: #ccc;
+                cursor: pointer;
+            }
+            a:hover {
+                .ico {
+                    color: @red;
+                }
+            }
+        }
+        dd {
+            padding-bottom: 5px;
+            margin-right: -19px;
+            font-size: 0;
+            a {
+                .dis(ib);
+                vertical-align: top;
+                padding: 0 15px;
+                margin: 12px 19px 0 0;
+                font-size: 14px;
+                color: #909090;
+                background: #f7f8fa;
+                .bdr(30px);
+                &:hover {
+                    color: #fff;
+                    background: @blue;
+                }
+                .blue {
+                    color: @blue;
+                }
+            }
+            img {
+                .dis(ib);
+                vertical-align: middle;
+                margin: -3px 10px 0 0;
+                width: 22px;
+                height: 22px;
+                .bdr(50%);
+                background: #eee url('../images/no-avatar.png') no-repeat center center;
+            }
+            span {
+                color: #666;
             }
         }
     }
@@ -902,10 +979,10 @@
             &-list {
                 .dis(n);
                 .pos(a);
-                top: 70px;
-                left: 0;
-                width: 162px;
-                padding: 13px 0;
+                top: 55px;
+                left: -20px;
+                width: 150px;
+                padding: 8px 0;
                 background: #fff;
                 .box-shadow(0 0 11px #ccc);
                 .bdr(4px);
@@ -960,6 +1037,11 @@
                 }
             }
         }
+        .fll {
+            .tab-li {
+                margin: 0 60px 0 0;
+            }
+        }
     }
     &-tit {
         margin-top: 30px;
@@ -994,8 +1076,11 @@
         font-size: 14px;
         color: #999;
         &-box {
-            padding-top: 22px;
+            padding: 22px 0 60px;
             min-height: 600px;
+            .page-list {
+                margin-bottom: -80px;
+            }
         }
     }
     &-designer {

@@ -78,7 +78,7 @@ $(function() {
         var _this = $(this);
         setTimeout(function() {
             _this.parents('.so-box').removeClass('hover').find('.so-dropdown').hide();
-        });
+        }, 200);
     });
 
     // 点击回复
