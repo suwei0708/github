@@ -1729,7 +1729,8 @@ body {
 .fixed-nav {
     .pos(f);
     top: 50%;
-    right: 100px;
+    left: 50%;
+    margin-left: 650px;
     width: 134px;
     height: 440px;
     margin-top: -220px;
@@ -1915,6 +1916,40 @@ body {
             }
         }
     }
+
+    &-guess {
+        .pos(f);
+        top: 0;
+        left: 0;
+        z-index: 990;
+        width: 100%;
+        height: 100%;
+        font-size: 0;
+        background: rgba(0, 0, 0, .9);
+        .ztpopup-box {
+            width: 730px;
+            padding: 25px 0 65px;
+            .img-box {
+                font-size: 0;
+                .img {
+                    .dis(ib);
+                    vertical-align: top;
+                    margin: 40px 20px 0;
+                    img {
+                        width: 73px;
+                        height: 73px;
+                        .bdr(50%);
+                    }
+                }
+                p {
+                    padding-top: 35px;
+                }
+            }
+            .ztpopup-ct {
+                padding: 0 80px;
+            }
+        }
+    }
 }
 
 .user-tip {
@@ -1922,5 +1957,89 @@ body {
     .icon-gou {
         background: @yellow;
         color: @bg;
+    }
+}
+
+.fixed-guess {
+    .pos(f);
+    bottom: 0;
+    left: 0;
+    z-index: 99;
+    width: 100%;
+    padding: 25px 0 35px;
+    background: #0d0d0d;
+    text-align: center;
+    .anim();
+    .tit {
+        line-height: 50px;
+        font-size: 16px;
+        color: #666;
+        font-family: "syreg";
+        .num {
+            font-family: 'symed';
+            font-size: 22px;
+            color: @brown;
+        }
+    }
+    .img-box {
+        padding: 25px 0 0;
+        font-size: 0;
+        margin-right: -50px;
+        .img {
+            .pos(r);
+            .dis(ib);
+            vertical-align: top;
+            width: 77px;
+            height: 77px;
+            margin: 0 50px 0 0;
+            .bdr(50%);
+            background: #121212;
+            &:after {
+                content: '';
+                .pos(a);
+                left: 0;
+                top: 0;
+                z-index: 3;
+                width: 100%;
+                height: 100%;
+                border: 1px solid #262626;
+                .bdr(50%);
+            }
+            img {
+                .pos(r);
+                z-index: 4;
+                width: 77px;
+                height: 77px;
+                .bdr(50%);
+            }
+            .icon-fail {
+                .pos(a);
+                top: -1px;
+                right: -4px;
+                z-index: 5;
+                width: 19px;
+                height: 20px;
+                line-height: 21px;
+                text-align: center;
+                color: #0d0d0d;
+                background: #666;
+                font-size: 12px;
+                cursor: pointer;
+                .bdr(50%);
+            }
+        }
+    }
+    .fixed-guess-btn {
+        .dis(n);
+        padding: 35px 0 0;
+        .ztbtn-sure {
+            .dis(ib);
+            width: 130px;
+            .height(36px);
+            font-size: 14px;
+            color: @bg;
+            background: @yellow;
+            .bdr(4px);
+        }
     }
 }

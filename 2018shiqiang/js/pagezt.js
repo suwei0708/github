@@ -100,27 +100,123 @@ $(function() {
      * 竞猜
     */
     // 点击竞猜
+    var selectBox;  // 弹窗取消时保留变量
     $('.list-myelection').on('click', '.ztbtn', function() {
-        var guessNum = $('.list-myelection').find('.ztbtn-dis').length;
+        selectBox = $(this);
+        var imgSrc = selectBox.parents('li').find('img').attr('src');
+        // 竞猜个数判断，由于分页需要后台判断，这里前端做个展示
+        var guessNum = $('.list-myelection').find('.ztbtn-dis').length;;
+        // 竞猜数已有10个,不能竞猜直接提示
         if(guessNum == 10) {
             $.ztMsg.Alert('tan', '竞猜人数已满足十位，请等待结果公布。');
             return false;
         }
 
         if(!$(this).hasClass('ztbtn-dis')) {
+            // 竞猜列表竞猜成功
             $(this).addClass('ztbtn-dis').html('竞猜成功');
+
+            // 底部浮窗增加dom
+            var dom = '<img src="' + imgSrc + '" alt="" myid="' + selectBox.attr('myid') + '"><span class="icon-fail"></span>'
+            $('.fixed-guess').find('.img').eq(guessNum).html(dom);
         }
         else {
+            // 竞猜列表取消竞猜
             $(this).removeClass('ztbtn-dis').html('竞猜TA');
+
+            // 判断myid相同，底部悬浮删除img
+            $.each($('.fixed-guess .img'), function(i) {
+                if($(this).find('img').attr('myid') == selectBox.attr('myid')) {
+                    $(this).html('');
+                    $(this).parents('.img-box').append($(this));
+                }
+            });
+
+            // 竞猜选中为0,底部悬浮隐藏
+            if(guessNum - 1 == 0) {
+                $('.fixed-guess').hide();
+            }
         };
 
         // 竞猜个数判断，由于分页需要后台判断，这里前端做个展示
-        guessNum = $('.list-myelection').find('.ztbtn-dis').length;
+        guessNum = $('.list-myelection').find('.ztbtn-dis').length;;
         $('.zt-election .tit').find('.num').html(guessNum);
-        // 选中10个判断为成功，点击关闭按钮跳转到成功页面
+        $('.fixed-guess').find('.num').html(guessNum);
+
+        // 选中10个弹出确定弹窗
         if(guessNum == 10) {
-            $.ztMsg.Alert('gou', '竞猜成功，请等待结果公布。');
+            // 展示图像直接copy底部悬浮头像
+            $('.ztpopup-guess').find('.img-box').html($('.fixed-guess').find('.img-box').html());
+            // 弹出弹窗
+            $('.ztpopup-guess').show();
+            // 选中10个底部悬浮展示确定按钮
+            $('.fixed-guess .fixed-guess-btn').show();
+            // 提示框居中
+            var _widht = document.documentElement.clientWidth; //屏幕宽
+            var _height = document.documentElement.clientHeight; //屏幕高
+            var boxWidth = $('.ztpopup-guess .ztpopup-box').outerWidth();
+            var boxHeight = $('.ztpopup-guess .ztpopup-box').outerHeight();
+            $('.ztpopup-guess .ztpopup-box').css({
+                top: (_height - boxHeight) / 2 + 'px',
+                left: (_widht - boxWidth) / 2 + 'px'
+            });
         }
+        // 选中1个显示底部浮窗
+        else if(guessNum == 1) {
+            $('.fixed-guess').show();
+        }
+        else {
+            $('.fixed-guess .fixed-guess-btn').hide();
+        }
+    });
+
+    // 竞猜10位确定
+    $('body').on('click', '.ztpopup-guess .ztbtn-sure', function() {
+        $.ztMsg.Alert('gou', '竞猜成功，请等待结果公布。');
+        $('.ztpopup-guess').hide();
+        $('.fixed-guess').hide();
+    })
+    // 竞猜10位取消
+    .on('click', '.ztpopup-guess .ztbtn-cancel', function() {
+        // 判断myid相同，竞猜列表取消选中
+        selectBox.removeClass('ztbtn-dis').html('竞猜TA');
+        // 底部悬浮删除img
+        $('.fixed-guess').find('.img').last().html('');
+        // 选中个数修改
+        $('.zt-election .tit').find('.num').html('9');
+        $('.fixed-guess').find('.num').html('9');
+        // 竞猜弹窗隐藏
+        $('.ztpopup-guess').hide();
+        // 选中不为10,底部悬浮确定按钮隐藏
+        $('.fixed-guess .fixed-guess-btn').hide();
+    })
+    // 底部悬浮竞猜取消
+    .on('click', '.fixed-guess .icon-fail', function() {
+        var _this = $(this);
+        // 判断myid相同，列表取消选中
+        $.each($('.list-myelection .ztbtn-dis'), function(i) {
+            if($(this).attr('myid') == _this.parents('.img').find('img').attr('myid')) {
+                $(this).removeClass('ztbtn-dis').html('竞猜TA');
+            }
+        });
+        // 底部悬浮删除img
+        _this.parents('.img-box').append(_this.parents('.img').html(''));
+        // 选中个数修改
+        var guessNum = $('.fixed-guess').find('.img img').length;
+        $('.zt-election .tit').find('.num').html(guessNum);
+        $('.fixed-guess').find('.num').html(guessNum);
+        // 选中为0,底部悬浮隐藏
+        if(guessNum == 0) {
+            $('.fixed-guess').hide();
+        }
+        // 选中不为10,底部悬浮确定按钮隐藏
+        $('.fixed-guess .fixed-guess-btn').hide();
+    })
+    // 底部悬浮竞猜确认
+    .on('click', '.fixed-guess .ztbtn-sure', function() {
+        $.ztMsg.Alert('gou', '竞猜成功，请等待结果公布。');
+        $('.ztpopup-guess').hide();
+        $('.fixed-guess').hide();
     });
 
     // 十强公布倒计时
@@ -250,7 +346,7 @@ $(function() {
     $('#luck-num').html(luck.num);
     $("#luck-btn").on('click', function(){
         // 每次抽取获得中奖位置
-        luck.prize = parseInt(Math.random() * 8);
+        // luck.prize = parseInt(Math.random() * 8);
         if(luck.num > 0) {
             // 抽奖次数大于0
             luck.num--;
@@ -347,7 +443,7 @@ var luck = {
     times: 10,    // 转动次数
     cycle: 50,   // 转动基本次数：即至少需要转动多少次再进入抽奖环节
     num: 3,      // 抽奖次数
-    prize: 0,   //中奖位置
+    prize: 1,   //中奖位置
     prizeData: [
         {
             name: '美工云VIP1年',
@@ -364,9 +460,9 @@ var luck = {
             func: null
         },
         {
-            name: '巧匠课堂VIP5折卡',
+            name: '巧匠课堂VIP1年',
             icon: 'liwu',
-            msg: '恭喜！抽中巧匠课堂VIP 5折体验卡！<br />兑换码：****************',
+            msg: '恭喜！抽中巧匠课堂VIP 1年体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
             btnlink: 'https://www.qiaojiang.tv/rh',
             func: null
