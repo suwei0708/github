@@ -8,14 +8,9 @@ app.width;
 app.height;
 app.loop = false;  // 循环展示
 app.DEFAULT_WIDTH = 750;
-app.DEFAULT_HEIGHT = 1212;
+app.DEFAULT_HEIGHT = 1218;
 app.baseUrl = 'static/img/';
 app.music1 = $('audio')[0];
-app.music2 = $('audio')[1];
-app.music3 = $('audio')[2];
-app.music4 = $('audio')[3];
-app.music5 = $('audio')[4];
-app.music6 = $('audio')[5];
 
 app.init = function () {
 
@@ -37,12 +32,12 @@ app.init = function () {
         all: function() {
             setTimeout(function() {
                 $('.loading').hide();
-                hanldeAnimate(0);
+                hanldeAnimate(5);
             }, 500);
         }
     });
 
-    var initialSlide = 1;
+    var initialSlide = 5;
     var swiperH = $(window).height() > app.DEFAULT_HEIGHT ? $(window).height() : app.DEFAULT_HEIGHT;
     app.swiper = new Swiper('.swiper-container', {
         direction: 'vertical',  // 是竖排还是横排滚动，不填时默认是横排
@@ -224,6 +219,8 @@ function isIOS() {
     }
 }
 
-function area1() {
-    alert(1)
+function area(score, num) {
+    console.log(score);
+    // app.swiper.slideTo(num, 0, false);
+    hanldeAnimate(num);
 }
