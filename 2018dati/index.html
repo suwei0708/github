@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>2018最牛老司机测试题</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script>
+    var deviceWidth =  parseInt(window.screen.width);var deviceScale = deviceWidth/750;var ua = navigator.userAgent;if (/Android (\d+\.\d+)/.test(ua)){var version = parseFloat(RegExp.$1);if(version>2.3){document.write('<meta name="viewport" content="width=750,initial-scale='+deviceScale+', minimum-scale = '+deviceScale+', maximum-scale = '+deviceScale+', target-densitydpi=device-dpi">');}else{document.write('<meta name="viewport" content="width=750,initial-scale=0.75,maximum-scale=0.75,minimum-scale=0.75,target-densitydpi=device-dpi" />');}} else {document.write('<meta name="viewport" content="width=750, user-scalable=no">');}
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/css/swiper.min.css">
+    <link rel="stylesheet" href="static/css/page.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="static/js/imgpreload.min.js"></script>
+</head>
+<body>
+<div style="display: none;"><img src="static/img/share.jpg"></div>
+<section class="loading">
+    <div>
+        <div class="percentage"><div id="percentage"></div></div>
+        <img src="static/img/loading-bg.png" class="img">
+        <img src="static/img/loading.png" class="text fade-in-out">
+    </div>
+</section>
+
+<!-- 向下箭头 -->
+<audio src="static/music/music-p1.mp3" preload></audio>
+
+<div id="content">
+    <!-- 主题滑动页面 -->
+    <section class="swiper-container">
+        <div class="swiper-wrapper">
+            <article class="swiper-slide page1 swiper-no-swiping">
+                <div class="box">
+                    <div class="main">
+                        <img src="static/img/p0/main.png" class="bg">
+                        <img src="static/img/p0/tit.png" class="tit">
+                        <img src="static/img/p0/talk.png" class="talk" data-anim="fade-in-out3">
+                    </div>
+                    <div class="btn">
+                        <img src="static/img/p0/btn.png" data-anim="fade-in-out delay3">
+                    </div>
+                    <div class="logo">
+                        <img src="static/img/p0/logo.png">
+                    </div>
+                </div>
+            </article>
+
+            <article class="swiper-slide page2 swiper-no-swiping">
+                <div class="box">
+                    <div class="main">
+                        <img src="static/img/p1/star1.png" class="bg">
+                    </div>
+                    <div class="answer">
+                        <img src="static/img/p1/answer.png" usemap="#answer1" class="bg">
+                        <img src="static/img/a.png" class="a">
+                        <img src="static/img/b.png" class="b">
+                        <img src="static/img/c.png" class="c">
+                        <map name="answer1" id="answer1">
+                            <area shape="poly" coords="0,48, 370,48, 200,580, 0,580" href =""/>
+                        </map>
+                    </div>
+                </div>
+            </article>
+
+            <article class="swiper-slide page3 swiper-no-swiping">
+
+            </article>
+
+            <article class="swiper-slide page4 swiper-no-swiping">
+
+            </article>
+        </div>
+    </section>
+</div>
+
+<!-- 基础JS脚本部分 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+<!-- 当前页面自定义JS -->
+<script src="static/js/page.min.js"></script>
+
+<!-- 微信分享文字自定义 -->
+<script src="static/js/weixin.js"></script>
+<script>
+$(function() {
+    var path = window.location.href;
+    var baseUrl = path.substr(0, path.lastIndexOf('/') + 1);
+    var wxData = {
+        imgUrl: baseUrl + 'static/img/share.jpg',
+        link: baseUrl + 'index.html',
+        title: '他们即将让全长沙抖抖抖抖起来',
+        desc: '来湖南首个网红音乐会遇见马可、胡66、马良、面筋哥、亮声OPEN……'
+    };
+    weixin.bindData(wxData);
+});
+</script>
+<script>
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?397b676cb941823a1840dfb7d8c17253";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+</body>
+</html>
