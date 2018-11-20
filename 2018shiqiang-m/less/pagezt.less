@@ -150,7 +150,8 @@ body {
     // 导航
     &-nav {
         .pos(r);
-        .lh(86);
+        .pds(t, 14);
+        .lh(82);
         .fz(32);
         text-align: center;
         a {
@@ -162,8 +163,15 @@ body {
             text-align: center;
             &.cur {
                 a {
-                    color: @brown;
-                    border-bottom: 3 / @font solid @brown;
+                    &:after {
+                        content: '';
+                        .dis(b);
+                        .w(24);
+                        .h(4);
+                        margin: 0 auto;
+                        background: @brown;
+                        border-bottom: 4 / @font solid @brown;
+                    }
                 }
             }
         }
@@ -285,7 +293,7 @@ body {
             li {
                 .pos(r);
                 .lh(130);
-                .fz(24);
+                .fz(30);
                 color: #666;
                 &:before {
                     content: '';
@@ -300,7 +308,7 @@ body {
                     .dis(ib);
                     vertical-align: baseline;
                     .mgs(r, 20);
-                    .fz(28);
+                    .fz(36);
                     color: #ccc;
                     &:before {
                         content: '';
@@ -587,7 +595,7 @@ body {
                 p {
                     .h(30);
                     .mg(0, 5);
-                    .fz(16);
+                    .fz(22);
                     color: @yellow;
                 }
                 .ztbtn-box {
