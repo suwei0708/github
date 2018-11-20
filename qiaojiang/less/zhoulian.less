@@ -199,8 +199,13 @@ input::-moz-placeholder, textarea::-moz-placeholder { // Firefox19+
         }
     }
     &-main {
-        .img {
-            width: 580px;
+        > .img {
+            width: 600px;
+            img {
+                width: 600px;
+                height: 290px;
+                .bdr(4px);
+            }
         }
         .main {
             width: 300px;
@@ -247,6 +252,7 @@ input::-moz-placeholder, textarea::-moz-placeholder { // Firefox19+
             }
         }
     }
+
     &-prize {
         .tit {
             padding: 30px 0 10px;
@@ -326,6 +332,9 @@ input::-moz-placeholder, textarea::-moz-placeholder { // Firefox19+
     }
     &-list {
         padding-top: 40px;
+        &.qj-box {
+            padding-top: 20px;
+        }
         .tab-list {
             margin-bottom: 20px;
         }
