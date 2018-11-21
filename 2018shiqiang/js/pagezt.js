@@ -446,17 +446,19 @@ var luck = {
     prize: 1,   //中奖位置
     prizeData: [
         {
-            name: '美工云VIP1年',
+            name: '美工云VIP 3个月',
             icon: 'liwu',
-            msg: '恭喜！抽中美工云享 1 年VIP体验卡！<br />兑换码：****************',
+            msg: '恭喜！抽中美工云享 3个月VIP体验卡！<br />兑换码：****************',
             btntxt: '立即使用',
             btnlink: '',
             func: null
         },
         {
-            icon: 'tan',
-            msg: '很遗憾，没有抽中，再试一次吧！',
-            btntxt: '再试一次',
+            name: '巧匠课堂VIP 7天',
+            icon: 'liwu',
+            msg: '恭喜！抽中巧匠课堂VIP 7天体验卡！<br />兑换码：****************',
+            btntxt: '立即使用',
+            btnlink: 'https://www.qiaojiang.tv/rh',
             func: null
         },
         {
