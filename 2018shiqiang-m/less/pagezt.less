@@ -34,7 +34,7 @@ a {
 }
 html, body {
     // min-height: 100vh;
-    font-size: 13px;
+    .fz(13);
     -webkit-overflow-scrolling: touch;
 }
 .fl {
@@ -167,10 +167,9 @@ body {
                         content: '';
                         .dis(b);
                         .w(24);
-                        .h(4);
+                        .h(3);
                         margin: 0 auto;
                         background: @brown;
-                        border-bottom: 4 / @font solid @brown;
                     }
                 }
             }
@@ -195,13 +194,13 @@ body {
             .translateX(-50%);
             .w(244);
             .lhh(94);
-            .fz(24);
+            .fz(26);
+            font-weight: 700;
             .zticon {
                 .dis(ib);
                 vertical-align: middle;
-                margin: -3px 0 0 10px;
-                width: 21px;
-                height: 21px;
+                .mg(-3, 0, 0, 10);
+                .wh(21);
                 background: url(../images/sy-arrow.png) no-repeat 0 0 / cover;
             }
         }
@@ -266,6 +265,7 @@ body {
                     .w(194);
                     .lhh(90);
                     .fz(22);
+                    font-weight: 700;
                     &-box {
                         .pd(5, 0);
                         text-align: right;
@@ -275,7 +275,7 @@ body {
                         vertical-align: middle;
                         .mg(-3, 0, 0, 10);
                         .wh(21);
-                        background: url(../images/sy-arrow.png) no-repeat 0 0;
+                        background: url(../images/sy-arrow.png) no-repeat 0 0 / cover;
                     }
                 }
             }
@@ -365,13 +365,13 @@ body {
                             content: '';
                             .pos(a);
                             top: 50%;
-                            left: -123px;
+                            .l(-123);
                             z-index: 2;
-                            width: 77px;
-                            height: 78px;
+                            .w(77);
+                            .h(78);
                             .translateY(-50%);
                             background: #241f1b;
-                            border: 10px solid @gray;
+                            border: 10 / @font solid @gray;
                             .bdr(50%);
                         }
                     }
@@ -607,7 +607,7 @@ body {
                         vertical-align: top;
                         .w(152);
                         .lhh(53);
-                        .fz(16);
+                        .fz(22);
                         .bdr(53 / @font);
                         color: #999;
                         background: #333;
@@ -670,7 +670,7 @@ body {
                 }
             }
             .bdsharebuttonbox {
-                padding: 35px 0 0;
+                .pd(35, 0, 0);
                 text-align: center;
                 // font-size: 0;
                 p {
@@ -801,7 +801,7 @@ body {
         .w(588);
         .pds(b, 60);
         background: #0d0d0d;
-        .bdr(10px);
+        .bdr(10 / @font);
         text-align: center;
         .translate(-50%, -55%);
     }
