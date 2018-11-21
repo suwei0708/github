@@ -24,20 +24,20 @@ app.init = function () {
     $.imgpreload(the_images,{
         each: function(i) {
             var status = $(this).data('loaded') ? 'success' : 'error';
-            if (status == "success") {
+            if (status == 'success') {
                 var v = (i.length / the_images.length).toFixed(2);
-                $("#percentage").width(Math.round(v * 100) + '%');
+                $('#percentage').width(Math.round(v * 100) + '%');
             }
         },
         all: function() {
             setTimeout(function() {
                 $('.loading').hide();
-                hanldeAnimate(5);
+                hanldeAnimate(1);
             }, 500);
         }
     });
 
-    var initialSlide = 5;
+    var initialSlide = 1;
     var swiperH = $(window).height() > app.DEFAULT_HEIGHT ? $(window).height() : app.DEFAULT_HEIGHT;
     app.swiper = new Swiper('.swiper-container', {
         direction: 'vertical',  // 是竖排还是横排滚动，不填时默认是横排
@@ -89,11 +89,11 @@ function getUrlParameterByName(name) {
 $(function () {
     app.init();
     //微信下兼容音乐处理
-    var index = app.swiper.activeIndex;
-    if(index != 0) {return false;}
-    if(app.music1) {app.music1.play();}
-    document.addEventListener("WeixinJSBridgeReady", function () {
-        app.music1.play();
+    // var index = app.swiper.activeIndex;
+    // if(index != 0) {return false;}
+    // if(app.music1) {app.music1.play();}
+    document.addEventListener('WeixinJSBridgeReady', function () {
+        // app.music1.play();
     }, false);
     initPageEvents();
 });
@@ -112,29 +112,32 @@ function initPageEvents() {
 
     // 分享
     $('body').on('click', function() {
-        if($('.share').is(':visible')) {
-            $('.share').hide();
-            $('.main-hb').show();
+        if($('.share-box').is(':visible')) {
+            $('.share-box').hide();
         }
     });
 
-    $('.page1').on('click', '.btn', function() {
+    $('.page0').on('click', '.btn', function() {
         app.swiper.slideTo(1, 0, false);
     });
 
     // form提交
-    $('.page4').on('click', '.btn-box', function() {
+    $('.page7').on('click', '.btn', function() {
+        console.log(22)
         if(!$.trim($('#form input[name=name]').val())) {
             alert('姓名不能为空！');
             return false;
         }
         if(!$.trim($('#form input[name=mobile]').val())) {
-            alert('手机号码不能为空！');
+            alert('电话号码不能为空！');
             return false;
         }
-
         if(!(/^1\d{10}$/.test($.trim($('#form input[name=mobile]').val())))) {
             alert('电话号码格式不正确');
+            return false;
+        }
+        if(!$.trim($('#form input[name=age]').val())) {
+            alert('车龄不能为空！');
             return false;
         }
 
@@ -172,6 +175,55 @@ function initPageEvents() {
 
         return false;
     });
+
+    $('.btn-share').on('click', function() {
+        $('.share-box').show();
+        return false;
+    });
+    $('.btn-replay').on('click', function() {
+        window.location.reload();
+    });
+
+    var name = '电视剧爱';
+    var sampleImage = document.getElementById('ringoImage'),
+        ecode = document.getElementById('ecode'),
+        canvas = convertImageToCanvas(sampleImage, ecode, name);
+
+    // canvas画图
+    document.getElementById('canvasHolder').appendChild(canvas);
+    document.getElementById('pngHolder').appendChild(convertCanvasToImage(canvas));
+
+    // Converts image to canvas; returns new canvas element
+    function convertImageToCanvas(image, ecode, name) {
+        var canvas = document.createElement('canvas');
+        canvas.width = image.width;
+        canvas.height = image.height;
+        var ctx = canvas.getContext('2d');
+        ctx.save();//保存状态
+
+        ctx.drawImage(image, 0, 0);
+
+        ctx.drawImage(ecode, 499, 933, 160, 160);
+
+        ctx.translate(90, 180);//设置画布上的(0,0)位置，也就是旋转的中心点
+        ctx.rotate(-2.5 * Math.PI / 180);
+        ctx.fillStyle = '#2c225e';   // 文字填充颜色
+        ctx.font = 'bold 42px Microsoft Yahei';
+        ctx.fillText(name, 0, 0);
+        ctx.restore();//恢复状态
+
+        ctx.stroke();
+
+        return canvas;
+    }
+
+    // Converts canvas to an image
+    function convertCanvasToImage(canvas) {
+        var image = new Image();
+        image.crossOrigin='anonymous';
+        image.src = canvas.toDataURL('image/png');
+        return image;
+    }
 
 }
 /**
@@ -219,8 +271,15 @@ function isIOS() {
     }
 }
 
-function area(score, num) {
-    console.log(score);
-    // app.swiper.slideTo(num, 0, false);
-    hanldeAnimate(num);
+function area(obj, score, num) {
+    console.log(obj);
+
+
+    console.log('.page' + (num - 1), '.talk-' + obj)
+    $('.page' + (num - 1)).find('.talk-' + obj).addClass('fade-in-out');
+    setTimeout(function() {
+        app.swiper.slideTo(num, 0, false);
+        hanldeAnimate(num);
+    }, 1000);
+
 }

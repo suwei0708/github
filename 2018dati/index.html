@@ -57,16 +57,16 @@
                     </div>
                     <div class="answer-box">
                         <img src="static/img/p1/answer.png" usemap="#answer1" class="answer">
-                        <img src="static/img/a.png" class="a" data-anim="fade-in-out" onclick="area(0, 2);">
-                        <img src="static/img/b.png" class="b" data-anim="fade-in-out" onclick="area(20, 2);">
-                        <img src="static/img/c.png" class="c" data-anim="fade-in-out" onclick="area(0, 2);">
-                        <img src="static/img/p1/talk-a.png" class="talk-a" onclick="area(0, 2);">
+                        <img src="static/img/a.png" class="a" data-option="a" data-anim="fade-in-out" onclick="area('a', 0, 2);">
+                        <img src="static/img/b.png" class="b" data-anim="fade-in-out" onclick="area('b', 20, 2);">
+                        <img src="static/img/c.png" class="c" data-anim="fade-in-out" onclick="area('c', 0, 2);">
+                        <img src="static/img/p1/talk-a.png" class="talk-a" data-option="a" onclick="area('a', 0, 2);">
                         <img src="static/img/p1/talk-b.png" class="talk-b" onclick="area(20, 2);">
                         <img src="static/img/p1/talk-c.png" class="talk-c" onclick="area(0, 2);">
                         <map name="answer1" id="answer1">
-                            <area shape="poly" coords="50,42, 370,42, 230,505, 50,505" href="javascript:area(0, 2);"/>
-                            <area shape="poly" coords="230,42, 670,42, 670,285, 282,317" href="javascript:area(20, 2);"/>
-                            <area shape="poly" coords="282,317, 670,285, 670,505, 282,505" href="javascript:area(0, 2);"/>
+                            <area shape="poly" coords="15,45, 335,45, 180,510, 15,510" data-option="a" href="javascript:area('a', 0, 2);"/>
+                            <area shape="poly" coords="335,45, 660,45, 660,285, 245,320" href="javascript:area(20, 2);"/>
+                            <area shape="poly" coords="245,320, 660,285, 660,510, 180,510" href="javascript:area(0, 2);"/>
                         </map>
                     </div>
                 </div>
@@ -114,7 +114,7 @@
                         <map name="answer3" id="answer3">
                             <area shape="poly" coords="15,45, 330,45, 265,305, 15,275" href="javascript:area(0, 4);"/>
                             <area shape="poly" coords="15,275, 660,355, 660,510, 15,510" href="javascript:area(0, 4);"/>
-                            <area shape="poly" coords="300,45, 660,45, 660,355, 265,305" href="javascript:area(20, 4);"/>
+                            <area shape="poly" coords="330,45, 660,45, 660,355, 265,305" href="javascript:area(20, 4);"/>
                         </map>
                     </div>
                 </div>
@@ -137,8 +137,8 @@
                         <img src="static/img/p4/talk-b.png" class="talk-b" onclick="area(0, 5);">
                         <img src="static/img/p4/talk-c.png" class="talk-c" onclick="area(20, 5);">
                         <map name="answer4" id="answer4">
-                            <area shape="poly" coords="15,45, 470,45, 400,250, 15,410" href="javascript:area(0, 5);"/>
-                            <area shape="poly" coords="15,410, 400,250, 310,510, 15,510" href="javascript:area(0, 5);"/>
+                            <area shape="poly" coords="15,45, 470,45, 395,245, 15,310" href="javascript:area(0, 5);"/>
+                            <area shape="poly" coords="15,310, 395,245, 310,510, 15,510" href="javascript:area(0, 5);"/>
                             <area shape="poly" coords="470,45, 660,45, 660,510, 310,510" href="javascript:area(20, 5);"/>
                         </map>
                     </div>
@@ -165,6 +165,67 @@
                             <area shape="poly" coords="15,385, 660,275, 660,510, 15,510" href="javascript:area(0, 6);"/>
                         </map>
                     </div>
+                </div>
+            </article>
+
+            <article class="swiper-slide page6 swiper-no-swiping">
+                <div class="box">
+                    <div class="main-box">
+                        <img src="static/img/p6/main.png" class="main">
+                        <img src="static/img/p6/card.png" class="card">
+                        <img src="static/img/p6/star1.png" class="star1">
+                        <img src="static/img/p6/star2.png" class="star2">
+                    </div>
+                    <div class="answer-box">
+                        <img src="static/img/p6/answer.png" usemap="#answer6" class="answer">
+                        <img src="static/img/a.png" class="a" data-anim="fade-in-out" onclick="area(0, 6);">
+                        <img src="static/img/b.png" class="b" data-anim="fade-in-out" onclick="area(20, 6);">
+                        <img src="static/img/c.png" class="c" data-anim="fade-in-out" onclick="area(0, 6);">
+                        <img src="static/img/p6/talk-a.png" class="talk-a" onclick="area(0, 6);">
+                        <img src="static/img/p6/talk-b.png" class="talk-b" onclick="area(20, 6);">
+                        <img src="static/img/p6/talk-c.png" class="talk-c" onclick="area(0, 6);">
+                        <map name="answer6" id="answer6">
+                            <area shape="poly" coords="15,45, 270,45, 400,320, 15,385" href="javascript:area(0, 6);"/>
+                            <area shape="poly" coords="270,45, 660,45, 660,280, 400,320" href="javascript:area(20, 6);"/>
+                            <area shape="poly" coords="15,385, 660,280, 660,510, 15,510" href="javascript:area(0, 6);"/>
+                        </map>
+                    </div>
+                </div>
+            </article>
+
+            <article class="swiper-slide page7 swiper-no-swiping">
+                <div class="box">
+                    <div class="main-box">
+                        <img src="static/img/p7/main.png" class="main">
+                        <img src="static/img/p7/close.png" class="close">
+                        <img src="static/img/p7/btn.png" class="btn">
+                        <form id="form">
+                            <input type="text" name="name" class="text">
+                            <input type="number" name="mobile" class="text">
+                            <input type="number" name="age" class="text">
+                        </form>
+                    </div>
+                </div>
+            </article>
+
+            <article class="swiper-slide page8 swiper-no-swiping">
+                <div class="box">
+                    <div class="main-box">
+                        <img src="static/img/p8/main.png" class="main">
+                        <img src="static/img/p8/d.png" class="result">
+                        <img src="static/img/p8/police.png" class="police">
+                        <img src="static/img/p8/btn-share.png" class="btn-share">
+                        <img src="static/img/p8/btn-replay.png" class="btn-replay">
+                        <div class="name">电视剧爱</div>
+
+                        <img id="ringoImage" style="display: none" src="static/img/p8/result-a.png">
+                        <img id="ecode" style="display: none" src="static/img/p8/ecode.jpg">
+                        <div id="canvasHolder" style="display: none"></div>
+                        <div id="pngHolder"></div>
+                    </div>
+                </div>
+                <div class="share-box">
+                    <img src="static/img/p8/share.png">
                 </div>
             </article>
         </div>
