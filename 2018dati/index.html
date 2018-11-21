@@ -2,7 +2,7 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>2018最牛老司机测试题</title>
+    <title>挑战全城开车最牛的你！</title>
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
@@ -18,7 +18,10 @@
 <div style="display: none;"><img src="static/img/share.jpg"></div>
 <section class="loading">
     <div>
-        <div class="percentage"><div id="percentage"></div></div>
+        <div class="percentage">
+            <img src="static/img/loading.gif">
+            <div id="percentage"></div>
+        </div>
     </div>
 </section>
 
@@ -33,11 +36,11 @@
                 <div class="box">
                     <div class="main-box">
                         <img src="static/img/p0/main.png" class="main">
-                        <img src="static/img/p0/tit.png" class="tit">
+                        <img src="static/img/p0/tit.png" class="tit" data-anim="fade-in-out3 delay5">
                         <img src="static/img/p0/talk.png" class="talk" data-anim="fade-in-out3">
                     </div>
                     <div class="btn">
-                        <img src="static/img/p0/btn.png" data-anim="fade-in-out delay3">
+                        <img src="static/img/p0/btn.png" data-anim="shake delay3">
                     </div>
                     <div class="logo">
                         <img src="static/img/p0/logo.png">
@@ -50,23 +53,23 @@
                     <div class="main-box">
                         <img src="static/img/p1/main.png" class="main">
                         <img src="static/img/p1/card.png" class="card">
-                        <img src="static/img/p1/star1.png" class="star1">
-                        <img src="static/img/p1/star2.png" class="star2">
-                        <img src="static/img/p1/star3.png" class="star3">
-                        <img src="static/img/p1/star4.png" class="star4">
+                        <img src="static/img/p1/star1.png" class="star1" data-anim="fade-in-out">
+                        <img src="static/img/p1/star2.png" class="star2" data-anim="fade-in-out delay3">
+                        <img src="static/img/p1/star3.png" class="star3" data-anim="fade-in-out delay5">
+                        <img src="static/img/p1/star4.png" class="star4" data-anim="fade-in-out delay7">
                     </div>
                     <div class="answer-box">
                         <img src="static/img/p1/answer.png" usemap="#answer1" class="answer">
-                        <img src="static/img/a.png" class="a" data-option="a" data-anim="fade-in-out" onclick="area('a', 0, 2);">
-                        <img src="static/img/b.png" class="b" data-anim="fade-in-out" onclick="area('b', 20, 2);">
-                        <img src="static/img/c.png" class="c" data-anim="fade-in-out" onclick="area('c', 0, 2);">
+                        <img src="static/img/a.png" class="a" data-option="a" data-anim="scale-in-out" onclick="area('a', 0, 2);">
+                        <img src="static/img/b.png" class="b" data-option="b" data-anim="scale-in-out" onclick="area('b', 20, 2);">
+                        <img src="static/img/c.png" class="c" data-option="v" data-anim="scale-in-out" onclick="area('c', 0, 2);">
                         <img src="static/img/p1/talk-a.png" class="talk-a" data-option="a" onclick="area('a', 0, 2);">
-                        <img src="static/img/p1/talk-b.png" class="talk-b" onclick="area(20, 2);">
-                        <img src="static/img/p1/talk-c.png" class="talk-c" onclick="area(0, 2);">
+                        <img src="static/img/p1/talk-b.png" class="talk-b" data-option="b" onclick="area('b', 20, 2);">
+                        <img src="static/img/p1/talk-c.png" class="talk-c" data-option="c" onclick="area('c', 0, 2);">
                         <map name="answer1" id="answer1">
                             <area shape="poly" coords="15,45, 335,45, 180,510, 15,510" data-option="a" href="javascript:area('a', 0, 2);"/>
-                            <area shape="poly" coords="335,45, 660,45, 660,285, 245,320" href="javascript:area(20, 2);"/>
-                            <area shape="poly" coords="245,320, 660,285, 660,510, 180,510" href="javascript:area(0, 2);"/>
+                            <area shape="poly" coords="335,45, 660,45, 660,285, 245,320" data-option="b" href="javascript:area('b', 20, 2);"/>
+                            <area shape="poly" coords="245,320, 660,285, 660,510, 180,510" data-option="c" href="javascript:area('c', 0, 2);"/>
                         </map>
                     </div>
                 </div>
@@ -77,21 +80,21 @@
                     <div class="main-box">
                         <img src="static/img/p2/main.png" class="main">
                         <img src="static/img/p2/card.png" class="card">
-                        <img src="static/img/p2/star1.png" class="star1">
-                        <img src="static/img/p2/star2.png" class="star2">
+                        <img src="static/img/p2/star1.png" class="star1" data-anim="fade-in-out">
+                        <img src="static/img/p2/star2.png" class="star2" data-anim="fade-in-out">
                     </div>
                     <div class="answer-box">
                         <img src="static/img/p2/answer.png" usemap="#answer2" class="answer">
-                        <img src="static/img/a.png" class="a" data-anim="fade-in-out" onclick="area(0, 3);">
-                        <img src="static/img/b.png" class="b" data-anim="fade-in-out" onclick="area(20, 3);">
-                        <img src="static/img/c.png" class="c" data-anim="fade-in-out" onclick="area(0, 3);">
-                        <img src="static/img/p2/talk-a.png" class="talk-a" onclick="area(0, 3);">
-                        <img src="static/img/p2/talk-b.png" class="talk-b" onclick="area(20, 3);">
-                        <img src="static/img/p2/talk-c.png" class="talk-c" onclick="area(0, 3);">
+                        <img src="static/img/a.png" class="a" data-option="a" data-anim="scale-in-out" onclick="area('a', 0, 3);">
+                        <img src="static/img/b.png" class="b" data-option="b" data-anim="scale-in-out" onclick="area('b', 20, 3);">
+                        <img src="static/img/c.png" class="c" data-option="v" data-anim="scale-in-out" onclick="area('c', 0, 3);">
+                        <img src="static/img/p2/talk-a.png" class="talk-a" data-option="a" onclick="area('a', 0, 3);">
+                        <img src="static/img/p2/talk-b.png" class="talk-b" data-option="b" onclick="area('b', 20, 3);">
+                        <img src="static/img/p2/talk-c.png" class="talk-c" data-option="c" onclick="area('c', 0, 3);">
                         <map name="answer2" id="answer2">
-                            <area shape="poly" coords="15,45, 300,45, 365,355, 15,285" href="javascript:area(0, 3);"/>
-                            <area shape="poly" coords="300,45, 660,45, 660,415, 365,355" href="javascript:area(20, 3);"/>
-                            <area shape="poly" coords="15,285, 660,415, 660,505, 15,505" href="javascript:area(0, 3);"/>
+                            <area shape="poly" coords="15,45, 300,45, 365,355, 15,285" data-option="a" href="javascript:area('a', 0, 3);"/>
+                            <area shape="poly" coords="300,45, 660,45, 660,415, 365,355" data-option="b" href="javascript:area('b', 20, 3);"/>
+                            <area shape="poly" coords="15,285, 660,415, 660,505, 15,505" data-option="c" href="javascript:area('c', 0, 3);"/>
                         </map>
                     </div>
                 </div>
@@ -105,16 +108,16 @@
                     </div>
                     <div class="answer-box">
                         <img src="static/img/p3/answer.png" usemap="#answer3" class="answer">
-                        <img src="static/img/a.png" class="a" data-anim="fade-in-out" onclick="area(0, 4);">
-                        <img src="static/img/b.png" class="b" data-anim="fade-in-out" onclick="area(0, 4);">
-                        <img src="static/img/c.png" class="c" data-anim="fade-in-out" onclick="area(20, 4);">
-                        <img src="static/img/p3/talk-a.png" class="talk-a" onclick="area(0, 4);">
-                        <img src="static/img/p3/talk-b.png" class="talk-b" onclick="area(0, 4);">
-                        <img src="static/img/p3/talk-c.png" class="talk-c" onclick="area(20, 4);">
+                        <img src="static/img/a.png" class="a" data-option="a" data-anim="scale-in-out" onclick="area('a', 0, 4);">
+                        <img src="static/img/b.png" class="b" data-option="b" data-anim="scale-in-out" onclick="area('b', 0, 4);">
+                        <img src="static/img/c.png" class="c" data-option="v" data-anim="scale-in-out" onclick="area('c', 20, 4);">
+                        <img src="static/img/p3/talk-a.png" class="talk-a" data-option="a" onclick="area('a', 0, 4);">
+                        <img src="static/img/p3/talk-b.png" class="talk-b" data-option="b" onclick="area('b', 0, 4);">
+                        <img src="static/img/p3/talk-c.png" class="talk-c" data-option="c" onclick="area('c', 20, 4);">
                         <map name="answer3" id="answer3">
-                            <area shape="poly" coords="15,45, 330,45, 265,305, 15,275" href="javascript:area(0, 4);"/>
-                            <area shape="poly" coords="15,275, 660,355, 660,510, 15,510" href="javascript:area(0, 4);"/>
-                            <area shape="poly" coords="330,45, 660,45, 660,355, 265,305" href="javascript:area(20, 4);"/>
+                            <area shape="poly" coords="15,45, 330,45, 265,305, 15,275" data-option="a" href="javascript:area('a', 0, 4);"/>
+                            <area shape="poly" coords="15,275, 660,355, 660,510, 15,510" data-option="b" href="javascript:area('b', 0, 4);"/>
+                            <area shape="poly" coords="330,45, 660,45, 660,355, 265,305" data-option="c" href="javascript:area('c', 20, 4);"/>
                         </map>
                     </div>
                 </div>
@@ -125,21 +128,21 @@
                     <div class="main-box">
                         <img src="static/img/p4/main.png" class="main">
                         <img src="static/img/p4/card.png" class="card">
-                        <img src="static/img/p4/star1.png" class="star1">
-                        <img src="static/img/p4/star2.png" class="star2">
+                        <img src="static/img/p4/star1.png" class="star1" data-anim="fade-in-out">
+                        <img src="static/img/p4/star2.png" class="star2" data-anim="fade-in-out delay5">
                     </div>
                     <div class="answer-box">
                         <img src="static/img/p4/answer.png" usemap="#answer4" class="answer">
-                        <img src="static/img/a.png" class="a" data-anim="fade-in-out" onclick="area(0, 5);">
-                        <img src="static/img/b.png" class="b" data-anim="fade-in-out" onclick="area(0, 5);">
-                        <img src="static/img/c.png" class="c" data-anim="fade-in-out" onclick="area(20, 5);">
-                        <img src="static/img/p4/talk-a.png" class="talk-a" onclick="area(0, 5);">
-                        <img src="static/img/p4/talk-b.png" class="talk-b" onclick="area(0, 5);">
-                        <img src="static/img/p4/talk-c.png" class="talk-c" onclick="area(20, 5);">
+                        <img src="static/img/a.png" class="a" data-option="a" data-anim="scale-in-out" onclick="area('a', 0, 5);">
+                        <img src="static/img/b.png" class="b" data-option="b" data-anim="scale-in-out" onclick="area('b', 0, 5);">
+                        <img src="static/img/c.png" class="c" data-option="v" data-anim="scale-in-out" onclick="area('c', 20, 5);">
+                        <img src="static/img/p4/talk-a.png" class="talk-a" data-option="a" onclick="area('a', 0, 5);">
+                        <img src="static/img/p4/talk-b.png" class="talk-b" data-option="b" onclick="area('b', 0, 5);">
+                        <img src="static/img/p4/talk-c.png" class="talk-c" data-option="c" onclick="area('c', 20, 5);">
                         <map name="answer4" id="answer4">
-                            <area shape="poly" coords="15,45, 470,45, 395,245, 15,310" href="javascript:area(0, 5);"/>
-                            <area shape="poly" coords="15,310, 395,245, 310,510, 15,510" href="javascript:area(0, 5);"/>
-                            <area shape="poly" coords="470,45, 660,45, 660,510, 310,510" href="javascript:area(20, 5);"/>
+                            <area shape="poly" coords="15,45, 470,45, 395,245, 15,310" data-option="a" href="javascript:area('a', 0, 5);"/>
+                            <area shape="poly" coords="15,310, 395,245, 310,510, 15,510" data-option="b" href="javascript:area('b', 0, 5);"/>
+                            <area shape="poly" coords="470,45, 660,45, 660,510, 310,510" data-option="c" href="javascript:area('c', 20, 5);"/>
                         </map>
                     </div>
                 </div>
@@ -153,16 +156,16 @@
                     </div>
                     <div class="answer-box">
                         <img src="static/img/p5/answer.png" usemap="#answer5" class="answer">
-                        <img src="static/img/a.png" class="a" data-anim="fade-in-out" onclick="area(0, 6);">
-                        <img src="static/img/b.png" class="b" data-anim="fade-in-out" onclick="area(20, 6);">
-                        <img src="static/img/c.png" class="c" data-anim="fade-in-out" onclick="area(0, 6);">
-                        <img src="static/img/p5/talk-a.png" class="talk-a" onclick="area(0, 6);">
-                        <img src="static/img/p5/talk-b.png" class="talk-b" onclick="area(20, 6);">
-                        <img src="static/img/p5/talk-c.png" class="talk-c" onclick="area(0, 6);">
+                        <img src="static/img/a.png" class="a" data-option="a" data-anim="scale-in-out" onclick="area('a', 0, 6);">
+                        <img src="static/img/b.png" class="b" data-option="b" data-anim="scale-in-out" onclick="area('b', 20, 6);">
+                        <img src="static/img/c.png" class="c" data-option="v" data-anim="scale-in-out" onclick="area('c', 0, 6);">
+                        <img src="static/img/p5/talk-a.png" class="talk-a" data-option="a" onclick="area('a', 0, 6);">
+                        <img src="static/img/p5/talk-b.png" class="talk-b" data-option="b" onclick="area('b', 20, 6);">
+                        <img src="static/img/p5/talk-c.png" class="talk-c" data-option="c" onclick="area('c', 0, 6);">
                         <map name="answer5" id="answer5">
-                            <area shape="poly" coords="15,45, 280,45, 415,315, 15,385" href="javascript:area(0, 6);"/>
-                            <area shape="poly" coords="280,45, 660,45, 660,275, 415,315" href="javascript:area(20, 6);"/>
-                            <area shape="poly" coords="15,385, 660,275, 660,510, 15,510" href="javascript:area(0, 6);"/>
+                            <area shape="poly" coords="15,45, 280,45, 415,315, 15,385" data-option="a" href="javascript:area('a', 0, 6);"/>
+                            <area shape="poly" coords="280,45, 660,45, 660,275, 415,315" data-option="b" href="javascript:area('b', 20, 6);"/>
+                            <area shape="poly" coords="15,385, 660,275, 660,510, 15,510" data-option="c" href="javascript:area('c', 0, 6);"/>
                         </map>
                     </div>
                 </div>
@@ -173,21 +176,21 @@
                     <div class="main-box">
                         <img src="static/img/p6/main.png" class="main">
                         <img src="static/img/p6/card.png" class="card">
-                        <img src="static/img/p6/star1.png" class="star1">
-                        <img src="static/img/p6/star2.png" class="star2">
+                        <img src="static/img/p6/star1.png" class="star1" data-anim="fade-in-out">
+                        <img src="static/img/p6/star2.png" class="star2" data-anim="fade-in-out delay3">
                     </div>
                     <div class="answer-box">
                         <img src="static/img/p6/answer.png" usemap="#answer6" class="answer">
-                        <img src="static/img/a.png" class="a" data-anim="fade-in-out" onclick="area(0, 6);">
-                        <img src="static/img/b.png" class="b" data-anim="fade-in-out" onclick="area(20, 6);">
-                        <img src="static/img/c.png" class="c" data-anim="fade-in-out" onclick="area(0, 6);">
-                        <img src="static/img/p6/talk-a.png" class="talk-a" onclick="area(0, 6);">
-                        <img src="static/img/p6/talk-b.png" class="talk-b" onclick="area(20, 6);">
-                        <img src="static/img/p6/talk-c.png" class="talk-c" onclick="area(0, 6);">
+                        <img src="static/img/a.png" class="a" data-option="a" data-anim="scale-in-out" onclick="area('a', 20, 7);">
+                        <img src="static/img/b.png" class="b" data-option="b" data-anim="scale-in-out" onclick="area('b', 20, 7);">
+                        <img src="static/img/c.png" class="c" data-option="v" data-anim="scale-in-out" onclick="area('c', 20, 7);">
+                        <img src="static/img/p6/talk-a.png" class="talk-a" data-option="a" onclick="area('a', 20, 7);">
+                        <img src="static/img/p6/talk-b.png" class="talk-b" data-option="b" onclick="area('b', 20, 7);">
+                        <img src="static/img/p6/talk-c.png" class="talk-c" data-option="c" onclick="area('c', 20, 7);">
                         <map name="answer6" id="answer6">
-                            <area shape="poly" coords="15,45, 270,45, 400,320, 15,385" href="javascript:area(0, 6);"/>
-                            <area shape="poly" coords="270,45, 660,45, 660,280, 400,320" href="javascript:area(20, 6);"/>
-                            <area shape="poly" coords="15,385, 660,280, 660,510, 15,510" href="javascript:area(0, 6);"/>
+                            <area shape="poly" coords="15,45, 270,45, 400,320, 15,385" data-option="a" href="javascript:area('a', 20, 7);"/>
+                            <area shape="poly" coords="270,45, 660,45, 660,280, 400,320" data-option="b" href="javascript:area('b', 20, 7);"/>
+                            <area shape="poly" coords="15,385, 660,280, 660,510, 15,510" data-option="c" href="javascript:area('c', 20, 7);"/>
                         </map>
                     </div>
                 </div>
@@ -200,9 +203,9 @@
                         <img src="static/img/p7/close.png" class="close">
                         <img src="static/img/p7/btn.png" class="btn">
                         <form id="form">
-                            <input type="text" name="name" class="text">
-                            <input type="number" name="mobile" class="text">
-                            <input type="number" name="age" class="text">
+                            <input type="text" name="name" class="text" maxlength="20">
+                            <input type="number" name="mobile" class="text" maxlength="20">
+                            <input type="number" name="age" class="text" maxlength="5">
                         </form>
                     </div>
                 </div>
@@ -212,11 +215,11 @@
                 <div class="box">
                     <div class="main-box">
                         <img src="static/img/p8/main.png" class="main">
-                        <img src="static/img/p8/d.png" class="result">
+                        <img src="static/img/p8/a.png" class="result">
                         <img src="static/img/p8/police.png" class="police">
                         <img src="static/img/p8/btn-share.png" class="btn-share">
                         <img src="static/img/p8/btn-replay.png" class="btn-replay">
-                        <div class="name">电视剧爱</div>
+                        <div class="name"></div>
 
                         <img id="ringoImage" style="display: none" src="static/img/p8/result-a.png">
                         <img id="ecode" style="display: none" src="static/img/p8/ecode.jpg">
@@ -246,8 +249,8 @@ $(function() {
     var wxData = {
         imgUrl: baseUrl + 'static/img/share.jpg',
         link: baseUrl + 'index.html',
-        title: '他们即将让全长沙抖抖抖抖起来',
-        desc: '来湖南首个网红音乐会遇见马可、胡66、马良、面筋哥、亮声OPEN……'
+        title: '挑战全城开车最牛的你！',
+        desc: '交通常识答题测验，成绩前100名将亲临挑战赛现场，用车技赢取千元油卡和华为mate20手机'
     };
     weixin.bindData(wxData);
 });
