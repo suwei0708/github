@@ -6549,7 +6549,7 @@
         <!--继续学习横条 end -->
 
         <!--弹窗登录观看 start -->
-        <div class="popup-box popup-play" style="display: none">
+        <div class="popup-box popup-play">
             <div class="fl left">
                 <div class="tit">加入巧匠课堂可以获得：</div>
                 <ul class="list">
@@ -6580,7 +6580,7 @@
         <!--弹窗登录观看 end -->
 
         <!--弹窗199 start -->
-        <div class="popup-box popup-199" style="display: none">
+        <div class="popup-box popup-199">
             <div class="ico-close"></div>
             <div class="img"><img src="images/index-img6.jpg" alt=""></div>
             <div class="tit">获得价值 <strong class="red">199元</strong> 合成直播课权限</div>
@@ -6592,6 +6592,7 @@
         <!-- 奖学金浮窗 start -->
         <style>
             .popup-jxj1 {
+                display: none;
                 overflow: hidden;
                 position: fixed;
                 left: -265px;
@@ -6607,6 +6608,7 @@
                 cursor: pointer;
             }
             .popup-jxj2 {
+                display: none;
                 position: fixed;
                 left: 0;
                 bottom: 0;
@@ -6804,10 +6806,10 @@
                 }
             }
         </style>
-        <div class="popup-jxj1" style="display: none">
+        <div class="popup-jxj1">
             <img src="images/fixed-jxj1.png" alt="">
         </div>
-        <div class="popup-jxj2" style="display: none">
+        <div class="popup-jxj2">
             <div class="wrap">
                 <a href="#" target="_blank"><img src="images/fixed-jxj2.png" alt=""></a>
             </div>
@@ -6816,19 +6818,120 @@
         <!-- 奖学金浮窗 end -->
 
         <!-- 砍价弹窗 start -->
-        <div class="popup-box popup-kj" style="display: ;">
+        <div class="popup-box popup-kj" style="display: none">
             <div class="ico-close"></div>
             <a href="#"><img src="images/kanjia.gif"></a>
         </div>
         <!-- 砍价弹窗 end -->
 
         <!--弹窗砍价 start -->
-        <div class="popup-box popup-kanjia" style="display: none">
+        <div class="popup-box popup-kanjia">
             <div class="ico ico-close" onclick="$(this).off('click'); $('.popup-kanjia, .mask').hide();"></div>
             <a href="http://www.qiaojiang.tv/kanjia" target="_blank"><img src="images/kanjia.png" height="505" width="1076" alt=""></a>
         </div>
         <!--弹窗砍价 end -->
-        <div class="mask" style="display: none"></div>
+        <div class="mask" style="display: block"></div>
+
+        <!--弹窗限时优惠 start -->
+        <style>
+            .popup-discount {
+                overflow: visible;
+                width: 570px;
+                height: 432px;
+                padding: 0;
+                margin: -216px 0 0 -285px;
+            }
+            .popup-discount .img {
+                position: absolute;
+                top: -96px;
+                left: 151px;
+                width: 311px;
+            }
+            .popup-discount .tit {
+                padding: 155px 0 0;
+                height: auto;
+                line-height: 36px;
+            }
+            .popup-discount .tit h3 {
+                font-size: 28px;
+                color: #333;
+            }
+            .popup-discount .tit .red {
+                color: #ff456b;
+            }
+            .popup-discount .tit p {
+                font-size: 18px;
+                color: #666;
+            }
+            .popup-discount .btn {
+                display: inline-block;
+                vertical-align: top;
+                width: 160px;
+                height: 44px;
+                line-height: 44px;
+                margin: 40px 0 0;
+                background: #ffa800;
+                color: #fff;
+                font-size: 16px;
+                font-weight: 700;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                -o-border-radius: 4px;
+                border-radius: 4px;
+            }
+            .popup-discount .btn:hover {
+                background: #ffba00;
+            }
+            #discount-times {
+                padding: 15px 0 0;
+                color: #333;
+                font-size: 0;
+                line-height: 52px;
+            }
+            #discount-times > div, #discount-times > strong {
+                display: inline-block;
+                vertical-align: top;
+                font-size: 16px;
+            }
+            #discount-times > strong {
+                margin: 0 8px;
+            }
+            #discount-times .num-bg {
+                display: inline-block;
+                vertical-align: top;
+                width: 40px;
+                height: 52px;
+                margin: 0 5px;
+                background: #ff456b;
+                color: #fff;
+                font-weight: 700;
+                font-size: 24px;
+                font-family: "arial";
+                text-align: center;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                -ms-border-radius: 4px;
+                -o-border-radius: 4px;
+                border-radius: 4px;
+            }
+        </style>
+
+        <div class="popup-box popup-discount" style="display: block">
+            <div class="ico-close"></div>
+            <img src="images/popup-cong.png" class="img">
+            <div class="tit">
+                <h3>获得终身VIP <strong class="red">99元</strong>优惠</h3>
+                <p>有效期：1小时</p>
+            </div>
+            <div id="discount-times" data-end="2018/11/22 16:45:00">
+                <div class="mini"><span class="num-bg">0</span><span class="num-bg">0</span></div><strong>分</strong>
+                <div class="sec"><span class="num-bg">0</span><span class="num-bg">0</span></div><strong>秒</strong>
+                <div class="hm"><span class="num-bg">0</span><span class="num-bg">0</span></div>
+            </div>
+            <a href="#" class="btn">享受优惠</a>
+        </div>
+        <!--弹窗限时优惠 end -->
 
         <!--js调用 start -->
         <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
@@ -6908,6 +7011,82 @@
                     loadNumber(1197, 100, '#num3');
                 }
             });
+        </script>
+
+        <script type="text/javascript">
+            // 倒计时插件
+            $.extend($.fn,{
+                fnTimeCountDown:function(d){
+                    this.each(function(){
+                        var $this = $(this);
+                        var o = {
+                            hm: $this.find('.hm'),
+                            sec: $this.find('.sec'),
+                            mini: $this.find('.mini')
+                        };
+                        var f = {
+                            haomiao: function(n){
+                                m = n.toString().slice(0, 2);
+                                if(m < 10)return '0' + n.toString();
+                                return m.toString();
+                            },
+                            zero: function(n){
+                                var _n = parseInt(n, 10);//解析字符串,返回整数
+                                if(_n > 0){
+                                    if(_n <= 9){
+                                        _n = '0' + _n
+                                    }
+                                    return String(_n);
+                                }else{
+                                    return '00';
+                                }
+                            },
+                            dv: function(){
+                                //d = d || Date.UTC(2050, 0, 1); //如果未定义时间，则我们设定倒计时日期是2050年1月1日
+                                var _d = $this.data('end') || d;
+                                var now = new Date(),
+                                    endDate = new Date(_d);
+                                //现在将来秒差值
+                                //alert(future.getTimezoneOffset());
+                                var dur = (endDate - now.getTime()) / 1000 , mss = endDate - now.getTime() ,pms = {
+                                    hm:'00',
+                                    sec: '00',
+                                    mini: '00'
+                                };
+                                if(mss > 0){
+                                    pms.hm = f.haomiao(mss % 1000);
+                                    pms.sec = f.zero(dur % 60);
+                                    pms.mini = Math.floor((dur / 60)) > 0? f.zero(Math.floor((dur / 60)) % 60) : '00';
+                                }else{
+                                    pms.mini=pms.sec='00';
+                                    pms.hm = '00';
+                                    //alert('结束了');
+                                    return;
+                                }
+                                return pms;
+                            },
+                            ui: function(){
+                                if(o.hm){
+                                    var hm = f.dv().hm.split('');
+                                    o.hm.html('<span class="num-bg">' + hm[0] + '</span><span class="num-bg">' + hm[1] + '</span>');
+                                }
+                                if(o.sec){
+                                    var sec = f.dv().sec.split('');
+                                    o.sec.html('<span class="num-bg">' + sec[0] + '</span><span class="num-bg">' + sec[1] + '</span>');
+                                }
+                                if(o.mini){
+                                    var mini = f.dv().mini.split('');
+                                    o.mini.html('<span class="num-bg">' + mini[0] + '</span><span class="num-bg">' + mini[1] + '</span>');
+                                }
+                                setTimeout(f.ui, 1);
+                            }
+                        };
+                        f.ui();
+                    });
+                }
+            });
+
+            $("#discount-times").fnTimeCountDown($('#discount-times').data('end'));
         </script>
         <!--js调用 end -->
     </body>
