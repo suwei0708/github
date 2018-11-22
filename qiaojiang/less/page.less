@@ -9773,6 +9773,9 @@ a.page-num{
                     &77 {
                         background-position: 0 -1040px;
                     }
+                    &99 {
+                        background-position: 0 -1120px;
+                    }
                 }
                 .text {
                     padding: 18px 0 0 0;
@@ -9783,6 +9786,20 @@ a.page-num{
                         color: #333;
                         span {
                             color: #999;
+                        }
+                    }
+                    &#discount-times {
+                        padding: 18px 0 0;
+                        line-height: 40px;
+                        font-size: 16px;
+                        color: #333;
+                        > div {
+                            .dis(i);
+                            font-weight: 700;
+                            margin: 0 3px 0 0;
+                        }
+                        strong {
+                            .dis(i);
                         }
                     }
                 }
@@ -9798,6 +9815,16 @@ a.page-num{
                 &.cur {
                     .ico-select {
                         .dis(b);
+                    }
+                }
+                &.bor {
+                    .ov(v);
+                    width: 326px;
+                    border: 1px solid #f85778;
+                    .ico-select {
+                        right: -1px;
+                        bottom: -1px;
+                        .bdr(4px);
                     }
                 }
             }

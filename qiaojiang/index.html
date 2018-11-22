@@ -6924,7 +6924,7 @@
                 <h3>获得终身VIP <strong class="red">99元</strong>优惠</h3>
                 <p>有效期：1小时</p>
             </div>
-            <div id="discount-times" data-end="2018/11/22 16:45:00">
+            <div id="discount-times" data-end="2018/11/22 18:45:00">
                 <div class="mini"><span class="num-bg">0</span><span class="num-bg">0</span></div><strong>分</strong>
                 <div class="sec"><span class="num-bg">0</span><span class="num-bg">0</span></div><strong>秒</strong>
                 <div class="hm"><span class="num-bg">0</span><span class="num-bg">0</span></div>
@@ -7013,80 +7013,13 @@
             });
         </script>
 
+        <script src="js/timeCountDown.js"></script>
         <script type="text/javascript">
-            // 倒计时插件
-            $.extend($.fn,{
-                fnTimeCountDown:function(d){
-                    this.each(function(){
-                        var $this = $(this);
-                        var o = {
-                            hm: $this.find('.hm'),
-                            sec: $this.find('.sec'),
-                            mini: $this.find('.mini')
-                        };
-                        var f = {
-                            haomiao: function(n){
-                                m = n.toString().slice(0, 2);
-                                if(m < 10)return '0' + n.toString();
-                                return m.toString();
-                            },
-                            zero: function(n){
-                                var _n = parseInt(n, 10);//解析字符串,返回整数
-                                if(_n > 0){
-                                    if(_n <= 9){
-                                        _n = '0' + _n
-                                    }
-                                    return String(_n);
-                                }else{
-                                    return '00';
-                                }
-                            },
-                            dv: function(){
-                                //d = d || Date.UTC(2050, 0, 1); //如果未定义时间，则我们设定倒计时日期是2050年1月1日
-                                var _d = $this.data('end') || d;
-                                var now = new Date(),
-                                    endDate = new Date(_d);
-                                //现在将来秒差值
-                                //alert(future.getTimezoneOffset());
-                                var dur = (endDate - now.getTime()) / 1000 , mss = endDate - now.getTime() ,pms = {
-                                    hm:'00',
-                                    sec: '00',
-                                    mini: '00'
-                                };
-                                if(mss > 0){
-                                    pms.hm = f.haomiao(mss % 1000);
-                                    pms.sec = f.zero(dur % 60);
-                                    pms.mini = Math.floor((dur / 60)) > 0? f.zero(Math.floor((dur / 60)) % 60) : '00';
-                                }else{
-                                    pms.mini=pms.sec='00';
-                                    pms.hm = '00';
-                                    //alert('结束了');
-                                    return;
-                                }
-                                return pms;
-                            },
-                            ui: function(){
-                                if(o.hm){
-                                    var hm = f.dv().hm.split('');
-                                    o.hm.html('<span class="num-bg">' + hm[0] + '</span><span class="num-bg">' + hm[1] + '</span>');
-                                }
-                                if(o.sec){
-                                    var sec = f.dv().sec.split('');
-                                    o.sec.html('<span class="num-bg">' + sec[0] + '</span><span class="num-bg">' + sec[1] + '</span>');
-                                }
-                                if(o.mini){
-                                    var mini = f.dv().mini.split('');
-                                    o.mini.html('<span class="num-bg">' + mini[0] + '</span><span class="num-bg">' + mini[1] + '</span>');
-                                }
-                                setTimeout(f.ui, 1);
-                            }
-                        };
-                        f.ui();
-                    });
-                }
-            });
-
-            $("#discount-times").fnTimeCountDown($('#discount-times').data('end'));
+            if($("#discount-times").length) {
+                $("#discount-times").timeCountDown($('#discount-times').data('end'), function() {
+                    console.log('结束了');
+                });
+            }
         </script>
         <!--js调用 end -->
     </body>
