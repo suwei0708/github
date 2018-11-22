@@ -115,14 +115,6 @@ function initPageEvents() {
         }
     });
 
-    // var arr = [1, 2, 3, 4, 5, 6];
-    // var ranNum = 6;
-    // for (var i = 0; i < ranNum; i++) {
-    // var ran = Math.floor(Math.random() * arr.length);
-    // result.push(arr.splice(ran, 1)[0]);
-    // };
-    // console.log(result);
-
     $('.page0').on('click', '.btn', function() {
         app.swiper.slideTo(1, 0, false);
         hanldeAnimate(1);
@@ -131,29 +123,29 @@ function initPageEvents() {
     // form提交
     $('.page7').on('click', '.btn', function() {
         if(!isClick) {return false;}
-        // if(!$.trim($('#form input[name=name]').val())) {
-        //     alert('姓名不能为空！');
-        //     return false;
-        // }
-        // if(!$.trim($('#form input[name=mobile]').val())) {
-        //     alert('电话号码不能为空！');
-        //     return false;
-        // }
-        // if(!(/^1\d{10}$/.test($.trim($('#form input[name=mobile]').val())))) {
-        //     alert('电话号码格式不正确');
-        //     return false;
-        // }.
-        // if(!$.trim($('#form input[name=age]').val())) {
-        //     alert('车龄不能为空！');
-        //     return false;
-        // }
+        if(!$.trim($('#form input[name=name]').val())) {
+            alert('姓名不能为空！');
+            return false;
+        }
+        if(!$.trim($('#form input[name=mobile]').val())) {
+            alert('电话号码不能为空！');
+            return false;
+        }
+        if(!(/^1\d{10}$/.test($.trim($('#form input[name=mobile]').val())))) {
+            alert('电话号码格式不正确');
+            return false;
+        }
+        if(!$.trim($('#form input[name=age]').val())) {
+            alert('车龄不能为空！');
+            return false;
+        }
 
         isClick = 0;
 
         $('#form input[name=name]').focus();
 
         $.ajax({
-            url: 'https://m.xinliling.com/trees?type=2',
+            url: 'https://m.xinliling.com/trees?type=3',
             type: 'POST',
             dataType: 'json',
             data: $('#form').serialize()
@@ -161,7 +153,7 @@ function initPageEvents() {
         .done(function(res) {
             var wxData = {
                 title: $.trim($('#form input[name=name]').val()) + '长沙市文明办、长沙公安交警队认证您为第' + res.total_user + '名交通文明践行者，城市文明接力邀您一起加入！',
-                desc: '交通常识答题测验，成绩前100名将亲临挑战赛现场，用车技赢取千元油卡和华为mate20手机'
+                desc: '122全国交通安全日答题测验，成绩满分将有机会亲临老司机挑战赛现场，用车技赢取华为mate20和千元油卡'
             };
             weixin.bindData(wxData);
             weixin.bindShareInfo();
@@ -175,6 +167,9 @@ function initPageEvents() {
             // canvas画图
             document.getElementById('canvasHolder').appendChild(canvas);
             document.getElementById('pngHolder').appendChild(convertCanvasToImage(canvas));
+
+            $('#form input[name=name]').blur();
+            alert('报名成功！');
             app.swiper.slideTo(8, 0, false);
         })
         .fail(function(res) {
@@ -182,22 +177,22 @@ function initPageEvents() {
                 alert(res.responseText);
             }
             else {
-                // alert('网络错误，请稍后重试');
+                alert('网络错误，请稍后重试');
 
-                var name = $.trim($('#form input[name=name]').val());
-                $('.page8').find('.name').html(name);
-                var sampleImage = document.getElementById('ringoImage'),
-                    ecode = document.getElementById('ecode'),
-                    canvas = convertImageToCanvas(sampleImage, ecode, name);
+                // var name = $.trim($('#form input[name=name]').val());
+                // $('.page8').find('.name').html(name);
+                // var sampleImage = document.getElementById('ringoImage'),
+                //     ecode = document.getElementById('ecode'),
+                //     canvas = convertImageToCanvas(sampleImage, ecode, name);
 
-                // canvas画图
-                document.getElementById('canvasHolder').appendChild(canvas);
-                document.getElementById('pngHolder').appendChild(convertCanvasToImage(canvas));
-                setTimeout(function() {
-                    $('#form input[name=name]').blur();
-                    alert('报名成功！');
-                    app.swiper.slideTo(8, 0, false);
-                }, 1000)
+                // // canvas画图
+                // document.getElementById('canvasHolder').appendChild(canvas);
+                // document.getElementById('pngHolder').appendChild(convertCanvasToImage(canvas));
+                // setTimeout(function() {
+                //     $('#form input[name=name]').blur();
+                //     alert('报名成功！');
+                //     app.swiper.slideTo(8, 0, false);
+                // }, 1000)
             }
         })
         .always(function() {
