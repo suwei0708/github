@@ -26,7 +26,18 @@
 </section>
 
 <!-- 向下箭头 -->
-<audio src="static/music/music-p1.mp3" preload></audio>
+<audio src="static/music/bg.mp3" preload loop></audio>
+<audio src="static/music/wrong.m4a" preload></audio>
+<audio src="static/music/right.mp3" preload></audio>
+<audio src="static/music/submit.mp3" preload></audio>
+
+<!-- 基础JS脚本部分 -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
+<!-- 当前页面自定义JS -->
+<script src="static/js/page.js"></script>
+
+<!-- 微信分享文字自定义 -->
+<script src="static/js/weixin.js"></script>
 
 <div id="content">
     <!-- 主题滑动页面 -->
@@ -235,20 +246,13 @@
     </section>
 </div>
 
-<!-- 基础JS脚本部分 -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.4.1/js/swiper.min.js"></script>
-<!-- 当前页面自定义JS -->
-<script src="static/js/page.min.js"></script>
-
-<!-- 微信分享文字自定义 -->
-<script src="static/js/weixin.js"></script>
 <script>
 $(function() {
     var path = window.location.href;
     var baseUrl = path.substr(0, path.lastIndexOf('/') + 1);
     var wxData = {
         imgUrl: baseUrl + 'static/img/share.jpg',
-        link: baseUrl + 'index.html',
+        link: path,
         title: '挑战全城开车最牛的你！',
         desc: '122全国交通安全日答题测验，成绩满分将有机会亲临老司机挑战赛现场，用车技赢取华为mate20和千元油卡'
     };

@@ -12,9 +12,18 @@ app.loop = false;  // 循环展示
 app.DEFAULT_WIDTH = 750;
 app.DEFAULT_HEIGHT = 1218;
 app.baseUrl = 'static/img/';
-app.music1 = $('audio')[0];
+app.music = $('audio')[0];
+app.manswer = $('audio')[1];
+app.mright = 'static/music/right.mp3';
+app.mwrong = 'static/music/wrong.m4a';
+app.msubmit = 'static/music/submit.mp3';
 
 app.init = function () {
+    //微信下兼容音乐处理
+    if(app.music) {app.music.play()}
+    document.addEventListener('WeixinJSBridgeReady', function () {
+        app.music.play();
+    }, false);
 
     app.loop = getUrlParameterByName('loop') || false;
 
@@ -51,19 +60,7 @@ app.init = function () {
         preventClicksPropagation: true,
         width: app.DEFAULT_WIDTH,
         height: swiperH,
-        noSwiping : true,
-        on: {
-            slideNextTransitionStart: function(){
-                var index = this.activeIndex;
-                if(index == 1) {
-                    // app.music1.src = app.music2.src;
-                    // app.music1.loop = false;
-                    // app.music1.play();
-                }
-            },
-            slideChangeTransitionEnd: function(){
-            }
-        }
+        noSwiping : true
     });
 
     // 初始化音乐按钮
@@ -90,11 +87,6 @@ function getUrlParameterByName(name) {
  */
 $(function () {
     app.init();
-    //微信下兼容音乐处理
-    // if(app.music1) {app.music1.play();}
-    document.addEventListener('WeixinJSBridgeReady', function () {
-        // app.music1.play();
-    }, false);
     initPageEvents();
 });
 
@@ -123,6 +115,8 @@ function initPageEvents() {
     // form提交
     $('.page7').on('click', '.btn', function() {
         if(!isClick) {return false;}
+        app.manswer.src = app.msubmit;
+        app.manswer.play();
         if(!$.trim($('#form input[name=name]').val())) {
             alert('姓名不能为空！');
             return false;
@@ -262,12 +256,18 @@ function area(answer, score, num) {
     $('.page' + (num - 1)).find('.talk-' + answer).addClass('fade-in-out');
     if(score > 0) {
         $('.page' + (num - 1)).find('.card').addClass('fade-in-out2');
+        app.manswer.src = app.mright;
+        app.manswer.play();
+    }
+    else {
+        app.manswer.src = app.mwrong;
+        app.manswer.play();
     }
     setTimeout(function() {
         app.swiper.slideTo(num, 0, false);
         hanldeAnimate(num);
         isClick = 1;
-    }, 1000);
+    }, 2000);
     resultNum = resultNum + score;
     if(num == 7) {
         var result = 'a';
