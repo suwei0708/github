@@ -152,9 +152,13 @@
             <div class="user-list user-coupon">
                 <ul>
                     <li>
-                        <div class="coupon coupon10"><span></span></div>
-                        <p>不限制使用</p>
-                        <p>2017.10.25-2018.01.12</p>
+                        <div class="coupon coupon99"><span></span></div>
+                        <p>有效期1小时</p>
+                        <p id="discount-times" data-end="2018/11/23 15:55:00">
+                            <span class="mini"><span class="num-bg">0</span><span class="num-bg">0</span></span> <strong>:</strong>
+                            <span class="sec"><span class="num-bg">0</span><span class="num-bg">0</span></span> <strong>:</strong>
+                            <span class="hm"><span class="num-bg">0</span><span class="num-bg">0</span></span>
+                        </p>
                         <a href="#" class="btn">立即使用</a>
                     </li>
                     <li>
@@ -341,5 +345,14 @@
         <script src="../js/masonry-docs.min.js"></script>
         <!-- 瀑布流js end-->
         <script src="../js/user.js" type="text/javascript"></script>
+
+        <script src="../js/timeCountDown.js"></script>
+        <script type="text/javascript">
+            if($("#discount-times").length) {
+                $("#discount-times").timeCountDown($('#discount-times').data('end'), function() {
+                    console.log('结束了');
+                });
+            }
+        </script>
     </body>
 </html>
