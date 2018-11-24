@@ -26,6 +26,7 @@ $(function() {
     $('.login-box').on('click', '.tab-tit li', function() {
         $(this).addClass('cur').siblings().removeClass('cur');
         $('.login-box').find('.form').hide().eq($(this).index()).show();
+        $('.login-box').find('.form').eq($(this).index()).find('.tips').hide();
     })
     // 清空input值
     .on('click', '.icon-quxiao', function() {
