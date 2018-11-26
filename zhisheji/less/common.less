@@ -3858,3 +3858,65 @@ body .bd_weixin_popup {
         color: #fff;
     }
 }
+
+// 十强底部浮窗
+.fixed-sq {
+    .pos(f);
+    bottom: 0;
+    left: 0;
+    z-index: 987;
+    width: 100%;
+    height: 75px;
+    text-align: right;
+    background: #0a0a0a;
+    .wrap {
+        .pos(r);
+        padding: 15px 0;
+    }
+    .img {
+        .pos(a);
+        bottom: 0;
+        left: 40px;
+        width: 208px;
+    }
+    .close {
+        .dis(ib);
+        vertical-align: top;
+        margin: 15px 70px 0 0;
+        font-size: 16px;
+        color: #4e4e4e;
+        &:hover {
+            color: #999;
+        }
+    }
+    .btn {
+        .dis(ib);
+        vertical-align: top;
+        width: 156px;
+        height: 45px;
+        margin: 0 132px 0 0;
+        line-height: 45px;
+        font-size: 16px;
+        text-align: center;
+        background: #f5d586;
+        color: #000;
+        .bdr(4px);
+        span {
+            .dis(ib);
+            vertical-align: middle;
+            font-size: 12px;
+            margin: -1px 0 0 10px;
+        }
+        &:hover {
+            background: #ffd89b;
+        }
+    }
+    p {
+        .dis(ib);
+        vertical-align: top;
+        line-height: 45px;
+        margin: 0 45px 0 0;
+        font-size: 23px;
+        color: #f5d586;
+    }
+}
