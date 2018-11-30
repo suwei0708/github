@@ -164,6 +164,10 @@ function judgeTips(obj) {
             jQuery(this).parents('.item').removeClass('has-val');
             jQuery(this).nextAll('.tips').html('<span class="triangle"></span>' + jQuery(this).parents('.item').find('.input-label').text() + '不能为空！').show();
         }
+        else if(!(/^1\d{10}$/.test(jQuery.trim(jQuery(this).val()))) && jQuery(this).parents('.item').find('.input-label').text() == '手机号') {
+            jQuery(this).nextAll('.tips').html('<span class="triangle"></span>' + jQuery(this).parents('.item').find('.input-label').text() + '格式不正确！').show();
+            return false;
+        }
     });
     jQuery(obj).find('.txt').on('focus', function() {
         jQuery(this).nextAll('.tips').hide();
