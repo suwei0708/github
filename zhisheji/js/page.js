@@ -8,14 +8,8 @@ $(function() {
             play: 3000,
             pause: 2500,
             hoverPause: true,
-            next: 'icon-b-r',
-            prev: 'icon-b-l'
-        });
-
-        $('#sld').on('mouseover', function() {
-            $('.icon-b-l, .icon-b-r').show();
-        }).on('mouseout', function() {
-            $('.icon-b-l, .icon-b-r').hide();
+            next: 'icon-youjiantou',
+            prev: 'icon-zuojiantou'
         });
     }
 
@@ -500,6 +494,11 @@ $(function() {
             switchNum = 0;
         }
         switchDom.find('.list').hide().eq(switchNum).show();
+    });
+
+    // 首页文章
+    $('.article-course .list').on('mouseover', 'li', function() {
+        $(this).addClass('cur').siblings().removeClass('cur');
     });
 });
 })(jQuery);
