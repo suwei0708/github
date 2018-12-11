@@ -912,7 +912,7 @@
 // alert和confirm美化
 // 调用方法, 标题为null则不显示标题
 // $.msgBox.Alert('title', 'msg');
-// $.msgBox.Confirm('title', 'msg', func);
+// $.msgBox.Confirm('title', 'msg', funcOk, funcNo);
 (function() {
     jQuery.msgBox = {
             Alert: function(title, msg) {
@@ -920,10 +920,10 @@
                 btnOk();
                 btnNo();
             },
-            Confirm: function(title, msg, callback) {
+            Confirm: function(title, msg, callback, callbackno) {
                 GenerateHtml('confirm', title, msg);
                 btnOk(callback);
-                btnNo();
+                btnNo(callbackno);
             }
         }
         //生成Html
@@ -971,10 +971,13 @@
             });
         }
         //取消按钮事件
-    var btnNo = function() {
+    var btnNo = function(callback) {
         jQuery('#sw-btn-no, #sw-close').on('click', function() {
             jQuery('#sw-con').remove();
             maskHide();
+            if (typeof(callback) == 'function') {
+                callback();
+            }
         });
     }
 })();
