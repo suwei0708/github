@@ -776,11 +776,6 @@
             }
         }
     }
-    .list2 {
-        *width: @page-w + 20;
-        padding-top: 30px;
-        margin-right: -20px;
-    }
     .btn {
         .dis(b);
         width: 65px;
@@ -917,12 +912,55 @@
             }
         }
     }
+    .list2 {
+        *width: @page-w + 20;
+        padding-top: 30px;
+        margin-right: -20px;
+        h4 {
+            padding: 4px 0 0;
+        }
+        .img {
+            img {
+                .dis(ib);
+                vertical-align: middle;
+                margin: -3px 0 0 6px;
+                float: none;
+                width: 17px;
+                height: auto;
+                .bdr(0);
+            }
+            .avatar {
+                float: left;
+                width: 54px;
+                height: 54px;
+                margin: 0 18px 0 0;
+                .bdr(50%);
+            }
+        }
+        .address {
+            padding: 4px 0 0;
+            font-size: 14px;
+            color: #999;
+            em {
+                margin: 0 0 0 14px;
+            }
+        }
+        .pic {
+            padding: 15px 0 60px;
+            margin-right: -10px;
+            img {
+                width: 139px;
+                height: 85px;
+                margin: 0 10px 0 0;
+            }
+        }
+    }
 }
 
 /* 职位推荐 */
 .post {
     .tit {
-        padding-bottom: 10px;
+        padding: 10px 0;
     }
     .list2 {
         *width: @page-w + 20px;
@@ -931,9 +969,9 @@
             .ov(h);
             float: left;
             padding: 15px 25px;
-            width: 391 - 50px;
+            width: 393 - 50px;
             margin-right: 20px;
-            border: 1px solid #eee;
+            background: #fff;
             .bdr(4px);
             .cl();
             img {
@@ -958,6 +996,77 @@
                 color: #666;
                 font-size: 14px;
             }
+        }
+    }
+}
+
+/* 致设计简介 */
+.zsj-intro {
+    padding: 55px 0 70px;
+    text-align: center;
+    .tit {
+        h2 {
+            line-height: 30px;
+            color: #333;
+            font-size: 16px;
+        }
+        p {
+            line-height: 28px;
+            font-size: 14px;
+            color: #999;
+        }
+    }
+    .ct {
+        padding: 43px 0 85px;
+        font-size: 0;
+        .dl {
+            .pos(r);
+            .dis(ib);
+            vertical-align: top;
+            &.item1 {
+                width: 340px;
+                text-align: left;
+            }
+            &.item2 {
+                width: 544px;
+            }
+            &.item3 {
+                width: 326px;
+                text-align: right;
+            }
+        }
+        .dt {
+            .pos(r);
+            .dis(ib);
+            height: 78px;
+            line-height: 78px;
+            font-size: 16px;
+            span {
+                font-size: 40px;
+            }
+        }
+        p {
+            .pos(a);
+            top: 78px;
+            left: 0;
+            line-height: 32px;
+            color: #999;
+            white-space: nowrap;
+            font-size: 14px;
+        }
+        .line {
+            .pos(a);
+            top: 44px;
+            right: -2px;
+            width: 2px;
+            height: 30px;
+            background: #eee;
+        }
+        .green {
+            color: @green;
+        }
+        .red {
+            color: @red-h;
         }
     }
 }
