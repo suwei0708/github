@@ -106,12 +106,12 @@
 
         function fitHeader() {
             $(window).width() <= 1440 ? $('.header').addClass('header-min') : $('.header').removeClass('header-min');
-            var offsetLeft = $('.footer .wrap').offset().left - $('.header .logo').width() - 160;
-            $(window).width() > 1680 && offsetLeft > 0 ? $('.header .nav').css({
-                'margin-left': offsetLeft
-            }) : $('.header .nav').css({
-                'margin-left': 0
-            });
+            // var offsetLeft = $('.footer .wrap').offset().left - $('.header .logo').width() - 160;
+            // $(window).width() > 1680 && offsetLeft > 0 ? $('.header .nav').css({
+            //     'margin-left': offsetLeft
+            // }) : $('.header .nav').css({
+            //     'margin-left': 0
+            // });
         }
 
         //返回顶部

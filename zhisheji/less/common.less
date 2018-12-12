@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url(../../common/common-pc.less);
+@import url(../../../common/common-pc.less);
 
 body {
     min-width: @page-w;
@@ -348,21 +348,27 @@ i {
     }
 
     .logo {
+        .pos(a);
+        top: 0;
+        left: 80px;
         .ov(h);
         .dis(b);
         width: 101px;
         height: 32px;
         line-height: 200px;
-        margin: 19px 55px 19px 80px;
+        margin: 19px 170px 0 0;
         background: url(../images/logo.png) no-repeat 0 0;
         background: url(../images/logo.svg) no-repeat 0 0 ~'/' 101px auto;
     }
     // 导航
     .nav {
+        float: none;
+        width: @page-w;
+        margin: 0 auto;
         li {
             float: left;
             .pos(r);
-            margin: 0 25px;
+            margin: 0 66px 0 0;
             a {
                 .dis(b);
                 height: 70px;
@@ -371,7 +377,7 @@ i {
                 color: #fff;
                 font-size: 16px;
                 .arrow {
-                    margin-left: 5px;
+                    margin-left: 9px;
                     // .triangle(bottom, 6px, #fff);
                     font-size: 12px;
                     color: #fff;
@@ -979,23 +985,6 @@ i {
         }
     }
     // 小屏幕头部
-    &-min {
-        .logo {
-            margin: 19px 30px 19px 50px;
-        }
-        .nav {
-            li {
-                margin: 0 18px;
-            }
-            &-sub {
-                li {
-                    margin: 0;
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width: 1440px) {
     &-min {
         .logo {
             margin: 19px 30px 19px 50px;
