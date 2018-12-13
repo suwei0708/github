@@ -391,6 +391,7 @@
         }
         .ct {
             border-top: 1px solid #f6f6f6;
+            font-size: 0;
             .item {
                 .pos(r);
                 padding: 56px 0 20px;
@@ -407,7 +408,8 @@
                 }
                 &-half {
                     .pos(s);
-                    float: left;
+                    .dis(ib);
+                    vertical-align: top;
                     width: 50%;
                     padding: 46px 0 42px;
                     margin-bottom: 0;
@@ -415,6 +417,11 @@
                     span {
                         font-size: 22px;
                     }
+                }
+                &2 {
+                    padding: 46px 0 42px;
+                    margin-bottom: 0;
+                    border-top: 1px solid #f6f6f6;
                 }
             }
         }

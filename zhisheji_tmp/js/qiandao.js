@@ -50,6 +50,11 @@ $(function() {
         $('.qd-user-info').find('dl:eq(1) .num').html('10');
         // 我的设计币
         $('.qd-user-info').find('dl:eq(2) .num').html(+$('.qd-user-info').find('dl:eq(2) .num').html() + 10);
+        setTimeout(function() {
+            if($('.popup-qd').is(':visible')) {
+                $('.popup-qd').trigger('click');
+            }
+        }, 2000);
     });
 
     $('.qd-top').on('click', '.btn-green', function() {
