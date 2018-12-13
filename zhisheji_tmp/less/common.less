@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url(../../common/common-pc.less);
+@import url(../../../common/common-pc.less);
 
 body {
     min-width: @page-w;
@@ -1460,8 +1460,10 @@ body {
         color: #aaa;
         font-size: 14px;
         cursor: pointer;
+        .anim();
         &:hover {
             color: @blue;
+            .transform(rotate(180deg));
         }
     }
     &-ct {
@@ -3777,88 +3779,54 @@ body .bd_weixin_popup {
 
 .popup-qd {
     .popup {
-        width: 586px;
-        height: 572px;
-        margin: -572px / 2 0 0 -586px / 2;
+        width: 620px;
+        // height: 388px;
+        height: 332px;
+        padding: 0;
+        margin: -332px / 2 0 0 -620px / 2;
         color: #fff;
         text-align: center;
-        background: url(../images/qiandao/popup-qd.png) no-repeat 0 0;
     }
-    .popup-close.icon-fail {
-        top: 70px;
-        right: 60px;
+    .popup-qd-close {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        color: #ccc;
         font-size: 14px;
-        color: #d3e9ff;
+        cursor: pointer;
         .anim();
         &:hover {
-            color: #fff;
+            color: @blue;
             .transform(rotate(180deg));
         }
     }
     .tit {
-        padding: 56px 0 21px;
-        strong {
-            .dis(b);
-            line-height: 40px;
-            font-size: 30px;
-        }
-        p {
-            line-height: 32px;
-            color: #d3e9ff;
-            font-size: 14px;
-            .yellow {
-                color: #fff846;
-            }
-        }
-    }
-    .list {
-        padding: 30px 60px 24px 34px;
-        font-size: 0;
-        li {
+        padding: 44px 0 0;
+        img {
             .dis(ib);
             vertical-align: top;
-            margin: 11px 27px 0;
-            strong {
-                .dis(b);
-                width: 50px;
-                height: 50px;
-                line-height: 50px;
-                font-size: 18px;
-                background: url(../images/qiandao/qd-num.png) 0 0;
-            }
-            p {
-                line-height: 42px;
-                color: #666;
-                font-size: 14px;
-            }
-            &.li2, &.li3, &.li5, &.li6 {
-                strong {
-                    background-position: 0 -50px;
-                }
-            }
-            &.li4 {
-                strong {
-                    background-position: 0 -100px;
-                }
-            }
-            &.li7 {
-                strong {
-                    background-position: 0 -150px;
-                }
-            }
-            &.cur {
-                strong {
-                    background-position: 0 0;
-                }
-                p {
-                    color: #ccc;
-                }
+            width: 146px;
+        }
+        strong {
+            .dis(b);
+            padding: 15px 0 0;
+            line-height: 30px;
+            font-size: 16px;
+            color: #444;
+        }
+        p {
+            line-height: 25px;
+            color: #666;
+            font-size: 14px;
+            .blue {
+                margin-right: 18px;
             }
         }
     }
     .btn-box {
         font-size: 0;
-        padding: 28px 0 0;
+        padding: 24px 0 0;
         .btn {
             .dis(ib);
             vertical-align: top;
@@ -3890,11 +3858,76 @@ body .bd_weixin_popup {
             }
         }
     }
-    .other {
-        padding: 10px 0 0;
-        line-height: 30px;
-        font-size: 14px;
-        color: #fff;
+}
+.integral-right {
+    animation: integralRight 1s linear;
+    -webkit-animation: integralRight 1s linear;
+    -moz-animation: integralRight 1s linear;
+    -o-animation: integralRight 1s linear;
+    animation-fill-mode: forwards;
+    -webkit-animation-fill-mode: forwards
+}
+@keyframes integralRight {
+    from {
+        left: 50%;
+        top: 50%;
+        transform: scale(1);
+        opacity: 1
+    }
+
+    to {
+        left: 100%;
+        top: 66%;
+        transform: scale(0);
+        opacity: 0
+    }
+}
+
+@-webkit-keyframes integralRight {
+    from {
+        left: 50%;
+        top: 50%;
+        -webkit-transform: scale(1);
+        opacity: 1
+    }
+
+    to {
+        left: 90%;
+        top: 60%;
+        -webkit-transform: scale(0);
+        opacity: 0
+    }
+}
+
+@-moz-keyframes integralRight {
+    from {
+        left: 50%;
+        top: 50%;
+        -moz-transform: scale(1);
+        -moz-opacity: 1
+    }
+
+    to {
+        left: 100%;
+        top: 60%;
+        -moz-transform: scale(0);
+        -moz-opacity: 0
+    }
+}
+
+@-o-keyframes integralRight {
+    from {
+        left: 50%;
+        top: 50%;
+        -o-transform: scale(1);
+        opacity: 1
+    }
+
+    to {
+        left: 100%;
+        top: 60%;
+        -o-transform: scale(0);
+        opacity: 0
     }
 }
 
