@@ -353,12 +353,12 @@ i {
         left: 80px;
         .ov(h);
         .dis(b);
-        width: 101px;
-        height: 32px;
+        width: 98px;
+        height: 30px;
         line-height: 200px;
-        margin: 19px 170px 0 0;
+        margin: 20px 170px 0 0;
         background: url(../images/logo.png) no-repeat 0 0;
-        background: url(../images/logo.svg) no-repeat 0 0 ~'/' 101px auto;
+        background: url(../images/logo.svg) no-repeat 0 0 ~'/' 98px auto;
     }
     // 导航
     .nav {
@@ -392,7 +392,7 @@ i {
                 }
             }
             &.hover {
-                a {
+                > a {
                     color: #fff;
                     height: 67px;
                     line-height: 70px;
@@ -400,19 +400,20 @@ i {
                 }
                 .nav-sub {
                     a {
-                        height: 45px;
-                        line-height: 45px;
+                        height: 36px;
+                        line-height: 36px;
                         color: #666;
                         border-bottom: 0;
                         &:hover {
-                            color: @blue;
-                            background: #f6f6f6;
+                            background: @blue;
+                            color: #fff;
+                            .bdr(4px);
                         }
                     }
                     &.hover {
                         a {
-                            height: 45px;
-                            line-height: 45px;
+                            height: 36px;
+                            line-height: 36px;
                             color: #fff;
                             border-bottom: 0;
                         }
@@ -426,38 +427,39 @@ i {
             .pos(a);
             left: 50%;
             top: 60px;
-            width: 110px;
-            margin-left: -55px;
+            width: 138px;
+            padding: 11px 0;
+            margin-left: -138px / 2;
             background: #fff;
             .bdr(4px);
             .box-shadow(0 0 11px #ccc);
             li {
                 float: none;
+                padding: 3px 8px;
                 margin: 0;
                 a {
                     .dis(b);
-                    height: 45px;
-                    line-height: 45px;
-                    padding-left: 20px;
-                    margin-top: -1px;
+                    height: 36px;
+                    line-height: 36px;
                     color: #666;
                     font-size: 14px;
-                    text-align: left;
-                    border-top: 1px solid #f6f6f6;
                     &:hover {
-                        color: @blue;
+                        background: @blue;
+                        color: #fff;
+                        .bdr(4px);
                     }
                 }
             }
             &2 {
                 // .dis(b);
                 top: 61px;
-                left: -27px;
+                left: -29px;
                 width: 654px - 20;
                 padding: 13px 0 24px 20px;
                 li {
                     float: left;
                     width: 92px;
+                    padding: 0;
                     margin: 12px 0 0 10px !important;
                     a {
                         .height(30px) !important;
@@ -521,21 +523,21 @@ i {
     .search {
         .pos(r);
         z-index: 991;
-        width: 270px;
+        width: 250px;
         height: 36px;
         line-height: 36px;
         margin: 17px 24px 0 0;
         padding-bottom: 17px;
         form {
             .dis(b);
-            width: 270px;
+            width: 250px;
             height: 36px;
             background: #fff;
             .bdr(18px);
         }
 
         .txt {
-            width: 220px;
+            width: 200px;
             .height(36px);
             float: left;
             padding: 0 0 0 15px;
@@ -655,10 +657,10 @@ i {
             .img {
                 .pos(r);
                 .dis(ib);
-                width: 21px;
-                height: 21px;
-                line-height: 21px;
-                margin-top: 10px;
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+                margin-top: 6px;
                 background: #fff;
                 text-align: center;
                 .bdr(50%);
@@ -686,7 +688,7 @@ i {
                 .text {
                     .dis(n);
                     .pos(a);
-                    top: 25px;
+                    top: 29px;
                     left: 50%;
                     line-height: 16px;
                     font-size: 12px;
@@ -697,20 +699,21 @@ i {
                 }
             }
             .icon-home {
-                .dis(b);
-                margin: 4px 0 0 -1px;
+                .dis(ib);
+                vertical-align: middle;
                 color: @blue;
-                font-size: 11px;
+                font-size: 14px;
             }
             .icon-msg {
-                .dis(b);
+                .dis(ib);
+                vertical-align: middle;
                 color: @blue;
-                font-size: 13px;
-                margin-top: 4px;
+                font-size: 14px;
             }
         }
         .h-msg {
-            padding-bottom: 24px;
+            margin-right: 30px;
+            padding-bottom: 21px;
             &-info {
                 .dis(n);
                 .pos(a);
@@ -851,11 +854,11 @@ i {
                 }
             }
             &-info {
-                .dis(n);
+                // .dis(n);
                 .pos(a);
                 right: 0;
                 top: 70px;
-                width: 210px;
+                width: 190px;
                 background: #fff;
                 .box-shadow(0 0 11px #ccc);
                 dl {
@@ -909,10 +912,10 @@ i {
                     a {
                         .dis(b);
                         width: auto;
-                        height: auto;
-                        padding-left: 20px;
-                        text-align: left;
+                        height: 38px;
+                        line-height: 38px;
                         font-size: 14px;
+                        text-align: center;
                         .bdr(0);
                         &:hover {
                             color: @blue;
@@ -987,11 +990,12 @@ i {
     // 小屏幕头部
     &-min {
         .logo {
+            .pos(s);
             margin: 19px 30px 19px 50px;
         }
         .nav {
             li {
-                margin: 0 18px;
+                margin: 0 16px;
             }
             &-sub {
                 li {
