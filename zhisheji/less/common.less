@@ -402,7 +402,7 @@ i {
                     a {
                         height: 36px;
                         line-height: 36px;
-                        color: #666;
+                        color: #444;
                         border-bottom: 0;
                         &:hover {
                             background: @blue;
@@ -441,7 +441,7 @@ i {
                     .dis(b);
                     height: 36px;
                     line-height: 36px;
-                    color: #666;
+                    color: #444;
                     font-size: 14px;
                     &:hover {
                         background: @blue;
@@ -580,7 +580,7 @@ i {
             top: 58px - 17;
             left: 0px;
             z-index: 99;
-            width: 270px;
+            width: 250px;
             line-height: 34px;
             background: #fff;
             font-size: 14px;
@@ -854,7 +854,7 @@ i {
                 }
             }
             &-info {
-                // .dis(n);
+                .dis(n);
                 .pos(a);
                 right: 0;
                 top: 70px;
@@ -862,40 +862,41 @@ i {
                 background: #fff;
                 .box-shadow(0 0 11px #ccc);
                 dl {
-                    padding: 14px 10px 14px 20px;
+                    padding: 21px 10px 20px 10px;
                     line-height: 26px;
+                    font-size: 14px;
+                    border-bottom: 1px solid #f1f1f1;
+                    text-align: center;
                 }
                 dt {
-                    font-size: 16px;
-                    color: #666;
+                    color: #444;
+                    font-weight: 700;
                 }
                 dd {
-                    font-size: 14px;
-                    color: #999;
+                    color: #666;
+                    line-height: 20px;
+                    font-size: 13px;
                     a {
-                        color: #999;
+                        color: #666;
                         &:hover {
                             color: @blue;
                         }
                     }
                 }
+                ul {
+                    padding: 11px 0;
+                }
                 li {
                     float: none;
-                    line-height: 55px;
+                    line-height: 38px;
+                    padding: 3px 15px;
                     margin: 0;
-                    border-top: 1px solid #f6f6f6;
-                    span {
-                        margin-right: 15px;
-                        font-size: 13px;
-                        color: #ddd;
-                    }
-                    .icon-home {
-                        .dis(i);
-                    }
                     .number {
+                        .pos(a);
+                        top: 8px;
                         .dis(ib);
                         vertical-align: middle;
-                        margin: -3px 0 0 10px;
+                        margin: 0 0 0 10px;
                         padding: 0 4px;
                         min-width: 10px;
                         height: 18px;
@@ -906,26 +907,19 @@ i {
                         font-size: 12px;
                         .bdr(10px);
                     }
-                    .icon-exit {
-                        vertical-align: middle;
-                    }
                     a {
+                        .pos(r);
                         .dis(b);
                         width: auto;
                         height: 38px;
+                        color: #444;
                         line-height: 38px;
                         font-size: 14px;
                         text-align: center;
-                        .bdr(0);
                         &:hover {
-                            color: @blue;
-                            background: #f6f6f6;
-                            span {
-                                color: @blue;
-                            }
-                            .number {
-                                color: #fff;
-                            }
+                            color: #fff;
+                            background: @blue;
+                            .bdr(4px);
                         }
                     }
                 }
@@ -1008,7 +1002,7 @@ i {
 
 /* footer */
 .footer {
-    padding: 23px 0;
+    padding: 46px 0 0;
     background: #111 !important;
     height: auto !important;
     min-width: 1280px;
@@ -1019,30 +1013,17 @@ i {
     .ft-logo {
         float: left;
         .dis(b);
-        width: 100px;
-        height: 34px;
-        margin: 19px 12px 0 0;
+        width: 130px;
+        height: 40px;
+        margin: 0 12px 45px 0;
         background: url(../images/ft-logo.png) no-repeat 0 0;
-    }
-    .fll {
-        p {
-            line-height: 18px;
-            margin-top: 21px;
-            white-space: nowrap;
-            color: #444;
-            font-size: 14px;
-            span {
-                .dis(b);
-                font-size: 12px;
-            }
-        }
     }
     .ft-nav {
         line-height: 40px;
         text-align: right;
         li {
             .dis(i);
-            margin-left: 40px;
+            margin-left: 90px;
             font-size: 14px;
             a {
                 color: #666;
@@ -1053,12 +1034,27 @@ i {
         }
     }
     .ft-copy {
-        text-align: right;
-        line-height: 34px;
+        border-top: 1px solid #222;
+        padding: 24px 0 20px;
+        line-height: 30px;
         color: #333;
         font-size: 12px;
         span {
-            padding: 0 8px;
+            margin-right: 30px;
+        }
+        .flink {
+            margin-right: -30px;
+            padding-bottom: 10px;
+            font-size: 13px;
+            a {
+                .dis(ib);
+                vertical-align: top;
+                margin-right: 30px;
+                color: #333;
+                &:hover {
+                    color: @blue;
+                }
+            }
         }
     }
     &-fixed {
