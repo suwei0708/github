@@ -539,7 +539,7 @@
                     <span class="icon-five"></span>作品获得编辑精选+20设计币，首页推荐+30设计币
                 </div>
                 <div class="item item2">
-                    <span class="icon-five">06</span>累计签到7天奖励133设计币，签到第1天 - 第7天分别奖励：3、10、5、20、15、20、60设计币
+                    <span class="icon-six"></span>累计签到7天奖励133设计币，签到第1天 - 第7天分别奖励：3、10、5、20、15、20、60设计币
                 </div>
             </div>
         </div>
@@ -978,7 +978,6 @@
         </div>
         <!-- 登录注册弹窗 end -->
 
-
         <!-- 兑换弹窗 start -->
         <div class="popup-box popup-box-line popup-infos">
             <div class="popup">
@@ -1003,18 +1002,19 @@
         <!-- 兑换弹窗 end -->
 
         <!-- 签到弹窗 start -->
-        <div class="popup-box pop popup-qd" onclick="jQuery('.popup-qd .popup').addClass('integral-right');setTimeout(function() {jQuery('.popup-qd').hide().find('.popup').removeClass('integral-right');}, 1000);">
+        <div class="popup-box pop popup-qd">
             <div class="popup" onclick="return false;">
-                <span class="popup-qd-close icon-fail" onclick="jQuery('.popup-qd .popup').addClass('integral-right');setTimeout(function() {jQuery('.popup-qd').hide().find('.popup').removeClass('integral-right');}, 1000);"></span>
                 <div class="tit">
                     <img src="../images/no-result6.png" alt="">
                     <strong>签到成功</strong>
                     <p>今日签到<span class="blue"> +<span class="num">10</span></span>累计签到 7 天可获得丰厚奖励</p>
                 </div>
-                <!-- 按钮在非签到页面显示 -->
+                <!-- start 非签到页显示 popup-qd在非签到页增加 onclick="jQuery('.popup-qd-close').click()" -->
+                <span style="display: none;" class="popup-qd-close icon-fail" onclick="jQuery('.popup-qd .popup').addClass('integral-right');setTimeout(function() {jQuery('.popup-qd').hide().find('.popup').removeClass('integral-right');}, 1000);"></span>
                 <div class="btn-box" style="display: none;">
                     <a href="签到.html" class="btn btn-green">兑换礼品</a>
                 </div>
+                <!-- end 非签到页显示 -->
             </div>
         </div>
         <!-- 签到弹窗 end -->
