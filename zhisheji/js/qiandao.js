@@ -50,6 +50,9 @@ $(function() {
         $('.qd-user-info').find('dl:eq(1) .num').html('10');
         // 我的设计币
         $('.qd-user-info').find('dl:eq(2) .num').html(+$('.qd-user-info').find('dl:eq(2) .num').html() + 10);
+        setTimeout(function() {
+            $('.popup-qd').hide();
+        }, 2000);
     });
 
     $('.qd-top').on('click', '.btn-green', function() {
@@ -78,7 +81,7 @@ $(function() {
     };
 
     // 兑换
-    $('.qd-list').on('click', '.btn-red', function() {
+    $('.qd-list').on('click', '.btn-blue', function() {
         var txt = $(this).parents('li').find('.name').html();
         $.msgBox.Confirm(null, '确定要兑换“' + txt + '”吗？', function() {
             $('.popup-shdz').show();
