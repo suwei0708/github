@@ -285,12 +285,12 @@ $(function() {
         var _this = $(this);
 
         cropperImg = $(this).parents('.cpimgbox').find('img');
+        if(jcropApi || !cropperImg){
+            clearSelect();
+        }
         var cropperImage = cropperImg.clone();
         cropperImg.after(cropperImage);
         cropperImg.hide();
-        if(jcropApi || !cropperImg){
-            return clearSelect();
-        }
         jcropApi = $.Jcrop(cropperImage, {
             onSelect: doSelect,
             onChange: doSelect,
@@ -300,7 +300,7 @@ $(function() {
     });
 
     function clearSelect() {
-        cropperImg.show();
+        $('.content').find('.cpimgbox > img').show();
         jcropApi.destroy();
         form.hide();
         jcropApi = null;

@@ -350,21 +350,27 @@ i {
     }
 
     .logo {
+        .pos(a);
+        top: 0;
+        left: 80px;
         .ov(h);
         .dis(b);
-        width: 101px;
-        height: 32px;
+        width: 98px;
+        height: 30px;
         line-height: 200px;
-        margin: 19px 55px 19px 80px;
+        margin: 20px 170px 0 0;
         background: url(../images/logo.png) no-repeat 0 0;
-        background: url(../images/logo.svg) no-repeat 0 0 ~'/' 101px auto;
+        background: url(../images/logo.svg) no-repeat 0 0 ~'/' 98px auto;
     }
     // 导航
     .nav {
+        float: none;
+        width: @page-w;
+        margin: 0 auto;
         li {
             float: left;
             .pos(r);
-            margin: 0 25px;
+            margin: 0 66px 0 0;
             a {
                 .dis(b);
                 height: 70px;
@@ -373,7 +379,7 @@ i {
                 color: #fff;
                 font-size: 16px;
                 .arrow {
-                    margin-left: 5px;
+                    margin-left: 9px;
                     // .triangle(bottom, 6px, #fff);
                     font-size: 12px;
                     color: #fff;
@@ -388,7 +394,7 @@ i {
                 }
             }
             &.hover {
-                a {
+                > a {
                     color: #fff;
                     height: 67px;
                     line-height: 70px;
@@ -396,19 +402,20 @@ i {
                 }
                 .nav-sub {
                     a {
-                        height: 45px;
-                        line-height: 45px;
-                        color: #666;
+                        height: 36px;
+                        line-height: 36px;
+                        color: #444;
                         border-bottom: 0;
                         &:hover {
-                            color: @blue;
-                            background: #f6f6f6;
+                            background: @blue;
+                            color: #fff;
+                            .bdr(4px);
                         }
                     }
                     &.hover {
                         a {
-                            height: 45px;
-                            line-height: 45px;
+                            height: 36px;
+                            line-height: 36px;
                             color: #fff;
                             border-bottom: 0;
                         }
@@ -422,38 +429,39 @@ i {
             .pos(a);
             left: 50%;
             top: 60px;
-            width: 110px;
-            margin-left: -55px;
+            width: 138px;
+            padding: 11px 0;
+            margin-left: -138px / 2;
             background: #fff;
             .bdr(4px);
             .box-shadow(0 0 11px #ccc);
             li {
                 float: none;
+                padding: 3px 8px;
                 margin: 0;
                 a {
                     .dis(b);
-                    height: 45px;
-                    line-height: 45px;
-                    padding-left: 20px;
-                    margin-top: -1px;
-                    color: #666;
+                    height: 36px;
+                    line-height: 36px;
+                    color: #444;
                     font-size: 14px;
-                    text-align: left;
-                    border-top: 1px solid #f6f6f6;
                     &:hover {
-                        color: @blue;
+                        background: @blue;
+                        color: #fff;
+                        .bdr(4px);
                     }
                 }
             }
             &2 {
                 // .dis(b);
                 top: 61px;
-                left: -27px;
+                left: -29px;
                 width: 654px - 20;
                 padding: 13px 0 24px 20px;
                 li {
                     float: left;
                     width: 92px;
+                    padding: 0;
                     margin: 12px 0 0 10px !important;
                     a {
                         .height(30px) !important;
@@ -517,21 +525,21 @@ i {
     .search {
         .pos(r);
         z-index: 991;
-        width: 270px;
+        width: 250px;
         height: 36px;
         line-height: 36px;
         margin: 17px 24px 0 0;
         padding-bottom: 17px;
         form {
             .dis(b);
-            width: 270px;
+            width: 250px;
             height: 36px;
             background: #fff;
             .bdr(18px);
         }
 
         .txt {
-            width: 220px;
+            width: 200px;
             .height(36px);
             float: left;
             padding: 0 0 0 15px;
@@ -574,7 +582,7 @@ i {
             top: 58px - 17;
             left: 0px;
             z-index: 99;
-            width: 270px;
+            width: 250px;
             line-height: 34px;
             background: #fff;
             font-size: 14px;
@@ -608,7 +616,7 @@ i {
             dd {
                 a {
                     .dis(b);
-                    width: 240px;
+                    width: 220px;
                     padding: 0 15px;
                     margin-left: -15px;
                     color: #666;
@@ -651,10 +659,10 @@ i {
             .img {
                 .pos(r);
                 .dis(ib);
-                width: 21px;
-                height: 21px;
-                line-height: 21px;
-                margin-top: 10px;
+                width: 28px;
+                height: 28px;
+                line-height: 28px;
+                margin-top: 6px;
                 background: #fff;
                 text-align: center;
                 .bdr(50%);
@@ -682,7 +690,7 @@ i {
                 .text {
                     .dis(n);
                     .pos(a);
-                    top: 25px;
+                    top: 29px;
                     left: 50%;
                     line-height: 16px;
                     font-size: 12px;
@@ -693,20 +701,21 @@ i {
                 }
             }
             .icon-home {
-                .dis(b);
-                margin: 4px 0 0 -1px;
+                .dis(ib);
+                vertical-align: middle;
                 color: @blue;
-                font-size: 11px;
+                font-size: 14px;
             }
             .icon-msg {
-                .dis(b);
+                .dis(ib);
+                vertical-align: middle;
                 color: @blue;
-                font-size: 13px;
-                margin-top: 4px;
+                font-size: 14px;
             }
         }
         .h-msg {
-            padding-bottom: 24px;
+            margin-right: 30px;
+            padding-bottom: 21px;
             &-info {
                 .dis(n);
                 .pos(a);
@@ -851,44 +860,45 @@ i {
                 .pos(a);
                 right: 0;
                 top: 70px;
-                width: 210px;
+                width: 190px;
                 background: #fff;
                 .box-shadow(0 0 11px #ccc);
                 dl {
-                    padding: 14px 10px 14px 20px;
+                    padding: 21px 10px 20px 10px;
                     line-height: 26px;
+                    font-size: 14px;
+                    border-bottom: 1px solid #f1f1f1;
+                    text-align: center;
                 }
                 dt {
-                    font-size: 16px;
-                    color: #666;
+                    color: #444;
+                    font-weight: 700;
                 }
                 dd {
-                    font-size: 14px;
-                    color: #999;
+                    color: #666;
+                    line-height: 20px;
+                    font-size: 13px;
                     a {
-                        color: #999;
+                        color: #666;
                         &:hover {
                             color: @blue;
                         }
                     }
                 }
+                ul {
+                    padding: 11px 0;
+                }
                 li {
                     float: none;
-                    line-height: 55px;
+                    line-height: 38px;
+                    padding: 3px 15px;
                     margin: 0;
-                    border-top: 1px solid #f6f6f6;
-                    span {
-                        margin-right: 15px;
-                        font-size: 13px;
-                        color: #ddd;
-                    }
-                    .icon-home {
-                        .dis(i);
-                    }
                     .number {
+                        .pos(a);
+                        top: 8px;
                         .dis(ib);
                         vertical-align: middle;
-                        margin: -3px 0 0 10px;
+                        margin: 0 0 0 10px;
                         padding: 0 4px;
                         min-width: 10px;
                         height: 18px;
@@ -899,26 +909,19 @@ i {
                         font-size: 12px;
                         .bdr(10px);
                     }
-                    .icon-exit {
-                        vertical-align: middle;
-                    }
                     a {
+                        .pos(r);
                         .dis(b);
                         width: auto;
-                        height: auto;
-                        padding-left: 20px;
-                        text-align: left;
+                        height: 38px;
+                        color: #444;
+                        line-height: 38px;
                         font-size: 14px;
-                        .bdr(0);
+                        text-align: center;
                         &:hover {
-                            color: @blue;
-                            background: #f6f6f6;
-                            span {
-                                color: @blue;
-                            }
-                            .number {
-                                color: #fff;
-                            }
+                            color: #fff;
+                            background: @blue;
+                            .bdr(4px);
                         }
                     }
                 }
@@ -983,28 +986,12 @@ i {
     // 小屏幕头部
     &-min {
         .logo {
+            .pos(s);
             margin: 19px 30px 19px 50px;
         }
         .nav {
             li {
-                margin: 0 18px;
-            }
-            &-sub {
-                li {
-                    margin: 0;
-                }
-            }
-        }
-    }
-}
-@media screen and (max-width: 1440px) {
-    &-min {
-        .logo {
-            margin: 19px 30px 19px 50px;
-        }
-        .nav {
-            li {
-                margin: 0 18px;
+                margin: 0 16px;
             }
             &-sub {
                 li {
@@ -1017,7 +1004,7 @@ i {
 
 /* footer */
 .footer {
-    padding: 23px 0;
+    padding: 46px 0 0;
     background: #111 !important;
     height: auto !important;
     min-width: 1280px;
@@ -1028,30 +1015,17 @@ i {
     .ft-logo {
         float: left;
         .dis(b);
-        width: 100px;
-        height: 34px;
-        margin: 19px 12px 0 0;
+        width: 130px;
+        height: 40px;
+        margin: 0 12px 45px 0;
         background: url(../images/ft-logo.png) no-repeat 0 0;
-    }
-    .fll {
-        p {
-            line-height: 18px;
-            margin-top: 21px;
-            white-space: nowrap;
-            color: #444;
-            font-size: 14px;
-            span {
-                .dis(b);
-                font-size: 12px;
-            }
-        }
     }
     .ft-nav {
         line-height: 40px;
         text-align: right;
         li {
             .dis(i);
-            margin-left: 40px;
+            margin-left: 90px;
             font-size: 14px;
             a {
                 color: #666;
@@ -1062,12 +1036,27 @@ i {
         }
     }
     .ft-copy {
-        text-align: right;
-        line-height: 34px;
+        border-top: 1px solid #222;
+        padding: 24px 0 20px;
+        line-height: 30px;
         color: #333;
         font-size: 12px;
         span {
-            padding: 0 8px;
+            margin-right: 30px;
+        }
+        .flink {
+            margin-right: -30px;
+            padding-bottom: 10px;
+            font-size: 13px;
+            a {
+                .dis(ib);
+                vertical-align: top;
+                margin-right: 30px;
+                color: #333;
+                &:hover {
+                    color: @blue;
+                }
+            }
         }
     }
     &-fixed {
@@ -1081,11 +1070,11 @@ i {
 /* 分页 */
 .page, .pg {
     text-align: center;
-    color: #aaa;
+    color: #999;
     font-size: 0px;
     a, label {
         .dis(ib);
-        color: #aaa;
+        color: #999;
         .height(40px);
         padding: 0 16px;
         margin: 0 5px;
