@@ -421,9 +421,9 @@
                 line-height: 14px;
                 margin: 0 15px 18px;
                 font-size: 12px;
-                color: #898888;
+                color: #888;
                 a {
-                    color: #898888;
+                    color: #888;
                     &:hover {
                         color: @blue;
                     }
@@ -437,13 +437,13 @@
                 em {
                     margin-right: 20px;
                     font-size: 12px;
-                    color: #898888;
+                    color: #888;
                     font-style: normal;
                     span {
                         .dis(ib);
                         vertical-align: middle;
                         margin: -3px 10px 0 0;
-                        color: #dcdcdc;
+                        color: #b4b4b4;
                         font-size: 16px;
                     }
                     .icon-comment {
@@ -488,7 +488,7 @@
                 a {
                     margin-right: 15px;
                     font-size: 14px;
-                    color: #666;
+                    color: #333;
                     &:hover {
                         color: @blue;
                     }
@@ -573,6 +573,7 @@
                 a {
                     font-size: 16px;
                     color: #333;
+                    font-weight: 700;
                     &:hover {
                         color: @blue;
                     }
@@ -625,13 +626,13 @@
             em {
                 margin-left: 20px;
                 font-size: 12px;
-                color: #909090;
+                color: #888;
                 span {
                     .dis(ib);
                     vertical-align: middle;
                     margin: -3px 10px 0 0;
                     font-size: 12px;
-                    color: #dcdcdc;
+                    color: #b4b4b4;
                 }
                 .icon-view {
                     font-size: 16px;
@@ -663,10 +664,10 @@
                 font-size: 14px;
                 color: #fff;
                 font-weight: 700;
-                background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0.8) 100%);
-                background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);
-                background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.8) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#cc000000',GradientType=0 );
+                background: -moz-linear-gradient(top, rgba(0,0,0,0) 0%, rgba(0,0,0,0) 1%, rgba(0,0,0,0.6) 100%);
+                background: -webkit-linear-gradient(top, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.6) 100%);
+                background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0) 1%,rgba(0,0,0,0.6) 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#99000000',GradientType=0 );
             }
             &.cur {
                 height: 175px;
@@ -926,10 +927,17 @@
         .pic {
             padding: 15px 0 60px;
             margin-right: -10px;
-            img {
+            font-size: 0;
+            a {
+                .dis(ib);
+                vertical-align: top;
                 width: 139px;
                 height: 85px;
                 margin: 0 10px 0 0;
+            }
+            img {
+                width: 139px;
+                height: 85px;
             }
         }
     }
@@ -1082,7 +1090,7 @@
         padding: 10px 0 0;
         margin-right: -38px;
         a {
-            margin-right: 38px;
+            margin-right: 40px;
             // .opacity(.5);
             img {
                 .dis(n);
