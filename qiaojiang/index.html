@@ -6651,8 +6651,8 @@
         <!--弹窗限时优惠 end -->
 
         <!--课程更新提醒 start -->
-        <div class="fixed-course1 course-bottom-in" onclick="$('.fixed-course1').removeClass('course-bottom-in').addClass('course-bottom-out');$('.fixed-course2').removeClass('course-bottom-out').addClass('course-bottom-in');"><span class="qjfont qj-zhong"></span><p>课程已更新</p></div>
-        <div class="fixed-course2">
+        <div class="fixed-course1 course-bottom-in" onmouseover="$('.fixed-course1').removeClass('course-bottom-in').addClass('course-bottom-out');$('.fixed-course2').removeClass('course-bottom-out').addClass('course-bottom-in');"><span class="qjfont qj-zhong"></span><p>课程已更新</p></div>
+        <div class="fixed-course2" onmouseleave="$(this).find('.qj-icon-test').click();">
             <span class="qjfont qj-icon-test" onclick="$('.fixed-course2').removeClass('course-bottom-in').addClass('course-bottom-out');$('.fixed-course1').removeClass('course-bottom-out').addClass('course-bottom-in');"></span>
             <div class="tit">最新教程</div>
             <div class="list">
