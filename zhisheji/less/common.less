@@ -344,10 +344,6 @@ i {
     z-index: 988;
     background: @blue !important;
     min-width: 1280px;
-    &.cl {
-        overflow: visible;
-        height: auto !important;
-    }
 
     .logo {
         .pos(a);
@@ -714,17 +710,17 @@ i {
             margin-right: 30px;
             padding-bottom: 21px;
             &-info {
-                // .dis(n);
+                .dis(n);
                 .pos(a);
                 right: 0;
                 top: 70px;
-                width: 370px;
+                width: 320px;
                 background: #fff;
                 .box-shadow(0 0 11px #ccc);
                 .tt {
-                    padding: 0 4px;
+                    padding: 2px 0 0;
                     line-height: 60px;
-                    border-bottom: 1px solid #eee;
+                    border-bottom: 1px solid #f1f1f1;
                     *zoom: 1;
                     &:after {
                         .dis(b);
@@ -734,42 +730,61 @@ i {
                     }
                     li {
                         float: left;
-                        margin: 0 31px;
+                        width: 50%;
+                        margin: 0;
+                        text-align: center;
                         a {
-                            .ov(h);
+                            .pos(r);
                             .dis(b);
                             height: 60px;
                             line-height: 60px;
-                            padding: 0 2px;
                             font-size: 14px;
                             color: #666;
                             white-space: nowrap;
                             &:hover, &.cur {
-                                height: 58px;
-                                margin-bottom: -1px;
-                                border-bottom: 3px solid @blue;
+                                color: @blue;
+                                font-weight: 700;
+                                &:after {
+                                    content: '';
+                                    .pos(a);
+                                    bottom: 0;
+                                    left: 50%;
+                                    width: 20px;
+                                    height: 2px;
+                                    margin-left: -10px;
+                                    background: @blue;
+                                }
+                            }
+                        }
+                        &.line {
+                            a:before {
+                                content: '';
+                                .pos(a);
+                                top: 23px;
+                                left: -1px;
+                                width: 2px;
+                                height: 12px;
+                                background: #f1f1f1;
                             }
                         }
                     }
                 }
                 .list {
-                    padding: 21px 10px 0 28px;
+                    padding: 21px 0 0 0;
                     ul {
                         width: 100%;
                         overflow-y: auto;
-                        max-height: 377px;
+                        max-height: 303px;
                     }
                     li {
                         float: none;
-                        padding: 9px 10px 9px 0;
-                        line-height: 22px;
+                        padding: 10px 24px 10px 33px;
+                        line-height: 24px;
+                        margin: 0;
                         color: #666;
-                        *zoom: 1;
-                        &:after {
-                            .dis(b);
-                            clear: both;
-                            height: 0;
-                            content: "\200B";
+                        .cl();
+                        &:hover {
+                            background: #f7f8fa;
                         }
                         &.no-msg {
                             padding: 20px 10px 20px 0;
@@ -777,50 +792,33 @@ i {
                             font-size: 14px;
                         }
                         .avatar {
-                            margin-right: 18px;
+                            margin-right: 19px;
                             img {
-                                width: 40px;
-                                height: 40px;
+                                width: 34px;
+                                height: 34px;
                                 .bdr(50%);
                             }
                         }
                         .info {
-                            margin-left: 58px;
+                            padding: 5px 0 0;
+                            margin-left: 53px;
                             font-size: 14px;
+                            color: #444;
                             a {
                                 &:hover {
-                                    color: @blue-h;
-                                }
-                            }
-                            strong {
-                                a {
-                                    color: #666;
-                                    &:hover {
-                                        color: @blue;
-                                    }
-                                }
-                            }
-                        }
-                        .time {
-                            margin-left: 58px;
-                            color: #aaa;
-                            font-size: 12px;
-                            a {
-                                margin-left: 10px;
-                                &:hover {
-                                    color: @blue-h;
+                                    color: @blue;
                                 }
                             }
                         }
                     }
                     .more {
-                        line-height: 48px;
-                        font-size: 14px;
-                        color: #666;
+                        line-height: 52px;
+                        font-size: 15px;
+                        color: #444;
                         text-align: center;
-                        border-top: 1px solid #f6f6f6;
+                        border-top: 1px solid #f1f1f1;
                         a {
-                            color: #666;
+                            color: #444;
                             &:hover {
                                 color: @blue;
                             }
