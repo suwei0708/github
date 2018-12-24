@@ -25,13 +25,10 @@ $(function() {
         }
     });
 
-    // 首页上传下拉
-    $('.iup-box').on('mouseover', function() {
-        $(this).addClass('iup-box-hover');
-        $(this).find('.iup-list').show();
-    }).on('mouseleave', function() {
-        $(this).removeClass('iup-box-hover');
-        $(this).find('.iup-list').hide();
+    // 推荐设计师切换
+    $('.zsj-box.designer h2').on('mouseover', function() {
+        $(this).find('a').addClass('cur').parent().siblings().find('a').removeClass('cur');
+        $('.zsj-box.designer').find('.list2').hide().eq($(this).index() - 1).show();
     });
 
     // 列表页下拉

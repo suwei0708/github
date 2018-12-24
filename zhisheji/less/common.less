@@ -697,7 +697,7 @@ i {
                 .dis(ib);
                 vertical-align: middle;
                 color: @blue;
-                font-size: 14px;
+                font-size: 12px;
             }
             .icon-msg {
                 .dis(ib);
@@ -721,13 +721,7 @@ i {
                     padding: 2px 0 0;
                     line-height: 60px;
                     border-bottom: 1px solid #f1f1f1;
-                    *zoom: 1;
-                    &:after {
-                        .dis(b);
-                        clear: both;
-                        height: 0;
-                        content: "\200B";
-                    }
+                    .cl();
                     li {
                         float: left;
                         width: 50%;
@@ -778,50 +772,49 @@ i {
                     }
                     li {
                         float: none;
-                        padding: 10px 24px 10px 33px;
+                        padding: 0;
                         line-height: 24px;
                         margin: 0;
                         color: #666;
-                        .cl();
-                        &:hover {
-                            background: #f7f8fa;
-                        }
                         &.no-msg {
                             padding: 20px 10px 20px 0;
                             text-align: center;
                             font-size: 14px;
                         }
-                        .avatar {
-                            margin-right: 19px;
+                        a {
+                            .dis(b);
+                            padding: 10px 24px 10px 33px;
+                            .cl();
+                            &:hover {
+                                background: #f7f8fa;
+                            }
                             img {
+                                float: left;
                                 width: 34px;
                                 height: 34px;
+                                margin-right: 19px;
                                 .bdr(50%);
                             }
                         }
                         .info {
+                            .dis(b);
                             padding: 5px 0 0;
                             margin-left: 53px;
                             font-size: 14px;
                             color: #444;
-                            a {
-                                &:hover {
-                                    color: @blue;
-                                }
-                            }
                         }
                     }
-                    .more {
-                        line-height: 52px;
-                        font-size: 15px;
+                }
+                .more {
+                    line-height: 52px;
+                    font-size: 15px;
+                    color: #444;
+                    text-align: center;
+                    border-top: 1px solid #f1f1f1;
+                    a {
                         color: #444;
-                        text-align: center;
-                        border-top: 1px solid #f1f1f1;
-                        a {
-                            color: #444;
-                            &:hover {
-                                color: @blue;
-                            }
+                        &:hover {
+                            color: @blue;
                         }
                     }
                 }

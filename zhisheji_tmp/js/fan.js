@@ -1,4 +1,4 @@
-var jqpost=_temp$=window.$,_tempjqpostuery=window.jqpostuery;
+var _temp$=window.$,_tempjqpostuery=window.jqpostuery;
 window.$=jqpost;
 
 jqpost(function(){
