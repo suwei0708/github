@@ -11,6 +11,9 @@
 @red: #f65658;
 @red-h: #fd4043;
 
+.mt20 {
+    margin-top: 20px;
+}
 // 联系我们
 .about {
 
@@ -76,63 +79,28 @@
         p {
             margin: 32px 0;
         }
-        .dl {
-            margin: 20px 0;
-            line-height: 30px;
-            font-size: 14px;
-        }
-        .h2 {
-            width: 940px;
-            margin: 20px 0 0 -30px;
-            padding: 20px 0 0 30px;
-            font-weight: 700;
-            border-top: 1px solid #eee;
-        }
-        .f14 {
-            font-size: 14px;
-        }
-        .dl2 {
-            width: 50%;
-            dt {
-                padding: 50px 0 15px;
-                color: @blue;
-                font-size: 16px;
-            }
-            dd {
-                font-size: 14px;
-                line-height: 30px;
-            }
-            .btn {
-                .dis(ib);
-                padding: 0 30px;
-                line-height: 36px;
-                font-size: 14px;
-                .bdr(4px);
-                margin-top: 10px;
-                span {
-                    font-size: 13px;
-                    margin: 0 5px 0 0;
-                }
-                &-green {
-                    color: #fff;
-                    background: @green;
-                    &:hover {
-                        background: @green-h;
-                    }
-                }
-            }
-        }
         #allmap {
-            width: 880px;
-            height: 375px;
+            width: 845px;
+            height: 350px;
         }
-
     }
     &-us {
         background: #fff;
         img {
             display: block;
             margin-bottom: 50px;
+        }
+        .img {
+            img {
+                margin: 0;
+            }
+            .info {
+                padding: 16px 0 0;
+                line-height: 20px;
+                font-size: 14px;
+                color: #aaa;
+                text-align: right;
+            }
         }
     }
     &-popularity {
@@ -154,8 +122,11 @@
                 .height(33px);
                 font-size: 0;
                 a {
+                    .dis(ib);
+                    vertical-align: middle;
                     color: #333;
-                    font-size: 20px;
+                    font-size: 16px;
+                    font-weight: 700;
                     &:hover {
                         color: @blue;
                     }
@@ -163,13 +134,13 @@
                 img {
                     .dis(ib);
                     vertical-align: middle;
-                    margin: -18px 0 0 10px;
+                    margin: 0 0 0 10px;
                 }
             }
             .adress {
                 .height(28px);
-                font-size: 14px;
-                color: #666;
+                font-size: 12px;
+                color: #aaa;
             }
         }
         .list {
@@ -265,6 +236,203 @@
                         border-width: 0 5px 5px;
                         border-style: solid;
                         border-color: transparent transparent #fff
+                    }
+                }
+            }
+        }
+    }
+    &-rise {
+        .about-cont {
+            padding: 10px 32px 40px;
+            font-size: 0;
+            dl {
+                .dis(ib);
+                vertical-align: top;
+                width: 33.33%;
+                margin: 23px 0 0;
+                line-height: 28px;
+                font-size: 14px;
+                dt {
+                    color: #333;
+                    font-weight: 700;
+                }
+                dd {
+                    color: #666;
+                }
+            }
+        }
+    }
+    &-medal {
+        .about-cont {
+            padding: 25px 32px;
+            font-size: 0;
+            li {
+                .dis(ib);
+                vertical-align: top;
+                width: 50%;
+                font-size: 14px;
+                line-height: 42px;
+                color: #666;
+                img {
+                    .dis(ib);
+                    vertical-align: middle;
+                    margin: -3px 12px 0 0;
+                }
+            }
+        }
+    }
+    &-interview {
+        .about-cont {
+            padding: 18px 32px 28px;
+            line-height: 32px;
+            font-size: 14px;
+            dt {
+                padding: 14px 0 0;
+                margin-bottom: -14px;
+                color: #333;
+                font-weight: 700;
+            }
+            dd, p {
+                padding: 14px 0;
+                margin: 0;
+                color: #666;
+            }
+            dd {
+                p {
+                    padding: 0;
+                }
+            }
+        }
+    }
+    &-help {
+        .about-tit {
+            h2 {
+                font-size: 14px;
+                font-weight: 700;
+            }
+        }
+        .about-cont {
+            padding: 23px 32px 30px;
+            line-height: 32px;
+            font-size: 14px;
+            color: #555;
+            p {
+                margin: 0;
+            }
+            dd {
+                .ov(h);
+                max-height: 0;
+                .cl();
+                .anim();
+                > div {
+                    padding: 20px;
+                    margin: 10px 0;
+                    background: #f7f8fa;
+                    .bdr(4px);
+                    text-align: justify;
+                }
+            }
+            dl {
+                cursor: pointer;
+                &:hover {
+                    > dd {
+                        max-height: 32px + 60;
+                    }
+                    .dd {
+                        &1 {
+                            &-1 {
+                                max-height: 32px * 3 + 60;
+                            }
+                            &-2, &-3 {
+                                max-height: 32px * 2 + 60;
+                            }
+                            &-5 {
+                                max-height: 32px * 7 + 60;
+                            }
+                        }
+                        &2 {
+                            &-1, &-5 {
+                                max-height: 32px * 4 + 60;
+                            }
+                            &-2, &-4 {
+                                max-height: 32px * 2 + 60;
+                            }
+                            &-3 {
+                                max-height: 32px * 3 + 60;
+                            }
+                        }
+                        &4 {
+                            &-1 {
+                                max-height: 32px * 2 + 60;
+                            }
+                            &-2, &-5 {
+                                max-height: 32px * 7 + 60;
+                            }
+                        }
+                        &5 {
+                            &-1 {
+                                max-height: 32px * 5 + 60;
+                            }
+                            &-2 {
+                                max-height: 32px * 10 + 60;
+                            }
+                        }
+                        &6 {
+                            &-2 {
+                                max-height: 32px * 6 + 60;
+                            }
+                        }
+                        &7 {
+                            &-1 {
+                                max-height: 32px * 2 + 60;
+                            }
+                            &-2 {
+                                max-height: 32px * 8 + 60;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &-map {
+        .about-cont {
+            padding: 32px 32px 60px;
+            font-size: 0;
+            dl {
+                .dis(ib);
+                vertical-align: top;
+                width: 50%;
+                margin: 42px 0 0;
+                line-height: 30px;
+                font-size: 14px;
+            }
+            dt {
+                padding: 0 0 12px;
+                font-weight: 700;
+                color: #333;
+            }
+            dd {
+                color: #666;
+                .btn {
+                    .dis(ib);
+                    vertical-align: top;
+                    width: 130px;
+                    height: 36px;
+                    line-height: 36px;
+                    margin: 17px 0 0;
+                    .bdr(4px);
+                    color: #fff;
+                    background: @green;
+                    text-align: center;
+                    span {
+                        .dis(ib);
+                        vertical-align: middle;
+                        margin: -3px 8px 0 0;
+                        font-size: 15px;
+                    }
+                    &:hover {
+                        background: @green-h;
                     }
                 }
             }
