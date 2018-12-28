@@ -399,6 +399,7 @@
                 display: inline-block;
                 vertical-align: top;
                 &:hover {
+                    color: @blue;
                     .img-box {
                         &:after {
                             position: absolute;
@@ -3218,11 +3219,13 @@
 .bla-box{width: 1220px;position: fixed; top: 50%;left: 50%; margin: -363px  / 2 0 0 -610px; z-index: 9999;}
 .bla-n{display: none;}
 .bla-title{padding-bottom: 20px;}
-.bla-btn{display: block;width: 120px;height: 40px;text-align: center;line-height: 40px;background-color: #178bf7;color: #FFF;font-size: 14px;border-radius: 3px;}
-.bla-btn:hover{color: #FFF;background-color: #2395ff;}
-.bla-btn1{color: #178bf7;font-size: 20px;line-height: 40px;}
-.bla-btn1:hover{color: #178bf7;text-decoration: underline;}
-.bla-btn1 img{float: left;margin-right: 10px;}
+.bla-btn{margin-top: 9px;display: block;width: 130px;height: 36px;text-align: center;line-height: 36px;background: @blue;color: #FFF;font-size: 14px;.bdr(4px);}
+.bla-btn:hover{color: #fff;background: @blue-h;}
+.bla-btn1{ display: block;color: #fff;font-size: 0;line-height: 54px; font-weight: 700;}
+.bla-btn1:hover{color: @blue;}
+.bla-btn1 span { font-size: 16px;.dis(ib); vertical-align: middle; margin-right: 6px;}
+.bla-btn1 img { .dis(ib); margin-left: 6px; width: 17px; vertical-align: middle;}
+.bla-btn1 .avatar{float: left;margin: 0 20px 0 0; .bdr(50%); width: 54px;height: 54px;}
 .bla-span{font-size: 20px;color: #FFF;}
 .bla-close{
     float: right;
