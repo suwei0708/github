@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url(../../common/common-pc.less);
+@import url(../../../common/common-pc.less);
 
 @page-w: 1220px;
 @yellow: #ff8d01;
@@ -620,7 +620,8 @@ input, textarea {
             img {
                 display: inline-block;
                 vertical-align: middle;
-                margin: -3px 0 0 10px;
+                width: 17px;
+                margin: 0 0 0 8px;
             }
         }
         .info {
@@ -2126,7 +2127,14 @@ input, textarea {
         margin: 10px auto 17px;
     }
     .name {
-        font-size: 22px;
+        font-size: 0;
+        a {
+            .dis(ib);
+            vertical-align: middle;
+            font-size: 22px;
+            color: #666;
+            margin-right: 2px;
+        }
     }
     .slogan {
         margin: 2px 0 7px;
