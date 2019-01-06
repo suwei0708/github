@@ -11806,3 +11806,121 @@ a.page-num{
         }
     }
 }
+
+// qq登录后跳转
+.popup-qqtz {
+    width: 726px;
+    height: 470px;
+    padding: 0;
+    margin: -470px / 2 0 0 -726px / 2;
+    .tit {
+        .height(40px);
+        font-size: 26px;
+        color: #333;
+    }
+    .tab {
+        padding: 32px 0 0;
+        font-size: 0;
+        li {
+            .pos(r);
+            .dis(ib);
+            vertical-align: top;
+            width: 33.333%;
+            line-height: 40px;
+            font-size: 18px;
+            color: #666;
+            &:after {
+                content: '';
+                .dis(b);
+                margin: 15px auto 0;
+                width: 16px;
+                height: 16px;
+                .bdr(50%);
+                background: #e0e0e0;
+            }
+            &.li {
+                &1, &2 {
+                    &:after {
+                        background: @yellow;
+                    }
+                }
+                &1 {
+                    &:before {
+                        content: '';
+                        .pos(a);
+                        top: 62px;
+                        left: 140px;
+                        width: 205px;
+                        height: 3px;
+                        background: @yellow;
+                    }
+                }
+                &2 {
+                    &:before {
+                        content: '';
+                        .pos(a);
+                        top: 59px;
+                        left: 116px;
+                        width: 8px;
+                        height: 8px;
+                        .bdr(50%);
+                        background: #fff;
+                    }
+                }
+                &3 {
+                    &:before {
+                        content: '';
+                        .pos(a);
+                        top: 62px;
+                        right: 140px;
+                        width: 205px;
+                        height: 3px;
+                        background: #f4f4f4;
+                    }
+                }
+            }
+        }
+    }
+    .ecode-box {
+        padding: 33px 0 0;
+        .ecode {
+            .dis(ib);
+            vertical-align: top;
+            padding: 12px;
+            background: @green;
+            .bdr(4px);
+            img {
+                width: 118px;
+                height: 119px;
+                .bdr(4px);
+            }
+        }
+        p {
+            line-height: 60px;
+            font-size: 16px;
+            color: #666;
+            span {
+                .dis(ib);
+                vertical-align: middle;
+                margin: -3px 13px 0 0;
+                font-size: 27px;
+                color: @green;
+            }
+        }
+    }
+    .ico-close {
+        top: auto;
+        right: 35px;
+        bottom: 28px;
+        font-size: 14px;
+        color: #d0cfcf;
+        line-height: 18px;
+        width: auto;
+        &:hover {
+            .rotate(0);
+        }
+        &:before {
+            display: none;
+        }
+    }
+}

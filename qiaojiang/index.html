@@ -13,7 +13,7 @@
     </head>
     <body class="body-fixed">
         <!-- 续费提醒 start -->
-        <div class="tips-renew-box tips-renew-show">
+        <div class="tips-renew-box tips-renew-show" style="display: none">
             <div class="tips-renew">
                 <p>亲爱的用户，你的VIP特权即将消失 ~仅剩30天，现在 <strong class="yellow">续费立减50</strong></p>
                 <a href="#" class="btn btn-yellow">续费VIP</a>
@@ -6605,9 +6605,6 @@
         <!--弹窗199 end -->
 
         <!-- 奖学金浮窗 start -->
-        <style>
-
-        </style>
         <div class="popup-jxj1">
             <img src="images/fixed-jxj1.png" alt="">
         </div>
@@ -6686,7 +6683,25 @@
         </div>
         <!--领取素材二维码 end -->
 
-        <div class="mask" style="display: none"></div>
+        <!-- QQ登录跳转 start -->
+        <div class="popup-box popup-qqtz" style="display: block">
+            <div class="tit">最后一步</div>
+            <div class="tab">
+                <ul>
+                    <li class="li1">注册账号</li>
+                    <li class="li2">绑定微信</li>
+                    <li class="li3">开始学习</li>
+                </ul>
+            </div>
+            <div class="ecode-box">
+                <div class="ecode"><img src="images/ecode-wxgzh.png" alt=""></div>
+                <p><span class="qjfont qj-weixin"></span>微信扫描二维码</p>
+            </div>
+            <a href="javascript:;" class="ico-close">跳过</a>
+        </div>
+        <!-- QQ登录跳转 end -->
+
+        <div class="mask" style="display: block"></div>
 
         <!--js调用 start -->
         <script src="js/jquery-1.4.2.min.js" type="text/javascript"></script>
