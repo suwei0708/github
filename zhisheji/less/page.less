@@ -2737,34 +2737,41 @@
             width: 1140px;
             height: 86px;
             .textarea {
-                width: 1138px - 60px;
-                height: 84px - 30px;
+                width: 1009px - 60px;
+                height: 74px - 30px;
                 padding: 15px 40px 15px 20px;
                 line-height: 22px;
                 border: 1px solid #ddd;
                 font-size: 14px;
                 background: #f7f8fa;
+                .bdr(4px, 0, 0, 4px);
                 &:focus {
                     background: #fff !important;
                 }
             }
             .tips {
-                width: 1138px - 30px;
-                height: 84px - 30px;
-                .bdr(4px);
+                width: 1009px - 30px;
+                height: 74px - 30px;
+                .bdr(4px, 0, 0, 4px);
                 background: #f7f8fa;
-                // display: none
             }
         }
         .btn-box {
+            .pos(r);
             a {
                 font-size: 12px;
                 margin-left: 0;
             }
             .btn-comment {
-                padding: 0 50px;
-                height: 36px;
-                line-height: 36px;
+                .pos(a);
+                right: 0;
+                top: -106px;
+                padding: 0;
+                width: 130px;
+                height: 76px;
+                line-height: 76px;
+                text-align: center;
+                .bdr(0, 4px, 4px, 0);
                 &.dis {
                     background: #eee;
                     cursor: default;
@@ -2890,10 +2897,23 @@
             .reply-form {
                 width: 1074px;
                 .text {
-                    width: 1072px - 40px;
-                    height: 83px - 30px;
+                    width: 942px - 40px;
+                    height: 74px - 30px;
                     padding: 15px 20px;
                     border: 1px solid #ddd;
+                }
+                .btn-box {
+                    .btn-sure {
+                        .pos(a);
+                        right: 0;
+                        top: -77px;
+                        padding: 0;
+                        width: 130px;
+                        height: 76px;
+                        line-height: 76px;
+                        text-align: center;
+                        .bdr(0, 4px, 4px, 0);
+                    }
                 }
             }
             .btn-del, .btn-jubao {
@@ -2905,6 +2925,7 @@
                 }
             }
         }
+
         .btn-sure.dis {
             background: #eee !important;
             color: #999 !important;;
@@ -2919,20 +2940,25 @@
         .reply-box {
             width: 1074px - 40px;
             padding: 22px 18px;
-            .reply-form {
-                width: 1074px - 40px;
-                .text {
-                    width: 1072px - 80px - 44px !important;
-                    height: 83px - 30px;
-                    padding: 15px 20px;
-                    border: 1px solid #ddd;
-                }
-                .btn-box {
-                    a:hover {
-                        color: #666;
+            .com-box {
+                .reply-form {
+                    // width: 1074px - 40px;
+                    .text {
+                        width: 1072px - 80px - 44px - 130px !important;
+                        height: 74px - 30px;
+                        padding: 15px 20px;
+                        border: 1px solid #ddd;
                     }
-                    .btn-sure:hover {
-                        color: #fff;
+                    .btn-box {
+                        a:hover {
+                            color: #666;
+                        }
+                        .btn-sure {
+                            // top:
+                        }
+                        .btn-sure:hover {
+                            color: #fff;
+                        }
                     }
                 }
             }
@@ -2977,7 +3003,7 @@
             }
         }
         .num-box {
-            right: 20px;
+            right: 150px;
             bottom: 5px;
             font-size: 0;
             .num {
