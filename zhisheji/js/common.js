@@ -67,9 +67,13 @@
 
         // 消息下拉框
         $('.h-msg-info .list ul').scrollUnique();
-        $('.h-msg').on('click', function(event) {
+        $('.h-msg').click(function (event) {
+            $.get('/userinfo/message');
             $('.h-msg-info').show();
             event.stopPropagation();
+        });
+        $('.h-msg-info').mouseleave(function () {
+            $('.h-msg-info').hide();
         });
 
         $('body').on('click', function() {
