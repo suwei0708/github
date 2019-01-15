@@ -106,13 +106,18 @@ $(function() {
                             + '</a>'
                             + '<div class="info"><strong><a href="#">痞先森</a></strong>  回复 <strong><a href="#">木白的白目</a></strong><span class="time">8小时前</span></div>'
                             + '<div class="info">'
-                                + '<a href="javascript:;" class="btn-replay">回复</a>'
-                                + '<a href="javascript:;" class="btn-del">删除</a>梵高展的时候有看过油画动画的部分展示，很遗憾没认真仔细的去研究。'
+                                + '梵高展的时候有看过油画动画的部分展示，很遗憾没认真仔细的去研究。'
+                                + '<div class="btn-box">'
+                                    + '<a href="javascript:;" class="btn-replay"><span class="icon-comment"></span><span class="btn-replay-txt"> 回复</span></a>'
+                                    + '<a href="javascript:;" class="btn-praise"><span class="icon-praise2"></span> 赞</a>'
+                                    + '<a href="javascript:;" class="btn-selected">精选</a>'
+                                    + '<a href="javascript:;" class="btn-report report"><span class="icon-jubao"></span> 举报</a>'
+                                    + '<a href="javascript:;" class="btn-del">删除</a>'
+                                + '</div>'
                             + '</div>'
                             + '<div class="reply-form" style="display: none;">'
                                 + '<textarea class="text" placeholder="回复 痞先森 :"></textarea>'
                                 + '<div class="btn-box">'
-                                    + '<a href="javascript:;" class="fll"><span class="icon-biaoqing"></span>添加表情</a>'
                                     + '<div class="fr">'
                                         + '<a href="javascript:;" class="btn btn-sure">回复</a>'
                                     + '</div>'
@@ -217,6 +222,9 @@ $(function() {
         monitorVal('.ct-comment-box .textarea', 500, 'minus');
         monitorVal('#cp_comment', 200, 'minus');
         monitorVal('#rp_comment', 200, 'minus');
+        $.each($('.ct-comment .text'), function(i) {
+            monitorVal($(this), 500, 'minus');
+        });
     }
     // 评论框回复
     $('.cpmbox').on('click', '.rpl a', function() {
