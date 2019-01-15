@@ -556,7 +556,7 @@
                 console.log('取消举报');
             });
 
-        $('.ct-share').on('click', '.report', function() {
+        $('.report').on('click', function() {
             $('.popup-report').show();
             centerObj('.popup-report .popup');
         });
@@ -909,6 +909,20 @@
         else {
             // 删除评论
             $(this).parents('li').remove();
+        }
+    });
+
+    // 评论展示更多
+    $('.ct-comment').on('click', '.more-comment', function() {
+        if($(this).find('.more-comment-text').text() == '收起') {
+            $(this).find('.more-comment-text').text('查看更多评论');
+            $(this).find('.triangle').removeClass('triangle-top').addClass('triangle-bottom');
+            $(this).parents('.reply-box').find('.more-comment-box').hide();
+        }
+        else {
+            $(this).find('.more-comment-text').text('收起');
+            $(this).find('.triangle').addClass('triangle-top').removeClass('triangle-bottom');
+            $(this).parents('.reply-box').find('.more-comment-box').show();
         }
     });
 })(jQuery);
