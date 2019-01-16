@@ -1359,9 +1359,6 @@ input, textarea {
                             height: 30px;
                         }
                     }
-                    .info, .time {
-                        margin-left: 44px;
-                    }
                     .com-box {
                         padding: 8px 0;
                     }
@@ -3198,11 +3195,8 @@ input, textarea {
                     height: 30px;
                 }
             }
-            .info, .time {
-                margin-left: 44px;
-            }
             .info {
-             width: 640px;
+                width: 640px;
             }
 
             .com-box {
@@ -3434,7 +3428,6 @@ input, textarea {
             .btn-box {
                 padding: 0;
                 margin: 0;
-                line-height: 1;
             }
             .reply-form {
                 width: 751px;
@@ -3453,12 +3446,6 @@ input, textarea {
             padding: 22px 18px;
             .reply-form {
                 width: 1074px - 40px;
-                // .text {
-                //     width: 669px - 40px !important;
-                //     height: 83px - 30px;
-                //     padding: 15px 20px;
-                //     border: 1px solid #ddd;
-                // }
                 .btn-box {
                     a:hover {
                         color: #666;
@@ -3473,47 +3460,6 @@ input, textarea {
                 width: auto;
                 margin-right: 132px;
                 margin-left: 54px;
-                .btn-replay {
-                    .pos(a);
-                    top: 2px;
-                    right: -120px;
-                    color: #999;
-                    &:hover {
-                        color: #666;
-                    }
-                    span {
-                     .dis(n);
-                    }
-                }
-                .btn-del {
-                    .pos(a);
-                    top: 2px;
-                    right: -60px;
-                    color: #999;
-                    font-size: 14px;
-                    &:hover {
-                        color: #666;
-                    }
-                }
-            }
-            .time {
-                margin-left: 10px;
-                font-size: 12px;
-                color: #999;
-            }
-            .avatar {
-                img {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-        }
-        .num-box {
-            right: 20px;
-            bottom: 5px;
-            font-size: 0;
-            .num {
-                font-size: 12px;
             }
         }
     }
@@ -3546,6 +3492,13 @@ input, textarea {
                 }
             }
         }
+        .info {
+            .btn-box {
+                .btn-replay {
+                    margin-left: 60px;
+                }
+            }
+        }
         .reply-box {
             .com-box {
                 .reply-form {
@@ -3554,11 +3507,11 @@ input, textarea {
                     }
                 }
             }
-        }
-        .info {
-            .btn-box {
-                .btn-replay {
-                    margin-left: 60px;
+            .info {
+                .btn-box {
+                    .btn-replay {
+                        margin-left: 0;
+                    }
                 }
             }
         }

@@ -914,13 +914,13 @@
 
     // 评论展示更多
     $('.ct-comment').on('click', '.more-comment', function() {
-        if($(this).find('.more-comment-text').text() == '收起') {
+        if($(this).find('.more-comment-text').text() == '收起评论') {
             $(this).find('.more-comment-text').text('查看更多评论');
             $(this).find('.triangle').removeClass('triangle-top').addClass('triangle-bottom');
             $(this).parents('.reply-box').find('.more-comment-box').hide();
         }
         else {
-            $(this).find('.more-comment-text').text('收起');
+            $(this).find('.more-comment-text').text('收起评论');
             $(this).find('.triangle').addClass('triangle-top').removeClass('triangle-bottom');
             $(this).parents('.reply-box').find('.more-comment-box').show();
         }
