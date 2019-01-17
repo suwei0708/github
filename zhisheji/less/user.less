@@ -3024,447 +3024,7 @@ input, textarea {
 
 // 留言
 .ct-comment {
-     padding: 22px 30px 0;
-     background: #fff;
-    .img {
-        margin-left: 25px;
-        img {
-            width: 120px;
-            height: 74px;
-        }
-    }
-    .btn-box {
-        margin-top: 0;
-        font-size: 0;
-        a {
-            margin-left: 13px;
-            font-size: 14px;
-            color: #999;
-            .icon-praise2 {
-                .dis(ib);
-                vertical-align: middle;
-                margin: -3px 7px 0 0;
-                font-size: 13px;
-                color: #999;
-            }
-            &:hover {
-                color: @blue;
-                .icon-praise2 {
-                    color: @blue;
-                }
-            }
-        }
-    }
-    .avatar {
-        margin-right: 25px;
-        img {
-            width: 54px;
-            height: 54px;
-            .bdr(50%);
-        }
-    }
-    .tt, .info {
-        padding-top: 4px;
-        margin-left: 79px;
-        font-size: 16px;
-        color: #666;
-        text-align: justify;
-        width: 670px;
-        line-height: 22px;
-        a {
-            &:hover {
-                color: @blue-h;
-            }
-        }
-        strong {
-            a {
-                color: #666;
-                &:hover {
-                    color: @blue;
-                }
-            }
-        }
-    }
-    .info {
-        padding: 2px 0;
-        color: #666;
-        font-size: 14px;
-        line-height: 22px;
-        img {
-            vertical-align: baseline;
-        }
-        .onimg {
-            width: 280px;
-            margin: 15px 0 0 0;
-            padding: 9px;
-            border: 1px solid #e4e4e4;
-            img {
-                max-width: 280px;
-                max-height: 230px;
-                cursor: pointer;
-            }
-        }
-    }
-    .time {
-        color: #aaa;
-        font-size: 14px;
-        a {
-            margin-left: 20px;
-
-        }
-    }
-    .reply {
-        &-form {
-            .dis(n);
-            padding-top: 15px;
-            margin-left: 79px;
-            // .text {
-            //     .dis(b);
-            //     width: 769px;
-            //     height: 90px - 20;
-            //     padding: 10px 15px;
-            //     border: 1px solid #ddd;
-            //     color: #666;
-            //     font-size: 14px;
-            //     .bdr(3px);
-            //     resize: none;
-            // }
-            .btn-box {
-                padding-top: 20px;
-                line-height: 36px;
-                font-size: 0;
-                .cl();
-                .fll {
-                    font-size: 14px;
-                    color: #aaa;
-                    .icon-smile {
-                        .dis(ib);
-                        vertical-align: middle;
-                        margin: -3px 10px 0 0;
-                        font-size: 19px;
-                        color: #ccc;
-                    }
-                }
-                .btn {
-                    .dis(ib);
-                    vertical-align: middle;
-                    width: 118px;
-                    height: 34px;
-                    line-height: 34px;
-                    margin-left: 10px;
-                    text-align: center;
-                    font-size: 14px;
-                    .bdr(4px);
-                    &-cancel {
-                        color: #aaa;
-                        border: 1px solid #ddd;
-                        &:hover {
-                            color: @blue;
-                            border: 1px solid @blue;
-                        }
-                    }
-                    &-sure {
-                        color: #fff;
-                        border: 1px solid @blue;
-                        background: @blue;
-                        &:hover {
-                            border: 1px solid @blue-h;
-                            background: @blue-h;
-                        }
-                    }
-                }
-            }
-        }
-        &-box {
-            .pos(r);
-            width: 850px - 18*2 - 79px;
-            margin: 20px 0 0 79px;
-            padding: 10px 18px;
-            background: #f6f6f6;
-            .bdr(4px);
-            .arrow {
-                .pos(a);
-                top: -9px;
-                left: 20px;
-                .triangle(top, 9px, #f6f6f6);
-            }
-            .avatar {
-                margin-right: 14px;
-                img {
-                    width: 30px;
-                    height: 30px;
-                }
-            }
-            .info {
-                width: 640px;
-            }
-
-            .com-box {
-                padding: 8px 0;
-                .reply-form {
-                    width: auto;
-                }
-            }
-            .btn-box {
-                margin: 0;
-            }
-        }
-    }
-    .com-box {
-        .reply-form {
-            // .text {
-            //     width: 771px - 32px;
-            // }
-            .btn-box {
-                margin: 0;
-            }
-        }
-    }
-    li {
-        padding: 20px 0;
-        border-bottom: 1px solid #f6f6f6;
-        .cl();
-    }
-
-    &-box {
-        .cl();
-        .btn-box {
-            margin: 20px 0 0;
-            font-size: 0;
-            .icon-pic {
-                .dis(ib);
-                vertical-align: middle;
-                margin: -3px 8px 0 0;
-                font-size: 20px;
-                color: #ccc;
-            }
-            .btn-smile {
-                margin: 0 15px 0 0;
-            }
-            .btn-add {
-                .pos(r);
-                font-size: 12px;
-                color: #999;
-                margin: 0 20px 0 0;
-                input {
-                    .pos(a);
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    .opacity(0);
-                    cursor: pointer;
-                }
-            }
-            .btn-del {
-                .dis(ib);
-                margin: 0 15px 0 0;
-
-            }
-            .progress {
-                .dis(ib);
-                height: 16px;
-                line-height: 16px;
-                margin: 0 15px 0 0;
-                font-size: 12px;
-                color: #999;
-                background: none;
-                .bg {
-                    .ov(h);
-                    .dis(ib);
-                    vertical-align: middle;
-                    margin: -3px 10px 0 0;
-                    width: 118px;
-                    height: 10px;
-                    background: #eee;
-                    .bdr(4px);
-                    span {
-                        .dis(b);
-                        height: 10px;
-                        background: @blue;
-                        .bdr(4px);
-                    }
-                }
-                #progress-data {
-                    .pos(s);
-                }
-            }
-            a:hover {
-                color: @blue;
-                span {
-                    color: @blue;
-                }
-            }
-        }
-    }
-    h3 {
-        font-size: 14px;
-        color: #666;
-        margin-top: 30px;
-        &.blue {
-            color: @blue;
-        }
-    }
-
     // 新评论
-    &-new {
-        margin-top: 0;
-        background: #fff;
-        padding: 40px 0;
-        .bdr(4px);
-        .ct-comment-box {
-            padding: 0 40px;
-        }
-        .btn-box {
-            a {
-                font-size: 12px;
-                margin-left: 0;
-            }
-            .btn-praise, .btn-replay, .btn-del {
-                margin-left: 60px;
-                span {
-                    font-size: 12px;
-                    color: #ccc;
-                }
-                .icon-praise2 {
-                    font-size: 14px;
-                }
-                &:hover {
-                    span {
-                        color: @blue;
-                    }
-                }
-            }
-            .btn-replay {
-                .icon-comment {
-                    margin-right: 7px;
-                }
-                .btn-replay-txt {
-                    color: #999;
-                }
-                &-blue {
-                    .icon-comment, .btn-replay-txt {
-                        color: @blue;
-                    }
-                }
-            }
-            .praise-ok {
-                color: @blue;
-                span {
-                    color: @blue;
-                }
-            }
-            .icon-biaoqing {
-                .dis(ib);
-                vertical-align: middle;
-                margin: -3px 12px 0 0;
-                font-size: 18px;
-                color: @blue;
-            }
-        }
-        h3 {
-            line-height: 20px;
-            margin: 40px 0 -13px;
-            padding: 0 40px;
-        }
-        li {
-            padding: 38px 40px 25px;
-        }
-        .tt {
-            a {
-                font-size: 14px;
-            }
-            img {
-                .dis(ib);
-                vertical-align: middle;
-                width: 17px;
-                margin: -3px 0 0 6px;
-            }
-            strong {
-                a {
-                    color: #333;
-                }
-            }
-        }
-        .info {
-            width: auto;
-            line-height: 24px;
-            margin-right: 160px;
-            img {
-                width: 34px;
-            }
-            .times {
-                margin-right: -160px;
-                line-height: 20px;
-                padding-top: 25px;
-                font-size: 12px;
-                color: #999;
-            }
-            strong {
-                img {
-                    display: inline-block;
-                    vertical-align: middle;
-                    width: 18px;
-                    margin: -3px 0 0 6px;
-                }
-                a {
-                    color: #333;
-                }
-            }
-            .onimg {
-                 width: 100px;
-                 padding: 6px;
-                 .bdr(4px);
-                 img {
-                     width: auto;
-                     max-width: 100px;
-                     max-height: 100px;
-                     vertical-align: top;
-                     .bdr(4px);
-                 }
-            }
-        }
-        .com-box {
-            .btn-box {
-                padding: 0;
-                margin: 0;
-            }
-            .reply-form {
-                width: 751px;
-            }
-            .btn-del, .btn-jubao {
-                .dis(n);
-            }
-            &:hover {
-                .btn-del, .btn-jubao {
-                    .dis(i);
-                }
-            }
-        }
-        .reply-box {
-            width: auto;
-            padding: 22px 18px;
-            .reply-form {
-                width: 1074px - 40px;
-                .btn-box {
-                    a:hover {
-                        color: #666;
-                    }
-                    .btn-sure:hover {
-                        color: #fff;
-                    }
-                }
-            }
-            .info {
-                .pos(r);
-                width: auto;
-                margin-right: 132px;
-                margin-left: 54px;
-            }
-        }
-    }
-}
-.ct-comment {
     &-new {
         margin: 0;
         .input {
@@ -3482,17 +3042,25 @@ input, textarea {
             }
         }
         .com-box {
-            .info {
-                padding-right: 0;
+            .btn-box {
+                padding: 0;
+                margin: 0;
             }
             .reply-form {
-                width: 1074px - 310;
                 .text {
-                    width: 942px - 40px - 1 - 310;
+                    width: 578px;
                 }
             }
         }
         .info {
+            padding-right: 160px;
+            .times {
+                margin-right: -160px;
+                line-height: 20px;
+                padding-top: 25px;
+                font-size: 12px;
+                color: #999;
+            }
             .btn-box {
                 .btn-replay {
                     margin-left: 60px;
@@ -3500,17 +3068,31 @@ input, textarea {
             }
         }
         .reply-box {
-            .com-box {
-                .reply-form {
-                    .text {
-                        width: 488px !important;
+            padding: 22px 18px;
+            .reply-form {
+                .btn-box {
+                    a:hover {
+                        color: #666;
+                    }
+                    .btn-sure:hover {
+                        color: #fff;
                     }
                 }
             }
             .info {
+                .pos(r);
+                padding-right: 132px;
+                margin-left: 54px;
                 .btn-box {
                     .btn-replay {
                         margin-left: 0;
+                    }
+                }
+            }
+            .com-box {
+                .reply-form {
+                    .text {
+                        width: 488px;
                     }
                 }
             }
