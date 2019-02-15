@@ -15,14 +15,14 @@ $(function() {
             play: 3000,
             pause: 2500,
             hoverPause: true,
-            next: 'icon-b-r',
-            prev: 'icon-b-l'
+            next: 'icon-youjiantou',
+            prev: 'icon-zuojiantou'
         });
 
         $('#sld-hd').on('mouseover', function() {
-            $('.icon-b-l, .icon-b-r').show();
+            $('.icon-youjiantou, .icon-zuojiantou').show();
         }).on('mouseout', function() {
-            $('.icon-b-l, .icon-b-r').hide();
+            $('.icon-youjiantou, .icon-zuojiantou').hide();
         });
     }
 });

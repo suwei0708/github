@@ -1,5 +1,5 @@
 @charset "utf-8";
-@import url(../../common/common-pc.less);
+@import url(../../../common/common-pc.less);
 
 @page-w: 1220px;
 @yellow: #ff8d01;
@@ -21,7 +21,7 @@ body {
 }
 .hd {
     &-nav {
-        padding: 22px 0 0;
+        padding: 6px 0 0;
         text-align: center;
         li {
             .dis(i);
@@ -30,20 +30,39 @@ body {
                 a {
                     font-weight: 700;
                     color: @blue;
-                    border-bottom: 3px solid @blue;
+                    &:after {
+                        content: '';
+                        .pos(a);
+                        left: 50%;
+                        bottom: 0;
+                        width: 20px;
+                        height: 2px;
+                        background: @blue;
+                        margin-left: -10px;
+                    }
                 }
             }
         }
         a {
+            .pos(r);
             .dis(ib);
             vertical-align: top;
-            line-height: 54px;
+            line-height: 64px;
             font-size: 16px;
             color: #999;
             &:hover {
                 font-weight: 700;
                 color: @blue;
-                border-bottom: 3px solid @blue;
+                &:after {
+                    content: '';
+                    .pos(a);
+                    left: 50%;
+                    bottom: 0;
+                    width: 20px;
+                    height: 2px;
+                    background: @blue;
+                    margin-left: -10px;
+                }
             }
         }
     }
@@ -188,7 +207,7 @@ body {
     .pos(r);
     width: @page-w;
     height: @h;
-    margin: 0 auto;
+    margin: 20px auto 0;
 
     .slides_container {
         width: @page-w;
@@ -227,8 +246,8 @@ body {
         a {
             .dis(ib);
             .ov(h);
-            width: 10px;
-            height: 10px;
+            width: 8px;
+            height: 8px;
             margin: 0 3px;
             background: #fff;
             line-height: 200px;
@@ -237,20 +256,21 @@ body {
         }
         .cur {
             a {
+                width: 18px;
                 .opacity(1);
             }
         }
     }
-    .icon-b-l, .icon-b-r {
+    .icon-zuojiantou, .icon-youjiantou {
         .dis(n);
         position: absolute;
         top: 0;
         .ov(h);
-        width: 90px;
+        width: 60px;
         height: @h;
         line-height: @h;
         z-index: 55;
-        font-size: 37px;
+        font-size: 20px;
         cursor: pointer;
         color: #fff;
         text-align: center;
@@ -258,10 +278,15 @@ body {
             color: @blue;
         }
     }
-    .icon-b-l {
+    .icon-zuojiantou {
         left: 0;
     }
-    .icon-b-r {
+    .icon-youjiantou {
         right: 0;
+    }
+    &:hover {
+        .icon-zuojiantou, .icon-youjiantou {
+            .dis(b);
+        }
     }
 }
