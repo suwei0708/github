@@ -4427,7 +4427,8 @@ body .bd_weixin_popup {
     .tt, .info {
         padding-top: 4px;
         margin-left: 79px;
-        font-size: 16px;
+        font-size: 0;
+        vertical-align: middle;
         color: #666;
         text-align: justify;
         width: 840px;
@@ -4547,7 +4548,7 @@ body .bd_weixin_popup {
             width: 840px - 18*2;
             margin: 20px 0 0 79px;
             padding: 10px 18px;
-            background: #f6f6f6;
+            background: #f7f8fa;
             .bdr(4px);
             .arrow {
                 .pos(a);
@@ -4881,13 +4882,15 @@ body .bd_weixin_popup {
         }
         .tt {
             a {
+                .dis(ib);
+                vertical-align: middle;
                 font-size: 14px;
             }
             img {
                 .dis(ib);
                 vertical-align: middle;
                 width: 17px;
-                margin: -3px 0 0 6px;
+                margin: 0 0 0 6px;
             }
             strong {
                 a {
@@ -4895,6 +4898,8 @@ body .bd_weixin_popup {
                 }
             }
             .times {
+                .dis(ib);
+                vertical-align: middle;
                 margin-left: 18px;
                 font-size: 12px;
                 color: #999;
@@ -4923,6 +4928,12 @@ body .bd_weixin_popup {
                 top: -30px;
                 right: 0;
                 color: #ccc;
+                &:hover {
+                    color: @red;
+                    .icon-jubao {
+                        color: @red;
+                    }
+                }
             }
             strong {
                 img {
@@ -5022,7 +5033,7 @@ body .bd_weixin_popup {
                     .pos(s);
                     color: #999;
                     &:hover {
-                        color: @blue;
+                        color: @red;
                     }
                 }
                 .btn-box {
