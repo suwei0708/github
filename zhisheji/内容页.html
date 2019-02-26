@@ -2469,13 +2469,13 @@
                     <input type="hidden" id="typeid" name="typeid" value="0">
                     <input type="hidden" id="subid" name="subid" value="0">
                     <input type="hidden" name="fid" id="fid" value="2">
-                    <div class="form-item cl" style="display: ;">
+                    <div class="form-item cl" style="display: none;">
                         <div class="f-title">原因</div>
                         <div class="f-txt">
                             <textarea class="textarea"></textarea>
                         </div>
                     </div>
-                    <div class="cl" style="display: ;">
+                    <div class="cl" style="display: none;">
                         <div class="f-title">&nbsp;</div>
                         <div class="f-txt checkbox">
                             <label>
@@ -2515,9 +2515,17 @@
             function yidong(){
                 $('.popup-move').show();
                 checkboxSelect('.popup-move');
-                centerObj('.popup-move .popup');
+                centerMove('.popup-move .popup');
                 $('#bigclass .select-btn-on').click();
             }
+            function centerMove(obj) {
+                var boxWidth = jQuery(obj).outerWidth();
+                var boxHeight = jQuery(obj).outerHeight();
+                jQuery(obj).css({
+                    'margin-top': -boxHeight / 2 - 50 + 'px',
+                    'margin-left': -boxWidth / 2 + 'px'
+                });
+            };
             window._bd_share_config = {
                 'common': {
                     'bdSnsKey': {},
