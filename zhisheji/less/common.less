@@ -3246,6 +3246,82 @@ body {
         color: @red;
         font-size: 14px;
     }
+
+    // 移动弹窗
+    &-move {
+        .f-title {
+            width: 70px;
+        }
+        .f-txt {
+            margin-left: 15px;
+        }
+        &-box {
+            padding-top: 40px;
+        }
+        .form-item {
+            padding: 10px 0;
+        }
+        .btn {
+            .dis(ib);
+            width: 160px;
+            height: 42px;
+            padding: 0;
+            margin: 0 0 0 85px;
+            line-height: 42px;
+            color: white;
+            border: none;
+            font-size: 16px;
+            .bdr(4px);
+            background: @blue;
+            border: 1px solid @blue;
+            &:hover {
+                background: @blue-h;
+                border: 1px solid @blue-h;
+            }
+        }
+        .textarea {
+            position: relative;
+            overflow: hidden;
+            width: 208px;
+            height: 60px;
+            display: block;
+            border: 1px solid #ddd;
+            font-size: 14px;
+            color: #666;
+            padding: 10px 20px;
+            line-height: 20px;
+            .bdr(4px);
+            &:hover {
+                border: 1px solid @blue;
+            }
+        }
+        .checkbox {
+            font-size: 14px;
+            color: #999;
+        }
+        .ico-radio {
+            .pos(r);
+            .dis(ib);
+            .ov(h);
+            width: 13px;
+            height: 13px;
+            margin: -3px 10px 0 0;
+            vertical-align: middle;
+            background: url(../images/radio.png) no-repeat -130px -2px;
+            cursor: pointer;
+            &-cur {
+                background-position: -160px -2px;
+            }
+            input {
+                .pos(a);
+                top: 0;
+                left: 0;
+                margin: 0;
+                .opacity(0);
+                cursor: pointer;
+            }
+        }
+    }
 }
 :root .popup-homepage .popup-ct #previews .choose {filter: none};
 
