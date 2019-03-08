@@ -4839,6 +4839,7 @@ body .bd_weixin_popup {
         .input {
             margin-top: 0;
             width: 1140px;
+            font-size: 0;
             .textarea {
                 width: 1009px - 60px;
                 height: 74px - 30px;
@@ -4851,6 +4852,18 @@ body .bd_weixin_popup {
                 .bdr(4px, 0, 0, 4px);
                 &:focus {
                     background: #fff !important;
+                }
+                &::-webkit-input-placeholder{
+                    color: #ccc;
+                }
+                &::-moz-placeholder{
+                    color: #ccc;
+                }
+                &:-moz-placeholder{
+                    color: #ccc;
+                }
+                &:-ms-input-placeholder{
+                    color: #ccc;
                 }
             }
             .tips {
@@ -5015,7 +5028,7 @@ body .bd_weixin_popup {
                 img {
                     display: inline-block;
                     vertical-align: middle;
-                    width: 18px;
+                    width: 17px;
                     margin: -3px 0 0 6px;
                 }
                 a {
@@ -5037,6 +5050,18 @@ body .bd_weixin_popup {
                     padding: 15px 20px;
                     border: 1px solid #ddd;
                     color: #444;
+                    &::-webkit-input-placeholder{
+                        color: #ccc;
+                    }
+                    &::-moz-placeholder{
+                        color: #ccc;
+                    }
+                    &:-moz-placeholder{
+                        color: #ccc;
+                    }
+                    &:-ms-input-placeholder{
+                        color: #ccc;
+                    }
                 }
                 .btn-box {
                     .pos(r);
@@ -5131,6 +5156,7 @@ body .bd_weixin_popup {
         .num-box {
             right: 150px;
             font-size: 0;
+            .height(50px);
             .num {
                 font-size: 12px;
             }
