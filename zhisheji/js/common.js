@@ -599,9 +599,9 @@
             $('.popup-collect').on('click', '.txt-box .btn', function() { // 管理收藏夹 添加收藏夹
                     var val = $.trim($(this).prevAll('.txt').val());
                     if (!!val) {
-                        var html = '<li>' + '<span class="fr num">0</span>' + '<label><input type="checkbox" name="collect" value="' + val + '">' + val + '</label>' + '</li>';
+                        var html = '<li><label>' + val + '</label>' + '</li>';
                         $('#popup-collect-list li:eq(0)').after(html);
-                        checkboxSelect('#popup-collect-list');
+                        // checkboxSelect('#popup-collect-list');
                     } else {
                         $.msgBox.Alert(null, '收藏夹名称不能为空！');
                     }

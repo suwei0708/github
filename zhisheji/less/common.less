@@ -1416,6 +1416,8 @@ i {
                 }
 
                 .fr {
+                    .pos(r);
+                    z-index: 9;
                     color: #aaa;
                     font-size: 12px;
                     a {
@@ -1685,7 +1687,7 @@ body {
     color: #666;
     padding: 10px 19px;
     line-height: 37px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #f6f6f6;
 }
 #sw-msg {
     padding: 53px 30px 32px;
@@ -1793,7 +1795,7 @@ body {
         color: #666;
         padding: 10px 19px;
         line-height: 37px;
-        border-bottom: 1px solid #ddd;
+        border-bottom: 1px solid #f6f6f6;
         h3 {
             line-height: 60px;
             text-align: center;
@@ -1828,12 +1830,17 @@ body {
         .txt-box {
             .ov(h);
             .pos(r);
-            width: 303px;
-            height: 38px;
-            line-height: 38px;
-            padding: 0 0 0 14px;
-            border: 1px solid #ddd;
+            width: 338px - 20;
+            height: 42px;
+            line-height: 42px;
+            padding: 0 0 0 20px;
+            margin: 0 auto;
+            border: 1px solid #dcdcdc;
             .bdr(4px);
+            .txt {
+                width: 100%;
+                vertical-align: top;
+            }
         }
     }
     .input-label {
@@ -2608,12 +2615,14 @@ body {
     }
     // 重命名
     &-rename {
+        .popup {
+            width: 400px;
+            margin-left: -200px;
+        }
         .popup-ct {
             .txt {
-                width: 250px;
-                height: 38px;
-                line-height: 38px;
-                margin-top: -1px;
+                height: 42px;
+                line-height: 42px;
                 border: 0;
                 font-size: 14px;
                 color: #666;
@@ -2622,22 +2631,40 @@ body {
                 position: absolute;
                 bottom: 0;
                 right: 10px;
-                color: #ccc;
-                font-size: 12px;
-                line-height: 38px
+                color: #999;
+                font-size: 0;
+                .height(42px);
+                .num {
+                    font-size: 12px;
+                }
+            }
+        }
+        .popup-btn-box {
+            .btn {
+                width: 130px;
+                .height(36px);
+                font-size: 14px;
+                &-gray {
+                    margin-left: 16px;
+                }
             }
         }
     }
 
     // 添加到收藏夹
     &-collect {
+        .popup {
+            width: 400px;
+            margin-left: -200px;
+        }
         .popup-ct {
+            padding: 0;
+            margin-bottom: 0;
             .txt {
                 float: left;
-                width: 236px;
-                height: 38px;
-                line-height: 38px;
-                margin-top: -1px;
+                width: 252px;
+                height: 42px;
+                line-height: 42px;
                 border: 0;
                 font-size: 14px;
                 color: #666;
@@ -2657,13 +2684,11 @@ body {
             .btn {
                 float: left;
                 width: 66px;
-                .height(20px);
+                .height(24px);
                 padding: 0;
                 margin: 9px 0 0;
                 border: 0;
-                border-left: 1px solid #ddd;
                 font-size: 14px;
-                font-weight: 700;
                 background: none;
                 color: #666;
                 cursor: pointer;
@@ -2674,11 +2699,15 @@ body {
             .list {
                 padding: 15px 0 0;
                 li {
+                    padding: 0 30px;
                     line-height: 40px;
                     font-size: 14px;
                     color: #666;
                     .num {
                         color: #aaa;
+                    }
+                    &:hover {
+                        background: #f7f8fa;
                     }
                     label {
                         .dis(ib);
@@ -2693,6 +2722,7 @@ body {
                             vertical-align: middle;
                         }
                         .ico-radio {
+                            .dis(n);
                             .pos(r);
                             .dis(ib);
                             .ov(h);
@@ -2723,50 +2753,56 @@ body {
     // 收藏夹管理
     &-manage {
         .popup {
-            width: 410px;
-            margin-left: -410 / 2px;
+            width: 450px;
+            margin-left: -450 / 2px;
         }
         .popup-ct {
             padding: 0 20px;
-            .txt-box {
-                width: 347 - 14px;
-                margin: 0 auto;
-            }
-            .txt {
-                float: left;
-                width: 267px;
-                height: 38px;
-                line-height: 38px;
-                margin-top: -1px;
-                border: 0;
-                font-size: 14px;
-                color: #aaa;
-            }
-            .btn {
-                float: left;
-                width: 66px;
-                .height(20px);
-                padding: 0;
-                margin: 9px 0 0;
-                border: 0;
-                border-left: 1px solid #ddd;
-                font-size: 14px;
-                font-weight: 700;
-                background: none;
-                color: #666;
-                cursor: pointer;
-                &:hover {
-                    color: @blue;
-                }
-            }
+            margin: 10px 0 0;
+            // .txt {
+            //     float: left;
+            //     width: 252px;
+            //     height: 42px;
+            //     line-height: 42px;
+            //     border: 0;
+            //     font-size: 14px;
+            //     color: #666;
+            //     &::-webkit-input-placeholder{
+            //         color: #aaa;
+            //     }
+            //     &::-moz-placeholder{
+            //         color: #aaa;
+            //     }
+            //     &:-moz-placeholder{
+            //         color: #aaa;
+            //     }
+            //     &:-ms-input-placeholder{
+            //         color: #aaa;
+            //     }
+            // }
+            // .btn {
+            //     float: left;
+            //     width: 66px;
+            //     .height(24px);
+            //     padding: 0;
+            //     margin: 9px 0 0;
+            //     border: 0;
+            //     font-size: 14px;
+            //     background: none;
+            //     color: #666;
+            //     cursor: pointer;
+            //     &:hover {
+            //         color: @blue;
+            //     }
+            // }
             .list {
-                padding: 15px 0 0;
+                // padding: 15px 0 0;
                 li {
                     .pos(r);
-                    line-height: 40px;
+                    line-height: 44px;
                     .input {
-                        width: 265px - 16px;
-                        .height(38px);
+                        width: 305px - 16px;
+                        .height(42px);
                         padding: 0 8px;
                         background: none;
                         font-size: 14px;
@@ -2780,8 +2816,11 @@ body {
                         bottom: 0;
                         right: 115px;
                         color: #ccc;
-                        font-size: 12px;
-                        line-height: 40px
+                        .height(44px);
+                        font-size: 0;
+                        .num {
+                            font-size: 12px;
+                        }
                     }
                     .btn-box {
                         a {
