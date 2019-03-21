@@ -485,7 +485,7 @@ $(function() {
         }
         else if(_this.index() == 2) {
             // 删除
-            $.msgBox.Confirm('删除收藏夹', '确定要删除该收藏夹所有作品吗？', function() {
+            $.msgBox.Confirm(null, '删除此收藏夹，收藏内容也将会同步移除<br/>确定要删除吗？', function() {
                 _this.parents('li').remove();
             })
         }
@@ -501,19 +501,24 @@ $(function() {
     });
 
     // 保存重命名
-    $('.popup-rename').on('click', '.btn', function() {
+    $('.popup-rename').on('click', '.btn-blue', function() {
         manageDom.find('strong').text($('.popup-rename').find('.txt').val());
         $(this).parents('.popup').find('.popup-close').click();
     });
 
+    // 重命名取消弹窗
+    $('.popup-rename').on('click', '.btn-gray', function() {
+        $(this).parents('.popup').find('.popup-close').click();
+    });
+
     // 添加到收藏夹选项
-    if($('#popup-collect-list').length) {
-        checkboxSelect('#popup-collect-list');
-    }
+    // if($('#popup-collect-list').length) {
+    //     checkboxSelect('#popup-collect-list');
+    // }
 
     // 展示收藏夹弹窗
-    if($('.user-tit .btn-manage').length) {
-        $('.user-tit').on('click', '.btn-collect', function() {
+    if($('.user-box .btn-manage').length) {
+        $('.user-box').on('click', '.btn-collect', function() {
             $('.popup-collect').show();
             centerObj('.popup-collect .popup');
             $('.popup-collect .popup-ct').scrollUnique();
