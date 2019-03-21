@@ -83,19 +83,35 @@ input::-moz-placeholder, textarea::-moz-placeholder { // Firefox19+
 @blue-h: #26a5ff;
 @yellow: #ffa800;
 @yellow-h: #ffba00;
+@pink: #f85778;
+@pink-h: #ff3a3b;
 .btn {
     &-green {
         color: #fff;
         background: #2ed25d !important;
         &:hover {
-            background: #65e386 !important;
+            background: #21bb1d !important;
         }
     }
     &-yellow {
         color: #fff;
         background: #ffa800 !important;
         &:hover {
-            background: #ffb400 !important;
+            background: #ffba00 !important;
+        }
+    }
+    &-pink {
+        color: #fff;
+        background: #f85778 !important;
+        &:hover {
+            background: #ff3a3b !important;
+        }
+    }
+    &-blue {
+        color: #fff;
+        background: #0097f8 !important;
+        &:hover {
+            background: #0084ff !important;
         }
     }
     &-gray {
@@ -5175,6 +5191,100 @@ body {
         }
     }
 }
+
+
+/* 分集下载弹窗 */
+.popup-qun {
+    top: 50%;
+    width: 920px;
+    height: 532px;
+    padding: 0;
+    margin: -532px / 2px 0 0 -920px / 2;
+    .tit {
+        height: auto;
+        padding: 50px 0 0;
+        margin-bottom: 30px;
+        h3 {
+            .height(40px);
+            font-size: 30px;
+            color: #333;
+            margin-bottom: 11px;
+        }
+        p {
+            line-height: 40px;
+            color: #666;
+            font-size: 0;
+            text-align: center;
+            span {
+                .pos(r);
+                .dis(ib);
+                vertical-align: top;
+                padding-left: 28px;
+                font-size: 16px;
+                margin: 0 20px;
+                &:after {
+                    content: '';
+                    .pos(a);
+                    left: 0;
+                    top: 50%;
+                    width:8px;
+                    height: 8px;
+                    margin-top: -4px;
+                    .bdr(50%);
+                    background: @pink;
+                }
+            }
+        }
+    }
+    .list {
+        font-size: 0;
+        li {
+            .dis(ib);
+            vertical-align: top;
+            width: 200px;
+            text-align: center;
+            .img {
+                width: 90px;
+                height: 90px;
+                margin: 0 auto 16px;
+                img {
+                    .dis(b);
+                    width: 100%;
+                    height: 100%;
+                    .bdr(50%);
+                }
+            }
+            dt {
+                line-height: 42px;
+                font-size: 18px;
+                color: #333;
+            }
+            dd {
+                line-height: 32px;
+                font-size: 16px;
+                color: #666;
+            }
+        }
+    }
+    .btn {
+        margin: 20px auto 0;
+        .dis(ib);
+        width: 160px;
+        height: 40px;
+        line-height: 40px;
+        color: #fff;
+        background: @blue;
+        text-align: center;
+        border: none;
+        cursor: pointer;
+        .bdr(4px);
+        font-size: 16px;
+        &-pink {
+            background: @pink;
+        }
+    }
+}
+
 /* 保存成功提示 */
 .user-tip {
     .dis(n);
