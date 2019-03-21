@@ -804,6 +804,11 @@ $(function() {
         });
     };
 
+    // 播放页入群交流按钮
+    $('.v-video').on('click', '.btn-qun', function() {
+        $('.popup-qun, .mask').show();
+    });
+
     // 播放页下载按钮
     $('.v-video').on('click', '.btn-down', function() {
         $('html, body').scrollTop($('.v-info.new-comment').offset().top);
