@@ -6,11 +6,8 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/page.css">
         <link rel="stylesheet" href="../css/user.css">
-
-        <!-- 裁剪头像css start-->
-        <link rel="stylesheet" href="../css/cropper.css">
-        <!-- 裁剪头像css end-->
     </head>
     <body>
         <!-- 头部 start -->
@@ -383,31 +380,27 @@
         <!-- 头部 end -->
 
         <!-- 内容主体 start -->
-        <div class="wrap user-box">
-            <div class="fll user-left">
-                <div class="user-gzlist">
-                    <div class="tit"><a href="我的关注.html" class="fr">更多</a>正在关注的人</div>
-                </div>
+        <div class="user-tit">
+            <div class="wrap">
+                <!-- 顶部广告 start -->
+                <div class="top-gg"><a href="#"><img src="../images/ft-gg.jpg" height="100" width="1220" alt=""></a></div>
+                <!-- 顶部广告 end -->
+                <div class="fr gz-num">关注 203 位设计师，以下是ta们的最新动态</div>
+                <ul class="user-tab">
+                    <li><a class="cur" href="我的关注.html">我的关注</a></li>
+                    <li><a href="我的作品.html">我的作品</a></li>
+                    <li><a href="关注的人.html">关注的人</a></li>
+                    <li><a href="粉丝.html">粉丝</a></li>
+                    <li><a href="收藏夹.html">收藏夹</a></li>
+                    <li><a href="草稿箱.html">草稿箱</a></li>
+                </ul>
             </div>
+        </div>
 
-            <div class="fr user-right">
-                <div class="user-tit">
-                    <div class="fr gz-num">hi，潜云，你一共关注了0位设计师，以下是TA们的最新动态</div>
-                    <ul class="user-tab">
-                        <li><a class="cur" href="我的关注-展开.html">好友动态</a></li>
-                        <li><a href="我的关注.html">我的关注</a></li>
-                        <li><a href="我的粉丝.html">我的粉丝</a></li>
-                    </ul>
-                </div>
-
-                <div class="uno-result">
-                    <img src="../images/no-result2.png">
-                    <h2>暂无关注内容</h2>
-                    <p>快去发现新朋友，别再孤单等下去。</p>
-                    <div class="btn-box">
-                        <a href="#" class="btn btn-green">关注设计师</a>
-                    </div>
-                </div>
+        <div class="wrap uno-result-box">
+            <div class="uno-result">
+                <img src="../images/no-result5.png">
+                <p>暂无关注好友，快去 <a href="#" class="blue">关注</a> 大神~</p>
             </div>
         </div>
         <!-- 内容主体 end -->
@@ -477,10 +470,6 @@
         <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
         <script src="../js/common.js" type="text/javascript"></script>
         <!-- 通用js start-->
-
-        <!-- 裁剪插件js start-->
-        <script src="../js/cropper.js" type="text/javascript"></script>
-        <!-- 裁剪插件js start-->
 
         <!--js调用 start -->
         <script src="../js/user.js" type="text/javascript"></script>

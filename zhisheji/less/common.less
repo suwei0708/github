@@ -1830,17 +1830,11 @@ body {
         .txt-box {
             .ov(h);
             .pos(r);
-            width: 338px - 20;
-            height: 42px;
+            width: 340px;
+            height: 44px;
             line-height: 42px;
-            padding: 0 0 0 20px;
             margin: 0 auto;
-            border: 1px solid #dcdcdc;
             .bdr(4px);
-            .txt {
-                width: 100%;
-                vertical-align: top;
-            }
         }
     }
     .input-label {
@@ -2621,11 +2615,21 @@ body {
         }
         .popup-ct {
             .txt {
+                .pos(a);
+                top: 0;
+                left: 0;
+                width: 318px;
                 height: 42px;
                 line-height: 42px;
+                padding-left: 20px;
                 border: 0;
                 font-size: 14px;
                 color: #666;
+                border: 1px solid #dcdcdc;
+                .bdr(4px);
+                &:focus {
+                    border: 1px solid @blue;
+                }
             }
             .num-box {
                 position: absolute;
@@ -2661,13 +2665,18 @@ body {
             padding: 0;
             margin-bottom: 0;
             .txt {
-                float: left;
-                width: 252px;
+                .pos(a);
+                top: 0;
+                left: 0;
+                width: 318px;
                 height: 42px;
                 line-height: 42px;
+                padding-left: 20px;
                 border: 0;
                 font-size: 14px;
                 color: #666;
+                border: 1px solid #dcdcdc;
+                .bdr(4px);
                 &::-webkit-input-placeholder{
                     color: #aaa;
                 }
@@ -2680,9 +2689,14 @@ body {
                 &:-ms-input-placeholder{
                     color: #aaa;
                 }
+                &:focus {
+                    border: 1px solid @blue;
+                }
             }
             .btn {
-                float: left;
+                .pos(a);
+                top: 0;
+                right: 0;
                 width: 66px;
                 .height(24px);
                 padding: 0;
@@ -2757,49 +2771,16 @@ body {
             margin-left: -450 / 2px;
         }
         .popup-ct {
-            padding: 0 20px;
+            padding: 0;
             margin: 10px 0 0;
-            // .txt {
-            //     float: left;
-            //     width: 252px;
-            //     height: 42px;
-            //     line-height: 42px;
-            //     border: 0;
-            //     font-size: 14px;
-            //     color: #666;
-            //     &::-webkit-input-placeholder{
-            //         color: #aaa;
-            //     }
-            //     &::-moz-placeholder{
-            //         color: #aaa;
-            //     }
-            //     &:-moz-placeholder{
-            //         color: #aaa;
-            //     }
-            //     &:-ms-input-placeholder{
-            //         color: #aaa;
-            //     }
-            // }
-            // .btn {
-            //     float: left;
-            //     width: 66px;
-            //     .height(24px);
-            //     padding: 0;
-            //     margin: 9px 0 0;
-            //     border: 0;
-            //     font-size: 14px;
-            //     background: none;
-            //     color: #666;
-            //     cursor: pointer;
-            //     &:hover {
-            //         color: @blue;
-            //     }
-            // }
             .list {
-                // padding: 15px 0 0;
                 li {
                     .pos(r);
+                    padding: 0 20px;
                     line-height: 44px;
+                    &:hover {
+                        background: #f7f8fa;
+                    }
                     .input {
                         width: 305px - 16px;
                         .height(42px);
@@ -2841,6 +2822,9 @@ body {
                     &.cur {
                         .input {
                             border: 1px solid #ddd;
+                            &:focus {
+                                border: 1px solid @blue;
+                            }
                         }
                         .num-box {
                             .dis(b);
