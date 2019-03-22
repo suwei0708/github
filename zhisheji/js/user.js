@@ -472,18 +472,18 @@ $(function() {
             $('.popup-rename').show().find('.txt').val(manageDom.text());
             monitorVal('.popup-rename .txt', 15);
         }
+        // else if(_this.index() == 1) {
+        //     // 是否公开
+        //     if(_this.find('span').hasClass('icon-lock-on')) {
+        //         manageDom.find('.icon-lock-off').remove();
+        //         _this.find('a').html('<span class="icon-lock-off"></span>仅自己可见');
+        //     }
+        //     else {
+        //         manageDom.prepend('<span class="icon-lock-off"></span>');
+        //         _this.find('a').html('<span class="icon-lock-on"></span>公开');
+        //     }
+        // }
         else if(_this.index() == 1) {
-            // 是否公开
-            if(_this.find('span').hasClass('icon-lock-on')) {
-                manageDom.find('.icon-lock-off').remove();
-                _this.find('a').html('<span class="icon-lock-off"></span>仅自己可见');
-            }
-            else {
-                manageDom.prepend('<span class="icon-lock-off"></span>');
-                _this.find('a').html('<span class="icon-lock-on"></span>公开');
-            }
-        }
-        else if(_this.index() == 2) {
             // 删除
             $.msgBox.Confirm(null, '删除此收藏夹，收藏内容也将会同步移除<br/>确定要删除吗？', function() {
                 _this.parents('li').remove();
@@ -578,7 +578,7 @@ $(function() {
     });
 
     // 删除草稿
-    $('.btn-drafts-del').on('click', function() {
+    $('#drafts-list').on('click', '.btn-del', function() {
         var _this = $(this);
         $.msgBox.Confirm('删除草稿', '删除后草稿将无法恢复，你确定要删除吗？', function() {
             _this.parents('li').remove();

@@ -6,11 +6,8 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/page.css">
         <link rel="stylesheet" href="../css/user.css">
-
-        <!-- 裁剪头像css start-->
-        <link rel="stylesheet" href="../css/cropper.css">
-        <!-- 裁剪头像css end-->
     </head>
     <body>
         <!-- 头部 start -->
@@ -383,42 +380,54 @@
         <!-- 头部 end -->
 
         <!-- 内容主体 start -->
-        <div class="wrap user-box">
-            <div class="fll user-left">
-                <div class="user-infos">
-                    <a href="javascript:;" class="btn-avatar"><span class="icon-uedit"></span></a>
-                    <img class="img" src="http://q.qlogo.cn/qqapp/101341581/C781FBAEE76D838500FA8B86CFE9ECAA/100" height="80" width="80">
-                    <div class="name">巧匠-潜云</div>
-                    <div class="info">北京市 | 设计指导</div>
-                    <a href="javascript:;" class="btn">签到</a>
-                </div>
+        <div class="user-tit">
+            <div class="wrap">
+                <!-- 顶部广告 start -->
+                <div class="top-gg"><a href="#"><img src="../images/ft-gg.jpg" height="100" width="1220" alt=""></a></div>
+                <!-- 顶部广告 end -->
+                <ul class="user-tab">
+                    <li><a href="我的关注.html">我的关注</a></li>
+                    <li><a href="我的作品.html">我的作品</a></li>
+                    <li><a href="关注的人.html">关注的人</a></li>
+                    <li><a href="粉丝.html">粉丝</a></li>
+                    <li><a class="cur" href="收藏夹.html">收藏夹</a></li>
+                    <li><a href="草稿箱.html">草稿箱</a></li>
+                </ul>
+            </div>
+        </div>
 
-                <div class="user-nav">
-                    <ul>
-                        <li><a href="我的关注-展开.html">好友动态</a></li>
-                        <li><a href="我的关注.html">我的关注</a></li>
-                        <li><a href="我的粉丝.html">我的粉丝</a></li>
-                        <li><a href="我的收藏.html" class="cur">我的收藏</a></li>
-                        <li><a href="我的作品.html">我的作品</a></li>
-                        <li><a href="我的草稿箱.html">我的草稿箱</a></li>
-                    </ul>
-                </div>
+        <div class="wrap user-box">
+            <div class="myworks-tab follow-tab">
+                <div class="fr gz-num">共 0 个收藏夹</div>
+                <a class="btn-collect" href="javascript:;">添加收藏夹</a>
+                <a class="btn-manage" href="javascript:;">管理</a>
             </div>
 
-            <div class="fr user-right">
-                <div class="user-tit">
-                    <div class="fr manage"><a href="javascript:;" class="btn-collect">添加收藏夹</a><a href="javascript:;" class="btn-manage">管理</a></div>
-                    <h2>我的收藏</h2>
-                </div>
-
-                <div class="uno-result">
-                    <img src="../images/no-result1.png">
-                    <h2>暂无收藏</h2>
-                    <p>收藏灵感是一种优秀的习惯</p>
-                    <div class="btn-box">
-                        <a href="#" class="btn btn-green">发现更多</a>
-                    </div>
-                </div>
+            <div class="zsj-box">
+                <ul class="list-collect">
+                    <li>
+                        <a href="收藏夹-展开.html">
+                            <span class="img-box">
+                                <img src="../images/nocollect.jpg" width="280" height="173">
+                                <span class="num">0</span>
+                            </span>
+                        </a>
+                        <div class="pic">
+                            <a href="收藏夹-展开.html"><img src="../images/nocollect2.jpg" height="82" width="133"></a>
+                            <a href="收藏夹-展开.html"><img src="../images/nocollect2.jpg" height="82" width="133"></a>
+                        </div>
+                        <div class="user">
+                            <div class="fr manage">
+                                <a href="javascript:;"><span class="icon-uedit"></span></a>
+                                <ul class="manage-list">
+                                    <li><a href="javascript:;"><span class="icon-uedit"></span>重命名</a></li>
+                                    <li><a href="javascript:;"><span class="icon-del"></span>删除</a></li>
+                                </ul>
+                            </div>
+                            <a href="收藏夹-展开.html"><strong>默认</strong></a>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         <!-- 内容主体 end -->
@@ -497,6 +506,7 @@
                 </div>
                 <div class="popup-btn-box">
                     <a href="javascript:;" class="btn btn-blue">保存</a>
+                    <a href="javascript:;" class="btn btn-gray">取消</a>
                 </div>
             </div>
         </div>
@@ -514,37 +524,28 @@
                     </div>
                     <ul class="list" id="popup-collect-list">
                         <li>
-                            <span class="fr num">12</span>
-                            <label><input type="checkbox" name="collect" value="默认收藏夹">默认收藏夹</label>
+                            <!-- <span class="fr num">12</span> -->
+                            <label>默认收藏夹</label>
                         </li>
                         <li>
-                            <span class="fr num">12</span>
-                            <label><input type="checkbox" name="collect" value="专题">专题</label>
+                            <label>专题</label>
                         </li>
                         <li>
-                            <span class="fr num">12</span>
-                            <label><input type="checkbox" name="collect" value="教程">教程</label>
+                            <label>教程</label>
                         </li>
                         <li>
-                            <span class="fr num">12</span>
-                            <label><input type="checkbox" name="collect" value="平面海报">平面海报</label>
+                            <label>平面海报</label>
                         </li>
                         <li>
-                            <span class="fr num">12</span>
-                            <label><input type="checkbox" name="collect" value="主图">主图</label>
+                            <label>主图</label>
                         </li>
                         <li>
-                            <span class="fr num">12</span>
-                            <label><input type="checkbox" name="collect" value="最爱">最爱</label>
+                            <label>最爱</label>
                         </li>
                         <li>
-                            <span class="fr num">12</span>
-                            <label><input type="checkbox" name="collect" value="任务">任务</label>
+                            <label>任务</label>
                         </li>
                     </ul>
-                </div>
-                <div class="popup-btn-box">
-                    <a href="javascript:;" class="btn btn-blue">保存</a>
                 </div>
             </div>
         </div>
@@ -556,10 +557,6 @@
                 <div class="popup-tit">管理收藏夹</div>
                 <span class="popup-close icon-close"></span>
                 <div class="popup-ct">
-                    <div class="txt-box">
-                        <input class="txt" type="text" value="" maxlength="15" placeholder="新建收藏夹，不能超过15个字">
-                        <button class="btn" type="button">添加</button>
-                    </div>
                     <ul class="list" id="popup-manage-list">
                         <li>
                             <input type="text" value="默认收藏夹" class="input" disabled>
@@ -596,9 +593,6 @@
                         </li>
                     </ul>
                 </div>
-                <div class="popup-btn-box">
-                    <a href="javascript:;" class="btn btn-blue">保存</a>
-                </div>
             </div>
         </div>
         <!-- 管理收藏夹弹窗 end -->
@@ -608,10 +602,6 @@
         <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
         <script src="../js/common.js" type="text/javascript"></script>
         <!-- 通用js start-->
-
-        <!-- 裁剪插件js start-->
-        <script src="../js/cropper.js" type="text/javascript"></script>
-        <!-- 裁剪插件js start-->
 
         <!--js调用 start -->
         <script src="../js/user.js" type="text/javascript"></script>
