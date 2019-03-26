@@ -1128,167 +1128,175 @@ input, textarea {
 
     /* 收到的赞 通用 */
     &-msg {
-        padding-top: 12px;
+        background: #fff;
+        .bdr(4px);
         &-list {
             .ov(h);
-            padding: 0 20px 23px 30px;
+            padding: 0 0 23px;
         }
-        li {
-            padding: 29px 10px 28px 0;
-            margin-top: -1px;
-            border-top: 1px solid #f6f6f6;
-            line-height: 25px;
-            color: #666;
-            .cl();
-            .img {
-                margin-left: 25px;
-                img {
-                    width: 120px;
-                    height: 74px;
-                }
+        .ct-comment-new {
+            margin: 0;
+            padding: 0;
+            li {
+                padding: 45px 40px 40px;
             }
-            .avatar {
-                margin-right: 25px;
-                img {
-                    width: 54px;
-                    height: 54px;
-                    .bdr(50%);
-                }
-            }
-            .tt, .info {
-                padding-top: 4px;
-                margin-left: 79px;
-                font-size: 16px;
-                color: #666;
-                text-align: justify;
-                a {
-                    &:hover {
-                        color: @blue-h;
-                    }
-                }
-                strong {
-                    a {
-                        color: #666;
-                        &:hover {
-                            color: @blue;
-                        }
-                    }
-                }
-            }
-            .info {
-                padding: 2px 0;
-                color: #888;
-                font-size: 14px;
-                line-height: 22px;
-            }
-            .time {
-                margin-left: 79px;
-                color: #aaa;
-                font-size: 14px;
-                a {
-                    margin-left: 20px;
+        }
+        // li {
+        //     padding: 45px 41px 40px;
+        //     margin-top: -1px;
+        //     border-top: 1px solid #f6f6f6;
+        //     line-height: 25px;
+        //     color: #666;
+        //     .cl();
+        //     .img {
+        //         margin-left: 25px;
+        //         img {
+        //             width: 120px;
+        //             height: 74px;
+        //         }
+        //     }
+        //     .avatar {
+        //         margin-right: 25px;
+        //         img {
+        //             width: 54px;
+        //             height: 54px;
+        //             .bdr(50%);
+        //         }
+        //     }
+        //     .tt, .info {
+        //         padding-top: 4px;
+        //         margin-left: 79px;
+        //         font-size: 16px;
+        //         color: #666;
+        //         text-align: justify;
+        //         a {
+        //             &:hover {
+        //                 color: @blue-h;
+        //             }
+        //         }
+        //         strong {
+        //             a {
+        //                 color: #666;
+        //                 &:hover {
+        //                     color: @blue;
+        //                 }
+        //             }
+        //         }
+        //     }
+        //     .info {
+        //         padding: 2px 0;
+        //         color: #888;
+        //         font-size: 14px;
+        //         line-height: 22px;
+        //     }
+        //     .time {
+        //         margin-left: 79px;
+        //         color: #aaa;
+        //         font-size: 14px;
+        //         a {
+        //             margin-left: 20px;
 
-                }
-                .btn-del {
-                    .dis(n);
-                    color: #aaa;
-                    &:hover {
-                        color: @blue;
-                    }
-                }
-            }
-            &:hover {
-                .btn-del {
-                    .dis(b);
-                }
-            }
-            .reply {
-                &-form {
-                    .dis(n);
-                    padding-top: 15px;
-                    margin-left: 79px;
-                    .text {
-                        .dis(b);
-                        width: 769px;
-                        height: 90px - 20;
-                        padding: 10px 15px;
-                        border: 1px solid #ddd;
-                        color: #666;
-                        font-size: 14px;
-                        .bdr(3px);
-                        resize: none;
-                    }
-                    .btn-box {
-                        padding-top: 20px;
-                        line-height: 36px;
-                        font-size: 0;
-                        .cl();
-                        .fll {
-                            font-size: 14px;
-                            color: #aaa;
-                            .icon-smile {
-                                .dis(ib);
-                                vertical-align: middle;
-                                margin: -3px 10px 0 0;
-                                font-size: 19px;
-                                color: #ccc;
-                            }
-                        }
-                        .btn {
-                            .dis(ib);
-                            vertical-align: middle;
-                            width: 118px;
-                            height: 34px;
-                            line-height: 34px;
-                            margin-left: 10px;
-                            text-align: center;
-                            font-size: 14px;
-                            .bdr(4px);
-                            &-cancel {
-                                color: #aaa;
-                                border: 1px solid #ddd;
-                                &:hover {
-                                    color: @blue;
-                                    border: 1px solid @blue;
-                                }
-                            }
-                            &-sure {
-                                color: #fff;
-                                border: 1px solid @blue;
-                                background: @blue;
-                                &:hover {
-                                    border: 1px solid @blue-h;
-                                    background: @blue-h;
-                                }
-                            }
-                        }
-                    }
-                }
-                &-box {
-                    .pos(r);
-                    margin: 20px 0 0 79px;
-                    padding: 10px 18px;
-                    background: #f6f6f6;
-                    .bdr(4px);
-                    .arrow {
-                        .pos(a);
-                        top: -9px;
-                        left: 20px;
-                        .triangle(top, 9px, #f6f6f6);
-                    }
-                    .avatar {
-                        margin-right: 14px;
-                        img {
-                            width: 30px;
-                            height: 30px;
-                        }
-                    }
-                    .com-box {
-                        padding: 8px 0;
-                    }
-                }
-            }
-        }
+        //         }
+        //         .btn-del {
+        //             .dis(n);
+        //             color: #aaa;
+        //             &:hover {
+        //                 color: @blue;
+        //             }
+        //         }
+        //     }
+        //     &:hover {
+        //         .btn-del {
+        //             .dis(b);
+        //         }
+        //     }
+        //     .reply {
+        //         &-form {
+        //             .dis(n);
+        //             padding-top: 15px;
+        //             margin-left: 79px;
+        //             .text {
+        //                 .dis(b);
+        //                 width: 769px;
+        //                 height: 90px - 20;
+        //                 padding: 10px 15px;
+        //                 border: 1px solid #ddd;
+        //                 color: #666;
+        //                 font-size: 14px;
+        //                 .bdr(3px);
+        //                 resize: none;
+        //             }
+        //             .btn-box {
+        //                 padding-top: 20px;
+        //                 line-height: 36px;
+        //                 font-size: 0;
+        //                 .cl();
+        //                 .fll {
+        //                     font-size: 14px;
+        //                     color: #aaa;
+        //                     .icon-smile {
+        //                         .dis(ib);
+        //                         vertical-align: middle;
+        //                         margin: -3px 10px 0 0;
+        //                         font-size: 19px;
+        //                         color: #ccc;
+        //                     }
+        //                 }
+        //                 .btn {
+        //                     .dis(ib);
+        //                     vertical-align: middle;
+        //                     width: 118px;
+        //                     height: 34px;
+        //                     line-height: 34px;
+        //                     margin-left: 10px;
+        //                     text-align: center;
+        //                     font-size: 14px;
+        //                     .bdr(4px);
+        //                     &-cancel {
+        //                         color: #aaa;
+        //                         border: 1px solid #ddd;
+        //                         &:hover {
+        //                             color: @blue;
+        //                             border: 1px solid @blue;
+        //                         }
+        //                     }
+        //                     &-sure {
+        //                         color: #fff;
+        //                         border: 1px solid @blue;
+        //                         background: @blue;
+        //                         &:hover {
+        //                             border: 1px solid @blue-h;
+        //                             background: @blue-h;
+        //                         }
+        //                     }
+        //                 }
+        //             }
+        //         }
+        //         &-box {
+        //             .pos(r);
+        //             margin: 20px 0 0 79px;
+        //             padding: 10px 18px;
+        //             background: #f6f6f6;
+        //             .bdr(4px);
+        //             .arrow {
+        //                 .pos(a);
+        //                 top: -9px;
+        //                 left: 20px;
+        //                 .triangle(top, 9px, #f6f6f6);
+        //             }
+        //             .avatar {
+        //                 margin-right: 14px;
+        //                 img {
+        //                     width: 30px;
+        //                     height: 30px;
+        //                 }
+        //             }
+        //             .com-box {
+        //                 padding: 8px 0;
+        //             }
+        //         }
+        //     }
+        // }
     }
 
     /* 人气排行 */
@@ -2879,76 +2887,78 @@ input, textarea {
 }
 
 // 留言
-.ct-comment {
-    // 新评论
-    &-new {
-        margin: 0;
-        .input {
-            width: 1140px - 310;
-            .textarea {
-                width: 1009px - 60px - 310;
-            }
-            .tips {
-                width: 1009px - 30px - 310;
-            }
-        }
-        .btn-box {
-            .btn-comment {
-                top: 35px;
-            }
-        }
-        .com-box {
-            .btn-box {
-                padding: 0;
-                margin: 0;
-            }
-            .reply-form {
-                .text {
-                    width: 578px;
+.homepage-box {
+    .ct-comment {
+        // 新评论
+        &-new {
+            margin: 0;
+            .input {
+                width: 1140px - 310;
+                .textarea {
+                    width: 1009px - 60px - 310;
+                }
+                .tips {
+                    width: 1009px - 30px - 310;
                 }
             }
-        }
-        .info {
-            padding-right: 160px;
-            .times {
-                margin-right: -160px;
-                line-height: 20px;
-                padding-top: 25px;
-                font-size: 12px;
-                color: #999;
-            }
             .btn-box {
-                .btn-replay {
-                    margin-left: 60px;
+                .btn-comment {
+                    top: 35px;
                 }
             }
-        }
-        .reply-box {
-            padding: 22px 18px;
-            .reply-form {
+            .com-box {
                 .btn-box {
-                    a:hover {
-                        color: #666;
-                    }
-                    .btn-sure:hover {
-                        color: #fff;
+                    padding: 0;
+                    margin: 0;
+                }
+                .reply-form {
+                    .text {
+                        width: 578px;
                     }
                 }
             }
             .info {
-                .pos(r);
-                padding-right: 132px;
-                margin-left: 54px;
+                padding-right: 160px;
+                .times {
+                    margin-right: -160px;
+                    line-height: 20px;
+                    padding-top: 25px;
+                    font-size: 12px;
+                    color: #999;
+                }
                 .btn-box {
                     .btn-replay {
-                        margin-left: 0;
+                        margin-left: 60px;
                     }
                 }
             }
-            .com-box {
+            .reply-box {
+                padding: 22px 18px;
                 .reply-form {
-                    .text {
-                        width: 488px;
+                    .btn-box {
+                        a:hover {
+                            color: #666;
+                        }
+                        .btn-sure:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+                .info {
+                    .pos(r);
+                    padding-right: 132px;
+                    margin-left: 54px;
+                    .btn-box {
+                        .btn-replay {
+                            margin-left: 0;
+                        }
+                    }
+                }
+                .com-box {
+                    .reply-form {
+                        .text {
+                            width: 488px;
+                        }
                     }
                 }
             }
