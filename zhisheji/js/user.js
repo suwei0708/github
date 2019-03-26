@@ -323,55 +323,55 @@ $(function() {
 
     /* 评论页 */
     // 点击回复
-    $('.user-msg-list').on('click', '.btn-replay', function() {
-        var replayForm = $(this).parent('.time').nextAll('.reply-form');
-        if(replayForm.is(':visible')) {
-            $('.user-msg-list .reply-form').hide();
-        }
-        else {
-            $('.user-msg-list .reply-form').hide();
-            replayForm.show();
-        }
-    });
-    // 点击取消
-    $('.user-msg').on('click', '.btn-cancel', function() {
-        var replayForm = $(this).parents('.reply-form');
-        replayForm.hide();
-    });
+    // $('.user-msg-list').on('click', '.btn-replay', function() {
+    //     var replayForm = $(this).parent('.time').nextAll('.reply-form');
+    //     if(replayForm.is(':visible')) {
+    //         $('.user-msg-list .reply-form').hide();
+    //     }
+    //     else {
+    //         $('.user-msg-list .reply-form').hide();
+    //         replayForm.show();
+    //     }
+    // });
+    // // 点击取消
+    // $('.user-msg').on('click', '.btn-cancel', function() {
+    //     var replayForm = $(this).parents('.reply-form');
+    //     replayForm.hide();
+    // });
 
-    // 回复内容
-    $('.user-msg-list').on('click', '.btn-sure', function() {
-        // 判断文本内容非空
-        if(!$.trim($(this).parents('.reply-form').find('.text').val())) {
-            $.msgBox.Alert(null, '回复内容不能为空');
-            return false;
-        }
-        // 判断回复盒子是否存在，不存在创造追加
-        if(!$(this).parents('li').find('.reply-box').length) {
-            $(this).parents('li').append('<div class="reply-box"></div>');
-        }
+    // // 回复内容
+    // $('.user-msg-list').on('click', '.btn-sure', function() {
+    //     // 判断文本内容非空
+    //     if(!$.trim($(this).parents('.reply-form').find('.text').val())) {
+    //         $.msgBox.Alert(null, '回复内容不能为空');
+    //         return false;
+    //     }
+    //     // 判断回复盒子是否存在，不存在创造追加
+    //     if(!$(this).parents('li').find('.reply-box').length) {
+    //         $(this).parents('li').append('<div class="reply-box"></div>');
+    //     }
 
-        var msgHtml = '<div class="com-box">'
-                        +    '<span class="arrow"></span>'
-                        +    '<a href="#" class="fll avatar">'
-                        +        '<img src="../images/avatar.gif" height="30" width="30">'
-                        +    '</a>'
-                        +    '<div class="info"><strong><a href="#">木白的白目</a></strong>  回复 <strong><a href="#">样佛爷</a></strong>：' + $(this).parents('.reply-form').find('.text').val() + '</div>'
-                        +    '<div class="time">' + '刚刚' + '<a href="javascript:;" class="blue btn-replay">回复</a></div>'
-                        +    '<div class="reply-form">'
-                        +        '<textarea class="text" placeholder="回复 木白的白目 : "></textarea>'
-                        +        '<div class="btn-box">'
-                        +            '<a href="javascript:;" class="fll"><span class="icon-smile"></span>添加表情</a>'
-                        +            '<div class="fr">'
-                        +                '<a href="javascript:;" class="btn btn-cancel">取消</a>'
-                        +                '<a href="javascript:;" class="btn btn-sure">回复</a>'
-                        +            '</div>'
-                        +        '</div>'
-                        +    '</div>'
-                        +'</div>';
-        $(this).parents('li').find('.reply-box').append(msgHtml).scrollTop(999999);
-        $(this).parents('.reply-form').find('.text').val('');
-    });
+    //     var msgHtml = '<div class="com-box">'
+    //                     +    '<span class="arrow"></span>'
+    //                     +    '<a href="#" class="fll avatar">'
+    //                     +        '<img src="../images/avatar.gif" height="30" width="30">'
+    //                     +    '</a>'
+    //                     +    '<div class="info"><strong><a href="#">木白的白目</a></strong>  回复 <strong><a href="#">样佛爷</a></strong>：' + $(this).parents('.reply-form').find('.text').val() + '</div>'
+    //                     +    '<div class="time">' + '刚刚' + '<a href="javascript:;" class="blue btn-replay">回复</a></div>'
+    //                     +    '<div class="reply-form">'
+    //                     +        '<textarea class="text" placeholder="回复 木白的白目 : "></textarea>'
+    //                     +        '<div class="btn-box">'
+    //                     +            '<a href="javascript:;" class="fll"><span class="icon-smile"></span>添加表情</a>'
+    //                     +            '<div class="fr">'
+    //                     +                '<a href="javascript:;" class="btn btn-cancel">取消</a>'
+    //                     +                '<a href="javascript:;" class="btn btn-sure">回复</a>'
+    //                     +            '</div>'
+    //                     +        '</div>'
+    //                     +    '</div>'
+    //                     +'</div>';
+    //     $(this).parents('li').find('.reply-box').append(msgHtml).scrollTop(999999);
+    //     $(this).parents('.reply-form').find('.text').val('');
+    // });
 
     /* 人气排行 */
     if($('.user-ct').length) {

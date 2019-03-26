@@ -217,7 +217,7 @@ $(function() {
     }
 
     // 监听input字数
-    if($('.ct-comment-box .textarea').length) {
+    if($('.ct-comment').length) {
         monitorVal('.popup-report .textarea', 500);
         monitorVal('.ct-comment-box .textarea', 500, 'minus');
         monitorVal('#cp_comment', 200, 'minus');
