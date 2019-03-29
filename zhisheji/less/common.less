@@ -2852,30 +2852,17 @@ body {
     // 私信
     &-letter {
         .popup {
-            width: 720px;
-            margin-left: -720px / 2px;
+            width: 860px;
+            margin-left: -860px / 2px;
+            margin-top: -300px;
         }
         .user-msgct {
-            padding-bottom: 0;
             &-tit {
-                .title {
-                    text-align: left;
-                    a {
-                        color: #666;
-                    }
-                }
                 .popup-close {
-                    .pos(s);
-                    display: inline-block;
                     z-index: 99;
-                    padding: 16px 0;
-                    margin-left: 22px;
                     cursor: pointer;
-                    font-size: 16px;
-                    .icon-close {
-                        font-size: 16px;
-                        color: #aaa;
-                    }
+                    font-size: 13px;
+                    top: 20px;
                     &:hover {
                         .icon-close {
                             color: @blue;
@@ -2883,31 +2870,8 @@ body {
                     }
                 }
             }
-            &-ct {
-                margin-top: 20px;
-                height: 338px;
-                .umsg {
-                    padding: 15px 10px 15px 20px;
-                    .img {
-                        img {
-                            width: 46px;
-                            height: 46px;
-                        }
-                    }
-                }
-                .umsg-ct {
-                    max-width: 553px;
-                    a {
-                        color: #888;
-                    }
-                }
-            }
             .reply-form {
                 .pos(r);
-                padding-top: 20px;
-                .text {
-                    width: 660 - 32px;
-                }
                 .num-box {
                     .pos(a);
                     top: 75px;
@@ -3394,21 +3358,8 @@ body {
     &-msgct {
         padding-bottom: 56px;
         &-tit {
-            padding: 16px 30px;
+            padding: 30px 30px 24px;
             border-bottom: 1px solid #eee;
-            .back {
-                .dis(ib);
-                padding: 13px 0;
-                .icon-back {
-                    font-size: 21px;
-                    color: #aaa;
-                }
-                &:hover {
-                    .icon-back {
-                        color: @blue;
-                    }
-                }
-            }
             .uinfo {
                 .pos(r);
                 .dis(ib);
@@ -3517,17 +3468,17 @@ body {
                 }
             }
             .title {
-                text-align: center;
                 font-size: 16px;
-                color: #666;
-                line-height: 46px;
+                color: #333;
+                line-height: 40px;
                 padding: 0;
                 height: auto;
+                font-weight: 700;
                 img {
                     .dis(ib);
-                    width: 46px;
-                    height: 46px;
-                    margin: -3px 10px 0 0;
+                    width: 40px;
+                    height: 40px;
+                    margin: -3px 12px 0 0;
                     vertical-align: middle;
                     .bdr(50%);
                 }
