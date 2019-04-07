@@ -2874,11 +2874,14 @@ body {
                 .pos(r);
                 .num-box {
                     .pos(a);
-                    top: 75px;
-                    right: 10px;
-                    color: #ccc;
-                    font-size: 12px;
+                    top: 40px;
+                    right: 140px;
+                    color: #999;
+                    font-size: 0;
                     line-height: 40px;
+                    .num {
+                        font-size: 12px;
+                    }
                 }
             }
         }
@@ -3356,7 +3359,7 @@ body {
 .user {
     /* 回复详情 */
     &-msgct {
-        padding-bottom: 56px;
+        padding-bottom: 20px;
         &-tit {
             padding: 30px 30px 24px;
             border-bottom: 1px solid #eee;
@@ -3365,6 +3368,7 @@ body {
                 .dis(ib);
                 z-index: 99;
                 padding: 12px 0;
+                margin-right: 30px;
                 cursor: pointer;
                 .icon-info {
                     font-size: 25px;
@@ -3565,39 +3569,39 @@ body {
         }
         .reply {
             &-form {
-                padding-top: 55px;
                 margin: 0 30px;
                 .text {
                     .dis(b);
-                    width: 850px;
-                    height: 90px - 20;
-                    padding: 10px 15px;
+                    width: 670px - 40;
+                    height: 74px - 20;
+                    padding: 10px 20px;
                     border: 1px solid #ddd;
                     color: #666;
                     font-size: 14px;
-                    .bdr(3px);
+                    .bdr(4px, 0, 0, 4px);
                     resize: none;
                     &::-webkit-input-placeholder{
-                        color: #aaa;
+                        color: #ccc;
                     }
                     &::-moz-placeholder{
-                        color: #aaa;
+                        color: #ccc;
                     }
                     &:-moz-placeholder{
-                        color: #aaa;
+                        color: #ccc;
                     }
                     &:-ms-input-placeholder{
-                        color: #aaa;
+                        color: #ccc;
                     }
                 }
                 .btn-box {
-                    padding-top: 20px;
+                    .pos(r);
                     line-height: 36px;
                     font-size: 0;
                     .cl();
                     .fll {
+                        margin-top: 12px;
                         font-size: 14px;
-                        color: #aaa;
+                        color: #999;
                         .icon-smile {
                             .dis(ib);
                             vertical-align: middle;
@@ -3615,28 +3619,28 @@ body {
                     .btn {
                         .dis(ib);
                         vertical-align: middle;
-                        width: 118px;
-                        height: 34px;
-                        line-height: 34px;
-                        margin-left: 10px;
+                        width: 130px;
+                        height: 76px;
+                        line-height: 76px;
                         text-align: center;
                         font-size: 14px;
-                        .bdr(4px);
-                        &-cancel {
-                            color: #aaa;
-                            border: 1px solid #ddd;
-                            &:hover {
-                                color: @blue;
-                                border: 1px solid @blue;
-                            }
-                        }
+                        .bdr(0, 4px, 4px, 0);
                         &-sure {
+                            .pos(a);
+                            top: -76px;
+                            right: 0;
                             color: #fff;
                             border: 1px solid @blue;
                             background: @blue;
                             &:hover {
                                 border: 1px solid @blue-h;
                                 background: @blue-h;
+                            }
+                            &.dis {
+                                background: #eee;
+                                color: #999;
+                                border: none;
+                                cursor: default;
                             }
                         }
                     }

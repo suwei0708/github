@@ -75,10 +75,10 @@ $(function() {
     });
 
     // 上传图像
-    $('.data-img .img').on('click', function() {
+    $('.data-img .edit').on('click', function() {
         $('.user-editbox').show();
         maskShow();
-        var src = $('.user-infos .img').attr('src');
+        var src = $('.data-img .img img').attr('src');
         $('.user-editbox .img').html('<img id="image" src="' + src + '" width="335" height="335"/>');
 
         var image = document.getElementById('image');
