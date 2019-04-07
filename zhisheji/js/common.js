@@ -1265,15 +1265,25 @@ function letter() {
             }
         });
 
+        // 判断回复框字数是否输入
+        $('.user-msgct .text').bind('input propertychange', function() {
+            var _this = $(this);
+            if (_this.val().length > 0) {
+                _this.parents('.user-msgct').find('.btn-sure').removeClass('dis');
+            }
+            else {
+                _this.parents('.user-msgct').find('.btn-sure').addClass('dis');
+            }
+        });
+
         if ($('.user-msgct').length) {
             $('.user-msgct-ct').scrollUnique();
         };
 
         $('.user-msgct').on('click', '.btn-sure', function() {
-            if (!$.trim($('.user-msgct').find('.text').val())) {
-                $.msgBox.Alert(null, '回复内容不能为空');
+            if($(this).hasClass('dis')) {
                 return false;
-            }
+            };
 
             var msgHtml = '<div class="umsg umsg-r">' + '<span class="img"><img src="http://q.qlogo.cn/qqapp/101341581/C781FBAEE76D838500FA8B86CFE9ECAA/100"></span>' + '<div class="umsg-ct">' + $('.user-msgct').find('.text').val() + '<span class="arrow"></span></div>' + '<span class="time">' + '刚刚' + '</span>' + '</div>';
             $('.user-msgct-ct').append(msgHtml).scrollTop(999999);
@@ -1282,7 +1292,7 @@ function letter() {
 
         // 监听input字数
         if ($('.popup-letter').length) {
-            monitorVal('.popup-letter .text', 400);
+            monitorVal('.popup-letter .text', 500, 'minus');
         };
     })(jQuery);
 }

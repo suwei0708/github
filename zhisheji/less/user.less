@@ -442,6 +442,12 @@ input, textarea {
     &-right {
         // .ov(h);
         width: 910px;
+        .user-tit {
+            padding: 0 0 0 30px;
+            font-size: 16px;
+            color: #333;
+            border-bottom: 1px solid #f7f8fa;
+        }
     }
     .minh {
         min-height: 1048px;
@@ -585,55 +591,29 @@ input, textarea {
     }
 
     /* 左侧导航 */
-    // &-nav {
-    //     .ov(h);
-    //     margin: 20px 0 0;
-    //     background: #fff;
-    //     .bdr(3px);
-    //     .tit {
-    //         .height(60px);
-    //         padding: 0 0 0 32px;
-    //         font-size: 20px;
-    //         color: #333;
-    //     }
-    //     li {
-    //         .pos(r);
-    //         .height(55px);
-    //         border-top: 1px solid #f6f6f6;
-    //         background: #fff;
-    //         a {
-    //             .dis(b);
-    //             padding: 0 20px 0 32px;
-    //             color: #666;
-    //             font-size: 16px;
-    //             &:hover, &.cur {
-    //                 color: @blue;
-    //                 border-left: 3px solid @blue;
-    //                 padding: 0 20px 0 29px;
-    //             }
-    //             .num {
-    //                 .ov(h);
-    //                 float: right;
-    //                 padding: 0 3px;
-    //                 min-width: 10px;
-    //                 height: 16px;
-    //                 line-height: 15px;
-    //                 margin-top: 21px;
-    //                 background: @red;
-    //                 color: #fff;
-    //                 text-align: center;
-    //                 font-size: 12px;
-    //                 .bdr(10px);
-    //             }
-    //         }
+    &-nav {
+        .ov(h);
+        background: #fff;
+        .bdr(4px);
+        li {
+            .pos(r);
+            .height(50px);
+            margin: 20px 0;
+            background: #fff;
+            a {
+                .dis(b);
+                padding: 0 20px 0 32px;
+                color: #333;
+                font-size: 14px;
+                &:hover, &.cur {
+                    color: @blue;
+                    border-left: 3px solid @blue;
+                    padding: 0 20px 0 29px;
+                }
+            }
 
-    //     }
-    //     .nav-msg {
-    //         border-top: 0;
-    //         margin: 10px 0 0;
-    //         .height(50px);
-    //     }
-    // }
+        }
+    }
 
     /* 标题 */
     &-tit {
@@ -724,35 +704,42 @@ input, textarea {
 
     /* 基本资料 */
     &-data {
-        padding: 38px 30px 47px;
+        padding: 35px 30px;
         .cl();
+        background: #fff;
+        .bdr(4px);
         .data-img {
-            margin-bottom: 15px;
+            .pos(r);
+            width: 910px;
+            margin-left: -30px;
+            padding: 5px 0 40px;
+            border-bottom: 1px solid #f7f8fa;
             .cl();
             .img {
-                .pos(r);
-                .ov(h);
                 margin: 0 24px 0 65px;
-                .bdr(50%);
+                img {
+                    width: 96px;
+                    height: 96px;
+                    .bdr(50%);
+                }
                 .edit {
-                    .dis(n);
                     .pos(a);
-                    top: 0;
-                    left: 0;
-                    width: 100%;
-                    height: 100%;
-                    line-height: 25px;
+                    top: 30px;
+                    right: 0;
+                    width: 130px;
+                    height: 36px;
+                    line-height: 36px;
                     color: #fff;
-                    background: #000;
+                    background: @blue;
                     text-align: center;
-                    background: rgba(0, 0, 0, .5);
-                    filter: ~'progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000)';
-                    font-size: 12px;
+                    font-size: 14px;
+                    cursor: pointer;
+                    .bdr(4px);
                     .icon-photo {
-                        .dis(b);
-                        width: 24px;
-                        margin: 25px auto 0;
-                        font-size: 24px;
+                        .dis(n);
+                    }
+                    &:hover {
+                        background: @blue-h;
                     }
                 }
                 &:hover {
@@ -763,18 +750,21 @@ input, textarea {
             }
             .name {
                 line-height: 20px;
-                padding-top: 27px;
-                font-size: 20px;
+                padding-top: 34px;
+                font-size: 16px;
                 color: #333;
+                font-weight: 700;
                 img {
-                    margin-left: 10px;
+                    margin: -3px 0 0 6px;
+                    .dis(ib);
+                    vertical-align: middle
                 }
             }
             .address {
                 line-height: 20px;
-                padding-top: 9px;
-                font-size: 14px;
-                color: #666;
+                padding-top: 6px;
+                font-size: 12px;
+                color: #999;
             }
         }
         .item {
