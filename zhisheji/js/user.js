@@ -9,37 +9,56 @@ $(function() {
         });
     }
 
-    // 基本资料公开选项
-    if($('.user-basedata .contact').length) {
-        checkboxSelect('.user-basedata .contact');
+    // 联系方式公开选项
+    if($('.user-contact .contact').length) {
+        checkboxSelect('.user-contact .contact');
 
         jQuery(this).find('input[type=checkbox]').hide();
-        jQuery('.user-basedata .contact').on('click', 'label', function() {
+        jQuery('.user-contact .contact').on('click', 'label', function() {
             if (jQuery(this).find('input[type=checkbox]').prop('checked')) {
-                // 选中
+                // 取消选中
                 jQuery(this).find('input[type=checkbox]').prop('checked', false);
                 jQuery(this).find('span').removeClass('ico-radio-cur');
-                if(jQuery(this).parents('.item').find('dt').text() == '邮箱') {
-                    console.log('选中邮箱')
+                if(jQuery(this).parents('.item').find('dt').text() == '微信') {
+                    console.log('取消选中微信')
                 }
-                else if(jQuery(this).parents('.item').find('dt').text() == '微信') {
-                    console.log('选中微信')
+                else if(jQuery(this).parents('.item').find('dt').text() == 'QQ') {
+                    console.log('取消选中QQ')
+                }
+                else if(jQuery(this).parents('.item').find('dt').text() == '手机号') {
+                    console.log('取消选中手机号')
                 }
             }
             else {
-                // 取消选中
+                // 选中
                 jQuery(this).find('input[type=checkbox]').prop('checked', true);
                 jQuery(this).find('span').addClass('ico-radio-cur');
-                if(jQuery(this).parents('.item').find('dt').text() == '邮箱') {
-                    console.log('取消选中邮箱')
+                if(jQuery(this).parents('.item').find('dt').text() == '微信') {
+                    console.log('选中微信')
                 }
-                else if(jQuery(this).parents('.item').find('dt').text() == '微信') {
-                    console.log('取消选中微信')
+                else if(jQuery(this).parents('.item').find('dt').text() == 'QQ') {
+                    console.log('选中QQ')
+                }
+                else if(jQuery(this).parents('.item').find('dt').text() == '手机号') {
+                    console.log('选中手机号')
                 }
             }
             return false;
         });
     }
+    // 保存联系方式
+    $('.user-contact').on('click', '.btn-save', function() {
+        // 随机生成0、1，1成功，0失败
+        var random = parseInt(Math.random() * 2);
+        if(random) {
+            // 保存失败
+            tipSave('fail', '保存失败!');
+        }
+        else {
+            // 保存成功
+            tipSave('suc', '保存成功，<span class="tip-num">2</span>秒后自动关闭');
+        }
+    });
 
     // 裁剪头像
     $('#avatarInput').on('change', function(e) {
@@ -75,7 +94,7 @@ $(function() {
     });
 
     // 上传图像
-    $('.data-img .edit').on('click', function() {
+    $('.data-img .img').on('click', function() {
         $('.user-editbox').show();
         maskShow();
         var src = $('.data-img .img img').attr('src');
@@ -104,7 +123,6 @@ $(function() {
         $('.user-editbox').hide();
         maskHide();
     });
-
 
     // 初始化城市
     if($('#city-input').length) {
@@ -137,7 +155,7 @@ $(function() {
             $('.sw-select').hide();
 
             var cityname = $('.user-basedata .txt:eq(5)');
-            cityname.nextAll('.tip').hide();
+            // cityname.nextAll('.tip').hide();
 
             return false;
         });
@@ -155,30 +173,31 @@ $(function() {
         var username = $('.user-basedata input[name=lname]');
         if(!$.trim(username.val())) {
             if(username.nextAll('.tip').length) {
-                username.nextAll('.tip').find('.text').text(username.parents('dl').find('dt').text() + '不能为空')
+                username.nextAll('.tip').find('.text').html('<span class="icon-tanhao"></span>' + username.parents('dl').find('dt').text() + '不能为空').show();
             }
             else {
-                username.after('<div class="tip">' + username.parents('dl').find('dt').text() + '不能为空</div>')
+                username.after('<span class="tip"><span class="icon-tanhao"></span>' + username.parents('dl').find('dt').text() + '不能为空</span>').show();
             }
             return false;
         }
         var sexname = $('#sex');
         if(!$.trim(sexname.find('input:radio:checked').val())) {
             if(sexname.find('.tip').length) {
-                sexname.find('.tip').text('请选择性别').show();
+                sexname.find('.tip').html('<span class="icon-tanhao"></span>' + '请选择性别').show();
             }
             else {
-                sexname.append('<span class="tip">请选择性别</span>').show()
+                sexname.append('<span class="tip"><span class="icon-tanhao"></span>请选择性别</span>').show();
             }
             return false;
         }
-        var cityname = $('#city-input');
-        if($.trim(cityname.val()) == '请选择') {
-            if(cityname.nextAll('.tip').length) {
-                cityname.nextAll('.tip').text('请填写所在地').show();
+
+        var vocation = $('.user-basedata input[name=vocation]');
+        if(!$.trim(vocation.val())) {
+            if(vocation.nextAll('.tip').length) {
+                vocation.nextAll('.tip').find('.text').html('<span class="icon-tanhao"></span>' + vocation.parents('dl').find('dt').text() + '不能为空').show();
             }
             else {
-                cityname.after('<span class="tip">请填写所在地</span>').show()
+                vocation.after('<span class="tip"><span class="icon-tanhao"></span>' + vocation.parents('dl').find('dt').text() + '不能为空</span>').show();
             }
             return false;
         }
@@ -211,29 +230,44 @@ $(function() {
         var _this = $(this);
         if(!$.trim(_this.val())) {
             if(_this.nextAll('.tip').length) {
-                _this.nextAll('.tip').text('用户名不能为空').show();
+                _this.nextAll('.tip').find('.text').html('<span class="icon-tanhao"></span>' + _this.parents('dl').find('dt').text() + '不能为空').show();
             }
             else {
-                _this.after('<span class="tip">用户名不能为空</span>').show()
+                _this.after('<span class="tip"><span class="icon-tanhao"></span>' + _this.parents('dl').find('dt').text() + '不能为空</span>').show();
             }
         }
     });
-    $('#city-input').on('blur', function() {
+    $('.user-basedata input[name=vocation]').on('blur', function() {
         var _this = $(this);
-        if($.trim(_this.val()) == '请选择') {
+        if(!$.trim(_this.val())) {
             if(_this.nextAll('.tip').length) {
-                _this.nextAll('.tip').text('请填写所在地').show();
+                _this.nextAll('.tip').find('.text').html('<span class="icon-tanhao"></span>' + _this.parents('dl').find('dt').text() + '不能为空').show();
             }
             else {
-                _this.after('<span class="tip">请填写所在地</span>').show()
+                _this.after('<span class="tip"><span class="icon-tanhao"></span>' + _this.parents('dl').find('dt').text() + '不能为空</span>').show()
             }
         }
     });
 
+    // 下拉经过
+    $('.user-basedata .select-box').mouseover(function(){
+        $(this).find('.select-txt').show();
+    }).mouseout(function(){
+        $(this).find('.select-txt').hide();
+    });
+    // 复选框
+    $(".user-basedata").on('click', '.select-ai', function(){
+        var txt = $(this).text();
+        $('.user-basedata input[name=vocation]').val(txt);
+        $(this).parents(".select-box").find('.select-val-txt').text(txt);
+        $('.select-txt').hide();
+    });
+
     // 监听input字数
     if($('.user-basedata .num-box').length) {
-        monitorVal('.user-basedata .txt:eq(0)', 15);
-        monitorVal('.user-basedata .text', 50);
+        monitorVal('.user-basedata .txt:eq(0)', 16, 'minus');
+        monitorVal('.user-basedata .text', 40, 'minus');
+        monitorVal('.user-basedata .text2', 500, 'minus');
     }
 
     // 签到
