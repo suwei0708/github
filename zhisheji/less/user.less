@@ -443,10 +443,13 @@ input, textarea {
         // .ov(h);
         width: 910px;
         .user-tit {
-            padding: 0 0 0 30px;
+            padding: 0 30px;
             font-size: 16px;
             color: #333;
             border-bottom: 1px solid #f7f8fa;
+            h2 {
+                font-size: 16px;
+            }
         }
     }
     .minh {
@@ -704,6 +707,7 @@ input, textarea {
 
     /* 基本资料 */
     &-data {
+        .pos(r);
         padding: 35px 30px;
         .cl();
         background: #fff;
@@ -713,6 +717,7 @@ input, textarea {
             width: 910px;
             margin-left: -30px;
             padding: 5px 0 40px;
+            margin-bottom: 33px;
             border-bottom: 1px solid #f7f8fa;
             .cl();
             .img {
@@ -725,7 +730,7 @@ input, textarea {
                 .edit {
                     .pos(a);
                     top: 30px;
-                    right: 0;
+                    right: 30px;
                     width: 130px;
                     height: 36px;
                     line-height: 36px;
@@ -768,26 +773,31 @@ input, textarea {
             }
         }
         .item {
-            padding: 25px 0 0;
+            padding: 17px 0;
             font-size: 0;
             dt {
                 .dis(ib);
-                width: 105px;
+                width: 75px;
                 font-size: 14px;
-                line-height: 40px;
+                line-height: 44px;
                 color: #666;
                 vertical-align: top;
                 text-align: right;
                 span {
-                    margin-right: 5px;
+                    margin-right: 8px;
                     color: @red;
+                    &.dot {
+                        .dis(ib);
+                        vertical-align: middle;
+                        width: 6px;
+                        height: 6px;
+                        background: @red;
+                        .bdr(50%);
+                    }
                 }
             }
             .z9 {
                 z-index: 9;
-                // .txt {
-                //     width: 228px;
-                // }
             }
             #sex {
                 .tip {
@@ -805,18 +815,16 @@ input, textarea {
                     label {
                         margin-left: 20px;
                     }
-                    .ico-radio-cur {
-                        background-position: -100px 0;
-                    }
                 }
                 .gray {
                     color: #888;
                 }
                 .txt {
-                    width: 458px - 140px;
+                    width: 458px - 160px;
                     .height(18px);
-                    padding: 10px;
+                    padding: 12px 20px;
                     margin: 0;
+                    vertical-align: middle;
                     border: 1px solid #ddd;
                     .bdr(3px);
                     font-size: 14px;
@@ -831,16 +839,33 @@ input, textarea {
                     bottom: 0;
                     right: 245px + 140px;
                     color: #ccc;
-                    font-size: 12px;
-                    line-height: 40px;
+                    font-size: 0;
+                    height: 44px;
+                    line-height: 44px;
+                    .num {
+                        font-size: 12px;
+                    }
                 }
                 .text {
-                    height: 60px;
+                    width: 458px - 160px + 366px;
                     resize: none;
+                    &~.num-box {
+                        right: 20px;
+                    }
+                    &2 {
+                        width: 458px - 160px + 366px;
+                        resize: none;
+                        height: 60px;
+                        &~.num-box {
+                            right: 20px;
+                        }
+                    }
                 }
                 .tip {
                     .pos(s);
                     padding: 0;
+                    .dis(ib);
+                    vertical-align: middle;
                     width: auto;
                     margin-left: 20px;
                     color: @red;
@@ -871,20 +896,11 @@ input, textarea {
                             }
                         }
                     }
-                }
-                .btn {
-                    .dis(ib);
-                    border: 0;
-                    padding: 0 70px;
-                    margin-top: 30px;
-                    .height(44px);
-                    background: @green;
-                    color: #fff;
-                    font-size: 16px;
-                    .bdr(4px);
-                    cursor: pointer;
-                    &:hover {
-                        background: @green-h;
+                    .icon-tanhao {
+                        font-size: 16px;
+                        margin: -3px 8px 0 0;
+                        .dis(ib);
+                        vertical-align: middle;
                     }
                 }
                 label {
@@ -935,7 +951,7 @@ input, textarea {
                 .sw-select {
                     .dis(n);
                     .pos(a);
-                    top: 40px;
+                    top: 44px;
                     width: 168px;
                     border: 1px solid #ddd;
                     z-index: 10;
@@ -974,6 +990,47 @@ input, textarea {
                         }
                     }
                 }
+                .select-box {
+                    width: 340px;
+                }
+                .select-val {
+                    width: 298px;
+                    height: 42px;
+                    line-height: 42px;
+                    color: #666;
+                }
+                .select-txt-all {
+                    width: 338px;
+                    top: 44px;
+                }
+            }
+            &2 {
+                dt {
+                    line-height: 20px;
+                }
+                dd {
+                    label {
+                        line-height: 20px;
+                    }
+                }
+            }
+        }
+        .btn {
+            .pos(a);
+            top: 52px;
+            right: 32px;
+            .dis(ib);
+            border: 0;
+            width: 84px;
+            .height(30px);
+            background: @green;
+            color: #fff;
+            font-size: 14px;
+            text-align: center;
+            .bdr(4px);
+            cursor: pointer;
+            &:hover {
+                background: @green-h;
             }
         }
         .title {
@@ -1024,6 +1081,14 @@ input, textarea {
                 background: none;
             }
         }
+    }
+    &-basedata {
+        .btn {
+            top: 230px;
+        }
+    }
+    &-contact {
+        margin-top: 20px;
     }
 
     /* 编辑头像 */
@@ -1835,116 +1900,15 @@ input, textarea {
         }
     }
 
-
-    /* 左侧关注列表 */
-    // &-gzlist {
-    //     padding: 0 0 20px;
-    //     background: #fff;
-    //     min-height: 655px;
-    //     .tit {
-    //         .height(60px);
-    //         padding: 0 20px 0 32px;
-    //         border-bottom: 1px solid #eee;
-    //         font-size: 20px;
-    //         color: #666;
-    //         a {
-    //             color: #ccc;
-    //             font-size: 14px;
-    //             &:hover {
-    //                 color: @blue;
-    //             }
-    //         }
-    //     }
-    //     ul {
-    //         padding: 10px 0 20px;
-    //         max-height: 1446px;
-    //         _height: 1446px;
-    //         *position:relative;
-    //         *left:0;
-    //         *top:0;
-    //         .ovy(a);
-    //     }
-    //     li {
-    //         float: none;
-    //         width: auto;
-    //         padding: 10px 0 10px 20px;
-    //         .cl();
-    //         .img {
-    //             .pos(r);
-    //             img {
-    //                 width: 66px;
-    //                 height: 66px;
-    //                 margin-right: 20px;
-    //                 .bdr(50%);
-    //             }
-    //             .icon-gou {
-    //                 .pos(a);
-    //                 right: 14px;
-    //                 bottom: 2px;
-    //                 font-size: 12px;
-    //                 color: #fff;
-    //                 padding: 3px;
-    //                 border: 2px solid #fff;
-    //                 .bdr(50%);
-    //                 background: @green;
-    //             }
-    //         }
-    //         h4 {
-    //             .height(22px);
-    //             .text-e(1);
-    //             font-size: 14px;
-    //             font-weight: 700;
-    //             color: #666;
-    //             a {
-    //                 color: #666;
-    //                 &:hover {
-    //                     color: @blue;
-    //                 }
-    //             }
-    //         }
-    //         .adress {
-    //             .height(22px);
-    //             font-size: 14px;
-    //             color: #999;
-    //         }
-    //         .info {
-    //             .height(18px);
-    //             font-size: 0;
-    //             color: #aaa;
-    //             em {
-    //                 .dis(ib);
-    //                 .height(22px);
-    //                 margin-right: 12px;
-    //                 font-size: 12px;
-    //             }
-    //             span {
-    //                 .dis(ib);
-    //                 vertical-align: middle;
-    //                 margin: -3px 6px 0 0;
-    //                 color: #dcdcdc;
-    //                 font-size: 12px;
-    //             }
-    //         }
-    //     }
-    // }
-
     // 修改密码
     &-password {
-        .item {
-            dt {
-                padding: 0 0 0 7px;
-            }
-        }
-
+        margin-bottom: 20px;
     }
     // 绑定账号
     &-bind {
-        border-top: 1px solid #eee;
+        margin-bottom: 20px;
         .item {
             font-size: 0;
-            dt {
-                padding: 0 0 0 7px;
-            }
             dd {
                 font-size: 0;
                 .tips {
@@ -1967,10 +1931,11 @@ input, textarea {
                         padding: 0 20px 0 10px;
                         color: #999;
                         font-size: 14px;
-                        line-height: 40px;
+                        line-height: 44px;
                         cursor: pointer;
                         .icon-arrowb {
                             font-size: 11px;
+                            margin-top: 3px;
                             margin-left: 8px;
                         }
                         &-list {
@@ -2036,7 +2001,7 @@ input, textarea {
             font-size: 0;
             dt {
                 width: 115px;
-                padding: 0 0 0 45px;
+                padding: 0 0 0 20px;
                 font-size: 14px;
                 color: #999;
                 text-align: left;
@@ -2072,7 +2037,7 @@ input, textarea {
                     .dis(ib);
                     vertical-align: top;
                     width: 250px;
-                    margin-right: 70px;
+                    margin-right: 50px;
                     line-height: 40px;
                     text-align: center;
                     font-size: 14px;

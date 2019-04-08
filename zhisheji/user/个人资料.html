@@ -6,6 +6,7 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/page.css">
         <link rel="stylesheet" href="../css/user.css">
 
         <!-- 裁剪头像css start-->
@@ -388,7 +389,7 @@
                 <div class="user-nav">
                     <ul>
                         <li><a class="cur" href="个人资料.html">个人资料</a></li>
-                        <li><a href="修改密码.html">账号和密码</a></li>
+                        <li><a href="账号与密码.html">账号与密码</a></li>
                     </ul>
                 </div>
             </div>
@@ -397,44 +398,76 @@
                 <div class="user-tit">
                     <h2>基本资料</h2>
                 </div>
-
                 <div class="user-data user-basedata">
                     <div class="data-img">
-                        <div href="#" class="fll img">
+                        <a href="javascript:;" class="fll img">
                             <img src="http://q.qlogo.cn/qqapp/101341581/C781FBAEE76D838500FA8B86CFE9ECAA/100" height="96" width="96">
                             <span class="edit">修改头像</span>
-                        </div>
-                        <div class="name">潜云 <img src="http://www.zhisheji.com/home/images/guanliyuan.png"><img src="http://www.zhisheji.com/home/images/guanliyuan.png"></div>
+                        </a>
+                        <div class="name">弥望痕迹 <img src="http://www.zhisheji.com/home/images/guanliyuan.png"><img src="http://www.zhisheji.com/home/images/guanliyuan.png"></div>
                         <div class="address">北京市  设计爱好者</div>
                     </div>
                     <dl class="item">
-                        <dt><span>*</span>手机</dt>
+                        <dt><span class="dot"></span>用户名</dt>
+                        <dd>
+                            <input type="text" class="txt" value="弥望痕迹" name="lname" placeholder="4 - 16个字符">
+                            <span class="num-box"><span class="num">0</span>/16</span>
+                        </dd>
+                    </dl>
+                    <dl class="item item2">
+                        <dt><span class="dot"></span>性别</dt>
+                        <dd id="sex">
+                            <label><input type="radio" name="sex" value="男" checked>男</label>
+                            <label><input type="radio" name="sex" value="女">女</label>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                        <dt><span class="dot"></span>职业</dt>
+                        <dd>
+                            <div class="select-box">
+                                <span class="select-val"><span class="select-val-txt">请选择</span><span class="icon-arrowb"></span></span>
+                                <div class="select-txt select-txt-all" style="display: none;">
+                                    <a href="javascript:;" class="select-ai select-btn">射鸡湿</a>
+                                    <a href="javascript:;" class="select-ai select-btn">程序猿</a>
+                                    <a href="javascript:;" class="select-ai select-btn">产品经理</a>
+                                </div>
+                            </div>
+                            <input type="hidden" name="vocation">
+                        </dd>
+                    </dl>
+
+                    <dl class="item">
+                        <dt>所在城市</dt>
+                        <dd class="z9">
+                            <input type="text" class="txt readonly" value="请选择" data-province="请选择" data-city="请选择" readonly id="city-input">
+                            <span class="icon-arrowb"></span>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                        <dt>主页签名</dt>
+                        <dd>
+                            <textarea type="text" class="txt text" placeholder="不超过20个汉字或40个字符"></textarea>
+                            <span class="num-box"><span class="num">0</span>/40</span>
+                        </dd>
+                    </dl>
+                    <dl class="item">
+                        <dt>个人简介</dt>
+                        <dd>
+                            <textarea type="text" class="txt text2" placeholder="个人简介"></textarea>
+                            <span class="num-box"><span class="num">0</span>/500</span>
+                        </dd>
+                    </dl>
+                    <button class="btn btn-save">保存</button>
+                </div>
+
+                <div class="user-data user-contact">
+                    <dl class="item item2">
+                        <dt>手机</dt>
                         <dd>
                             <label class="gray">暂未绑定</label>
                             <a href="javascript:;" class="bind-phone blue">绑定手机号</a>
                             <label class="gray">180****1105</label>
                             <a href="javascript:;" class="edit-phone blue">修改手机号</a>
-                        </dd>
-                    </dl>
-                    <dl class="item">
-                        <dt><span>*</span>用户名</dt>
-                        <dd>
-                            <input type="text" class="txt" value="潜云" name="lname">
-                            <span class="num-box"><span class="num">0</span>/15</span>
-                        </dd>
-                    </dl>
-                    <dl class="item">
-                        <dt><span>*</span>性别</dt>
-                        <dd id="sex">
-                            <label><input type="radio" name="sex" value="男">男</label>
-                            <label><input type="radio" name="sex" value="女">女</label>
-                        </dd>
-                    </dl>
-                    <dl class="item">
-                        <dt>邮箱</dt>
-                        <dd class="contact">
-                            <input type="text" class="txt" value="35451215@qq.com">
-                            <label><input type="checkbox" name="wx">公开</label>
                         </dd>
                     </dl>
                     <dl class="item">
@@ -452,34 +485,13 @@
                         </dd>
                     </dl>
                     <dl class="item">
-                        <dt>手机</dt>
+                        <dt>手机号</dt>
                         <dd class="contact">
                             <input type="text" class="txt" value="35451215">
                             <label><input type="checkbox" name="phone">公开</label>
                         </dd>
                     </dl>
-                    <dl class="item">
-                        <dt>公司</dt>
-                        <dd><input type="text" class="txt" value=""></dd>
-                    </dl>
-                    <dl class="item">
-                        <dt><span>*</span>城市</dt>
-                        <dd class="z9">
-                            <input type="text" class="txt readonly" value="请选择" data-province="请选择" data-city="请选择" readonly id="city-input">
-                            <span class="icon-arrowb"></span>
-                        </dd>
-                    </dl>
-                    <dl class="item">
-                        <dt>主页签名</dt>
-                        <dd>
-                            <textarea type="text" class="txt text"></textarea>
-                            <span class="num-box"><span class="num">0</span>/45</span>
-                        </dd>
-                    </dl>
-                    <dl class="item">
-                        <dt>&nbsp;</dt>
-                        <dd><button class="btn btn-save">保存</button></dd>
-                    </dl>
+                    <button class="btn btn-save">保存</button>
                 </div>
             </div>
         </div>
@@ -513,6 +525,12 @@
 
         <!--右边悬浮 start -->
         <ul class="talk">
+            <li class="sign">
+                <a href="#">
+                    <span class="sign-box"><span class="icon-sign"></span>签到</span>
+                    <p>每日<br>签到</p>
+                </a>
+            </li>
             <li>
                 <a href="#" class="ico-edit">
                     <span class="icon-edit"></span>
@@ -520,10 +538,19 @@
                 </a>
             </li>
             <li>
+                <a href="#" class="ico-qun">
+                    <span class="icon-qq-qun"></span>
+                    <p>QQ群</p>
+                </a>
+            </li>
+            <li>
                 <a href="javascript:;" class="ico-back" id="goBack">
                     <span class="icon-back-top"></span>
                     <p>返回<br>顶部</p>
                 </a>
+            </li>
+            <li class="gif">
+                <span class="icon-avatar"></span>
             </li>
         </ul>
         <!--右边悬浮 end -->

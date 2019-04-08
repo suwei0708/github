@@ -2,15 +2,12 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>修改密码-致设计</title>
+        <title>账号与密码-致设计</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/page.css">
         <link rel="stylesheet" href="../css/user.css">
-
-        <!-- 裁剪头像css start-->
-        <link rel="stylesheet" href="../css/cropper.css">
-        <!-- 裁剪头像css end-->
     </head>
     <body>
         <!-- 头部 start -->
@@ -385,41 +382,10 @@
         <!-- 内容主体 start -->
         <div class="wrap user-box">
             <div class="fll user-left">
-                <div class="user-infos">
-                    <a href="javascript:;" class="btn-avatar"><span class="icon-uedit"></span></a>
-                    <img class="img" src="http://q.qlogo.cn/qqapp/101341581/C781FBAEE76D838500FA8B86CFE9ECAA/100" height="80" width="80">
-                    <div class="name">巧匠-潜云</div>
-                    <div class="info">北京市 | 设计指导</div>
-                    <a href="javascript:;" class="btn dis">已签到</a>
-                </div>
-
                 <div class="user-nav">
-                    <div class="tit">个人中心</div>
                     <ul>
                         <li><a href="个人资料.html">个人资料</a></li>
-                        <li><a class="cur" href="修改密码.html">账号和密码</a></li>
-                    </ul>
-                </div>
-
-                <div class="user-nav">
-                    <div class="tit">通知提醒</div>
-                    <ul>
-                        <li><a href="全部消息.html"><span class="num">38</span>全部消息</a></li>
-                        <li><a href="收到的赞.html">收到的赞</a></li>
-                        <li><a href="系统消息.html">系统消息</a></li>
-                        <li><a href="私信消息.html"><span class="num">6</span>私信消息</a></li>
-                        <li><a href="作品评论.html"><span class="num">32</span>作品评论</a></li>
-                        <li><a href="主页留言.html">主页留言</a></li>
-                    </ul>
-                </div>
-
-                <div class="user-nav">
-                    <div class="tit">平台规则</div>
-                    <ul>
-                        <li><a href="人气排名.html#user-rqpm">人气排名</a></li>
-                        <li><a href="人气排名.html#user-jjgz">晋级规则</a></li>
-                        <li><a href="人气排名.html#user-zfsjs">专访设计师</a></li>
-                        <li><a href="人气排名.html#user-xzgz">勋章规则</a></li>
+                        <li><a class="cur" href="账号与密码.html">账号与密码</a></li>
                     </ul>
                 </div>
             </div>
@@ -430,11 +396,10 @@
                 </div>
 
                 <div class="user-data user-password">
-                    <div class="title">修改密码</div>
                     <dl class="item">
                         <dt>旧密码</dt>
                         <dd>
-                            <input type="password" class="txt" value="">
+                            <input type="password" class="txt" value="" placeholder="6-16位，区分大小写">
                         </dd>
                     </dl>
                     <dl class="item">
@@ -443,24 +408,18 @@
                             <input type="password" class="txt" value="" placeholder="6-16位，区分大小写">
                         </dd>
                     </dl>
-                    <dl class="item">
-                        <dt>确认新密码</dt>
-                        <dd>
-                            <input type="password" class="txt" value="" placeholder="6-16位，区分大小写">
-                        </dd>
-                    </dl>
-                    <dl class="item">
-                        <dt>&nbsp;</dt>
-                        <dd><button class="btn btn-save">保存</button></dd>
-                    </dl>
+                    <button class="btn btn-save">保存</button>
                 </div>
 
+                <div class="user-tit">
+                    <span class="fr">绑定后可直接登录</span>
+                    <h2>绑定账号</h2>
+                </div>
                 <div class="user-data user-bind">
-                    <div class="title">绑定账号<span>绑定后可用相关账号安全登录</span></div>
                     <dl class="item">
                         <dt>邮箱账号</dt>
                         <dd>
-                            <input type="text" class="txt" value="" placeholder="请输入您的邮箱">
+                            <input type="text" class="txt" value="" placeholder="邮箱">
                             <button type="button" class="btn-bind btn-bind-email">绑定</button>
                             <!-- <div class="tips tips-err"><span class="icon-gt"></span>请输入正确的邮箱地址</div> -->
                         </dd>
@@ -469,8 +428,8 @@
                         <dt>手机账号</dt>
                         <dd>
                             <div class="fll phone">
-                                <input class="txt" type="text" value="">
-                                <div class="input-label">手机号</div>
+                                <input class="txt" type="text" value="" placeholder="手机号码">
+                                <div class="input-label">手机账号</div>
                                 <div class="area-code">
                                     <span class="area-code-txt">+86</span><span class="icon-arrowb"></span>
                                     <div class="area-code-list">
@@ -505,19 +464,13 @@
                             <!-- <div class="tips tips-err"><span class="icon-gt"></span>请输入正确的手机号码</div> -->
                         </dd>
                     </dl>
-                    <!-- <dl class="item">
-                        <dt>手机账号</dt>
-                        <dd>
-                            <div class="name">1387458554
-                                <span class="tips tips-right"><span class="icon-gou"></span></span>
-                            </div>
-                            <button type="button" class="btn-bind btn-bind-phone">绑定</button>
-                        </dd>
-                    </dl> -->
                 </div>
 
+                <div class="user-tit">
+                        <span class="fr">绑定后可直接登录</span>
+                        <h2>第三方账号关联</h2>
+                    </div>
                 <div class="user-data user-bindother">
-                    <div class="title">第三方账号关联</div>
                     <dl class="item">
                         <dt><span class="icon icon-qq"></span>QQ</dt>
                         <dd>
@@ -565,10 +518,22 @@
 
         <!--右边悬浮 start -->
         <ul class="talk">
+            <li class="sign">
+                <a href="#">
+                    <span class="sign-box"><span class="icon-sign"></span>签到</span>
+                    <p>每日<br>签到</p>
+                </a>
+            </li>
             <li>
                 <a href="#" class="ico-edit">
                     <span class="icon-edit"></span>
                     <p>意见<br>反馈</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="ico-qun">
+                    <span class="icon-qq-qun"></span>
+                    <p>QQ群</p>
                 </a>
             </li>
             <li>
@@ -577,26 +542,11 @@
                     <p>返回<br>顶部</p>
                 </a>
             </li>
+            <li class="gif">
+                <span class="icon-avatar"></span>
+            </li>
         </ul>
         <!--右边悬浮 end -->
-
-        <!-- 编辑头像弹窗 start -->
-        <div class="user-editbox">
-            <a href="javascript:;" class="user-ico user-editbox-close"><span class="icon-close"></span></a>
-            <div class="tit">编辑头像</div>
-            <div class="ct">
-                <div class="img"><img id="image" src="http://q.qlogo.cn/qqapp/101341581/C781FBAEE76D838500FA8B86CFE9ECAA/100" width="335" height="335"/></div>
-                <div class="preview-box">
-                    <div class="img-preview preview-lg"></div>
-                    <p>85PX</p>
-                    <div class="img-preview preview-md"></div>
-                    <p>50PX</p>
-                </div>
-                <a href="javascript:;" class="btn-up">重新上传<input type="file" id="avatarInput"></a>
-                <a href="javascript:;" class="btn">保 存</a>
-            </div>
-        </div>
-        <!-- 编辑头像弹窗 end -->
 
         <!-- 绑定手机弹窗 start -->
         <div class="popup-box popup-backbox popup-bindphone" style="display: ">
