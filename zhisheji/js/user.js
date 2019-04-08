@@ -281,7 +281,6 @@ $(function() {
     if($('.user-password').length) {
         var oldpassword = $('.user-password').find('.txt:eq(0)');
         var newpassword = $('.user-password').find('.txt:eq(1)');
-        var renewpassword = $('.user-password').find('.txt:eq(2)');
         $('.user-password').find('.txt').on('focus', function() {
             $(this).nextAll('.tips').hide();
         });
@@ -300,14 +299,6 @@ $(function() {
             else if(_this.val().length > 16) {
                 _this.nextAll('.tips').attr('class', 'tips tips-err').html('<span class="icon-gt"></span>' + _this.parents('.item').find('dt').html() + '长度不能大于16！').show();
             }
-            else if (_this.parents('.item').find('dt').html() == '确认新密码') {
-                if(newpassword.val() != renewpassword.val()) {
-                    _this.nextAll('.tips').attr('class', 'tips tips-err').html('<span class="icon-gt"></span>两次输入的密码不一致').show();
-                }
-                else {
-                    _this.nextAll('.tips').attr('class', 'tips tips-right').html('<span class="icon-gou"></span>').show();
-                }
-            }
             else {
                 _this.nextAll('.tips').attr('class', 'tips tips-right').html('<span class="icon-gou"></span>').show();
             }
@@ -315,6 +306,7 @@ $(function() {
 
         // 修改密码保存
         $('.user-password').on('click', '.btn-save', function() {
+            var passNum = 0;
             $.each($('.user-password').find('.txt'), function(i) {
                 var _this = $(this);
                 if(!_this.nextAll('.tips').length) {
@@ -333,13 +325,10 @@ $(function() {
                     _this.nextAll('.tips').attr('class', 'tips tips-err').html('<span class="icon-gt"></span>' + _this.parents('.item').find('dt').html() + '长度不能大于16！').show();
                     return false;
                 }
-                else if (_this.parents('.item').find('dt').html() == '确认新密码') {
-                    if(newpassword.val() != renewpassword.val()) {
-                        _this.nextAll('.tips').attr('class', 'tips tips-err').html('<span class="icon-gt"></span>两次输入的密码不一致').show();
-                        return false;
-                    }
-                    else {
-                        // 验证通过提交数据
+                else {
+                    // 验证通过提交数据
+                    passNum++;
+                    if(passNum == $('.user-password').find('.txt').length) {
                         console.log('保存');
                     }
                 }
@@ -558,17 +547,6 @@ $(function() {
             $('.popup-rename').show().find('.txt').val(manageDom.text());
             monitorVal('.popup-rename .txt', 15);
         }
-        // else if(_this.index() == 1) {
-        //     // 是否公开
-        //     if(_this.find('span').hasClass('icon-lock-on')) {
-        //         manageDom.find('.icon-lock-off').remove();
-        //         _this.find('a').html('<span class="icon-lock-off"></span>仅自己可见');
-        //     }
-        //     else {
-        //         manageDom.prepend('<span class="icon-lock-off"></span>');
-        //         _this.find('a').html('<span class="icon-lock-on"></span>公开');
-        //     }
-        // }
         else if(_this.index() == 1) {
             // 删除
             $.msgBox.Confirm(null, '删除此收藏夹，收藏内容也将会同步移除<br/>确定要删除吗？', function() {
@@ -596,11 +574,6 @@ $(function() {
     $('.popup-rename').on('click', '.btn-gray', function() {
         $(this).parents('.popup').find('.popup-close').click();
     });
-
-    // 添加到收藏夹选项
-    // if($('#popup-collect-list').length) {
-    //     checkboxSelect('#popup-collect-list');
-    // }
 
     // 展示收藏夹弹窗
     if($('.user-box .btn-manage').length) {
