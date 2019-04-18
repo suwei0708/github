@@ -126,8 +126,10 @@ $(function() {
 
     // 初始化城市
     if($('#city-input').length) {
-        initCitys('#city-input');
+        // 城市颜色控制
+        selectValColor($('#city-input'));
 
+        initCitys('#city-input');
         // 点击城市选项
         $('#city-input').on('click', function() {
             initCitys('#city-input');
@@ -153,8 +155,9 @@ $(function() {
             $('#city-input').val($('.sw-select1').find('.cur').text() + ' / ' + $('.sw-select2').find('.cur').text());
             $('#city-input').attr('data-province', $('.sw-select1').find('.cur').text()).attr('data-city', $('.sw-select2').find('.cur').text())
             $('.sw-select').hide();
+            selectValColor($('#city-input'));
 
-            var cityname = $('.user-basedata .txt:eq(5)');
+            // var cityname = $('.user-basedata .txt:eq(5)');
             // cityname.nextAll('.tip').hide();
 
             return false;
@@ -262,6 +265,25 @@ $(function() {
         $(this).parents(".select-box").find('.select-val-txt').text(txt);
         $('.select-txt').hide();
     });
+    // 分类颜色控制
+    $.each($('.select-val-txt'), function (index, val) {
+        selectValColor($(this));
+        $(this).on('DOMNodeInserted', function () {
+            selectValColor($(this));
+        });
+    });
+
+    function selectValColor(obj) {
+        if (obj.html() != '请选择分类' && obj.html() != '请选择' && obj.val() != '请选择') {
+            obj.attr({
+                style: 'color: #666'
+            });
+        } else {
+            obj.attr({
+                style: 'color: #bbb'
+            });
+        }
+    }
 
     // 监听input字数
     if($('.user-basedata .num-box').length) {
