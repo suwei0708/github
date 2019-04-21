@@ -12,7 +12,6 @@
 @pink: #f85778;
 @pink-h: #ff3a3b;
 /* 播放页 */
-@charset "UTF-8";
 
 .video-js .vjs-control:before, .video-js .vjs-modal-dialog, .vjs-modal-dialog .vjs-modal-dialog-content {
     position: absolute;
@@ -26,7 +25,6 @@
 }
 .video-js {
     display: block;
-    vertical-align: top;
     color: #fff;
     background-color: #000;
     position: relative;
@@ -587,6 +585,7 @@ video::-webkit-media-text-track-display {
             .ov(h);
             height: 50px;
             line-height: 50px;
+            padding-top: 40px;
             font-size: 14px;
             color: #666;
 
@@ -599,6 +598,28 @@ video::-webkit-media-text-track-display {
             }
             span {
                 color: #ccc;
+            }
+            .fr {
+                .pos(r);
+                top: -12px;
+                line-height: 40px;
+                font-size: 15px;
+                color: #999;
+                a {
+                    .dis(ib);
+                    vertical-align: top;
+                    width: 160px;
+                    height: 40px;
+                    margin-left: 30px;
+                    color: #fff;
+                    text-align: center;
+                    font-size: 14px;
+                    background: @yellow;
+                    .bdr(4px);
+                    &:hover {
+                        background: @yellow-h;
+                    }
+                }
             }
         }
         .area-l {
@@ -720,7 +741,6 @@ video::-webkit-media-text-track-display {
                     left: 0;
                     width: 268px;
                     padding-bottom: 21px;
-                    background: url(about: blank);
 
                     &-box {
                         padding: 0 10px 0 0;
@@ -1656,7 +1676,6 @@ video::-webkit-media-text-track-display {
 
     img {
         display: block;
-        vertical-align: middle;
         margin: 0 auto;
         max-height: 100%;
         padding: 0;
