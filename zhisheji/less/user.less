@@ -596,23 +596,24 @@ input, textarea {
     /* 左侧导航 */
     &-nav {
         .ov(h);
+        padding: 11px 0;
         background: #fff;
         .bdr(4px);
         li {
             .pos(r);
             .height(30px);
-            padding: 10px 0;
-            margin: 20px 0;
+            padding: 11px 0;
             background: #fff;
             a {
                 .dis(b);
-                padding: 0 20px 0 32px;
-                color: #333;
+                padding: 0 30px;
+                color: #555;
                 font-size: 14px;
                 &:hover, &.cur {
                     color: @blue;
                     border-left: 3px solid @blue;
-                    padding: 0 20px 0 29px;
+                    padding: 0 30px 0 27px;
+                    font-weight: 700;
                 }
             }
 
@@ -952,7 +953,7 @@ input, textarea {
                 .sw-select {
                     .dis(n);
                     .pos(a);
-                    top: 44px;
+                    top: 53px;
                     width: 168px;
                     border: 1px solid #ddd;
                     z-index: 10;
