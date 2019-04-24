@@ -183,6 +183,15 @@
                         </dd>
                     </dl>
                     <dl class="item">
+                        <dt><span>&nbsp;</span>手机</dt>
+                        <dd>
+                            <label class="gray">暂未绑定</label>
+                            <a href="javascript:;" class="bind-phone yellow">绑定手机号</a>
+                            <label class="gray">13852125215</label>
+                            <a href="javascript:;" class="edit-phone yellow">修改手机号</a>
+                        </dd>
+                    </dl>
+                    <dl class="item">
                         <dt><span>*</span>邮箱</dt>
                         <dd>
                             <input type="text" class="txt email" value="35451215@qq.com">
@@ -322,6 +331,109 @@
             </div>
         </div>
         <!-- 编辑头像 end -->
+
+        <!--弹窗登录观看 start -->
+        <div class="popup-box popup-play">
+            <div class="fl left">
+                <div class="tit">加入巧匠课堂可以获得：</div>
+                <ul class="list">
+                    <li class="slideDown delay5"><span class="qjfont qj-gou"></span>全站2055个高清设计视频教程</li>
+                    <li class="slideDown delay10"><span class="qjfont qj-gou"></span>高清视频+搭配素材+名师讲解</li>
+                    <li class="slideDown delay15"><span class="qjfont qj-gou"></span>持续更新，每天免费学习1个教程</li>
+                    <li class="slideDown delay20"><span class="qjfont qj-gou"></span>设计社群交流，结识设计好友</li>
+                    <li class="slideDown delay25"><span class="qjfont qj-gou"></span>APP离线缓存，随时随地学习</li>
+                </ul>
+                <div class="info">已有 <strong class="yellow">576625</strong> 热爱学习的小伙伴加入巧匠</div>
+            </div>
+            <div class="fr right">
+                <div class="ct">
+                    <div class="wx">
+                        <img src="images/ecode-lqsc.jpg" width="202" height="202" alt="">
+                        <p><span class="qjfont qj-weixin"></span>微信扫码关注即可登录</p>
+                    </div>
+                </div>
+                <div class="info">
+                    <div class="item">
+                        <a href="javascript:;" onclick="$('.popup-loginphone').show();$('.popup-play').hide();dragValidation($('#dragouter2'));"><span class="qjfont qj-shouji"></span>手机登录</a>
+                    </div>
+                    <div class="item">
+                        <a href="javascript:;" onclick="$('.popup-bindphone').show();$('.popup-play').hide();"><span class="qjfont qj-qie"></span>QQ 登录</a>
+                    </div>
+                    <div class="item item3">
+                        <span class="qjfont qj-gou"></span>我已阅读并接受<a href="https://www.qiaojiang.tv/About/Fuwu" target="_blank" class="yellow">用户协议</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--弹窗登录观看 end -->
+
+        <!-- 绑定手机号码 start -->
+        <div class="popup-box popup-phone popup-bindphone">
+            <a href="javascript:;" class="ico-close">跳过</a>
+            <div class="tit">绑定手机号码</div>
+            <div class="ct">
+                <div class="item">
+                    <input type="text" class="text phone" placeholder="请输入手机号" autocomplete="off">
+                </div>
+                <div class="item">
+                    <div class="yzm"><a href="javascript:;" class="sendcode">发送验证码</a></div>
+                    <input type="text" class="text" name="code" autocomplete="off">
+                </div>
+                <a href="javascript:;" class="btn dis">绑定</a>
+            </div>
+        </div>
+        <!-- 绑定手机号码 end -->
+
+        <!-- 修改手机号码 start -->
+        <div class="popup-box popup-phone popup-editphone">
+            <a href="javascript:;" class="ico-close"></a>
+            <div class="tit">修改手机号码</div>
+            <div class="ct">
+                <div class="item">
+                    <input type="text" class="text oldphone" placeholder="原手机号" autocomplete="off">
+                </div>
+                <div class="item">
+                    <input type="text" class="text phone" placeholder="新手机号" autocomplete="off">
+                </div>
+                <div class="item">
+                    <div class="drag-outer-box" id="dragouter1"></div>
+                </div>
+                <div class="item">
+                    <div class="yzm"><a href="javascript:;" class="sendcode">发送验证码</a></div>
+                    <input type="text" class="text" name="code" autocomplete="off">
+                </div>
+                <a href="javascript:;" class="btn dis">确定</a>
+            </div>
+        </div>
+        <!-- 修改手机号码 end -->
+
+        <!-- 手机登录/注册 start -->
+        <div class="popup-box popup-phone popup-loginphone">
+            <a href="javascript:;" class="ico-close"></a>
+            <div class="tit">手机登录/注册</div>
+            <div class="ct">
+                <div class="item">
+                    <input type="text" class="text phone" placeholder="手机号" autocomplete="off">
+                </div>
+                <div class="item">
+                    <div class="drag-outer-box" id="dragouter2"></div>
+                </div>
+                <div class="item">
+                    <div class="yzm"><a href="javascript:;" class="sendcode">发送验证码</a></div>
+                    <input type="text" class="text" name="code" autocomplete="off">
+                </div>
+                <a href="javascript:;" class="btn dis">确定</a>
+            </div>
+            <ul class="other">
+                <li>
+                    <a href="javascript:;" onclick="$('.popup-play').show();$('.popup-loginphone').hide();"><span class="qjfont qj-weixin"></span>微信登录</a>
+                </li>
+                <li>
+                    <a href="javascript:;" onclick="$('.popup-bindphone').show();$('.popup-loginphone').hide();"><span class="qjfont qj-qie"></span>QQ 登录</a>
+                </li>
+            </ul>
+        </div>
+        <!-- 手机登录/注册 end -->
 
         <div class="mask"></div>
 
