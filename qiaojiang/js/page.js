@@ -474,7 +474,6 @@ $(function() {
 
     //搜索按钮
     $("#bsearch").click(function() {
-        console.log(1)
         var val = $("#searchkey").val();
         if (val != "") {
             $.get("/Video/Getpy/?key=" + encodeURI(val), function(data) {
@@ -830,16 +829,32 @@ $(function() {
     });
 
     // 发送验证码
-    $('body').on('click', '.popup-bindphone .sendcode', function () {
-        if (!$('.popup-bindphone').find('.tips').length) {
-            $('.popup-bindphone').find('.item').last().after('<div class="tips"></div>');
+    $('body').on('click', '.popup-phone .sendcode', function () {
+        var dom = $(this).parents('.popup-phone');
+        var val = $.trim(dom.find('.phone').val());
+        if (!dom.find('.tips').length) {
+            dom.find('.item').last().after('<div class="tips"></div>');
         };
-        if(!$('.popup-bindphone').find('[name=phone]').val()) {
-            $('.popup-bindphone').find('.tips').html('手机号码不能为空！').show();
+        if(dom.find('.drag-outer-box').length && !dom.find('.drag-outer-box').hasClass('act')) {
+            dom.find('.tips').html('验证失败！').show();
             return false;
         }
-        if(isMobile($('.popup-bindphone').find('[name=phone]').val())) {
-            $('.popup-bindphone').find('.tips').html('手机号码格式不正确！').show();
+        if(!val) {
+            if(dom.hasClass('popup-editphone')) {
+                dom.find('.tips').html('新手机号码格式不能为空！').show();
+            }
+            else {
+                dom.find('.tips').html('手机号码格式不能为空！').show();
+            }
+            return false;
+        }
+        if(isMobile(val)) {
+            if(dom.hasClass('popup-editphone')) {
+                dom.find('.tips').html('新手机号码格式不正确！').show();
+            }
+            else {
+                dom.find('.tips').html('手机号码格式不正确！').show();
+            }
             return false;
         }
 
@@ -857,36 +872,77 @@ $(function() {
     });
 
     // 判断input是否为空，按钮调整
-    $.each($('.popup-phone').find('.text'), function(i) {
-        $(this).on('focus', function() {
-            $('.popup-phone').find('.tips').hide();
-        });
-        $(this).bind('input propertychange', function() {
-            if($('.popup-phone').find('[name=phone]').val() && $('.popup-phone').find('[name=code]').val()) {
-                $('.popup-phone').find('.btn').removeClass('dis');
+    $('.popup-phone').find('.text').on('focus', function() {
+        var dom = $(this).parents('.popup-phone');
+        dom.find('.tips').hide();
+    });
+
+    $('.popup-phone').find('.text').bind('input propertychange', function() {
+        var dom = $(this).parents('.popup-phone');
+        dom.find('.btn').addClass('dis');
+        var i = 0;
+        $.each(dom.find('.text'), function(index, val) {
+            if(!$.trim($(this).val())) {
+                return false;
             }
             else {
-                $('.popup-phone').find('.btn').addClass('dis');
+                i++;
             }
         });
+        if(i == dom.find('.text').length) {
+            dom.find('.btn').removeClass('dis');
+        }
     });
 
     // 绑定手机号码
-    $('body').on('click', '.popup-bindphone .btn', function() {
+    $('body').on('click', '.popup-phone .btn', function() {
+        var dom = $(this).parents('.popup-phone');
         if($(this).hasClass('dis')) {
             return false;
         }
-        if (!$('.popup-bindphone').find('.tips').length) {
-            $('.popup-bindphone').find('.item').last().after('<div class="tips"></div>');
+        if (!dom.find('.tips').length) {
+            dom.find('.item').last().after('<div class="tips"></div>');
         };
-        if(isMobile($('.popup-bindphone').find('[name=phone]').val())) {
-            $('.popup-bindphone').find('.tips').html('手机号码格式不正确！').show();
+        if(dom.find('.drag-outer-box').length && !dom.find('.drag-outer-box').hasClass('act')) {
+            dom.find('.tips').html('验证失败！').show();
             return false;
         }
-        $('.popup-bindphone, .mask').hide();
-        console.log('绑定成功');
+        if(dom.find('.oldphone').length && isMobile(dom.find('.oldphone').val())) {
+            dom.find('.tips').html('原手机号码格式不正确！').show();
+            return false;
+        }
+        if(dom.find('.phone').length && isMobile(dom.find('.phone').val())) {
+            if(dom.hasClass('popup-editphone')) {
+                dom.find('.tips').html('新手机号码格式不正确！').show();
+            }
+            else {
+                dom.find('.tips').html('手机号码格式不正确！').show();
+            }
+            return false;
+        }
+        if(dom.hasClass('popup-bindphone')) {
+            $('.popup-bindphone, .mask').hide();
+            console.log('绑定成功');
+        }
+        else if(dom.hasClass('popup-editphone')) {
+            $('.popup-editphone, .mask').hide();
+            console.log('修改成功');
+        }
+        else if(dom.hasClass('popup-loginphone')) {
+            $('.popup-loginphone, .mask').hide();
+            console.log('手机登录/注册成功');
+        }
     });
 
+    // 点击绑定手机号码
+    $('.bind-phone').on('click', function() {
+        $('.popup-bindphone, .mask').show();
+    });
+    // 点击修改手机号码
+    $('.edit-phone').on('click', function() {
+        dragValidation($('#dragouter1'));
+        $('.popup-editphone, .mask').show();
+    });
 });
 
 function isMobile(sMobile) {
@@ -1285,3 +1341,53 @@ function tipSave(status, cont, times, classes) {
         }, time);
     }
 };
+
+// 拖拽验证
+function dragValidation(obj) {
+    if(!obj.html()) {
+        var dom = '<div class="drag-outer"><div class="filter-box"></div><span>请按住滑块，拖动到最右边</span><div class="inner"><i class="qjfont qj-dbyoujiantou"></i></div></div>';
+        obj.html(dom);
+    };
+    SlideCheckFail();
+    obj.find('.inner').unbind();
+    obj.find('.inner').mousedown(function(e) {
+        var dx, os = obj.find('.inner').offset(),
+            _differ = obj.width() - obj.find('.inner').width();
+        $(document).mousemove(function(e) {
+            dx = e.pageX - os.left;
+            if (dx < 0) {
+                dx = 0;
+            } else if (dx > _differ) {
+                dx = _differ;
+            }
+            obj.find('.filter-box').css('width', dx);
+            obj.find('.inner').css('left', dx);
+        });
+        $(document).mouseup(function(e) {
+            $(document).off('mousemove');
+            $(document).off('mouseup');
+            dx = e.pageX - os.left;
+            if (dx < _differ) {
+                SlideCheckFail();
+            } else if (dx >= _differ) {
+                SlideCheckSuc(_differ);
+            }
+        })
+    });
+
+    function SlideCheckFail() {
+        obj.removeClass('act');
+        obj.find('.inner').css('left', 0);
+        obj.find('.inner').html('<i class="qjfont qj-dbyoujiantou"></i>');
+        obj.find('.filter-box').css('width', 0);
+        obj.find('span').html('按住滑块，拖拽到最右边');
+    }
+
+    function SlideCheckSuc(dx) {
+        obj.addClass('act');
+        obj.find('span').html('验证通过！');
+        obj.find('.inner').html('<i class="qjfont qj-gou"></i>');
+        obj.find('.inner').css('left', dx);
+        obj.find('.filter-box').css('width', dx);
+    }
+}
