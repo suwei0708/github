@@ -1381,6 +1381,8 @@ function dragValidation(obj) {
         obj.find('.inner').html('<i class="qjfont qj-dbyoujiantou"></i>');
         obj.find('.filter-box').css('width', 0);
         obj.find('span').html('按住滑块，拖拽到最右边');
+        console.log('fail', obj)
+        obj.parents('.popup-phone').find('.item-yzm').hide();
     }
 
     function SlideCheckSuc(dx) {
@@ -1389,5 +1391,6 @@ function dragValidation(obj) {
         obj.find('.inner').html('<i class="qjfont qj-gou"></i>');
         obj.find('.inner').css('left', dx);
         obj.find('.filter-box').css('width', dx);
+        obj.parents('.popup-phone').find('.item-yzm').show();
     }
 }
