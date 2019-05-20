@@ -126,6 +126,9 @@ input::-moz-placeholder, textarea::-moz-placeholder { // Firefox19+
 .bdr4 {
     .bdr(4px);
 }
+.anim {
+	.transition(all, 0.6s, cubic-bezier(0.215, 0.61, 0.355, 1), 0s);
+}
 html, body {
     height: 100%;
 }
@@ -440,19 +443,20 @@ html, body {
         .num {
             margin-left: 30px;
             color: #999;
-            cursor: pointer;
             .icon {
                 margin-right: 10px;
                 color: #ccc;
                 font-size: 16px;
             }
-            &:hover {
+		}
+		a.num {
+			&:hover {
                 color: @blue;
                 .icon {
                     color: @blue;
                 }
             }
-        }
+		}
         .share {
             margin-left: 30px;
             color: #999;
@@ -735,16 +739,12 @@ html, body {
 .wt-comment {
     margin-top: 20px;
     background: #fff;
-    padding: 0 50px;
     .bdr(4px);
-
-
     &-box {
-        padding: 30px 0 0;
+        padding: 30px 50px 0;
         .cl();
     }
     .avatar {
-        margin-right: 20px;
         img {
             width: 40px;
             height: 40px;
@@ -752,11 +752,12 @@ html, body {
         }
     }
     .input {
-        @w: 620px;
+        @w: 660px;
         @h: 100px;
         .pos(r);
         width: @w;
-        height: @h;
+		height: @h;
+		margin-left: 60px;
         .textarea {
             width: @w - 40 - 1;
             height: @h - 40 - 2;
@@ -780,7 +781,6 @@ html, body {
             }
         }
     }
-
     .btn-sure {
         .pos(a);
         right: -140px;
@@ -819,31 +819,81 @@ html, body {
             height: 74px;
         }
     }
-    .btn-box {
+    .tt, .info {
+        margin-left: 60px;
         font-size: 0;
+        vertical-align: top;
+        color: #333;
+        text-align: justify;
+        // width: 840px;
+        line-height: 20px;
         a {
-            margin-left: 13px;
-            font-size: 14px;
-            color: #999;
-            .icon-praise2 {
-                .dis(ib);
-                vertical-align: middle;
-                margin: -3px 7px 0 0;
-                font-size: 13px;
-                color: #999;
-            }
+			.dis(ib);
+			vertical-align: middle;
+			font-size: 14px;
+			color: #333;
             &:hover {
-                color: @blue;
-                .icon-praise2 {
+                color: @blue-h;
+            }
+		}
+		.txt {
+			.dis(ib);
+			vertical-align: middle;
+			font-size: 14px;
+			color: #333;
+			margin: 0 10px;
+		}
+        strong {
+            a {
+                &:hover {
                     color: @blue;
                 }
             }
+		}
+		.times {
+			.dis(ib);
+			vertical-align: top;
+			margin-left: 10px;
+			font-size: 12px;
+			color: #999;
+		}
+    }
+    .info {
+		.pos(r);
+        padding: 10px 0 0;
+        color: #666;
+        font-size: 14px;
+        line-height: 22px;
+		img {
+			width: 34px;
+            vertical-align: baseline;
+		}
+    }
+    .btn-box {
+		line-height: 20px;
+		padding-top: 15px;
+		font-size: 14px;
+		color: #999;
+        font-size: 0;
+        a {
+            margin-right: 30px;
+            font-size: 14px;
+			color: #ccc;
+			.icon {
+				font-size: 14px;
+			}
+            &:hover {
+                color: @blue;
+			}
+			i {
+				margin: 0 -5px 0 5px;
+			}
             &.btn-del {
                 &:hover {
                     color: @red;
                 }
             }
-            &.btn-praise {
+            &.btn-zan {
                 .pos(r);
                 .add {
                     .dis(n);
@@ -856,53 +906,25 @@ html, body {
                     color: @blue;
                     white-space: nowrap;
                 }
-            }
-        }
-    }
-    .tt, .info {
-        padding-top: 4px;
-        margin-left: 79px;
-        font-size: 0;
-        vertical-align: middle;
-        color: #666;
-        text-align: justify;
-        width: 840px;
-        line-height: 22px;
-        a {
-            &:hover {
-                color: @blue-h;
-            }
-        }
-        strong {
-            a {
-                color: #666;
-                &:hover {
+			}
+			&.btn-zan, &.btn-cai {
+				&.cur, &.cur:hover {
                     color: @blue;
                 }
-            }
-        }
-    }
-    .info {
-        padding: 2px 0;
-        color: #666;
-        font-size: 14px;
-        line-height: 22px;
-        img {
-            vertical-align: baseline;
-        }
-        .onimg {
-            width: 100px;
-            text-align: center;
-            margin: 10px 0 0 0;
-            .bdr(4px);
-            img {
-                width: auto;
-                .dis(b);
-                margin: 0 auto;
-            }
-        }
-        .cpshowimg {
-            margin: 10px 0 0 0;
+			}
+			&.btn-report {
+				.pos(a);
+				top: -30px;
+				right: 0;
+				margin: 0;
+				font-size: 12px;
+				&:hover {
+					color: @red;
+					.icon-jubao {
+						color: @red;
+					}
+				}
+			}
         }
     }
     .time {
@@ -916,91 +938,32 @@ html, body {
     .reply {
         &-form {
             .dis(n);
-            padding-top: 25px;
-            margin-left: 79px;
-            .text {
-                .dis(b);
-                width: 769px;
-                height: 90px - 20;
-                padding: 10px 15px;
-                border: 1px solid #ddd;
-                color: #666;
-                font-size: 14px;
-                .bdr(3px);
-                resize: none;
-            }
-            .btn-box {
-                padding-top: 20px;
-                line-height: 36px;
-                font-size: 0;
-                .cl();
-                .fll {
-                    font-size: 14px;
-                    color: #aaa;
-                    .icon-smile {
-                        .dis(ib);
-                        vertical-align: middle;
-                        margin: -3px 10px 0 0;
-                        font-size: 19px;
-                        color: #ccc;
-                    }
-                }
-                .btn {
-                    .dis(ib);
-                    vertical-align: middle;
-                    width: 118px;
-                    height: 34px;
-                    line-height: 34px;
-                    margin-left: 10px;
-                    text-align: center;
-                    font-size: 14px;
-                    .bdr(4px);
-                    &-cancel {
-                        color: #aaa;
-                        border: 1px solid #ddd;
-                        &:hover {
-                            color: @blue;
-                            border: 1px solid @blue;
-                        }
-                    }
-                    &-sure {
-                        color: #fff;
-                        border: 1px solid @blue;
-                        background: @blue;
-                        &:hover {
-                            border: 1px solid @blue-h;
-                            background: @blue-h;
-                        }
-                    }
-                }
-            }
+            padding-top: 15px;
+            margin-left: 60px;
+            .input {
+				margin-left: 0;
+			}
         }
         &-box {
+			.dis(n);
             .pos(r);
-            width: 840px - 18*2;
-            margin: 20px 0 0 79px;
-            padding: 10px 18px;
-            background: #f7f8fa;
+            margin: 15px 0 0 60px;
             .bdr(4px);
-            .arrow {
-                .pos(a);
-                top: -9px;
-                left: 20px;
-                .triangle(top, 9px, #f6f6f6);
-            }
             .avatar {
-                margin-right: 14px;
                 img {
                     width: 30px;
                     height: 30px;
                 }
             }
-            .info, .time {
-                margin-left: 44px;
-            }
-            .info {
-                width: 760px;
-            }
+            .info, .tt {
+                margin-left: 50px;
+			}
+			.tt {
+				color: #666;
+				a, .txt {
+					color: #666;
+				}
+			}
 
             .com-box {
                 padding: 10px 0;
@@ -1030,236 +993,123 @@ html, body {
         }
     }
     li {
-        padding: 20px 0;
-        border-bottom: 1px solid #f6f6f6;
+        padding: 30px 50px;
+        border-top: 1px solid #eee;
         .cl();
     }
     h3 {
-        font-size: 14px;
-        color: #666;
-        margin-top: 30px;
+		.pos(r);
+		z-index: 99;
+		line-height: 1;
+		margin: 30px 0 -1px;
+		padding: 0 50px;
+		font-size: 14px;
+		background: #fff;
+        color: #333;
         &.blue {
             color: @blue;
         }
-    }
-    // 新评论
-    &-new {
-        h3 {
-            line-height: 20px;
-            margin: 40px 0 -13px;
-            padding: 0 40px;
-        }
-        li {
-            padding: 38px 40px 30px;
-        }
-        .tt {
-            a {
-                .dis(ib);
-                vertical-align: middle;
-                font-size: 14px;
-            }
-            img {
-                .dis(ib);
-                vertical-align: middle;
-                width: 17px;
-                margin: 0 0 0 6px;
-            }
-            strong {
-                a {
-                    color: #333;
-                }
-            }
-            .times {
-                .dis(ib);
-                vertical-align: middle;
-                margin-left: 18px;
-                font-size: 12px;
-                color: #999;
-            }
-        }
-        .info {
-            .pos(r);
-            width: auto;
-            padding: 10px 80px 0 0;
-            line-height: 24px;
-            color: #444;
-            img {
-                width: 34px;
-            }
-            .btn-box {
-                line-height: 20px;
-                padding-top: 30px;
-                font-size: 12px;
-                color: #999;
-                .btn-replay {
-                    margin: 0;
-                }
-            }
-            .btn-report {
-                .pos(a);
-                top: -30px;
-                right: 0;
-                color: #ccc;
-                &:hover {
-                    color: @red;
-                    .icon-jubao {
-                        color: @red;
-                    }
-                }
-            }
-            strong {
-                img {
-                    display: inline-block;
-                    vertical-align: middle;
-                    width: 17px;
-                    margin: -3px 0 0 6px;
-                }
-                a {
-                    color: #333;
-                }
-            }
-        }
-        .com-box {
-            .btn-box {
-                margin: 0;
-            }
-            .reply-form {
-                .pos(r);
-                .text {
-                    width: 942px - 40px - 14;
-                    height: 74px - 30px;
-                    padding: 15px 20px;
-                    border: 1px solid #ddd;
-                    color: #444;
-                    &::-webkit-input-placeholder{
-                        color: #ccc;
-                    }
-                    &::-moz-placeholder{
-                        color: #ccc;
-                    }
-                    &:-moz-placeholder{
-                        color: #ccc;
-                    }
-                    &:-ms-input-placeholder{
-                        color: #ccc;
-                    }
-                }
-                .btn-box {
-                    .pos(r);
-                    .btn-sure {
-                        .pos(a);
-                        right: 0;
-                        top: -77px;
-                        padding: 0;
-                        width: 130px;
-                        height: 76px;
-                        line-height: 76px;
-                        text-align: center;
-                        .bdr(0, 4px, 4px, 0);
-                    }
-                }
-            }
-            .btn-del, .btn-report, .btn-selected {
-                .dis(n);
-            }
-            &:hover {
-                .btn-del, .btn-report, .btn-selected {
-                    .dis(i);
-                }
-            }
-        }
+	}
+	.more-comment {
+		.dis(ib);
+		vertical-align: top;
+		padding: 10px 0 0;
+		margin: 0 0 0 60px;
+		line-height: 20px;
+		font-size: 14px;
+		color: #666;
+		span {
+			.dis(ib);
+			vertical-align: middle;
+		}
+		.icon {
+			margin: 0 0 0 6px;
+			font-size: 12px;
+			.anim();
+		}
+		&:hover {
+			color: @blue;
+		}
+		.more-comment-text2 {
+			.dis(n);
+		}
+		&.cur {
+			.more-comment-text {
+				.dis(n);
+			}
+			.more-comment-text2 {
+				.dis(i);
+			}
+			.icon {
+				.rotate(180deg);
+			}
+		}
+	}
+}
 
-        .btn-sure.dis {
-            background: #eee !important;
-            color: #999 !important;;
-            border: 1px solid #eee !important;;
-            cursor: auto !important;;
-            &:hover {
-                background: #eee !important;;
-                color: #999 !important;;
-                border: 1px solid #eee !important;;
-            }
-        }
-        .reply-box {
-            width: auto;
-            padding: 30px 40px;
-            .com-box {
-                .reply-form {
-                    // width: 1074px - 40px;
-                    margin-left: 54px;
-                    .text {
-                        width: 1072px - 80px - 44px - 130px - 64;
-                        height: 74px - 30px;
-                        padding: 15px 20px;
-                        border: 1px solid #ddd;
-                    }
-                    .btn-box {
-                        a:hover {
-                            color: #666;
-                        }
-                        .btn-sure {
-                            // top:
-                        }
-                        .btn-sure:hover {
-                            color: #fff;
-                        }
-                    }
-                }
-            }
-            .info {
-                .pos(r);
-                width: auto;
-                padding-right: 60px;
-                margin-left: 54px;
-                .btn-report {
-                    .pos(s);
-                    color: #999;
-                    &:hover {
-                        color: @red;
-                    }
-                }
-                .btn-box {
-                    padding: 8px 0 0;
-                }
-            }
-            .time {
-                margin-left: 18px;
-                font-size: 12px;
-                color: #999;
-            }
-            .avatar {
-                img {
-                    width: 40px;
-                    height: 40px;
-                }
-            }
-        }
-        .num-box {
-            right: 150px;
-            font-size: 0;
-            .height(50px);
-            .num {
-                font-size: 12px;
-            }
-        }
-        .more-comment {
-            .dis(b);
-            padding: 5px 0 0;
-            margin: 0 0 0 54px;
-            line-height: 32px;
-            font-size: 14px;
-            color: #666;
-            .triangle {
-                .dis(ib);
-                vertical-align: middle;
-                margin: -3px 0 0 10px;
-                &-top {
-                    .triangle(top, 5px, #ccc);
-                }
-                &-bottom {
-                    .triangle(bottom, 5px, #ccc);
-                }
-            }
-        }
+/* alert, confirm样式 */
+#sw-con {
+    z-index: 9999;
+    width: 396px;
+    padding-bottom: 40px;
+    position: fixed;
+    background: #fff;
+    .bdr(4px);
+}
+#sw-tit {
+    font-size: 16px;
+    color: #666;
+    padding: 10px 19px;
+    line-height: 37px;
+    border-bottom: 1px solid #f6f6f6;
+}
+#sw-msg {
+    padding: 53px 30px 32px;
+    line-height: 30px;
+    font-size: 16px;
+    color: #666;
+    text-align: center;
+}
+#sw-close {
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    color: #ccc;
+    font-size: 14px;
+    cursor: pointer;
+    &:hover {
+        color: @blue;
+    }
+}
+#sw-btn-box {
+    text-align: center;
+    font-size: 0;
+}
+#sw-btn-ok, #sw-btn-no {
+    .dis(ib);
+    width: 128px;
+    height: 34px;
+    line-height: 34px;
+    color: white;
+    border: none;
+    font-size: 14px;
+    .bdr(4px);
+}
+#sw-btn-ok {
+    background: @blue;
+    border: 1px solid @blue;
+    &:hover {
+        background: @blue-h;
+        border: 1px solid @blue-h;
+    }
+}
+#sw-btn-no {
+    color: #666;
+    border: 1px solid #ccc;
+    margin-left: 15px;
+    &:hover {
+        color: @blue;
+        border: 1px solid @blue;
     }
 }
