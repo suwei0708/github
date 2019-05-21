@@ -187,7 +187,9 @@ $(function() {
 
 	/** 评论按钮操作 start */
     // 评论判断回复框字数是否输入
-	textareaChange('.wt-comment', 500);
+    if($('.wt-comment').length) {
+        textareaChange('.wt-comment', 500);
+    }
 	$('.wt-comment')
 	// 回复展示更多
 	.on('click', '.more-comment', function() {
@@ -279,7 +281,13 @@ $(function() {
 	        console.log('提交成功');
 	    }
 	});
-	/** 评论按钮操作 end */
+    /** 评论按钮操作 end */
+
+    // 发布页字数判断
+    if ($('.wt-form').length) {
+        monitorVal($('.wt-form').find('.text:eq(0)'), 30, 'minus');
+        monitorVal($('.wt-form').find('.textarea'), 1000, 'minus');
+    }
 });
 
 function textareaChange(dom, nums) {

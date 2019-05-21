@@ -891,29 +891,37 @@ html, body {
 	}
 
 	&-form {
-		padding: 35px 0 60px;
+		padding: 0 0 60px;
 		background: #fff;
 		font-size: 0;
 		.bdr(4px);
 		&-tit {
-			height: 60px;
+            height: 74px;
+            padding: 0 12px;
 			margin-bottom: 25px;
 			border-bottom: 1px solid #eee;
 			li {
+                .pos(a);
 				.dis(ib);
-				height: 60px;
-				line-height: 60px;
+				height: 74px;
+				line-height: 74px;
 				text-align: center;
 				margin: 0 38px;
 				color: #666;
 				font-size: 16px;
 				&.cur {
-					height: 58px;
-					border-bottom: 3px solid #178bf7;
-					line-height: 60px;
-					background-color: #fff;
 					color: @blue;
-					font-weight: 700;
+                    font-weight: 700;
+                    &:after {
+                        content: '';
+                        .pos(a);
+                        bottom: 0;
+                        left: 50%;
+                        width: 20px;
+                        height: 3px;
+                        margin-left: -10px;
+                        background: @blue;
+                    }
 				}
 			}
 		}
@@ -955,7 +963,7 @@ html, body {
 					color: #bbb;
 				}
 			}
-			.text, .tagInput {
+			.text, .tagsContaine {
 				.dis(ib);
 				vertical-align: middle;
 				padding: 10px 20px;
@@ -969,7 +977,78 @@ html, body {
 				&:focus {
 					border: 1px solid @blue;
 				}
-			}
+            }
+            .tagsContaine {
+                .pos(r);
+                z-index: 9;
+                padding: 10px 0;
+                width: 760px - 2;
+                &.hover {
+                    border: 1px solid @blue;
+                }
+            }
+            .textarea {
+                height: 180px;
+            }
+            #tagValue {
+                .pos(a);
+                z-index: -1;
+                .opacity(0);
+            }
+            .tagList {
+                float: left;
+                font-size: 0;
+                .tagItem {
+                    .dis(ib);
+                    vertical-align: top;
+                    height: 26px;
+                    line-height: 26px;
+                    background: #f6f6f6;
+                    margin-left: 10px;
+                    padding: 0 10px 0 3px;
+                    font-size: 14px;
+                    color: #666;
+                    .icon {
+                        .dis(ib);
+                        vertical-align: middle;
+                        margin: -3px 0 0 10px;
+                        font-size: 12px;
+                        color: #ccc;
+                        cursor: pointer;
+                        &:hover {
+                            color: @blue;
+                        }
+                    }
+                }
+            }
+            .tagInput {
+                border: 0;
+                line-height: 24px;
+                height: 24px;
+                color: #333;
+                margin-left: 10px;
+                font-size: 14px;
+            }
+            .tags {
+                padding: 10px 0 0;
+                line-height: 30px;
+                .tag {
+                    .dis(ib);
+                    vertical-align: top;
+                    height: 30px;
+                    line-height: 30px;
+                    background: #f6f6f6;
+                    margin-left: 10px;
+                    padding: 0 10px 0 3px;
+                    font-size: 12px;
+                    color: #999;
+                    cursor: pointer;
+                }
+                .fr {
+                    font-size: 14px;
+                    color: #bbb;
+                }
+            }
 			.num-box {
 				overflow: hidden;
 				position: absolute;
@@ -981,12 +1060,10 @@ html, body {
 			}
 			div.error {
 				position: absolute;
-				top: 0;
-				left: 760px;
+				bottom: -25px;
+                left: 0;
 				font-size: 12px;
-				vertical-align: middle;
-				margin-left: 20px;
-				line-height: 43px;
+				line-height: 20px;
 				color: #f65658;
 				font-size: 14px;
 				white-space: nowrap;
@@ -999,12 +1076,16 @@ html, body {
 				border: 1px solid #eee;
 				width: 288px;
 				height: 178px;
-				margin-bottom: 10px;
-				-webkit-border-radius: 4px;
-				-ms-border-radius: 4px;
-				-moz-border-radius: 4px;
-				border-radius: 4px;
-				cursor: pointer;
+				.bdr(4px);
+                cursor: pointer;
+                input {
+                    .pos(a);
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    .opacity(0);
+                }
 				img {
 					position: relative;
 					top: -1px;
@@ -1015,7 +1096,19 @@ html, body {
 				}
 				&:hover {
 					border: 1px solid @blue;
-				}
+                }
+                &.cur {
+                    border: none;
+                    width: 290px;
+                    height: 180px;
+                    img {
+                        top: 0;
+                        left: 0;
+                    }
+                    &:hover {
+                        border: none;
+                    }
+                }
 			}
 		}
 		.btn-box {
@@ -1024,14 +1117,17 @@ html, body {
 				display: inline-block;
 				width: 170px;
 				height: 44px;
-				border: 1px solid @green;
-				background-color: @green;
+				background: @green;
 				color: #fff;
 				text-align: center;
 				line-height: 44px;
 				font-size: 14px;
 				.bdr(4px);
-				cursor: pointer;
+                cursor: pointer;
+                border: none;
+                &:hover {
+                    background: @green-h;
+                }
 			}
 		}
 	}
@@ -1793,4 +1889,58 @@ html, body {
         font-size: 12px;
         .bdr(50%);
     }
+}
+
+/* 分页 */
+.page {
+    text-align: center;
+    color: #999;
+    font-size: 0px;
+    a, label {
+        .dis(ib);
+        color: #999;
+        .height(40px);
+        padding: 0 16px;
+        margin: 0 5px;
+        .bdr(4px);
+        font-size: 14px;
+        vertical-align: middle;
+        background: #fff;
+        &:hover {
+            background-color: @blue;
+            color: #fff;
+        }
+    }
+    span, strong {
+        .dis(ib);
+        .height(40px);
+        padding: 0 16px;
+        margin: 0 5px;
+        .bdr(4px);
+        vertical-align: middle;
+        background: #fff;
+        font-size: 14px;
+        font-weight: 400;
+    }
+    .cur, strong {
+        color: #fff;
+        background: @blue;
+    }
+    .next, .prev {
+        padding: 0;
+        span {
+            margin: 0;
+            padding: 0 14px;
+            font-size: 12px;
+            background: none;
+        }
+    }
+    &-gray {
+        a, label, span, strong {
+            background: #f6f6f6;
+        }
+    }
+}
+.page-box {
+    padding: 20px 0;
 }
