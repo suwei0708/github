@@ -189,6 +189,19 @@
                     </li>
                 </ul>
             </div>
+            <div class="page-box">
+                <div class="page">
+                    <a href="#" class="prev"><span class="icon icon-jiantouz"></span></a>
+                    <a href="#">1</a>
+                    <span class="cur">2</span>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <a href="#">5</a>
+                    <span>...</span>
+                    <a href="#">20</a>
+                    <a href="#" class="next"><span class="icon icon-jiantouy"></span></a>
+                </div>
+            </div>
         </div>
         <div class="fl w270 wt-sidebar">
             <div class="wt-hot">
@@ -253,7 +266,7 @@
                 var $li = $(this).parents('li');
                 var bdUrl = $li.find('.tit a').attr('href');
                 var bdText = $li.find('.tit').text();
-                var bdDesc = $li.find('.ct').html();
+                var bdDesc = $li.find('.ct').text();
                 var bdPic = $li.find('.img').attr('src');
                 $('#shareContent').data('bdUrl', bdUrl);
                 $('#shareContent').data('bdText', bdText);

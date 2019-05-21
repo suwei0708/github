@@ -22,8 +22,8 @@
                         <span>*</span>提问标题
                     </div>
                     <div class="ct">
-                        <input type="text" class="text" value="" name="title" placeholder="请输入提问标题">
-                        <span class="num-box"><span class="num">500</span></span>
+                        <input type="text" class="text" value="" name="title" placeholder="请输入提问标题" autocomplete="off">
+                        <span class="num-box"><span class="num">30</span></span>
                     </div>
                 </div>
                 <div class="item">
@@ -31,9 +31,9 @@
                         <span>*</span>图片描述
                     </div>
                     <div class="ct">
-						<input type="file" name="pic">
-                        <div class="img">
-                            <img src="../images/fb-img.png" width="290">
+                        <div class="img" id="previews">
+                            <img src="../images/fb-img.png" width="290" height="180" id="imghead">
+                            <input type="file" name="pic" autocomplete="off" id="choosefile">
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,12 @@
                         <span>*</span>问题标签
                     </div>
                     <div class="ct">
-                        <input type="text" id="tagValue" class="text">
+                        <input type="text" id="tagValue" class="text" name="tags" value="nihao,hello" placeholder="请输入问题标签">
+                        <div class="tags tag-click">
+                            <span class="fr">标签不超过3个 用空格隔离</span>
+                            <span class="tag">Photoshop</span>
+                            <span class="tag">基础理论</span>
+                        </div>
                     </div>
                 </div>
                 <div class="item">
@@ -50,12 +55,12 @@
                         <span>*</span>详细描述
                     </div>
                     <div class="ct">
-                        <input type="text" class="text textarea" value="" maxlength="30" placeholder="请输入提问标题">
-                        <span class="num-box"><span class="num">500</span></span>
+                        <textarea class="text textarea" name="describe" value="" placeholder="请描述你遇到的问题"></textarea>
+                        <span class="num-box"><span class="num">1000</span></span>
                     </div>
 				</div>
 				<div class="btn-box">
-					<button type="submit" id="postsubmit" class="btn">发布作品</button>
+					<button type="submit" class="btn">提交问题</button>
 				</div>
             </form>
         </div>
@@ -64,26 +69,8 @@
 	<script src="../js/wenti.js"></script>
 	<script src="../js/validate-1.14.0.min.js"></script>
 	<script src="../js/tag.js"></script>
+	<script src="../js/uploadPreview.js"></script>
     <script>
-        jQuery.extend(jQuery.validator.messages, {
-            required: "必选字段",
-            remote: "请修正该字段",
-            email: "请输入正确格式的电子邮件",
-            url: "请输入合法的网址",
-            date: "请输入合法的日期",
-            dateISO: "请输入合法的日期 (ISO).",
-            number: "请输入合法的数字",
-            digits: "只能输入整数",
-            creditcard: "请输入合法的信用卡号",
-            equalTo: "请再次输入相同的值",
-            accept: "请输入拥有合法后缀名的字符串",
-            maxlength: jQuery.validator.format("请输入一个长度最多是{0}的字符串"),
-            minlength: jQuery.validator.format("请输入一个长度最少是{0}的字符串"),
-            rangelength: jQuery.validator.format("请输入一个长度介于{0}和{1}之间的字符串"),
-            range: jQuery.validator.format("请输入一个介于{0}和{1}之间的值"),
-            max: jQuery.validator.format("请输入一个最大为{0}的值"),
-            min: jQuery.validator.format("请输入一个最小为{0}的值")
-        });
         $(function() {
 			// 表单验证
             $('#form').validate({
@@ -91,26 +78,11 @@
                 errorClass: 'error',
                 validClass: 'right',
                 onfocusout: function(element) {
-					console.log('onfocusout')
                     $(element).valid();
                 },
-                // errorPlacement: function(error, element) {
-				// 	// console.log(error, element)
-                //     // error.append('<span class="icon icon-tanhao"></span>');
-                // },
-                // highlight: function(element, errorClass, validClass) {
-				// 	console.log('highlight')
-                //     $(element).removeClass('right').addClass('error');
-                //     $(element).parent().next().removeClass('right').addClass('error').find('i').html('&#xe606;');
-                // },
-                // success: function(span) {
-				// 	console.log('success');
-                //     // span.parent().removeClass('error').addClass('right');
-                //     // span.prev('.icon').html('&#xe607;');
-				// },
 				// 替换默认form提交，使用form提交请删除submitHandler
 				submitHandler:function(form){
-					console.log("submit!");
+					$.msgBox.Alert(null, '提交成功')
 				},
                 rules: {
                     title: {
@@ -118,21 +90,48 @@
 					},
 					pic: {
 						required: true
-					}
+					},
+					tags: {
+					    required: true
+                    },
+                    describe: {
+                        required: true
+                    }
                 },
                 messages: {
                     title: {
                         required: '提问标题不能为空'
 					},
 					pic: {
-						required: '图片描述不能为空'
+					    required: '图片描述不能为空'
+					},
+					tags: {
+					    required: '问题标签不能为空'
+					},
+					describe: {
+					    required: '详细描述不能为空'
 					}
                 }
             });
 
+            $('body').on('focus', '.tagInput', function() {
+                $(this).parents('.tagsContaine').addClass('hover');
+            }).on('blur', '.tagInput', function() {
+                $('#tagValue').valid();
+                $(this).parents('.tagsContaine').removeClass('hover');
+            });
+            $('.wt-form').on('click', '.tag', function() {
+                $('.tagInput').val($(this).html());
+            })
+
             // 初始化tag标签
-            var tag = new Tag("tagValue");
-            tag.initView();
+            var tag = new Tag('tagValue').initView();
+
+            // 初始化图片上传预览
+            new uploadPreview({ UpBtn: "choosefile", DivShow: "previews", ImgShow: "imghead", callback: function()     {
+                    $('#previews').addClass('cur');
+                }
+            });
         });
     </script>
 </body>

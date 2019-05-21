@@ -14,28 +14,68 @@ function Tag(inputId) {
 
     //初始化界面
     obj.initView = function() {
-        var inputObj = jQuery("#" + this.inputId);
+        var inputObj = $('#' + this.inputId);
         var inputId = this.inputId;
-        inputObj.css("display", "none");
+        inputObj.wrap('<div style="height: 0;"></div>');
+        var placeholder = inputObj.attr('placeholder') ? inputObj.attr('placeholder') : '输入标签'
         var appendStr = '';
         appendStr += '<div class="tagsContaine" id="' + inputId + '_tagcontaine">';
-        appendStr += '<input type="text" class="tagInput" placeholder="输入职能标签"/><div class="tagList"></div>';
+        appendStr += '<div class="tagList"></div><input type="text" class="tagInput" placeholder="' + placeholder + '"/>';
         appendStr += '</div>';
-        inputObj.after(appendStr);
-        var tagInput = jQuery("#" + inputId + "_tagcontaine .tagInput");
+        inputObj.parent().after(appendStr);
+        var tagInput = $('#' + inputId + "_tagcontaine .tagInput");
+        $('.tagsContaine').on('click', function() {
+            $('.tagInput').focus();
+        });
+        $('.tagList').on('click', function(e) {
+            e.stopPropagation();
+        });
+        $('.tag-click').on('click', '.tag', function() {
+            var inputValue = $(this).html();
+            var arr = $('#tagValue').val().split(',');
+            if (arr.length == 3) {
+                $(this).val('');
+                alert('最多只能3个标签');
+                return false;
+            };
+            if (inputValue.length > 10) {
+                alert('标签不能超过10个字');
+                return false;
+            } else if (inputValue.length < 2) {
+                alert('标签不能少于2个字');
+                return false;
+            };
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == inputValue) {
+                    $(this).val('');
+                    alert('不能输入相同标签');
+                    return false;
+                }
+            }
+            tagTake.setInputValue(inputId, inputValue);
+            $(this).val('');
+            return false;
+        });
+        if($.trim(inputObj.val())) {
+            var inputValue = $.trim(inputObj.val());
+            var arr = inputValue.split(',');
+            for (var i = 0; i < arr.length; i++) {
+                tagTake.setInputValue(inputId, arr[i]);
+            }
+        }
         if (!this.isDisable) {
-            jQuery("#" + inputId + "_tagcontaine").attr("ds", "1");
+            $('#' + inputId + "_tagcontaine").attr("ds", "1");
             tagInput.keydown(function(event) {
                 if (event.keyCode == 32) {
-                    var inputValue = jQuery(this).val();
-                    var arr = jQuery('#tagValue').val().split(',');
+                    var inputValue = $(this).val();
+                    var arr = $('#tagValue').val().split(',');
                     if(arr.length == 3) {
-                        jQuery(this).val('');
-                        alert('最多只能三个标签');
+                        $(this).val('');
+                        alert('最多只能3个标签');
                         return false;
                     };
-                    if(inputValue.length > 5) {
-                        alert('标签不能超过5个字');
+                    if(inputValue.length > 10) {
+                        alert('标签不能超过10个字');
                         return false;
                     }
                     else if(inputValue.length < 2) {
@@ -44,25 +84,24 @@ function Tag(inputId) {
                     };
                     for (var i = 0; i < arr.length; i++) {
                         if(arr[i] == inputValue) {
-                        jQuery(this).val('');
+                        $(this).val('');
                             alert('不能输入相同标签');
                             return false;
                         }
                     }
-                    console.log(arr)
                     tagTake.setInputValue(inputId, inputValue);
-                    jQuery(this).val('');
+                    $(this).val('');
                     return false;
                 }
             });
         } else {
-            jQuery("#" + inputId + "_tagcontaine").attr("ds", "0");
+            $('#' + inputId + "_tagcontaine").attr("ds", "0");
             tagInput.remove();
         }
         if (this.tagValue != null && this.tagValue != "") {
             tagTake.setInputValue(inputId, this.tagValue);
             if (this.isDisable) {
-                jQuery("#" + inputId + "_tagcontaine .tagList .tagItem .icon-close").remove();
+                $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-guanbi").remove();
             }
         }
     }
@@ -71,11 +110,11 @@ function Tag(inputId) {
             return;
         }
         var inputId = this.inputId;
-        var tagInput = jQuery("#" + inputId + "_tagcontaine .tagInput");
+        var tagInput = $('#' + inputId + "_tagcontaine .tagInput");
         tagInput.remove();
         this.isDisable = true;
-        jQuery("#" + inputId + "_tagcontaine").attr("ds", "0");
-        jQuery("#" + inputId + "_tagcontaine .tagList .tagItem .icon-close").remove();
+        $('#' + inputId + "_tagcontaine").attr("ds", "0");
+        $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-guanbi").remove();
         tagTake.initTagEvent(inputId);
 
     }
@@ -84,19 +123,19 @@ function Tag(inputId) {
             return;
         }
         var inputId = this.inputId;
-        var tagContaine = jQuery("#" + inputId + "_tagcontaine");
+        var tagContaine = $('#' + inputId + "_tagcontaine");
         tagContaine.append('<input type="text" class="tagInput"/>');
         this.isDisable = false;
-        jQuery("#" + inputId + "_tagcontaine").attr("ds", "1");
-        var tagInput = jQuery("#" + inputId + "_tagcontaine .tagInput");
+        $('#' + inputId + "_tagcontaine").attr("ds", "1");
+        var tagInput = $('#' + inputId + "_tagcontaine .tagInput");
         tagInput.keydown(function(event) {
             if (event.keyCode == 13) {
-                var inputValue = jQuery(this).val();
+                var inputValue = $(this).val();
                 tagTake.setInputValue(inputId, inputValue);
-                jQuery(this).val("");
+                $(this).val("");
             }
         });
-        jQuery("#" + inputId + "_tagcontaine .tagList .tagItem").append('<div class="icon-close"></div>');
+        $('#' + inputId + "_tagcontaine .tagList .tagItem").append('<div class="icon icon-guanbi"></div>');
         tagTake.initTagEvent(inputId);
 
     }
@@ -109,11 +148,11 @@ var tagTake = {
         if (inputValue == null || inputValue == "") {
             return;
         }
-        var tagListContaine = jQuery("#" + inputId + "_tagcontaine .tagList");
+        var tagListContaine = $('#' + inputId + "_tagcontaine .tagList");
         inputValue = inputValue.replace(/，/g, ",");
         var inputValueArray = inputValue.split(",");
         for (var i = 0; i < inputValueArray.length; i++) {
-            var valueItem = jQuery.trim(inputValueArray[i]);
+            var valueItem = $.trim(inputValueArray[i]);
             if (valueItem != "") {
                 var appendListItem = tagTake.getTagItemModel(valueItem);
                 tagListContaine.append(appendListItem);
@@ -123,27 +162,27 @@ var tagTake = {
         tagTake.initTagEvent(inputId);
     },
     "initTagEvent": function(inputId) {
-        jQuery("#" + inputId + "_tagcontaine .tagList .tagItem .icon-close").off();
-        jQuery("#" + inputId + "_tagcontaine .tagList .tagItem").off();
-        var ds = jQuery("#" + inputId + "_tagcontaine").attr("ds");
+        $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-guanbi").off();
+        $('#' + inputId + "_tagcontaine .tagList .tagItem").off();
+        var ds = $('#' + inputId + "_tagcontaine").attr("ds");
         if (ds == "0") {
             return;
         }
-        jQuery("#" + inputId + "_tagcontaine .tagList .tagItem .icon-close").click(function() {
-            jQuery(this).parent().remove();
+        $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-guanbi").click(function() {
+            $(this).parent().remove();
             tagTake.resetTagValue(inputId);
         });
     },
     "resetTagValue": function(inputId) {
-        var tags = jQuery("#" + inputId + "_tagcontaine .tagList .tagItem");
+        var tags = $('#' + inputId + "_tagcontaine .tagList .tagItem");
         var tagsStr = "";
         for (var i = 0; i < tags.length; i++) {
             tagsStr += tags.eq(i).find("span").html() + ",";
         }
         tagsStr = tagsStr.substr(0, tagsStr.length - 1);
-        jQuery("#" + inputId).val(tagsStr);
+        $('#' + inputId).val(tagsStr);
     },
     "getTagItemModel": function(valueStr) {
-        return '<div class="tagItem"><span>' + valueStr + '</span><div class="icon-close"></div></div>';
+        return '<div class="tagItem"><span>' + valueStr + '</span><div class="icon icon-guanbi"></div></div>';
     }
 }
