@@ -43,9 +43,19 @@ $(function() {
     // 删除搜索历史
     $('.del-his').on('click', function() {
         $('.wt-so-tip-his').remove();
-    });
+	});
 
-    // 删除问题
+	// 列表删除问题
+	$('.wt-list').on('click', '.btn-del', function() {
+		var _this = $(this);
+        $.msgBox.Confirm(null, '确定删除吗？', function () {
+			_this.parents('li').slideUp(400, function() {
+				_this.parents('li').remove();
+			})
+        });
+	});
+
+    // 详情删除问题
     $('.wt-details-tit').on('click', '.wt-operate .btn-del', function () {
         var _this = $(this);
         $.msgBox.Confirm(null, '确定删除吗？', function () {
@@ -56,8 +66,8 @@ $(function() {
         });
     });
 
-	/** 回答按钮操作 start */
-    $('.wt-main')
+	/** 详情回答按钮操作 start */
+    $('.wt-details')
     // 我来答
     .on('click', '.btn-answer', function () {
         if ($('.wt-answer').is(':visible')) {
@@ -154,7 +164,7 @@ $(function() {
         $(this).parents('.wt-details-ct').slideDown();
         $(this).parents('.wt-details-ct').removeClass('wt-details-shrink');
     });
-    /** 回答按钮操作 end */
+    /** 详情回答按钮操作 end */
 
     /** 举报通用 start */
     // 举报通用

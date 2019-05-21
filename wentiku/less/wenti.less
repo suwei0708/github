@@ -168,12 +168,10 @@ html, body {
     background: #ecf0f5;
     .cl();
     &-main {
-        // .ov(h);
-        margin: 30px 20px 130px 30px;
-        .bdr(4px);
+        padding: 30px 20px 130px 30px;
     }
     &-sidebar {
-        margin: 30px 0 130px 0;
+        padding: 30px 0 130px 0;
     }
     &-tab {
         .pos(r);
@@ -890,7 +888,153 @@ html, body {
             color: #666;
             text-align: center;
         }
-    }
+	}
+
+	&-form {
+		padding: 35px 0 60px;
+		background: #fff;
+		font-size: 0;
+		.bdr(4px);
+		&-tit {
+			height: 60px;
+			margin-bottom: 25px;
+			border-bottom: 1px solid #eee;
+			li {
+				.dis(ib);
+				height: 60px;
+				line-height: 60px;
+				text-align: center;
+				margin: 0 38px;
+				color: #666;
+				font-size: 16px;
+				&.cur {
+					height: 58px;
+					border-bottom: 3px solid #178bf7;
+					line-height: 60px;
+					background-color: #fff;
+					color: @blue;
+					font-weight: 700;
+				}
+			}
+		}
+		.item {
+			padding: 15px 0;
+			.cl();
+		}
+		.tit {
+			width: 120px;
+			text-align: right;
+			float: left;
+			line-height: 44px;
+			font-size: 14px;
+			color: #999;
+			min-height: 44px;
+			span {
+				display: inline-block;
+				margin-right: 3px;
+				color: red;
+				vertical-align: middle;
+			}
+		}
+		.ct {
+			margin-left: 30px;
+			line-height: 42px;
+			float: left;
+			position: relative;
+			input, textarea {
+				&::-webkit-input-placeholder{
+					color: #bbb;
+				}
+				&::-moz-placeholder{
+					color: #bbb;
+				}
+				&:-moz-placeholder{
+					color: #bbb;
+				}
+				&:-ms-input-placeholder{
+					color: #bbb;
+				}
+			}
+			.text, .tagInput {
+				.dis(ib);
+				vertical-align: middle;
+				padding: 10px 20px;
+				width: 760px - 42;
+				border: 1px solid #eee;
+				border-radius: 2px;
+				color: #666;
+				font-size: 14px;
+				line-height: 22px;
+				.bdr(4px);
+				&:focus {
+					border: 1px solid @blue;
+				}
+			}
+			.num-box {
+				overflow: hidden;
+				position: absolute;
+				bottom: 15px;
+				right: 20px;
+				color: #ccc;
+				font-size: 12px;
+				line-height: 1;
+			}
+			div.error {
+				position: absolute;
+				top: 0;
+				left: 760px;
+				font-size: 12px;
+				vertical-align: middle;
+				margin-left: 20px;
+				line-height: 43px;
+				color: #f65658;
+				font-size: 14px;
+				white-space: nowrap;
+				.icon {
+					margin-right: 8px;
+				}
+			}
+			.img {
+				overflow: hidden;
+				border: 1px solid #eee;
+				width: 288px;
+				height: 178px;
+				margin-bottom: 10px;
+				-webkit-border-radius: 4px;
+				-ms-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				cursor: pointer;
+				img {
+					position: relative;
+					top: -1px;
+					left: -1px;
+					max-width: none;
+					width: 290px;
+					height: 180px;
+				}
+				&:hover {
+					border: 1px solid @blue;
+				}
+			}
+		}
+		.btn-box {
+			padding: 25px 0 0 150px;
+			.btn {
+				display: inline-block;
+				width: 170px;
+				height: 44px;
+				border: 1px solid @green;
+				background-color: @green;
+				color: #fff;
+				text-align: center;
+				line-height: 44px;
+				font-size: 14px;
+				.bdr(4px);
+				cursor: pointer;
+			}
+		}
+	}
 }
 // 回答
 .wt-answer {
