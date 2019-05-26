@@ -1,0 +1,103 @@
+@charset "utf-8";
+@import url(../../../common/common-pc.less);
+
+@page-w: 1220px;
+@green: #2ed25d;
+@green-h: #48f579;
+@blue: #0097f8;
+@blue-h: #26a5ff;
+@yellow: #ffa800;
+@yellow-h: #ffba00;
+
+body {
+    background: #ffcc3b;
+}
+// 问卷
+.wj {
+	&-top {
+		.pos(r);
+		z-index: 5;;
+		height: 816px;
+		background: url(../images/wenjuan/wj-top.jpg) no-repeat center 0;
+	}
+	&-bottom {
+		height: 84px;
+		background: url(../images/wenjuan/wj-bottom.jpg) no-repeat center 0;
+	}
+	&-list {
+		.pos(r);
+		left: -1px;
+		background: #fff;
+		.subject {
+			.ov(h);
+			.pos(r);
+			z-index: 6;
+			margin: -92px 70px 0;
+		}
+		dl {
+			margin-top: -1px;
+			padding: 40px 30px;
+			color: #333;
+			border-top: 1px dashed #fee493;
+		}
+		dt {
+			line-height: 42px;
+			font-size: 18px;
+			.red {
+				color: #ff3a3b;
+			}
+			.num {
+				.dis(ib);
+				vertical-align: top;
+				width: 42px;
+				height: 42px;
+				margin: 0 30px 0 0;
+				background: #ffcc3b;
+				text-align: center;
+				.bdr(50%);
+			}
+		}
+		dd {
+			padding: 20px 0 0;
+			label {
+				.dis(b);
+				font-size: 16px;
+				line-height: 40px;
+				padding: 0 14px;
+				cursor: pointer;
+				&:hover {
+					background: #f8f8f8;
+				}
+				input {
+					display: inline-block;
+					width: 18px;
+					height: 18px;
+					margin: -3px 18px 0 0;
+					vertical-align: middle;
+					cursor: pointer;
+				}
+				.ico-radio {
+					position: relative;
+					display: inline-block;
+					vertical-align: middle;
+					overflow: hidden;
+					width: 18px;
+					height: 18px;
+					margin: -3px 10px 0 0;
+					background: url(../images/wenjuan/radio.png) no-repeat 0 0;
+					&-cur {
+    					background-position: 0 -20px;
+					}
+					input {
+						position: absolute;
+						top: 0;
+						left: 0;
+						margin: 0;
+						filter: alpha(opacity= 0 );
+						opacity: 0;
+					}
+				}
+			}
+		}
+	}
+}
