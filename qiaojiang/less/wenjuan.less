@@ -21,6 +21,7 @@ body {
 		background: url(../images/wenjuan/wj-top.jpg) no-repeat center 0;
 	}
 	&-bottom {
+		padding-bottom: 120px;
 		height: 84px;
 		background: url(../images/wenjuan/wj-bottom.jpg) no-repeat center 0;
 	}
@@ -29,16 +30,14 @@ body {
 		left: -1px;
 		background: #fff;
 		.subject {
-			.ov(h);
 			.pos(r);
 			z-index: 6;
 			margin: -92px 70px 0;
 		}
 		dl {
-			margin-top: -1px;
 			padding: 40px 30px;
 			color: #333;
-			border-top: 1px dashed #fee493;
+			border-bottom: 1px dashed #fee493;
 		}
 		dt {
 			line-height: 42px;
@@ -96,6 +95,75 @@ body {
 						filter: alpha(opacity= 0 );
 						opacity: 0;
 					}
+				}
+			}
+		}
+		.other {
+			padding: 56px 0 62px;
+			text-align: center;
+			font-size: 0;
+			.tit {
+				line-height: 30px;
+				font-size: 18px;
+				color: #666;
+			}
+			.btn-box {
+				padding: 32px 0 0;
+				.btn {
+					.dis(ib);
+					vertical-align: top;
+					width: 160px;
+					line-height: 40px;
+					margin: 0 10px;
+					.bdr(4px);
+					color: #fff;
+					font-size: 16px;
+					background: @yellow;
+					border: none;
+					cursor: pointer;
+					&:hover {
+						background: @yellow-h;
+					}
+				}
+			}
+		}
+	}
+
+	&-box {
+		padding: 60px 0 20px;
+		background: #fff;
+		.bdr(20px);
+		.title {
+			margin-bottom: -14px;
+			h2 {
+				width: 245px - 82;
+				height: 75px;
+				line-height: 60px;
+				padding: 0 0 0 82px;
+				margin-left: -14px;
+				font-size: 22px;
+				color: #fdd24b;
+				background: url(../images/wenjuan/wj-tit.png) no-repeat 0 0;
+			}
+		}
+		.ct {
+			padding: 0 68px;
+		}
+	}
+	&-hdsm {
+		margin-bottom: 160px;
+		.ct {
+			.ov(h);
+			li {
+				padding: 33px 0;
+				border-top: 1px dashed #fee493;
+				margin-top: -1px;
+				font-size: 16px;
+				color: #666;
+				.num {
+					margin-right: 40px;
+					font-size: 18px;
+					color: #561ed7;
 				}
 			}
 		}
