@@ -280,7 +280,7 @@ $(function() {
             });
         } else {
             obj.attr({
-                style: 'color: #bbb'
+                style: 'color: #999'
             });
         }
     }
@@ -567,7 +567,7 @@ $(function() {
             // 重命名
             centerObj('.popup-rename .popup');
             $('.popup-rename').show().find('.txt').val(manageDom.text());
-            monitorVal('.popup-rename .txt', 15);
+            monitorVal('.popup-rename .txt', 15, 'minus');
         }
         else if(_this.index() == 1) {
             // 删除

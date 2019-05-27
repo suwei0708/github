@@ -12,7 +12,7 @@
 @red-h: #fd4043;
 
 body {
-    background: #f6f6f6;
+    background: #f7f8fa;
 }
 input, textarea {
     &::-webkit-input-placeholder{
@@ -34,7 +34,7 @@ input, textarea {
 .user {
     /* 用户中心通用 */
     &-box {
-        padding: 20px 0 60px;
+        padding: 20px 0 40px;
         background: #f7f8fa;
         .cl();
         &~.uno-result-box {
@@ -173,11 +173,10 @@ input, textarea {
                             .pos(a);
                             bottom: 10px;
                             left: 10px;
-                            min-width: 13px;
+                            width: 24px;
                             .height(22px);
-                            padding: 0 10px;
                             text-align: center;
-                            font-weight: 700;
+                            font-weight: 400;
                             color: #fff;
                             font-size: 12px;
                             .bdr(4px);
@@ -262,6 +261,7 @@ input, textarea {
                                     }
                                 }
                                 &-list {
+									.ov(h);
                                     .dis(n);
                                     .pos(a);
                                     top: 30px;
@@ -272,12 +272,13 @@ input, textarea {
                                     li {
                                         width: auto;
                                         float: none;
-                                        margin: 0;
+                                        margin: -1px 0 0;
                                         padding: 0 15px;
                                         .bdr(0);
                                         font-size: 14px;
                                         color: #666;
                                         border: 0;
+										border-top: 1px solid #f7f7f7;
                                         &:hover {
                                             .box-shadow(none);
                                         }
@@ -331,8 +332,8 @@ input, textarea {
                 text-align: center;
                 &:hover, &.cur {
                     color: #fff;
-                    background: @blue;
-                    border: 1px solid @blue;
+                    background: #0f92fb;
+                    border: 1px solid #0f92fb;
                 }
                 &.btn-collect {
                     color: #fff;
@@ -723,7 +724,7 @@ input, textarea {
             border-bottom: 1px solid #f7f8fa;
             .cl();
             .img {
-                margin: 0 24px 0 65px;
+                margin: 0 24px 0 30px;
                 img {
                     width: 96px;
                     height: 96px;
@@ -834,7 +835,19 @@ input, textarea {
                     &:focus {
                         border: 1px solid @blue;
                         .box-shadow(0, 0, 5px, rgba(0, 132, 255, .2));
-                    }
+					}
+					&::-webkit-input-placeholder{
+						color: #999;
+					}
+					&::-moz-placeholder{
+						color: #999;
+					}
+					&:-moz-placeholder{
+						color: #999;
+					}
+					&:-ms-input-placeholder{
+						color: #999;
+					}
                 }
                 .num-box {
                     .pos(a);
@@ -870,12 +883,12 @@ input, textarea {
                     vertical-align: middle;
                     width: auto;
                     margin-left: 20px;
-                    color: @red;
+                    color: #f75659;
                     border: 0;
                     background: none;
                     &s {
                         margin-left: 20px;
-                        color: @red;
+                        color: #f75659;
                         span {
                             .ov(h);
                             padding: 2px;
@@ -1072,25 +1085,23 @@ input, textarea {
             line-height: 38px;
             border: 1px solid #ddd;
             text-align: center;
-            font-size: 16px;
+            font-size: 14px;
             background: none;
             .bdr(4px);
             cursor: pointer;
-            color: #999;
+            color: #666;
             &:hover {
                 border: 1px solid #999;
-                color: #999;
+                color: #666;
                 background: none;
             }
         }
     }
     &-basedata {
+		margin-bottom: 20px;
         .btn {
             top: 230px;
         }
-    }
-    &-contact {
-        margin-top: 20px;
     }
 
     /* 编辑头像 */
@@ -1815,7 +1826,6 @@ input, textarea {
 
     // 绑定第三方
     &-bindother {
-        border-top: 1px solid #eee;
         .item {
             padding: 20px 0;
             font-size: 0;
@@ -1938,8 +1948,8 @@ input, textarea {
                 width: 68px;
                 .height(24px);
                 margin-top: 12px;
-                border: 1px solid @blue;
-                background: @blue;
+                border: 1px solid #0f92fb;
+                background: #0f92fb;
                 color: #fff;
                 font-weight: 700;
                 font-size: 14px;
@@ -1997,13 +2007,13 @@ input, textarea {
 }
 
 .uno-result-box {
-    padding: 108px 0 50px;
+    padding: 108px 0 60px;
     margin: 20px auto 60px;
     background: #fff;
     .bdr(4px);
 }
 .page-msg {
-    padding: 40px 0 0;
+    padding: 40px 0 20px;
     background: #f6f6f6;
 }
 
@@ -2579,14 +2589,13 @@ input, textarea {
                         .pos(a);
                         bottom: 10px;
                         left: 10px;
-                        min-width: 13px;
+                        width: 24px;
                         .height(22px);
-                        padding: 0 10px;
                         text-align: center;
-                        font-weight: 700;
                         color: #fff;
                         font-size: 12px;
-                        .bdr(4px);
+						.bdr(4px);
+						font-weight: 400;
                         background: rgba(0, 0, 0, .5);
                         filter: ~'progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000)';
 
@@ -2667,6 +2676,7 @@ input, textarea {
                                 }
                             }
                             &-list {
+								.ov(h);
                                 .dis(n);
                                 .pos(a);
                                 top: 30px;
@@ -2677,12 +2687,13 @@ input, textarea {
                                 li {
                                     width: auto;
                                     float: none;
-                                    margin: 0;
+                                    margin: -1px 0 0;;
                                     padding: 0 15px;
                                     .bdr(0);
                                     font-size: 14px;
                                     color: #666;
-                                    border: 0;
+									border: 0;
+									border-top: 1px solid #f7f7f7;
                                     &:hover {
                                         .box-shadow(none);
                                     }
