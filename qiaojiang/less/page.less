@@ -3343,7 +3343,7 @@ body {
                     border: 1px solid #e9e9e9;
                     .bdr(5px);
                     resize: none;
-                    font-family: "Hiragino Sans GB","Open Sans",Arial,"Microsoft YaHei","微软雅黑",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
+                    font-family: Arial,"Microsoft YaHei","微软雅黑","Hiragino Sans GB","Open Sans",STHeiti,"WenQuanYi Micro Hei",SimSun,sans-serif;
                 }
                 .btn {
                     &-box {
@@ -3738,30 +3738,6 @@ body {
                         span.fl {
                             .pos(s);
                             top: 0;
-                        }
-                    }
-                    .reply {
-                        .ov(h);
-                        .dis(ib);
-                        vertical-align: middle;
-                        width: 17px;
-                        height: 16px;
-                        line-height: 200px;
-                        background: url(../images/qj-ico2.png) no-repeat -100px -1220px;
-                        &:hover {
-                            background: url(../images/qj-ico2.png) no-repeat -120px -1220px;
-                        }
-                    }
-                    .del {
-                        .ov(h);
-                        .dis(ib);
-                        vertical-align: middle;
-                        width: 11px;
-                        height: 11px;
-                        line-height: 200px;
-                        background: url(../images/qj-ico2.png) no-repeat -100px -1240px;
-                        &:hover {
-                            background: url(../images/qj-ico2.png) no-repeat -120px -1240px;
                         }
                     }
                 }
@@ -10897,7 +10873,7 @@ a.page-num{
                     }
                     a {
                         .dis(ib);
-                        vertical-align: top;
+						vertical-align: top;
                     }
                     .del {
                         font-size: 12px;
@@ -10914,7 +10890,7 @@ a.page-num{
                         font-size: 13px;
                         margin-left: 40px;
                         .qjfont {
-                            font-size: 14px;
+							font-size: 14px;
                         }
                         .qj-pinglunmianxing {
                             .dis(n);
@@ -10975,25 +10951,19 @@ a.page-num{
                 }
             }
             .com-to {
-                padding: 0 0 30px;
-                margin: -20px 42px 0 107px;
-                .bgs {
-                    .pos(r);
-                    padding: 20px 80px 20px 20px;
-                    background: #f6f6f6;
-                    .bdr(5px);
-                    .arrow {
-                        .pos(a);
-                        top: -8px;
-                        left: 20px;
-                        .triangle(top, 8px, #f6f6f6);
-                    }
-                    &.func {
-                        margin: 0;
-                        height: auto;
-                        .ov(v);
-                    }
-                }
+                .pos(r);
+				padding: 20px 30px;
+				background: #f6f6f6;
+				.bdr(5px);
+                margin: -10px 42px 0 107px;
+
+				&:before {
+					content: '';
+					.pos(a);
+					top: -8px;
+					left: 20px;
+					.triangle(top, 8px, #f6f6f6);
+				}
                 .input2 {
                     margin-left: 0;
                 }
@@ -11023,23 +10993,24 @@ a.page-num{
                 }
                 .func {
                     a {
-                        .dis(ib);
-                    }
-                    .reply {
-                        width: auto;
-                        height: auto;
-                        padding: 0;
-                        margin-left: 5px;
-                        background: none;
-                        color: @yellow;
-                        font-size: 14px;
-                        line-height: 22px;
-                        vertical-align: top;
-                        &:hover {
-                            color: @yellow-h;
-                        }
-                    }
-                }
+						.dis(ib);
+					}
+					.reply, .laud {
+						margin-left: 13px;
+					}
+				}
+				.input2 {
+					margin-left: 45px;
+					width: 561px;
+					.textarea {
+						width: 561px - 72px !important;
+						background: #fff;
+					}
+					.tip {
+						width: 519px !important;
+						background: #fff;
+					}
+				}
             }
         }
     }
@@ -11216,7 +11187,18 @@ a.page-num{
     }
     .cont li .com-box .input2 {
         width: 864px;
-    }
+	}
+	.cont li .com-to {
+		.input2 {
+			width: 761px;
+			.textarea {
+				width: 761px - 72px !important;
+			}
+			.tip {
+				width: 719px !important;
+			}
+		}
+	}
     .input2 .tip {
         width: 862px - 40px !important;
     }
@@ -11273,7 +11255,18 @@ a.page-num{
     }
     .cont li .com-box .input2 {
         width: 864px;
-    }
+	}
+	.cont li .com-to {
+		.input2 {
+			width: 761px;
+			.textarea {
+				width: 761px - 72px !important;
+			}
+			.tip {
+				width: 719px !important;
+			}
+		}
+	}
     .input2 .tip {
         width: 862px - 40px !important;
     }
