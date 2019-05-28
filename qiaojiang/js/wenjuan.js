@@ -1,10 +1,51 @@
 $(function() {
 	if ($('.wj-list').find('input[type=radio]').length) {
+		// radio美化
 		radioSelect('.wj-list dd');
-	}
+	};
 	if ($('.wj-list').find('input[type=checkbox]').length) {
+	    // checkbox美化
 		checkboxSelect('.wj-list dd');
-	}
+	};
+
+	$.extend(jQuery.validator.messages, {
+	    required: "<span></span></span>必选字段"
+	});
+
+	$.validator.setDefaults({
+		errorElement: 'div',
+		debug: true, // 只验证不提交表单
+		errorPlacement: function(error, element) {
+			error.appendTo(element.parents('dd'));
+		},
+	});
+	$('.wj-list').on('click', '.btn-agreen', function() {
+		// 我愿意
+		$('#wj-list1').validate({
+			// 验证成功后提交
+			submitHandler: function(form) {
+				$('.popup-wjstudy, .mask').show();
+			},
+		});
+	})
+	.on('click', '.btn-end', function() {
+		// 结束问卷
+		$('#wj-list1').validate({
+		    // 验证成功后提交
+		    submitHandler: function(form) {
+		        $('.popup-subsuc, .mask').show();
+		    },
+		});
+	})
+	.on('click', '.btn-submit', function() {
+		// 结束问卷
+		$('#wj-list2').validate({
+		    // 验证成功后提交
+		    submitHandler: function(form) {
+		        $('.popup-submit, .mask').show();
+		    },
+		});
+	});
 });
 
 
