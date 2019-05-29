@@ -251,57 +251,61 @@
         <!-- 内容 start -->
 		<div class="wj-top"></div>
 		<form class="wrap wj-list" id="wj-list1" action="#">
-			<div class="subject">
-				<dl>
-				    <dt><strong class="num">01</strong>你的年龄？<span class="red">*</span></dt>
-				    <dd>
-				        <label><input type="radio" name="wj01" required>A . 18岁以下</label>
-				        <label><input type="radio" name="wj01">B . 19 - 25岁</label>
-				        <label><input type="radio" name="wj01">C . 26 - 35岁</label>
-				        <label><input type="radio" name="wj01">D . 36岁以上</label>
-				    </dd>
-				</dl>
-				<dl>
-				    <dt><strong class="num">02</strong>你做设计多久了？<span class="red">*</span></dt>
-				    <dd>
-				        <label><input type="radio" name="wj02" required>A . 0 - 3个月</label>
-				        <label><input type="radio" name="wj02">B . 4 - 12个月</label>
-				        <label><input type="radio" name="wj02">C . 1 - 2年</label>
-				        <label><input type="radio" name="wj02">D . 2年以上</label>
-				    </dd>
-				</dl>
-				<dl>
-				    <dt><strong class="num">03</strong>你是怎么知道巧匠课堂的？<span class="red">*</span></dt>
-				    <dd>
-				        <label><input type="radio" name="wj03" required>A . 朋友推荐的</label>
-				        <label><input type="radio" name="wj03">B . 其它设计平台</label>
-				        <label><input type="radio" name="wj03">C . 公众号上推荐的</label>
-				        <label><input type="radio" name="wj03">D . 百度一下就知道</label>
-				    </dd>
-				</dl>
-				<dl>
-				    <dt><strong class="num">04</strong>你为什么不愿意推荐巧匠给你身边的朋友？<span class="red">*</span></dt>
-				    <dd>
-				        <label><input type="radio" name="wj04" required>A . 教程质量一般</label>
-				        <label><input type="radio" name="wj04">B . 免费视频太少</label>
-				        <label><input type="radio" name="wj04">C . 网站体验不好</label>
-				        <label><input type="radio" name="wj04">D . 推荐没有好处</label>
-				        <label><input type="radio" name="wj04">E . 推荐过了</label>
-				    </dd>
-				</dl>
-				<dl>
-				    <dt><strong class="num">11</strong>终极大吐槽，把你觉得我们LOW的，对我们不满的地方都吐槽出来~ <span class="red">*</span></dt>
-				    <dd>
-				        <textarea class="textarea" required></textarea>
-				    </dd>
-				</dl>
-			</div>
-			<div class="other">
-			    <div class="tit">还有12题可以帮助我们更了解你的需求，从而优化巧匠体验。（不愿意可以直接点击结束问卷）</div>
-			    <div class="btn-box">
-			        <button type="submit" class="btn btn-agreen">我愿意</button>
-			        <button type="submit" class="btn btn-end">结束问卷</button>
-			    </div>
+			<div id="scroll">
+				<div>
+					<div class="subject">
+						<dl>
+							<dt><strong class="num">01</strong>你的年龄？<span class="red">*</span></dt>
+							<dd>
+								<label><input type="radio" name="wj01" required>A . 18岁以下</label>
+								<label><input type="radio" name="wj01">B . 19 - 25岁</label>
+								<label><input type="radio" name="wj01">C . 26 - 35岁</label>
+								<label><input type="radio" name="wj01">D . 36岁以上</label>
+							</dd>
+						</dl>
+						<dl>
+							<dt><strong class="num">02</strong>你做设计多久了？<span class="red">*</span></dt>
+							<dd>
+								<label><input type="radio" name="wj02" required>A . 0 - 3个月</label>
+								<label><input type="radio" name="wj02">B . 4 - 12个月</label>
+								<label><input type="radio" name="wj02">C . 1 - 2年</label>
+								<label><input type="radio" name="wj02">D . 2年以上</label>
+							</dd>
+						</dl>
+						<dl>
+							<dt><strong class="num">03</strong>你是怎么知道巧匠课堂的？<span class="red">*</span></dt>
+							<dd>
+								<label><input type="radio" name="wj03" required>A . 朋友推荐的</label>
+								<label><input type="radio" name="wj03">B . 其它设计平台</label>
+								<label><input type="radio" name="wj03">C . 公众号上推荐的</label>
+								<label><input type="radio" name="wj03">D . 百度一下就知道</label>
+							</dd>
+						</dl>
+						<dl>
+							<dt><strong class="num">04</strong>你为什么不愿意推荐巧匠给你身边的朋友？<span class="red">*</span></dt>
+							<dd>
+								<label><input type="radio" name="wj04" required>A . 教程质量一般</label>
+								<label><input type="radio" name="wj04">B . 免费视频太少</label>
+								<label><input type="radio" name="wj04">C . 网站体验不好</label>
+								<label><input type="radio" name="wj04">D . 推荐没有好处</label>
+								<label><input type="radio" name="wj04">E . 推荐过了</label>
+							</dd>
+						</dl>
+						<dl>
+							<dt><strong class="num">11</strong>终极大吐槽，把你觉得我们LOW的，对我们不满的地方都吐槽出来~ <span class="red">*</span></dt>
+							<dd>
+								<textarea class="textarea" required></textarea>
+							</dd>
+						</dl>
+					</div>
+					<div class="other">
+						<div class="tit">还有12题可以帮助我们更了解你的需求，从而优化巧匠体验。（不愿意可以直接点击结束问卷）</div>
+						<div class="btn-box">
+							<button type="submit" class="btn btn-agreen">我愿意</button>
+							<button type="submit" class="btn btn-end">结束问卷</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</form>
 		<div class="wj-bottom"></div>
@@ -314,7 +318,7 @@
 				<ul>
 				    <li><strong class="num">01</strong>巧匠准备了200份一个月VIP兑换码，填写完问卷调查就有机会获得巧匠课堂1个月VIP兑换码。</li>
 				    <li><strong class="num">02</strong>获得兑换码后到此链接兑换即可： www.qiaojiang.tv/rh</li>
-				    <li><strong class="num">03</strong>兑换码请在有效限期内使用(有效期至2019年6月20日)，过期不可兑换。</li>
+				    <li><strong class="num">03</strong>兑换码请在有效限期内使用(有效期至2019年7月1日)，过期不可兑换。</li>
 				    <li><strong class="num">04</strong>本活动最终解释权归巧匠课堂所有。</li>
 				</ul>
 			</div>
@@ -642,7 +646,7 @@
 		    <div class="ico-exchange"></div>
 		    <div class="text">感谢您的宝贵建议!!</div>
 		    <div class="btn-box">
-		        <a href="javascript:;" class="btn" onclick="$('.popup-subsuc .ico-close').trigger('click');">确 定</a>
+		        <a href="https://www.qiaojiang.tv/" class="btn">确 定</a>
 		    </div>
 		</div>
 		<!--结束问卷 end -->

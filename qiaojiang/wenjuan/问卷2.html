@@ -251,60 +251,64 @@
         <!-- 内容 start -->
 		<div class="wj-top"></div>
 		<form class="wrap wj-list" id="wj-list2">
-			<div class="subject">
-				<dl>
-				    <dt><strong class="num">01</strong>你所学的班级你最不满意的是什么？<span class="red">*</span></dt>
-				    <dd>
-				        <textarea class="textarea" required></textarea>
-				    </dd>
-				</dl>
-				<dl>
-				    <dt><strong class="num">02</strong>你觉得课程上那些点是我们需要加强的？<span class="red">*</span></dt>
-				    <dd>
-				        <textarea class="textarea" required></textarea>
-				    </dd>
-				</dl>
-				<dl>
-				    <dt><strong class="num">03</strong>你曾加入过多少个巧匠相关的群？<span class="red">*</span></dt>
-				    <dd>
-				        <label><input type="radio" name="wj03" required>A . 1 — 2个</label>
-				        <label><input type="radio" name="wj03">B . 3 — 5个</label>
-				        <label><input type="radio" name="wj03">C . 6个以上</label>
-				    </dd>
-				</dl>
-				<dl>
-				    <dt><strong class="num">04</strong>这些群里你最不喜欢的是什么？（多选）<span class="red">*</span></dt>
-				    <dd>
-				        <label><input type="checkbox" name="wj04" required>A . 没有获得我想要的帮助</label>
-				        <label><input type="checkbox" name="wj04">B . 群里的人跟我不是一类人</label>
-				        <label><input type="checkbox" name="wj04">C . 瞎扯淡聊天，灌水</label>
-				        <label><input type="checkbox" name="wj04">D . 天天打广告</label>
-				        <label><input type="checkbox" name="wj04">E . 死群除了广告没人说话</label>
-				    </dd>
-				</dl>
-				<dl>
-				    <dt><strong class="num">05</strong>如果1- 2分钟能教会你一些小技巧，这样的视频需要多一些吗？<span class="red">*</span></dt>
-				    <dd>
-				        <label><input type="radio" name="wj05" required>A . 需要</label>
-				        <label><input type="radio" name="wj05">B . 不需要</label>
-				        <label><input type="radio" name="wj05">C . 瞎扯淡聊天，灌水</label>
-				        <label><input type="radio" name="wj05">D . 天天打广告</label>
-				        <label><input type="radio" name="wj05">E . 死群除了广告没人说话</label>
-				    </dd>
-				</dl>
-				<dl>
-				    <dt><strong class="num">12</strong>如果巧匠开启免费学习日计划，每月10号全站视频统统免费不限量观看。你觉得？<span class="red">*</span></dt>
-				    <dd>
-				        <label><input type="radio" name="wj12" required>A . 没啥卵用，不感兴趣</label>
-				        <label><input type="radio" name="wj12">B . 挺好的</label>
-				        <label><input type="radio" name="wj12">C . 好到爆炸！！！</label>
-				    </dd>
-				</dl>
-			</div>
-			<div class="other">
-			    <div class="btn-box">
-			        <button type="submit" class="btn btn-submit">提交</button>
-			    </div>
+			<div id="scroll">
+			    <div>
+					<div class="subject">
+						<dl>
+							<dt><strong class="num">01</strong>你所学的班级你最不满意的是什么？<span class="red">*</span></dt>
+							<dd>
+								<textarea class="textarea" required></textarea>
+							</dd>
+						</dl>
+						<dl>
+							<dt><strong class="num">02</strong>你觉得课程上那些点是我们需要加强的？<span class="red">*</span></dt>
+							<dd>
+								<textarea class="textarea" required></textarea>
+							</dd>
+						</dl>
+						<dl>
+							<dt><strong class="num">03</strong>你曾加入过多少个巧匠相关的群？<span class="red">*</span></dt>
+							<dd>
+								<label><input type="radio" name="wj03" required>A . 1 — 2个</label>
+								<label><input type="radio" name="wj03">B . 3 — 5个</label>
+								<label><input type="radio" name="wj03">C . 6个以上</label>
+							</dd>
+						</dl>
+						<dl>
+							<dt><strong class="num">04</strong>这些群里你最不喜欢的是什么？（多选）<span class="red">*</span></dt>
+							<dd>
+								<label><input type="checkbox" name="wj04" required>A . 没有获得我想要的帮助</label>
+								<label><input type="checkbox" name="wj04">B . 群里的人跟我不是一类人</label>
+								<label><input type="checkbox" name="wj04">C . 瞎扯淡聊天，灌水</label>
+								<label><input type="checkbox" name="wj04">D . 天天打广告</label>
+								<label><input type="checkbox" name="wj04">E . 死群除了广告没人说话</label>
+							</dd>
+						</dl>
+						<dl>
+							<dt><strong class="num">05</strong>如果1- 2分钟能教会你一些小技巧，这样的视频需要多一些吗？<span class="red">*</span></dt>
+							<dd>
+								<label><input type="radio" name="wj05" required>A . 需要</label>
+								<label><input type="radio" name="wj05">B . 不需要</label>
+								<label><input type="radio" name="wj05">C . 瞎扯淡聊天，灌水</label>
+								<label><input type="radio" name="wj05">D . 天天打广告</label>
+								<label><input type="radio" name="wj05">E . 死群除了广告没人说话</label>
+							</dd>
+						</dl>
+						<dl>
+							<dt><strong class="num">12</strong>如果巧匠开启免费学习日计划，每月10号全站视频统统免费不限量观看。你觉得？<span class="red">*</span></dt>
+							<dd>
+								<label><input type="radio" name="wj12" required>A . 没啥卵用，不感兴趣</label>
+								<label><input type="radio" name="wj12">B . 挺好的</label>
+								<label><input type="radio" name="wj12">C . 好到爆炸！！！</label>
+							</dd>
+						</dl>
+					</div>
+					<div class="other">
+						<div class="btn-box">
+							<button type="submit" class="btn btn-submit">提交</button>
+						</div>
+					</div>
+				</div>
 			</div>
 		</form>
 		<div class="wj-bottom"></div>
@@ -317,7 +321,7 @@
 				<ul>
 				    <li><strong class="num">01</strong>巧匠准备了200份一个月VIP兑换码，填写完问卷调查就有机会获得巧匠课堂1个月VIP兑换码。</li>
 				    <li><strong class="num">02</strong>获得兑换码后到此链接兑换即可： www.qiaojiang.tv/rh</li>
-				    <li><strong class="num">03</strong>兑换码请在有效限期内使用(有效期至2019年6月20日)，过期不可兑换。</li>
+				    <li><strong class="num">03</strong>兑换码请在有效限期内使用(有效期至2019年7月1日)，过期不可兑换。</li>
 				    <li><strong class="num">04</strong>本活动最终解释权归巧匠课堂所有。</li>
 				</ul>
 			</div>
@@ -633,7 +637,7 @@
 		    <div class="ico-close"></div>
 		    <div class="desc">感谢你对巧匠课堂提出的建议，欢迎加入~<br><strong class="yellow">巧匠课堂核心用户群</strong></div>
 		    <div class="btn-box">
-		        <a href="http://wpa.qq.com/msgrd?v=3&uin=424485995&site=qq&menu=yes" target="_blank" class="btn"><span class="qjfont qj-qie"></span>立即入群</a>
+		        <a href="https://jq.qq.com/?_wv=1027&k=5rcrPAT" target="_blank" class="btn"><span class="qjfont qj-qie"></span>立即入群</a>
 		    </div>
 		</div>
 		<!--提交问卷 end -->
