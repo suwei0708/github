@@ -11,12 +11,18 @@
         goscrollTop();
         // 判断滚动条底部悬浮
         if(!hasScrollbar()) {
-            $('.footer').addClass('footer-fixed');
+			$('.footer').addClass('footer-fixed');
+			$('body').css({
+				'padding-bottom': $('.footer').outerHeight()
+			});
         }
         $(window).on('resize', function() {
             goscrollTop();
             if(!hasScrollbar()) {
-                $('.footer').addClass('footer-fixed');
+				$('.footer').addClass('footer-fixed');
+				$('body').css({
+				    'padding-bottom': $('.footer').outerHeight()
+				});
             }
         });
         $(window).on('scroll', function() {
