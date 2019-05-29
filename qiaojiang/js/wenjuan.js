@@ -48,9 +48,19 @@ $(function() {
 		});
 	});
 
+	// 问卷2根据url判断是否有前2题
+	if (getUrlParameterByName('study') == '0') {
+		$('#wj-list2').find('dl:lt(2)').remove();
+		$.each($('#wj-list2').find('.num'), function(i) {
+			var num;
+			$(this).text() - 2 > 9 ? num = $(this).text() - 2 : num = '0' + ($(this).text() - 2);
+			$(this).html(num);
+		});
+	};
+
 	// 滚动条美化
 	if($("#scroll").length) {
-		$("#scroll").panel({ iWheelStep: 32 });
+		$("#scroll").panel({ iWheelStep: 50 });
 	}
 });
 
@@ -91,6 +101,12 @@ function checkboxSelect(obj) {
     });
 };
 
+function getUrlParameterByName(name) {
+    name = name.replace(/[\[]/, '\\[').replace(/[\]]/, '\\]');
+    var regex = new RegExp('[\\?&]' + name + '=([^&#]*)'),
+        results = regex.exec(location.search);
+    return results === null ? '' : decodeURIComponent(results[1].replace(/\+/g, ' '))
+}
 
 // 滚动条美化
 (function($) {
