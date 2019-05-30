@@ -19,10 +19,22 @@ input, textarea {
 // 问卷
 .wj {
 	&-top {
-		.pos(r);
-		z-index: 5;;
 		height: 816px;
 		background: url(../images/wenjuan/wj-top.jpg) no-repeat center 0;
+		.man {
+			.pos(r);
+			z-index: 9;
+			float: right;
+			width: 0;
+			img {
+				.pos(a);
+				top: 276px;
+				right: 36px;
+				z-index: 9;
+				width: 762px;
+				max-width: none;
+			}
+		}
 	}
 	&-bottom {
 		padding-bottom: 120px;
@@ -125,7 +137,7 @@ input, textarea {
 			}
 		}
 		.other {
-			padding: 56px 0 0;
+			padding: 56px 0 30px;
 			text-align: center;
 			font-size: 0;
 			.tit {
@@ -404,19 +416,4 @@ input, textarea {
 			background: url(../images/wenjuan/sub-suc.png) no-repeat center 0;
 		}
 	}
-}
-#scroll {
-	height: 700px;
-	margin-top: -92px;
-}
-.swUipanelScrollBox,.swUipanelScrollBar{
-	width:4px;
-	top: 0;
-	z-index: 9;
-	right: 33px;
-	.bdr(4px);
-
-}
-.swUipanelScrollBar{
-	background:#ddd;
 }
