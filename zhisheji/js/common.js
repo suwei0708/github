@@ -23,7 +23,13 @@
 				$('body').css({
 				    'padding-bottom': $('.footer').outerHeight()
 				});
-            }
+			}
+			else {
+				$('.footer').removeClass('footer-fixed');
+				$('body').css({
+				    'padding-bottom': 0
+				});
+			}
         });
         $(window).on('scroll', function() {
             goscrollTop();
