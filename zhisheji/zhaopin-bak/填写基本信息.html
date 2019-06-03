@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>填写基本信息-致设计</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" href="../css/common.css">
+        <link rel="stylesheet" href="../css/zhaopin-bak.css">
+        <!-- 裁剪头像css start-->
+        <link rel="stylesheet" href="../css/cropper.css">
+        <!-- 裁剪头像css end-->
+    </head>
+    <body>
+        <!-- 内容主体 start -->
+        <div class="job-nav">
+            <div class="wrap">
+                <div class="fll city">全国站</div>
+                <div class="fll city-switch"><span class="ijob"></span>切换城市</div>
+                <a class="fr btn" href="#" target="_blank">免费发布职位</a>
+                <ul class="fr menu">
+                    <li><a href="招聘首页.html">首页</a></li>
+                    <li><a href="求职.html">求职</a></li>
+                    <li><a href="推荐公司.html">推荐公司</a></li>
+                    <li><a href="填写基本信息.html">我的简历</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="info-box">
+            <div class="wrap cl">
+                <div class="info-title">
+                    <div class="fr"><span>1</span> / 5</div>
+                    <h2>创建简历 - 基本信息</h2>
+                </div>
+                <div class="info-main">
+                    <form action="" id="form">
+                        <div class="info-data">
+                            <div class="data-img">
+                                <a href="javascript:;" class="fll img">
+                                    <span class="edit">
+                                        <span class="icon-photo"></span>上传头像
+                                    </span>
+                                </a>
+                                <div class="info">建议使用真实照片提升真实性、专业性<br>支持jpg、jpeg、gif、png，小于10MB·</div>
+                            </div>
+                            <div class="item">
+                                <input type="text" class="txt" placeholder="输入您的姓名" validate = '[{"type":"notNull","msg":"用户名不能为空"}]'>
+                            </div>
+                            <div class="item" id="sex">
+                                <div class="item-half">
+                                    <label>
+                                        <input type="radio" name="sex" value="男" checked>
+                                        <span class="radio-text">男</span>
+                                    </label>
+                                </div>
+                                <div class="item-half ml20">
+                                    <label>
+                                        <input type="radio" name="sex" value="女">
+                                        <span class="radio-text">女</span>
+                                    </label>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="item-half item-select">
+                                    <input type="text" class="txt txt-half readonly" placeholder="学历" readonly validate = '[{"type":"notNull","msg":"学历不能为空"}]'><span class="icon-arrowb"></span>
+                                    <ul class="select-list">
+                                        <li>大专</li>
+                                        <li>本科</li>
+                                        <li>硕士</li>
+                                        <li>博士</li>
+                                        <li>其他</li>
+                                    </ul>
+                                </div>
+                                <div class="item-half ml20 item-select">
+                                    <input type="text" class="txt txt-half readonly" placeholder="工作经验" readonly validate = '[{"type":"notNull","msg":"工作经验不能为空"}]'><span class="icon-arrowb"></span>
+                                    <ul class="select-list">
+                                        <li>应届毕业生</li>
+                                        <li>一年以内</li>
+                                        <li>1-3年</li>
+                                        <li>5-10年 </li>
+                                        <li>10年以上</li>
+                                        <li>不要求</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <input type="text" class="txt" placeholder="手机" validate = '[{"type":"notNull","msg":"手机不能为空"}]'>
+                            </div>
+                            <div class="item">
+                                <input type="text" class="txt" placeholder="邮箱" validate = '[{"type":"notNull","msg":"邮箱不能为空"}]'>
+                            </div>
+                            <div class="item">
+                                <input type="text" class="txt" placeholder="QQ" validate = '[{"type":"notNull","msg":"QQ不能为空"}]'>
+                            </div>
+                            <div class="item">
+                                <div class="item-half item-select">
+                                    <input type="text" class="txt txt-half readonly" placeholder="当前求职状态" readonly validate = '[{"type":"notNull","msg":"当前求职状态不能为空"}]'><span class="icon-arrowb"></span>
+                                    <ul class="select-list">
+                                        <li>离职</li>
+                                        <li>在职</li>
+                                    </ul>
+                                </div>
+                                <div class="item-half ml20 item-select">
+                                    <input type="text" class="txt txt-half readonly" placeholder="所在城市" readonly validate = '[{"type":"notNull","msg":"所在城市不能为空"}]'><span class="icon-arrowb"></span>
+                                    <ul class="select-list">
+                                        <li>热门城市</li>
+                                        <li>北京</li>
+                                        <li>广州</li>
+                                        <li>上海</li>
+                                        <li>杭州</li>
+                                        <li>其他城市</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <button class="btn" type="submit">下一步:继续完善职业信息</button>
+                            <!-- <a class="btn" href="工作经历.html">下一步:继续完善职业信息</a> -->
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <!-- 内容主体 end -->
+
+        <!-- footer start -->
+        <div class="footer">
+            <div class="cl wrap">
+                <div class="fll">
+                    <span class="ft-logo"></span>
+                    <p>电商设计师交流平台<span>www.zhisheji.com</span></p>
+                </div>
+                <div class="fr">
+                    <ul class="cl ft-nav">
+                        <li><a href="#">关于我们</a></li>
+                        <li><a href="#">版权声明</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="../加入我们.html">加入我们</a></li>
+                        <li><a href="#">联系我们</a></li>
+                        <li><a href="#">在线客服</a></li>
+                    </ul>
+                    <div class="ft-copy">
+                        <span>Copyright &copy; 2013-2017 致设计</span>
+                        <span>Processed in 0.202241 second(s), 25 queries , Gzip On.</span>
+                        <img src="http://static.anquan.org/static/outer/image/sm_83x30.png?id=www.zhisheji.com?t=51" alt="安全联盟认证" width="83" height="30" style="border: none;">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- footer end -->
+
+        <!--右边悬浮 start -->
+        <ul class="talk">
+            <li class="sign">
+                <a href="#" class="ico-sign">
+                    <span></span>
+                    <p>每日<br>签到</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="ico-edit">
+                    <span class="icon-edit"></span>
+                    <p>意见<br>反馈</p>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="ico-qun">
+                    <span class="icon-qq-qun"></span>
+                    <p>QQ群</p>
+                </a>
+            </li>
+            <li>
+                <a href="javascript:;" class="ico-back" id="goBack">
+                    <span class="icon-back-top"></span>
+                    <p>返回<br>顶部</p>
+                </a>
+            </li>
+        </ul>
+        <!--右边悬浮 end -->
+
+        <!-- 登录注册弹窗 start -->
+        <div class="popup-box popup-login">
+            <div class="popup">
+                <div class="popup-tit">
+                    <ul class="popup-tab">
+                        <li class="cur">账号登录</li>
+                        <li>用户注册</li>
+                    </ul>
+                </div>
+                <span class="popup-close icon-close"></span>
+                <div class="popup-ct">
+                    <form action="">
+                    <div class="item"><input class="txt" type="text" value=""><div class="input-label">帐号</div></div>
+                    <div class="item"><input class="txt" type="password" value=""><div class="input-label">密码</div></div>
+                    <div class="other">
+                        <div class="fr">还没有帐号？ <a href="javascript:;" class="blue btn-rgs">马上注册</a></div>
+                        <a href="javascript:;" class="btn-forget">忘记密码？</a>
+                    </div>
+                    <div class="popup-btn-box">
+                        <a href="javascript:;" class="btn btn-blue">登录</a>
+                    </div>
+                    </form>
+                </div>
+                <div class="popup-ct" style="display: none">
+                    <form action="">
+                    <div class="item"><input class="txt" type="text" value=""><div class="input-label">帐号</div></div>
+                    <div class="item"><input class="txt" type="password" value=""><div class="input-label">密码</div></div>
+                    <div class="item"><input class="txt" type="password" value=""><div class="input-label">确认密码</div></div>
+                    <div class="item"><input class="txt" type="text" value=""><div class="input-label">邮箱</div></div>
+                    <div class="other">
+                        <div class="fr">已经有账号，去 <a href="javascript:;" class="blue btn-lg">登录</a></div>
+                        <a href="javascript:;" class="btn-lg">立即登录</a>
+                    </div>
+                    <div class="popup-btn-box">
+                        <a href="javascript:;" class="btn btn-blue">注册</a>
+                    </div>
+                    </form>
+                </div>
+                <div class="other-login">
+                    <p>使用社交帐号登陆</p>
+                    <a href="#"><img src="../images/qq.png" alt="QQ登录"><br>QQ登录</a>
+                    <a href="#"><img src="../images/wx.png" alt="微信登录"><br>微信登录</a>
+                </div>
+            </div>
+        </div>
+        <!-- 登录注册弹窗 end -->
+
+        <!-- 切换城市弹窗 start -->
+        <div class="popup-box popup-changecity">
+            <div class="popup">
+                <span class="popup-close icon-close"></span>
+                <div class="popup-tit">
+                    切换城市
+                </div>
+                <div class="popup-ct">
+                    <div class="item">您当前选择的城市是：<a href="javascript:void(0);">全国</a></div>
+                    <dl>
+                        <dt>热门城市：</dt>
+                        <dd>
+                            <a href="javascript:;">北京</a>
+                            <a href="javascript:;">上海</a>
+                            <a href="javascript:;">广州</a>
+                            <a href="javascript:;">深圳</a>
+                            <a href="javascript:;">杭州</a>
+                            <a href="javascript:;">成都</a>
+                        </dd>
+                    </dl>
+                    <dl>
+                        <dt>点击进入或者选择其他城市：</dt>
+                        <dd>
+                            <a href="javascript:;">全国</a>
+                            <a href="javascript:;">北京</a>
+                            <a href="javascript:;">上海</a>
+                            <a href="javascript:;">广州</a>
+                            <a href="javascript:;">深圳</a>
+                            <a href="javascript:;">杭州</a>
+                            <a href="javascript:;">成都</a>
+                            <a href="javascript:;">武汉</a>
+                            <a href="javascript:;">其他城市</a>
+                        </dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <!-- 切换城市弹窗 end -->
+
+        <!-- 编辑头像弹窗 start -->
+        <div class="user-editbox">
+            <a href="javascript:;" class="user-ico user-editbox-close"><span class="icon-close"></span></a>
+            <div class="tit">编辑头像</div>
+            <div class="ct">
+                <div class="img"><img id="image" src="http://q.qlogo.cn/qqapp/101341581/C781FBAEE76D838500FA8B86CFE9ECAA/100" width="335" height="335"/></div>
+                <div class="preview-box">
+                    <div class="img-preview preview-lg"></div>
+                    <p>85PX</p>
+                    <div class="img-preview preview-md"></div>
+                    <p>50PX</p>
+                </div>
+                <a href="javascript:;" class="btn-up">重新上传<input type="file" id="avatarInput"></a>
+                <a href="javascript:;" class="btn">保 存</a>
+            </div>
+        </div>
+        <div class="mask"></div>
+        <!-- 编辑头像弹窗 end -->
+
+        <!-- 通用js start-->
+        <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script>var jq = jQuery.noConflict();</script>
+        <script src="../js/common.js" type="text/javascript"></script>
+        <!-- 通用js start-->
+
+        <!-- 裁剪插件js start-->
+        <script src="../js/cropper.js" type="text/javascript"></script>
+        <!-- 裁剪插件js start-->
+
+        <!-- 表单验证js start-->
+        <script src="../js/jquery.validate.js" type="text/javascript"></script>
+        <script type="text/javascript">
+            jQuery(function(){
+                // 判断图片非空
+                jQuery('#form .btn').on('click', function() {
+                    if(!jQuery('#form').find('.img img').length) {
+                        if(!jQuery('#form').find('.info .tip').length) {
+                            jQuery('#form').find('.info').append('<span class="tip"></span>');
+                        }
+                        jQuery('#form').find('.info .tip').html('图片不能为空');
+                        jQuery('#form').find('input').blur();
+                        return false;
+                    }
+                });
+                jQuery('#form').find('.img').on('click', function() {
+                    jQuery('#form .info').find('.tip').hide()
+                });
+            // 启用表单验证
+                jQuery('#form').validate();
+            });
+        </script>
+        <!-- 表单验证js end-->
+
+        <!--js调用 start -->
+        <script src="../js/zhaopin-bak.js" type="text/javascript"></script>
+        <!--js调用 end -->
+    </body>
+</html>
