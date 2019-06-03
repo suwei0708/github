@@ -22,7 +22,7 @@
                         <span>*</span>提问标题
                     </div>
                     <div class="ct">
-                        <input type="text" class="text" value="" name="title" placeholder="请输入提问标题" autocomplete="off">
+                        <input type="text" class="text" value="" name="title" placeholder="请输入提问标题" autocomplete="off" required>
                         <span class="num-box"><span class="num">30</span></span>
                     </div>
                 </div>
@@ -33,7 +33,7 @@
                     <div class="ct">
                         <div class="img" id="previews">
                             <img src="../images/fb-img.png" width="290" height="180" id="imghead">
-                            <input type="file" name="pic" autocomplete="off" id="choosefile">
+                            <input type="file" name="pic" autocomplete="off" id="choosefile" required>
                         </div>
                     </div>
                 </div>
@@ -42,7 +42,7 @@
                         <span>*</span>问题标签
                     </div>
                     <div class="ct">
-                        <input type="text" id="tagValue" class="text" name="tags" value="nihao,hello" placeholder="请输入问题标签">
+                        <input type="text" id="tagValue" class="text" name="tags" value="nihao,hello" placeholder="请输入问题标签" required>
                         <div class="tags tag-click">
                             <span class="fr">标签不超过3个 用空格隔离</span>
                             <span class="tag">Photoshop</span>
@@ -55,7 +55,7 @@
                         <span>*</span>详细描述
                     </div>
                     <div class="ct">
-                        <textarea class="text textarea" name="describe" value="" placeholder="请描述你遇到的问题"></textarea>
+                        <textarea class="text textarea" name="describe" value="" placeholder="请描述你遇到的问题" required></textarea>
                         <span class="num-box"><span class="num">1000</span></span>
                     </div>
 				</div>
@@ -76,28 +76,12 @@
             $('#form').validate({
                 errorElement: 'div',
                 errorClass: 'error',
-                validClass: 'right',
                 onfocusout: function(element) {
                     $(element).valid();
                 },
-				// 替换默认form提交，使用form提交请删除submitHandler
 				submitHandler:function(form){
 					$.msgBox.Alert(null, '提交成功')
 				},
-                rules: {
-                    title: {
-                        required: true
-					},
-					pic: {
-						required: true
-					},
-					tags: {
-					    required: true
-                    },
-                    describe: {
-                        required: true
-                    }
-                },
                 messages: {
                     title: {
                         required: '提问标题不能为空'
