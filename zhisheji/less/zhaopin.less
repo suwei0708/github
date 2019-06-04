@@ -64,6 +64,9 @@ body {
 .pt20 {
 	padding-top: 20px;
 }
+.pt28 {
+	padding-top: 28px;
+}
 .pb10 {
 	padding-bottom: 10px;
 }
@@ -242,10 +245,22 @@ body {
             height: 30px;
             line-height: 30px;
             font-size: 16px;
-            color: #666;
+            color: #333;
 			border: 1px solid #ddd;
 			border-right: none;
 			.bdr(4px, 0, 0, 4px);
+			&::-webkit-input-placeholder{
+				color: #666;
+			}
+			&::-moz-placeholder{
+				color: #666;
+			}
+			&:-moz-placeholder{
+				color: #666;
+			}
+			&:-ms-input-placeholder{
+				color: #666;
+			}
 			&:focus {
 				border-color: @blue;
 			}
@@ -255,8 +270,8 @@ body {
             vertical-align: top;
             width: 103px;
             height: 58px;
-            border: none;
             line-height: 58px;
+            border: none;
             font-size: 22px;
             background: @blue;
             color: #fff;
@@ -284,7 +299,22 @@ body {
 					color: @blue;
 				}
 			}
-    }
+		}
+		&-list {
+			width: 930px;
+			padding-top: 0;
+			.text {
+				width: 826px - 71;
+            	padding: 10px 35px;
+			}
+			.btn {
+				height: 52px;
+				line-height: 52px;
+			}
+			.hot {
+				padding: 5px 0 0 20px;
+			}
+		}
 	}
 	&-list {
 		background: #fff;
@@ -457,7 +487,7 @@ body {
 				font-size: 16px;
 				color: #2f2f2f;
 				cursor: pointer;
-                &.cur, &:hover {
+                &.cur {
 					color: @blue;
 					font-weight: 700;
 					&:after {
@@ -531,7 +561,56 @@ body {
                 color: #666;
             }
         }
-    }
+	}
+	&-select {
+		.pos(r);
+		padding: 12px 0 30px;
+		font-size: 0;
+		li {
+			padding: 21px 0 0;
+		}
+		span {
+			.dis(ib);
+			vertical-align: top;
+			width: 85px;
+			height: 30px;
+			line-height: 30px;
+			padding: 0 0 0 20px;
+			font-size: 14px;
+			color: #666;
+		}
+		a {
+			.dis(ib);
+			vertical-align: top;
+			width: 84px;
+			height: 30px;
+			line-height: 30px;
+			margin-left: 10px;
+			text-align: center;
+			font-size: 14px;
+			color: #666;
+			.bdr(4px);
+			&.cur, &:hover {
+				background: @blue;
+				color: #fff;
+			}
+		}
+		.clear-select {
+			.pos(a);
+			right: 20px;
+			bottom: 30px;
+			width: auto;
+			height: 30px;
+			line-height: 30px;
+			padding: 0;
+			color: #999;
+			font-size: 14px;
+			cursor: pointer;
+			&:hover {
+				color: @blue;
+			}
+		}
+	}
 }
 .page-job {
 	padding: 40px 0 60px;
@@ -565,5 +644,41 @@ body {
 		background: #fff;
 		.bdr(4px);
 		text-align: center;
+	}
+}
+.page {
+	.form {
+		.dis(ib);
+		vertical-align: top;
+		.input {
+			overflow: hidden;
+			width: 38px;
+			height: 38px;
+			line-height: 38px;
+			margin: 0 5px;
+			border: 1px solid #ddd;
+			.bdr(4px);
+			color: #666;
+			font-size: 14px;
+			background: #fff;
+			text-align: center;
+		}
+		.btn {
+			overflow: hidden;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			margin: 0 5px;
+			border: 1px solid #eee;
+			.bdr(4px);
+			color: #fff;
+			font-size: 14px;
+			background: @blue;
+			text-align: center;
+			cursor: pointer;
+			&:hover {
+				background: @blue-h;
+			}
+		}
 	}
 }

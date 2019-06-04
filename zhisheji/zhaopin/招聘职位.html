@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>招聘首页-致设计</title>
+        <title>招聘职位-致设计</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
@@ -381,29 +381,10 @@
 		<!-- 内容主体 start -->
 		<div class="bg-white">
 			<div class="wrap">
-				<div class="cl job-adv pt20">
-					<!-- 轮播图 start -->
-					<div id="job-sld1" class="fll">
-						<ul class="slides_container">
-							<li><a href="#"><img src="../images/article1.jpg" width="610" height="340" /></a></li>
-							<li><a href="#"><img src="../images/article2.jpg" width="610" height="340" /></a></li>
-							<li><a href="#"><img src="../images/article3.jpg" width="610" height="340" /></a></li>
-							<li><a href="#"><img src="../images/article4.jpg" width="610" height="340" /></a></li>
-						</ul>
-					</div>
-					<!-- 轮播图 end -->
-					<div class="item1 w290 fll ml10">
-						<a class="imgmask" href="#"><img src="../images/simg1-3.jpg" width="290" height="165" /></a>
-						<a class="imgmask mt10" href="#"><img src="../images/simg1-4.jpg" width="290" height="165" /></a>
-					</div>
-					<div class="item2 w300 fll ml10">
-						<a class="imgmask" href="#"><img src="../images/simg3.jpg" width="300" height="340" /></a>
-					</div>
-				</div>
 				<div class="cl job-nav">
 					<ul>
-						<li class="cur"><a href="招聘首页.html">首页</a></li>
-						<li><a href="招聘职位.html">职位</a></li>
+						<li><a href="招聘首页.html">首页</a></li>
+						<li class="cur"><a href="招聘职位.html">职位</a></li>
 						<li><a href="简历.html">简历</a></li>
 						<li><a href="消息.html">消息<i>99</i></a></li>
 					</ul>
@@ -411,17 +392,34 @@
 			</div>
 		</div>
 		<div class="wrap">
-			<div class="job-sobox">
-			    <form action="" class="form">
-			        <input type="text" class="text" autocomplete="off" placeholder="搜索职位、公司">
-			        <button type="submit" class="btn"><span class="icon-so"></span></button>
-				</form>
-				<div class="hot">
-				    <span>热门搜索：</span> <a href="#">产品经理 </a><a href="#">腾讯</a><a href="#">深圳</a> <a href="#">电商运营</a><a href="#">网易</a><a href="#">UI设计师</a><a href="#">销售经理</a><a href="#">产品经理</a><a href="#">内容运营</a><a href="#">拉勾APP</a>
-				</div>
-			</div>
-			<div class="cl pb60">
+			<div class="cl pb60 pt28">
 				<div class="fll w930">
+					<div class="job-sobox job-sobox-list">
+					    <form action="" class="form">
+					        <input type="text" class="text" autocomplete="off" placeholder="搜索职位、公司">
+					        <button type="submit" class="btn"><span class="icon-so"></span></button>
+					    </form>
+					    <div class="hot">
+					        <span>热门搜索：</span> <a href="#">产品经理 </a><a href="#">腾讯</a><a href="#">深圳</a> <a href="#">电商运营</a><a href="#">网易</a><a href="#">UI设计师</a><a href="#">销售经理</a><a href="#">产品经理</a><a href="#">内容运营</a><a href="#">拉勾APP</a>
+					    </div>
+					</div>
+					<div class="job-select">
+						<ul>
+						    <li>
+						        <span>工作地点：</span><a href="#" class="cur">全国</a><a href="#">北京</a><a href="#">上海</a><a href="#">广州</a><a href="#">深圳</a><a href="#">杭州</a><a href="#">其它</a>
+						    </li>
+						    <li>
+						        <span>薪资要求：</span><a href="#" class="cur">不限</a><a href="#">2-5K</a><a href="#">5-10k</a><a href="#">10-15k</a><a href="#">15-20k</a><a href="#">20-25k</a>
+						    </li>
+						    <li>
+						        <span>工作经验：</span><a href="#" class="cur">不限</a><a href="#">应届生</a><a href="#">1年</a><a href="#">1-3年</a><a href="#">3-5年</a><a href="#">5-10年</a><a href="#">10年以上</a>
+						    </li>
+						    <li>
+						        <span>职业性质：</span><a href="#" class="cur">不限</a><a href="#">全职</a><a href="#">兼职</a>
+						    </li>
+						</ul>
+						<span class="clear-select">清空筛选</span>
+					</div>
 					<div class="job-list">
 					    <div class="tit">
 					        <h2>最新职位</h2>
@@ -673,10 +671,13 @@
 						        <span class="cur">1</span>
 						        <a href="javascript:;">2</a>
 						        <a href="javascript:;">3</a>
-						        <a href="javascript:;">4</a>
 						        <span>···</span>
 						        <a href="javascript:;">269</a>
-						        <a href="javascript:;">下一页</a>
+								<a href="javascript:;">下一页</a>
+								<form action="" class="form">
+									<input type="text" class="input">
+									<button class="btn">GO</button>
+								</form>
 						    </div>
 						</div>
 					</div>
@@ -712,7 +713,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="tips-noexist"><span class="icon-tanhao"></span>您的企业法人不存在，请修改后提交信息，我们将会重新审核<a href="javascript:;" class="btn" onclick="$('.tips-noexist').remove();">完善信息</a></div>
         <!-- 内容主体 end -->
 
         <!-- footer start -->
