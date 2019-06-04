@@ -79,7 +79,6 @@ $(function() {
                     scrollTop: $('.wt-answer').offset().top - 117
                 }, 500);
             });
-            textareaChange('.wt-answer', 1000);
         }
     })
     // 提交答案
