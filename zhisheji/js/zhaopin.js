@@ -13,7 +13,7 @@ $(function() {
 	}
 
 	// 招聘首页公众号和QQ求职推荐 切换
-	$('.job-ecode .tit').on('click', 'li', function() {
+	$('.job-ecode .tit').on('mouseover', 'li', function() {
 	    $(this).addClass('cur').siblings().removeClass('cur');
 	    $(this).parents('.job-ecode').find('.ct').hide().eq($(this).index()).show();
 	});
