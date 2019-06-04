@@ -18,13 +18,111 @@ $(function() {
 	    $(this).parents('.job-ecode').find('.ct').hide().eq($(this).index()).show();
 	});
 
+	// 招聘通用下拉
+	$('.item-select').on('click', function() {
+		if($(this).find('.select-list').is(':hidden')) {
+			$('.select-list').slideUp();
+			$('.item-select').css('z-index', 'auto');
+			$(this).css('z-index', '999');
+			$(this).find('.select-list').slideDown();
+		}
+		return false;
+	});
+	$('.select-list').on('click', 'li', function() {
+	    var txtDom = $(this).parents('.item-select').find('.input');
+	    if (txtDom.is('input')) {
+	        txtDom.val($(this).text());
+	    } else {
+	        txtDom.html($(this).text());
+	    }
+	    $(this).parents('.select-list').slideUp();
+	    $('.item-select').css('z-index', 'auto');
+	    return false;
+	});
+	$('body').on('click', function() {
+		if ($('.select-list').is(':visible')) {
+			$('.select-list').slideUp();
+		}
+	});
+
+	// 裁剪头像
+	$('#avatarInput').on('change', function(e) {
+	    var filemaxsize = 1024 * 10; //10M
+	    var target = $(e.target);
+	    var Size = target[0].files[0].size / 1024;
+	    if (Size > filemaxsize) {
+	        $.msgBox.Alert(null, '图片大于10M，请重新选择!');
+	        return false;
+	    }
+	    if (!this.files[0].type.match(/image.*/)) {
+	        $.msgBox.Alert(null, '请选择正确的图片!');
+	    } else {
+	        var file = target[0].files[0];
+	        var src = window.URL.createObjectURL(file);
+	        $('.user-editbox').show();
+	        maskShow();
+	        $('.user-editbox .img').html('<img id="image" src="' + src + '" width="335" height="335"/>');
+	        var image = document.getElementById('image');
+	        $(image).on('load', function() {
+	            $(image).cropper({
+	                aspectRatio: 200 / 200,
+	                viewMode: 2, //显示
+	                dragMode: "move",
+	                preview: '.img-preview'
+	            });
+	        });
+	    }
+	});
+
+	// 关闭裁剪头像
+	$('.user-editbox-close').on('click', function() {
+	    $('.user-editbox').hide();
+	    // maskHide();
+	});
+
+	// 上传图像
+	$('.data-img .img').on('click', function() {
+	    console.log(1)
+	    $('#avatarInput').trigger('click');
+	});
+
+	// 保存头像
+	$('.user-editbox').on('click', '.btn', function() {
+	    // var image = document.getElementById('image');
+	    var $imgData = $(image).cropper('getCroppedCanvas', {
+	        width: 200,
+	        height: 200
+	    });
+	    dataurl = $imgData.toDataURL('image/png');
+
+	    if ($('.data-img .img img').length) {
+	        $('.data-img .img img').attr('src', dataurl);
+	    } else {
+	        $('.data-img .img').prepend('<img height="100" width="100" src="' + dataurl + '">');
+	    }
+
+	    $('.user-editbox').hide();
+	    // maskHide();
+	});
+
+	// 启用时间插件
+	if ($('.timepicker').length) {
+	    timepicker();
+	};
+
 });
 
-function timepicker() {
-    jQuery.datetimepicker.setLocale('ch');
+function timepicker(format) {
+	jQuery.datetimepicker.setLocale('ch');
+	if(format) {
+		var data = format;
+	}
+	else {
+		var data = 'Y-m-d';
+	}
     jQuery('.timepicker').datetimepicker({
         // lang:"ch", //语言选择中文 注：旧版本 新版方法：$.datetimepicker.setLocale('ch');
-        format:"Y-m-d",      //格式化日期
+        format: data, //格式化日期
         timepicker:false,    //关闭时间选项
         todayButton:false    //关闭选择今天按钮
     });

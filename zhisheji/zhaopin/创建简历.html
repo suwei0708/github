@@ -2,11 +2,17 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>招聘职位-致设计</title>
+        <title>创建简历-致设计</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
-        <link rel="stylesheet" href="../css/zhaopin.css">
+		<link rel="stylesheet" href="../css/zhaopin.css">
+		<!-- 裁剪头像css start -->
+		<link rel="stylesheet" href="../css/cropper.css">
+		<!-- 裁剪头像css end -->
+		<!-- 时间插件css start -->
+		<link rel="stylesheet" href="../css/jquery.datetimepicker.min.css">
+		<!-- 时间插件css end -->
     </head>
     <body>
         <!-- 头部 start -->
@@ -379,338 +385,148 @@
         <!-- 头部 end -->
 
 		<!-- 内容主体 start -->
-		<div class="bg-white">
-			<div class="wrap">
-				<div class="cl job-nav">
-					<ul>
-						<li><a href="招聘首页.html">首页</a></li>
-						<li class="cur"><a href="招聘职位.html">职位</a></li>
-						<li><a href="简历.html">简历</a></li>
-						<li><a href="消息.html">消息<i>99</i></a></li>
-					</ul>
+		<div class="wrap jinfo-box">
+			<div class="jinfo-pos">当前栏目：创建简历</div>
+			<div class="jinfo-form">
+				<div class="jinfo-tit">
+					<h2>基本信息</h2>
 				</div>
-			</div>
-		</div>
-		<div class="wrap">
-			<div class="cl pb60 pt28">
-				<div class="fll w930">
-					<div class="job-sobox job-sobox-list">
-					    <form action="" class="form">
-					        <input type="text" class="text" autocomplete="off" placeholder="搜索职位、公司">
-					        <button type="submit" class="btn"><span class="icon-so"></span></button>
-					    </form>
-					    <div class="hot">
-					        <span>热门搜索：</span> <a href="#">产品经理 </a><a href="#">腾讯</a><a href="#">深圳</a> <a href="#">电商运营</a><a href="#">网易</a><a href="#">UI设计师</a><a href="#">销售经理</a><a href="#">产品经理</a><a href="#">内容运营</a><a href="#">拉勾APP</a>
-					    </div>
-					</div>
-					<div class="job-select">
-						<ul>
-						    <li>
-						        <span>工作地点：</span><a href="#" class="cur">全国</a><a href="#">北京</a><a href="#">上海</a><a href="#">广州</a><a href="#">深圳</a><a href="#">杭州</a><a href="#">其它</a>
-						    </li>
-						    <li>
-						        <span>薪资要求：</span><a href="#" class="cur">不限</a><a href="#">2-5K</a><a href="#">5-10k</a><a href="#">10-15k</a><a href="#">15-20k</a><a href="#">20-25k</a>
-						    </li>
-						    <li>
-						        <span>工作经验：</span><a href="#" class="cur">不限</a><a href="#">应届生</a><a href="#">1年</a><a href="#">1-3年</a><a href="#">3-5年</a><a href="#">5-10年</a><a href="#">10年以上</a>
-						    </li>
-						    <li>
-						        <span>职业性质：</span><a href="#" class="cur">不限</a><a href="#">全职</a><a href="#">兼职</a>
-						    </li>
-						</ul>
-						<span class="clear-select">清空筛选</span>
-					</div>
-					<div class="job-list">
-					    <div class="tit">
-					        <h2>最新职位</h2>
-					    </div>
-					    <div class="list">
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
+				<form action="" id="form" class="form">
+					<dl class="item item-avatar">
+						<dt><span>*</span> 简历头像</dt>
+						<dd>
+							<input type="hidden" required>
+							<div class="data-img">
+							    <a href="javascript:;" class="fll img">
+							        <span class="edit">
+							            <span class="icon-photo"></span>上传头像
+							        </span>
+							    </a>
+							    <div class="info">支持jpg、图片大小不超过5MB<br>建议使用真实照片提升真实性。</div>
+							</div>
+						</dd>
+					</dl>
+
+					<dl class="item item-half">
+						<dt><span>*</span> 真实姓名</dt>
+						<dd>
+							<input name="name" type="text" class="input" placeholder="输入您的姓名" required>
+							<div class="tips-err">此项内容不能为空</div>
+						</dd>
+					</dl>
+					<dl class="item item-half">
+					    <dt><span>*</span> 出生日期</dt>
+					    <dd>
+							<input type="text" class="input readonly timepicker" placeholder="1990-01-01" required>
+							<span class="icon-sanjiao"></span>
+					        <div class="tips-err">此项内容不能为空</div>
+					    </dd>
+					</dl>
+
+					<dl class="item">
+					    <dt><span>*</span> 性别</dt>
+					    <dd>
+					        <label><input type="radio" name="sex" value="男" checked>男</label>
+					        <label><input type="radio" name="sex" value="女">女</label>
+					    </dd>
+					</dl>
+
+					<dl class="item item-half item-select">
+					    <dt><span>*</span> 工作经验</dt>
+					    <dd>
+							<input type="text" class="input readonly" placeholder="选择学历" readonly required>
+							<span class="icon-sanjiao"></span>
+							<div class="select-list">
+								<ul>
+									<li>1年及应届生</li>
+									<li>2年经验</li>
+									<li>3年经验</li>
+									<li>4年经验</li>
+									<li>5年经验</li>
+									<li>6年经验</li>
+								</ul>
+							</div>
+					        <div class="tips-err">此项内容不能为空</div>
+					    </dd>
+					</dl>
+					<dl class="item item-half item-select">
+					    <dt><span>*</span> 期望薪资</dt>
+					    <dd>
+					        <input type="text" class="input readonly" placeholder="0~3k" readonly required>
+					        <span class="icon-sanjiao"></span>
+					        <div class="select-list">
+					            <ul>
+					                <li>0~3k</li>
+					                <li>3-6k</li>
+					                <li>6-9k</li>
+					                <li>9-12k</li>
+					                <li>12-15k</li>
+					                <li>15k-18k</li>
+					            </ul>
 					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
+					        <div class="tips-err">此项内容不能为空</div>
+					    </dd>
+					</dl>
+
+					<dl class="item item-half item-select">
+					    <dt><span>*</span> 期望城市</dt>
+					    <dd>
+					        <input type="text" class="input readonly" placeholder="工作城市" readonly required>
+					        <span class="icon-sanjiao"></span>
+					        <div class="select-list">
+					            <ul>
+					                <li>0~3k</li>
+					                <li>3-6k</li>
+					                <li>6-9k</li>
+					                <li>9-12k</li>
+					                <li>12-15k</li>
+					                <li>15k-18k</li>
+					            </ul>
 					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong>
-					                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-					        <div class="item">
-					            <div class="fll item-l">
-					                <div class="j-name">
-					                    <a class="name" href="招聘信息.html" target="_blank">资深电商设计师</a>
-					                    <strong class="price yellow">8K-10K</strong			                    <span class="times">1天前发布</span>
-					                    <span class="btn">发起沟通</span>
-					                </div>
-					                <div class="j-intro">北京<span>|</span>3-5年经验<span>|</span>学历不限</div>
-					            </div>
-					            <div class="fr item-r">
-					                <div class="fll c-img">
-					                    <a href="#" target="_blank">
-					                        <img src="../images/man.jpg" width="62" height="62">
-					                    </a>
-					                </div>
-					                <div class="c-name"><a href="#" target="_blank">名创优品</a></div>
-					                <div class="c-slogan">生活百货<span>|</span>30-50人</div>
-					            </div>
-					        </div>
-						</div>
-						<div class="page-job page-gray">
-						    <div class="page">
-						        <span>上一页</span>
-						        <span class="cur">1</span>
-						        <a href="javascript:;">2</a>
-						        <a href="javascript:;">3</a>
-						        <span>···</span>
-						        <a href="javascript:;">269</a>
-								<a href="javascript:;">下一页</a>
-								<form action="" class="form">
-									<input type="text" class="input">
-									<button class="btn">GO</button>
-								</form>
-						    </div>
-						</div>
-					</div>
-				</div>
-				<div class="fr w270">
-					<div class="job-sideadv pb10">
-						<a class="imgmask" href="#"><img src="../images/simg1-1.jpg" width="270" height="120" /></a>
-						<a class="imgmask" href="#"><img src="../images/simg1-2.jpg" width="270" height="120" /></a>
-						<a class="imgmask" href="#"><img src="../images/simg1-3.jpg" width="270" height="120" /></a>
-						<a class="imgmask" href="#"><img src="../images/simg1-4.jpg" width="270" height="120" /></a>
-					</div>
-					<div class="job-ecode mb20">
-					    <ul class="tit">
-					        <li class="cur">公众号</li>
-					        <li>求职群</li>
-					    </ul>
-					    <div class="ct">
-					        <img src="../images/zhaopin/ecode-gzh.jpg" width="123" height="123">
-					        <p>定期推送招聘相关资料</p>
-					    </div>
-					    <div class="ct" style="display: none">
-							<img src="../images/zhaopin/ecode-qzq.jpg" width="123" height="123">
-							<p>交流获取招聘信息</p>
-					    </div>
-					</div>
-					<div class="job-contact">
-					    <div class="tit">联系客服</div>
-					    <div class="ct">
-							<a class="btn" href="http://wpa.qq.com/msgrd?v=3&amp;uin=869706776&amp;site=qq&amp;menu=yes" target="_blank"><span class="icon-qq"></span>在线咨询</a>
-							<p>周一至周五 09:30 - 18:00</p>
-					    </div>
-					</div>
-				</div>
+					        <div class="tips-err">此项内容不能为空</div>
+					    </dd>
+					</dl>
+					<dl class="item item-half">
+					    <dt><span>*</span> 手机号码</dt>
+					    <dd>
+					        <input type="text" class="input" placeholder="手机号" required>
+					        <div class="tips-err">此项内容不能为空</div>
+					    </dd>
+					</dl>
+
+					<dl class="item item-half">
+					    <dt><span>*</span> 邮箱</dt>
+					    <dd>
+					        <input type="text" class="input" placeholder="邮箱" required>
+					        <div class="tips-err">此项内容不能为空</div>
+					    </dd>
+					</dl>
+					<dl class="item item-half">
+					    <dt>QQ</dt>
+					    <dd>
+					        <input type="text" class="input" placeholder="QQ联系更方便" required>
+					        <div class="tips-err">此项内容不能为空</div>
+					    </dd>
+					</dl>
+
+					<dl class="item">
+						<dt><span>*</span> 求职状态</dt>
+						<dd>
+							<label><input type="radio" name="sex" value="离职" checked>离职</label>
+							<label><input type="radio" name="sex" value="在职">在职</label>
+						</dd>
+					</dl>
+
+					<dl class="item">
+						<dt>&nbsp;</dt>
+						<dd>
+							<div class="tips">Tips: 最新发布的原创作品会自动同步到简历</div>
+							<button class="btn" type="submit">下一步</button>
+							<!-- <a class="btn" href="工作经历.html">下一步:继续完善职业信息</a> -->
+						</dd>
+					</dl>
+
+				</form>
 			</div>
 		</div>
         <!-- 内容主体 end -->
@@ -747,7 +563,35 @@
         <!-- 通用js start-->
 
         <!--js调用 start -->
+        <script src="../js/cropper.js" type="text/javascript"></script>
+        <script src="../js/jquery.datetimepicker.full.js" type="text/javascript"></script>
+        <script src="../js/validate-1.14.0.min.js" type="text/javascript"></script>
         <script src="../js/zhaopin.js" type="text/javascript"></script>
-        <!--js调用 end -->
+		<!--js调用 end -->
+		<script>
+			$(function() {
+				$.extend(jQuery.validator.messages, {
+					required: "此项内容不能为空"
+				});
+
+				$.validator.setDefaults({
+					errorElement: 'div',
+					errorClass: 'tips-err',
+					onfocusout: function(element) {
+						$(element).valid();
+					},
+					debug: true, // 只验证不提交表单
+					errorPlacement: function(error, element) {
+						error.appendTo(element.parents('dd'));
+					},
+				});
+				$('#form').validate({
+					// 验证成功后提交
+					submitHandler: function(form) {
+						$('.popup-submit, .mask').show();
+					},
+				});
+			});
+		</script>
     </body>
 </html>
