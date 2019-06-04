@@ -1474,6 +1474,42 @@ i {
         }
     }
 }
+.page {
+	.form {
+		.dis(ib);
+		vertical-align: top;
+		.input {
+			overflow: hidden;
+			width: 38px;
+			height: 38px;
+			line-height: 38px;
+			margin: 0 5px;
+			border: 1px solid #ddd;
+			.bdr(4px);
+			color: #666;
+			font-size: 14px;
+			background: #fff;
+			text-align: center;
+		}
+		.btn {
+			overflow: hidden;
+			width: 40px;
+			height: 40px;
+			line-height: 40px;
+			margin: 0 5px;
+			border: 1px solid #eee;
+			.bdr(4px);
+			color: #fff;
+			font-size: 14px;
+			background: @blue;
+			text-align: center;
+			cursor: pointer;
+			&:hover {
+				background: @blue-h;
+			}
+		}
+	}
+}
 .pg {
     float: none !important;
     label {
@@ -3398,16 +3434,17 @@ body {
                     .bdr(4px);
                     cursor: auto;
                     .info {
-                        padding: 0 0 13px;
+                        padding: 0 0 22px;
                         text-align: center;
+                        border-bottom: 1px solid #f6f6f6;
                     }
                     .img {
                         .pos(r);
-                        width: 80px;
+                        width: 96px;
                         margin: 0 auto;
                         img {
-                            width: 80px;
-                            height: 80px;
+                            width: 96px;
+                            height: 96px;
                             .bdr(50%);
                         }
                         .u {
@@ -3442,22 +3479,25 @@ body {
                         }
                     }
                     .name {
-                        padding-top: 6px;
+                        padding-top: 16px;
                         line-height: 25px;
                         font-size: 16px;
-                        color: #666;
+						color: #333;
+						font-weight: 700;
                     }
                     .adress {
                         line-height: 25px;
                         font-size: 14px;
                         color: #999;
-                    }
+					}
+					ul {
+						padding: 14px 0;
+					}
                     li {
-                        padding: 15px 16px;
+                        padding: 12px 0 12px 30px;
                         line-height: 24px;
                         font-size: 14px;
                         color: #666;
-                        border-top: 1px solid #f6f6f6;
                         span {
                             .dis(ib);
                             vertical-align: middle;
