@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>创建简历-致设计</title>
+        <title>教育经历-致设计</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
@@ -385,131 +385,77 @@
         <!-- 头部 end -->
 
 		<!-- 内容主体 start -->
-		<div class="wrap jinfo-box">
-			<div class="jinfo-pos">当前栏目：创建简历</div>
-			<form action="" id="form" class="jinfo-form">
+		<form action="" id="form" class="wrap jinfo-box">
+			<div class="jinfo-pos">当前栏目：教育经历</div>
+			<div class="jinfo-form">
 				<div class="jinfo-tit">
-					<h2>基本信息</h2>
+					<h2>教育经历</h2>
 				</div>
 				<div class="jinfo-ct">
-					<dl class="item item-avatar">
-						<dt><span>*</span> 简历头像</dt>
-						<dd>
-							<input type="text" required name="avatar" class="avatar">
-							<div class="data-img">
-							    <a href="javascript:;" class="fll img">
-							        <span class="edit">
-							            <span class="icon-photo"></span>上传头像
-							        </span>
-							    </a>
-							    <div class="info">支持jpg、图片大小不超过5MB<br>建议使用真实照片提升真实性。</div>
-							</div>
-						</dd>
-					</dl>
-
-					<dl class="item item-half">
-						<dt><span>*</span> 真实姓名</dt>
-						<dd>
-							<input name="name" type="text" class="input" placeholder="输入您的姓名" required autocomplete="off">
-						</dd>
-					</dl>
-					<dl class="item item-half">
-					    <dt><span>*</span> 出生日期</dt>
-					    <dd>
-							<input name="date" type="text" class="input readonly timepicker" placeholder="1990-01-01" required autocomplete="off">
-							<span class="icon-sanjiao"></span>
-					    </dd>
-					</dl>
-
-					<dl class="item">
-					    <dt><span>*</span> 性别</dt>
-					    <dd class="radio">
-					        <label><input type="radio" name="sex" value="男" checked required>男</label>
-					        <label><input type="radio" name="sex" value="女">女</label>
-					    </dd>
-					</dl>
-
-					<dl class="item item-half item-select">
-					    <dt><span>*</span> 工作经验</dt>
-					    <dd>
-							<input name="xueli" type="text" class="input readonly" placeholder="1年及应届生" readonly required autocomplete="off">
-							<span class="icon-sanjiao"></span>
-							<div class="select-list">
-								<ul>
-									<li>1年及应届生</li>
-									<li>2年经验</li>
-									<li>3年经验</li>
-									<li>4年经验</li>
-									<li>5年经验</li>
-									<li>6年经验</li>
-								</ul>
-							</div>
-					    </dd>
-					</dl>
-					<dl class="item item-half item-select">
-					    <dt><span>*</span> 期望薪资</dt>
-					    <dd>
-					        <input name="xinzi" type="text" class="input readonly" placeholder="0~3k" readonly required autocomplete="off">
-					        <span class="icon-sanjiao"></span>
-					        <div class="select-list">
-					            <ul>
-					                <li>0~3k</li>
-					                <li>3-6k</li>
-					                <li>6-9k</li>
-					                <li>9-12k</li>
-					                <li>12-15k</li>
-					                <li>15k-18k</li>
-					            </ul>
-					        </div>
-					    </dd>
-					</dl>
-
-					<dl class="item item-half item-select">
-					    <dt><span>*</span> 期望城市</dt>
-					    <dd>
-					        <input name="city" type="text" class="input readonly" placeholder="工作城市" readonly required id="city-input" autocomplete="off">
-					        <span class="icon-sanjiao"></span>
-					    </dd>
-					</dl>
-					<dl class="item item-half">
-					    <dt><span>*</span> 手机号码</dt>
-					    <dd>
-					        <input name="phone" type="text" class="input" placeholder="手机号" required autocomplete="off">
-					    </dd>
-					</dl>
-
-					<dl class="item item-half">
-					    <dt><span>*</span> 邮箱</dt>
-					    <dd>
-					        <input name="email" type="email" class="input" placeholder="邮箱" required autocomplete="off">
-					    </dd>
-					</dl>
-					<dl class="item item-half">
-					    <dt>QQ</dt>
-					    <dd>
-					        <input name="qq" type="text" class="input" placeholder="QQ联系更方便" autocomplete="off">
-					    </dd>
-					</dl>
-
-					<dl class="item">
-						<dt><span>*</span> 求职状态</dt>
-						<dd class="radio">
-							<label><input type="radio" name="status" value="离职" checked required>离职</label>
-							<label><input type="radio" name="status" value="在职">在职</label>
-						</dd>
-					</dl>
+					<div class="base-box">
+						<dl class="item item-half2 block">
+						    <dt><span>*</span> 学校名称</dt>
+						    <dd>
+						        <input name="name" type="text" class="input" placeholder="从最近工作填写" required autocomplete="off">
+						        <div class="num-box"><span class="num">20</span></div>
+						    </dd>
+						</dl>
+						<dl class="item item-half2 item-select block">
+						    <dt><span>*</span> 学历</dt>
+						    <dd>
+						        <input name="zhicheng" type="text" class="input readonly" placeholder="请选择" required readonly autocomplete="off">
+						        <span class="icon-sanjiao"></span>
+						        <div class="select-list">
+						            <ul>
+						                <li>小学</li>
+						                <li>初中</li>
+						                <li>高中</li>
+						                <li>大专</li>
+						                <li>本科及以上</li>
+						            </ul>
+						        </div>
+						    </dd>
+						</dl>
+						<dl class="item item-half2 block">
+						    <dt><span>*</span> 专业名称</dt>
+						    <dd>
+						        <input name="zhuanye" type="text" class="input" placeholder="例如：视觉传达" required autocomplete="off">
+						    </dd>
+						</dl>
+						<dl class="item">
+						    <dt><span>*</span> 在校时间</dt>
+						    <dd>
+						        <div class="pos-box">
+						            <input name="datea" type="text" class="input readonly timepicker" placeholder="入学年份" required autocomplete="off">
+						            <span class="icon-sanjiao"></span>
+						        </div>
+						        <i>至</i>
+						        <div class="pos-box">
+						            <input name="dateb" type="text" class="input readonly timepicker" placeholder="毕业年份" required autocomplete="off">
+						            <span class="icon-sanjiao"></span>
+						        </div>
+						    </dd>
+						</dl>
+					</div>
 
 					<dl class="item">
 						<dt></dt>
 						<dd>
-							<div class="tips">Tips: 最新发布的原创作品会自动同步到简历</div>
-							<button class="btn" type="submit">下一步</button>
-							<!-- <a class="btn" href="工作经历.html">下一步:继续完善职业信息</a> -->
+							<div class="btn-add"><span class="icon-play1"></span>添加教育经历</div>
 						</dd>
 					</dl>
+
+					<!-- <dl class="item">
+					    <dt></dt>
+					    <dd>
+					        <button class="btn" type="submit">下一步</button>
+					        <a class="btn-back" href="工作经历.html">上一步</a>
+					    </dd>
+					</dl> -->
+
 				</div>
-			</form>
-		</div>
+			</div>
+		</form>
 		<!-- 内容主体 end -->
 
 		<!-- 编辑头像弹窗 start -->
@@ -573,27 +519,14 @@
 				// 验证设置
 				$.extend(jQuery.validator.messages, {
 					required: "此项内容不能为空",
-					email: "请输入有效的电子邮件地址"
 				});
 				$.validator.setDefaults({
 					errorElement: 'div',
 					errorClass: 'tips-err',
 					debug: true, // 只验证不提交表单
 					errorPlacement: function(error, element) {
-						error.appendTo(element.parents('dd'));
-					},
-					rules: {
-						phone: {
-							minlength : 11,
-							isMobile : true
-						}
-					},
-					messages: {
-						phone: {
-							minlength : "请正确填写手机号码",
-							isMobile : "请正确填写手机号码"
-						}
-					},
+						error.appendTo(element.parent());
+					}
 				});
 
 				//手机号码验证
@@ -606,7 +539,7 @@
 				var validator = $('#form').validate({
 					// 验证成功后提交
 					submitHandler: function(form) {
-						window.location.href = '工作经历.html'
+						window.location.href = '教育经历.html'
 					},
 				});
 

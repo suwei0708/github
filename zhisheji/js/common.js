@@ -1100,7 +1100,6 @@ function checkboxSelect(obj) {
             jQuery(this).parents('span').addClass('ico-radio-cur');
         }
         jQuery(this).on('change', function() {
-            console.log(jQuery(this))
             if (jQuery(this).prop('checked')) {
                 jQuery(this).parents('span').addClass('ico-radio-cur');
             } else {
@@ -1239,7 +1238,7 @@ function monitorVal(obj, nums, minus) {
             jQuery(obj).nextAll('.num-box').find('.num').html(jQuery(obj).val().length);
         }
     }
-
+	jQuery(obj).unbind();
     jQuery(obj).bind('input propertychange', function() {
         if (jQuery(obj).val().length >= nums) {
             jQuery(obj).val(jQuery(obj).val().substr(0, nums));
