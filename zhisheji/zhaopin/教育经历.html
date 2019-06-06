@@ -444,38 +444,53 @@
 							<div class="btn-add"><span class="icon-play1"></span>添加教育经历</div>
 						</dd>
 					</dl>
+				</div>
+			</div>
 
-					<!-- <dl class="item">
+			<div class="jinfo-form mt20">
+			    <div class="jinfo-tit">自我介绍</div>
+			    <div class="jinfo-ct">
+			        <dl class="item">
+			            <dt><span>*</span> 自我评价</dt>
+			            <dd>
+			                <textarea name="pingjia" class="input textarea" placeholder="介绍个人特长及爱好等。" required></textarea>
+			            </dd>
+			        </dl>
+			        <dl class="item">
+			            <dt>熟练软件</dt>
+			            <dd>
+							<input type="text" id="tagValue" class="input" name="tags" value="nihao,hello" placeholder="请输入标签" required>
+							<div class="tags tag-click">
+							    <span class="fr">标签用空格分离</span>
+							    <span class="tag">Photoshop</span>
+							    <span class="tag">基础理论</span>
+							</div>
+			            </dd>
+			        </dl>
+			        <dl class="item">
+			            <dt>熟练软件</dt>
+			            <dd>
+			                <input type="text" id="tagValue2" class="input" name="tags2" value="nihao,hello" placeholder="请输入标签" required>
+			                <div class="tags tag-click">
+			                    <span class="fr">标签用空格分离</span>
+			                    <span class="tag">Photoshop</span>
+			                    <span class="tag">基础理论</span>
+			                </div>
+			            </dd>
+			        </dl>
+
+			        <dl class="item">
 					    <dt></dt>
 					    <dd>
-					        <button class="btn" type="submit">下一步</button>
+					        <button class="btn" type="submit">创建简历</button>
 					        <a class="btn-back" href="工作经历.html">上一步</a>
 					    </dd>
-					</dl> -->
+					</dl>
 
-				</div>
+			    </div>
 			</div>
 		</form>
 		<!-- 内容主体 end -->
-
-		<!-- 编辑头像弹窗 start -->
-		<div class="user-editbox">
-		    <a href="javascript:;" class="user-ico user-editbox-close"><span class="icon-close"></span></a>
-		    <div class="tit">编辑头像</div>
-		    <div class="ct">
-		        <div class="img"><img id="image" src="http://q.qlogo.cn/qqapp/101341581/C781FBAEE76D838500FA8B86CFE9ECAA/100" width="335" height="335" /></div>
-		        <div class="preview-box">
-		            <div class="img-preview preview-lg"></div>
-		            <p>85PX</p>
-		            <div class="img-preview preview-md"></div>
-		            <p>50PX</p>
-		        </div>
-		        <a href="javascript:;" class="btn-up">重新上传<input type="file" id="avatarInput"></a>
-		        <a href="javascript:;" class="btn">保 存</a>
-		    </div>
-		</div>
-		<div class="mask"></div>
-		<!-- 编辑头像弹窗 end -->
 
         <!-- footer start -->
         <div class="footer">
@@ -512,6 +527,7 @@
         <script src="../js/cropper.js" type="text/javascript"></script>
         <script src="../js/jquery.datetimepicker.full.js" type="text/javascript"></script>
         <script src="../js/validate-1.14.0.min.js" type="text/javascript"></script>
+        <script src="../js/tag.js" type="text/javascript"></script>
         <script src="../js/zhaopin.js" type="text/javascript"></script>
 		<!--js调用 end -->
 		<script>
@@ -547,6 +563,10 @@
 				// validator.showErrors({
 				// 	"name": "真实姓名重复"
 				// });
+
+				// 初始化tag标签
+				var tag = new Tag('tagValue').initView();
+				var tag2 = new Tag('tagValue2').initView();
 			});
 		</script>
     </body>
