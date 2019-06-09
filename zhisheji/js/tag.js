@@ -1,14 +1,17 @@
-function Tag(inputId) {
+function Tag(tag) {
     var obj = new Object();
-    if (inputId == null || inputId == "") {
+    if (tag == null || tag == "") {
         alert("初始化失败，请检查参数！");
         return;
     }
-    obj.inputId = inputId;
     //初始化
     obj = (function(obj) {
         obj.tagValue = "";
         obj.isDisable = false;
+        obj.taglen = tag.taglen;
+        obj.tagtextMax = tag.tagtextMax;
+        obj.tagtextMin = tag.tagtextMin;
+		obj.inputId = tag.id;
         return obj;
     })(obj);
 
@@ -16,33 +19,36 @@ function Tag(inputId) {
     obj.initView = function() {
         var inputObj = $('#' + this.inputId);
         var inputId = this.inputId;
+        var taglen = this.taglen;
+        var tagtextMax = this.tagtextMax;
+        var tagtextMin = this.tagtextMin;
         inputObj.wrap('<div style="height: 0;"></div>');
         var placeholder = inputObj.attr('placeholder') ? inputObj.attr('placeholder') : '输入标签'
         var appendStr = '';
         appendStr += '<div class="tagsContaine" id="' + inputId + '_tagcontaine">';
-        appendStr += '<div class="tagList"></div><input type="text" class="tagInput" placeholder="' + placeholder + '"/>';
+        appendStr += '<div class="tagList"></div><input name="tagInput" type="text" class="tagInput" placeholder="' + placeholder + '"/>';
         appendStr += '</div>';
         inputObj.parent().after(appendStr);
         var tagInput = $('#' + inputId + "_tagcontaine .tagInput");
         $('.tagsContaine').on('click', function() {
-            $('.tagInput').focus();
+            $(this).find('.tagInput').focus();
         });
         $('.tagList').on('click', function(e) {
             e.stopPropagation();
         });
         $('.tag-click').on('click', '.tag', function() {
             var inputValue = $(this).html();
-            var arr = $('#tagValue').val().split(',');
-            if (arr.length == 3) {
+            var arr = $('#' + inputId).val().split(',');
+            if (taglen && arr.length == taglen) {
                 $(this).val('');
-                alert('最多只能3个标签');
+                alert('最多只能' + taglen + '个标签');
                 return false;
             };
-            if (inputValue.length > 10) {
-                alert('标签不能超过10个字');
+            if (tagtextMax && inputValue.length > tagtextMax) {
+                alert('标签不能超过' + tagtextMax + '个字');
                 return false;
-            } else if (inputValue.length < 2) {
-                alert('标签不能少于2个字');
+            } else if (tagtextMin && inputValue.length < tagtextMin) {
+                alert('标签不能少于' + tagtextMin + '个字');
                 return false;
             };
             for (var i = 0; i < arr.length; i++) {
@@ -67,19 +73,18 @@ function Tag(inputId) {
             $('#' + inputId + "_tagcontaine").attr("ds", "1");
             tagInput.keydown(function(event) {
                 if (event.keyCode == 32) {
-                    var inputValue = $(this).val();
-                    var arr = $('#tagValue').val().split(',');
-                    if(arr.length == 3) {
+					var inputValue = $(this).val();
+                    var arr = $('#' + inputId).val().split(',');
+                    if (taglen && arr.length == taglen) {
                         $(this).val('');
-                        alert('最多只能3个标签');
+                        alert('最多只能' + taglen + '个标签');
                         return false;
                     };
-                    if(inputValue.length > 10) {
-                        alert('标签不能超过10个字');
+                    if (tagtextMax && inputValue.length > tagtextMax) {
+                        alert('标签不能超过' + tagtextMax + '个字');
                         return false;
-                    }
-                    else if(inputValue.length < 2) {
-                        alert('标签不能少于2个字');
+                    } else if (tagtextMin && inputValue.length < tagtextMin) {
+                        alert('标签不能少于' + tagtextMin + '个字');
                         return false;
                     };
                     for (var i = 0; i < arr.length; i++) {
@@ -101,7 +106,7 @@ function Tag(inputId) {
         if (this.tagValue != null && this.tagValue != "") {
             tagTake.setInputValue(inputId, this.tagValue);
             if (this.isDisable) {
-                $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-guanbi").remove();
+                $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-close").remove();
             }
         }
     }
@@ -114,7 +119,7 @@ function Tag(inputId) {
         tagInput.remove();
         this.isDisable = true;
         $('#' + inputId + "_tagcontaine").attr("ds", "0");
-        $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-guanbi").remove();
+        $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-close").remove();
         tagTake.initTagEvent(inputId);
 
     }
@@ -135,7 +140,7 @@ function Tag(inputId) {
                 $(this).val("");
             }
         });
-        $('#' + inputId + "_tagcontaine .tagList .tagItem").append('<div class="icon icon-guanbi"></div>');
+        $('#' + inputId + "_tagcontaine .tagList .tagItem").append('<div class="icon icon-close"></div>');
         tagTake.initTagEvent(inputId);
 
     }
@@ -162,13 +167,13 @@ var tagTake = {
         tagTake.initTagEvent(inputId);
     },
     "initTagEvent": function(inputId) {
-        $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-guanbi").off();
+        $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-close").off();
         $('#' + inputId + "_tagcontaine .tagList .tagItem").off();
         var ds = $('#' + inputId + "_tagcontaine").attr("ds");
         if (ds == "0") {
             return;
         }
-        $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-guanbi").click(function() {
+        $('#' + inputId + "_tagcontaine .tagList .tagItem .icon-close").click(function() {
             $(this).parent().remove();
             tagTake.resetTagValue(inputId);
         });
@@ -183,6 +188,6 @@ var tagTake = {
         $('#' + inputId).val(tagsStr);
     },
     "getTagItemModel": function(valueStr) {
-        return '<div class="tagItem"><span>' + valueStr + '</span><div class="icon icon-guanbi"></div></div>';
+        return '<div class="tagItem"><span>' + valueStr + '</span><div class="icon icon-close"></div></div>';
     }
 }

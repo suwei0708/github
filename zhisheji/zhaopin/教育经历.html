@@ -7,9 +7,6 @@
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
 		<link rel="stylesheet" href="../css/zhaopin.css">
-		<!-- 裁剪头像css start -->
-		<link rel="stylesheet" href="../css/cropper.css">
-		<!-- 裁剪头像css end -->
 		<!-- 时间插件css start -->
 		<link rel="stylesheet" href="../css/jquery.datetimepicker.min.css">
 		<!-- 时间插件css end -->
@@ -396,14 +393,14 @@
 						<dl class="item item-half2 block">
 						    <dt><span>*</span> 学校名称</dt>
 						    <dd>
-						        <input name="name" type="text" class="input" placeholder="从最近工作填写" required autocomplete="off">
+						        <input name="xuyuan" type="text" class="input" placeholder="请输入学校名称" required autocomplete="off">
 						        <div class="num-box"><span class="num">20</span></div>
 						    </dd>
 						</dl>
 						<dl class="item item-half2 item-select block">
 						    <dt><span>*</span> 学历</dt>
 						    <dd>
-						        <input name="zhicheng" type="text" class="input readonly" placeholder="请选择" required readonly autocomplete="off">
+						        <input name="xueli" type="text" class="input readonly" placeholder="请选择" required readonly autocomplete="off">
 						        <span class="icon-sanjiao"></span>
 						        <div class="select-list">
 						            <ul>
@@ -411,7 +408,8 @@
 						                <li>初中</li>
 						                <li>高中</li>
 						                <li>大专</li>
-						                <li>本科及以上</li>
+						                <li>本科</li>
+						                <li>本科以上</li>
 						            </ul>
 						        </div>
 						    </dd>
@@ -426,12 +424,12 @@
 						    <dt><span>*</span> 在校时间</dt>
 						    <dd>
 						        <div class="pos-box">
-						            <input name="datea" type="text" class="input readonly timepicker" placeholder="入学年份" required autocomplete="off">
+						            <input name="datea" type="text" class="input readonly timepicker" placeholder="入学年份" required autocomplete="off" data-format="Y-m">
 						            <span class="icon-sanjiao"></span>
 						        </div>
 						        <i>至</i>
 						        <div class="pos-box">
-						            <input name="dateb" type="text" class="input readonly timepicker" placeholder="毕业年份" required autocomplete="off">
+						            <input name="dateb" type="text" class="input readonly timepicker" placeholder="毕业年份" required autocomplete="off" data-format="Y-m">
 						            <span class="icon-sanjiao"></span>
 						        </div>
 						    </dd>
@@ -439,7 +437,7 @@
 					</div>
 
 					<dl class="item">
-						<dt></dt>
+						<dt>&nbsp;</dt>
 						<dd>
 							<div class="btn-add"><span class="icon-play1"></span>添加教育经历</div>
 						</dd>
@@ -459,28 +457,20 @@
 			        <dl class="item">
 			            <dt>熟练软件</dt>
 			            <dd>
-							<input type="text" id="tagValue" class="input" name="tags" value="nihao,hello" placeholder="请输入标签" required>
-							<div class="tags tag-click">
-							    <span class="fr">标签用空格分离</span>
-							    <span class="tag">Photoshop</span>
-							    <span class="tag">基础理论</span>
+							<div class="pos-box">
+								<input type="text" id="tagValue" class="input" name="tags" value="" placeholder="请输入标签">
+								<div class="tags tag-click">
+									<span class="fr">标签用空格分离</span>
+									<span class="tag">PS</span>
+									<span class="tag">AI</span>
+									<span class="tag">C4D</span>
+								</div>
 							</div>
-			            </dd>
-			        </dl>
-			        <dl class="item">
-			            <dt>熟练软件</dt>
-			            <dd>
-			                <input type="text" id="tagValue2" class="input" name="tags2" value="nihao,hello" placeholder="请输入标签" required>
-			                <div class="tags tag-click">
-			                    <span class="fr">标签用空格分离</span>
-			                    <span class="tag">Photoshop</span>
-			                    <span class="tag">基础理论</span>
-			                </div>
 			            </dd>
 			        </dl>
 
 			        <dl class="item">
-					    <dt></dt>
+					    <dt>&nbsp;</dt>
 					    <dd>
 					        <button class="btn" type="submit">创建简历</button>
 					        <a class="btn-back" href="工作经历.html">上一步</a>
@@ -524,7 +514,6 @@
         <!-- 通用js start-->
 
         <!--js调用 start -->
-        <script src="../js/cropper.js" type="text/javascript"></script>
         <script src="../js/jquery.datetimepicker.full.js" type="text/javascript"></script>
         <script src="../js/validate-1.14.0.min.js" type="text/javascript"></script>
         <script src="../js/tag.js" type="text/javascript"></script>
@@ -555,7 +544,7 @@
 				var validator = $('#form').validate({
 					// 验证成功后提交
 					submitHandler: function(form) {
-						window.location.href = '教育经历.html'
+						window.location.href = '简历.html'
 					},
 				});
 
@@ -565,8 +554,10 @@
 				// });
 
 				// 初始化tag标签
-				var tag = new Tag('tagValue').initView();
-				var tag2 = new Tag('tagValue2').initView();
+				var tag = new Tag({
+					id: 'tagValue',
+					tagtextMin: 2
+				}).initView();
 			});
 		</script>
     </body>

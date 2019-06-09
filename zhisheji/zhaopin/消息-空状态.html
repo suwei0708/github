@@ -2,17 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>创建简历-致设计</title>
+        <title>消息-致设计</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
 		<link rel="stylesheet" href="../css/zhaopin.css">
-		<!-- 裁剪头像css start -->
-		<link rel="stylesheet" href="../css/cropper.css">
-		<!-- 裁剪头像css end -->
-		<!-- 时间插件css start -->
-		<link rel="stylesheet" href="../css/jquery.datetimepicker.min.css">
-		<!-- 时间插件css end -->
     </head>
     <body>
         <!-- 头部 start -->
@@ -385,129 +379,23 @@
         <!-- 头部 end -->
 
 		<!-- 内容主体 start -->
-		<div class="wrap jinfo-box">
-			<div class="jinfo-pos">当前栏目：创建简历</div>
-			<form action="" id="form" class="jinfo-form">
-				<div class="jinfo-tit">
-					<h2>基本信息</h2>
-				</div>
-				<div class="jinfo-ct">
-					<dl class="item item-avatar">
-						<dt><span>*</span> 简历头像</dt>
-						<dd>
-							<input type="text" required name="avatar" class="avatar">
-							<div class="data-img">
-							    <a href="javascript:;" class="fll img">
-							        <span class="edit">
-							            <span class="icon-photo"></span>上传头像
-							        </span>
-							    </a>
-							    <div class="info">支持jpg、图片大小不超过5MB<br>建议使用真实照片提升真实性。</div>
-							</div>
-						</dd>
-					</dl>
-
-					<dl class="item item-half">
-						<dt><span>*</span> 真实姓名</dt>
-						<dd>
-							<input name="name" type="text" class="input" placeholder="输入您的姓名" required autocomplete="off">
-						</dd>
-					</dl>
-					<dl class="item item-half">
-					    <dt><span>*</span> 出生日期</dt>
-					    <dd>
-							<input name="date" type="text" class="input readonly timepicker" placeholder="1990-01" required autocomplete="off" data-format="Y-m">
-							<span class="icon-sanjiao"></span>
-					    </dd>
-					</dl>
-
-					<dl class="item">
-					    <dt><span>*</span> 性别</dt>
-					    <dd class="radio">
-					        <label><input type="radio" name="sex" value="男" checked required>男</label>
-					        <label><input type="radio" name="sex" value="女">女</label>
-					    </dd>
-					</dl>
-
-					<dl class="item item-half item-select">
-					    <dt><span>*</span> 工作经验</dt>
-					    <dd>
-							<input name="jingyan" type="text" class="input readonly" placeholder="1年及应届生" readonly required autocomplete="off">
-							<span class="icon-sanjiao"></span>
-							<div class="select-list">
-								<ul>
-									<li>1年及应届生</li>
-									<li>2年经验</li>
-									<li>3年经验</li>
-									<li>4年经验</li>
-									<li>5年经验</li>
-									<li>6年经验</li>
-								</ul>
-							</div>
-					    </dd>
-					</dl>
-					<dl class="item item-half item-select">
-					    <dt><span>*</span> 期望薪资</dt>
-					    <dd>
-					        <input name="xinzi" type="text" class="input readonly" placeholder="0~3k" readonly required autocomplete="off">
-					        <span class="icon-sanjiao"></span>
-					        <div class="select-list">
-					            <ul>
-					                <li>0~3k</li>
-					                <li>3-6k</li>
-					                <li>6-9k</li>
-					                <li>9-12k</li>
-					                <li>12-15k</li>
-					                <li>15k-18k</li>
-					            </ul>
-					        </div>
-					    </dd>
-					</dl>
-
-					<dl class="item item-half item-select">
-					    <dt><span>*</span> 期望城市</dt>
-					    <dd>
-					        <input name="city" type="text" class="input readonly" placeholder="工作城市" readonly required id="city-input" autocomplete="off">
-					        <span class="icon-sanjiao"></span>
-					    </dd>
-					</dl>
-					<dl class="item item-half">
-					    <dt><span>*</span> 手机号码</dt>
-					    <dd>
-					        <input name="phone" type="text" class="input" placeholder="手机号" required autocomplete="off">
-					    </dd>
-					</dl>
-
-					<dl class="item item-half">
-					    <dt><span>*</span> 邮箱</dt>
-					    <dd>
-					        <input name="email" type="email" class="input" placeholder="邮箱" required autocomplete="off">
-					    </dd>
-					</dl>
-					<dl class="item item-half">
-					    <dt>QQ</dt>
-					    <dd>
-					        <input name="qq" type="text" class="input" placeholder="QQ联系更方便" autocomplete="off">
-					    </dd>
-					</dl>
-
-					<dl class="item">
-						<dt><span>*</span> 求职状态</dt>
-						<dd class="radio">
-							<label><input type="radio" name="status" value="离职" checked required>离职</label>
-							<label><input type="radio" name="status" value="在职">在职</label>
-						</dd>
-					</dl>
-
-					<dl class="item">
-						<dt></dt>
-						<dd>
-							<div class="tips">Tips: 最新发布的原创作品会自动同步到简历</div>
-							<button class="btn" type="submit">下一步</button>
-						</dd>
-					</dl>
-				</div>
-			</form>
+		<div class="bg-white">
+		    <div class="wrap">
+		        <div class="cl job-nav">
+		            <ul>
+		                <li><a href="招聘首页.html">首页</a></li>
+		                <li><a href="招聘职位.html">职位</a></li>
+		                <li><a href="简历.html">简历</a></li>
+		                <li class="cur"><a href="消息.html">消息</a></li>
+		            </ul>
+		        </div>
+		    </div>
+		</div>
+		<div class="wrap bg-white mt20 mb60 bdr4">
+		    <div class="no-result jno-result">
+		        <img src="../images/no-result2.png">
+		        <p>暂无消息！在 <a href="招聘首页.html" class="blue">首页</a> 寻找合适的工作</p>
+		    </div>
 		</div>
 		<!-- 内容主体 end -->
 
@@ -535,26 +423,7 @@
                 </div>
             </div>
         </div>
-		<!-- footer end -->
-
-		<!-- 编辑头像弹窗 start -->
-		<div class="user-editbox">
-		    <a href="javascript:;" class="user-ico user-editbox-close"><span class="icon-close"></span></a>
-		    <div class="tit">编辑头像</div>
-		    <div class="ct">
-		        <div class="img"><img id="image" src="http://q.qlogo.cn/qqapp/101341581/C781FBAEE76D838500FA8B86CFE9ECAA/100" width="335" height="335" /></div>
-		        <div class="preview-box">
-		            <div class="img-preview preview-lg"></div>
-		            <p>85PX</p>
-		            <div class="img-preview preview-md"></div>
-		            <p>50PX</p>
-		        </div>
-		        <a href="javascript:;" class="btn-up">重新上传<input type="file" id="avatarInput"></a>
-		        <a href="javascript:;" class="btn">保 存</a>
-		    </div>
-		</div>
-		<div class="mask"></div>
-		<!-- 编辑头像弹窗 end -->
+        <!-- footer end -->
 
         <!-- 通用js start-->
         <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
@@ -562,58 +431,7 @@
         <!-- 通用js start-->
 
         <!--js调用 start -->
-        <script src="../js/cropper.js" type="text/javascript"></script>
-        <script src="../js/jquery.datetimepicker.full.js" type="text/javascript"></script>
-        <script src="../js/validate-1.14.0.min.js" type="text/javascript"></script>
         <script src="../js/zhaopin.js" type="text/javascript"></script>
 		<!--js调用 end -->
-		<script>
-			$(function() {
-				// 验证设置
-				$.extend(jQuery.validator.messages, {
-					required: "此项内容不能为空",
-					email: "请输入有效的电子邮件地址"
-				});
-				$.validator.setDefaults({
-					errorElement: 'div',
-					errorClass: 'tips-err',
-					debug: true, // 只验证不提交表单
-					errorPlacement: function(error, element) {
-						error.appendTo(element.parents('dd'));
-					},
-					rules: {
-						phone: {
-							minlength : 11,
-							isMobile : true
-						}
-					},
-					messages: {
-						phone: {
-							minlength : "请正确填写手机号码",
-							isMobile : "请正确填写手机号码"
-						}
-					},
-				});
-
-				//手机号码验证
-				jQuery.validator.addMethod("isMobile", function(value, element) {
-					var length = value.length;
-					var mobile = /^(1[0-9]{10})$/;
-					return this.optional(element) || (length == 11 && mobile.test(value));
-				}, "请正确填写手机号码");
-
-				var validator = $('#form').validate({
-					// 验证成功后提交
-					submitHandler: function(form) {
-						window.location.href = '工作经历.html'
-					},
-				});
-
-				// 手动提示错误信息， name为input的name值
-				// validator.showErrors({
-				// 	"name": "真实姓名重复"
-				// });
-			});
-		</script>
     </body>
 </html>

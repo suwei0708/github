@@ -19,7 +19,7 @@ $(function() {
 	});
 
 	// 招聘通用下拉
-	$('.item-select').on('click', function() {
+	$('body').on('click', '.item-select', function() {
 		if($(this).find('.select-list').is(':hidden')) {
 			$('.select-list').slideUp();
 			$('.item-select').css('z-index', 'auto');
@@ -27,8 +27,8 @@ $(function() {
 			$(this).find('.select-list').slideDown();
 		}
 		return false;
-	});
-	$('.select-list').on('click', 'li', function() {
+	})
+	.on('click', '.select-list li', function() {
 	    var txtDom = $(this).parents('.item-select').find('.input');
 	    if (txtDom.is('input')) {
 	        txtDom.val($(this).text());
@@ -38,10 +38,20 @@ $(function() {
 	    $(this).parents('.select-list').slideUp();
 	    $('.item-select').css('z-index', 'auto');
 	    return false;
-	});
-	$('body').on('click', function() {
+	})
+	.on('click', function() {
 		if ($('.select-list').is(':visible')) {
 			$('.select-list').slideUp();
+		}
+	});
+
+	// 公司简介展开收缩
+	$('.job-cintro').on('click', '.more', function() {
+		if($(this).parents('.cont').hasClass('cont-more')) {
+			$(this).parents('.cont').removeClass('cont-more');
+		}
+		else {
+			$(this).parents('.cont').addClass('cont-more');
 		}
 	});
 
@@ -96,9 +106,9 @@ $(function() {
 	    if ($('.data-img .img img').length) {
 	        $('.data-img .img img').attr('src', dataurl);
 	    } else {
-	        $('.data-img .img').prepend('<img height="100" width="100" src="' + dataurl + '">');
+	        $('.data-img .img').prepend('<img src="' + dataurl + '">');
 		}
-		$('.avatar').val(dataurl);
+		$('.jinfo-form .avatar').val(dataurl);
 	    $('.user-editbox').hide();
 	    maskHide();
 	});
@@ -163,7 +173,7 @@ $(function() {
 
 	// 启用时间插件
 	if ($('.timepicker').length) {
-	    timepicker();
+		timepicker();
 	};
 	// radio美化
 	if ($('.radio').length) {
@@ -177,32 +187,145 @@ $(function() {
 	$('.jinfo-box').on('click', '.btn-add', function() {
 		addNum++;
 		var $newDom = $dom.clone();
-		console.log($newDom.html())
 		$.each($newDom.find('.item'), function() {
 		    $(this).find('.input').attr('name', $(this).find('.input').attr('name') + addNum);
 		});
 		$(this).parents('.item').before($newDom);
 		numbox(); //字数判断
-		timepicker(); //时间插件
+
+		timepicker();
 	});
 
+	// 消息页消息滚动到底部
+	if($('.jmsg').length) {
+		$('.jmsg').find('.cont').scrollTop(99999);
+	}
+	// 消息快捷回复
+	$('.btn-fast').on('click', '.list li', function() {
+		var $replayDom = '<div class="msg msg-r">' +
+		    '<span class="img"><img src="../images/system.png" height="40" width="40"></span>' +
+		    '<div class="msg-ct">' + $(this).text() + '<span class="arrow"></span></div>' +
+		    '<div class="times">' + getNowFormatDate() + '</div>' +
+		    '</div>';
+		$('.jmsg').find('.cont').append($replayDom).scrollTop(99999);
+	});
+
+	// 回复消息
+	$('.jmsg').on('click', '.reply .btn', function() {
+	    var $replayDom = '<div class="msg msg-r">' +
+	        '<span class="img"><img src="../images/system.png" height="40" width="40"></span>' +
+	        '<div class="msg-ct">' + $(this).parents('.reply').find('.textarea').val() + '<span class="arrow"></span></div>' +
+	        '<div class="times">' + getNowFormatDate() + '</div>' +
+			'</div>';
+		$(this).parents('.reply').find('.textarea').val('');
+	    $('.jmsg').find('.cont').append($replayDom).scrollTop(99999);
+	});
+
+	// 简历导航位置跳转
+	if($('.side-nav').length && $('#scroll0').length) {
+		var pos = $('.side-nav').offset().top;
+		posNav(pos);
+		$(window).on('scroll', function() {
+			posNav(pos)
+		});
+		$('.side-nav').on('click', 'li', function() {
+		    var _this = $(this);
+		    var index = +$(this).index();
+		    $('html, body').animate({
+		        scrollTop: $('#scroll' + index).offset().top
+			}, 100);
+			setTimeout(function() {
+				_this.find('a').addClass('cur').parent().siblings().find('a').removeClass('cur')
+			}, 110);
+
+		});
+	}
+
+	// 编辑简历基本信息
+	$('.jl-box').on('click', '.btn-edit', function() {
+		$(this).parents('.jl-box').find('.jl-info').hide();
+		$(this).parents('.jl-box').find('.jinfo-form').show();
+	});
+
+	// 编辑简历工作经历
+	$('.jl-work').on('click', '.btn-edit', function() {
+		$(this).parents('.work-box').find('.work-item').hide();
+		$(this).parents('.work-box').find('.jinfo-form').show();
+	});
+	// 删除简历工作经历
+	$('.jl-work').on('click', '.btn-del', function() {
+	    var _this = $(this);
+	    $.msgBox.Confirm(null, '删除后将无法恢复，确定要删除吗？', function() {
+	        _this.parents('.work-box').remove();
+	    });
+	});
+	// 增加工作经历
+	$('.jl-work').on('click', '.btn-add', function() {
+	    $(this).parents('.jl-work').find('#form1-add').show();
+	});
+
+	// 编辑简历自我介绍
+	$('.jl-intro').on('click', '.btn-edit', function() {
+		$(this).hide();
+	    $(this).parents('.jl-intro').find('.work-item').hide();
+	    $(this).parents('.jl-intro').find('.jinfo-form').show();
+	});
+
+	// 增加工作经历
+	$('.jl-edu').on('click', '.btn-edit', function() {
+	    $(this).parents('.work-box').find('.work-item').hide();
+	    $(this).parents('.work-box').find('.jinfo-form').show();
+	});
+	// 删除简历工作经历
+	$('.jl-edu').on('click', '.btn-del', function() {
+	    var _this = $(this);
+	    $.msgBox.Confirm(null, '删除后将无法恢复，确定要删除吗？', function() {
+	        _this.parents('.work-box').remove();
+	    });
+	});
+	$('.jl-edu').on('click', '.btn-add', function() {
+	    $(this).parents('.jl-edu').find('#form3-add').show();
+	});
 });
 
-function timepicker(format) {
+// 获取当前时间
+function getNowFormatDate() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
+    var strDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+    var currentdate = month + seperator1 + strDate +
+        " " + date.getHours() + seperator2 + date.getMinutes() +
+        seperator2 + date.getSeconds();
+    return currentdate;
+}
+
+function timepicker() {
 	// $('.timepicker').datetimepicker('remove');
 	$.datetimepicker.setLocale('ch');
-	if(format) {
-		var data = format;
-	}
-	else {
-		var data = 'Y-m-d';
-	}
-    $('.timepicker').datetimepicker({
-        // lang:"ch", //语言选择中文 注：旧版本 新版方法：$.datetimepicker.setLocale('ch');
-        format: data, //格式化日期
-        timepicker:false,    //关闭时间选项
-        todayButton:false    //关闭选择今天按钮
-    });
+	$.each($('.timepicker'), function() {
+	    if ($(this).data('format')) {
+			data = $(this).data('format');
+			var _this = $(this);
+			$(this).datetimepicker({
+			    // lang:"ch", //语言选择中文 注：旧版本 新版方法：$.datetimepicker.setLocale('ch');
+				format: data, //格式化日期
+			    timepicker: false, //关闭时间选项
+				todayButton: false, //关闭选择今天按钮
+				validateOnBlur: false, // 失去焦点时验证datetime值输入,。如果值是无效的datetime,然后插入当前日期时间值
+			});
+		}
+		else {
+			data = 'Y-m-d';
+			$(this).datetimepicker({
+			    format: data, //格式化日期
+			    timepicker: false, //关闭时间选项
+			    todayButton: false //关闭选择今天按钮
+			});
+	    }
+	});
+
 }
 
 //图片上传预览
@@ -339,4 +462,24 @@ function numbox() {
 	        monitorVal($(this).parent().find('.input'), $(this).find('.num').text(), 'minus');
 	    });
 	}
+}
+
+// 简历导航跳转
+function posNav(pos) {
+	if($(window).scrollTop() > pos) {
+		$('.side-nav').css({
+			position: 'fixed',
+			top: 0
+		})
+	}
+	else {
+		$('.side-nav').css({
+		    position: 'static'
+		})
+	}
+	$.each($('.side-nav li'), function(i) {
+		if ($(window).scrollTop() >= $('#scroll' + i).offset().top) {
+			$('.side-nav li a').removeClass('cur').parent().eq(i).find('a').addClass('cur');
+		}
+	});
 }

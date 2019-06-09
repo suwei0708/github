@@ -8,7 +8,7 @@
 @blue-h: #0f92fb;
 @green: #21bc1d;
 @green-h: #41cb56;
-@red: #f75659;
+@red: #f6565b;
 @red-h: #fd4043;
 
 @gray: #ddd;
@@ -55,6 +55,9 @@ body {
 .w930 {
     width: 930px;
 }
+.mt0 {
+    margin-top: 0 !important;
+}
 .mt10 {
     margin-top: 10px;
 }
@@ -63,6 +66,9 @@ body {
 }
 .mb20 {
     margin-bottom: 20px;
+}
+.mb60 {
+    margin-bottom: 60px;
 }
 .ml10 {
     margin-left: 10px;
@@ -172,19 +178,20 @@ body {
 .job {
 	// 首页
 	&-adv {
+		padding-bottom: 16px;
 		img, .imgmask {
 			.bdr(4px);
 		}
 	}
 	&-nav {
-		padding-top: 28px;
+		padding-top: 10px;
 		font-size: 0;
 		text-align: center;
 		li {
 			.dis(ib);
 			vertical-align: top;
 			margin: 0 33px;
-			line-height: 56px;
+			line-height: 58px;
 			color: #666;
 			font-size: 16px;
 			a {
@@ -388,6 +395,7 @@ body {
 							text-align: center;
 							cursor: pointer;
 							&:hover {
+								color: #fff;
 								background: @green-h;
 							}
 						}
@@ -447,9 +455,8 @@ body {
                 &:hover {
 					.pos(r);
 					left: -14px;
-					top: -14px;
 					padding: 32px + 14px;
-					margin-bottom: -28px;
+					margin: -14px 0 -14px;
 					.box-shadow(0 0 12px rgba(0, 0, 0, .1));
 					background: #fff;
 					.bdr(4px);
@@ -726,6 +733,69 @@ body {
 			}
 		}
 	}
+	&-cintro {
+		margin-bottom: 20px;
+		background: #fff;
+		.bdr(4px);
+		.tit {
+			padding: 0 34px;
+			line-height: 72px;
+			border-bottom: 1px solid #eee;
+			h2 {
+				font-size: 16px;
+				color: #333;
+			}
+		}
+		.cont {
+			padding: 20px 34px 30px;
+			line-height: 28px;
+			font-size: 14px;
+			color: #333;
+			text-align: justify;
+			.more {
+				line-height: 28px;
+				font-size: 14px;
+				color: @blue;
+				cursor: pointer;
+				text-align: center;
+				.icon-arrowb {
+					.dis(ib);
+					vertical-align: middle;
+					font-size: 12px;
+					margin-left: 5px;
+					.anim();
+					.rotate(180deg);
+				}
+				.txt1 {
+					.dis(n);
+				}
+				.txt2 {
+					.dis(i);
+				}
+			}
+			.more-cont {
+				.ov(h);
+			}
+			&-more {
+				.ct {
+					max-height: 28px * 3;
+					.text-e(3);
+					.ov(h);
+				}
+				.more {
+					.icon-arrowb {
+						.rotate(0deg);
+					}
+					.txt2 {
+						.dis(n);
+					}
+					.txt1 {
+						.dis(i);
+					}
+				}
+			}
+		}
+	}
 }
 .page-job {
 	padding: 40px 0 60px;
@@ -759,6 +829,23 @@ body {
 		background: #fff;
 		.bdr(4px);
 		text-align: center;
+	}
+}
+.w910 {
+	.job-list {
+		.tit {
+			h2 {
+				font-size: 16px;
+			}
+		}
+		.list {
+			.item {
+				width: 846px;
+				&-l {
+					width: 548px;
+				}
+			}
+		}
 	}
 }
 .page {
@@ -912,6 +999,68 @@ body {
 			}
 		}
 	}
+	&-integrity {
+        padding: 25px 30px 30px;
+        line-height: 25px;
+        background: #fff;
+        font-size: 14px;
+        color: #666;
+        .bdr(4px);
+        .integrity {
+            .ov(h);
+            height: 6px;
+            margin-top: 15px;
+            background: #eee;
+            .bdr(4px);
+            span {
+                .dis(b);
+                height: 100%;
+                background: @blue;
+                .bdr(4px);
+            }
+        }
+        .btn {
+			.dis(b);
+			width: 168px;
+			height: 42px;
+			line-height: 42px;
+			margin-top: 30px;
+			text-align: center;
+			font-size: 14px;
+			color: #666;
+			border: 1px solid #dcdcdc;
+			.bdr(4px);
+            &:hover {
+				color: @blue;
+				border-color: @blue;
+            }
+        }
+	}
+	/* 左侧导航 */
+    &-nav {
+        .ov(h);
+        padding: 11px 0;
+        background: #fff;
+        .bdr(4px);
+        li {
+            .pos(r);
+            .height(30px);
+            padding: 11px 0;
+            background: #fff;
+            a {
+                .dis(b);
+                padding: 0 30px;
+                color: #555;
+                font-size: 14px;
+                &:hover, &.cur {
+                    color: @blue;
+                    border-left: 3px solid @blue;
+                    padding: 0 30px 0 27px;
+                    font-weight: 700;
+                }
+            }
+        }
+    }
 }
 
 // 填写信息
@@ -923,6 +1072,9 @@ body {
         line-height: 54px;
 		font-size: 14px;
 		color: #999;
+		span {
+			color: #333;
+		}
 	}
 	&-tit {
 		padding: 0 34px;
@@ -969,6 +1121,7 @@ body {
 		}
 		dd {
 			.pos(r);
+			z-index: 1;
 			margin-left: 145px;
 			i {
 				.dis(ib);
@@ -980,9 +1133,9 @@ body {
 			}
 		}
         .input, .textarea, .tagsContaine {
-			width: 884px - 40;
+			width: 884px - 50;
             .height(24px);
-            padding: 9px 20px;
+            padding: 9px 30px 9px 20px;
             border: 1px solid #dcdcdc;
             .bdr(4px);
             background: #fff;
@@ -1019,7 +1172,13 @@ body {
 			&+.num-box {
 				bottom: 20px;
 			}
-        }
+		}
+		input.avatar {
+			.pos(a);
+			width: 0;
+			height: 0;
+			.opacity(0);
+		}
         .item {
 			.pos(r);
 			padding: 20px 0;
@@ -1029,17 +1188,12 @@ body {
 				dt {
 					line-height: 96px;
 				}
-				.avatar {
-					.pos(a);
-					width: 0;
-					height: 0;
-					.opacity(0);
-				}
 			}
 			.pos-box {
 				.pos(r);
 				.dis(ib);
 				vertical-align: top;
+				.cl();
 			}
 
             &-half {
@@ -1048,7 +1202,7 @@ body {
                 vertical-align: top;
 				width: 485px;
 				.input {
-            		width: 338px - 40;
+            		width: 338px - 50;
 				}
 				&2 {
 					.pos(r);
@@ -1056,7 +1210,7 @@ body {
 					vertical-align: top;
 					width: 513px;
 					.input {
-						width: 366px - 40;
+						width: 366px - 50;
 					}
 				}
             }
@@ -1069,21 +1223,6 @@ body {
                 font-size: 14px;
                 line-height: 32px;
                 white-space: nowrap;
-            }
-            .btn {
-                .dis(b);
-                border: 0;
-                width: 170px;
-                margin-top: 30px;
-                .height(44px);
-                background: @green;
-                color: #fff;
-                font-size: 16px;
-                .bdr(4px);
-                cursor: pointer;
-                &:hover {
-                    background: @green-h;
-                }
             }
             label {
 				.dis(ib);
@@ -1098,28 +1237,6 @@ body {
 					height: 18px;
 					margin: -3px 6px 0 0;
 					vertical-align: middle;
-				}
-				.ico-radio {
-					.pos(r);
-					.dis(ib);
-					.ov(h);
-					width: 16px;
-					height: 16px;
-					margin: -3px 6px 0 0;
-					vertical-align: middle;
-					background: url(../images/radio.png) no-repeat -69px 0;
-					cursor: pointer;
-					&-cur {
-						background-position: -30px 0;
-					}
-					input {
-						.pos(a);
-						top: 0;
-						left: 0;
-						margin: 0;
-						.opacity(0);
-						cursor: pointer;
-					}
 				}
 			}
             .icon-sanjiao {
@@ -1222,21 +1339,21 @@ body {
         }
 
         .btn {
-            .dis(ib);
-            vertical-align: top;
-            padding: 0 38px;
-            margin-top: 40px;
-            line-height: 44px;
-            background: @green;
-            font-size: 16px;
+            .dis(b);
+            width: 170px;
+			line-height: 44px;
+			margin-top: 30px;
+            font-size: 14px;
             color: #fff;
-            border: 0;
+            background: @green;
+			border: none;
+			text-align: center;
             .bdr(4px);
             cursor: pointer;
             &:hover {
                 background: @green-h;
             }
-        }
+		}
         .data-img {
             margin-bottom: 10px;
             .cl();
@@ -1248,7 +1365,11 @@ body {
                 width: 96px;
                 height: 96px;
                 background: #dcdcdc;
-                .bdr(50%);
+				.bdr(50%);
+				img {
+					width: 96px;
+					height: 96px;
+				}
                 .edit {
                     // .dis(n);
                     .pos(a);
@@ -1312,8 +1433,9 @@ body {
 		.tagsContaine {
 			.pos(r);
 			z-index: 9;
-			padding: 10px 0;
+			padding: 10px 0 0;
 			width: 886px - 2;
+			height: auto;
 			&.hover {
 				border: 1px solid @blue;
 			}
@@ -1324,15 +1446,18 @@ body {
 			.opacity(0);
 		}
 		.tagList {
-			float: left;
+			// float: left;
 			font-size: 0;
+			// margin-bottom: -10px;
 			.tagItem {
+				float: left;
 				.dis(ib);
 				vertical-align: top;
 				height: 26px;
 				line-height: 26px;
 				background: #f6f6f6;
 				margin-left: 10px;
+				margin-bottom: 10px;
 				padding: 0 10px;
 				font-size: 14px;
 				color: #666;
@@ -1340,8 +1465,8 @@ body {
 				.icon {
 					.dis(ib);
 					vertical-align: middle;
-					margin: -3px 0 0 10px;
-					font-size: 12px;
+					margin: -3px 0 0 20px;
+					font-size: 10px;
 					color: #ccc;
 					cursor: pointer;
 					&:hover {
@@ -1351,26 +1476,29 @@ body {
 			}
 		}
 		.tagInput {
+			float: left;
 			border: 0;
 			line-height: 24px;
 			height: 24px;
 			color: #333;
-			margin-left: 10px;
+			margin: 0 0 10px 10px;
 			font-size: 14px;
 		}
 		.tags {
 			padding: 10px 0 0;
+			margin-bottom: -30px;
 			line-height: 30px;
 			.tag {
 				.dis(ib);
 				vertical-align: top;
-				height: 30px;
-				line-height: 30px;
-				background: #f6f6f6;
-				margin-left: 10px;
-				padding: 0 10px;
-				font-size: 12px;
-				color: #999;
+				height: 28px;
+				line-height: 28px;
+				margin-right: 10px;
+				padding: 0 25px;
+				font-size: 14px;
+				color: #666;
+				background: #fff;
+				border: 1px solid #ccc;
 				cursor: pointer;
 				.bdr(4px);
 				&:hover {
@@ -1538,4 +1666,731 @@ body {
             }
         }
     }
+}
+
+// 消息
+.jmsg {
+	background: #fff;
+	.bdr(4px);
+	&-l {
+		.ov(h);
+		width: 240px;
+		border: 1px solid #eee;
+		.bdr(4px, 0, 0, 4px);
+		ul {
+			max-height: 722px;
+			.ovy(a);
+		}
+		li {
+			padding: 20px;
+			.cl();
+			cursor: pointer;
+			&.cur, &:hover {
+				background: #f6f9f9;
+			}
+			.img {
+				width: 40px;
+				height: 40px;
+				margin-right: 10px;
+				.bdr(50%);
+			}
+			.tt {
+				.pos(r);
+				.name {
+					width: 80px;
+					height: 22px;
+					line-height: 22px;
+					font-size: 16px;
+					color: #333;
+					.text-e(1);
+				}
+				.times {
+					.pos(a);
+					top: 0;
+					right: 0;
+					font-size: 12px;
+					color: #999;
+				}
+			}
+			.ct {
+				.pos(r);
+				.info {
+					width: 120px;
+					height: 16px;
+					line-height: 16px;
+					font-size: 12px;
+					color: #999;
+					.text-e(1);
+					.ov(h);
+				}
+				.num {
+					.pos(a);
+					top: 0;
+					right: 0;
+					padding: 0 4px;
+					line-height: 15px;
+					height: 15px;
+					background: @red;
+					font-size: 12px;
+					color: #fff;
+					.bdr(15px);
+				}
+			}
+		}
+	}
+	&-r {
+		width: 668px;
+		.title {
+			line-height: 62px;
+			padding: 7px 32px 0;
+			font-size: 14px;
+			color: #969696;
+			border-bottom: 1px solid #eee;
+		}
+		.cont {
+			margin: 28px 0 20px;
+			height: 420px;
+			.ovy(a);
+			.msg {
+				padding: 12px 30px;
+				.cl();
+				.img {
+					float: left;
+					img {
+						width: 40px;
+						height: 40px;
+						.bdr(50%);
+					}
+				}
+				&-ct {
+					.dis(ib);
+					vertical-align: top;
+					.pos(r);
+					max-width: 330px;
+					padding: 14px 20px;
+					margin: 0 14px;
+					line-height: 20px;
+					color: #666;
+					font-size: 14px;
+					background: #f6f9f9;
+					text-align: justify;
+					img {
+						.dis(ib);
+						vertical-align: middle;
+						margin: -3px 3px 0;
+					}
+					.bdr(4px);
+					.arrow {
+						.pos(a);
+						top: 20px;
+						left: -6px;
+						.triangle(left, 6px, #f6f6f6);
+					}
+				}
+				.times {
+					padding: 5px 60px 0;
+					line-height: 22px;
+					font-size: 12px;
+					color: #ccc;
+				}
+				&-r {
+					text-align: right;
+					.img {
+						float: right;
+					}
+					.msg-ct {
+						background: #0f93fa;
+						color: #fff;
+						.arrow {
+							left: auto;
+							right: -6px;
+							.triangle(right, 6px, #0f93fa);
+						}
+						a {
+							color: #fff;
+						}
+					}
+					.times {
+						// float: right;
+						// margin-right: 17px;
+					}
+				}
+			}
+		}
+		.reply {
+			border-top: 1px solid #eee;
+			padding: 10px 20px 30px;
+			.textarea {
+				.dis(b);
+				width: 100%;
+				height: 95px;
+				border: none;
+				color: #666;
+				font-size: 14px;
+				line-height: 20px;
+				resize: none;
+				&::-webkit-input-placeholder{
+					color: #ccc;
+				}
+				&::-moz-placeholder{
+					color: #ccc;
+				}
+				&:-moz-placeholder{
+					color: #ccc;
+				}
+				&:-ms-input-placeholder{
+					color: #ccc;
+				}
+			}
+			.btn-box {
+				.pos(r);
+				padding: 12px 0 0;
+				line-height: 36px;
+				font-size: 0;
+				.cl();
+				.fll {
+					.btn-smile {
+						.dis(ib);
+						vertical-align: top;
+						font-size: 14px;
+						color: #999;
+						margin-left: 10px;
+						span {
+							.dis(ib);
+							vertical-align: middle;
+							margin: -3px 8px 0 0;
+							font-size: 17px;
+							color: #ccc;
+						}
+						&:hover {
+							color: @blue;
+							span {
+								color: @blue;
+							}
+						}
+					}
+					.btn-fast {
+						.dis(ib);
+						vertical-align: top;
+						.pos(r);
+						font-size: 14px;
+						color: #999;
+						margin-left: 32px;
+						cursor: pointer;
+						span {
+							.dis(ib);
+							vertical-align: middle;
+							margin: -3px 8px 0 0;
+							font-size: 17px;
+							color: #ccc;
+						}
+						.list {
+							.dis(n);
+							.ov(h);
+							.pos(a);
+							top: 36px;
+							left: 0;
+							width: 300px;
+							padding: 14px 0;
+							background: #fff;
+							.bdr(4px);
+							ul {
+								margin-top: -1px;
+							}
+							li {
+								height: 44px;
+								line-height: 44px;
+								padding: 0 20px;
+								font-size: 14px;
+								color: #666;
+								border-top: 1px solid #f6f6f6;
+								.text-e(1);
+								.ov(h);
+								cursor: pointer;
+								&:hover {
+									color: @blue;
+								}
+							}
+						}
+						&:hover {
+							color: @blue;
+							span {
+								color: @blue;
+							}
+							.list {
+								.dis(b);
+							}
+						}
+					}
+				}
+				.btn {
+					.dis(ib);
+					vertical-align: middle;
+					width: 130px;
+					height: 36px;
+					line-height: 36px;
+					text-align: center;
+					font-size: 14px;
+					color: #fff;
+					background: @blue;
+					.bdr(4px);
+					&:hover {
+						background: @blue-h;
+					}
+				}
+			}
+        }
+	}
+}
+.jno-result {
+	padding: 130px 0;
+	p {
+		padding-top: 36px;
+	}
+}
+
+// 我的简历
+.jl {
+	&-box {
+		padding: 40px 40px 0;
+		background: #fff;
+		.bdr(4px, 4px, 0, 0);
+		.jinfo-form {
+			.data-img {
+				text-align: center;
+				.img {
+					.dis(ib);
+					vertical-align: top;
+					width: 120px;
+					height: 120px;
+					margin: 0;
+					img {
+						width: 120px;
+						height: 120px;
+					}
+					.edit {
+						.icon-photo {
+							margin-top: 40px;
+						}
+					}
+				}
+			}
+			.name {
+				margin-bottom: 20px;
+				line-height: 30px;
+				font-size: 0;
+				color: #2d2d2d;
+				text-align: center;
+				span {
+					.dis(ib);
+					vertical-align: middle;
+					font-size: 20px;
+					color: #2d2d2d;
+				}
+				img {
+					.dis(ib);
+					vertical-align: middle;
+					margin: 0 0 0 10px;
+				}
+			}
+			.item {
+				&-half {
+					width: 395px;
+					.input {
+						width: 198px;
+					}
+				}
+				.btn {
+					width: 130px;
+					height: 36px;
+					line-height: 36px;
+					margin: 0;
+				}
+			}
+		}
+	}
+	&-info {
+		.pos(r);
+		padding: 0 0 10px;
+		text-align: center;
+		.btn-edit {
+			.dis(n);
+			.pos(a);
+			top: 175px;
+			right: 0;
+			font-size: 14px;
+			color: #666;
+			cursor: pointer;
+			&:hover {
+				color: @blue;
+			}
+		}
+		&:hover {
+			.btn-edit {
+				.dis(b);
+			}
+		}
+		.img {
+			.dis(ib);
+			vertical-align: top;
+			width: 120px;
+			height: 120px;
+			margin-bottom: 10px;
+			img {
+				width: 120px;
+				height: 120px;
+			}
+			.edit {
+				.icon-photo {
+					margin-top: 40px;
+				}
+			}
+		}
+		.name-box {
+			margin-bottom: 14px;
+			line-height: 30px;
+			font-size: 0;
+			color: #2d2d2d;
+			text-align: center;
+			.name {
+				.dis(ib);
+				vertical-align: middle;
+				font-size: 20px;
+				color: #2d2d2d;
+			}
+			img {
+				.dis(ib);
+				vertical-align: middle;
+				margin: 0 0 0 10px;
+			}
+		}
+		.item {
+			line-height: 32px;
+			font-size: 0;
+			> div {
+				.dis(ib);
+				vertical-align: top;
+				font-size: 14px;
+				color: #666;
+				span {
+					.dis(ib);
+					vertical-align: top;
+				}
+				.icon-shouji {
+					margin: 0 10px 0 0;
+				}
+				.icon-youxiang {
+					margin: 0 10px 0 30px;
+				}
+				.icon-qqkong {
+					margin: 0 10px 0 30px;
+				}
+			}
+			i {
+				color: #c7c7c7;
+				margin: 0 10px;
+				font-size: 14px;
+			}
+		}
+	}
+	&-works {
+		background: #fff;
+		.bdr(0, 0, 4px, 4px);
+		.tit {
+			padding: 0 30px;
+			line-height: 54px;
+			font-size: 16px;
+			color: #333;
+		}
+	}
+	&-work, &-edu {
+		background: #fff;
+		.bdr(4px);
+		.tit {
+			line-height: 75px;
+			font-size: 16px;
+			color: #333;
+			padding: 0 30px;
+			border-bottom: 1px solid #eee;
+			.btn-add {
+				font-size: 14px;
+				color: @blue;
+				cursor: pointer;
+				span {
+					.dis(ib);
+					vertical-align: middle;
+					font-size: 14px;
+					margin: -3px 10px 0 0;
+				}
+				&:hover {
+					color: @blue-h;
+				}
+			}
+		}
+		.list {
+			.cl();
+			.work {
+				&-box {
+					// margin-bottom: -34px;
+					.jinfo-form {
+						padding-left: 35px;
+						.add-box {
+							padding: 20px 0 0 35px;
+							margin: -1px 0 0 -35px;
+						}
+						.item {
+							&-half2 {
+								width: 395px;
+								.input {
+									width: 198px;
+								}
+							}
+							.btn {
+								width: 130px;
+								height: 36px;
+								line-height: 36px;
+								margin: 0;
+							}
+						}
+						.textarea {
+							width: 844px - 231px;
+						}
+					}
+				}
+				&-item {
+					.pos(r);
+					padding: 0 30px;
+					margin: 40px 0;
+					.name {
+						.ov(h);
+						height: 24px;
+						line-height: 24px;
+						font-size: 16px;
+						color: #333;
+					}
+					.slogan {
+						.ov(h);
+						height: 22px;
+						line-height: 22px;
+						padding-top: 10px;
+						font-size: 14px;
+						color: #666;
+						i {
+							.dis(ib);
+							vertical-align: middle;
+							font-size: 12px;
+							color: #888;
+							margin: -3px 10px 0;
+						}
+					}
+					.cont {
+						padding: 18px 0 0;
+						line-height: 24px;
+						font-size: 14px;
+						color: #666;
+					}
+					.btn-box {
+						.dis(n);
+						.pos(a);
+						top: 17px;
+						right: 30px;
+						font-size: 0;
+						div {
+							.dis(ib);
+							vertical-align: top;
+							margin-left: 20px;
+							font-size: 14px;
+							color: #666;
+							line-height: 1;
+							cursor: pointer;
+							&:hover {
+								color: @blue;
+							}
+						}
+					}
+					&:hover {
+						.btn-box {
+							.dis(b);
+						}
+					}
+				}
+			}
+		}
+	}
+	&-intro {
+		background: #fff;
+		.bdr(4px);
+		.tit {
+			line-height: 75px;
+			font-size: 16px;
+			color: #333;
+			padding: 0 30px;
+			border-bottom: 1px solid #eee;
+			.btn-edit {
+				.dis(ib);
+				vertical-align: top;
+				margin-left: 20px;
+				font-size: 14px;
+				color: #666;
+				cursor: pointer;
+				&:hover {
+					color: @blue;
+				}
+			}
+		}
+		.list {
+			.cl();
+			.work {
+				&-box {
+					.jinfo-form {
+						padding: 20px 0 40px 35px;
+						.add-box {
+							padding: 20px 0 0 35px;
+							margin: -1px 0 0 -35px;
+						}
+						.item {
+							&-half2 {
+								width: 395px;
+								.input {
+									width: 198px;
+								}
+							}
+							.btn {
+								width: 130px;
+								height: 36px;
+								line-height: 36px;
+							}
+						}
+						.textarea {
+							width: 844px - 231px;
+						}
+						.tagsContaine {
+							width: 665px;
+						}
+					}
+				}
+				&-item {
+					.pos(r);
+					padding: 25px 30px 40px;
+					.cont {
+						padding: 18px 0 0;
+						line-height: 24px;
+						font-size: 14px;
+						color: #666;
+						text-align: justify;
+					}
+					.tags-box {
+						line-height: 26px;
+						padding: 22px 0 0;
+						font-size: 0;
+						span {
+							.dis(ib);
+							vertical-align: top;
+							margin-right: 10px;
+							font-size: 16px;
+							color: #666;
+						}
+						.tags {
+							.dis(ib);
+							vertical-align: top;
+						}
+						.tag {
+							.dis(ib);
+							vertical-align: top;
+							padding: 0 22px;
+							margin-left: 10px;
+							font-size: 14px;
+							color: #fff;
+							background: @blue;
+							.bdr(4px);
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.zsj-box {
+    .list {
+		width: 910px - 30px;
+		padding: 0 0 10px 30px;
+        li {
+            width: 268px;
+            padding: 0 0 14px;
+            margin: 0 20px 20px 0;
+            border: 1px solid #eee;
+            .bdr(4px);
+            .img {
+                &-box {
+                    .pos(r);
+                    top: -1px;
+                    left: -1px;
+                    .ov(h);
+                    .dis(b);
+                    width:270px;
+                    height: 170px;
+                    .bdr(4px, 4px, 0, 0);
+                    img {
+                        width: 270px;
+                        height: 170px;
+                        &:after {
+                            width: 270px;
+                            height: 170px;
+                        }
+                    }
+                }
+            }
+            h3 {
+                padding: 10px 0 0 15px;
+				margin-right: 15px;
+				span {
+					.dis(ib);
+					vertical-align: middle;
+					margin: -3px 10px 0 0;
+					font-size: 16px;
+					color: @yellow;
+				}
+            }
+            .info {
+                .height(22px);
+                padding: 0 0 0 15px;
+                em {
+                    margin-right: 20px;
+                    font-size: 12px;
+                    color: #aaa;
+                    font-style: normal;
+                    span {
+                        color: #dcdcdc;
+                    }
+                    .icon-comment {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.ico-radio {
+	.pos(r);
+	.dis(ib);
+	.ov(h);
+	width: 16px;
+	height: 16px;
+	margin: -3px 6px 0 0;
+	vertical-align: middle;
+	background: url(../images/radio.png) no-repeat -69px 0;
+	cursor: pointer;
+	&-cur {
+		background-position: -30px 0;
+	}
+	input {
+		.pos(a);
+		top: 0;
+		left: 0;
+		margin: 0;
+		.opacity(0);
+		cursor: pointer;
+	}
 }
