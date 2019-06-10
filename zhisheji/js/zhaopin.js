@@ -179,6 +179,10 @@ $(function() {
 	if ($('.radio').length) {
 	    radioBeautify('.radio');
 	}
+	// checkbox美化
+	if ($('.checkbox').length) {
+	    checkboxSelect('.checkbox');
+	};
 
 	var addNum = 1;
 	if ($('.base-box').length) {
@@ -286,6 +290,11 @@ $(function() {
 	$('.jl-edu').on('click', '.btn-add', function() {
 	    $(this).parents('.jl-edu').find('#form3-add').show();
 	});
+
+	// 上传营业执照
+	if ($('#choosefile').length) {
+	    new uploadPreview({ UpBtn: "choosefile", DivShow: "previews", ImgShow: "imghead", fileSize: 20});
+	}
 });
 
 // 获取当前时间
@@ -353,6 +362,7 @@ var uploadPreview = function(setting) {
         ImgShow: "",
         Width: 100,
         Height: 100,
+        fileSize: 5,
         ImgType: ["gif", "jpeg", "jpg", "bmp", "png"],
         ErrMsg: "选择文件错误,图片类型必须是(gif,jpeg,jpg,bmp,png)中的一种",
         callback: function() { }
@@ -367,6 +377,7 @@ var uploadPreview = function(setting) {
         Width: _self.IsNull(setting.Width) ? _self.DefautlSetting.Width : setting.Width,
         Height: _self.IsNull(setting.Height) ? _self.DefautlSetting.Height : setting.Height,
         ImgType: _self.IsNull(setting.ImgType) ? _self.DefautlSetting.ImgType : setting.ImgType,
+    	fileSize: _self.IsNull(setting.fileSize) ? _self.DefautlSetting.fileSize : setting.fileSize,
         ErrMsg: _self.IsNull(setting.ErrMsg) ? _self.DefautlSetting.ErrMsg : setting.ErrMsg,
         callback: _self.IsNull(setting.callback) ? _self.DefautlSetting.callback : setting.callback
     };
@@ -389,13 +400,13 @@ var uploadPreview = function(setting) {
     */
     _self.Bind = function() {
         document.getElementById(_self.Setting.UpBtn).onchange = function(e) {
-            var filemaxsize = 1024 * 2;//2M
+            var filemaxsize = 1024 * _self.Setting.fileSize;
             var target = jQuery(e.target);
             var Size = target[0].files[0].size / 1024;
 
             console.log(Size);
             if(Size > filemaxsize) {
-                jQuery.msgBox.Alert(null, '图片大于2M，请重新选择!');
+                jQuery.msgBox.Alert(null, '图片大于' + _self.Setting.fileSize + 'M，请重新选择!');
                 return false;
             }
             if(!this.files[0].type.match(/image.*/)) {

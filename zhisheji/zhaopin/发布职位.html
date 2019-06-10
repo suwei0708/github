@@ -396,7 +396,7 @@
 						</dd>
 					</dl>
 
-					<dl class="item item-half item-select">
+					<dl class="item item-half3 item-select">
 						<dt><span>*</span> 学历要求</dt>
 						<dd>
 							<input name="xueli" type="text" class="input readonly" placeholder="请选择" required readonly autocomplete="off">
@@ -414,7 +414,7 @@
 							</div>
 						</dd>
 					</dl>
-					<dl class="item item-half item-select">
+					<dl class="item item-half3 item-select">
 					    <dt><span>*</span> 月薪范围</dt>
 					    <dd>
 					        <input name="xinzi" type="text" class="input readonly" placeholder="0~3k" readonly required autocomplete="off">
@@ -432,14 +432,14 @@
 					    </dd>
 					</dl>
 
-					<dl class="item item-half item-select">
+					<dl class="item item-half3">
 					    <dt><span>*</span> 工作城市</dt>
 					    <dd>
 					        <input name="city" type="text" class="input readonly" placeholder="工作城市" readonly required id="city-input" autocomplete="off">
 					        <span class="icon-sanjiao"></span>
 					    </dd>
 					</dl>
-					<dl class="item item-half item-select">
+					<dl class="item item-half3 item-select">
 					    <dt><span>*</span> 经验要求</dt>
 					    <dd>
 					        <input name="jingyan" type="text" class="input readonly" placeholder="1年及应届生" readonly required autocomplete="off">
@@ -460,7 +460,7 @@
 					<dl class="item">
 						<dt><span>*</span> 工作地址</dt>
 						<dd>
-							<input name="dizhi" type="text" class="input" placeholder="公司详细地址" required autocomplete="off">
+							<input name="adress" type="text" class="input" placeholder="公司详细地址" required autocomplete="off">
 						</dd>
 					</dl>
 					<dl class="item">
@@ -538,7 +538,7 @@
 		<!-- footer end -->
 
 		<!-- 发布者选择 start -->
-		<div class="popup-box popup-cselect" style="display: block">
+		<div class="popup-box popup-cselect">
 		    <div class="popup">
 		        <div class="popup-tit">
 		            完善公司信息
@@ -548,11 +548,11 @@
 		            <div class="radio">
 		                <label class="cur">
 							<div class="icon-qiye"></div>
-							<input type="radio" name="xingzhi" value="我是企业" checked required>我是企业
+							<input type="radio" name="xingzhi" value="0" checked required>我是企业
 						</label>
 		                <label>
 							<div class="icon-gongzuoshi"></div>
-							<input type="radio" name="xingzhi" value="我是工作室">我是工作室
+							<input type="radio" name="xingzhi" value="1">我是工作室
 						</label>
 		            </div>
 		            <div class="popup-btn-box">
@@ -569,7 +569,6 @@
         <!-- 通用js start-->
 
         <!--js调用 start -->
-        <script src="../js/jquery.datetimepicker.full.js" type="text/javascript"></script>
         <script src="../js/validate-1.14.0.min.js" type="text/javascript"></script>
         <script src="../js/tag.js" type="text/javascript"></script>
         <script src="../js/zhaopin.js" type="text/javascript"></script>
@@ -599,7 +598,7 @@
 				var validator = $('#form').validate({
 					// 验证成功后提交
 					submitHandler: function(form) {
-						window.location.href = '教育经历.html'
+						$('.popup-cselect').show();
 					},
 				});
 
@@ -613,9 +612,18 @@
 					id: 'tagValue',
 					tagtextMin: 2
 				}).initView();
+
+				// 选择企业或工作室链接跳转
 				$('body').on('change', 'input[type=radio]', function() {
 					if($(this).prop('checked')) {
 						$(this).parents('label').addClass('cur').siblings().removeClass('cur');
+						console.log($(this).val())
+						if($(this).val() == '0') {
+							$('.popup-cselect').find('.btn').attr('href', '企业认证.html');
+						}
+						else {
+							$('.popup-cselect').find('.btn').attr('href', '企业后台.html');
+						}
 					}
 				})
 			});
