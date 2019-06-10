@@ -2074,15 +2074,18 @@ body {
 				color: #666;
 				span {
 					.dis(ib);
-					vertical-align: top;
+					vertical-align: middle;
 				}
 				.icon-shouji {
+					color: #ccc;
 					margin: 0 10px 0 0;
 				}
 				.icon-youxiang {
+					color: #ccc;
 					margin: 0 10px 0 30px;
 				}
 				.icon-qqkong {
+					color: #ccc;
 					margin: 0 10px 0 30px;
 				}
 			}
@@ -2392,5 +2395,51 @@ body {
 		margin: 0;
 		.opacity(0);
 		cursor: pointer;
+	}
+}
+
+.popup {
+	&-cselect {
+		.popup {
+			width: 588px;
+			height: 390px;
+			padding: 0;
+			margin: -390px / 2 0 0 -588px / 2;
+		}
+		.popup-tit {
+			color: #333;
+		}
+		.popup-ct {
+			margin: 55px 0 0;
+		}
+		.radio {
+			label {
+				.dis(ib);
+				vertical-align: top;
+				text-align: center;
+				margin: 0 18px 0 100px;
+				font-size: 14px;
+				line-height: 1;
+				color: #666;
+				cursor: pointer;
+				> div {
+					font-size: 80px;
+					color: #ccc;
+					margin-bottom: 35px;
+				}
+				&.cur > div {
+					color: @blue;
+				}
+			}
+		}
+		.popup-btn-box {
+			padding: 52px 0 0;
+			.btn-green {
+				background: @green;
+				&:hover {
+					background: @green-h;
+				}
+			}
+		}
 	}
 }
