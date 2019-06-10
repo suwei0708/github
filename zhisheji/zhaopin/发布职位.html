@@ -546,16 +546,19 @@
 		        <span class="popup-close icon-close"></span>
 		        <div class="popup-ct">
 		            <div class="radio">
-		                <label>
-							<div class="icon-gou1"></div>
+		                <label class="cur">
+							<div class="icon-qiye"></div>
 							<input type="radio" name="xingzhi" value="我是企业" checked required>我是企业
 						</label>
 		                <label>
-							<div class="icon-gou1"></div>
+							<div class="icon-gongzuoshi"></div>
 							<input type="radio" name="xingzhi" value="我是工作室">我是工作室
 						</label>
 		            </div>
-		        </div>
+		            <div class="popup-btn-box">
+		                <a href="javascript:;" class="btn btn-green">下一步</a>
+		            </div>
+				</div>
 		    </div>
 		</div>
 		<!-- 发布者选择 end -->
@@ -610,6 +613,11 @@
 					id: 'tagValue',
 					tagtextMin: 2
 				}).initView();
+				$('body').on('change', 'input[type=radio]', function() {
+					if($(this).prop('checked')) {
+						$(this).parents('label').addClass('cur').siblings().removeClass('cur');
+					}
+				})
 			});
 		</script>
     </body>
