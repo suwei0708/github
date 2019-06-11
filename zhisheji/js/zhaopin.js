@@ -34,7 +34,8 @@ $(function() {
 	        txtDom.val($(this).text());
 	    } else {
 	        txtDom.html($(this).text());
-	    }
+		}
+		txtDom.focus().blur();
 	    $(this).parents('.select-list').slideUp();
 	    $('.item-select').css('z-index', 'auto');
 	    return false;
@@ -108,7 +109,7 @@ $(function() {
 	    } else {
 	        $('.data-img .img').prepend('<img src="' + dataurl + '">');
 		}
-		$('.jinfo-form .avatar').val(dataurl);
+		$('.jinfo-form .avatar').val(dataurl).focus().blur();
 	    $('.user-editbox').hide();
 	    maskHide();
 	});
@@ -204,6 +205,11 @@ $(function() {
 	if($('.jmsg').length) {
 		$('.jmsg').find('.cont').scrollTop(99999);
 	}
+
+	// 切换消息
+	$('.jmsg').on('click', '.jmsg-l li', function() {
+		$(this).addClass('cur').siblings().removeClass('cur');
+	});
 	// 消息快捷回复
 	$('.btn-fast').on('click', '.list li', function() {
 		var $replayDom = '<div class="msg msg-r">' +
@@ -216,9 +222,14 @@ $(function() {
 
 	// 回复消息
 	$('.jmsg').on('click', '.reply .btn', function() {
+		$cont = $.trim($(this).parents('.reply').find('.textarea').val());
+		if (!$cont) {
+			$.msgBox.Alert(null, '内容不能为空！');
+			return false;
+		}
 	    var $replayDom = '<div class="msg msg-r">' +
 	        '<span class="img"><img src="../images/system.png" height="40" width="40"></span>' +
-	        '<div class="msg-ct">' + $(this).parents('.reply').find('.textarea').val() + '<span class="arrow"></span></div>' +
+	        '<div class="msg-ct">' + $cont + '<span class="arrow"></span></div>' +
 	        '<div class="times">' + getNowFormatDate() + '</div>' +
 			'</div>';
 		$(this).parents('.reply').find('.textarea').val('');
@@ -241,7 +252,6 @@ $(function() {
 			setTimeout(function() {
 				_this.find('a').addClass('cur').parent().siblings().find('a').removeClass('cur')
 			}, 110);
-
 		});
 	}
 
@@ -290,11 +300,6 @@ $(function() {
 	$('.jl-edu').on('click', '.btn-add', function() {
 	    $(this).parents('.jl-edu').find('#form3-add').show();
 	});
-
-	// 上传营业执照
-	if ($('#choosefile').length) {
-	    new uploadPreview({ UpBtn: "choosefile", DivShow: "previews", ImgShow: "imghead", fileSize: 20});
-	}
 });
 
 // 获取当前时间
@@ -404,7 +409,6 @@ var uploadPreview = function(setting) {
             var target = jQuery(e.target);
             var Size = target[0].files[0].size / 1024;
 
-            console.log(Size);
             if(Size > filemaxsize) {
                 jQuery.msgBox.Alert(null, '图片大于' + _self.Setting.fileSize + 'M，请重新选择!');
                 return false;

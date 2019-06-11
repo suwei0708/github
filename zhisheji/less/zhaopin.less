@@ -1199,7 +1199,8 @@ body {
 	}
     &-form {
 		padding-bottom: 40px;
-        background: #fff;
+		background: #fff;
+		font-size: 0;
 		.bdr(4px);
 
 		dt {
@@ -1470,8 +1471,17 @@ body {
 						.pos(a);
 						top: 0;
 						left: 0;
+						z-index: 9;
 						width: 120%;
 						height: 120%;
+						cursor: pointer;
+						.opacity(0);
+					}
+					.hiddeninput {
+						.pos(a);
+						top: 0;
+						left: 0;
+						z-index: 2;
 						cursor: pointer;
 						.opacity(0);
 					}
@@ -1495,6 +1505,7 @@ body {
 				cursor: pointer;
 				span {
 					margin-right: 6px;
+					font-size: 14px;
 				}
 				&-box {
 					.dis(n);
@@ -1725,6 +1736,11 @@ body {
 				font-size: 14px;
 				color: #bbb;
 			}
+		}
+	}
+	&-form2 {
+		.input, .textarea {
+			width: 643px - 50;
 		}
 	}
 }
@@ -1962,6 +1978,12 @@ body {
 			font-size: 14px;
 			color: #969696;
 			border-bottom: 1px solid #eee;
+			a {
+				color: #333;
+				&:hover {
+					color: @blue;
+				}
+			}
 		}
 		.cont {
 			margin: 28px 0 20px;
@@ -2691,17 +2713,96 @@ body {
 .person {
 	&-list {
 		.item {
+			padding: 30px 30px 0;
 			margin-bottom: 20px;
 			background: #fff;
 			.bdr(4px);
 			.cl();
+			&-l {
+				width: 420px;
+				padding: 10px 0 30px;
+			}
+			&-r {
+				padding: 0 0 30px;
+				font-size: 0;
+				a {
+					.dis(ib);
+					vertical-align: top;
+					margin-left: 16px;
+					.bdr(4px);
+				}
+				img {
+					width: 180px;
+					height: 110px;
+					.bdr(4px);
+				}
+			}
 			.img {
 				width: 96px;
+				margin-right: 18px;
 				img {
 					width: 96px;
 					height: 96px;
 					.bdr(50%);
 				}
+			}
+			.name {
+				padding: 18px 0 0;
+				line-height: 30px;
+				font-size: 0;
+				color: #333;
+				span, img {
+					.dis(ib);
+					vertical-align: middle;
+					margin: 0 0 0 8px;
+				}
+				img {
+					width: 17px;
+				}
+				span {
+					margin: 0 2px 0 0;
+					font-size: 16px;
+				}
+				a {
+					color: #333;
+					&:hover {
+						color: @blue;
+					}
+				}
+			}
+			.info {
+				padding: 3px 0 0;
+				line-height: 30px;
+				color: #888;
+				font-size: 0;
+				span {
+					font-size: 14px;
+					margin-right: 20px;
+				}
+			}
+		}
+		.intro {
+			padding: 18px 30px;
+			line-height: 36px;
+			border-top: 1px solid #eee;
+			.cl();
+			clear: both;
+			font-size: 14px;
+			color: #666;
+			.btn {
+				.dis(b);
+				width: 130px;
+				height: 36px;
+				line-height: 36px;
+				background: @green;
+				color: #fff;
+				text-align: center;
+				font-size: 14px;
+				.bdr(4px);
+			}
+			i {
+				margin: 0 16px;
+				color: #dcdcdc;
 			}
 		}
 	}
