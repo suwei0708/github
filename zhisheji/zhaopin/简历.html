@@ -842,7 +842,7 @@
                                         <div class="btn-edit">编辑</div>
                                     </div>
                                     <div class="name xuyuan"></div>
-                                    <div class="slogan"><span class="zhuanye"></span><i>|</i><span class="xueli"></span><i>|</i><span class="data-a"></span> 至 <span class="dateb"></span></div>
+                                    <div class="slogan"><span class="zhuanye"></span><i>|</i><span class="xueli"></span><i>|</i><span class="datea"></span> 至 <span class="dateb"></span></div>
                                 </div>
 
                                 <form action="" id="form3-add" class="jinfo-form" style="display: none;">
@@ -961,7 +961,6 @@
         <script src="../js/cropper.js" type="text/javascript"></script>
         <script src="../js/jquery.datetimepicker.full.js" type="text/javascript"></script>
         <script src="../js/validate-1.14.0.min.js" type="text/javascript"></script>
-        <script src="https://cdn.bootcss.com/jquery.form/4.2.1/jquery.form.min.js"></script>
         <script src="../js/tag.js" type="text/javascript"></script>
         <script src="../js/zhaopin.js" type="text/javascript"></script>
         <!--js调用 end -->
@@ -1045,7 +1044,7 @@
                     },
                 });
 
-                validatorAdd = $('#form1-add').validate({
+                var validatorAdd = $('#form1-add').validate({
                     // 验证成功后提交
                     submitHandler: function(form) {
                         $.each($(form).find('.input'), function() {
@@ -1055,20 +1054,37 @@
                             }
                             $(form).prev('.work-item').find('.' + $(this).attr('name')).html($val);
                         });
-                        var object= {
-                            url: 'https://www.baidu.com/',　　　　　　//form提交数据的地址
-                            type: 'get',　　　  //form提交的方式(method:post/get)
-                            target: 'target',　　//服务器返回的响应数据显示的元素(Id)号
-                            success:function(){},　　　　   //提交成功后执行的回调函数
-                            error:function(){}, //提交失败执行的函数
-                            dataType:null,　　　　　　　//服务器返回数据类型
-                            clearForm:true,　　　　　　 //提交成功后是否清空表单中的字段值
-                            restForm:true,　　　　　　  //提交成功后是否重置表单中的字段值，即恢复到页面加载时的状态
-                            timeout:6000 　　　　　 　 //设置请求时间，超过该时间后，自动退出请求，单位(毫秒)。
-                        }
-                        // form.ajaxSubmit(object);
-                        $(form).ajaxSubmit();
-                        // $('#form1-add').ajaxForm(object);
+
+						var $dom = $(form).parents('.work-box');
+						if($dom.prev('.work-box').length) {
+							var $num = +$dom.prev('.work-box').find('.jinfo-form').attr('id').replace('form3-', '') + 1;
+						}
+						else {
+							var $num = 1;
+						}
+						var $newdom = $dom.clone();
+						var $js = "<sc" + "ript>" +
+								"var validatorA" + $num + " = $('#form1-" + $num + "').validate({" +
+						        "submitHandler: function(form) {" +
+						            "$.each($(form).find('.input'), function() {" +
+						                "var $val = $.trim($(this).val());" +
+						                "if ($(this).hasClass('textarea')) {" +
+						                    "$val = $val.replace(/\\n/g, '<br />');" +
+						                "}" +
+						                "$(form).prev('.work-item').find('.' + $(this).attr('name')).html($val);"+
+						                "$(form).parents('.work-box').find('.work-item').show();"+
+						                "$(form).parents('.work-box').find('.jinfo-form').hide();"+
+						            "});"+
+						        "},"+
+							"});"+
+							"timepicker();"+
+							"</sc" + "ript>"
+
+						$newdom.removeClass('work-box-add').find('.work-item').show();
+						$newdom.find('.jinfo-form').attr('id', 'form1-' + $num).hide();
+						$dom.find('.jinfo-form').hide().find('.input').val('');
+						$newdom.append($js);
+						$dom.before($newdom);
                     },
                 });
 
@@ -1113,12 +1129,37 @@
                     submitHandler: function(form) {
                         $.each($(form).find('.input'), function() {
                             var $val = $.trim($(this).val());
-                            if($(this).hasClass('textarea')) {
-                                $val = $val.replace(/\n/g,"<br />");
-                            }
                             $(form).prev('.work-item').find('.' + $(this).attr('name')).html($val);
-                        });
-                    },
+						});
+
+						var $dom = $(form).parents('.work-box');
+						if($dom.prev('.work-box').length) {
+							var $num = +$dom.prev('.work-box').find('.jinfo-form').attr('id').replace('form3-', '') + 1;
+						}
+						else {
+							var $num = 1;
+						}
+						var $newdom = $dom.clone();
+						var $js = "<sc" + "ript>" +
+								"var validatorA" + $num + " = $('#form3-" + $num + "').validate({" +
+						        "submitHandler: function(form) {" +
+						            "$.each($(form).find('.input'), function() {" +
+						                "var $val = $.trim($(this).val());" +
+						                "$(form).prev('.work-item').find('.' + $(this).attr('name')).html($val);"+
+						                "$(form).parents('.work-box').find('.work-item').show();"+
+						                "$(form).parents('.work-box').find('.jinfo-form').hide();"+
+						            "});"+
+						        "},"+
+							"});"+
+							"timepicker();"+
+							"</sc" + "ript>"
+
+						$newdom.removeClass('work-box-add').find('.work-item').show();
+						$newdom.find('.jinfo-form').attr('id', 'form3-' + $num).hide();
+						$dom.find('.jinfo-form').hide().find('.input').val('');
+						$newdom.append($js);
+						$dom.before($newdom);
+                    }
                 });
 
                 // form1手动提示错误信息， name为input的name值
