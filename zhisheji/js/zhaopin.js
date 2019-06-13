@@ -275,7 +275,10 @@ $(function() {
 	});
 	// 增加工作经历
 	$('.jl-work').on('click', '.btn-add', function() {
-	    $(this).parents('.jl-work').find('#form1-add').show();
+		$(this).parents('.jl-work').find('#form1-add').show();
+		$('html,body').animate({
+			scrollTop: $(this).parents('.jl-work').find('#form1-add').offset().top
+		}, 200)
 	});
 
 	// 编辑简历自我介绍
@@ -298,7 +301,10 @@ $(function() {
 	    });
 	});
 	$('.jl-edu').on('click', '.btn-add', function() {
-	    $(this).parents('.jl-edu').find('#form3-add').show();
+		$(this).parents('.jl-edu').find('#form3-add').show();
+		$('html,body').animate({
+		    scrollTop: $(this).parents('.jl-edu').find('#form3-add').offset().top
+		}, 200)
 	});
 });
 
