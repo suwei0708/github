@@ -1304,24 +1304,24 @@ body {
 					// width: 338px - 50;
 					width: 366px - 50;
 				}
-				&2 {
-					.pos(r);
-					.dis(ib);
-					vertical-align: top;
-					width: 513px;
-					.input {
-						width: 366px - 50;
-					}
-				}
-				&3 {
-					.pos(r);
-					.dis(ib);
-					vertical-align: top;
-					width: 395px;
-					.input {
-						width: 248px - 50;
-					}
-				}
+				// &2 {
+				// 	.pos(r);
+				// 	.dis(ib);
+				// 	vertical-align: top;
+				// 	width: 513px;
+				// 	.input {
+				// 		width: 366px - 50;
+				// 	}
+				// }
+				// &3 {
+				// 	.pos(r);
+				// 	.dis(ib);
+				// 	vertical-align: top;
+				// 	width: 395px;
+				// 	.input {
+				// 		width: 248px - 50;
+				// 	}
+				// }
             }
             div.tips-err {
                 .pos(a);
@@ -1363,7 +1363,7 @@ body {
                 .dis(n);
                 .pos(a);
                 top: 54px;
-                width: 338px / 2;
+                width: 50%;
                 border: 1px solid #ddd;
                 z-index: 10;
                 background: #fff;
@@ -1375,7 +1375,7 @@ body {
                     .bdr(4px 0 0 4px);
                 }
                 &2 {
-                    left: 338px / 2;
+                    left: 50%;
                     .bdr(0 4px 4px 0);
 
                 }
@@ -1712,6 +1712,18 @@ body {
 			color: #333;
 			margin: 0 0 10px 10px;
 			font-size: 14px;
+			&::-webkit-input-placeholder{
+                color: #bbb;
+            }
+            &::-moz-placeholder{   /* Mozilla Firefox 19+ */
+                color: #bbb;
+            }
+            &:-moz-placeholder{    /* Mozilla Firefox 4 to 18 */
+                color: #bbb;
+            }
+            &:-ms-input-placeholder{  /* Internet Explorer 10-11 */
+                color: #bbb;
+            }
 		}
 		.tags {
 			padding: 10px 0 0;
@@ -2234,12 +2246,12 @@ body {
 				}
 			}
 			.item {
-				&-half {
-					width: 395px;
-					.input {
-						width: 198px;
-					}
-				}
+				// &-half {
+				// 	width: 395px;
+				// 	.input {
+				// 		width: 198px;
+				// 	}
+				// }
 				.btn {
 					width: 130px;
 					height: 36px;
@@ -2382,12 +2394,12 @@ body {
 							margin: -1px 0 0 -35px;
 						}
 						.item {
-							&-half2 {
-								width: 395px;
-								.input {
-									width: 198px;
-								}
-							}
+							// &-half2 {
+							// 	width: 395px;
+							// 	.input {
+							// 		width: 198px;
+							// 	}
+							// }
 							.btn {
 								width: 130px;
 								height: 36px;
@@ -2492,12 +2504,12 @@ body {
 							margin: -1px 0 0 -35px;
 						}
 						.item {
-							&-half2 {
-								width: 395px;
-								.input {
-									width: 198px;
-								}
-							}
+							// &-half2 {
+							// 	width: 395px;
+							// 	.input {
+							// 		width: 198px;
+							// 	}
+							// }
 							.btn {
 								width: 130px;
 								height: 36px;
@@ -2805,6 +2817,16 @@ body {
 			i {
 				margin: 0 16px;
 				color: #dcdcdc;
+			}
+		}
+	}
+}
+.w910 {
+	.item {
+		&-half {
+			width: 395px;
+			.input {
+				width: 198px;
 			}
 		}
 	}

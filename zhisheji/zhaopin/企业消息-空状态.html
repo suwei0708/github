@@ -2,14 +2,11 @@
 <html>
     <head>
         <meta charset="UTF-8">
-        <title>公司信息-致设计</title>
+        <title>企业消息-致设计</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="../css/common.css">
 		<link rel="stylesheet" href="../css/zhaopin.css">
-		<!-- 裁剪头像css start -->
-		<link rel="stylesheet" href="../css/cropper.css">
-		<!-- 裁剪头像css end -->
     </head>
     <body>
         <!-- 头部 start -->
@@ -268,149 +265,17 @@
 						    <ul>
 						        <li><a href="企业后台.html">职位管理</a></li>
 						        <li><a href="推荐人才.html">推荐人才</a></li>
-						        <li><a href="企业消息.html">消息<i>33</i></a></li>
-						        <li><a class="cur" href="公司信息.html">公司信息</a></li>
+						        <li><a class="cur" href="企业消息.html">消息<i>33</i></a></li>
+						        <li><a href="公司信息.html">公司信息</a></li>
 						    </ul>
 						</div>
 				    </div>
 				</div>
 				<div class="fr w910">
-					<form action="" id="form" class="jinfo-form jinfo-form2">
-					    <div class="jinfo-ct">
-					        <dl class="item item-avatar">
-					            <dt><span>*</span> 企业标志</dt>
-					            <dd>
-					                <input type="text" required name="avatar" class="avatar" value="../images/man.jpg">
-					                <div class="data-img">
-					                    <a href="javascript:;" class="fll img">
-											<img src="../images/man.jpg" alt="">
-					                        <span class="edit">
-					                            <span class="icon-photo"></span>上传头像
-					                        </span>
-					                    </a>
-					                    <div class="info">支持jpg、图片大小不超过5MB<br>建议使用真实照片提升真实性。</div>
-					                </div>
-					            </dd>
-					        </dl>
-					        <dl class="item">
-					            <dt><span>*</span> 企业名称</dt>
-					            <dd>
-					                <div class="pos-box">
-					                    <input name="allcname" type="text" class="input" placeholder="请填写营业执照上的全称" required autocomplete="off" value="深圳巧匠教育咨询有限公司">
-					                    <div class="num-box"><span class="num">15</span></div>
-					                </div>
-					            </dd>
-					        </dl>
-
-					        <dl class="item item-half">
-					            <dt><span>*</span> 公司简称</dt>
-					            <dd>
-					                <input name="cname" type="text" class="input" placeholder="请填写企业的简称" required autocomplete="off" value="致设计">
-					            </dd>
-					        </dl>
-					        <dl class="item item-half">
-					            <dt><span>*</span> 法人姓名</dt>
-					            <dd>
-					                <input name="name" type="text" class="input" placeholder="姓名" required autocomplete="off" value="王军府">
-					            </dd>
-					        </dl>
-
-					        <dl class="item item-half item-select">
-					            <dt><span>*</span> 联系人</dt>
-					            <dd>
-					                <input name="lianxiren" type="text" class="input" placeholder="真实姓名" required autocomplete="off" value="王军府">
-					            </dd>
-					        </dl>
-					        <dl class="item item-half">
-					            <dt><span>*</span> 联系手机</dt>
-					            <dd>
-					                <input name="phone" type="text" class="input" placeholder="手机号码" required autocomplete="off" value="13822242224">
-					            </dd>
-					        </dl>
-
-					        <dl class="item">
-					            <dt><span>*</span> 营业执照</dt>
-					            <dd>
-					                <div class="zhizhao">
-					                    <div id="previews">
-					                        <img src="../images/zhaopin/zhizhao.png" id="imghead">
-					                        <input class="choosefile" type="file" name="cover" id="choosefile">
-					                        <input class="hiddeninput" type="text" name="zhizhao" required value="../images/zhaopin/zhizhao.png">
-					                    </div>
-					                    <p>图片最大支持20M(清晰完善，不能裁剪)</p>
-					                </div>
-					                <div class="shili">
-					                    <span class="icon-shili"></span>示例
-					                    <div class="shili-box">
-					                        <img src="../images/zhaopin/zhizhao.png" alt="" class="fll img">
-					                        <div class="cont">
-					                            <div class="tt">上传营业执照须知：</div>
-					                            <div class="ct">
-					                                <p><strong>清晰完整，不能裁剪，不支持手机截图和电脑翻拍图片</strong></p>
-					                                <p><strong>营业执照的黑白复印件、扫描件，需加盖红色公司公章</strong></p>
-					                                <p><strong>营业执照二维码能识别信息</strong></p>
-					                                <p>如公司信息已变更，请上传最新营业执照</p>
-					                                <p>营业执照与公司全称一致</p>
-					                                <p>如添加水印须与致设计网招聘审核相关</p>
-					                            </div>
-					                        </div>
-					                    </div>
-					                </div>
-					            </dd>
-					        </dl>
-					        <dl class="item item-half item-select">
-					            <dt><span>*</span> 行业领域</dt>
-					            <dd>
-					                <input name="lingyu" type="text" class="input readonly" placeholder="电子商务" readonly required autocomplete="off" value="电子商务">
-					                <span class="icon-sanjiao"></span>
-					                <div class="select-list">
-					                    <ul>
-					                        <li>电子商务</li>
-					                        <li>电子商务1</li>
-					                    </ul>
-					                </div>
-					            </dd>
-					        </dl>
-					        <dl class="item item-half item-select">
-					            <dt><span>*</span> 公司规模</dt>
-					            <dd>
-					                <input name="guimo" type="text" class="input readonly" placeholder="0 ~ 30人" readonly required autocomplete="off" value="0 ~ 30人">
-					                <span class="icon-sanjiao"></span>
-					                <div class="select-list">
-					                    <ul>
-					                        <li>0 ~ 30人</li>
-					                        <li>30 ~ 100</li>
-					                        <li>100 ~ 500</li>
-					                        <li>500 ~ 1000</li>
-					                        <li>1000以上</li>
-					                    </ul>
-					                </div>
-					            </dd>
-					        </dl>
-					        <dl class="item">
-					            <dt><span>*</span> 公司官网</dt>
-					            <dd>
-					                <input name="net" type="text" class="input" placeholder="公司网址或店铺网址" required autocomplete="off" value="http://www.zhisheji.com/">
-					            </dd>
-					        </dl>
-					        <dl class="item">
-					            <dt>公司简介</dt>
-					            <dd>
-									<div class="pos-box">
-										<textarea name="jianjie" class="input textarea textarea2" placeholder="详细的公司信息更受求职者欢迎。">详细的公司信息更受求职者欢迎。详细的公司信息更受求职者欢迎。</textarea>
-										<div class="num-box"><span class="num">500</span></div>
-									</div>
-					            </dd>
-					        </dl>
-
-					        <dl class="item">
-					            <dt></dt>
-					            <dd>
-					                <button class="btn mt0" type="submit">保存</button>
-					            </dd>
-					        </dl>
-					    </div>
-					</form>
+					<div class="no-result jno-result">
+						<img src="../images/no-result2.png">
+						<p>暂无消息！在 <a href="招聘首页.html" class="blue">首页</a> 寻找合适的工作</p>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -442,96 +307,13 @@
         </div>
 		<!-- footer end -->
 
-		<!-- 编辑头像弹窗 start -->
-		<div class="user-editbox">
-		    <a href="javascript:;" class="user-ico user-editbox-close"><span class="icon-close"></span></a>
-		    <div class="tit">编辑头像</div>
-		    <div class="ct">
-		        <div class="img"><img id="image" src="http://q.qlogo.cn/qqapp/101341581/C781FBAEE76D838500FA8B86CFE9ECAA/100" width="335" height="335" /></div>
-		        <div class="preview-box">
-		            <div class="img-preview preview-lg"></div>
-		            <p>85PX</p>
-		            <div class="img-preview preview-md"></div>
-		            <p>50PX</p>
-		        </div>
-		        <a href="javascript:;" class="btn-up">重新上传<input type="file" id="avatarInput"></a>
-		        <a href="javascript:;" class="btn">保 存</a>
-		    </div>
-		</div>
-		<div class="mask"></div>
-		<!-- 编辑头像弹窗 end -->
-
         <!-- 通用js start-->
         <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
         <script src="../js/common.js" type="text/javascript"></script>
         <!-- 通用js start-->
 
         <!--js调用 start -->
-        <script src="../js/cropper.js" type="text/javascript"></script>
-        <script src="../js/validate-1.14.0.min.js" type="text/javascript"></script>
         <script src="../js/zhaopin.js" type="text/javascript"></script>
 		<!--js调用 end -->
-		<script>
-		    $(function() {
-		        // 验证设置
-		        $.extend(jQuery.validator.messages, {
-		            required: "此项内容不能为空",
-		            email: "请输入有效的电子邮件地址"
-		        });
-		        $.validator.setDefaults({
-		            errorElement: 'div',
-		            errorClass: 'tips-err',
-		            debug: true, // 只验证不提交表单
-		            errorPlacement: function(error, element) {
-		                error.appendTo(element.parents('dd'));
-		            },
-		            rules: {
-		                phone: {
-		                    minlength: 11,
-		                    isMobile: true
-		                }
-		            },
-		            messages: {
-		                phone: {
-		                    minlength: "请正确填写手机号码",
-		                    isMobile: "请正确填写手机号码"
-		                },
-		                xieyi: {
-		                    required: "请阅读招聘协议"
-		                }
-		            },
-		        });
-
-		        //手机号码验证
-		        jQuery.validator.addMethod("isMobile", function(value, element) {
-		            var length = value.length;
-		            var mobile = /^(1[0-9]{10})$/;
-		            return this.optional(element) || (length == 11 && mobile.test(value));
-		        }, "请正确填写手机号码");
-
-		        var validator = $('#form').validate({
-		            // 验证成功后提交
-		            submitHandler: function(form) {
-		                $.msgBox.Alert(null, '保存成功！');
-		            },
-		        });
-
-		        // 手动提示错误信息， name为input的name值
-		        // validator.showErrors({
-		        // 	"name": "真实姓名重复"
-				// });
-
-				// 上传营业执照
-				if ($('#choosefile').length) {
-					new uploadPreview({
-						UpBtn: "choosefile", DivShow: "previews", ImgShow: "imghead", fileSize: 20
-					});
-
-					$('#choosefile').on('change', function() {
-						$('#previews').find('.hiddeninput').val($('#choosefile').val()).focus().blur();
-					})
-				}
-		    });
-		</script>
     </body>
 </html>
