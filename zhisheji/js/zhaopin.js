@@ -23,7 +23,7 @@ $(function() {
 		if($(this).find('.select-list').is(':hidden')) {
 			$('.select-list').slideUp();
 			$('.item-select').css('z-index', 'auto');
-			$(this).css('z-index', '999');
+			$(this).css('z-index', '980');
 			$(this).find('.select-list').slideDown();
 		}
 		return false;
