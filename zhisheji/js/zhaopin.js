@@ -311,13 +311,13 @@ $(function() {
 // 获取当前时间
 function getNowFormatDate() {
     var date = new Date();
-    var seperator1 = "-";
     var seperator2 = ":";
     var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
-    var strDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-    var currentdate = month + seperator1 + strDate +
-        " " + date.getHours() + seperator2 + date.getMinutes() +
-        seperator2 + date.getSeconds();
+	var strDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+	var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
+	var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
+	var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
+    var currentdate = month + '月' + strDate + "日 " + hours + seperator2 + minutes + seperator2 + seconds;
     return currentdate;
 }
 
