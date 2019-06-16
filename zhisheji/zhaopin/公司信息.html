@@ -500,7 +500,7 @@
 		                xieyi: {
 		                    required: "请阅读招聘协议"
 		                }
-		            },
+		            }
 		        });
 
 		        //手机号码验证
@@ -514,7 +514,7 @@
 		            // 验证成功后提交
 		            submitHandler: function(form) {
 		                $.msgBox.Alert(null, '保存成功！');
-		            },
+		            }
 		        });
 
 		        // 手动提示错误信息， name为input的name值
@@ -525,7 +525,7 @@
 				// 上传营业执照
 				if ($('#choosefile').length) {
 					new uploadPreview({
-						UpBtn: "choosefile", DivShow: "previews", ImgShow: "imghead", fileSize: 20
+						UpBtn: "choosefile", DivShow: "previews", ImgShow: "imghead", fileSize: 20, Width: 288, Height: 178
 					});
 
 					$('#choosefile').on('change', function() {

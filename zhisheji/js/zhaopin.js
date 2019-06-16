@@ -67,7 +67,8 @@ $(function() {
 	    }
 	    if (!this.files[0].type.match(/image.*/)) {
 	        $.msgBox.Alert(null, '请选择正确的图片!');
-	    } else {
+		}
+		else {
 	        var file = target[0].files[0];
 	        var src = window.URL.createObjectURL(file);
 	        $('.user-editbox').show();
@@ -333,7 +334,7 @@ function timepicker() {
 				format: data, //格式化日期
 			    timepicker: false, //关闭时间选项
 				todayButton: false, //关闭选择今天按钮
-				validateOnBlur: false, // 失去焦点时验证datetime值输入,。如果值是无效的datetime,然后插入当前日期时间值
+				validateOnBlur: false // 失去焦点时验证datetime值输入,。如果值是无效的datetime,然后插入当前日期时间值
 			});
 		}
 		else {

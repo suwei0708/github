@@ -305,7 +305,7 @@
 					    <dt><span>*</span> 营业执照</dt>
 					    <dd>
 							<div class="zhizhao">
-								<div id="previews">
+								<div id="previews" onclick="$('#choosefile').on('click');">
 								    <img src="../images/zhaopin/nocover.png" id="imghead">
 								    <input class="choosefile" type="file" name="cover" id="choosefile">
 								    <input class="hiddeninput" type="text" name="zhizhao" required>
@@ -557,7 +557,7 @@
 					// 验证成功后提交
 					submitHandler: function(form) {
 						$('.popup-pubrecruit').show();
-					},
+					}
 				});
 
 				$('.jinfo-form').on('click', '.btn-agreement', function() {
@@ -573,7 +573,7 @@
 				// 上传营业执照
 				if ($('#choosefile').length) {
 					new uploadPreview({
-						UpBtn: "choosefile", DivShow: "previews", ImgShow: "imghead", fileSize: 20
+						UpBtn: "choosefile", DivShow: "previews", ImgShow: "imghead", fileSize: 20, Width: 288, Height: 178
 					});
 
 					$('#choosefile').on('change', function() {

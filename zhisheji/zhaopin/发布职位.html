@@ -461,7 +461,7 @@
 					// 验证成功后提交
 					submitHandler: function(form) {
 						$('.popup-cselect').show();
-					},
+					}
 				});
 
 				// 手动提示错误信息， name为input的name值
@@ -479,7 +479,6 @@
 				$('body').on('change', 'input[type=radio]', function() {
 					if($(this).prop('checked')) {
 						$(this).parents('label').addClass('cur').siblings().removeClass('cur');
-						console.log($(this).val())
 						if($(this).val() == '0') {
 							$('.popup-cselect').find('.btn').attr('href', '企业认证.html');
 						}
