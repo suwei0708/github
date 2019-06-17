@@ -66,24 +66,23 @@ $(function() {
 	        return false;
 	    }
 	    if (!this.files[0].type.match(/image.*/)) {
-	        $.msgBox.Alert(null, '请选择正确的图片!');
+			$.msgBox.Alert(null, '请选择正确的图片!');
+			return false;
 		}
-		else {
-	        var file = target[0].files[0];
-	        var src = window.URL.createObjectURL(file);
-	        $('.user-editbox').show();
-	        maskShow();
-	        $('.user-editbox .img').html('<img id="image" src="' + src + '" width="335" height="335"/>');
-	        var image = document.getElementById('image');
-	        $(image).on('load', function() {
-	            $(image).cropper({
-	                aspectRatio: 200 / 200,
-	                viewMode: 2, //显示
-	                dragMode: "move",
-	                preview: '.img-preview'
-	            });
-	        });
-	    }
+		var file = target[0].files[0];
+		var src = window.URL.createObjectURL(file);
+		$('.user-editbox').show();
+		maskShow();
+		$('.user-editbox .img').html('<img id="image" src="' + src + '" width="335" height="335"/>');
+		var image = document.getElementById('image');
+		$(image).on('load', function() {
+		    $(image).cropper({
+		        aspectRatio: 200 / 200,
+		        viewMode: 2, //显示
+		        dragMode: "move",
+		        preview: '.img-preview'
+		    });
+		});
 	});
 
 	// 关闭裁剪头像
