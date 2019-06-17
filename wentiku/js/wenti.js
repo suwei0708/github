@@ -67,6 +67,9 @@ $(function() {
     });
 
 	/** 详情回答按钮操作 start */
+	if ($('.wt-answer').length) {
+		textareaChange('.wt-answer');
+	}
     $('.wt-details')
     // 我来答
     .on('click', '.btn-answer', function () {
@@ -292,8 +295,10 @@ $(function() {
 function textareaChange(dom, nums) {
 	$.each($(dom).find('.textarea'), function(index, val) {
 		var _this = $(this);
-		_this.unbind()
-        monitorVal(_this, nums, 'minus');
+		_this.unbind();
+		if (nums) {
+			monitorVal(_this, nums, 'minus');
+		}
         _this.bind('input propertychange', function() {
             if (_this.val().length > 0) {
                 _this.parent().find('.btn-sure').removeClass('dis');
