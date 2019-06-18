@@ -63,7 +63,6 @@ var uploadPreview = function(setting) {
         document.getElementById(_self.Setting.UpBtn).onchange = function(e) {
 			var filemaxsize = 1024 * _self.Setting.fileSize;
 			var Size;
-			console.log(e, 'e')
 			if (e && $(e.target)[0].files) {
 				Size = $(e.target)[0].files[0].size / 1024
 			}
