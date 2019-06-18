@@ -59,7 +59,10 @@ $(function() {
 	// 裁剪头像
 	$('#avatarInput').on('change', function(e) {
 	    var filemaxsize = 1024 * 5; //10M
-	    var target = $(e.target);
+		var target = $(e.target);
+		if (!target[0].files) {
+			$.msgBox.Alert(null, '您的浏览器版本过低');
+		}
 	    var Size = target[0].files[0].size / 1024;
 	    if (Size > filemaxsize) {
 	        $.msgBox.Alert(null, '图片大于10M，请重新选择!');
