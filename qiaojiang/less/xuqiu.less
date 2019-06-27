@@ -169,7 +169,50 @@ input::-moz-placeholder, textarea::-moz-placeholder { // Firefox19+
                 }
             }
         }
-    }
+	}
+	&-rule-box {
+		width: 1220px - 100;
+		margin: 30px auto 70px;
+		padding: 17px 50px 35px;
+		background: #fff;
+		.bdr(4px);
+		dl {
+			padding: 25px 50px;
+		}
+		dt {
+			line-height: 30px;
+			color: #333;
+			font-size: 16px;
+			font-weight: 700;
+		}
+		dd {
+			padding: 12px 0 0;
+			line-height: 27px;
+			color: #666;
+			font-size: 14px;
+		}
+		.btn {
+			.dis(b);
+			width: 144px;
+			height: 40px;
+			line-height: 40px;
+			margin-top: 14px;
+			font-size: 14px;
+			color: #fff;
+			text-align: center;
+			background: #ff8d01;
+			.bdr(4px);
+			&:hover {
+				background: @yellow;
+			}
+			span {
+				.dis(ib);
+				vertical-align: middle;
+				font-size: 14px;
+				margin: -3px 8px 0 0;
+			}
+		}
+	}
 }
 .page-xq {
     padding: 20px 0 10px;
