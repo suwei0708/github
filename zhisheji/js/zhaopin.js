@@ -19,12 +19,12 @@ $(function() {
 	});
 
 	// 招聘通用下拉
-	$('body').on('click', '.item-select', function() {
+	$('body').on('mouseover', '.item-select dd', function() {
 		if($(this).find('.select-list').is(':hidden')) {
-			$('.select-list').slideUp();
+			$('.select-list').hide();
 			$('.item-select').css('z-index', 'auto');
-			$(this).css('z-index', '980');
-			$(this).find('.select-list').slideDown();
+			$(this).parents('.item-select').css('z-index', '980');
+			$(this).find('.select-list').show();
 		}
 		return false;
 	})
@@ -36,13 +36,13 @@ $(function() {
 	        txtDom.html($(this).text());
 		}
 		txtDom.focus().blur();
-	    $(this).parents('.select-list').slideUp();
+	    $(this).parents('.select-list').hide();
 	    $('.item-select').css('z-index', 'auto');
 	    return false;
 	})
-	.on('click', function() {
+	.on('mouseout', '.item-select dd', function() {
 		if ($('.select-list').is(':visible')) {
-			$('.select-list').slideUp();
+			$('.select-list').hide();
 		}
 	});
 
@@ -212,6 +212,7 @@ $(function() {
 	// 切换消息
 	$('.jmsg').on('click', '.jmsg-l li', function() {
 		$(this).addClass('cur').siblings().removeClass('cur');
+		$(this).find('.num').remove();
 	});
 	// 消息快捷回复
 	$('.btn-fast').on('click', '.list li', function() {
@@ -241,7 +242,7 @@ $(function() {
 
 	// 简历导航位置跳转
 	if($('.side-nav').length && $('#scroll0').length) {
-		var pos = $('.side-nav').offset().top;
+		var pos = $('.fixed-bar').offset().top;
 		posNav(pos);
 		$(window).on('scroll', function() {
 			posNav(pos)
@@ -381,13 +382,13 @@ function numbox() {
 // 简历导航跳转
 function posNav(pos) {
 	if($(window).scrollTop() > pos) {
-		$('.side-nav').css({
+		$('.fixed-bar').css({
 			position: 'fixed',
 			top: 0
 		})
 	}
 	else {
-		$('.side-nav').css({
+		$('.fixed-bar').css({
 		    position: 'static'
 		})
 	}
