@@ -1,18 +1,20 @@
 @charset "utf-8";
 @import url(../../../common/common-pc.less);
 @page-w: 1220px;
-@green: #2ed25d;
-@green-h: #34db64;
-@blue: #0097f8;
-@blue-h: #26a5ff;
-@yellow: #ff8d01;
-@yellow-h: #fd9932;
 @y: #ffa200;
 @y-h: #ffba00;
 @pink: #f85778;
 @pink-h: #ff3a3b;
-/* 播放页 */
+@yellow: #ff6c00;
+@yellow-h: #fd9932;
+@blue: #0084ff;
+@blue-h: #0097f9;
+@green: #21bb1d;
+@green-h: #2ed35c;
+@red: #ff3a3a;
+@red-h: #f95678;
 
+/* 播放页 */
 .video-js .vjs-control:before, .video-js .vjs-modal-dialog, .vjs-modal-dialog .vjs-modal-dialog-content {
     position: absolute;
     top: 0;
@@ -573,8 +575,7 @@ video::-webkit-media-text-track-display {
     &-video {
         width: 100%;
         min-width: @page-w;
-        padding: 0 0 30px;
-        background: #292929;
+        background: #fff;
 
         &-normal {
             .qjplayer-btn-big .qjplayer-pause, .qjplayer-tips-mini {
@@ -585,46 +586,35 @@ video::-webkit-media-text-track-display {
             .ov(h);
             height: 50px;
             line-height: 50px;
-            padding-top: 40px;
+            padding-top: 12px;
             font-size: 14px;
-            color: #666;
+            color: #999;
 
             a {
-                color: #666;
+                color: #999;
 
                 &:hover {
-                    color: #ccc;
+                    color: #666;
                 }
             }
             span {
-                color: #ccc;
+                color: #666;
             }
             .fr {
-                .pos(r);
-                top: -12px;
-                line-height: 40px;
-                font-size: 15px;
-                color: #999;
+				margin-right: -10px;
+				color: #eee;
                 a {
-                    .dis(ib);
-                    vertical-align: top;
-                    width: 160px;
-                    height: 40px;
-                    margin-left: 30px;
-                    color: #fff;
-                    text-align: center;
-                    font-size: 14px;
-                    background: #fe7001;
-                    .bdr(4px);
+					margin: 0 10px;
+					color: #999;
                     &:hover {
-                        background: #feaa00;
+                        color: #666;
                     }
                 }
             }
         }
         .area-l {
             width: 852px;
-            height: 480px + 60px;
+            height: 480px;
         }
         #area {
             .pos(r);
@@ -638,23 +628,45 @@ video::-webkit-media-text-track-display {
                 width: 100%;
                 height: 100%;
                 z-index: 996;
-                background: #ccc;
+				background: #000;
+				&::before {
+					content: '';
+					.pos(a);
+					top: 0;
+					right: 0;
+					bottom: 0;
+					left: 0;
+					background: rgba(0, 0, 0, .6);
+				}
 
                 img {
                     width: 100%;
                     height: 100%;
-                }
-                .iplay {
+				}
+				.text {
                     position: absolute;
                     top: 50%;
-                    left: 50%;
+					left: 0;
+					z-index: 9;
+					width: 100%;
+					text-align: center;
+                    margin: -53px 0 0 0;
+				}
+                .iplay {
+					.dis(ib);
+					vertical-align: top;
                     width: 70px;
                     height: 70px;
-                    margin: -35px 0 0 -35px;
                     background: url(../images/kecheng/iplay.png) no-repeat 0 -630px;
                     cursor: pointer;
                     font-size: 0;
-                }
+				}
+				p {
+					padding: 20px 0 0;
+					font-size: 16px;
+					color: #dcdcdc;
+					line-height: 1;
+				}
             }
         }
         #my-video {
@@ -918,186 +930,45 @@ video::-webkit-media-text-track-display {
             &:hover {
                 background-position: -40px -210px;
             }
-        }
-        .other {
-            height: 40px;
-            line-height: 40px;
-            padding: 10px 0;
-            background: #1f1f1f;
+		}
 
-            .fl {
-                padding: 0 0 0 20px;
-            }
-            .collect {
-                .pos(r);
-                .dis(ib);
-                margin: 0 30px 0 0;
-                color: #999;
-                font-size: 14px;
-
-                .iplay-collect {
-                    width: 16px;
-                    height: 16px;
-                    margin: -3px 8px 0 0;
-                    background-position: 0 -160px;
-                }
-                .tips {
-                    .pos(a);
-                    top: 40px;
-                    left: -10px;
-                    padding: 0 9px;
-                    line-height: 32px;
-                    background: #333;
-                    color: #ccc;
-                    font-size: 13px;
-                    .bdr(3px);
-                    border: 0;
-                }
-                &:hover, &.cur {
-                    color: @yellow;
-
-                    .iplay-collect {
-                        background-position: -40px -160px;
-                    }
-                }
-            }
-            .phone {
-                .pos(r);
-                .dis(ib);
-                margin: 0 30px 0 0;
-                color: #999;
-                font-size: 14px;
-
-                .iplay-phone {
-                    width: 16px;
-                    height: 16px;
-                    margin: -3px 8px 0 0;
-                    background-position: 0 -190px;
-                }
-                .tips {
-                    .pos(a);
-                    top: 40px;
-                    left: 0;
-                    width: 288px;
-                    padding: 16px 12px;
-                    line-height: 24px;
-                    background: #fff;
-                    color: #666;
-                    font-size: 0;
-                    .bdr(3px);
-                    border: 0;
-
-                    p {
-                        .dis(ib);
-                        width: 140px;
-                        margin-right: 10px;
-                        font-size: 13px;
-                    }
-                    strong {
-                        .dis(b);
-                        padding-top: 10px;
-                        margin-bottom: 8px;
-                        font-size: 15px;
-                        font-weight: 400;
-                    }
-                    img {
-                        display: inline-block;
-                    }
-                }
-                &:hover, &.cur {
-                    color: @yellow;
-
-                    .iplay-phone {
-                        background-position: -40px -190px;
-                    }
-                }
-            }
-            .btn {
-                .dis(ib);
-                padding: 0 26px;
-                margin: 0 0 0 10px;
-                color: #fffefe;
-                font-size: 15px;
-                .bdr(3px);
-                &-largess {
-                    .pos(r);
-                    padding: 0 34px;
-                    line-height: 38px;
-                    border: 1px solid #666;
-                    color: #999;
-
-                    &:hover {
-                        color: #fff;
-                        .tips {
-                            .dis(b);
-                        }
-                    }
-                }
-                &-down {
-                    .iplay-down {
-                        width: 12px;
-                        height: 16px;
-                        margin: -3px 7px 0 0;
-                        background-position: -60px -410px;
-                    }
-                }
-                &-qun {
-                    .qj-qie {
-                        font-size: 16px;
-                        margin: -3px 7px 0 0;
-                    }
-                }
-            }
-            .tips {
-                .dis(n);
-                .pos(a);
-                top: 50px;
-                left: 0;
-                padding: 15px 25px;
-                white-space: nowrap;
-                background: #fff;
-                z-index: 9;
-                line-height: 26px;
-                color: #666;
-                font-size: 14px;
-                .bdr(3px);
-                border: 1px solid #ebebeb;
-
-                .triangle {
-                    .pos(a);
-                    top: -6px;
-                    *top: -33px;
-                    left: 50px;
-                    .triangle(top, 6px, #fff);
-                }
-            }
-        }
         .play-list {
             width: 368px;
-            background: #1f1f1f;
+			background: #1f1f1f;
 
-            h1 {
+			scrollbar-arrow-color: #666; /*三角箭头的颜色*/
+			scrollbar-face-color: #666; /*立体滚动条的颜色*/
+			scrollbar-shadow-color: #666; /*立体滚动条阴影的颜色*/
+			/*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+			::-webkit-scrollbar {
+				width: 4px;
+				// height: 140px;
+				background-color: #1f1f1f;
+			}
+			/*定义滚动条轨道 内阴影+圆角*/
+			::-webkit-scrollbar-track {
+				border-radius: 4px;
+				background-color: #1f1f1f;
+			}
+			/*定义滑块 内阴影+圆角*/
+			::-webkit-scrollbar-thumb {
+				border-radius: 4px;
+				background-color: #666;
+			}
+
+            .tit {
                 .ov(h);
                 .dis(b);
-                padding: 15px 20px 0 47px;
-                margin: 0 0 7px;
-                height: 60px;
-                font-size: 18px;
+                padding: 30px 10px 15px 40px;
+				height: 25px;
+				line-height: 15px;
+                font-size: 16px;
                 color: #fff;
 
                 span {
-                    display: inline-block;
-                    line-height: 30px;
-                    vertical-align: middle;
-                    *display: inline;
-                    *zoom: 1;
-                }
-                i {
-                    content: '';
-                    height: 100%;
-                    vertical-align: middle;
-                    width: 0;
-                    display: inline-block;
+					margin: 0 0 0 20px;
+					font-size: 14px;
+					color: #999;
                 }
             }
             .h2 {
@@ -1109,103 +980,40 @@ video::-webkit-media-text-track-display {
             .list {
                 .ovx(h);
                 .ovy(a);
-                height: 454px;
+				height: 410px;
 
                 li {
                     .ov(h);
                     .pos(r);
-                    padding: 10px 40px 10px 0;
+                    .height(40px);
                     font-size: 0;
-
-                    .iplay-ksk {
-                        .pos(a);
-                        top: 10px;
-                        right: 11px;
-                        width: 24px;
-                        height: 45px;
-                        background-position: 0 -390px;
-                    }
-                    .iplay-vip {
-                        .pos(a);
-                        top: 57px;
-                        right: 11px;
-                        width: 29px;
-                        height: 13px;
-                        background-position: -30px -390px;
-                    }
                     .iplay-play {
-                        .dis(n);
+						.dis(n);
+						.pos(a);
+						top: 15px;
+						left: 20px;
                         width: 9px;
                         height: 12px;
                         background-position: -50px -410px;
-                    }
-                    .order {
-                        .dis(ib);
-                        vertical-align: middle;
-                        width: 44px;
-                        line-height: 62px;
-                        text-align: center;
-                        font-size: 14px;
-                        color: #666;
-                    }
-                    .img {
-                        .pos(r);
-                        .dis(ib);
-                        vertical-align: middle;
-                        margin-left: 3px;
-                        width: 110px;
-
-                        img {
-                            width: 110px;
-                            height: 62px;
-                            .bdr(3px);
-                        }
-                        .times {
-                            .pos(a);
-                            bottom: 5px;
-                            left: 4px;
-                            padding: 0 5px;
-                            line-height: 15px;
-                            background: #333;
-                            .bdr(3px);
-                            color: #ccc;
-                            font-size: 10px;
-                        }
-                    }
-                    .cont {
-                        .dis(ib);
-                        vertical-align: middle;
-                        width: 150px;
-                        line-height: 25px;
-                        padding: 6px 0 0;
-                        margin-left: 20px;
-                        font-size: 12px;
-                        color: #666;
-
-                        p {
-                            .height(25px);
-                            .text-e(1);
-                            margin-bottom: 4px;
-                            font-size: 15px;
-                            color: #999;
-                        }
-                    }
+					}
+					a {
+						.dis(ib);
+						vertical-align: top;
+						padding: 0 40px;
+						.text-e(1);
+					}
+					p {
+						font-size: 14px;
+						color: #999;
+					}
                     &:hover, &.cur {
                         background: #333;
-
-                        .cont {
-                            p {
-                                color: #fff;
-                            }
-                        }
-                        .order {
-                            .num {
-                                .dis(n);
-                            }
-                            .iplay-play {
-                                .dis(ib);
-                            }
-                        }
+						.iplay-play {
+							.dis(b);
+						}
+						p {
+							color: #fff;
+						}
                     }
                 }
             }
@@ -1226,82 +1034,70 @@ video::-webkit-media-text-track-display {
                 height: 410px - 113px;
             }
         }
-        .tag {
-            padding: 12px 0 0;
-            line-height: 34px;
-            color: #666;
-            font-size: 14px;
+        .other {
+			padding: 30px 0;
+			.tit {
+				line-height: 24px;
+				h1 {
+					.dis(ib);
+					vertical-align: top;
+					font-size: 24px;
+					color: #333;
+				}
+				.tag {
+					.dis(ib);
+					vertical-align: top;
+					padding: 0 10px;
+					margin: 0 0 0 20px;
+					background: @green;
+					color: #fff;
+					font-size: 12px;
+					.bdr(4px);
+				}
+			}
+			.ct {
+				padding: 12px 0 0;
+				line-height: 30px;
+				font-size: 14px;
+				color: #666;
+				a {
+					margin-left: 30px;
+					color: #666;
+					span {
+						.dis(ib);
+						vertical-align: middle;
+						margin: -3px 8px 0 0;
+					}
+					&:hover {
+						color: @blue;
+					}
+				}
+			}
+			.fr {
+				padding: 6px 0 0;
+				line-height: 44px;
+				font-size: 0;
+				.price {
+					font-size: 30px;
+					color: @red;
+				}
+				.btn {
+					.dis(ib);
+					vertical-align: top;
+					width: 170px;
+					height: 44px;
+					margin-left: 20px;
+					text-align: center;
+					font-size: 14px;
+					color: #fff;
+					.bdr(4px);
+					background: @red;
+					&:hover {
+						background: @red-h;
+					}
 
-            a {
-                color: #666;
-                font-size: 14px;
-
-                &:hover {
-                    color: #999;
-                }
-            }
-
-            /* 分享 */
-            .bdsharebuttonbox {
-                span {
-                    margin-right: 10px;
-                    line-height: 34px;
-                    font-size: 14px;
-                    color: #999;
-                }
-                a {
-                    overflow: hidden;
-                    .pos(r);
-                    width: 34px;
-                    height: 34px;
-                    line-height: 34px;
-                    padding: 0;
-                    margin: 0 12px 0 0;
-                    font-size: 34px;
-                    text-indent: 0;
-                    color: #1f1f1f;
-                    background: none;
-                    .bdr(50%);
-
-                    &.qjfont {
-                        &:before {
-                            .pos(a);
-                            top: 0;
-                            left: 0;
-                            z-index: 2;
-                        }
-                        &:after {
-                            content: '';
-                            .pos(a);
-                            top: 2px;
-                            right: 2px;
-                            bottom: 2px;
-                            left: 2px;
-                            .bdr(50%);
-                            background: #999;
-                        }
-                    }
-                    &:hover.qj-weixinhuise {
-                        color: #2ed25d;
-                    }
-                    &:hover.qj-kongjianhuise {
-                        color: #ffa800;
-                    }
-                    &:hover.qj-qqhuise {
-                        color: #0097f8;
-                    }
-                    &:hover.qj-weibohuise {
-                        color: #f85778;
-                    }
-                    &:hover {
-                        opacity: 1;
-
-                        &:after {
-                            background: #fff;
-                        }
-                    }
-                }
-            }
+				}
+			}
         }
         &-full {
             #my-video {
