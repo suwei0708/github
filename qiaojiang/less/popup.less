@@ -379,3 +379,98 @@
         opacity: 0
     }
 }
+
+// 7天vip
+.popup-7vip {
+    overflow: visible;
+    width: 570px;
+    height: 574px;
+    padding: 0;
+	margin: -287px 0 0 -285px;
+	.img {
+		position: absolute;
+		top: -96px;
+		left: 112px;
+		width: 311px;
+	}
+	.tit {
+		padding: 155px 0 0;
+		height: auto;
+		line-height: 36px;
+		margin: 0;
+		h3 {
+			font-size: 28px;
+			color: #333;
+		}
+		.red {
+			color: #ff456b;
+		}
+		p {
+			font-size: 18px;
+			color: #666;
+		}
+	}
+	ul {
+		padding: 8px 0 0 29px;
+		font-size: 0;
+		text-align: left;
+		li {
+			.dis(ib);
+			vertical-align: top;
+			width: 171px;
+			padding: 14px 0 0;
+			text-align: center;
+			span {
+				.dis(ib);
+				vertical-align: top;
+				width: 65px;
+				height: 65px;
+				background: url(../images/icon-7day.png) no-repeat;
+				@h: -70px;
+				&.icon1 {
+					background-position: 0 0;
+				}
+				&.icon2 {
+					background-position: 0 @h;
+				}
+				&.icon3 {
+					background-position: 0 @h*2;
+				}
+				&.icon4 {
+					background-position: 0 @h*3;
+				}
+				&.icon5 {
+					background-position: 0 @h*4;
+				}
+				&.icon6 {
+					background-position: 0 @h*5;
+				}
+			}
+			p {
+				line-height: 38px;
+				font-size: 18px;
+				color: #111;
+			}
+		}
+	}
+
+	.btn {
+		display: inline-block;
+		vertical-align: top;
+		width: 160px;
+		height: 44px;
+		line-height: 44px;
+		margin: 32px 0 0;
+		background: #ffa800;
+		color: #fff;
+		font-size: 16px;
+		-webkit-border-radius: 4px;
+		-moz-border-radius: 4px;
+		-ms-border-radius: 4px;
+		-o-border-radius: 4px;
+		border-radius: 4px;
+		&:hover {
+			background: #ffba00;
+		}
+	}
+}
