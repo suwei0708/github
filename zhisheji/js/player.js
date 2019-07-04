@@ -320,7 +320,12 @@ $(function () {
     // 迷你播放器暂停
     $('.qjplayer-btn-big').on('click', '.qjplayer-pause', function () {
         player.pause();
-    });
+	});
+
+	$('.wait').on('click', function() {
+		$(this).hide();
+		player.play();
+	})
 });
 
 function minihide() {
