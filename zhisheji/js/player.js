@@ -322,8 +322,8 @@ $(function () {
         player.pause();
 	});
 
-	$('.wait').on('click', function() {
-		$(this).hide();
+	$('#area').on('click', '.wait .iplay', function() {
+		$(this).parents('.wait').hide();
 		player.play();
 	})
 });
