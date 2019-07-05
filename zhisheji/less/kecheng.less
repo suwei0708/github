@@ -23,15 +23,9 @@ input::-ms-clear, input::-ms-reveal {
 }
 .bg-blue {
     background: @blue !important;
-    &:hover {
-        background: @blue-h !important;
-    }
 }
 .bg-green {
     background: @green !important;
-    &:hover {
-        background: @green-h !important;
-    }
 }
 .bdr4 {
     .bdr(4px);
@@ -538,6 +532,9 @@ input::-ms-clear, input::-ms-reveal {
 		}
 	}
 }
+.page-comment {
+	padding: 40px 0 0;
+}
 
 .popup-share {
 	.popup {
@@ -631,4 +628,71 @@ input::-ms-clear, input::-ms-reveal {
 .bd_weixin_popup {
 	margin-top: 376px;
 	padding: 15px 0 26px 0 !important;
+}
+.popup-buy {
+	.popup {
+	    width: 648px;
+	    height: 438px;
+	    padding: 0;
+	    margin: -438px/2 0 0 -648px/2;
+	}
+	.popup-tit {
+	    color: #333;
+	}
+	.popup-ct {
+	    max-height: none;
+	    padding: 0;
+	    margin: 0;
+	}
+	.list {
+	    padding-top: 40px;
+	    .cl();
+	    li {
+	        .ov(h);
+	        float: left;
+	        width: 200px;
+			margin: 0 0 0 66px;
+			.img {
+				padding: 10px;
+				.bdr(4px);
+			}
+	        img {
+	            .dis(b);
+	            width: 180px;
+				height: 180px;
+				.bdr(4px);
+	        }
+	        .btn {
+	            .dis(b);
+	            width: 170px;
+	            height: 44px;
+				line-height: 44px;
+				margin: 40px auto 0;
+	            color: #fff;
+	            font-size: 14px;
+	            text-align: center;
+	            .bdr(5px);
+	            &-blue {
+	                background: @blue;
+	                &:hover {
+	                    background: @blue-h;
+	                }
+	            }
+			}
+			strong {
+				.dis(b);
+				line-height: 35px;
+				margin-top: 26px;
+				font-size: 30px;
+				color: @red;
+				text-align: center;
+			}
+			p {
+				line-height: 30px;
+				font-size: 14px;
+				color: #333;
+				text-align: center;
+			}
+	    }
+	}
 }
