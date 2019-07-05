@@ -12,13 +12,17 @@ $(function() {
 	    });
 	}
 
-
 	// 首页切换
 	$('.zsj-kc').on('click', '.tit h2', function() {
 		console.log($(this).index());
 		$(this).find('a').addClass('cur').parent().siblings('h2').find('a').removeClass('cur');
 		$('.tab-kccont').find('.zsj-kc').hide().eq($(this).index()).show();
 	});
+
+	// 点击购买
+	$('body').on('click', '.btn-buy', function() {
+		$('.popup-buy').show();
+	})
 
 	// 播放页分享
 	$('.v-share').on('click', function() {
