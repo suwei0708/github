@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>课程介绍-致设计</title>
         <meta name="keywords" content="" />
-        <meta name="description" content="" />
+        <meta name="description" content="课程介绍描述" />
         <link rel="stylesheet" href="../css/common.css">
 		<link rel="stylesheet" href="../css/kecheng.css">
 		<link rel="stylesheet" href="../css/player.css">
@@ -384,7 +384,8 @@
 		            <h1>PS - CC2019零基础入门全面精通</h1>
 		            <span class="tag">录播</span>
 		        </div>
-		        <div class="ct">课程服务 :<a href="#"><span class="icon-qq"></span>1992343888</a><a href="#"><span class="icon-qq-qun"></span>课程交流群</a><a href="#"><span class="icon-dianhua"></span>18003060140</a><a href="javascript:;" class="v-share"><span class="icon-fenxiang"></span>分享</a></div>
+		        <div class="ct">课程服务 :<a href="http://wpa.qq.com/msgrd?v=3&amp;uin=1992343888&amp;site=qq&amp;menu=yes" target="_blank"><span class="icon-qq"></span>1992343888</a><a href="http://shang.qq.com/wpa/qunwpa?idkey=d4644c4097146c52a04802b3dabdbb6698aa5be2b8492cc4f1d60ab51906c828
+;" target="_blank"><span class="icon-qq-qun"></span>课程交流群</a><a href="tel:18003060140"><span class="icon-dianhua"></span>18003060140</a><a href="javascript:;" class="v-share"><span class="icon-fenxiang"></span>分享</a></div>
 			</div>
 			<div class="cl wrap v-tab">
 				<ul>
@@ -393,9 +394,9 @@
 					<li>素材下载</li>
 				</ul>
 				<div class="btn-box">
-				    <a href="javascript:;" class="btn-zan"><span class="icon-praise"></span><i>1048</i></a>
-				    <a href="javascript:;" class="btn-cai"><span class="icon-cai"></span><i>16</i></a>
-				    <div class="per"><span style="width: 90%"></span></div>
+				    <a href="javascript:;" class="btn-zan"><span class="icon-praise"></span><i>900</i></a>
+				    <a href="javascript:;" class="btn-cai"><span class="icon-cai"></span><i>100</i></a>
+				    <div class="per"><span style="width: 0%"></span></div>
 				</div>
 			</div>
 		</div>
@@ -967,10 +968,6 @@
 		    </div>
 		</div>
 		<!-- 购买课程弹窗 end -->
-		<script>
-		    window._bd_share_config = { "common": { "bdSnsKey": {}, "bdText": "", "bdMini": "2", "bdMiniList": false, "bdPic": "", "bdStyle": "0", "bdSize": "24" }, "share": {} };
-		    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
-		</script>
 
         <!-- 通用js start-->
         <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
@@ -984,5 +981,32 @@
         <!--js调用 start -->
         <script src="../js/kecheng.js" type="text/javascript"></script>
 		<!--js调用 end -->
+		<script>
+			// 百度分享自定义
+			var meta = document.getElementsByTagName('meta');
+			var share_desc = '';
+			for(i in meta){
+				if(typeof meta[i].name!="undefined"&&meta[i].name.toLowerCase()=="description"){
+					share_desc = meta[i].content;
+				}
+			}
+		    window._bd_share_config = {
+		        "common": {
+		            "bdSnsKey": {},
+		            "bdUrl": window.location.href,
+		            "bdText": document.title,
+		            "bdDesc": share_desc,
+		            "bdPic": $('#area').find('.wait img').attr('src'),
+		            "bdMini": "2",
+		            "bdMiniList": false,
+		            "bdStyle": "0",
+		            "bdSize": "16"
+		        },
+		        "share": {
+		            "bdSize": 16
+		        }
+		    };
+		    with(document) 0[(getElementsByTagName('head')[0] || body).appendChild(createElement('script')).src = 'http://bdimg.share.baidu.com/static/api/js/share.js?v=89860593.js?cdnversion=' + ~(-new Date() / 36e5)];
+		</script>
     </body>
 </html>
