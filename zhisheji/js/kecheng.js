@@ -41,13 +41,61 @@ $(function() {
 	});
 
 	// 视频页点赞
-	$('.v-tab').on('click', '.btn-zan', function() {
-	    var _this = $(this);
-	    if (!$(this).hasClass('cur')) {
-	        _this.addClass('cur');
-	        _this.find('i').html(+_this.find('i').html() + 1);
-	    }
-	});
+	if ($('.v-tab').length) {
+		var $parents = $('.v-tab');
+		var $btnCai = $parents.find('.btn-cai');
+		var $cai = $btnCai.find('i');
+		var $caiNum = $cai.html() ? +$cai.html() : 0;
+		var $btnZan = $parents.find('.btn-zan');
+		var $zan = $btnZan.find('i');
+		var $zanNum = $zan.html() ? +$zan.html() : 0;
+		zanPer($('.v-tab').find('.per'));
+		function zanPer(dom) {
+			var num;
+			$zanNum == 0 || $caiNum == 0 ? num = 0 : num = $zanNum * 100 / (+$zanNum + +$caiNum) + '%'
+			dom.find('span').animate({
+				'width': num
+			}, 100);
+		}
+
+		$('.v-tab').on('click', '.btn-zan', function() {
+			if ($btnZan.hasClass('cur')) {
+				$btnZan.removeClass('cur');
+				$zanNum - 1 ? $zanNum = $zanNum - 1 : $zanNum = 0;
+				$zan.html($zanNum);
+			} else {
+				if ($btnCai.hasClass('cur')) {
+					$btnCai.removeClass('cur');
+					$caiNum - 1 ? $caiNum = $caiNum - 1 : $caiNum = 0;
+					$cai.html($caiNum);
+				}
+				$(this).addClass('cur');
+				$zanNum = $zanNum + 1
+				$zan.html($zanNum);
+			}
+			zanPer($('.v-tab').find('.per'));
+		})
+		// 视频页踩
+		.on('click', '.btn-cai', function() {
+			if ($btnCai.hasClass('cur')) {
+				$btnCai.removeClass('cur');
+				$caiNum - 1 ? $caiNum = $caiNum - 1 : $caiNum = 0;
+				$cai.html($caiNum);
+			}
+			else {
+				if ($btnZan.hasClass('cur')) {
+					$btnZan.removeClass('cur');
+					$zanNum - 1 ? $zanNum = $zanNum - 1 : $zanNum = 0;
+					$zan.html($zanNum);
+				}
+				$(this).addClass('cur');
+				$caiNum = $caiNum + 1
+				$cai.html($caiNum);
+			}
+			zanPer($('.v-tab').find('.per'));
+		});
+	}
+
 
 	// 监听input字数
 	if ($('.ct-comment').length) {
@@ -74,7 +122,7 @@ $(function() {
 	    replayForm.hide();
 	});
 
-	// 回复内容 250180921
+	// 回复内容
 	$('.ct-comment').on('click', '.btn-sure', function() {
 	    // 判断文本内容非空
 	    if ($(this).hasClass('dis')) {
@@ -135,65 +183,61 @@ $(function() {
 	        }
 	    });
 	});
-});
 
-// 获取当前时间
-function getNowFormatDate() {
-    var date = new Date();
-    var seperator2 = ":";
-    var month = date.getMonth() + 1 < 10 ? "0" + (date.getMonth() + 1) : date.getMonth() + 1;
-	var strDate = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
-	var hours = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
-	var minutes = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
-	var seconds = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
-    var currentdate = month + '月' + strDate + "日 " + hours + seperator2 + minutes + seperator2 + seconds;
-    return currentdate;
-}
+	// 监听input字数
+	if($('.kc-form').length) {
+		numbox();
+	}
 
-function timepicker() {
-	// $('.timepicker').datetimepicker('remove');
-	$.datetimepicker.setLocale('ch');
-	$.each($('.timepicker'), function() {
-	    if ($(this).data('format')) {
-			data = $(this).data('format');
-			var _this = $(this);
-			$(this).datetimepicker({
-			    // lang:"ch", //语言选择中文 注：旧版本 新版方法：$.datetimepicker.setLocale('ch');
-				format: data, //格式化日期
-			    timepicker: false, //关闭时间选项
-				todayButton: false, //关闭选择今天按钮
-				validateOnBlur: false // 失去焦点时验证datetime值输入,。如果值是无效的datetime,然后插入当前日期时间值
-			});
+	// checkbox美化
+	if ($('.checkbox').length) {
+	    checkboxSelect('.checkbox');
+	};
+
+	// 课程通用下拉
+	$('body').on('mouseover', '.item-select dd', function() {
+		if ($(this).find('.select-list').is(':hidden')) {
+			$('.select-list').hide();
+			$('.item-select').css('z-index', 'auto');
+			$(this).parents('.item-select').css('z-index', '980');
+			$(this).find('.select-list').show();
 		}
-		else {
-			data = 'Y-m-d';
-			$(this).datetimepicker({
-			    format: data, //格式化日期
-			    timepicker: false, //关闭时间选项
-			    todayButton: false //关闭选择今天按钮
-			});
-	    }
+		return false;
+	})
+	.on('click', '.select-list li', function() {
+		var txtDom = $(this).parents('.item-select').find('.input');
+		if (txtDom.is('input')) {
+			txtDom.val($(this).text());
+		} else {
+			txtDom.html($(this).text());
+		}
+		txtDom.focus().blur();
+		$(this).parents('.select-list').hide();
+		$('.item-select').css('z-index', 'auto');
+		return false;
+	})
+	.on('mouseout', '.item-select dd', function() {
+		if ($('.select-list').is(':visible')) {
+			$('.select-list').hide();
+		}
 	});
 
-}
+	// 删除视频课程
+	$('.form-spgl').on('click', '.icon-del', function() {
+		var _this = $(this);
+		$.msgBox.Confirm(null, '确定删除该视频吗？', function() {
+			_this.parents('li').remove();
+		});
+	});
 
-// radio选中效果
-function radioBeautify(obj) {
-    $.each($(obj).find('input[type=radio]'), function(index) {
-        if (!$(this).parents('label').find('.ico-radio').length) {
-            $(this).wrap('<span class="ico-radio"></span>');
-        }
-        if ($(this).prop('checked')) {
-            $(this).parents('span').addClass('ico-radio-cur');
-        }
-        $(this).on('change', function() {
-            $(obj).find('input[type=radio][name=' + $(this).attr('name') + ']').parents('span').removeClass('ico-radio-cur');
-            if ($(this).prop('checked')) {
-                $(this).parents('span').addClass('ico-radio-cur');
-            }
-        });
-    });
-}
+	// 删除课程课程
+	$('.form-kcgl').on('click', '.icon-del', function() {
+		var _this = $(this);
+		$.msgBox.Confirm(null, '确定删除该课程吗？', function() {
+			_this.parents('li').remove();
+		});
+	});
+});
 
 // 字数判断
 function numbox() {
