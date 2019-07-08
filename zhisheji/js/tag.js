@@ -26,7 +26,7 @@ function Tag(tag) {
         var placeholder = inputObj.attr('placeholder') ? inputObj.attr('placeholder') : '输入标签'
         var appendStr = '';
         appendStr += '<div class="tagsContaine" id="' + inputId + '_tagcontaine">';
-        appendStr += '<div class="tagList"></div><input name="tagInput" type="text" class="tagInput" placeholder="' + placeholder + '"/>';
+        appendStr += '<div class="tagList"></div><input autocomplete="off" name="tagInput" type="text" class="tagInput" placeholder="' + placeholder + '"/>';
         appendStr += '</div>';
         inputObj.parent().after(appendStr);
         var tagInput = $('#' + inputId + "_tagcontaine .tagInput");

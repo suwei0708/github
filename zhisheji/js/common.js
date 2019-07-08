@@ -821,13 +821,14 @@
             }
         };
 
-        // 20180920修改分享
+		// 20180920修改分享
+		var shareTimer;
         $('.bdsharebuttonbox').on('mouseover', '.bds_weixin', function() {
             var _this = $(this);
-            var timer = setInterval(function() {
+            shareTimer = setInterval(function() {
                 $('.bds_weixin')[0].click();
                 if ($('#bdshare_weixin_qrcode_dialog').length) {
-                    clearInterval(timer);
+                    clearInterval(shareTimer);
                     $('#bdshare_weixin_qrcode_dialog').css({
                         left: _this.offset().left - 262 / 2 + 15,
                         top: _this.offset().top - 300
@@ -838,10 +839,11 @@
                         'height': 'auto'
                     });
                 }
-            }, 500);
+            }, 100);
             $('.bds_weixin')[0].click();
         })
         .on('mouseleave', '.bds_weixin', function() {
+			clearInterval(shareTimer);
             $('#bdshare_weixin_qrcode_dialog').hide();
             $('.bd_weixin_popup_bg').hide();
         })
