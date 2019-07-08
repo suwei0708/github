@@ -227,51 +227,22 @@ $(function () {
         return false;
     });
 
-    // 点击收藏
-    $('.v-video').on('click', '.collect', function () {
-            var _this = $(this);
-            if (!_this.hasClass('cur')) {
-                _this.addClass('cur').find('.tips').show();
-                setTimeout(function () {
-                    _this.find('.tips').hide();
-                }, 2000);
-            }
-        })
-        // 点击手机播放
-        .on('mouseover', '.phone', function () {
-            var _this = $(this);
-            if (!_this.hasClass('cur')) {
-                _this.addClass('cur').find('.tips').show();
-            } else {
-                _this.removeClass('cur').find('.tips').hide();
-            }
-            return false;
-        })
-        .on('click', '.phone .tips', function () {
-            return false;
-        })
-        // 点击关闭观看时间、免费观看提示
-        .on('click', '.qjplayer-tips-close', function () {
-            $(this).parents('.qjplayer-tips').hide();
-            $('.v-video').removeClass('v-video-mini').addClass('v-video-normal');
-            $('#area').removeAttr('style');
-            $('.v-video').attr("cmd", 'yes');
-            $.disable_cloose();
-        })
-        // 点击关闭、展示右侧列表
-        .on('click', '.iplay-bar', function () {
-            if ($(this).parents('.v-video').hasClass('v-video-full')) {
-                $(this).parents('.v-video').removeClass('v-video-full');
-            } else {
-                $(this).parents('.v-video').addClass('v-video-full');
-            }
-        });
-    // 任意点击关闭手机观看弹窗
-    $('body').on('click', function () {
-        if ($('.v-video').find('.phone').hasClass('cur')) {
-            $('.v-video').find('.phone').removeClass('cur').find('.tips').hide();
-        }
-    });
+    // 点击关闭观看时间、免费观看提示
+    $('.v-video').on('click', '.qjplayer-tips-close', function () {
+		$(this).parents('.qjplayer-tips').hide();
+		$('.v-video').removeClass('v-video-mini').addClass('v-video-normal');
+		$('#area').removeAttr('style');
+		$('.v-video').attr("cmd", 'yes');
+		$.disable_cloose();
+	})
+	// 点击关闭、展示右侧列表
+	.on('click', '.iplay-bar', function () {
+		if ($(this).parents('.v-video').hasClass('v-video-full')) {
+			$(this).parents('.v-video').removeClass('v-video-full');
+		} else {
+			$(this).parents('.v-video').addClass('v-video-full');
+		}
+	});
     // 鼠标移入移出播放器按钮显示隐藏
     $('#my-video, .iplay-bar').hover(function () {
         $('.iplay-bar').show();
