@@ -2679,7 +2679,7 @@ body {
 }
 
 .popup {
-	&-cselect {
+	&-cselect, &-iselect {
 		.dis(n);
 		.popup {
 			width: 588px;
@@ -2858,6 +2858,24 @@ body {
 			width: 395px;
 			.input {
 				width: 198px;
+			}
+		}
+	}
+}
+#sw-con {
+	.sw-btn-box {
+		#sw-btn-ok {
+			background: @green;
+			border: 1px solid @green;
+			&:hover {
+				background: @green-h;
+				border: 1px solid @green-h;
+			}
+		}
+		#sw-btn-no {
+			&:hover {
+				color: @green;
+				border: 1px solid @green;
 			}
 		}
 	}

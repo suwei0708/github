@@ -310,6 +310,31 @@ $(function() {
 		    scrollTop: $(this).parents('.jl-edu').find('#form3-add').offset().top
 		}, 200)
 	});
+
+	// 首页选择身份切换
+	$('body').on('change', '.popup-iselect input[type=radio]', function() {
+	    if ($(this).prop('checked')) {
+	        $(this).parents('label').addClass('cur').siblings().removeClass('cur');
+	    }
+	});
+	// 首页选择身份提交
+	$('body').on('click', '.popup-iselect .btn', function() {
+		if (!$('.popup-iselect .radio').find('.cur').length) {
+			alertMsg('请选择身份！');
+			return false;
+		}
+		$('.popup-iselect').hide();
+		$.msgBox.Confirm(null, '身份确定后不可修改', function() {
+			// console.log('back');
+			$('.popup-iselect').show();
+			$('#sw-con').remove();
+		}, function() {
+			console.log('ok')
+		});
+		$('#sw-btn-ok').html('返回上一步');
+		$('#sw-btn-no').html('确定');
+		$('#sw-btn-box').addClass('sw-btn-box');
+	});
 });
 
 // 获取当前时间
