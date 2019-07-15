@@ -2484,32 +2484,30 @@
         }
     }
     .fix-topbtn {
-        line-height: 38px;
+        line-height: 28px;
         font-size: 0;
         a {
-            .dis(ib);
-            vertical-align: middle;
-            margin-left: 40px;
-            span {
-                .dis(ib);
-                vertical-align: middle;
-                margin: -2px 0 0 0;
-                font-size: 16px;
-                color: #ccc;
-            }
-            .icon-comment {
-                font-size: 15px;
-            }
-            .num {
-                font-size: 14px;
-                margin: 0 0 0 14px;
-            }
-            &:hover, &.dis, &.praise-ok {
-                color: @blue;
-                span {
-                    color: @blue;
-                }
-            }
+			.dis(ib);
+			vertical-align: top;
+			width: 88px;
+			.height(28px);
+			margin: 4px 0 0 16px;
+			color: #666;
+			border: 1px solid #bbb;
+			cursor: pointer;
+			.bdr(4px);
+			text-align: center;
+			font-size: 12px;
+			&:hover {
+				border: 1px solid #999;
+			}
+			.icon-collect, .icon-comment {
+				font-size: 12px;
+				color: #bbb;
+				display: inline-block;
+				vertical-align: middle;
+				margin: -3px 6px 0 0;
+			}
         }
     }
     .title {
