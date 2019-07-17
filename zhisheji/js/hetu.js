@@ -91,6 +91,39 @@ $(function() {
 		numbox();
 	}
 
+	// 监听input字数
+	if ($('#form').length) {
+	    numbox();
+	}
+
+	// 贺图通用下拉
+	$('body').on('mouseover', '.item-select dd', function() {
+		if($(this).find('.select-list').is(':hidden')) {
+			$('.select-list').hide();
+			$('.item-select').css('z-index', 'auto');
+			$(this).parents('.item-select').css('z-index', '980');
+			$(this).find('.select-list').show();
+		}
+		return false;
+	})
+	.on('click', '.select-list li', function() {
+	    var txtDom = $(this).parents('.item-select').find('.input');
+	    if (txtDom.is('input')) {
+	        txtDom.val($(this).text());
+	    } else {
+	        txtDom.html($(this).text());
+		}
+		txtDom.focus().blur();
+	    $(this).parents('.select-list').hide();
+	    $('.item-select').css('z-index', 'auto');
+	    return false;
+	})
+	.on('mouseout', '.item-select dd', function() {
+		if ($('.select-list').is(':visible')) {
+			$('.select-list').hide();
+		}
+	});
+
 });
 
 // 字数判断
