@@ -216,7 +216,7 @@ body {
 	        }
 	    }
 	    .input, .textarea {
-	        width: 880px - 50;
+	        width: 878px - 50;
 	        .height(24px);
 	        padding: 9px 30px 9px 20px;
 	        border: 1px solid #dcdcdc;
@@ -248,7 +248,7 @@ body {
 	        }
 	    }
 		.timepicker {
-		    width: 248px - 40;
+		    width: 248px - 50;
 		}
 	    .textarea {
 	        .ov(a);
@@ -283,7 +283,7 @@ body {
 	            vertical-align: top;
 	            width: 355px;
 	            .input {
-	                width: 250px - 50;
+	                width: 248px - 50;
 	            }
 	        }
 	        div.tips-err {
@@ -386,7 +386,35 @@ body {
 	                color: #999;
 	                text-align: center;
 	            }
-	        }
+			}
+			.upmodel {
+				.btn-upmodel {
+					.pos(r);
+					.dis(ib);
+					vertical-align: top;
+					width: 130px;
+					height: 36px;
+					line-height: 36px;
+					margin-top: 4px;
+					input {
+						.pos(a);
+						top: 0;
+						left: -50%;
+						opacity: 0;
+						width: 200%;
+						height: 100%;
+						cursor: pointer;
+					}
+				}
+				span {
+					.dis(ib);
+					vertical-align: top;
+					line-height: 44px;
+					font-size: 14px;
+					color: #bbb;
+					margin-left: 30px;
+				}
+			}
 	    }
 
 	    .btn {
@@ -434,4 +462,55 @@ body {
 .ct-comment-new {
 	margin-top: 0;
 	margin-bottom: 60px;
+}
+
+// 通用下拉
+.item-select {
+    .pos(r);
+    z-index: 2;
+    .select-list {
+        .dis(n);
+        .pos(a);
+        top: 44px;
+		left: 0;
+		z-index: 999;
+        width: 100%;
+        padding: 10px 0 0;
+        line-height: 32px;
+        font-size: 14px;
+		ul {
+			padding: 10px 0;
+			border: 1px solid #dcdcdc;
+			.box-shadow(0, 0, 6px, rgba(24, 28, 27, .15));
+			background: #fff;
+			.bdr(4px);
+		}
+        li {
+            padding: 0 20px;
+            cursor: pointer;
+            text-align: left;
+			color: #333;
+			.icon-del {
+				.dis(n);
+				float: right;
+				margin: 9px 0 0;
+				font-size: 14px;
+			}
+            &:hover {
+				color: @blue;
+				background: #f6f6f6;
+				.icon-del {
+					.dis(b);
+				}
+            }
+        }
+	}
+	dd:hover {
+		.input {
+			border: 1px solid @blue;
+		}
+		.icon-sanjiao {
+			.rotate(180deg);
+		}
+	}
 }
