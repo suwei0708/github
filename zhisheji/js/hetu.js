@@ -107,16 +107,29 @@ $(function() {
 		return false;
 	})
 	.on('click', '.select-list li', function() {
-	    var txtDom = $(this).parents('.item-select').find('.input');
-	    if (txtDom.is('input')) {
-	        txtDom.val($(this).text());
-	    } else {
-	        txtDom.html($(this).text());
+		if(!$(this).hasClass('add')) {
+			var txtDom = $(this).parents('.item-select').find('.input');
+			if (txtDom.is('input')) {
+				txtDom.val($(this).text());
+			} else {
+				txtDom.html($(this).text());
+			}
+			txtDom.focus().blur();
+			$(this).parents('.select-list').hide();
+			$('.item-select').css('z-index', 'auto');
+			return false;
 		}
-		txtDom.focus().blur();
-	    $(this).parents('.select-list').hide();
-	    $('.item-select').css('z-index', 'auto');
-	    return false;
+		else {
+			console.log('add');
+		}
+	})
+	// 删除活动分类
+	.on('click', '.select-list li .icon-del', function() {
+		var _this = $(this);
+		$.msgBox.Confirm(null, '确定删除此活动分类吗？', function() {
+			_this.parents('li').remove();
+		});
+		return false;
 	})
 	.on('mouseout', '.item-select dd', function() {
 		if ($('.select-list').is(':visible')) {
@@ -124,6 +137,16 @@ $(function() {
 		}
 	});
 
+	// 增加分类
+	$('body').on('click', '.popup-addfenlei .btn', function() {
+		console.log('click')
+		var $val = $.trim($(this).prevAll('.input').val());
+		if (!$val) {
+			alertMsg('分类不能为空！');
+			return false;
+		}
+		$('.select-list').find('.add').before('<li>' + $val + '</li>');
+	})
 });
 
 // 字数判断
