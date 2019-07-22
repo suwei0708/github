@@ -1,4 +1,11 @@
 $(function() {
+	$('.ht-main').on('click', '.icon-del', function() {
+		var _this = $(this);
+		$.msgBox.Confirm(null, '确定删除此活动吗？', function() {
+			console.log('删除成功！')
+		});
+		return false;
+	});
 	// 监听input字数
 	if ($('.ct-comment').length) {
 	    $.each($('.ct-comment .textarea'), function(i) {
@@ -120,13 +127,17 @@ $(function() {
 			return false;
 		}
 		else {
-			console.log('add');
+			$('.popup-addfenlei').show();
 		}
 	})
 	// 删除活动分类
 	.on('click', '.select-list li .icon-del', function() {
 		var _this = $(this);
 		$.msgBox.Confirm(null, '确定删除此活动分类吗？', function() {
+			// 删除选中分类则清空
+			if (_this.parents('dd').find('.input ').val() == _this.parents('li').text()) {
+				_this.parents('dd').find('.input ').val('');
+			}
 			_this.parents('li').remove();
 		});
 		return false;
@@ -139,13 +150,26 @@ $(function() {
 
 	// 增加分类
 	$('body').on('click', '.popup-addfenlei .btn', function() {
-		console.log('click')
-		var $val = $.trim($(this).prevAll('.input').val());
+		var pass = true;
+		var _this = $(this);
+		var $val = $.trim(_this.prevAll('.input').val());
 		if (!$val) {
 			alertMsg('分类不能为空！');
 			return false;
 		}
-		$('.select-list').find('.add').before('<li>' + $val + '</li>');
+		$.each($('.select-list li'), function() {
+			if ($(this).text() == $val) {
+			    pass = false;
+			    _this.prevAll('.input').val('');
+				alertMsg('不能添加相同分类！');
+				return false;
+			}
+		});
+		if(pass) {
+			$('.popup-addfenlei').hide();
+			_this.prevAll('.input').val('');
+			$('.select-list').find('.add').before('<li><span class="icon-del"></span>' + $val + '</li>');
+		}
 	})
 });
 
