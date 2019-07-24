@@ -167,11 +167,11 @@ $(function() {
     .on('click', '.edit', function() {
         window.location.href = $(this).data('src');
     });
-    $('.ct-share, .fix-topbar').on('click', '.collect', function() {
+    $('.ct-share, .fix-topbar, .praise-box').on('click', '.collect', function() {
         if($(this).hasClass('dis')) {
             tipSave('suc', '取消收藏成功！');
-            $('.content-box, .fix-topbar').find('.collect').removeClass('dis').find('.text').html('收藏');
-            $('.content-box, .fix-topbar').find('.collect .num').html(+$('.content-box .collect').find('.num').html() - 1);
+            $('.content-box, .fix-topbar, .praise-box').find('.collect').removeClass('dis').find('.text').html('收藏');
+            $('.content-box, .fix-topbar, .praise-box').find('.collect .num').html(+$('.content-box .collect').find('.num').html() - 1);
         }
         else {
             $('.popup-collect').show(); centerObj('.popup-collect .popup');
@@ -180,12 +180,12 @@ $(function() {
 
     // 点赞后的关注
     $('.at-gz').on('click', '.btn-gz', function() {
-        if($(this).text() == '已关注作者') {
-            $(this).text('+ 关注作者');
+        if ($(this).text() == '取消关注') {
+            $(this).removeClass('dis').text('关注');
             $('.designer').find('.btn').removeClass('dis').html('关注');
         }
         else {
-            $(this).text('已关注作者');
+            $(this).addClass('dis').text('取消关注');
             $('.designer').find('.btn').addClass('dis').html('已关注');
         }
     });
@@ -504,7 +504,7 @@ $(function() {
     // 首页文章
     $('.article-course .list').on('mouseover', 'li', function() {
         $(this).addClass('cur').siblings().removeClass('cur');
-    });
+	})
 });
 })(jQuery);
 

@@ -208,6 +208,10 @@ body {
 				.price {
 					font-size: 24px;
 					color: @red;
+					&.green {
+						color: @green;
+						font-size: 22px;
+					}
 				}
 				.tag {
 					.dis(ib);
@@ -370,6 +374,11 @@ body {
 		font-size: 16px;
 		line-height: 32px;
 		color: #444;
+	}
+	&2 {
+		padding: 40px;
+		line-height: 30px;
+		font-size: 16px;
 	}
 	&3 {
 		padding: 0;
@@ -1482,4 +1491,267 @@ body {
 	.btn {
 		font-size: 14px;
 	}
+}
+
+/* 上传视频弹窗 */
+.popup-video {
+    .popup {
+		width: 726px;
+		height: 465px;
+		padding: 0;
+		margin: -465px / 2 0 0 -726px / 2;
+	}
+    .tit {
+        padding-top: 0;
+        height: 68px;
+        line-height: 68px;
+        font-size: 28px;
+        background: @blue;
+		color: #fff;
+		text-align: center;
+    }
+    .popup-close {
+		font-size: 24px;
+		color: #fff;
+		&:hover {
+			color: #fff;
+		}
+    }
+    &-list {
+        .ovy(a);
+        padding: 40px 20px 0;
+        height: 258px;
+        li {
+            float: left;
+            width: 250px;
+            margin: 0 0 20px 60px;
+            .bg {
+                .pos(r);
+                .ov(h);
+                width: 250px;
+                height: 130px;
+                margin: 0 0 20px;
+                .progress {
+                    .pos(a);
+                    top: 50%;
+                    left: 0;
+                    width: 100%;
+                    height: 30px;
+                    line-height: 30px;
+                    margin: -15px 0 0;
+                    text-align: center;
+                    color: @blue;
+                    font-size: 24px;
+                }
+            }
+            .text {
+                .pos(r);
+                width: 250px;
+                height: 45px;
+                .txt {
+                    width: 198px;
+                    height: 43px;
+                    line-height: 43px;
+                    padding: 0 35px 0 15px;
+                    border: 1px solid #dedede;
+                    color: #666;
+                    font-size: 16px;
+                }
+                .icon-feedback {
+                    .pos(a);
+                    top: 14px;
+                    right: 13px;
+					font-size: 16px;
+					cursor: pointer;
+					color: #ccc;
+					&:hover {
+						color: @blue;
+					}
+                }
+            }
+        }
+        .sp {
+            .bg {
+                background: url(../images/kecheng/sp-box1.jpg) no-repeat 0 0;
+            }
+        }
+        .add {
+            .bg {
+                cursor: pointer;
+                background: url(../images/kecheng/sp-box2.jpg) no-repeat 0 0;
+                input {
+                    .pos(a);
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    .opacity(0);
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+    .btn-box {
+		padding: 20px 0 0;
+		text-align: center;
+        .btn {
+            .pos(r);
+            .dis(ib);
+            width: 160px;
+            height: 52px;
+            line-height: 52px;
+            color: #fff;
+            background: @green;
+            text-align: center;
+            border: 0;
+            cursor: pointer;
+            .bdr(3px);
+            font-size: 18px;
+            &:hover {
+                background: @green-h;
+            }
+            &-add {
+                input {
+                    .pos(a);
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    .opacity(0);
+                }
+            }
+            &-cancel {
+                margin: 0 0 0 22px;
+                background: @blue;
+                &:hover {
+                    background: @blue-h;
+                }
+            }
+        }
+    }
+}
+
+/* 视频弹窗 */
+.popup-sp {
+    .popup {
+		width: 510px;
+		height: 548px;
+		padding: 0;
+		margin: -548px / 2 0 0 -510px / 2;
+	}
+    .popup-close {
+		font-size: 24px;
+		color: #fff;
+    }
+    .tit {
+        .ov(h);
+        height: 70px;
+        line-height: 70px;
+        padding: 0;
+        font-size: 28px;
+        color: #fff;
+		background: @blue;
+		text-align: center;
+    }
+    .so {
+        .ov(h);
+        width: 390px;
+        height: 40px;
+        line-height: 40px;
+        font-size: 0;
+        margin: 16px auto;
+        border: 1px solid #e7e7e7;
+        background: #fff;
+        .bdr(3px);
+        .txt {
+            float: left;
+            width: 340px - 15;
+            height: 40px;
+            line-height: 40px;
+            border: 0;
+            font-size: 16px;
+            padding: 0 0 0 15px;
+        }
+        .btn {
+            .dis(ib);
+            width: 50px;
+            height: 40px;
+            line-height: 40px;
+            text-align: center;
+            border: 0;
+            background: #fff;
+            cursor: pointer;
+            font-size: 16px;
+            .icon-so {
+				.dis(ib);
+				vertical-align: middle;
+                font-size: 18px;
+                margin: -3px 0 0;
+				color: #ccc;
+				&:hover {
+					color: @blue;
+				}
+            }
+        }
+    }
+    &-list {
+        .ovx(h);
+        .ovy(a);
+        height: 300px;
+        li {
+            .ov(h);
+            height: 50px;
+            line-height: 50px;
+            padding: 0 0 0 55px;
+            text-align: left;
+            font-size: 16px;
+			label {
+				.dis(b);
+				cursor: pointer;
+			}
+			&:nth-child(odd) {
+				background: rgb(246, 246, 246);
+			}
+            .ico-radio {
+                width: 21px;
+                height: 21px;
+				margin: -3px 18px 0 0;
+				background: url(../images/kecheng/checkbox.png) no-repeat 0 -27px;
+                &-cur {
+                    background-position: 0 0;
+                }
+                input {
+                    .dis(n);
+                }
+            }
+        }
+    }
+    .btn-box {
+		text-align: center;
+        padding: 20px 0 0;
+        .btn {
+            .dis(ib);
+            width: 160px;
+            height: 52px;
+            line-height: 52px;
+            color: #fff;
+            background: @blue;
+            text-align: center;
+            border: 0;
+            cursor: pointer;
+            .bdr(3px);
+            font-size: 18px;
+            &:hover {
+                background: @blue-h;
+            }
+            &-cancel {
+                margin: 0 0 0 22px;
+                background: #efefef;
+                color: #666;
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
 }

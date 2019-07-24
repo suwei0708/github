@@ -985,8 +985,19 @@ video::-webkit-media-text-track-display {
                 li {
                     .ov(h);
                     .pos(r);
-                    .height(40px);
-                    font-size: 0;
+                    .height(44px);
+					font-size: 0;
+					.btn {
+						.dis(ib);
+						vertical-align: top;
+						width: 44px;
+						line-height: 23px;
+						margin: 11px 24px 0 0;
+						text-align: center;
+						color: #fff;
+						.bdr(4px);
+						font-size: 12px;
+					}
                     .iplay-play {
 						.dis(n);
 						.pos(a);
@@ -1067,10 +1078,12 @@ video::-webkit-media-text-track-display {
 						.dis(ib);
 						vertical-align: middle;
 						margin: -3px 8px 0 0;
+						font-size: 16px;
 						&.icon-qq {
 							color: @blue;
 						}
 						&.icon-qq-qun {
+							font-size: 19px;
 							color: @red;
 						}
 						&.icon-dianhua {
@@ -1092,6 +1105,9 @@ video::-webkit-media-text-track-display {
 				.price {
 					font-size: 30px;
 					color: @red;
+					&.green {
+						color: @green;
+					}
 				}
 				.btn {
 					.dis(ib);
@@ -1106,6 +1122,18 @@ video::-webkit-media-text-track-display {
 					background: @red;
 					&:hover {
 						background: @red-h;
+					}
+					&-join {
+						background: @green;
+						&:hover {
+							background: @green-h;
+						}
+						span {
+							.dis(ib);
+							vertical-align: middle;
+							font-size: 19px;
+							margin: -2px 10px 0 0;
+						}
 					}
 
 				}
