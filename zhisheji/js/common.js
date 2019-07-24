@@ -608,27 +608,66 @@
         // 收藏夹
         if ($('#popup-collect-list').length) {
             checkboxSelect('#popup-collect-list');
-            $('.popup-collect').on('click', '.txt-box .btn', function() { // 管理收藏夹 添加收藏夹
-                    var val = $.trim($(this).prevAll('.txt').val());
-                    if (!!val) {
-                        var html = '<li><label>' + val + '</label>' + '</li>';
-                        $('#popup-collect-list li:eq(0)').after(html);
-                        // checkboxSelect('#popup-collect-list');
-                    } else {
-                        $.msgBox.Alert(null, '收藏夹名称不能为空！');
-                    }
-                })
-                .on('click', '.popup-btn-box .btn', function() { // 添加收藏夹 保存
-                    $(this).parents('.popup-collect').hide();
-                    maskHide();
-                    // console.log('保存收藏');
-                    if ($('.content-box').length) {
-                        tipSave('suc', '收藏成功！');
-                        $('.content-box, .fix-topbar').find('.collect').addClass('dis').find('.text').html('已收藏');
-                        $('.content-box').find('.collect').find('.num').html(+$('.content-box').find('.collect').find('.num').html() + 1);
-                    }
-                });
-        };
+            $('.popup-collect').on('click', '.txt-box .btn', function() {
+				// 管理收藏夹 添加收藏夹
+				var val = $.trim($(this).prevAll('.txt').val());
+				if (!!val) {
+					var html = '<li><label>' + val + '</label>' + '</li>';
+					$('#popup-collect-list li:eq(0)').after(html);
+					// checkboxSelect('#popup-collect-list');
+				} else {
+					$.msgBox.Alert(null, '收藏夹名称不能为空！');
+				}
+			})
+			.on('click', '.popup-btn-box .btn', function() { // 添加收藏夹 保存
+				$(this).parents('.popup-collect').hide();
+				maskHide();
+				// console.log('保存收藏');
+				if ($('.content-box').length) {
+					tipSave('suc', '收藏成功！');
+					$('.content-box, .fix-topbar, .praise-box').find('.collect').addClass('dis').find('.text').html('已收藏');
+					$('.content-box, .fix-topbar, .praise-box').find('.collect').find('.num').html(+$('.content-box').find('.collect').find('.num').html() + 1);
+				}
+			});
+		};
+
+		// 内容页新建收藏夹
+		$('body').on('click', '.popup-collect .btn-new', function() {
+			$('.popup-collect').hide();
+			$('.popup-creatcollect').show();
+			monitorVal('.popup-creatcollect .input', 15, 'minus');
+		})
+		// 内容页创建收藏夹保存
+		.on('click', '.popup-creatcollect .btn', function() {
+			var pass = true;
+			var _this = $(this);
+			var $input = _this.parents('.popup-creatcollect').find('.input');
+			var $val = $.trim($input.val());
+			if (!$val) {
+				alertMsg('名称不能为空！');
+			}
+			$.each($('.popup-collect .list li'), function() {
+			    if ($(this).text() == $val) {
+			        pass = false;
+			        $input.val('');
+			        alertMsg('不能添加相同分类！');
+			        return false;
+			    }
+			});
+			if (pass) {
+			    $('.popup-creatcollect').hide();
+			    $('.popup-collect').show();
+			    $input.val('');
+			    $('.popup-collect .list').prepend('<li><label><input type="checkbox" name="collect" value="' + $val + '">' + $val + '</label></li>');
+			    checkboxSelect('#popup-collect-list');
+			}
+		})
+		// 内容页创建收藏夹关闭
+		.on('click', '.popup-creatcollect .popup-close', function() {
+			console.log(111)
+			$('.popup-collect').show();
+		});
+
         // 个人中心私信
         if ('.user-msgct') {
             letter();
@@ -1101,7 +1140,9 @@ function checkboxSelect(obj) {
         if (jQuery(this).prop('checked')) {
             jQuery(this).parents('span').addClass('ico-radio-cur');
         }
+        jQuery(this).unbind();
         jQuery(this).on('change', function() {
+			console.log('change');
             if (jQuery(this).prop('checked')) {
                 jQuery(this).parents('span').addClass('ico-radio-cur');
             } else {

@@ -1538,71 +1538,70 @@
             top: 120px;
             left: 50%;
             z-index: 99;
-            margin-left: -95px;
-            width: 190px;
+			width: 320px;
+			padding: 16px 0 30px;
+            margin-left: -320/2px;
             text-align: center;
             background: #fff;
             .box-shadow(0, 0, 11px, #ccc);
             .bdr(4px);
-            .bdsharebuttonbox {
-                padding: 10px 0;
-                text-align: center;
-                font-size: 0;
-                a {
-                    float: none;
-                    width: 30px;
-                    height: 30px;
-                    line-height: 30px;
-                    margin: 0 5px;
-                    font-size: 30px;
-                    text-indent: 0;
-                    background: none;
-                    color: #fff;
-                    background: #ddd;
-                    .bdr(50%);
-                }
-                .icon-swx {
-                    background: #1ccd27;
-                }
-                .icon-swb {
-                    background: #ff3e3e;
-                }
-                .icon-sqq {
-                    background: #0aa0ff;
-                }
-                .icon-sqzone {
-                    background: #ffcc00;
-                }
-            }
             .btn {
-                .dis(b);
-                line-height: 48px;
-                color: #666;
-                border-bottom: 1px solid #f1f1f1;
-                font-size: 14px;
-                &-gz, &:hover {
-                    color: @blue;
+				.dis(b);
+				width: 238px;
+				height: 38px;
+				line-height: 38px;
+				margin: 20px auto 0;
+                border: 1px solid #f1f1f1;
+				font-size: 14px;
+				font-weight: 700;
+				color: #333;
+				.bdr(4px);
+                &-gz {
+					color: #fff;
+					background: @blue;
                 }
                 &-gz:hover {
-                    color: @blue-h;
-                }
+                    background: @blue-h;
+				}
+				&-gz.dis {
+					background: @red;
+					&:hover {
+						background: @red-h;
+					}
+				}
+
             }
             .collect {
+				.icon-shoucang {
+					.dis(ib);
+					vertical-align: middle;
+					margin: -3px 10px 0 0;
+					font-size: 13px;
+				}
+				&:hover {
+					color: @blue;
+					border: 1px solid @blue;
+				}
                 .txt1 {
                     .dis(b);
                 }
                 .txt2 {
                     .dis(n);
-                }
+				}
+				&.dis {
+					color: #999;
+					&:hover {
+						border: 1px solid #999;
+					}
+				    .txt2 {
+				        .dis(b);
+				    }
+				    .txt1 {
+				        .dis(n);
+				    }
+				}
             }
-            .dis {
-                .txt2 {
-                    .dis(b);
-                }
-                .txt1 {
-                    .dis(n);
-                }
-            }
+
         }
         .edit {
             // .dis(n);
@@ -1630,7 +1629,7 @@
         .arrow {
             .pos(a);
             top: -6px;
-            left: 190 / 2 - 3px;
+            left: 320px / 2 - 3px;
             .triangle(top, 6px, #fff);
         }
         .praise {
