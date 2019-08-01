@@ -19,12 +19,7 @@ $(function() {
         // 实时输入判断input非空显示图标
         input.bind('input propertychange', function() {
             inputChange($(this));
-		});
-
-		// 聚焦取消错误显示
-		input.on('focus', function() {
-			$(this).removeClass('input-err');
-		})
+        });
     }
 
     // 登录切换
@@ -56,31 +51,21 @@ $(function() {
     .on('click', '.btn-msglogin', function() {
         if($(this).hasClass('dis')) {
             return false;
-		}
-		isYzm($(this));
+        }
         console.log('短信登录');
     })
     // 账号密码登录提交
     .on('click', '.btn-login', function() {
         if($(this).hasClass('dis')) {
             return false;
-		}
-		var $val = $.trim($(this).parents('.form').find('.input:eq(0)').val());
-		var box = $('.form-login');
-		if (!isPhone($val) && !isEmail($val)) {
-			box.find('.tips').html('手机号/邮箱格式不正确').show();
-			return false;
-		}
+        }
         console.log('账号密码登录');
     })
     // 注册提交
     .on('click', '.btn-register', function() {
         if($(this).hasClass('dis')) {
             return false;
-		}
-		if (!isYzm($(this))) {
-		    return false;
-		}
+        }
         console.log('注册');
     })
     // 找回密码提交
@@ -88,9 +73,6 @@ $(function() {
         if($(this).hasClass('dis')) {
             return false;
         }
-        if (!isYzm($(this))) {
-			return false;
-		}
         console.log('找回密码');
         window.location.href = '重置密码.html';
     })
@@ -148,28 +130,21 @@ $(function() {
     });
 });
 
-function sendCode(dom, times) {
+function sendCode(dom) {
     var i = 59;
-	if(times) {
-		i = times;
-	}
-    dom.html(i + 's');
+    dom.html(i);
     var codeTimer = setInterval(function() {
         i--;
-        dom.html(i + 's');
+        dom.html(i);
         if (i == 0) {
             clearInterval(codeTimer);
             dom.html('<a href="javascript:;" class="sendcode resendcode">重新获取</a>')
         }
     }, 1000);
 }
+
 function isPhone(str) {
     var reg = /^1\d{10}$/;
-    return reg.test(str);
-};
-
-function isEmail(str) {
-    var reg = /^([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+@([a-zA-Z0-9]+[_|\_|\.]?)*[a-zA-Z0-9]+\.[a-zA-Z]{2,3}$/;
     return reg.test(str);
 };
 
@@ -177,12 +152,10 @@ function isYzm(dom) {
     var box = dom.parents('.form');
     var val = $.trim(box.find('.phone').val());
     if(!val) {
-		box.find('.phone').addClass('input-err');
         box.find('.tips').html('手机号码不能为空').show();
         return false;
     }
-    else if (!isPhone(val)) {
-        box.find('.phone').addClass('input-err');
+    else if(!isPhone(val)) {
         box.find('.tips').html('手机号码错误，请重新输入').show();
         return false;
     }
@@ -193,7 +166,7 @@ function inputChange(dom) {
     var val = $.trim(dom.val()).length;
     if (!val) {
         dom.attr('data-val', 0);
-		dom.parents('.item').removeClass('item-val');
+        dom.parents('.item').removeClass('item-val');
     }
     else {
         dom.attr('data-val', 1);
