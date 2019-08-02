@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en" data-dpr="1" style="font-size: 32px;">
 <head>
     <meta charset="UTF-8">
     <title>找回密码-致设计</title>
@@ -14,16 +14,13 @@
     <div class="wrap">
         <!-- 头部 start -->
         <div class="header">
-            <div class="l"><a href="javascript:history.go(-1);">取消</a></div>
-            <h2><img src="../images/logo.svg" alt=""></h2>
+            <div class="l"><a href="javascript:history.go(-1);" class="back"><span class="zsjicon icon-fanhui"></span></a></div>
+            <h2>找回密码</h2>
         </div>
         <!-- 头部 end -->
 
         <!-- 主体 start -->
         <div class="login-box">
-			<div class="tit">
-				<h2>找回密码</h2>
-			</div>
             <div class="form form-retrieve">
                 <div class="item">
                     <input type="number" class="input phone" placeholder="手机号码" maxlength="20">
@@ -33,8 +30,17 @@
                     <input type="text" class="input" placeholder="验证码" maxlength="20">
                     <div class="yzm"><a href="javascript:;" class="sendcode">获取验证码</a></div>
                 </div>
+                <div class="item">
+                    <input type="password" class="input" placeholder="密码长度6-20位" maxlength="20">
+                    <span class="zsjicon icon-yanjing"></span>
+                </div>
                 <button class="btn btn-retrieve dis">下一步</button>
             </div>
+            <div class="other">
+                <div class="fl retrieve-no">收不到验证码？</div>
+                <div class="fr"><a href="登录.html">返回登录</a></div>
+            </div>
+            <div class="retrieve-tips"><span class="zsjicon icon-gantanhao"></span>请联系管理员QQ：869706776</div>
         </div>
         <!-- 主体 end -->
 
