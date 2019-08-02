@@ -38,15 +38,17 @@ $(function() {
         $(this).parents('.item').removeClass('item-val').find('.input').val('');
         $(this).parents('.form').find('.btn').addClass('dis');
     })
-    // 密码是否展示
+    // 密码展示
     .on('click', '.icon-yanjing', function() {
+		$(this).attr('class', 'icon-bukejian');
         var input = $(this).parents('.item').find('.input');
-        if(input.attr('type') == 'password') {
             input.attr('type', 'text');
-        }
-        else {
-            input.attr('type', 'password');
-        }
+    })
+    // 密码不展示
+    .on('click', '.icon-bukejian', function() {
+        $(this).attr('class', 'icon-yanjing');
+        var input = $(this).parents('.item').find('.input');
+        input.attr('type', 'password');
     })
     // 收不到验证码
     .on('click', '.retrieve-no', function() {

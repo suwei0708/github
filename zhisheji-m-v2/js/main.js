@@ -17,4 +17,15 @@ $(function() {
 	.on('click', '.menu-sub ul', function(e) {
 	    e.stopPropagation();
 	});
+
+	// 评论展示更多
+	$('.content-comment').on('click', '.more-comment', function() {
+	    if ($(this).find('.more-comment-text').text() == '收起评论') {
+	        $(this).find('.more-comment-text').text('查看更多评论');
+	        $(this).parents('.reply-box').find('.more-comment-box').hide();
+	    } else {
+	        $(this).find('.more-comment-text').text('收起评论');
+	        $(this).parents('.reply-box').find('.more-comment-box').show();
+	    }
+	});
 });

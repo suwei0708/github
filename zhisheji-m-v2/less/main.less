@@ -85,7 +85,10 @@ body {
     background: #fff;
 }
 .blue {
-	color: @blue !important;
+    color: @blue  !important;
+}
+.yellow {
+    color: @yellow  !important;
 }
 
 .header {
@@ -174,12 +177,28 @@ body {
         width: 25%;
         .pds(t, 20);
         text-align: center;
-        img {
+        span {
             .dis(b);
             margin: 0 auto;
             .mgs(b, 10);
             .w(90);
-            .h(90);
+			.lhh(90);
+			.bdr(50%);
+			.fz(44);
+			color: #fff;
+			text-align: center;
+			&.icon-toutiao {
+			    background: #ff5969;
+			}
+			&.icon-zhuanfang {
+			    background: #f9be20;
+			}
+			&.icon-shejishi {
+			    background: #3f9af7;
+			}
+			&.icon-zhaopin {
+			    background: #1ccb7a;
+			}
         }
         p {
             .lhh(50);
@@ -310,16 +329,17 @@ body {
 }
 
 .content {
-	.pd(0, 38);
+	.pd(0, 35, 45);
 	.lh(58);
 	.fz(34);
 	border-top: 1px solid #eee;
 	&-tit {
-		.pd(46, 38,  60);
+		.pd(46, 35,  60);
 		.title {
 			.lh(70);
 			h1 {
-				.dis(i);
+				.dis(ib);
+				vertical-align: middle;
 				.fz(46);
 				color: #333;
 			}
@@ -341,6 +361,9 @@ body {
 				&:hover {
 					color: @blue;
 				}
+			}
+			.line {
+			    .mg(0, 20);
 			}
 		}
 		.designer {
@@ -386,6 +409,234 @@ body {
 				.fz(24);
 				color: #bbb;
 			}
+		}
+	}
+	.ct-video {
+		.pd(45, 0, 0);
+		video {
+			.w(680);
+			.h(376);
+		}
+	}
+	img {
+		max-width: 100% !important;
+	}
+	.picview {
+		.pds(t, 48);
+	}
+
+	&-info {
+		.pd(64, 0, 0);
+		.mg(0, 35);
+		border-top: 1px solid #eee;
+		.tit {
+			line-height: 1;
+			.fz(36);
+			color: #333;
+		}
+		.ct {
+			.pd(40, 0, 25);
+			.lh(60);
+			dl {
+				.pd(10, 0);
+				.fz(28);
+				color: #999;
+			}
+			dt {
+				float: left;
+			}
+			dd {
+				.mgs(l, 172);
+				.tag {
+					.dis(ib);
+					vertical-align: top;
+					.pd(0, 24);
+					.mgs(l, 20);
+					.fz(24);
+					background: #f7f8fa;
+					color: #999;
+					.bdr(60 / @font);
+				}
+				a.tag:hover {
+					background: @blue;
+					color: #fff;
+				}
+			}
+		}
+	}
+	&-other {
+		.pd(60, 35);
+		border-top: 20px solid #f7f8fa;
+		.tit {
+			.pos(r);
+			line-height: 1;
+			.fz(36);
+			color: #333;
+			.more {
+				.pos(a);
+				.t(16);
+				.r(0);
+				.fz(28);
+				color: @blue;
+			}
+		}
+		.list {
+			.pd(35, 0, 0);
+			.mgs(r, -35);
+			.ovx(a);
+			font-size: 0;
+			white-space: nowrap;
+			li {
+				.dis(ib);
+				vertical-align: top;
+				.mgs(r, 24);
+				img {
+					.w(304);
+					.h(190);
+					.bdr(16 / @font);
+				}
+			}
+		}
+	}
+	&-comment {
+		.pd(60, 35);
+		border-top: 20px solid #f7f8fa;
+		.tit {
+			.pos(r);
+			line-height: 1;
+			.fz(36);
+			color: #333;
+			span {
+				.fz(32);
+				color: #999;
+				.mgs(l, 32);
+			}
+			.more {
+				.pos(a);
+				.t(16);
+				.r(0);
+				.fz(28);
+				color: @blue;
+			}
+		}
+		li {
+			.pd(50, 0);
+			border-bottom: 1px solid #eee;
+		}
+		.com-box {
+			.fll {
+				float: left;
+			}
+			.avatar {
+				img {
+					.w(76);
+					.h(76);
+					.bdr(50%);
+				}
+			}
+			.tt, .info {
+				.pos(r);
+				.pds(t, 16);
+				.mgs(l, 95);
+				.lh(48);
+				font-size: 0;
+				a {
+				    .dis(ib);
+					vertical-align: middle;
+					.mgs(r, 12);
+					.fz(32);
+					color: #333;
+				}
+				img {
+					.dis(ib);
+					vertical-align: middle;
+					.w(30);
+					.mgs(l, 8);
+				}
+				.time, .times {
+					.dis(ib);
+					vertical-align: bottom;
+					.fz(24);
+					color: #666;
+					.mgs(l, 10);
+				}
+			}
+			.tt {
+				.pds(r, 100);
+			}
+			.info {
+				.pds(t, 24);
+				.fz(30);
+				color: #666;
+				.btn-box {
+					a {
+						.dis(n);
+					}
+					.btn-praise {
+						.dis(b);
+						.pos(a);
+						.t(-58);
+						right: 0;
+						color: #bbb;
+						.fz(20);
+					}
+				}
+			}
+			.cpshowimg {
+				.dis(n);
+			}
+		}
+		.reply-box {
+			.pd(32, 32, 7);
+			.mgs(l, 95);
+			background: #f7f8fa;
+			.bdr(10 / @font);
+			.com-box {
+			    .avatar {
+					.mgs(r, 18);
+			        img {
+			            .w(48);
+			            .h(48);
+			        }
+			    }
+				.tt, .info {
+					.pds(t, 4);
+					.mgs(l, 0);
+					.lh(40);
+					.fz(28);
+					.cl();
+					.mgs(b, 25);
+				}
+				.info {
+					.btn-box {
+						.dis(n);
+					}
+					a, span {
+						.fz(28);
+					}
+					span {
+						.dis(ib);
+						vertical-align: middle;
+						.mg(0, 20);
+					}
+					.time, .times {
+						.dis(n);
+					}
+				}
+			}
+		}
+		.more-comment {
+			.dis(b);
+			.pds(b, 25);
+		    .lh(32);
+		    .fz(24);
+			color: #999;
+			&:hover {
+				color: @blue;
+			}
+		    .triangle {
+		        .dis(n);
+		    }
 		}
 	}
 }
