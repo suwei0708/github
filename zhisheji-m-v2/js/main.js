@@ -18,6 +18,17 @@ $(function() {
 	    e.stopPropagation();
 	});
 
+	// 招聘弹窗
+	$('.tip-zp').on('click', function() {
+		$('.popup-zp').show();
+	});
+	$('body').on('click', '.popup', function() {
+		$(this).hide();
+	})
+	.on('click', '.popup > div', function(e) {
+	    e.stopPropagation();
+	})
+
 	// 评论展示更多
 	$('.content-comment').on('click', '.more-comment', function() {
 	    if ($(this).find('.more-comment-text').text() == '收起评论') {
@@ -28,4 +39,62 @@ $(function() {
 	        $(this).parents('.reply-box').find('.more-comment-box').show();
 	    }
 	});
+
+	if ($('.so-box').length) {
+	    // 搜索页 是否展示删除按钮
+		comInput($('.so-box .input'));
+		$('.so-box .input').bind('input propertychange', function() {
+			comInput($(this));
+		});
+		//	搜索页 点击删除按钮
+		$('.so-box').on('click', '.icon-quxiao', function() {
+			$(this).hide();
+			$('.so-box .input').val('');
+		})
+		//	搜索页 点击提交按钮
+		.on('click', '.btn', function() {
+		    if (!$.trim($('.so-box .input').val()).length) {
+				alertTips('搜索内容不能为空！');
+				return false;
+			}
+			else {
+				// 模拟无结果
+				if ($.trim($('.so-box .input').val()).length > 5) {
+					$('.so-noresult, .so-footer').removeClass('hide');
+					$('.so-result').addClass('hide');
+				}
+				// 模拟有结果
+				else {
+					$('.so-result').removeClass('hide');
+					$('.so-footer, .so-noresult').addClass('hide');
+				}
+
+				return false;
+			}
+		});
+
+		function comInput(obj) {
+			if ($.trim(obj.val()).length > 0) {
+				$('.so-box').find('.icon-quxiao').show();
+			}
+			else {
+				$('.so-box').find('.icon-quxiao').hide();
+			}
+		}
+	}
 });
+
+// 通用alert美化
+var alertTimes;
+function alertTips(txt, times) {
+    if (!$('.alerttips-box').length) {
+        $('body').append('<div class="alerttips-box"><div class="alerttips"></div></div>');
+    }
+    $('.alerttips').html(txt);
+    $('.alerttips-box').show();
+    times ? time = times : time = 2000;
+    clearTimeout(alertTimes);
+    alertTimes = setTimeout(function() {
+        $('.alerttips-box').hide();
+    }, time);
+}
