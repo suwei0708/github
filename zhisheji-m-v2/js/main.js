@@ -40,6 +40,29 @@ $(function() {
 	    }
 	});
 
+	// 评论点赞
+	$('.content-comment').on('click', '.btn-praise', function() {
+		var _this = $(this);
+		if (!_this.hasClass('praise-ok')) {
+		    if (!_this.find('.add').length) {
+		        _this.append('<span class="add">+1</span>');
+		    }
+		    _this.find('.add').fadeIn();
+		    setTimeout(function() {
+		        _this.find('.add').fadeOut();
+		    }, 800);
+
+		    var num = 0;
+		    if (_this.find('.num').length) {
+		        var num = _this.find('.num').text();
+		    } else {
+		        _this.append(' <span class="num"></span>');
+		    }
+		    num = parseInt(num) + 1;
+		    $(this).addClass('praise-ok').find('.num').text(num);
+		}
+	});
+
 	if ($('.so-box').length) {
 	    // 搜索页 是否展示删除按钮
 		comInput($('.so-box .input'));
