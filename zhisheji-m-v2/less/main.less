@@ -547,6 +547,19 @@ body {
 						right: 0;
 						color: #bbb;
 						.fz(20);
+						&.praise-ok {
+							color: @blue;
+						}
+						.add {
+							display: none;
+							position: absolute;
+							.t(-20);
+							right: 0;
+							.fz(20);
+							.lhh(24);
+							color: @blue;
+							white-space: nowrap;
+						}
 					}
 				}
 			}
@@ -589,6 +602,9 @@ body {
 					}
 					.time, .times {
 						.dis(n);
+					}
+					&:first-of-type {
+						.mgs(b, 0);
 					}
 				}
 			}
