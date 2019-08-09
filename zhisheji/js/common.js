@@ -1142,7 +1142,6 @@ function checkboxSelect(obj) {
         }
         jQuery(this).unbind();
         jQuery(this).on('change', function() {
-			console.log('change');
             if (jQuery(this).prop('checked')) {
                 jQuery(this).parents('span').addClass('ico-radio-cur');
             } else {
