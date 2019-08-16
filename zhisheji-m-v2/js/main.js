@@ -1,11 +1,20 @@
 $(function() {
+	function bodyScroll(event) {
+	    event.preventDefault();
+	}
 	// 头部下拉
 	$('body').on('click', '.menu-down', function() {
 		if ($(this).find('.menu-sub').is(':hidden')) {
 			$(this).find('.menu-sub').slideDown();
+			$(this).find('.icon-gengduo').attr('class', 'icon-guanbi1');
+			// 防止拖动出现黑块
+			document.body.addEventListener('touchmove', bodyScroll, { passive: false });
 		}
 		else {
 			$('.menu-sub').slideUp();
+			$(this).find('.icon-guanbi1').attr('class', 'icon-gengduo');
+			// 允许拖动出现黑块
+			document.body.removeEventListener('touchmove', bodyScroll, { passive: false });
 		}
 	})
 	// 下拉收起
