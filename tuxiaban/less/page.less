@@ -1,0 +1,72 @@
+@charset "utf-8";
+@import url(../../../common/common-pc.less);
+
+@page-w: 1220px;
+@green: #00b266;
+@green-h: #00ca69;
+@yellow: #f64a1a;
+@yellow-h: #ff6815;
+.sld-box {
+    .ov(h);
+}
+#sld {
+    @h: 380px;
+    .pos(r);
+    width: @page-w;
+    height: @h;
+	margin: 0 auto;
+
+    .slides_container {
+        width: @page-w;
+        height: @h;
+        overflow: visible !important;
+        li {
+            width: @page-w;
+            height: @h;
+        }
+        img {
+            .pos(a);
+            top: 0;
+            left: 50%;
+            width: 1920px;
+            max-width: none;
+            margin-left:  -1920px / 2;
+        }
+    }
+    .pagination {
+        position: absolute;
+        bottom: 16px;
+        z-index: 6;
+		width: 100%;
+		line-height: 10px;
+        text-align: center;
+
+        li {
+            .dis(ib);
+			vertical-align: top;
+        }
+        a {
+			.dis(b);
+            .ov(h);
+            width: 10px;
+            height: 10px;
+            margin: 0 5px;
+            background: #fff;
+            font-size: 0;
+            .bdr(10px);
+        }
+        .cur {
+            a {
+				width: 20px;
+                background: @yellow;
+            }
+        }
+    }
+}
+
+.w800 {
+    width: 800px;
+}
+.w335 {
+    width: 335px;
+}
