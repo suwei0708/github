@@ -108,8 +108,20 @@ body {
 .pb40 {
     padding-bottom: 40px;
 }
+.pb60 {
+	padding-bottom: 60px;
+}
+.pt20 {
+	padding-top: 20px;
+}
+.pt40 {
+	padding-top: 40px;
+}
 .pt60 {
 	padding-top: 60px;
+}
+.w860 {
+    width: 860px;
 }
 .w340 {
 	width: 340px;
@@ -578,44 +590,79 @@ body {
 /* 翻页 */
 .page {
     text-align: center;
-    font-size: 0;
-
+    color: #999;
+    font-size: 0px;
     a {
         .dis(ib);
-        vertical-align: top;
-        padding: 8px 13px 9px;
-        min-width: 10px;
-        margin: 0 6px;
         color: #999;
-        background: #f4f4f4;
+        .height(46px);
+        padding: 0 19px;
+        margin: 0 5px;
         font-size: 14px;
-        .bdr(4px);
-        font-weight: 400;
-
+        vertical-align: middle;
+        background: #fff;
         &:hover {
-            background-color: @green;
+            background-color: @yellow;
             color: #fff;
         }
     }
-    strong {
+    span {
         .dis(ib);
-        padding: 7px 0 8px;
-        width: 36px;
-        margin: 0 6px;
-        color: #999;
-        background: #f4f4f4;
+        .height(46px);
+        padding: 0 19px;
+        margin: 0 5px;
+        vertical-align: middle;
+        background: #fff;
         font-size: 14px;
-        .bdr(4px);
         font-weight: 400;
-        letter-spacing:-2px;
-    }
-    strong.cur {
-        width: auto;
-        padding: 8px 14px 9px;
-        background-color: @green;
+	}
+	.prev, .next {
+        padding: 0 26px;
+	}
+    .cur {
         color: #fff;
-        letter-spacing: 0;
+        background: @yellow;
     }
+	.form {
+		.dis(ib);
+		vertical-align: top;
+		padding: 0 0 0 10px;
+		i {
+			margin: 0 5px;
+			font-size: 14px;
+			color: #666;
+		}
+		.input {
+			overflow: hidden;
+			width: 46px;
+			height: 46px;
+			line-height: 46px;
+			margin: 0 5px;
+			color: #666;
+			font-size: 14px;
+			background: #fff;
+			text-align: center;
+			border: none;
+		}
+		.btn {
+			overflow: hidden;
+			width: 94px;
+			height: 46px;
+			line-height: 46px;
+			margin: 0 0 0 15px;
+			.bdr(4px);
+			color: #666;
+			font-size: 14px;
+			background: #fff;
+			text-align: center;
+			border: none;
+			cursor: pointer;
+			&:hover {
+				color: #fff;
+				background: @yellow;
+			}
+		}
+	}
 }
 
 .ico-radio {

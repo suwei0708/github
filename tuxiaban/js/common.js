@@ -12,6 +12,34 @@ $(function() {
 		$('.popup-login').show();
 	});
 
+	// 是否显示返回顶部
+	goscrollTop();
+	$(window).on('scroll', function() {
+	    goscrollTop();
+	});
+
+	// 判断滚动条底部悬浮
+	if (!hasScrollbar()) {
+		$('.footer').addClass('footer-fixed');
+		$('body').css({
+			'padding-bottom': $('.footer').outerHeight()
+		});
+	}
+	$(window).on('resize', function() {
+		goscrollTop();
+		if (!hasScrollbar()) {
+			$('.footer').addClass('footer-fixed');
+			$('body').css({
+				'padding-bottom': $('.footer').outerHeight()
+			});
+		} else {
+			$('.footer').removeClass('footer-fixed');
+			$('body').css({
+				'padding-bottom': 0
+			});
+		}
+	});
+
     //返回顶部
     $('#goBack').on('click', function() {
         $('body, html').animate({
@@ -21,9 +49,9 @@ $(function() {
     });
 
     // 通用盒子切换
-    $('.box-tab').on('click', 'li', function() {
+    $('.tab-tit').on('click', 'li', function() {
         $(this).addClass('cur').siblings().removeClass('cur');
-        $(this).parents('.box').find('.list').hide().eq($(this).index()).show()
+        $(this).parents('.tab-box').find('.tab-ct').hide().eq($(this).index()).show()
     });
 
     // checkbox美化
@@ -52,9 +80,9 @@ function isMobile(sMobile) {
 }
 
 function centerObj(obj) {
-    var boxWidth = jQuery(obj).outerWidth();
-    var boxHeight = jQuery(obj).outerHeight();
-    jQuery(obj).css({
+    var boxWidth = $(obj).outerWidth();
+    var boxHeight = $(obj).outerHeight();
+    $(obj).css({
         'margin-top': -boxHeight / 2 + 'px',
         'margin-left': -boxWidth / 2 + 'px'
     });
@@ -62,41 +90,41 @@ function centerObj(obj) {
 
 // radio选中效果
 function radioSelect(obj) {
-    jQuery(obj).find('span').removeClass('ico-radio-cur');
-    jQuery.each(jQuery(obj).find('input[type=radio]'), function(index) {
-        if (!jQuery(this).parents('label').find('.ico-radio').length) {
-            jQuery(this).wrap('<span class="ico-radio"></span>');
+    $(obj).find('span').removeClass('ico-radio-cur');
+    $.each($(obj).find('input[type=radio]'), function(index) {
+        if (!$(this).parents('label').find('.ico-radio').length) {
+            $(this).wrap('<span class="ico-radio"></span>');
         }
-        if (jQuery(this).prop('checked')) {
-            jQuery(this).parents('span').addClass('ico-radio-cur')
+        if ($(this).prop('checked')) {
+            $(this).parents('span').addClass('ico-radio-cur')
         }
-        jQuery(this).off('change');
-        jQuery(this).on('change', function() {
-            if (jQuery(this).prop('checked')) {
-                jQuery(this).parents(obj).find('span').removeClass('ico-radio-cur');
-                jQuery(this).parents('span').addClass('ico-radio-cur');
+        $(this).off('change');
+        $(this).on('change', function() {
+            if ($(this).prop('checked')) {
+                $(this).parents(obj).find('span').removeClass('ico-radio-cur');
+                $(this).parents('span').addClass('ico-radio-cur');
             } else {
-                jQuery(this).parents('span').removeClass('ico-radio-cur');
+                $(this).parents('span').removeClass('ico-radio-cur');
             }
         });
     });
 };
 // checkbox选中效果
 function checkboxSelect(obj) {
-    jQuery(obj).find('span').removeClass('ico-radio-cur');
-    jQuery.each(jQuery(obj).find('input[type=checkbox]'), function(i) {
-        if (!jQuery(this).parents('label').find('.ico-radio').length) {
-            jQuery(this).wrap('<span class="ico-radio"></span>');
+    $(obj).find('span').removeClass('ico-radio-cur');
+    $.each($(obj).find('input[type=checkbox]'), function(i) {
+        if (!$(this).parents('label').find('.ico-radio').length) {
+            $(this).wrap('<span class="ico-radio"></span>');
         }
-        if (jQuery(this).prop('checked')) {
-            jQuery(this).parents('span').addClass('ico-radio-cur');
+        if ($(this).prop('checked')) {
+            $(this).parents('span').addClass('ico-radio-cur');
 		}
-		jQuery(this).off('change');
-        jQuery(this).on('change', function() {
-            if (jQuery(this).prop('checked')) {
-                jQuery(this).parents('span').addClass('ico-radio-cur');
+		$(this).off('change');
+        $(this).on('change', function() {
+            if ($(this).prop('checked')) {
+                $(this).parents('span').addClass('ico-radio-cur');
             } else {
-                jQuery(this).parents('span').removeClass('ico-radio-cur');
+                $(this).parents('span').removeClass('ico-radio-cur');
             }
         });
     });
@@ -109,7 +137,7 @@ function checkboxSelect(obj) {
 // $.msgBox.Alert('title', 'msg');
 // $.msgBox.Confirm('title', 'msg', func);
 (function() {
-    jQuery.msgBox = {
+    $.msgBox = {
         Alert: function(title, msg) {
             GenerateHtml('alert', title, msg);
             btnOk();
@@ -138,7 +166,7 @@ function checkboxSelect(obj) {
         }
         _html += '</div></div></div>';
         //必须先将_html添加到body，再设置Css样式
-        jQuery('body').append(_html);
+        $('body').append(_html);
         GenerateCss();
     }
 
@@ -146,10 +174,10 @@ function checkboxSelect(obj) {
     var GenerateCss = function() {
         var _widht = document.documentElement.clientWidth; //屏幕宽
         var _height = document.documentElement.clientHeight; //屏幕高
-        var boxWidth = jQuery('#sw-con').width();
-        var boxHeight = jQuery('#sw-con').height();
+        var boxWidth = $('#sw-con').width();
+        var boxHeight = $('#sw-con').height();
         //让提示框居中
-        jQuery('#sw-con-mask').css({
+        $('#sw-con-mask').css({
             position: 'fixed',
             top: 0,
             left: 0,
@@ -159,15 +187,15 @@ function checkboxSelect(obj) {
             background: '#000',
             background: 'rgba(0, 0, 0, .8)'
         });
-        jQuery('#sw-con').css({
+        $('#sw-con').css({
             top: (_height - boxHeight) / 2 + 'px',
             left: (_widht - boxWidth) / 2 + 'px'
         });
     }
     //确定按钮事件
     var btnOk = function(callback) {
-        jQuery('#sw-btn-ok').on('click', function() {
-            jQuery('#sw-con-mask').remove();
+        $('#sw-btn-ok').on('click', function() {
+            $('#sw-con-mask').remove();
             if (typeof(callback) == 'function') {
                 callback();
             }
@@ -175,15 +203,25 @@ function checkboxSelect(obj) {
     }
     //取消按钮事件
     var btnNo = function() {
-        jQuery('#sw-btn-no, #sw-close').on('click', function() {
-            jQuery('#sw-con-mask').remove();
+        $('#sw-btn-no, #sw-close').on('click', function() {
+            $('#sw-con-mask').remove();
         });
     }
 })();
 
 function alertMsg(title, txt) {
-    jQuery.msgBox.Alert(title, txt);
+    $.msgBox.Alert(title, txt);
 }
 function confirmMsg(title, txt, func) {
-    jQuery.msgBox.Confirm(title, txt, func);
+    $.msgBox.Confirm(title, txt, func);
+}
+function goscrollTop() {
+    if ($(window).scrollTop() <= 0) {
+        $('#goBack').parents('li').hide();
+    } else {
+        $('#goBack').parents('li').show();
+    }
+}
+function hasScrollbar() {
+    return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
 }

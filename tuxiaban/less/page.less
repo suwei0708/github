@@ -249,9 +249,107 @@
 	}
 }
 
-.w800 {
-    width: 800px;
+.position {
+	line-height: 32px;
+	font-size: 14px;
+	color: #999;
+	a {
+		color: #999;
+		&:hover {
+			color: @yellow;
+		}
+	}
+	span {
+		color: #333;
+	}
 }
-.w335 {
-    width: 335px;
+.page-list {
+	padding: 50px 0 40px;
+}
+
+// 详情页
+.cont {
+    &-main {
+		padding: 30px;
+		background: #fff;
+		.img {
+            .pos(r);
+            clear: both;
+        }
+	}
+	&-intro {
+		.tab-tit {
+			font-size: 0;
+			li {
+				.dis(ib);
+				vertical-align: top;
+				margin-right: 30px;
+				cursor: pointer;
+				font-size: 16px;
+				color: #666;
+				&.cur, &:hover {
+					color: #333;
+				}
+			}
+		}
+		.tab-ct {
+			padding: 15px 0 35px;
+			line-height: 25px;
+			font-size: 14px;
+			color: #666;
+			margin-right: -30px;
+			a {
+				.dis(ib);
+				vertical-align: top;
+				color: #666;
+				margin-right: 30px;
+				&:hover {
+					color: #333;
+				}
+			}
+		}
+	}
+	&-info {
+		padding: 40px 30px;
+		font-size: 0;
+		.btn-down {
+			.dis(b);
+			height: 70px;
+			line-height: 70px;
+			font-size: 16px;
+			color: #fff;
+			font-weight: 700;
+			background: @green;
+			text-align: center;
+			span {
+				.dis(ib);
+				vertical-align: middle;
+				margin: -3px 20px 0 0;
+				font-weight: 400;
+				font-size: 20px;
+			}
+			&:hover {
+				color: #fff;
+				color: @green-h;
+			}
+		}
+		.tit {
+			padding: 33px 0 13px;
+			line-height: 32px;
+			font-size: 20px;
+			color: #333;
+		}
+		p {
+			.ov(h);
+			height: 32px;
+			line-height: 32px;
+			font-size: 14px;
+			color: #666;
+			&.half {
+				.dis(ib);
+				vertical-align: top;
+				width: 50%;
+			}
+		}
+	}
 }
