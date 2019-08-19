@@ -9,7 +9,7 @@ $(function() {
             pause: 2500,
             hoverPause: true,
 			effect: 'fade',
-			next: 'icon-qiehuan',
+			next: 'icon-youjiantou',
 			prev: 'icon-zuojiantou'
 		});
     };
