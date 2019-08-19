@@ -1,4 +1,17 @@
 $(function() {
+	// 弹窗关闭
+	$('body').on('click', '.popup-box', function() {
+		$(this).hide();
+	})
+	.on('click', '.popup', function(e) {
+		e.stopPropagation();
+	});
+
+	// 头部登录注册
+	$('.btn-login, .btn-register').on('click', function() {
+		$('.popup-login').show();
+	});
+
     //返回顶部
     $('#goBack').on('click', function() {
         $('body, html').animate({
@@ -30,6 +43,14 @@ function isEmail(str) {
     return reg.test(str);
 };
 
+function isMobile(sMobile) {
+    if (/^1[2|3|4|5|6|7|8|9][0-9]\d{8}$/.test(sMobile)) {
+        return false;
+    } else {
+        return true;
+    }
+}
+
 function centerObj(obj) {
     var boxWidth = jQuery(obj).outerWidth();
     var boxHeight = jQuery(obj).outerHeight();
@@ -49,6 +70,7 @@ function radioSelect(obj) {
         if (jQuery(this).prop('checked')) {
             jQuery(this).parents('span').addClass('ico-radio-cur')
         }
+        jQuery(this).off('change');
         jQuery(this).on('change', function() {
             if (jQuery(this).prop('checked')) {
                 jQuery(this).parents(obj).find('span').removeClass('ico-radio-cur');
@@ -68,7 +90,8 @@ function checkboxSelect(obj) {
         }
         if (jQuery(this).prop('checked')) {
             jQuery(this).parents('span').addClass('ico-radio-cur');
-        }
+		}
+		jQuery(this).off('change');
         jQuery(this).on('change', function() {
             if (jQuery(this).prop('checked')) {
                 jQuery(this).parents('span').addClass('ico-radio-cur');
@@ -79,13 +102,6 @@ function checkboxSelect(obj) {
     });
 };
 
-function isMobile(sMobile) {
-    if (/^1[2|3|4|5|6|7|8|9][0-9]\d{8}$/.test(sMobile)) {
-        return false;
-    } else {
-        return true;
-    }
-}
 
 
 // alert和confirm美化
