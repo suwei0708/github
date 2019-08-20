@@ -6,6 +6,8 @@
 @yellow: #f64a1a;
 @yellow-h: #ff6815;
 @bg-color: #f4f6f8;
+@blue: #0097f8;
+@blue-h: #26a5ff;
 body {
     min-width: @page-w;
     margin: 0;
@@ -85,6 +87,12 @@ body {
 	min-width: @page-w;
 	background: @bg-color;
 }
+.hide {
+    .dis(n);
+}
+.show {
+    .dis(b);
+}
 .green {
     color: @green !important;
     &:hover {
@@ -104,6 +112,9 @@ body {
 }
 .bdr4 {
     .bdr(4px);
+}
+.pb20 {
+    padding-bottom: 20px;
 }
 .pb40 {
     padding-bottom: 40px;
@@ -685,38 +696,49 @@ body {
 }
 
 /* alert, confirm样式 */
+#sw-bg {
+	position: fixed;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+	z-index: 998;
+	background: rgba(0, 0, 0, .6);
+	filter:~'progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000)';
+}
 #sw-con {
-    z-index: 9999;
-    width: 428px;
-    padding-bottom: 40px;
-    position: fixed;
+    width: 480px;
+    padding-bottom: 60px;
+    position: absolute;
     background: #fff;
-    .bdr(4px);
 }
 #sw-tit {
     font-size: 16px;
     color: #666;
     padding: 10px 19px;
     line-height: 37px;
-    border-bottom: 1px solid #ddd;
+    border-bottom: 1px solid #f6f6f6;
 }
 #sw-msg {
-    padding: 43px 19px;
-    line-height: 30px;
-    font-size: 18px;
-    color: #666;
+    padding: 60px 30px 30px;
+    line-height: 36px;
+    font-size: 16px;
+    color: #333;
     text-align: center;
 }
 #sw-close {
     display: block;
     position: absolute;
     right: 20px;
-    top: 22px;
-    color: #aaa;
-    font-size: 14px;
-    cursor: pointer;
+	top: 20px;
+	line-height: 1;
+    color: #bbb;
+    font-size: 16px;
+	cursor: pointer;
+	.anim();
     &:hover {
-        color: @green;
+        color: @yellow;
+        .transform(rotate(180deg));
     }
 }
 #sw-btn-box {
@@ -725,34 +747,33 @@ body {
 }
 #sw-btn-ok, #sw-btn-no {
     .dis(ib);
-    width: 160px;
-    height: 42px;
-    line-height: 42px;
+    width: 144px;
+    height: 38px;
+    line-height: 38px;
     color: white;
     border: none;
-    font-size: 16px;
-    .bdr(4px);
+    font-size: 14px;
 }
 #sw-btn-ok {
-    background: @green;
-    border: 1px solid @green;
+    background: @yellow;
+    border: 3px solid @yellow;
     &:hover {
-        background: @green-h;
-        border: 1px solid @green-h;
+        background: @yellow-h;
+        border: 3px solid @yellow-h;
     }
 }
 #sw-btn-no {
     color: #666;
-    border: 1px solid #ccc;
+    border: 3px solid #eee;
     margin-left: 20px;
     &:hover {
-        color: @green;
-        border: 1px solid @green;
+        color: @yellow;
+        border: 3px solid @yellow;
     }
 }
 
 // 通用弹窗
-:root .popup-box {
+:root .popup-box, :root #sw-bg, :root .user-tip-box {
     filter: none;
 }
 .popup {
@@ -761,7 +782,7 @@ body {
     position: fixed;
     top: 50%;
     left: 50%;
-    margin-left: -390 / 2px;
+    margin: -390px/2 0 0 -580px/2;
     background: #fff;
     &-box {
         .dis(n);
@@ -770,24 +791,24 @@ body {
 		right: 0;
 		bottom: 0;
         left: 0;
-        z-index: 989;
+        z-index: 998;
         background: rgba(0, 0, 0, .6);
         filter: ~'progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000)';
     }
     &-tit {
-        font-size: 16px;
-        color: #666;
-        padding: 10px 19px;
-        line-height: 37px;
-        border-bottom: 1px solid #f6f6f6;
+        font-size: 20px;
+        color: #333;
+        padding: 20px 40px;
+        line-height: 39px;
+        border-bottom: 1px solid #eee;
     }
     &-close {
         display: block;
         position: absolute;
         right: 20px;
-        top: 22px;
-        color: #aaa;
-        font-size: 14px;
+        top: 20px;
+        color: #bbb;
+        font-size: 16px;
         cursor: pointer;
         .anim();
         &:hover {
@@ -795,12 +816,45 @@ body {
             .transform(rotate(180deg));
         }
     }
-    &-ct {
-        padding: 0 30px;
-        margin: 25px 0;
-        line-height: 30px;
-        font-size: 18px;
-        color: #666;
+    &-btn-box {
+		padding: 50px 0 0;
+		text-align: center;
+		font-size: 0;
+        .btn {
+			.dis(ib);
+			vertical-align: top;
+			width: 144px;
+			height: 38px;
+			line-height: 38px;
+			font-size: 14px;
+			border: 3px solid @yellow;
+			color: #fff;
+			background: @yellow;
+			&:hover {
+				background: @yellow-h;
+				border-color: @yellow-h;
+			}
+			&-gray {
+			    border: 3px solid #eee;
+			    color: #666;
+			    background: #fff;
+			    margin-left: 20px;
+			    &:hover {
+					color: @yellow;
+			        border-color: @yellow;
+			        background: #fff;
+			    }
+			}
+			&-green {
+			    border: 3px solid @green;
+			    color: #fff;
+			    background: @green;
+			    &:hover {
+			        background: @green-h;
+			        border-color: @green-h;
+			    }
+			}
+		}
     }
 }
 // 弹窗登录
@@ -909,5 +963,98 @@ body {
 				}
 			}
 		}
+    }
+}
+// 弹窗开通vip
+.popup-openvip {
+	.popup {
+		&-tit {
+			padding: 30px 40px;
+			font-size: 30px;
+			font-weight: 700;
+			text-align: center;
+		}
+		&-ct {
+			padding: 30px 0;
+			ul {
+				padding: 0 0 0 90px;
+				font-size: 0;
+			}
+			li {
+				.dis(ib);
+				vertical-align: top;
+				line-height: 55px;
+				width: 263px;
+				font-size: 16px;
+				color: #333;
+				&.odd {
+					width: 220px;
+				}
+				span {
+					.dis(ib);
+					vertical-align: middle;
+					margin: -3px 10px 0 0;
+					color: @green;
+				}
+			}
+		}
+		&-btn-box {
+			padding: 0;
+			.btn {
+				width: 360px;
+				height: 70px;
+				line-height: 70px;
+				font-size: 20px;
+			}
+		}
+	}
+}
+
+/* 保存成功提示 */
+.user-tip {
+    .dis(n);
+    .pos(f);
+    top: 50%;
+    left: 50%;
+    z-index: 999;
+    height: 60px;
+    line-height: 60px;
+    padding: 0 54px;
+    margin-top: -30px;
+    background: #fff;
+    font-size: 16px;
+    text-align: center;
+    color: #333;
+	white-space: nowrap;
+	&-box {
+		position: fixed;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		z-index: 998;
+		background: rgba(0, 0, 0, .6);
+		filter:~'progid:DXImageTransform.Microsoft.gradient(startColorstr=#7f000000, endColorstr=#7f000000)';
+	}
+    .icon-hygouxuan {
+        .ov(h);
+        .dis(ib);
+		vertical-align: middle;
+		line-height: 1;
+        padding: 5px;
+        margin: -3px 10px 0 0;
+        background: @green;
+        color: #fff;
+        font-size: 12px;
+        .bdr(50%);
+    }
+    .icon-tishi {
+        .ov(h);
+        .dis(ib);
+        vertical-align: middle;
+        margin: -3px 20px 0 0;
+        color: @yellow;
+        font-size: 22px;
+        .bdr(50%);
     }
 }

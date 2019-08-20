@@ -4,12 +4,16 @@ $(function() {
 		$(this).hide();
 	})
 	.on('click', '.popup', function(e) {
-		e.stopPropagation();
+	    e.stopPropagation();
+	})
+	.on('click', '.popup-box .popup-close', function(e) {
+	    $(this).parents('.popup-box').hide();
 	});
 
 	// 头部登录注册
 	$('.btn-login, .btn-register').on('click', function() {
 		$('.popup-login').show();
+		checkboxSelect('.checkbox');
 	});
 
 	// 是否显示返回顶部
@@ -130,30 +134,65 @@ function checkboxSelect(obj) {
     });
 };
 
-
+// 保存成功失败 status为suc或者fail，cont为提示的内容
+function tipSave(status, cont, times) {
+    var time;
+    if (status == 'suc') {
+        icon = 'hygouxuan'
+    }
+    if (status == 'fail') {
+        icon = 'tishi'
+    }
+    times ? time = times : time = 2000
+    if (!jQuery('.user-tip').length) {
+        jQuery('body').append('<div class="user-tip-box"><div class="user-tip">' + '<span class="icon icon-' + icon + '"></span>' + '<span class="text">' + cont + '</span>' + '</div></div>');
+    } else {
+        jQuery('.user-tip').find('.icon').attr('class', 'icon icon-' + icon);
+        jQuery('.user-tip').find('.text').html(cont);
+    }
+    jQuery('.user-tip').css({
+        'margin-left': -jQuery('.user-tip').outerWidth() / 2
+    }).show();
+    maskShow();
+    if (jQuery('.tip-num').length) {
+        var tipTimer = setInterval(function() {
+            if (jQuery('.tip-num').html() == 1) {
+                jQuery('.user-tip').hide();
+                maskHide();
+                clearInterval(tipTimer);
+            }
+            jQuery('.tip-num').html(jQuery('.tip-num').html() - 1);
+        }, 1000);
+    } else {
+        setTimeout(function() {
+            jQuery('.user-tip').hide();
+            maskHide();
+        }, time);
+    }
+};
 
 // alert和confirm美化
 // 调用方法, 标题为null则不显示标题
 // $.msgBox.Alert('title', 'msg');
-// $.msgBox.Confirm('title', 'msg', func);
+// $.msgBox.Confirm('title', 'msg', funcOk, funcNo);
 (function() {
-    $.msgBox = {
+    jQuery.msgBox = {
         Alert: function(title, msg) {
             GenerateHtml('alert', title, msg);
             btnOk();
             btnNo();
         },
-        Confirm: function(title, msg, callback) {
+        Confirm: function(title, msg, callback, callbackno) {
             GenerateHtml('confirm', title, msg);
             btnOk(callback);
-            btnNo();
+            btnNo(callbackno);
         }
     }
     //生成Html
     var GenerateHtml = function(type, title, msg) {
-        var _html = '<div id="sw-con-mask"><div id="sw-con">';
+        var _html = '<div id="sw-bg"><div id="sw-con"><a id="sw-close" href="javascript:;"><span class="icon-guanbi"></span></a>';
         if (title) {
-            _html += '<div id="sw-tit">' + title + '</div><a id="sw-close" href="javascript:;"><span class="icon-close"></span></a>';
+            _html += '<div id="sw-tit">' + title + '</div>';
         }
         _html += '<div id="sw-msg">' + msg + '</div><div id="sw-btn-box">';
 
@@ -166,7 +205,7 @@ function checkboxSelect(obj) {
         }
         _html += '</div></div></div>';
         //必须先将_html添加到body，再设置Css样式
-        $('body').append(_html);
+        jQuery('body').append(_html);
         GenerateCss();
     }
 
@@ -174,46 +213,39 @@ function checkboxSelect(obj) {
     var GenerateCss = function() {
         var _widht = document.documentElement.clientWidth; //屏幕宽
         var _height = document.documentElement.clientHeight; //屏幕高
-        var boxWidth = $('#sw-con').width();
-        var boxHeight = $('#sw-con').height();
+        var boxWidth = jQuery('#sw-con').width();
+        var boxHeight = jQuery('#sw-con').height();
         //让提示框居中
-        $('#sw-con-mask').css({
-            position: 'fixed',
-            top: 0,
-            left: 0,
-            zIndex: 990,
-            width: '100%',
-            height: '100%',
-            background: '#000',
-            background: 'rgba(0, 0, 0, .8)'
-        });
-        $('#sw-con').css({
+        jQuery('#sw-con').css({
             top: (_height - boxHeight) / 2 + 'px',
             left: (_widht - boxWidth) / 2 + 'px'
         });
     }
     //确定按钮事件
     var btnOk = function(callback) {
-        $('#sw-btn-ok').on('click', function() {
-            $('#sw-con-mask').remove();
+        jQuery('#sw-btn-ok').on('click', function() {
+            jQuery('#sw-bg').remove();
             if (typeof(callback) == 'function') {
                 callback();
             }
         });
     }
     //取消按钮事件
-    var btnNo = function() {
-        $('#sw-btn-no, #sw-close').on('click', function() {
-            $('#sw-con-mask').remove();
+    var btnNo = function(callback) {
+        jQuery('#sw-btn-no, #sw-close').on('click', function() {
+            jQuery('#sw-bg').remove();
+            if (typeof(callback) == 'function') {
+                callback();
+            }
         });
     }
 })();
 
-function alertMsg(title, txt) {
-    $.msgBox.Alert(title, txt);
+function alertMsg(title, msg) {
+    $.msgBox.Alert(title, msg);
 }
-function confirmMsg(title, txt, func) {
-    $.msgBox.Confirm(title, txt, func);
+function confirmMsg(title, msg, callback, callbackno) {
+    $.msgBox.Confirm(title, msg, callback, callbackno);
 }
 function goscrollTop() {
     if ($(window).scrollTop() <= 0) {

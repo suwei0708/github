@@ -7,6 +7,8 @@
 @yellow: #f64a1a;
 @yellow-h: #ff6815;
 @bg-color: #f4f6f8;
+@blue: #0097f8;
+@blue-h: #26a5ff;
 .sld-box {
     .ov(h);
 }
@@ -310,7 +312,7 @@
 		}
 	}
 	&-info {
-		padding: 40px 30px;
+		padding: 40px 30px 20px;
 		font-size: 0;
 		.btn-down {
 			.dis(b);
@@ -330,7 +332,7 @@
 			}
 			&:hover {
 				color: #fff;
-				color: @green-h;
+				background: @green-h;
 			}
 		}
 		.tit {
@@ -349,6 +351,69 @@
 				.dis(ib);
 				vertical-align: top;
 				width: 50%;
+			}
+		}
+	}
+	&-tags {
+		padding: 0 30px 18px;
+		.tit {
+			line-height: 32px;
+			font-size: 16px;
+			color: #333;
+		}
+		.ct {
+			padding: 12px 0;
+			margin-right: -10px;
+			font-size: 0;
+			a {
+				.dis(ib);
+				vertical-align: top;
+				line-height: 24px;
+				padding: 0 14px;
+				margin: 8px 10px 0 0;
+				border: 1px solid #ddd;
+				font-size: 14px;
+				color: #666;
+				&:hover {
+					color: #333;
+				}
+			}
+		}
+	}
+	&-limit {
+		padding: 20px 30px;
+		.tit {
+		    line-height: 32px;
+		    font-size: 16px;
+		    color: #333;
+		}
+		.ct {
+			padding: 15px 0;
+			line-height: 24px;
+			color: #666;
+			text-align: justify;
+			font-size: 14px;
+		}
+		.btn-jubao {
+			.dis(ib);
+			vertical-align: top;
+			padding: 30px 0 0;
+			line-height: 32px;
+			font-size: 14px;
+			color: #666;
+			cursor: pointer;
+			span {
+				.dis(ib);
+				vertical-align: middle;
+				margin: -3px 16px 0 0;
+				font-size: 18px;
+				color: #ccc;
+			}
+			&:hover {
+				color: @yellow;
+				span {
+					color: @yellow;
+				}
 			}
 		}
 	}

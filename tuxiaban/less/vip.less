@@ -1,0 +1,344 @@
+@charset "utf-8";
+@import url(../../../common/common-pc.less);
+
+@page-w: 1220px;
+@green: #00b266;
+@green-h: #00ca69;
+@yellow: #f64a1a;
+@yellow-h: #ff6815;
+@bg-color: #f4f6f8;
+@blue: #0097f8;
+@blue-h: #26a5ff;
+
+// VIP
+.vip {
+    &-banner {
+        height: 300px;
+        background: url(../images/vip/banner.jpg) no-repeat center 0;
+    }
+    &-type {
+        padding: 50px 0 13px;
+        .tit {
+            line-height: 30px;
+            margin-bottom: -16px;
+            font-size: 18px;
+            color: #333;
+            font-weight: 700;
+        }
+        .tab {
+            .cl();
+            padding-bottom: 20px;
+            li {
+                .pos(r);
+                float: left;
+                width: 384px;
+                height: 243px - 60;
+                padding: 60px 0 0;
+                margin-right: 34px;
+                cursor: pointer;
+                background: url(../images/vip/tab.png) no-repeat;
+                strong {
+                    .dis(b);
+                    padding: 0 0 0 35px;
+                    line-height: 55px;
+                    color: #fff;
+                    font-size: 36px;
+                }
+                del {
+                    .dis(b);
+                    padding: 8px 0 0 35px;
+                    line-height: 20px;
+                    font-size: 14px;
+					color: #fcfbf6;
+					.opacity(.5);
+                }
+                .price {
+                    padding: 0 0 0 35px;
+                    line-height: 35px;
+                    font-weight: 700;
+                    font-size: 34px;
+                    color: #fff;
+                    .fr {
+                        padding: 5px 30px 0 0;
+                        font-size: 16px;
+                        font-weight: 400;
+					}
+					i {
+						.dis(ib);
+						vertical-align: top;
+						width: 16px;
+						height: 16px;
+						line-height: 16px;
+						margin-top: 6px;
+						text-align: center;
+						font-size: 12px;
+						font-weight: 400;
+						color: #fff;
+						border: 2px solid #fff;
+						.bdr(50%);
+					}
+                }
+                &:after {
+                    .dis(n);
+                    .pos(a);
+                    bottom: -21px;
+                    left: 50%;
+                    margin-left: -13px;
+                    content: '';
+                    width: 26px;
+                    height: 12px;
+                    background: url(../images/vip/arrow.jpg) no-repeat 0 0;
+                }
+                &.item1 {
+                    background-position: -8px 0;
+                    &:hover, &.cur {
+                        background-position: -8px -272px;
+                    }
+                }
+                &.item2 {
+                    background-position: -426px 0;
+                    &:hover, &.cur {
+                        background-position: -426px -272px;
+                    }
+                }
+                &.item3 {
+                    margin: 0;
+                    background-position: -844px 0;
+                    &:hover, &.cur {
+                        background-position: -844px -272px;
+                    }
+                }
+                &.cur {
+                    &:after {
+                        .dis(b);
+                    }
+                }
+            }
+        }
+        .ct {
+            .cl();
+            height: 210px;
+            padding: 40px 0 0;
+            border: 1px solid #eee;
+            .bdr(4px);
+            font-size: 0;
+            >div {
+                .dis(ib);
+                vertical-align: middle;
+                font-size: 16px;
+                color: #666;
+            }
+            .price {
+                width: 328px - 120;
+                padding: 0 0 0 120px;
+                line-height: 38px;
+                strong {
+                    .dis(b);
+                    line-height: 44px;
+                    font-size: 36px;
+                    color: #333;
+                }
+                i {
+                    .dis(ib);
+                    vertical-align: top;
+                    margin: -6px 0 0 8px;
+                    font-size: 14px;
+                    color: #ff8e00;
+                }
+            }
+            .ecode {
+                width: 436px;
+                .img {
+                    .ov(h);
+                    .dis(ib);
+                    vertical-align: middle;
+                    width: 150px;
+                    height: 150px;
+                }
+                .text {
+                    .ov(h);
+                    .dis(ib);
+                    vertical-align: middle;
+                    padding: 0 0 0 40px;
+                    span {
+                        .dis(ib);
+                        vertical-align: middle;
+						font-size: 26px;
+						padding: 12px;
+                        margin: 0 14px 0 0;
+                        &.icon-weixin {
+							color: #fff;
+							background: #2ed25d;
+							.bdr(50%);
+                        }
+                    }
+                }
+                .btn {
+                    .ov(h);
+                    .dis(ib);
+                    vertical-align: middle;
+                    margin: 0 0 0 50px;
+                    width: 136px;
+                    height: 40px;
+                    line-height: 40px;
+                    font-size: 14px;
+                    color: #fff;
+                    text-align: center;
+                    .bdr(4px);
+                    background: @blue;
+                    &:hover {
+                        background: @blue-h;
+                    }
+                }
+            }
+        }
+    }
+    &-iconlist {
+        .cl();
+		padding-bottom: 80px;
+		font-size: 0;
+        .item {
+			.dis(ib);
+			vertical-align: top;
+            width: 100px;
+			padding-top: 25px;
+			margin-left: 180px;
+			text-align: center;
+        }
+        .item span {
+			.dis(ib);
+			vertical-align: top;
+            width: 66px;
+			height: 62px;
+        }
+        .item p {
+			padding: 30px 0 0;
+            line-height: 30px;
+            font-size: 20px;
+            color: #333;
+		}
+		.itema {
+			margin-left: 0;
+		}
+        .itema span {
+           	background: url(../images/vip/icon-shangyong.png) no-repeat center 0;
+        }
+        .itemb span {
+            background: url(../images/vip/icon-banquan.png) no-repeat center 0;
+        }
+        .itemc span {
+            background: url(../images/vip/icon-sucai.png) no-repeat center 0;
+        }
+        .itemd span {
+            background: url(../images/vip/icon-fuwu.png) no-repeat center 0;
+        }
+        .iteme span {
+            background: url(../images/vip/icon-jingpin.png) no-repeat center 0;
+        }
+    }
+    /* 对比 */
+    &-duibi {
+        padding-top: 40px;
+        width: 1220px;
+		margin: 0 auto;
+		.list {
+		    padding-top: 50px;
+		    overflow: hidden;
+		}
+    }
+    .duibi .list .item {
+        float: left;
+        width: 33.333333%;
+    }
+    .duibi .list .item h2 {
+        text-align: center;
+        padding-bottom: 20px;
+        position: relative;
+    }
+    .duibi .list .item h2:after {
+        content: '';
+        position: absolute;
+        width: 27px;
+        height: 3px;
+        background: #efefef;
+        border-radius: 2px;
+        -webkit-border-radius: 2px;
+        -moz-border-radius: 2px;
+        -ms-border-radius: 2px;
+        margin: auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+    }
+    .duibi .list .item h2 span {
+        display: inline-block;
+        font-size: 22px;
+        font-weight: bold;
+        line-height: 30px;
+        position: relative;
+    }
+    .duibi .list .item h2 span:before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: url(../images/vip.png);
+        left: -40px;
+        top: 0;
+    }
+    .duibi .list .item.tq h2 span:before {
+        background-position: -140px -140px;
+    }
+    .duibi .list .item.pt h2 span {
+        color: #00aeff;
+    }
+    .duibi .list .item.pt h2 span:before {
+        background-position: -180px -140px;
+    }
+    .duibi .list .item.vip h2 span {
+        color: #ffa800;
+    }
+    .duibi .list .item.vip h2 span:before {
+        background-position: -220px -140px;
+    }
+    .duibi .list .item p {
+        text-align: center;
+        line-height: 64px;
+        border-bottom: #efefef 1px solid;
+        font-size: 16px;
+    }
+    .duibi .list .item p.kf {
+        border-bottom: none;
+        height: 64px;
+    }
+    .duibi .list .item p.no {
+        position: relative;
+    }
+    .duibi .list .item p.no:before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: url(../images/vip.png) -260px -140px;
+        margin: auto;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+    .duibi .list .item p.yes {
+        position: relative;
+    }
+    .duibi .list .item p.yes:before {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background: url(../images/vip.png) -300px -140px;
+        margin: auto;
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+    }
+}
