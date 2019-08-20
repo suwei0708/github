@@ -17,7 +17,7 @@
         background: url(../images/vip/banner.jpg) no-repeat center 0;
     }
     &-type {
-        padding: 50px 0 13px;
+        padding: 50px 0 60px;
         .tit {
             line-height: 30px;
             margin-bottom: -16px;
@@ -193,15 +193,69 @@
             }
         }
     }
+    /* 对比 */
+    &-duibi {
+        margin: 60px 0;
+		border: 1px solid #f1f1f1;
+		.list {
+			font-size: 0;
+			.item {
+				.dis(ib);
+				vertical-align: top;
+				width: 406px;
+				h2 {
+					text-align: center;
+					position: relative;
+					line-height: 120px;
+					font-size: 20px;
+					color: #333;
+				}
+				p {
+					text-align: center;
+					line-height: 80px;
+					font-size: 16px;
+					color: #555;
+					&.odd {
+						background: #fbf9f8;
+					}
+				}
+				&-vip {
+					width: 394px;
+					padding: 30px 0;
+					margin: -36px 0;
+					background: #fff;
+					border: 6px solid @yellow;
+					h2 {
+						color: @yellow;
+						font-weight: 700;
+						span {
+							.dis(ib);
+							vertical-align: middle;
+							margin: -3px 10px 0 0;
+							font-size: 34px;
+							font-weight: 400;
+						}
+					}
+					p {
+						color: @yellow;
+					}
+				}
+				&-pt {
+					p {
+						color: @yellow;
+					}
+				}
+			}
+		}
+    }
     &-iconlist {
         .cl();
-		padding-bottom: 80px;
+		padding: 60px 0 70px;
 		font-size: 0;
         .item {
 			.dis(ib);
 			vertical-align: top;
             width: 100px;
-			padding-top: 25px;
 			margin-left: 180px;
 			text-align: center;
         }
@@ -235,110 +289,5 @@
         .iteme span {
             background: url(../images/vip/icon-jingpin.png) no-repeat center 0;
         }
-    }
-    /* 对比 */
-    &-duibi {
-        padding-top: 40px;
-        width: 1220px;
-		margin: 0 auto;
-		.list {
-		    padding-top: 50px;
-		    overflow: hidden;
-		}
-    }
-    .duibi .list .item {
-        float: left;
-        width: 33.333333%;
-    }
-    .duibi .list .item h2 {
-        text-align: center;
-        padding-bottom: 20px;
-        position: relative;
-    }
-    .duibi .list .item h2:after {
-        content: '';
-        position: absolute;
-        width: 27px;
-        height: 3px;
-        background: #efefef;
-        border-radius: 2px;
-        -webkit-border-radius: 2px;
-        -moz-border-radius: 2px;
-        -ms-border-radius: 2px;
-        margin: auto;
-        bottom: 0;
-        left: 0;
-        right: 0;
-    }
-    .duibi .list .item h2 span {
-        display: inline-block;
-        font-size: 22px;
-        font-weight: bold;
-        line-height: 30px;
-        position: relative;
-    }
-    .duibi .list .item h2 span:before {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background: url(../images/vip.png);
-        left: -40px;
-        top: 0;
-    }
-    .duibi .list .item.tq h2 span:before {
-        background-position: -140px -140px;
-    }
-    .duibi .list .item.pt h2 span {
-        color: #00aeff;
-    }
-    .duibi .list .item.pt h2 span:before {
-        background-position: -180px -140px;
-    }
-    .duibi .list .item.vip h2 span {
-        color: #ffa800;
-    }
-    .duibi .list .item.vip h2 span:before {
-        background-position: -220px -140px;
-    }
-    .duibi .list .item p {
-        text-align: center;
-        line-height: 64px;
-        border-bottom: #efefef 1px solid;
-        font-size: 16px;
-    }
-    .duibi .list .item p.kf {
-        border-bottom: none;
-        height: 64px;
-    }
-    .duibi .list .item p.no {
-        position: relative;
-    }
-    .duibi .list .item p.no:before {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background: url(../images/vip.png) -260px -140px;
-        margin: auto;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
-    }
-    .duibi .list .item p.yes {
-        position: relative;
-    }
-    .duibi .list .item p.yes:before {
-        content: '';
-        position: absolute;
-        width: 30px;
-        height: 30px;
-        background: url(../images/vip.png) -300px -140px;
-        margin: auto;
-        left: 0;
-        top: 0;
-        right: 0;
-        bottom: 0;
     }
 }
