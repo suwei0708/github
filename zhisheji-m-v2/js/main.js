@@ -115,7 +115,7 @@ $(function() {
 		}
 	}
 });
-
+alertTips('fdasfasdkljf')
 // 通用alert美化
 var alertTimes;
 function alertTips(txt, times) {
