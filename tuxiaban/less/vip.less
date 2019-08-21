@@ -14,7 +14,7 @@
 .vip {
     &-banner {
         height: 300px;
-        background: url(../images/vip/banner.jpg) no-repeat center 0;
+		background: url(../images/vip/banner.jpg) no-repeat center 0;
     }
     &-type {
         padding: 50px 0 60px;
@@ -117,21 +117,21 @@
         }
         .ct {
             .cl();
-            height: 210px;
-            padding: 40px 0 0;
+            padding: 45px 0 55px;
             border: 1px solid #eee;
             .bdr(4px);
             font-size: 0;
-            >div {
+            > div {
                 .dis(ib);
                 vertical-align: middle;
-                font-size: 16px;
+                // font-size: 16px;
                 color: #666;
             }
             .price {
                 width: 328px - 120;
                 padding: 0 0 0 120px;
-                line-height: 38px;
+				line-height: 38px;
+				font-size: 16px;
                 strong {
                     .dis(b);
                     line-height: 44px;
@@ -159,7 +159,8 @@
                     .ov(h);
                     .dis(ib);
                     vertical-align: middle;
-                    padding: 0 0 0 40px;
+					padding: 0 0 0 40px;
+					font-size: 16px;
                     span {
                         .dis(ib);
                         vertical-align: middle;
@@ -290,4 +291,141 @@
             background: url(../images/vip/icon-jingpin.png) no-repeat center 0;
         }
     }
+}
+
+// 我的
+.user {
+	&-info {
+		padding: 40px 0 30px;
+		text-align: center;
+		.img {
+			width: 80px;
+			margin: 0 auto;
+			img {
+				.dis(b);
+				width: 80px;
+				height: 80px;
+				.bdr(50%);
+			}
+		}
+		.name {
+		    line-height: 24px;
+		    padding: 17px 0 0;
+		    font-size: 16px;
+		    color: #333;
+		    font-weight: 700;
+		}
+		.id {
+		    line-height: 18px;
+		    font-size: 12px;
+		    color: #666;
+		}
+		.vip {
+			.pos(r);
+			margin: 26px 0 0;
+			line-height: 20px;
+			font-size: 14px;
+			color: #333;
+			span {
+				.dis(ib);
+				vertical-align: middle;
+			    margin: -3px 10px 0 0;
+				font-size: 20px;
+				color: #aaa;
+			}
+			&-tips {
+				.dis(n);
+				.pos(a);
+				top: 34px;
+				left: 55px;
+				padding: 0 20px;
+				line-height: 60px;
+				font-size: 14px;
+				color: #666;
+				background: #fff;
+				.box-shadow(0, 0, 15px, rgba(0, 0, 0, .12));
+				&:before {
+					content: '';
+					.pos(a);
+					top: -7px;
+					left: 53px;
+					.triangle(top, 7px, #fff);
+				}
+			}
+			&:hover {
+				.vip-tips {
+					.dis(b);
+				}
+			}
+		}
+	}
+	&-nav {
+		padding: 8px 0;
+		border-top: 1px solid #eee;
+		li {
+			padding: 8px 0;
+			a {
+				.dis(b);
+				line-height: 36px;
+				padding: 0 0 0 46px;
+				font-size: 16px;
+				color: #666;
+				border-left: 4px solid #fff;
+				&.cur, &:hover {
+					border-color: @yellow;
+					color: #333;
+				}
+			}
+		}
+	}
+	&-vip-tips {
+		padding: 20px 40px;
+		line-height: 20px;
+		background: @yellow;
+		font-size: 14px;
+		color: #fff;
+		span.icon-guanbi {
+			.dis(b);
+			margin: 3px 0 0;
+			cursor: pointer;
+			.anim;
+			&:hover {
+				.rotate(-180deg);
+			}
+		}
+		span.icon-tishi {
+			.dis(ib);
+			vertical-align: top;
+			font-size: 20px;
+			margin-right: 24px;
+		}
+	}
+
+	&-type {
+		padding: 35px 40px 60px;
+		.ct {
+			padding: 58px 0;
+			.price {
+				width: 153px;
+				padding: 0 0 0 73px;
+			}
+			.ecode {
+				width: 331px;
+				.img {
+					width: 120px;
+					height: 120px;
+					img {
+						width: 120px;
+						height: 120px;
+					}
+				}
+				.text {
+					padding-left: 30px;
+				}
+				.btn {
+					margin-left: 35px;
+				}
+			}
+		}
+	}
 }
