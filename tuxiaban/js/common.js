@@ -257,3 +257,26 @@ function goscrollTop() {
 function hasScrollbar() {
     return document.body.scrollHeight > (window.innerHeight || document.documentElement.clientHeight);
 }
+
+function monitorVal(obj, nums, minus) {
+    if (minus) {
+        if (jQuery(obj).nextAll('.num-box').find('.num').length) {
+            jQuery(obj).nextAll('.num-box').find('.num').html(nums - jQuery(obj).val().length);
+        }
+    } else {
+        if (jQuery(obj).nextAll('.num-box').find('.num').length) {
+            jQuery(obj).nextAll('.num-box').find('.num').html(jQuery(obj).val().length);
+        }
+    }
+    jQuery(obj).unbind();
+    jQuery(obj).bind('input propertychange', function() {
+        if (jQuery(obj).val().length >= nums) {
+            jQuery(obj).val(jQuery(obj).val().substr(0, nums));
+        }
+        if (minus) {
+            jQuery(obj).nextAll('.num-box').find('.num').html(nums - jQuery(obj).val().length);
+        } else {
+            jQuery(obj).nextAll('.num-box').find('.num').html(jQuery(obj).val().length);
+        }
+    });
+};
