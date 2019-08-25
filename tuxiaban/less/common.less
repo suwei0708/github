@@ -113,6 +113,9 @@ body {
 .bdr4 {
     .bdr(4px);
 }
+.pb15 {
+    padding-bottom: 15px;
+}
 .pb20 {
     padding-bottom: 20px;
 }
@@ -127,6 +130,9 @@ body {
 }
 .pb80 {
 	padding-bottom: 80px;
+}
+.pt15 {
+	padding-top: 15px;
 }
 .pt20 {
 	padding-top: 20px;
@@ -616,6 +622,21 @@ body {
     }
 }
 
+.position {
+	line-height: 32px;
+	font-size: 14px;
+	color: #999;
+	a {
+		color: #999;
+		&:hover {
+			color: @yellow;
+		}
+	}
+	span {
+		color: #333;
+	}
+}
+
 /* 翻页 */
 .page {
     text-align: center;
@@ -1028,7 +1049,7 @@ body {
 	}
 }
 
-/* 保存成功提示 */
+// 保存成功提示
 .user-tip {
     .dis(n);
     .pos(f);
@@ -1075,4 +1096,27 @@ body {
         font-size: 22px;
         .bdr(50%);
     }
+}
+
+//  左侧导航
+.left {
+	&-nav {
+		padding: 8px 0;
+		border-top: 1px solid #eee;
+		li {
+			padding: 8px 0;
+			a {
+				.dis(b);
+				line-height: 36px;
+				padding: 0 0 0 46px;
+				font-size: 16px;
+				color: #666;
+				border-left: 4px solid #fff;
+				&.cur, &:hover {
+					border-color: @yellow;
+					color: #333;
+				}
+			}
+		}
+	}
 }
