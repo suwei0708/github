@@ -144,29 +144,27 @@ function tipSave(status, cont, times) {
         icon = 'tishi'
     }
     times ? time = times : time = 2000
-    if (!jQuery('.user-tip').length) {
-        jQuery('body').append('<div class="user-tip-box"><div class="user-tip">' + '<span class="icon icon-' + icon + '"></span>' + '<span class="text">' + cont + '</span>' + '</div></div>');
+    if (!$('.user-tip-box').length) {
+        $('body').append('<div class="user-tip-box"><div class="user-tip">' + '<span class="icon icon-' + icon + '"></span>' + '<span class="text">' + cont + '</span>' + '</div></div>');
     } else {
-        jQuery('.user-tip').find('.icon').attr('class', 'icon icon-' + icon);
-        jQuery('.user-tip').find('.text').html(cont);
+        $('.user-tip').find('.icon').attr('class', 'icon icon-' + icon);
+        $('.user-tip').find('.text').html(cont);
     }
-    jQuery('.user-tip').css({
-        'margin-left': -jQuery('.user-tip').outerWidth() / 2
+    $('.user-tip').css({
+        'margin-left': -$('.user-tip').outerWidth() / 2
     }).show();
-    maskShow();
-    if (jQuery('.tip-num').length) {
+    $('.user-tip-box').show();
+    if ($('.tip-num').length) {
         var tipTimer = setInterval(function() {
-            if (jQuery('.tip-num').html() == 1) {
-                jQuery('.user-tip').hide();
-                maskHide();
+            if ($('.tip-num').html() == 1) {
+                $('.user-tip-box').hide();
                 clearInterval(tipTimer);
             }
-            jQuery('.tip-num').html(jQuery('.tip-num').html() - 1);
+            $('.tip-num').html($('.tip-num').html() - 1);
         }, 1000);
     } else {
         setTimeout(function() {
-            jQuery('.user-tip').hide();
-            maskHide();
+            $('.user-tip-box').hide();
         }, time);
     }
 };
@@ -176,7 +174,7 @@ function tipSave(status, cont, times) {
 // $.msgBox.Alert('title', 'msg');
 // $.msgBox.Confirm('title', 'msg', funcOk, funcNo);
 (function() {
-    jQuery.msgBox = {
+    $.msgBox = {
         Alert: function(title, msg) {
             GenerateHtml('alert', title, msg);
             btnOk();
@@ -205,7 +203,7 @@ function tipSave(status, cont, times) {
         }
         _html += '</div></div></div>';
         //必须先将_html添加到body，再设置Css样式
-        jQuery('body').append(_html);
+        $('body').append(_html);
         GenerateCss();
     }
 
@@ -213,18 +211,18 @@ function tipSave(status, cont, times) {
     var GenerateCss = function() {
         var _widht = document.documentElement.clientWidth; //屏幕宽
         var _height = document.documentElement.clientHeight; //屏幕高
-        var boxWidth = jQuery('#sw-con').width();
-        var boxHeight = jQuery('#sw-con').height();
+        var boxWidth = $('#sw-con').width();
+        var boxHeight = $('#sw-con').height();
         //让提示框居中
-        jQuery('#sw-con').css({
+        $('#sw-con').css({
             top: (_height - boxHeight) / 2 + 'px',
             left: (_widht - boxWidth) / 2 + 'px'
         });
     }
     //确定按钮事件
     var btnOk = function(callback) {
-        jQuery('#sw-btn-ok').on('click', function() {
-            jQuery('#sw-bg').remove();
+        $('#sw-btn-ok').on('click', function() {
+            $('#sw-bg').remove();
             if (typeof(callback) == 'function') {
                 callback();
             }
@@ -232,8 +230,8 @@ function tipSave(status, cont, times) {
     }
     //取消按钮事件
     var btnNo = function(callback) {
-        jQuery('#sw-btn-no, #sw-close').on('click', function() {
-            jQuery('#sw-bg').remove();
+        $('#sw-btn-no, #sw-close').on('click', function() {
+            $('#sw-bg').remove();
             if (typeof(callback) == 'function') {
                 callback();
             }
@@ -260,23 +258,23 @@ function hasScrollbar() {
 
 function monitorVal(obj, nums, minus) {
     if (minus) {
-        if (jQuery(obj).nextAll('.num-box').find('.num').length) {
-            jQuery(obj).nextAll('.num-box').find('.num').html(nums - jQuery(obj).val().length);
+        if ($(obj).nextAll('.num-box').find('.num').length) {
+            $(obj).nextAll('.num-box').find('.num').html(nums - $(obj).val().length);
         }
     } else {
-        if (jQuery(obj).nextAll('.num-box').find('.num').length) {
-            jQuery(obj).nextAll('.num-box').find('.num').html(jQuery(obj).val().length);
+        if ($(obj).nextAll('.num-box').find('.num').length) {
+            $(obj).nextAll('.num-box').find('.num').html($(obj).val().length);
         }
     }
-    jQuery(obj).unbind();
-    jQuery(obj).bind('input propertychange', function() {
-        if (jQuery(obj).val().length >= nums) {
-            jQuery(obj).val(jQuery(obj).val().substr(0, nums));
+    $(obj).unbind();
+    $(obj).bind('input propertychange', function() {
+        if ($(obj).val().length >= nums) {
+            $(obj).val($(obj).val().substr(0, nums));
         }
         if (minus) {
-            jQuery(obj).nextAll('.num-box').find('.num').html(nums - jQuery(obj).val().length);
+            $(obj).nextAll('.num-box').find('.num').html(nums - $(obj).val().length);
         } else {
-            jQuery(obj).nextAll('.num-box').find('.num').html(jQuery(obj).val().length);
+            $(obj).nextAll('.num-box').find('.num').html($(obj).val().length);
         }
     });
 };
