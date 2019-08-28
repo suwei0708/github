@@ -18,11 +18,39 @@
 			    <a class="btn" href="javascript:;"><span class="icon-pingguo"></span>iPhone 版</a>
 			    <a class="btn" href="javascript:;"><span class="icon-anzhuo"></span>Android 版</a>
 			</div>
+			<div class="box-down-mask">
+				<img src="../images/guide.png" alt="">
+			</div>
 		</div>
         <!-- 主体 end -->
     </div>
     <script src="../js/jquery-3.2.1.min.js"></script>
 
-    <script src="../js/main.js"></script>
+	<script src="../js/main.js"></script>
+	<script>
+		function isWeiXinQQ(){
+			var ua = window.navigator.userAgent.toLowerCase();
+			if(ua.match(/MicroMessenger/i) == 'micromessenger'){
+				//判断是否是微信浏览器的函数
+				return true;
+			}
+			else if(ua.indexOf('qq')>-1 && ua.indexOf('mqqbrowser') <0){
+				//qq内置浏览器
+				return true;
+			}
+			else{
+				return false;
+			}
+		}
+		if(isWeiXinQQ()) {
+			$('.box-down').on('click', '.btn', function() {
+				$('.box-down-mask').show();
+				return false;
+			});
+		}
+		$('.box-down-mask').on('click', function() {
+			$(this).hide();
+		})
+	</script>
 </body>
 </html>
