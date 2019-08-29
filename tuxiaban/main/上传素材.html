@@ -94,24 +94,59 @@
 						    <dl class="item">
 						        <dt><span>*</span> 素材标题</dt>
 						        <dd>
-						            <input name="biaoti" type="text" class="input" placeholder="输入标题内容" required autocomplete="off">
+						            <input name="biaoti1" type="text" class="input" placeholder="输入标题内容" required autocomplete="off">
 						            <div class="num-box"><span class="num">30</span></div>
 						        </dd>
 						    </dl>
 						    <dl class="item item-select">
 						        <dt><span>*</span> 素材分类</dt>
 						        <dd>
-						            <input name="biaoti" type="text" class="input" placeholder="输入标题内容" required autocomplete="off">
-						            <div class="num-box"><span class="num">30</span></div>
+									<input name="fenlei1" type="text" class="input readonly" placeholder="首页/专题" required autocomplete="off">
+									<span class="icon-zhankai"></span>
 						            <div class="select-list">
 						                <ul>
-						                    <li>0 ~ 30人</li>
-						                    <li>30 ~ 100</li>
-						                    <li>100 ~ 500</li>
-						                    <li>500 ~ 1000</li>
-						                    <li>1000以上</li>
+						                    <li>首页/专题</li>
+						                    <li>详情页</li>
+						                    <li>钻展/主图</li>
+						                    <li>海报</li>
+						                    <li>平面</li>
+						                    <li>UI</li>
+						                    <li>网页</li>
+						                    <li>摄影</li>
+						                    <li>插画</li>
+						                    <li>C4D</li>
+						                    <li>其它</li>
 						                </ul>
 						            </div>
+						        </dd>
+						    </dl>
+						    <dl class="item">
+						        <dt><span>*</span> 素材标签</dt>
+						        <dd>
+						            <input type="text" id="tagValue1" class="input" name="tags1" value="" placeholder="标签用空格间隔" required>
+						        </dd>
+						    </dl>
+						    <dl class="item item-select">
+						        <dt><span>*</span> 素材格式</dt>
+						        <dd>
+									<input name="geshi1" type="text" class="input readonly" placeholder="输入标题内容" required autocomplete="off">
+									<span class="icon-zhankai"></span>
+						            <div class="select-list">
+						                <ul>
+						                    <li>PSD</li>
+						                    <li>CDR</li>
+						                    <li>JPG</li>
+						                    <li>PNG</li>
+						                    <li>AI</li>
+						                </ul>
+						            </div>
+						        </dd>
+						    </dl>
+						    <dl class="item">
+						        <dt class="w168"><span>*</span>是否带党政敏感图片</dt>
+						        <dd class="radio">
+						            <label><input type="radio" name="mingan1" value="是" checked required><span class="icon-gouxuan"></span>是</label>
+						            <label><input type="radio" name="mingan1" value="否"><span class="icon-gouxuan"></span>否</label>
 						        </dd>
 						    </dl>
 						</form>
@@ -202,8 +237,33 @@
     <!-- 通用js end -->
 
     <!--js调用 start -->
+    <script src="../js/tag.js" type="text/javascript"></script>
+    <script src="../js/validate-1.14.0.min.js" type="text/javascript"></script>
     <script src="../js/page.js" type="text/javascript"></script>
-    <!--js调用 end -->
+	<!--js调用 end -->
+	<script>
+		$.validator.setDefaults({
+			errorElement: 'div',
+			errorClass: 'tips-err',
+			debug: true, // 只验证不提交表单
+			errorPlacement: function(error, element) {
+				error.appendTo(element.parent());
+			}
+		});
+
+		var validator = $('#form').validate({
+			// 验证成功后提交
+			submitHandler: function(form) {
+				$('.popup-cselect').show();
+			}
+		});
+
+		// 初始化tag标签
+		var tag = new Tag({
+			id: 'tagValue1',
+			tagtextMin: 2
+		}).initView();
+	</script>
 </body>
 
 </html>

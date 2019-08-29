@@ -89,31 +89,31 @@
                     height: 12px;
                     background: url(../images/vip/arrow.jpg) no-repeat 0 0;
                 }
-                &.item1 {
-                    background-position: -8px 0;
-                    &:hover, &.cur {
-                        background-position: -8px -272px;
-                    }
-                }
-                &.item2 {
-                    background-position: -426px 0;
-                    &:hover, &.cur {
-                        background-position: -426px -272px;
-                    }
-                }
-                &.item3 {
-                    margin: 0;
-                    background-position: -844px 0;
-                    &:hover, &.cur {
-                        background-position: -844px -272px;
-                    }
-                }
-                &.cur {
-                    &:after {
-                        .dis(b);
-                    }
-                }
-            }
+			}
+			.item1 {
+				background-position: -8px 0;
+				&:hover, &.cur {
+					background-position: -8px -272px;
+				}
+			}
+			.item2 {
+				background-position: -426px 0;
+				&:hover, &.cur {
+					background-position: -426px -272px;
+				}
+			}
+			.item3 {
+				margin: 0;
+				background-position: -844px 0;
+				&:hover, &.cur {
+					background-position: -844px -272px;
+				}
+			}
+			.cur {
+				&:after {
+					.dis(b);
+				}
+			}
         }
         .ct {
             .cl();
@@ -391,7 +391,79 @@
 		}
 	}
 	&-type {
-		padding: 35px 40px 60px;
+		padding: 35px 0 60px;
+		.tit {
+			padding: 0 40px 10px;
+			font-size: 20px;
+		}
+		.tab {
+			padding: 0 20px 20px;
+			li {
+				padding: 88px 0 0;
+				width:309px;
+				height: 417px - 88;
+				margin-right: 0;
+				text-align: center;
+				background: url(../images/vip/tab2.png) no-repeat 0 0;
+				strong {
+					padding: 0;
+				}
+				del {
+					padding: 10px 0 0;
+				}
+				.price {
+					padding: 0;
+					line-height: 40px;
+					font-size: 40px;
+					i {
+						width: auto;
+						height: auto;
+						line-height: 40px;
+						font-size: 18px;
+						border: none;
+						vertical-align: baseline;
+					}
+				}
+				.slogan {
+					line-height: 24px;
+					color: #fff;
+					padding: 16px 0 0;
+				}
+				.btn {
+					.dis(b);
+					width: 160px;
+					height: 50px;
+					line-height: 50px;
+					margin: 15px auto 0;
+					text-align: center;
+					font-size: 16px;
+					color: #666;
+					background: #fff;
+					font-weight: 700;
+					&:hover {
+						color: @yellow;
+					}
+				}
+			}
+			.item1 {
+				background-position: 0 -438px;
+				&:hover, &.cur {
+					background-position: 0 0;
+				}
+			}
+			.item2 {
+				background-position: -308px -438px;
+				&:hover, &.cur {
+					background-position: -308px 0;
+				}
+			}
+			.item3 {
+				background-position: -616px -438px;
+				&:hover, &.cur {
+					background-position: -616px 0;
+				}
+			}
+		}
 		.ct {
 			padding: 58px 0;
 			.price {
