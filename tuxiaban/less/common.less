@@ -86,6 +86,24 @@ input {
 body {
 	min-width: @page-w;
 	background: @bg-color;
+	// 滚动条
+    scrollbar-arrow-color: #eee; /*三角箭头的颜色*/
+    scrollbar-face-color: #eee; /*立体滚动条的颜色*/
+    scrollbar-shadow-color: #eee; /*立体滚动条阴影的颜色*/
+    /*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+    ::-webkit-scrollbar {
+        width: 4px;
+        // height: 140px;
+        background-color: #fff;
+    }
+    /*定义滚动条轨道 内阴影+圆角*/
+    ::-webkit-scrollbar-track {
+        background-color: #fff;
+    }
+    /*定义滑块 内阴影+圆角*/
+    ::-webkit-scrollbar-thumb {
+        background-color: #eee;
+    }
 }
 .hide {
     .dis(n);
@@ -148,6 +166,9 @@ body {
 }
 .pt80 {
 	padding-top: 80px;
+}
+.ml310 {
+	margin-left: 310px;
 }
 .w970 {
     width: 970px;
@@ -703,7 +724,6 @@ body {
 			height: 46px;
 			line-height: 46px;
 			margin: 0 0 0 15px;
-			.bdr(4px);
 			color: #666;
 			font-size: 14px;
 			background: #fff;
@@ -1052,6 +1072,71 @@ body {
 	}
 }
 
+// 编辑上传
+.popup-edit {
+	.popup {
+		width: 940px;
+		height: 640px;
+		margin: -640px/2 0 0 -940px/2;
+		&-ct {
+			padding: 40px 40px 0;
+		}
+		.btn-box {
+			padding: 50px 0 0;
+			text-align: center;
+			clear: both;
+			font-size: 0;
+			.btn {
+				.pos(r);
+				.dis(ib);
+				vertical-align: top;
+				width: 158px;
+				height: 48px;
+				line-height: 48px;
+				text-align: center;
+				font-size: 16px;
+				cursor: pointer;
+				&-gray {
+					margin-left: 20px;
+					border: 1px solid #eee;
+					color: #666;
+					&:hover {
+						color: @green;
+						border: 1px solid @green;
+					}
+				}
+				&-green {
+					color: #fff;
+					background: @green;
+					border: 1px solid @green;
+					&:hover {
+						border: 1px solid @green-h;
+						background: @green-h;
+					}
+				}
+				input {
+					.pos(a);
+					top: 0;
+					left: -100px;
+					width: 200%;
+					height: 100%;
+					cursor: pointer;
+					.opacity(0);
+				}
+			}
+		}
+		.up-form {
+			.img-edit {
+				.dis(n);
+			}
+			.img-reupload {
+				.dis(b);
+				background: rgba(0, 0, 0, .6);
+			}
+		}
+	}
+}
+
 // 保存成功提示
 .user-tip {
     .dis(n);
@@ -1107,17 +1192,32 @@ body {
 		padding: 8px 0;
 		border-top: 1px solid #eee;
 		li {
-			padding: 8px 0;
 			a {
+				.pos(r);
 				.dis(b);
-				line-height: 36px;
-				padding: 0 0 0 46px;
+				line-height: 50px;
+				padding: 0 0 0 50px;
 				font-size: 16px;
 				color: #666;
-				border-left: 4px solid #fff;
-				&.cur, &:hover {
-					border-color: @yellow;
+				&.cur {
 					color: #333;
+					&:before {
+						content: '';
+						.pos(a);
+						top: 8px;
+						left: 0;
+						width: 4px;
+						height: 36px;
+						background: @yellow;
+					}
+					&:hover {
+						color: #333;
+						background: none;
+					}
+				}
+				&:hover {
+					color: #fff;
+					background: @yellow;
 				}
 			}
 		}
