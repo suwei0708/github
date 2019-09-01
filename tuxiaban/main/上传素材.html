@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../css/iconfont.css">
     <link rel="stylesheet" href="../css/common.css">
     <link rel="stylesheet" href="../css/page.css">
+    <script src="../js/jquery-1.8.1.min.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -85,73 +86,333 @@
 				<p>每次最多上传10张<br>支持rar、zip、jpg、psd、cdr 、ai、cdr、tif、abr、ppt、eps...等格式</p>
 			</div>
 			<div class="up-list bg-white">
-				<ul>
-					<li>
-						<a class="fl img" href="javascript:;">
-						    <img src="../images/img1.jpg" alt="">
-						</a>
-						<form action="" class="up-form">
-						    <dl class="item">
-						        <dt><span>*</span> 素材标题</dt>
-						        <dd>
-						            <input name="biaoti1" type="text" class="input" placeholder="输入标题内容" required autocomplete="off">
-						            <div class="num-box"><span class="num">30</span></div>
-						        </dd>
-						    </dl>
-						    <dl class="item item-select">
-						        <dt><span>*</span> 素材分类</dt>
-						        <dd>
-									<input name="fenlei1" type="text" class="input readonly" placeholder="首页/专题" required autocomplete="off">
-									<span class="icon-zhankai"></span>
-						            <div class="select-list">
-						                <ul>
-						                    <li>首页/专题</li>
-						                    <li>详情页</li>
-						                    <li>钻展/主图</li>
-						                    <li>海报</li>
-						                    <li>平面</li>
-						                    <li>UI</li>
-						                    <li>网页</li>
-						                    <li>摄影</li>
-						                    <li>插画</li>
-						                    <li>C4D</li>
-						                    <li>其它</li>
-						                </ul>
-						            </div>
-						        </dd>
-						    </dl>
-						    <dl class="item">
-						        <dt><span>*</span> 素材标签</dt>
-						        <dd>
-						            <input type="text" id="tagValue1" class="input" name="tags1" value="" placeholder="标签用空格间隔" required>
-						        </dd>
-						    </dl>
-						    <dl class="item item-select">
-						        <dt><span>*</span> 素材格式</dt>
-						        <dd>
-									<input name="geshi1" type="text" class="input readonly" placeholder="输入标题内容" required autocomplete="off">
-									<span class="icon-zhankai"></span>
-						            <div class="select-list">
-						                <ul>
-						                    <li>PSD</li>
-						                    <li>CDR</li>
-						                    <li>JPG</li>
-						                    <li>PNG</li>
-						                    <li>AI</li>
-						                </ul>
-						            </div>
-						        </dd>
-						    </dl>
-						    <dl class="item">
-						        <dt class="w168"><span>*</span>是否带党政敏感图片</dt>
-						        <dd class="radio">
-						            <label><input type="radio" name="mingan1" value="是" checked required><span class="icon-gouxuan"></span>是</label>
-						            <label><input type="radio" name="mingan1" value="否"><span class="icon-gouxuan"></span>否</label>
-						        </dd>
-						    </dl>
-						</form>
-					</li>
-				</ul>
+			    <form action="" class="up-form" id="form">
+					<ul>
+						<li>
+							<div class="fl img">
+								<input type="button" name="image1" required>
+								<div class="img-upload">
+									<input type="file">
+								    <span class="icon-shangchuan"></span>
+								    <p>支持文件拖拽上传</p>
+								</div>
+							</div>
+							<div class="ml310">
+								<dl class="item">
+									<dt><span>*</span> 素材标题</dt>
+									<dd>
+										<input name="biaoti1" type="text" class="input" placeholder="输入标题内容" required autocomplete="off">
+										<div class="num-box"><span class="num">30</span></div>
+									</dd>
+								</dl>
+								<dl class="item item-select">
+									<dt><span>*</span> 素材分类</dt>
+									<dd>
+										<input name="fenlei1" type="text" class="input readonly" placeholder="素材分类" required autocomplete="off">
+										<span class="icon-zhankai"></span>
+										<div class="select-list">
+											<ul>
+												<li>首页/专题</li>
+												<li>详情页</li>
+												<li>钻展/主图</li>
+												<li>海报</li>
+												<li>平面</li>
+												<li>UI</li>
+												<li>网页</li>
+												<li>摄影</li>
+												<li>插画</li>
+												<li>C4D</li>
+												<li>其它</li>
+											</ul>
+										</div>
+									</dd>
+								</dl>
+								<dl class="item">
+									<dt><span>*</span> 素材标签</dt>
+									<dd>
+										<input type="text" id="tagValue1" class="input" name="tags1" value="" placeholder="标签用空格间隔" required>
+									</dd>
+								</dl>
+								<dl class="item item-select">
+									<dt><span>*</span> 素材格式</dt>
+									<dd>
+										<input name="geshi1" type="text" class="input readonly" placeholder="素材格式" required autocomplete="off">
+										<span class="icon-zhankai"></span>
+										<div class="select-list">
+											<ul>
+												<li>PSD</li>
+												<li>CDR</li>
+												<li>JPG</li>
+												<li>PPT</li>
+												<li>EPS</li>
+												<li>TIF</li>
+												<li>MAX</li>
+												<li>PNG</li>
+												<li>AI</li>
+											</ul>
+										</div>
+									</dd>
+								</dl>
+								<dl class="item item-checkbox">
+									<dt class="w168"><span>*</span>是否带党政敏感图片</dt>
+									<dd class="radio">
+										<label><input type="radio" name="mingan1" value="是" required><span class="icon-gouxuan"></span>是</label>
+										<label><input type="radio" name="mingan1" value="否" checked><span class="icon-gouxuan"></span>否</label>
+										<div class="up-tips">
+											<span class="icon-tishi1"></span>
+											<div class="up-tips-box">您的作品中包含国旗、国徽等政治图案，图下班网对这部分图案不享有权力，上传时必须勾选【带有党政敏感图片】选项。</div>
+										</div>
+									</dd>
+								</dl>
+							</div>
+						</li>
+						<li>
+						    <div class="fl img">
+						        <input value="../images/img1.jpg" type="button" name="image2" required>
+								<img src="../images/img1.jpg" alt="">
+								<div class="img-tips">
+								    <input type="file">
+									<span class="icon-tishi1"></span>
+								    <p>您上传的文件解析失败，<br>请点击此处手动上传封面。</p>
+								</div>
+						    </div>
+						    <div class="ml310">
+						        <dl class="item">
+						            <dt><span>*</span> 素材标题</dt>
+						            <dd>
+						                <input name="biaoti2" type="text" class="input" placeholder="输入标题内容" required autocomplete="off">
+						                <div class="num-box"><span class="num">30</span></div>
+						            </dd>
+						        </dl>
+						        <dl class="item item-select">
+						            <dt><span>*</span> 素材分类</dt>
+						            <dd>
+						                <input name="fenlei2" type="text" class="input readonly" placeholder="素材分类" required autocomplete="off">
+						                <span class="icon-zhankai"></span>
+						                <div class="select-list">
+						                    <ul>
+						                        <li>首页/专题</li>
+						                        <li>详情页</li>
+						                        <li>钻展/主图</li>
+						                        <li>海报</li>
+						                        <li>平面</li>
+						                        <li>UI</li>
+						                        <li>网页</li>
+						                        <li>摄影</li>
+						                        <li>插画</li>
+						                        <li>C4D</li>
+						                        <li>其它</li>
+						                    </ul>
+						                </div>
+						            </dd>
+						        </dl>
+						        <dl class="item">
+						            <dt><span>*</span> 素材标签</dt>
+						            <dd>
+						                <input type="text" id="tagValue2" class="input" name="tags2" value="" placeholder="标签用空格间隔" required>
+						            </dd>
+						        </dl>
+						        <dl class="item item-select">
+						            <dt><span>*</span> 素材格式</dt>
+						            <dd>
+						                <input name="geshi2" type="text" class="input readonly" placeholder="素材格式" required autocomplete="off">
+						                <span class="icon-zhankai"></span>
+						                <div class="select-list">
+						                    <ul>
+						                        <li>PSD</li>
+						                        <li>CDR</li>
+						                        <li>JPG</li>
+						                        <li>PPT</li>
+						                        <li>EPS</li>
+						                        <li>TIF</li>
+						                        <li>MAX</li>
+						                        <li>PNG</li>
+						                        <li>AI</li>
+						                    </ul>
+						                </div>
+						            </dd>
+						        </dl>
+						        <dl class="item item-checkbox">
+						            <dt class="w168"><span>*</span>是否带党政敏感图片</dt>
+						            <dd class="radio">
+						                <label><input type="radio" name="mingan2" value="是" required><span class="icon-gouxuan"></span>是</label>
+						                <label><input type="radio" name="mingan2" value="否" checked><span class="icon-gouxuan"></span>否</label>
+						                <div class="up-tips">
+						                    <span class="icon-tishi1"></span>
+						                    <div class="up-tips-box">您的作品中包含国旗、国徽等政治图案，图下班网对这部分图案不享有权力，上传时必须勾选【带有党政敏感图片】选项。</div>
+						                </div>
+						            </dd>
+						        </dl>
+						    </div>
+						</li>
+						<li>
+						    <div class="fl img">
+						        <input value="../images/img1.jpg" type="button" name="image3" required>
+						        <img src="../images/img1.jpg" alt="">
+						        <div class="img-per">
+									<span class="per" style="width: 60%"></span>
+									<span class="num">60%</span>
+						        </div>
+						    </div>
+						    <div class="ml310">
+						        <dl class="item">
+						            <dt><span>*</span> 素材标题</dt>
+						            <dd>
+						                <input name="biaoti3" type="text" class="input" placeholder="输入标题内容" required autocomplete="off">
+						                <div class="num-box"><span class="num">30</span></div>
+						            </dd>
+						        </dl>
+						        <dl class="item item-select">
+						            <dt><span>*</span> 素材分类</dt>
+						            <dd>
+						                <input name="fenlei3" type="text" class="input readonly" placeholder="素材分类" required autocomplete="off">
+						                <span class="icon-zhankai"></span>
+						                <div class="select-list">
+						                    <ul>
+						                        <li>首页/专题</li>
+						                        <li>详情页</li>
+						                        <li>钻展/主图</li>
+						                        <li>海报</li>
+						                        <li>平面</li>
+						                        <li>UI</li>
+						                        <li>网页</li>
+						                        <li>摄影</li>
+						                        <li>插画</li>
+						                        <li>C4D</li>
+						                        <li>其它</li>
+						                    </ul>
+						                </div>
+						            </dd>
+						        </dl>
+						        <dl class="item">
+						            <dt><span>*</span> 素材标签</dt>
+						            <dd>
+						                <input type="text" id="tagValue3" class="input" name="tags3" value="" placeholder="标签用空格间隔" required>
+						            </dd>
+						        </dl>
+						        <dl class="item item-select">
+						            <dt><span>*</span> 素材格式</dt>
+						            <dd>
+						                <input name="geshi3" type="text" class="input readonly" placeholder="素材格式" required autocomplete="off">
+						                <span class="icon-zhankai"></span>
+						                <div class="select-list">
+						                    <ul>
+						                        <li>PSD</li>
+						                        <li>CDR</li>
+						                        <li>JPG</li>
+						                        <li>PPT</li>
+						                        <li>EPS</li>
+						                        <li>TIF</li>
+						                        <li>MAX</li>
+						                        <li>PNG</li>
+						                        <li>AI</li>
+						                    </ul>
+						                </div>
+						            </dd>
+						        </dl>
+						        <dl class="item item-checkbox">
+						            <dt class="w168"><span>*</span>是否带党政敏感图片</dt>
+						            <dd class="radio">
+						                <label><input type="radio" name="mingan3" value="是" required><span class="icon-gouxuan"></span>是</label>
+						                <label><input type="radio" name="mingan3" value="否" checked><span class="icon-gouxuan"></span>否</label>
+						                <div class="up-tips">
+						                    <span class="icon-tishi1"></span>
+						                    <div class="up-tips-box">您的作品中包含国旗、国徽等政治图案，图下班网对这部分图案不享有权力，上传时必须勾选【带有党政敏感图片】选项。</div>
+						                </div>
+						            </dd>
+						        </dl>
+						    </div>
+						</li>
+						<li>
+						    <div class="fl img">
+						        <input value="../images/img1.jpg" type="button" name="image4" required>
+						        <img src="../images/img1.jpg" alt="">
+						        <div class="img-edit">
+						            <span class="icon-bianji"></span>
+								</div>
+								<div class="img-upload img-reupload">
+								    <input type="file">
+								    <span class="icon-shangchuan"></span>
+								    <p>重新上传文件</p>
+								</div>
+						    </div>
+						    <div class="ml310">
+						        <dl class="item">
+						            <dt><span>*</span> 素材标题</dt>
+						            <dd>
+						                <input name="biaoti4" type="text" class="input" placeholder="输入标题内容" required autocomplete="off" value="淘宝水果蔬菜促销banner海报psd">
+						                <div class="num-box"><span class="num">30</span></div>
+						            </dd>
+						        </dl>
+						        <dl class="item item-select">
+						            <dt><span>*</span> 素材分类</dt>
+						            <dd>
+						                <input name="fenlei4" type="text" class="input readonly" placeholder="素材分类" required autocomplete="off" value="首页/专题"
+						                <span class="icon-zhankai"></span>
+						                <div class="select-list">
+						                    <ul>
+						                        <li>首页/专题</li>
+						                        <li>详情页</li>
+						                        <li>钻展/主图</li>
+						                        <li>海报</li>
+						                        <li>平面</li>
+						                        <li>UI</li>
+						                        <li>网页</li>
+						                        <li>摄影</li>
+						                        <li>插画</li>
+						                        <li>C4D</li>
+						                        <li>其它</li>
+						                    </ul>
+						                </div>
+						            </dd>
+						        </dl>
+						        <dl class="item">
+						            <dt><span>*</span> 素材标签</dt>
+						            <dd>
+						                <input type="text" id="tagValue4" class="input" name="tags4" placeholder="标签用空格间隔" required value="首页,海报">
+						            </dd>
+						        </dl>
+						        <dl class="item item-select">
+						            <dt><span>*</span> 素材格式</dt>
+						            <dd>
+										<input name="geshi4" type="text" class="input readonly" placeholder="素材格式" required autocomplete="off" value="PSD">
+						                <span class="icon-zhankai"></span>
+						                <div class="select-list">
+						                    <ul>
+						                        <li>PSD</li>
+						                        <li>CDR</li>
+						                        <li>JPG</li>
+						                        <li>PPT</li>
+						                        <li>EPS</li>
+						                        <li>TIF</li>
+						                        <li>MAX</li>
+						                        <li>PNG</li>
+						                        <li>AI</li>
+						                    </ul>
+						                </div>
+						            </dd>
+						        </dl>
+						        <dl class="item item-checkbox">
+						            <dt class="w168"><span>*</span>是否带党政敏感图片</dt>
+						            <dd class="radio">
+						                <label><input type="radio" name="mingan4" value="是" required><span class="icon-gouxuan"></span>是</label>
+						                <label><input type="radio" name="mingan4" value="否" checked><span class="icon-gouxuan"></span>否</label>
+						                <div class="up-tips">
+						                    <span class="icon-tishi1"></span>
+						                    <div class="up-tips-box">您的作品中包含国旗、国徽等政治图案，图下班网对这部分图案不享有权力，上传时必须勾选【带有党政敏感图片】选项。</div>
+						                </div>
+						            </dd>
+						        </dl>
+						    </div>
+						</li>
+					</ul>
+					<div class="up-btn-box">
+						<div>
+							<div class="btn btn-gray btn-add">继续添加<input type="file"></div>
+							<button class="btn btn-green btn-shenhe" type="submit">提交审核</button>
+						</div>
+					</div>
+				</form>
 			</div>
         </div>
     </div>
@@ -229,10 +490,40 @@
             </div>
         </div>
     </div>
-    <!--弹窗登录 end -->
+	<!--弹窗登录 end -->
+
+	<!-- 弹窗编辑上传 start -->
+	<div class="popup-box popup-edit">
+	    <div class="popup">
+			<div class="popup-tit">编辑素材</div>
+			<span class="popup-close icon-guanbi"></span>
+			<div class="popup-ct">
+				<form class="up-form" id="form-popup">
+					<div class="up-form-box"></div>
+					<div class="btn-box">
+						<button class="btn btn-green btn-add" type="submit">提交审核</button>
+						<div class="btn btn-gray btn-shanchu">删除</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<script>
+			$(function() {
+				// 验证设置
+				var validatorPopup = $('#form-popup').validate({
+					// 验证成功后提交
+					submitHandler: function(form) {
+						tipSave('suc', '提交成功！');
+						editName.remove();
+						$('.popup-edit').hide();
+					}
+				});
+			});
+		</script>
+	</div>
+	<!-- 弹窗编辑上传 end -->
 
     <!-- 通用js start -->
-    <script src="../js/jquery-1.8.1.min.js" type="text/javascript"></script>
     <script src="../js/common.js" type="text/javascript"></script>
     <!-- 通用js end -->
 
@@ -242,6 +533,10 @@
     <script src="../js/page.js" type="text/javascript"></script>
 	<!--js调用 end -->
 	<script>
+	    // 验证设置
+	    $.extend($.validator.messages, {
+	        required: "<span class='icon-tishi'></span>此项内容不能为空",
+	    });
 		$.validator.setDefaults({
 			errorElement: 'div',
 			errorClass: 'tips-err',
@@ -254,13 +549,25 @@
 		var validator = $('#form').validate({
 			// 验证成功后提交
 			submitHandler: function(form) {
-				$('.popup-cselect').show();
+				window.location.href = "审核中.html"
 			}
 		});
 
 		// 初始化tag标签
-		var tag = new Tag({
+		var tag1 = new Tag({
 			id: 'tagValue1',
+			tagtextMin: 2
+		}).initView();
+		var tag2 = new Tag({
+			id: 'tagValue2',
+			tagtextMin: 2
+		}).initView();
+		var tag3 = new Tag({
+			id: 'tagValue3',
+			tagtextMin: 2
+		}).initView();
+		var tag4 = new Tag({
+			id: 'tagValue4',
 			tagtextMin: 2
 		}).initView();
 	</script>
