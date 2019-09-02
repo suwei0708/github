@@ -1072,7 +1072,7 @@ body {
 	}
 }
 
-// 编辑上传
+// 弹窗编辑上传
 .popup-edit {
 	.popup {
 		width: 940px;
@@ -1133,6 +1133,99 @@ body {
 				.dis(b);
 				background: rgba(0, 0, 0, .6);
 			}
+		}
+	}
+}
+
+// 弹窗举报
+.popup-report {
+	.popup {
+		width: 580px;
+		margin: -682px/2 0 0 -580px/2;
+		height: 682px;
+	}
+	.popup-ct {
+		padding: 36px 60px 0;
+		margin: 0;
+		max-height: 100%;
+	}
+	.radio {
+		font-size: 0;
+		label {
+			.dis(ib);
+			width: 250px;
+			line-height: 50px;
+			cursor: pointer;
+			font-size: 16px;
+			color: #333;
+			&.item1 {
+				width: 200px;
+			}
+			input {
+				.dis(ib);
+				width: 20px;
+				height: 20px;
+				margin: -3px 10px 0 0;
+				vertical-align: middle;
+			}
+			.ico-radio {
+				.pos(r);
+				.dis(ib);
+				.ov(h);
+				width: 20px;
+				height: 20px;
+				margin: -3px 10px 0 0;
+				vertical-align: middle;
+				background: url(../images/radio.png) no-repeat 0 -30px;
+				cursor: pointer;
+				&-cur {
+					background-position: 0 0;
+				}
+				input {
+					.pos(a);
+					top: 0;
+					left: 0;
+					margin: 0;
+					.opacity(0);
+					cursor: pointer;
+				}
+			}
+		}
+	}
+	.input {
+		.dis(b);
+		width: 468px - 40px;
+		height: 46px - 26px;
+		margin: 10px 0 0;
+		padding: 13px 20px;
+		border: 1px solid #eee;
+		font-size: 14px;
+		color: #333;
+		line-height: 20px;
+	}
+	.explain {
+		.pos(r);
+		padding: 35px 0 0;
+		.textarea {
+			height: 130px - 30px;
+			margin: 0;
+			padding: 15px 20px;
+			resize: none;
+		}
+		.num-box {
+			.pos(a);
+			bottom: 0;
+			right: 10px;
+			color: #ccc;
+			font-size: 12px;
+			height: 40px;
+			line-height: 40px;
+		}
+	}
+	.popup-btn-box {
+		text-align: left;
+		.btn {
+			text-align: center;
 		}
 	}
 }

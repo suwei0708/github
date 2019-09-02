@@ -69,15 +69,6 @@ $(function() {
 		}
 	});
 
-	// 上传页按钮是否悬浮
-	if ($('.up-form').length) {
-		var $pos = $('.up-btn-box').offset().top;
-		topbar($pos);
-		$(window).on('scroll', function() {
-			topbar($pos);
-		});
-	};
-
 	// 上传页编辑
 	$('.up-form').on('click', '.img-edit span', function() {
 		editName = $(this).parents('li');
