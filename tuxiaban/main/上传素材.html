@@ -78,14 +78,14 @@
             </div>
         </div>
         <div class="fr w970">
-			<div class="up-box bg-white hide">
+			<div class="up-box bg-white">
 				<div class="btn-upload">
 					<span class="icon-shangchuan"></span><strong>上传素材</strong>
 					<input type="file">
 				</div>
 				<p>每次最多上传10张<br>支持rar、zip、jpg、psd、cdr 、ai、cdr、tif、abr、ppt、eps...等格式</p>
 			</div>
-			<div class="up-list bg-white">
+			<div class="up-list bg-white" style="display: none;">
 			    <form action="" class="up-form" id="form">
 					<ul>
 						<li>
@@ -533,6 +533,17 @@
     <script src="../js/page.js" type="text/javascript"></script>
 	<!--js调用 end -->
 	<script>
+		$('.up-box').find('input[type=file]').on('change', function() {
+			$('.up-list').show();
+			$('.up-box').hide();
+			// 上传页按钮是否悬浮
+			var $pos = $('.up-btn-box').offset().top;
+			topbar($pos);
+			$(window).on('scroll', function() {
+				topbar($pos);
+			});
+		});
+
 	    // 验证设置
 	    $.extend($.validator.messages, {
 	        required: "<span class='icon-tishi'></span>此项内容不能为空",

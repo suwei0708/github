@@ -6,7 +6,7 @@ $(function() {
 	.on('click', '.popup', function(e) {
 	    e.stopPropagation();
 	})
-	.on('click', '.popup-box .popup-close', function(e) {
+	.on('click', '.popup-box .popup-close, .popup-box .btn-quxiao', function(e) {
 	    $(this).parents('.popup-box').hide();
 	});
 
@@ -65,7 +65,25 @@ $(function() {
     // radio美化
     if ($('.radio').length) {
         radioSelect('.radio');
-    };
+	};
+
+	// 通用举报
+	$('body').on('click', '.btn-jubao', function() {
+		$('.popup-report').show();
+	});
+
+	$('body').on('click', '.popup-report .btn-tijiao', function() {
+		if (!$.trim($('.popup-report').find('.input:eq(0)').val())) {
+			alertMsg(null, '请填写举报内容描述')
+		}
+		else if (!$.trim($('.popup-report').find('.input:eq(1)').val())) {
+			alertMsg(null, '请输入手机号/QQ号/邮箱')
+		}
+		else {
+			tipSave('suc', '举报成功');
+			$('.popup-report').hide();
+		}
+	});
 
 });
 

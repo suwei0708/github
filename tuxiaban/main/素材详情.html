@@ -213,27 +213,28 @@
 		<!--弹窗登录 end -->
 
 		<!--弹窗举报 start -->
-		<div class="popup-box popup-report" style="display: block;">
+		<div class="popup-box popup-report">
 		    <div class="popup">
 		        <div class="popup-tit">举报理由</div>
 		        <span class="popup-close icon-guanbi"></span>
 		        <div class="popup-ct">
-		            <div class="label">
-		                <label><span class="ico-radio ico-radio-cur"><input type="radio" name="report" value="色情低俗" checked="checked"></span>色情低俗</label>
-		                <label><span class="ico-radio"><input type="radio" name="report" value="广告欺诈"></span>广告欺诈</label>
-		                <label><span class="ico-radio"><input type="radio" name="report" value="反动信息"></span>反动信息</label>
-		                <label><span class="ico-radio"><input type="radio" name="report" value="作品抄袭"></span>作品抄袭</label>
-		                <label><span class="ico-radio"><input type="radio" name="report" value="骚扰谩骂"></span>骚扰谩骂</label>
-		                <label><span class="ico-radio"><input type="radio" name="report" value="其他"></span>其他</label>
+		            <div class="radio">
+		                <label class="item1"><input type="radio" name="report" value="源文件为合层文件" checked="checked">源文件为合层文件</label>
+		                <label><input type="radio" name="report" value="素材重复/网站已存在同样内容">素材重复/网站已存在同样内容</label>
+		                <label class="item1"><input type="radio" name="report" value="格式不符/错误">格式不符/错误</label>
+		                <label><input type="radio" name="report" value="压缩包出错/解压失败">压缩包出错/解压失败</label>
+		                <label class="item1"><input type="radio" name="report" value="盗版/侵权">盗版/侵权</label>
+		                <label><input type="radio" name="report" value="预览图与源文件不符">预览图与源文件不符</label>
+		                <label><input type="radio" name="report" value="文件损坏/文件空白/打不开">文件损坏/文件空白/打不开</label>
 		            </div>
 		            <div class="explain">
-		                <div class="tit">举报说明（可选）:</div>
-		                <textarea class="textarea"></textarea>
-		                <span class="num-box"><span class="num">0</span>/500</span>
+		                <textarea class="input textarea" placeholder="请描述举报内容描述"></textarea>
+		                <span class="num-box"><span class="num">100</span></span>
 		            </div>
+		            <input type="text" class="input" placeholder="请输入手机号/QQ号/邮箱">
 		            <div class="popup-btn-box">
-		                <a href="javascript:;" class="btn btn-blue">提交</a>
-		                <a href="javascript:;" class="btn btn-gray">取消</a>
+		                <a href="javascript:;" class="btn btn-tijiao">提交</a>
+		                <a href="javascript:;" class="btn btn-gray btn-quxiao">取消</a>
 		            </div>
 		        </div>
 		    </div>
