@@ -8,5 +8,10 @@ $(function() {
 	// 关闭续费提醒
 	$('.user-vip-tips').on('click', '.icon-guanbi', function() {
 		$('.user-vip-tips').hide();
+	});
+
+	//  普通会员切换
+	$('.user-normal-type .tab li').on('mouseover', function() {
+		$(this).addClass('cur').siblings().removeClass('cur');
 	})
 });

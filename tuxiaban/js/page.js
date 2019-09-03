@@ -3,6 +3,19 @@ var editName;
 $(function() {
 	numbox();
 
+	// 通用列表下载
+	var $down = 0; //模拟会员和非会员
+	$('.box .list').on('click', '.btn-down', function() {
+		var i = $down++ % 2;
+		if(i) {
+			window.open('会员下载页面.html');
+		}
+		else {
+			$('.popup-openvip').show();
+		}
+		return false;
+	});
+
     // 首页banner
     if($('#sld').length) {
         $('#sld').slides({
