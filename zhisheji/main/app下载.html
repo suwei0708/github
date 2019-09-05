@@ -8,13 +8,26 @@
 		<link rel="stylesheet" href="../css/common.css">
 		<style>
 			.app-bg {
+				position: relative;
+				width: 100%;
 				overflow: hidden;
-				height: 895px;
+				height: 100%;
+				min-height: 895px;
 				background: #0075ff;
 				background: -moz-linear-gradient(top, #0075ff 23%, #00c6ff 100%);
 				background: -webkit-linear-gradient(top, #0075ff 23%,#00c6ff 100%);
 				background: linear-gradient(to bottom, #0075ff 23%,#00c6ff 100%);
 				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#0075ff', endColorstr='#00c6ff',GradientType=0 );
+			}
+			@media screen and (min-height: 1131px) {
+				.app-bg {
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+				.app-bg .wrap {
+					margin-top: 3%;
+				}
 			}
 			.app-bg .wrap {
 				position: relative;
@@ -471,26 +484,26 @@
             <div class="cl wrap">
                 <div class="fll">
                     <span class="ft-logo"></span>
-                    <p>电商设计师交流平台<span>www.zhisheji.com</span></p>
                 </div>
                 <div class="fr">
                     <ul class="cl ft-nav">
                         <li><a href="#">关于我们</a></li>
-                        <li><a href="#">版权声明</a></li>
-                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">帮助中心</a></li>
                         <li><a href="加入我们.html">加入我们</a></li>
                         <li><a href="#">联系我们</a></li>
-                        <li><a href="#">在线客服</a></li>
+                        <li><a href="#">意见反馈</a></li>
+                        <li><a href="#">版权声明</a></li>
                     </ul>
-                    <div class="ft-copy">
-                        <span>Copyright © 2013-2017 致设计</span>
-                        <span>Processed in 0.202241 second(s), 25 queries , Gzip On.</span>
-                        <img src="http://static.anquan.org/static/outer/image/sm_83x30.png?id=www.zhisheji.com?t=51" alt="安全联盟认证" width="83" height="30" style="border: none;">
-                    </div>
+                </div>
+            </div>
+            <div class="ft-copy">
+                <div class="wrap">
+                    <img class="fr" src="http://static.anquan.org/static/outer/image/sm_83x30.png?id=www.zhisheji.com?t=51" alt="安全联盟认证" width="83" height="30" style="border: none;">
+                    Copyright © 2013-2017 致设计 京ICP备14060168号-1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;打开耗时:1168毫秒 加载本页耗时 498 毫秒
                 </div>
             </div>
         </div>
-		<!-- footer end -->
+        <!-- footer end -->
 
 		<!--右边悬浮 start -->
 		<ul class="talk">
