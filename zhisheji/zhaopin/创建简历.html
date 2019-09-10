@@ -251,6 +251,7 @@
 			<div class="jinfo-pos">当前栏目：创建简历</div>
 			<form action="" id="form" class="jinfo-form">
 				<div class="jinfo-tit">
+					<div class="step"><span>1</span>/3</div>
 					<h2>基本信息</h2>
 				</div>
 				<div class="jinfo-ct">
@@ -283,11 +284,27 @@
 					    </dd>
 					</dl>
 
-					<dl class="item">
+					<dl class="item item-half">
 					    <dt><span>*</span> 性别</dt>
 					    <dd class="radio">
 					        <label><input type="radio" name="sex" value="男" checked required>男</label>
 					        <label><input type="radio" name="sex" value="女">女</label>
+					    </dd>
+					</dl>
+					<dl class="item item-half item-select">
+					    <dt><span>*</span> 学历</dt>
+					    <dd>
+					        <input name="xueli" type="text" class="input readonly" placeholder="学历" readonly required autocomplete="off">
+					        <span class="icon-sanjiao"></span>
+					        <div class="select-list">
+					            <ul>
+					                <li>高中及以下</li>
+					                <li>大专</li>
+					                <li>本科</li>
+					                <li>研究生</li>
+					                <li>博士</li>
+					            </ul>
+					        </div>
 					    </dd>
 					</dl>
 
@@ -341,7 +358,7 @@
 					</dl>
 
 					<dl class="item item-half">
-					    <dt><span>*</span> 邮箱</dt>
+					    <dt><span>*</span> </dt>
 					    <dd>
 					        <input name="email" type="email" class="input" placeholder="邮箱" required autocomplete="off">
 					    </dd>
