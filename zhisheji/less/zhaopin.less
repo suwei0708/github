@@ -750,17 +750,25 @@ body {
 		.btn-box {
 			padding: 42px 0 0;
 			.btn {
-				.dis(b);
-				width: 220px;
-				height: 48px;
-				line-height: 48px;
-				background: @green;
-				color: #fff;
+				.dis(ib);
+				vertical-align: top;
+				width: 132px;
+				height: 46px;
+				line-height: 46px;
+				margin: 0 0 0 18px;
+				border: 1px solid @green;
+				color: @green;
 				text-align: center;
 				.bdr(4px);
 				font-size: 16px;
+				&-toudi {
+					background: @green;
+					color: #fff;
+				}
 				&:hover {
+					color: #fff;
 					background: @green-h;
+					border: 1px solid @green-h;
 				}
 			}
 		}
@@ -1182,6 +1190,7 @@ body {
 		}
 	}
 	&-tit {
+		.pos(r);
 		padding: 0 34px;
 		line-height: 70px;
 		font-size: 16px;
@@ -1202,6 +1211,16 @@ body {
 				height: 2px;
 				margin-left: -10px;
 				background: @blue;
+			}
+		}
+		.step {
+			.pos(a);
+			top: 0;
+			right: 20px;
+			color: #bbb;
+			font-size: 14px;
+			span {
+				color: #333;
 			}
 		}
 	}
@@ -1377,7 +1396,7 @@ body {
                 top: 54px;
                 width: 50%;
                 border: 1px solid #ddd;
-                z-index: 10;
+                z-index: 109;
                 background: #fff;
                 .ovx(h);
                 .ovy(a);
@@ -2876,6 +2895,18 @@ body {
 			&:hover {
 				color: @green;
 				border: 1px solid @green;
+			}
+		}
+	}
+}
+.popup-tdsuc {
+	.popup {
+		width: 566px;
+		height: 368px;
+		margin: -368px/2 0 0 -566px/2;
+		.no-result {
+			p {
+				padding-top: 25px;
 			}
 		}
 	}

@@ -335,6 +335,57 @@ $(function() {
 		$('#sw-btn-no').html('确定');
 		$('#sw-btn-box').addClass('sw-btn-box');
 	});
+
+	// 投递简历
+	var toudiI = 0; //模拟是否有简历
+	$('body').on('click', '.btn-toudi', function() {
+		toudiI++;
+		if (toudiI % 2) {
+			$('.popup-tdsuc').show();
+			setTimeout(function() {
+				$('.popup-tdsuc').hide();
+			}, 2000)
+		}
+		else {
+			$.msgBox.Confirm(null, '您还未创建简历，请先创建简历', function() {
+			    window.location.href = '创建简历.html'
+			});
+		}
+	});
+
+	// 招聘信息头部悬浮
+	if ($('.job-details').length) {
+		var $dom = $('.job-details');
+		var $dPos = $dom.offset().top;
+		jobDetails();
+		$(window).on('scroll', function() {
+			jobDetails();
+		});
+
+		function jobDetails() {
+			if ($(window).scrollTop() > $dPos) {
+				$dom.parents('.bg-white').css({
+					'position': 'fixed',
+					'top': 0,
+					'left': 0,
+					'z-index': 989,
+					'width': '100%'
+				});
+				$dom.parents('.bg-white').next('wrap').css({
+					'margin-top': $dom.outerHeight()
+				});
+			}
+			else {
+				$dom.parents('.bg-white').css({
+				    'position': 'static'
+				});
+				$dom.parents('.bg-white').next('wrap').css({
+				    'margin-top': 0
+				});
+			}
+		}
+	}
+
 });
 
 // 获取当前时间
