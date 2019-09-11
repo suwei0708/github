@@ -369,7 +369,8 @@ $(function() {
 					'top': 0,
 					'left': 0,
 					'z-index': 989,
-					'width': '100%'
+					'width': '100%',
+					'box-shadow': '0 0 11px #ccc'
 				});
 				$dom.parents('.bg-white').next('wrap').css({
 					'margin-top': $dom.outerHeight()
@@ -377,7 +378,8 @@ $(function() {
 			}
 			else {
 				$dom.parents('.bg-white').css({
-				    'position': 'static'
+					'position': 'static',
+					'box-shadow': 'none'
 				});
 				$dom.parents('.bg-white').next('wrap').css({
 				    'margin-top': 0
