@@ -28,6 +28,9 @@
 .pt20 {
     padding-top: 20px;
 }
+.pb60 {
+    padding-bottom: 60px;
+}
 .mt20 {
 	margin-top: 20px;
 }
@@ -87,6 +90,9 @@
 		line-height: 82px;
 		background: #fff;
 		text-align: center;
+		.wrap {
+			.pos(r);
+		}
 		a {
 			.dis(ib);
 			vertical-align: top;
@@ -251,15 +257,183 @@
 			text-align: center;
 		}
 	}
+	&-tit {
+		line-height: 70px;
+		padding: 0 34px;
+		font-size: 16px;
+		color: #333;
+		border-bottom: 1px solid #eee;
+	}
+	&-obtain {
+		.ct {
+			font-size: 0;
+			li {
+				border-top: 1px solid #eee;
+				padding: 40px 80px;
+				margin-top: -1px;
+			}
+		}
+		.item {
+			.dis(ib);
+			vertical-align: top;
+			&1 {
+				width: 80px;
+				.icon {
+					.dis(ib);
+					vertical-align: top;
+					width: 50px;
+					line-height: 50px;
+					text-align: center;
+					font-size: 20px;
+					color: #fff;
+					.bdr(50%);
+					&-edit {
+						background: #ffc200;
+					}
+					&-wenzhang {
+						background: #f65658;
+					}
+					&-recommend {
+						background: #319afd;
+					}
+					&2 {
+						background: #fe7e32;
+					}
+					&-changyongyu {
+						background: #2ed35c;
+					}
+					&-view {
+						background: #ff8963;
+					}
+					&-myfollow {
+						background: #35d7a8;
+					}
+				}
+			}
+			&2 {
+				width: 123px;
+				padding: 2px 0 0;
+				line-height: 24px;
+				font-size: 16px;
+				color: #333;
+				p {
+					font-size: 14px;
+					color: #999;
+				}
+			}
+			&3 {
+				width: 600px;
+				.per {
+					.ov(h);
+					.pos(r);
+					width: 100%;
+					height: 7px;
+					margin-top: 7px;
+					background: #eee;
+					.bdr(7px);
+					>div {
+						.pos(a);
+						top: 0;
+						left: 0;
+						z-index: 8;
+						height: 100%;
+						background: @blue;
+					}
+					span {
+						.pos(a);
+						top: 0;
+						width: 1px;
+						background: #fff;
+						z-index: 9;
+						height: 100%;
+					}
+				}
+				p {
+					line-height: 25px;
+					padding: 10px 0 0;
+					font-size: 12px;
+					color: #999;
+				}
+			}
+			&4 {
+				width: 235px;
+				text-align: right;
+				.btn {
+					.dis(ib);
+					vertical-align: top;
+					width: 128px;
+					height: 34px;
+					line-height: 34px;
+					font-size: 14px;
+					color: #666;
+					.bdr(4px);
+					border: 1px solid #dcdcdc;
+					&:hover {
+						border: 1px solid @blue;
+						color: @blue;
+					}
+					&-dis {
+						color: #999;
+						background: #eee;
+						border-color: #eee;
+						&:hover {
+							color: #999;
+							background: #eee;
+							border-color: #eee;
+						}
+					}
+					&-green {
+						color: #fff;
+						background: @green;
+						border-color: @green;
+						&:hover {
+							color: #fff;
+							background: @green-h;
+							border-color: @green-h;
+						}
+					}
+				}
+			}
+		}
+	}
+	&-explain {
+		.ct {
+			padding: 26px 60px;
+			line-height: 40px;
+			font-size: 14px;
+			color: #666;
+		}
+	}
+	&-sjb {
+		.pos(a);
+		top: 0;
+		left: 0;
+	}
     &-list {
         .ov(h);
-        padding-bottom: 60px;
+		.tit {
+			padding: 12px 0 0;
+			line-height: 1;
+			font-size: 16px;
+			color: #333;
+			a {
+				font-size: 14px;
+				color: #666;
+				&:hover {
+					color: @blue;
+				}
+			}
+		}
         ul {
-            width: @page-w + 36px;
+			width: @page-w + 36px;
+			margin-right: -36px;
+			font-size: 0;
         }
         li {
-            .pos(r);
-            float: left;
+			.ov(h);
+			.pos(r);
+			.dis(ib);
+			vertical-align: top;
             width: 290px;
             height: 354px;
             margin: 20px 20px 0 0;
@@ -267,16 +441,16 @@
             background: #fff;
             img {
                 width: 290px;
-                height: 250px;
+                height: 245px;
                 .bdr(4px, 4px, 0, 0);
-                background: @blue;
+				border-bottom: 1px solid #f6f6f6;
             }
             .ico-ysq {
                 .pos(a);
                 top: 0;
                 left: 0;
                 width: 290px;
-                height: 250px;
+                height: 245px;
                 .bdr(4px);
                 background: rgba(0, 0, 0, .6) url(../images/qiandao/icon-ysq.png) no-repeat center center;
             }
@@ -284,7 +458,7 @@
                 line-height: 30px;
                 color: #666;
                 font-size: 16px;
-                margin-top: 20px;
+                margin-top: 24px;
                 padding: 0 20px;
                 .fr {
                     font-size: 14px;
@@ -397,4 +571,71 @@
             }
         }
     }
+}
+.popup-record {
+	.popup {
+		width: 970px;
+		height: 648px;;
+		padding: 0;
+		margin: -648px/2 0 0 -970px/2;
+	}
+	.popup-tit {
+		padding: 13px 30px 0;
+		border: none;
+		color: #333;
+	}
+	.list {
+		li {
+			font-size: 0;
+			border-top: 1px solid #f6f6f6;
+			>div {
+				.dis(ib);
+				vertical-align: top;
+				.ov(h);
+				line-height: 52px;
+				height: 52px;
+				font-size: 14px;
+				color: #999;
+				text-align: center;
+			}
+			&.title {
+				padding: 2px 0;
+				border: none;
+				> div {
+					font-size: 16px;
+					color: #666;
+				}
+			}
+			.times {
+				width: 205px;
+				padding: 0 0 0 120px;
+				text-align: left;
+				span {
+					color: #999;
+					padding-left: 18px;
+				}
+			}
+			.name {
+				width: 164px;
+				span {
+					.dis(ib);
+					vertical-align: top;
+					.text-e(1);
+				}
+			}
+			.coin {
+				width: 274px;
+				color: #666;
+			}
+			.status {
+				width: 134px;
+			}
+		}
+	}
+	.no-result {
+		padding-top: 100px;
+		p {
+			padding: 15px 0 0;
+		}
+	}
 }
