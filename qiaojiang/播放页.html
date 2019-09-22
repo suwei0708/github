@@ -6,6 +6,7 @@
         <meta name="keywords" content="" />
         <meta name="description" content="" />
         <link rel="stylesheet" href="css/iconfont.css">
+        <link rel="stylesheet" href="css/popup.css">
         <link rel="stylesheet" href="css/page.css">
         <link rel="stylesheet" href="css/player.css">
     </head>
@@ -1475,7 +1476,7 @@
         <!--右边悬浮 end -->
 
         <!--弹窗开通学习 start -->
-        <div class="popup-box popup-vip" style="display: block">
+        <div class="popup-box popup-vip">
             <div class="ico ico-close"></div>
             <div class="tit">亲爱的学员</div>
             <p>这是付费课程，现在加入群<br><strong>可以免费获取7天VIP特权</strong></p>
@@ -1539,7 +1540,7 @@
         <!--弹窗开通下载 end -->
 
         <!--弹窗登录观看 start -->
-        <div class="popup-box popup-play" style="display: none">
+        <div class="popup-box popup-play">
             <div class="ico ico-close"></div>
             <div class="popup-play-tit">
                 <ul>
@@ -1758,7 +1759,16 @@
                 </ul>
             </div>
         </div>
-        <!--弹窗入群交流 end -->
+		<!--弹窗入群交流 end -->
+
+		<!-- 续费提醒弹窗 start -->
+		<div class="fixed-topbar">
+			<div class="wrap">
+				<a href="javascript:;" class="fr close" onclick="$('.fixed-topbar').hide();"><span class="qjfont qj-cha"></span></a>
+				<p><a href="#" class="fr btn">去续费</a><img class="icon" src="images/ico-vip.png" alt="">您的会员 5天 后到期，请及时续费；续费后原会员剩余的天数将会累加！</p>
+			</div>
+		</div>
+        <!-- 续费提醒弹窗 end -->
 
         <div class="mask" style="display: none"></div>
 
