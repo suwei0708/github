@@ -79,7 +79,28 @@ $(function() {
     $('body').on('click', '.popup-shdz .btn-blue', function() {
         $('.popup-shdz').hide();
         tipSave('suc', '兑换成功，预计48小时内发货，请注意查收');
-    });
+	});
+
+	// 抽奖
+	luck.init('luck');
+	$("#prize-btn").on('click', function() {
+	    if (+$('.qd-sjb span').text() >= 20 && luck.isClick) {
+			luck.isClick = false;
+	        // 抽奖次数大于0
+	        $('.qd-sjb span').text($('.qd-sjb span').text() - 20);
+	        luck.speed = 100;
+	        roll();
+	        return false;
+	    } else {
+	        // 抽奖次数用完
+	        $('.popup-prize').find('.tit').html('抱歉(┬＿┬)您的抽奖次数已经用完了');
+	        $('.popup-prize').find('.text').html('');
+	        $('.popup-prize').find('.popup-btn').find('a').attr('class', 'btn-add');
+	        $('.popup-prize').show();
+	        center('.popup-prize');
+	        mask.show();
+	    }
+	});
 });
 
 // 无缝滚动js
@@ -165,4 +186,113 @@ function judgeBtns(obj) {
         }
     });
     return pass;
+}
+// 抽奖js
+var luck = {
+    index: -1, // 当前转动到哪个位置，起点位置
+    count: 8, // 总共有多少个位置
+    timer: 0, // setTimeout的ID，用clearTimeout清除
+    speed: 20, // 初始转动速度
+    times: 5, // 转动次数
+    cycle: 50, // 转动基本次数：即至少需要转动多少次再进入抽奖环节
+    num: 1, // 抽奖次数
+	// prize: parseInt(Math.random() * 8), //中奖位置
+    prize: 0, //中奖位置
+    isClick: true,
+    prizeData: [
+        '50元优惠券',
+        'VIP3天',
+        '谢谢参与',
+        'VIP1天',
+        'VIP7天',
+        '100元优惠券',
+        'VIP1天',
+        '谢谢参与',
+    ],
+    init: function(id) {
+        if ($("#" + id).find(".luck-unit").length > 0) {
+            $luck = $("#" + id);
+            $units = $luck.find(".luck-unit");
+            this.obj = $luck;
+            this.count = $units.length;
+            $luck.find(".luck-unit-" + this.index).addClass("active");
+        };
+    },
+
+    roll: function() {
+        var index = this.index;
+        var count = this.count;
+        var luck = this.obj;
+        $(luck).find(".luck-unit-" + index).removeClass("active");
+        index += 1;
+        if (index > count) {
+            index = 0;
+        };
+        $(luck).find(".luck-unit-" + index).addClass("active");
+        this.index = index;
+        return false;
+    },
+    stop: function(index) {
+		// this.prize = index;
+		luck.isClick = true;
+		console.log('stop')
+        return false;
+    }
+};
+var mask = $('#mask');
+
+function roll() {
+    luck.times += 1;
+    luck.roll();
+    if (luck.times > luck.cycle + 10 && luck.prize == luck.index) {
+        clearTimeout(luck.timer);
+        luck.times = 0;
+        // 中奖弹出窗
+        if (luck.prize == 2 || luck.prize == 7) {
+            // 没有中奖
+            $('.popup-prize').find('.tit').html(luck.prizeData[luck.prize]);
+            $('.popup-prize').find('.text').html('什么？还没抽到永久VIP 就没机会了？快让好友送你抽奖机会把');
+            $('.popup-prize').find('.popup-btn').find('a').attr('class', 'btn-continue');
+            $('.popup-prize').show();
+            mask.show();
+        } else if (luck.prize == 0 || luck.prize == 5) {
+            // 中优惠券
+            $('.popup-prize-quan').find('.text').html('恭喜您，获得' + luck.prizeData[luck.prize]);
+            $('.popup-prize-quan').show();
+            center('.popup-prize-quan');
+            mask.show();
+        } else {
+            // 中奖
+            $('.popup-prize').find('.tit').html('恭喜获得' + luck.prizeData[luck.prize] + '，已经入账');
+            $('.popup-prize').find('.text').html('注释：如VIP 标识没有显示，可以试着重新登录下哦');
+            // if(luck.prize == 5) {
+            //     $('.popup-prize').find('.popup-btn').find('a').attr('class', 'btn-share');
+            // }
+            // else {
+            //     $('.popup-prize').find('.popup-btn').find('a').attr('class', 'btn-sure');
+            // }
+            $('.popup-prize').show();
+            center('.popup-prize');
+            mask.show();
+        }
+    } else {
+        if (luck.times < luck.cycle) {
+            luck.speed -= 10;
+        } else if (luck.times == luck.cycle) {
+            var index = Math.random() * (luck.count) | 0;
+            // luck.prize = index;
+        } else {
+            if (luck.times > luck.cycle + 10 && ((luck.prize == 0 && luck.index == 7) || luck.prize == luck.index + 1)) {
+                luck.speed += 110;
+            } else {
+                luck.speed += 20;
+            }
+        }
+        if (luck.speed < 40) {
+            luck.speed = 40;
+        };
+
+        luck.timer = setTimeout(roll, luck.speed);
+    }
+    return false;
 }
