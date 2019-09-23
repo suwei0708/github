@@ -83,23 +83,29 @@ $(function() {
 
 	// 抽奖
 	luck.init('luck');
-	$("#prize-btn").on('click', function() {
+	$('#prize-btn').on('click', function() {
 	    if (+$('.qd-sjb span').text() >= 20 && luck.isClick) {
+	        // 设计币大于20开始抽奖
 			luck.isClick = false;
-	        // 抽奖次数大于0
 	        $('.qd-sjb span').text($('.qd-sjb span').text() - 20);
-	        luck.speed = 100;
+			luck.speed = 100;
+			luck.prize = parseInt(Math.random() * 8); //中奖位置0~7顺时针
 	        roll();
 	        return false;
-	    } else {
+		}
+		else {
 	        // 抽奖次数用完
-	        $('.popup-prize').find('.tit').html('抱歉(┬＿┬)您的抽奖次数已经用完了');
-	        $('.popup-prize').find('.text').html('');
-	        $('.popup-prize').find('.popup-btn').find('a').attr('class', 'btn-add');
-	        $('.popup-prize').show();
-	        center('.popup-prize');
-	        mask.show();
+	        $('.popup-prize').find('.cjimg').attr('class', 'cjimg no-result');
+	        $('.popup-prize').find('.text').html('设计币不足，去赚取设计币');
+	        $('.popup-prize').find('.btn-sure').html('赚取设计币').attr('href', '签到有礼.html');
+			$('.popup-prize').show();
 	    }
+	});
+
+	// 无缝滚动
+	$('.myscroll').myScroll({
+	    speed: 50, //数值越大，速度越慢
+	    rowHeight: 40 //li的高度
 	});
 });
 
@@ -187,6 +193,7 @@ function judgeBtns(obj) {
     });
     return pass;
 }
+
 // 抽奖js
 var luck = {
     index: -1, // 当前转动到哪个位置，起点位置
@@ -196,26 +203,49 @@ var luck = {
     times: 5, // 转动次数
     cycle: 50, // 转动基本次数：即至少需要转动多少次再进入抽奖环节
     num: 1, // 抽奖次数
-	// prize: parseInt(Math.random() * 8), //中奖位置
-    prize: 0, //中奖位置
+	prize: 0, //中奖位置
     isClick: true,
     prizeData: [
-        '50元优惠券',
-        'VIP3天',
-        '谢谢参与',
-        'VIP1天',
-        'VIP7天',
-        '100元优惠券',
-        'VIP1天',
-        '谢谢参与',
+        {
+			img: 'cjimg cj-quan100',
+			text: '恭喜获得 <span class="blue">巧匠课堂100元</span> 优惠券'
+		},
+        {
+            img: 'cjimg cj-sjb5',
+			text: '恭喜获得 <span class="blue">5</span> 设计币'
+		},
+        {
+            img: 'cjimg cj-ipad',
+			text: '恭喜获得 <span class="blue">iPad Pro</span>'
+		},
+        {
+            img: 'cjimg cj-sjb188',
+			text: '恭喜获得 <span class="blue">188设计币</span> 设计币'
+		},
+        {
+            img: 'cjimg cj-wacom',
+			text: '恭喜获得 <span class="blue">wacom数位板</span>'
+		},
+        {
+            img: 'cjimg cj-baozhen',
+			text: '恭喜获得 <span class="blue">小智抱枕(随机)</span>'
+		},
+        {
+            img: 'cjimg cj-shu',
+			text: '恭喜获得 <span class="blue">设计书籍一本</span>'
+		},
+        {
+            img: 'cjimg cj-sjb50',
+			text: '恭喜获得 <span class="blue">50</span> 设计币'
+		},
     ],
     init: function(id) {
-        if ($("#" + id).find(".luck-unit").length > 0) {
-            $luck = $("#" + id);
-            $units = $luck.find(".luck-unit");
+        if ($('#' + id).find('.luck-unit').length > 0) {
+            $luck = $('#' + id);
+            $units = $luck.find('.luck-unit');
             this.obj = $luck;
             this.count = $units.length;
-            $luck.find(".luck-unit-" + this.index).addClass("active");
+            $luck.find('.luck-unit-' + this.index).addClass('active');
         };
     },
 
@@ -223,59 +253,40 @@ var luck = {
         var index = this.index;
         var count = this.count;
         var luck = this.obj;
-        $(luck).find(".luck-unit-" + index).removeClass("active");
+        $(luck).find('.luck-unit-' + index).removeClass('active');
         index += 1;
         if (index > count) {
             index = 0;
         };
-        $(luck).find(".luck-unit-" + index).addClass("active");
+        $(luck).find('.luck-unit-' + index).addClass('active');
         this.index = index;
         return false;
     },
     stop: function(index) {
-		// this.prize = index;
-		luck.isClick = true;
-		console.log('stop')
         return false;
     }
 };
-var mask = $('#mask');
 
 function roll() {
     luck.times += 1;
     luck.roll();
     if (luck.times > luck.cycle + 10 && luck.prize == luck.index) {
         clearTimeout(luck.timer);
-        luck.times = 0;
-        // 中奖弹出窗
-        if (luck.prize == 2 || luck.prize == 7) {
-            // 没有中奖
-            $('.popup-prize').find('.tit').html(luck.prizeData[luck.prize]);
-            $('.popup-prize').find('.text').html('什么？还没抽到永久VIP 就没机会了？快让好友送你抽奖机会把');
-            $('.popup-prize').find('.popup-btn').find('a').attr('class', 'btn-continue');
-            $('.popup-prize').show();
-            mask.show();
-        } else if (luck.prize == 0 || luck.prize == 5) {
-            // 中优惠券
-            $('.popup-prize-quan').find('.text').html('恭喜您，获得' + luck.prizeData[luck.prize]);
-            $('.popup-prize-quan').show();
-            center('.popup-prize-quan');
-            mask.show();
-        } else {
-            // 中奖
-            $('.popup-prize').find('.tit').html('恭喜获得' + luck.prizeData[luck.prize] + '，已经入账');
-            $('.popup-prize').find('.text').html('注释：如VIP 标识没有显示，可以试着重新登录下哦');
-            // if(luck.prize == 5) {
-            //     $('.popup-prize').find('.popup-btn').find('a').attr('class', 'btn-share');
-            // }
-            // else {
-            //     $('.popup-prize').find('.popup-btn').find('a').attr('class', 'btn-sure');
-            // }
-            $('.popup-prize').show();
-            center('.popup-prize');
-            mask.show();
-        }
-    } else {
+		luck.times = 0;
+		luck.isClick = true;
+
+		// 中奖弹出窗
+		$('.popup-prize').find('.cjimg').attr('class', luck.prizeData[luck.prize].img);
+		$('.popup-prize').find('.text').html(luck.prizeData[luck.prize].text);
+		if (+$('.qd-sjb span').text() >= 20) {
+			$('.popup-prize').find('.btn-sure').html('去使用').attr('href', 'javascript:;');
+		}
+		else {
+			$('.popup-prize').find('.btn-sure').html('赚取设计币').attr('href', '签到有礼.html');
+		}
+		$('.popup-prize').show();
+	}
+	else {
         if (luck.times < luck.cycle) {
             luck.speed -= 10;
         } else if (luck.times == luck.cycle) {
