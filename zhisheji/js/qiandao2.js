@@ -36,23 +36,23 @@ $(function() {
     $('.qd-top').on('click', '.btn-green', function() {
         // 第一次
         $.msgBox.Confirm(null, '第一次兑换商品需要先完善个人信息哦！', function() {
-            $('.popup-infos').show();
-            centerObj('.popup-infos .popup');
+            $('.popup-shinfos').show();
+            centerObj('.popup-shinfos .popup');
             $('.popup-box').find('.tips').hide();
         });
         // 非第一次
-        // $('.popup-infos').show();
-        // centerObj('.popup-infos .popup');
+        // $('.popup-shinfos').show();
+        // centerObj('.popup-shinfos .popup');
         // $('.popup-box').find('.tips').hide();
     });
 
     // 保存收货信息
-    if ($('.popup-infos').length) {
-        var dom1 = jQuery('.popup-infos').find('.popup-ct');
+    if ($('.popup-shinfos').length) {
+        var dom1 = jQuery('.popup-shinfos').find('.popup-ct');
         judgeTips(dom1);
-        $('.popup-infos').on('click', '.btn', function() {
+        $('.popup-shinfos').on('click', '.btn', function() {
             if (judgeBtns(dom1)) {
-                $('.popup-infos').hide();
+                $('.popup-shinfos').hide();
                 tipSave('suc', '保存成功');
             }
         });
@@ -70,9 +70,8 @@ $(function() {
     // 修改收货地址
     $('body').on('click', '.popup-shdz .btn-edit', function() {
         $('.popup-shdz').hide();
-        $('.popup-infos').show();
+        $('.popup-shinfos').show();
         $('.popup-box').find('.tips').hide();
-        centerObj('.popup-infos .popup');
     });
 
     // 确认收货地址
@@ -103,10 +102,12 @@ $(function() {
 	});
 
 	// 无缝滚动
-	$('.myscroll').myScroll({
-	    speed: 50, //数值越大，速度越慢
-	    rowHeight: 40 //li的高度
-	});
+	if ($('.myscroll').length) {
+		$('.myscroll').myScroll({
+		    speed: 50, //数值越大，速度越慢
+		    rowHeight: 40 //li的高度
+		});
+	}
 });
 
 // 无缝滚动js
@@ -159,15 +160,11 @@ $(function() {
 })(jQuery);
 
 function judgeTips(obj) {
-    jQuery(obj).find('.txt').on('blur', function() {
+    jQuery(obj).find('.input').on('blur', function() {
         if (!jQuery(this).nextAll('.tips').length) {
             jQuery(this).parents('.item').append('<span class="tips"></span>');
         }
-        if (jQuery.trim(jQuery(this).val()).length) {
-            jQuery(this).parents('.item').addClass('has-val');
-        }
         if (!jQuery.trim(jQuery(this).val()).length) {
-            jQuery(this).parents('.item').removeClass('has-val');
             jQuery(this).nextAll('.tips').html('<span class="triangle"></span>' + jQuery(this).parents('.item').find('.input-label').text() + '不能为空！').show();
         }
         else if(!(/^1\d{10}$/.test(jQuery.trim(jQuery(this).val()))) && jQuery(this).parents('.item').find('.input-label').text() == '手机号') {
@@ -175,14 +172,14 @@ function judgeTips(obj) {
             return false;
         }
     });
-    jQuery(obj).find('.txt').on('focus', function() {
+    jQuery(obj).find('.input').on('focus', function() {
         jQuery(this).nextAll('.tips').hide();
     });
 }
 
 function judgeBtns(obj) {
     var pass = true;
-    jQuery.each(jQuery(obj).find('.txt'), function(index, val) {
+    jQuery.each(jQuery(obj).find('.input'), function(index, val) {
         if (!jQuery.trim(jQuery(this).val()).length) {
             if (!jQuery(this).nextAll('.tips').length) {
                 jQuery(this).parents('.item').append('<span class="tips"></span>');
@@ -278,6 +275,27 @@ function roll() {
 		// 中奖弹出窗
 		$('.popup-prize').find('.cjimg').attr('class', luck.prizeData[luck.prize].img);
 		$('.popup-prize').find('.text').html(luck.prizeData[luck.prize].text);
+		if (luck.prize == 1) {
+			// 中5设计币
+			$('.qd-sjb span').text(+$('.qd-sjb span').text() + 5);
+		}
+		else if (luck.prize == 3) {
+		    // 中188设计币
+		    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 188);
+		}
+		else if (luck.prize == 7) {
+		    // 中50设计币
+		    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 50);
+		}
+		else if (luck.prize == 0) {
+			// 中优惠券
+		}
+		else {
+			// 中实物
+			$('.popup-shinfos').show();
+			return false;
+		}
+		// 按钮显示文字
 		if (+$('.qd-sjb span').text() >= 20) {
 			$('.popup-prize').find('.btn-sure').html('去使用').attr('href', 'javascript:;');
 		}
