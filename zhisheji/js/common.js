@@ -138,11 +138,16 @@
             return false;
         });
 
-        // 关闭弹窗
-        $('.popup-box').on('click', '.popup-close', function() {
+        // 统一关闭弹窗
+        $('body').on('click', '.popup-box .popup-close', function() {
             $(this).parents('.popup-box').hide();
-            maskHide();
-        });
+		})
+		.on('click', '.popup-box', function() {
+			$('.popup-box').hide();
+		})
+		.on('click', '.popup-box .popup', function(e) {
+			e.stopPropagation();
+		});
 
         // 切换
         $('.popup-tab').on('click', 'li', function() {
