@@ -2042,7 +2042,7 @@
 		<!--专属福利小浮窗 start -->
 		<style>
 		    .popup-zsfl {
-		        width: 163px;
+				width: 163px;
 				height: 217px;
 				top: auto;
 				bottom: 43px;
@@ -2050,8 +2050,14 @@
 				z-index: 960;
 				padding: 0;
 				margin: 0;
-		        background: url(../images/adv/popup-zsfl.png) no-repeat center 0;
-		    }
+				background: none;
+			}
+			.popup-zsfl .links {
+				display: block;
+				width: 163px;
+				height: 217px;
+				background: url(../images/adv/popup-zsfl.png) no-repeat center 0;
+			}
 		    .popup-zsfl .popup-close {
 		        width: 10px;
 		        height: 10px;
@@ -2095,6 +2101,7 @@
 			}
 		</style>
 		<div class="popup popup-zsfl" style="display: block">
+			<a href="#" class="links"></a>
 			<span class="popup-close" onclick="$('.popup-zsfl').hide();"></span>
 			<a href="#" class="btn"><strong>点击领取</strong></a>
 		</div>
