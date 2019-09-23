@@ -250,9 +250,17 @@
 
         <!-- 视频播放 start -->
         <div class="v-video v-video-normal">
+			<!-- 续费提醒弹窗 start -->
+			<div class="fixed-topbar">
+			    <div class="wrap">
+			        <a href="javascript:;" class="fr close" onclick="$('.fixed-topbar').slideUp();"><span class="qjfont qj-cha"></span></a>
+			        <p><a href="#" class="fr btn">去续费</a><img class="icon" src="images/ico-vip.png" alt="">您的会员 5天 后到期，请及时续费；续费后原会员剩余的天数将会累加！</p>
+			    </div>
+			</div>
+			<!-- 续费提醒弹窗 end -->
             <div class="cl wrap">
                 <div class="pos">
-                    <div class="fr">告别一个人孤单的学习，入群交流 <a href="#">立即入群</a></div>
+                    <!-- <div class="fr">告别一个人孤单的学习，入群交流 <a href="#">立即入群</a></div> -->
                     <a href="#">首页</a> &gt; <a href="#">视频教程</a> &gt; <span>质感按钮</span>
                 </div>
                 <div class="fl area-l">
@@ -1760,15 +1768,6 @@
             </div>
         </div>
 		<!--弹窗入群交流 end -->
-
-		<!-- 续费提醒弹窗 start -->
-		<div class="fixed-topbar">
-			<div class="wrap">
-				<a href="javascript:;" class="fr close" onclick="$('.fixed-topbar').hide();"><span class="qjfont qj-cha"></span></a>
-				<p><a href="#" class="fr btn">去续费</a><img class="icon" src="images/ico-vip.png" alt="">您的会员 5天 后到期，请及时续费；续费后原会员剩余的天数将会累加！</p>
-			</div>
-		</div>
-        <!-- 续费提醒弹窗 end -->
 
         <div class="mask" style="display: none"></div>
 
