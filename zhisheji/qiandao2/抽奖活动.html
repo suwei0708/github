@@ -606,53 +606,53 @@
         </div>
         <!-- 登录注册弹窗 end -->
 
-        <!-- 兑换弹窗 start -->
+        <!-- 收货信息弹窗 start -->
         <div class="popup-box popup-shinfos">
             <div class="popup">
                 <div class="popup-tit">收货信息</div>
                 <span class="popup-close icon-close"></span>
                 <div class="popup-ct">
-                    <form action="">
+                    <form action="" id="form">
                         <dl class="item item-half">
                             <dt><span class="red">*</span> 姓名</dt>
-                            <dd><input type="text" name="name" class="input" value=""></dd>
+                            <dd><input type="text" name="name" class="input" value="" autocomplete="off" required></dd>
                         </dl>
                         <dl class="item item-half">
                             <dt><span class="red">*</span> 手机号</dt>
-                            <dd><input type="text" name="mobile" class="input" value=""></dd>
+                            <dd><input type="text" name="mobile" class="input" value=""  autocomplete="off" required></dd>
                         </dl>
                         <dl class="item item-half">
                             <dt><span class="red">*</span> QQ号</dt>
-                            <dd><input type="text" name="qq" class="input" value=""></dd>
+                            <dd><input type="text" name="qq" class="input" value=""  autocomplete="off" required></dd>
                         </dl>
                         <dl class="item item-half">
                             <dt><span class="red">*</span> 电子邮箱</dt>
-                            <dd><input type="text" name="email" class="input" value=""></dd>
+                            <dd><input type="email" name="email" class="input" value=""  autocomplete="off" required></dd>
                         </dl>
                         <dl class="item">
                             <dt><span class="red">*</span> 邮寄地址</dt>
-                            <dd><input type="text" name="address" class="input" value=""></dd>
+                            <dd><input type="text" name="address" class="input" value=""  autocomplete="off" required></dd>
                         </dl>
 						<div class="popup-btn-box">
-						    <a href="javascript:;" class="btn btn-blue">保 存</a>
-						    <a href="javascript:;" class="btn btn-cancel" onclick="$('.popup-shinfos').hide();">取消</a>
+						    <button type="submit" class="btn btn-blue">保 存</button>
+						    <button type="button" class="btn btn-cancel" onclick="$('.popup-shinfos').hide();">取消</button>
 						</div>
                     </form>
                 </div>
             </div>
         </div>
-        <!-- 兑换弹窗 end -->
+        <!-- 收货信息弹窗 end -->
 
         <!-- 收货地址弹窗 start -->
-        <div class="popup-box pop popup-shdz">
+        <div class="popup-box popup-shdz">
             <div class="popup">
                 <span class="popup-close icon-fail"></span>
-                <div class="tit">确认收货地址</div>
+                <div class="tit">收货信息</div>
                 <div class="textarea">
-                    <strong class="name">易烊千玺</strong>
-                    <strong class="tel">138****1323</strong>
-                    <p>北京市昌平区回龙观东大街天龙苑25号楼1单元301室</p>
-                    <span class="icon-feedback btn-edit"></span>
+                    <span class="name">易烊千玺</strong>
+                    <span class="mobile">138****1323</span>
+                    <p class="address">北京市昌平区回龙观东大街天龙苑25号楼1单元301室</p>
+                    <span class="icon-edit btn-edit"></span>
                 </div>
                 <div class="btn-box">
                     <a href="javascript:;" class="btn btn-blue">确认</a>
@@ -758,13 +758,79 @@
 		</div>
 		<!-- 中奖提示窗 end -->
 
+		<!-- 领取奖励提示窗 start -->
+		<div class="fixed-ftbar">
+		    <a href="#">恭喜作品被选入编辑推荐，快去领取奖励吧!</a>
+		</div>
+		<!-- 领取奖励提示窗 end -->
+
         <!-- 通用js start-->
         <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
         <script src="../js/common.js" type="text/javascript"></script>
         <!-- 通用js start-->
 
+		<!-- 表单验证js start -->
+		<script src="../js/validate-1.14.0.min.js"></script>
+		<!-- 表单验证js end -->
+
         <!--js调用 start -->
         <script src="../js/qiandao2.js" type="text/javascript"></script>
-        <!--js调用 end -->
+		<!--js调用 end -->
+		<script>
+		    $(function() {
+		        // 验证设置
+		        $.extend(jQuery.validator.messages, {
+		            required: "此项内容不能为空",
+		            email: "请输入有效的电子邮件地址"
+		        });
+		        $.validator.setDefaults({
+		            errorElement: 'div',
+		            errorClass: 'tips-err',
+		            debug: true, // 只验证不提交表单
+		            errorPlacement: function(error, element) {
+		                error.appendTo(element.parents('dd'));
+		            },
+		            rules: {
+		                mobile: {
+		                    minlength: 11,
+		                    isMobile: true
+		                }
+		            },
+		            messages: {
+		                mobile: {
+		                    minlength: "请正确填写手机号码",
+		                    isMobile: "请正确填写手机号码"
+		                }
+		            },
+		        });
+
+		        //手机号码验证
+		        jQuery.validator.addMethod("isMobile", function(value, element) {
+		            var length = value.length;
+		            var mobile = /^(1[0-9]{10})$/;
+		            return this.optional(element) || (length == 11 && mobile.test(value));
+		        }, "请正确填写手机号码");
+
+		        var validator = $('#form').validate({
+		            // 验证成功后提交
+		            submitHandler: function(form) {
+						$('.popup-shinfos').hide();
+						$('.popup-shdz').show();
+		            }
+		        });
+
+		        // 手动提示错误信息， name为input的name值
+		        // validator.showErrors({
+		        // 	"name": "真实姓名重复"
+		        // });
+		    });
+		</script>
+
+		<!-- js模拟领取奖励弹出消失 -->
+		<script>
+		    $('.fixed-ftbar').slideDown(400, function() {
+		        setTimeout(function() { $('.fixed-ftbar').slideUp() }, 2000)
+		    });
+		</script>
     </body>
 </html>

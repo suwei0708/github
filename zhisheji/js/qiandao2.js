@@ -5,7 +5,7 @@ $(function() {
 			for (var i = 1; i < $(this).find('.total').text(); i++) {
 				$(this).find('.per').append('<span style="left: ' + i / $(this).find('.total').text() * 100 + '%"></span>');
 			}
-			$(this).find('.per > div').css({
+			$(this).find('.per > div').animate({
 				width: $(this).find('.num').text() / $(this).find('.total').text() * 100 + '%'
 			})
 		});
@@ -17,46 +17,38 @@ $(function() {
 	});
 
     // 签到
-    $('.qd-user-info').on('click', '.btn-red', function() {
-        $('.popup-qd').show();
-        centerObj('.popup-qd .popup');
-        $(this).removeClass('btn-red').addClass('btn-gray').html('已签到');
-        $('.qd-user-info').find('p').html('您已连续签到2天，获得15设计币');
+    $('.qd-sign').on('click', '.btn-sign', function() {
+		// 签到的设计币数量
+		var $coin = +$('.qd-sign').find('.today').find('strong').html().replace('+', '');
+		// 按钮变色
+        $(this).removeClass('btn-sign').addClass('btn-gray').html('已签到');
         // 连续签到天数
-        $('.qd-user-info').find('dl:eq(0) .num').html(+$('.qd-user-info').find('dl:eq(0) .num').html() + 1);
-        // 获得设计币
-        $('.qd-user-info').find('dl:eq(1) .num').html('10');
-        // 我的设计币
-        $('.qd-user-info').find('dl:eq(2) .num').html(+$('.qd-user-info').find('dl:eq(2) .num').html() + 10);
+        $('.qd-coin').find('dd span:eq(2)').html(+$('.qd-coin').find('dd span:eq(2)').html() + 1);
+		// 获得设计币
+		$('.popup-sign').find('strong').html('签到成功');
+		$('.popup-sign').find('p').html('今日签到<span class="blue"> +' + $coin + '</span>&nbsp;&nbsp;&nbsp;&nbsp;累计签到 7 天可获得丰厚奖励');
+        $('.popup-sign').show();
         setTimeout(function() {
-            $('.popup-qd').hide();
+            $('.popup-sign').hide();
         }, 2000);
-    });
+        // 我的设计币
+		$('.qd-coin').find('strong.blue').html(+$('.qd-coin').find('strong.blue').html() + $coin);
+		// 签到样式变化
+		$('.qd-sign').find('.today').removeClass('today').addClass('cur');
+	});
 
-    $('.qd-top').on('click', '.btn-green', function() {
-        // 第一次
-        $.msgBox.Confirm(null, '第一次兑换商品需要先完善个人信息哦！', function() {
-            $('.popup-shinfos').show();
-            centerObj('.popup-shinfos .popup');
-            $('.popup-box').find('.tips').hide();
-        });
-        // 非第一次
-        // $('.popup-shinfos').show();
-        // centerObj('.popup-shinfos .popup');
-        // $('.popup-box').find('.tips').hide();
-    });
-
-    // 保存收货信息
-    if ($('.popup-shinfos').length) {
-        var dom1 = jQuery('.popup-shinfos').find('.popup-ct');
-        judgeTips(dom1);
-        $('.popup-shinfos').on('click', '.btn', function() {
-            if (judgeBtns(dom1)) {
-                $('.popup-shinfos').hide();
-                tipSave('suc', '保存成功');
-            }
-        });
-    };
+	// 领取设计币
+	$('.qd-obtain').on('click', '.btn-green', function() {
+		// 领取样式变化
+		$(this).removeClass('btn-green').addClass('btn-dis').html('已完成');
+		// 领取的设计币数量
+		var $coin = +$(this).parents('li').find('.item2 p').html().replace('+', '').replace(' /次', '');
+		// 获得设计币
+		$('.popup-sign').find('strong').html('领取成功');
+		$('.popup-sign').find('p').html('恭喜完成任务&nbsp;&nbsp;<span class="blue"> +' + $coin + '</span> 设计币');
+		$('.popup-sign').show();
+		setTimeout(function() { $('.popup-sign').hide(); }, 2000);
+	})
 
     // 兑换
     $('.qd-list').on('click', '.btn-blue', function() {
@@ -70,14 +62,17 @@ $(function() {
     // 修改收货地址
     $('body').on('click', '.popup-shdz .btn-edit', function() {
         $('.popup-shdz').hide();
-        $('.popup-shinfos').show();
-        $('.popup-box').find('.tips').hide();
+        $('.popup-shinfos').show().find('.popup-tit').html('编辑地址');
+	})
+	.on('click', '.popup-shinfos .btn-cancel', function() {
+        $('.popup-shdz').show();
+        $('.popup-shinfos').hide();
     });
 
     // 确认收货地址
     $('body').on('click', '.popup-shdz .btn-blue', function() {
         $('.popup-shdz').hide();
-        tipSave('suc', '兑换成功，预计48小时内发货，请注意查收');
+        tipSave('suc', '兑换成功，预计5-7 个工作日发货，请注意查收');
 	});
 
 	// 抽奖
@@ -93,7 +88,7 @@ $(function() {
 	        return false;
 		}
 		else {
-	        // 抽奖次数用完
+	        // 设计币不足20
 	        $('.popup-prize').find('.cjimg').attr('class', 'cjimg no-result');
 	        $('.popup-prize').find('.text').html('设计币不足，去赚取设计币');
 	        $('.popup-prize').find('.btn-sure').html('赚取设计币').attr('href', '签到有礼.html');
@@ -158,38 +153,6 @@ $(function() {
         });
     }
 })(jQuery);
-
-function judgeTips(obj) {
-    jQuery(obj).find('.input').on('blur', function() {
-        if (!jQuery(this).nextAll('.tips').length) {
-            jQuery(this).parents('.item').append('<span class="tips"></span>');
-        }
-        if (!jQuery.trim(jQuery(this).val()).length) {
-            jQuery(this).nextAll('.tips').html('<span class="triangle"></span>' + jQuery(this).parents('.item').find('.input-label').text() + '不能为空！').show();
-        }
-        else if(!(/^1\d{10}$/.test(jQuery.trim(jQuery(this).val()))) && jQuery(this).parents('.item').find('.input-label').text() == '手机号') {
-            jQuery(this).nextAll('.tips').html('<span class="triangle"></span>' + jQuery(this).parents('.item').find('.input-label').text() + '格式不正确！').show();
-            return false;
-        }
-    });
-    jQuery(obj).find('.input').on('focus', function() {
-        jQuery(this).nextAll('.tips').hide();
-    });
-}
-
-function judgeBtns(obj) {
-    var pass = true;
-    jQuery.each(jQuery(obj).find('.input'), function(index, val) {
-        if (!jQuery.trim(jQuery(this).val()).length) {
-            if (!jQuery(this).nextAll('.tips').length) {
-                jQuery(this).parents('.item').append('<span class="tips"></span>');
-            }
-            jQuery(this).nextAll('.tips').html('<span class="triangle"></span>' + jQuery(this).parents('.item').find('.input-label').text() + '不能为空！').show();
-            pass = false;
-        }
-    });
-    return pass;
-}
 
 // 抽奖js
 var luck = {
@@ -263,7 +226,6 @@ var luck = {
         return false;
     }
 };
-
 function roll() {
     luck.times += 1;
     luck.roll();
@@ -275,32 +237,38 @@ function roll() {
 		// 中奖弹出窗
 		$('.popup-prize').find('.cjimg').attr('class', luck.prizeData[luck.prize].img);
 		$('.popup-prize').find('.text').html(luck.prizeData[luck.prize].text);
+		var link;
 		if (luck.prize == 1) {
 			// 中5设计币
 			$('.qd-sjb span').text(+$('.qd-sjb span').text() + 5);
+			link = '兑换商场.html';
 		}
 		else if (luck.prize == 3) {
 		    // 中188设计币
 		    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 188);
+		    link = '兑换商场.html';
 		}
 		else if (luck.prize == 7) {
 		    // 中50设计币
 		    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 50);
+		    link = '兑换商场.html';
 		}
 		else if (luck.prize == 0) {
 			// 中优惠券
+			link = 'https://www.qiaojiang.tv/';
 		}
 		else {
-			// 中实物
-			$('.popup-shinfos').show();
+			// 中实物 没有收货地址
+			// $('.popup-shinfos').show();
+			// 中实物 有收货地址
+			$('.popup-shdz').show();
 			return false;
 		}
 		// 按钮显示文字
 		if (+$('.qd-sjb span').text() >= 20) {
-			$('.popup-prize').find('.btn-sure').html('去使用').attr('href', 'javascript:;');
-		}
-		else {
-			$('.popup-prize').find('.btn-sure').html('赚取设计币').attr('href', '签到有礼.html');
+		    $('.popup-prize').find('.btn-sure').html('去使用').attr('href', link);
+		} else {
+		    $('.popup-prize').find('.btn-sure').html('赚取设计币').attr('href', '签到有礼.html');
 		}
 		$('.popup-prize').show();
 	}
