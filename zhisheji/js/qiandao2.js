@@ -78,7 +78,10 @@ $(function() {
 	// 抽奖
 	luck.init('luck');
 	$('#prize-btn').on('click', function() {
-	    if (+$('.qd-sjb span').text() >= 20 && luck.isClick) {
+		if (!luck.isClick) {
+			return false;
+		}
+	    if (+$('.qd-sjb span').text() >= 20) {
 	        // 设计币大于20开始抽奖
 			luck.isClick = false;
 	        $('.qd-sjb span').text($('.qd-sjb span').text() - 20);
