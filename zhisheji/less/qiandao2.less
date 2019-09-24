@@ -242,11 +242,14 @@
 			margin: 32px 0 0;
 			border: none;
 			font-size: 14px;
-			background: @red;
 			.bdr(22px);
 			cursor: pointer;
-			&:hover {
-				background: @red-h;
+
+			&-sign {
+			    background: @red;
+				&:hover {
+				    background: @red-h;
+				}
 			}
 		}
 		.sign-tips {
@@ -560,143 +563,6 @@
 .page-qd {
     padding: 30px 0;
 }
-.popup-shdz {
-    .popup {
-        width: 593px;
-        height: auto;
-        padding: 0 0 20px;
-        margin: -295px / 2 0 0 -593px / 2;
-    }
-    .tit {
-        padding: 5px 30px 0;
-        line-height: 56px;
-        color: #333;
-        font-size: 16px;
-        border-bottom: 1px solid #f1f1f1;
-    }
-    .textarea {
-        .pos(r);
-        width: 531px - 44px;
-        // height: 82px - 16px;
-        padding: 16px 22px 0;
-        margin: 32px auto 0;
-        border: 1px solid #f1f1f1;
-        .bdr(4px);
-        line-height: 25px;
-        color: #666;
-        font-size: 14px;
-        .tel {
-            margin: 0 0 0 25px;
-        }
-        p {
-            padding: 3px 0 14px;
-        }
-        .btn-edit {
-            .pos(a);
-            top: 34px;
-            right: 23px;
-            font-size: 14px;
-            color: #ccc;
-            cursor: pointer;
-            &:hover {
-                color: @blue;
-            }
-        }
-    }
-    .btn-box {
-        padding: 30px;
-        font-size: 0;
-        .btn {
-            .dis(ib);
-            vertical-align: top;
-            width: 130px;
-            height: 36px;
-            margin-right: 8px;
-            line-height: 36px;
-            font-size: 14px;
-            &-grayl {
-                .pos(s);
-                width: 128px;
-                height: 34px;
-                line-height: 34px;
-                color: #666;
-                border: 1px solid #f1f1f1;
-                &:hover {
-                    border: 1px solid @blue;
-                    color: @blue;
-                    .rotate(0);
-                }
-            }
-        }
-    }
-}
-.popup-record {
-	.popup {
-		width: 970px;
-		height: 648px;;
-		padding: 0;
-		margin: -648px/2 0 0 -970px/2;
-	}
-	.popup-tit {
-		padding: 13px 30px 0;
-		border: none;
-		color: #333;
-	}
-	.list {
-		li {
-			font-size: 0;
-			border-top: 1px solid #f6f6f6;
-			>div {
-				.dis(ib);
-				vertical-align: top;
-				.ov(h);
-				line-height: 52px;
-				height: 52px;
-				font-size: 14px;
-				color: #999;
-				text-align: center;
-			}
-			&.title {
-				padding: 2px 0;
-				border: none;
-				> div {
-					font-size: 16px;
-					color: #666;
-				}
-			}
-			.times {
-				width: 205px;
-				padding: 0 0 0 120px;
-				text-align: left;
-				span {
-					color: #999;
-					padding-left: 18px;
-				}
-			}
-			.name {
-				width: 164px;
-				span {
-					.dis(ib);
-					vertical-align: top;
-					.text-e(1);
-				}
-			}
-			.coin {
-				width: 274px;
-				color: #666;
-			}
-			.status {
-				width: 134px;
-			}
-		}
-	}
-	.no-result {
-		padding-top: 100px;
-		p {
-			padding: 15px 0 0;
-		}
-	}
-}
 
 .prize {
 	.ov(h);
@@ -844,7 +710,9 @@
 		padding: 0;
 		margin: -436px/2 0 0 -680px/2;
 		&-ct {
+			.ov(v);
 			font-size: 0;
+			max-height: none;
 		}
 		.item {
 			padding: 15px 0;
@@ -862,6 +730,7 @@
 				}
 			}
 			dd {
+				.pos(r);
 				.dis(ib);
 				vertical-align: top;
 				.input {
@@ -887,6 +756,16 @@
 					}
 				}
 			}
+			div.tips-err {
+			    position: absolute;
+			    bottom: -32px;
+			    left: 20px;
+			    z-index: 99;
+			    color: #f6565b;
+			    font-size: 14px;
+			    line-height: 32px;
+			    white-space: nowrap;
+			}
 		}
 		&-btn-box {
 			padding: 25px 0 0 110px;
@@ -897,10 +776,12 @@
 				line-height: 34px;
 				font-size: 14px;
 				border: 1px solid @blue;
+				cursor: pointer;
 				&-cancel {
 					margin-left: 16px;
 					border: 1px solid #dcdcdc;
 					color: #666;
+					background: none;
 					&:hover {
 						color: @blue;
 						border-color: @blue;
@@ -908,5 +789,170 @@
 				}
 			}
 		}
+	}
+}
+.popup-shdz {
+    .popup {
+        width: 446px;
+        height: 274px;
+        padding: 0 0 20px;
+        margin: -274px/2 0 0 -446px/2;
+    }
+    .tit {
+        padding: 5px 30px 0;
+        line-height: 56px;
+        color: #333;
+        font-size: 16px;
+        border-bottom: 1px solid #f1f1f1;
+    }
+    .textarea {
+        .pos(r);
+        padding: 35px 30px;
+        .bdr(4px);
+        line-height: 25px;
+        color: #666;
+		font-size: 14px;
+		.name {
+			font-size: 16px;
+			color: #333;
+		}
+        .mobile {
+			margin: 0 0 0 20px;
+			color: #999;
+        }
+        p {
+            padding: 8px 0 4px;
+        }
+        .btn-edit {
+            .pos(a);
+            top: 38px;
+            right: 30px;
+            font-size: 16px;
+            color: #bbb;
+            cursor: pointer;
+            &:hover {
+                color: @blue;
+            }
+        }
+    }
+    .btn-box {
+		text-align: center;
+        font-size: 0;
+        .btn {
+            .dis(ib);
+            vertical-align: top;
+            width: 130px;
+            height: 36px;
+            margin-right: 8px;
+            line-height: 36px;
+            font-size: 14px;
+            &-grayl {
+                .pos(s);
+                width: 128px;
+                height: 34px;
+                line-height: 34px;
+                color: #666;
+                border: 1px solid #f1f1f1;
+                &:hover {
+                    border: 1px solid @blue;
+                    color: @blue;
+                    .rotate(0);
+                }
+            }
+        }
+    }
+}
+.popup-record {
+    .popup {
+        width: 970px;
+        height: 648px;
+        ;
+        padding: 0;
+        margin: -648px/2 0 0 -970px/2;
+    }
+    .popup-tit {
+        padding: 13px 30px 0;
+        border: none;
+        color: #333;
+    }
+    .list {
+        li {
+            font-size: 0;
+            border-top: 1px solid #f6f6f6;
+            >div {
+                .dis(ib);
+                vertical-align: top;
+                .ov(h);
+                line-height: 52px;
+                height: 52px;
+                font-size: 14px;
+                color: #999;
+                text-align: center;
+            }
+            &.title {
+                padding: 2px 0;
+                border: none;
+                >div {
+                    font-size: 16px;
+                    color: #666;
+                }
+            }
+            .times {
+                width: 205px;
+                padding: 0 0 0 120px;
+                text-align: left;
+                span {
+                    color: #999;
+                    padding-left: 18px;
+                }
+            }
+            .name {
+                width: 164px;
+                span {
+                    .dis(ib);
+                    vertical-align: top;
+                    .text-e(1);
+                }
+            }
+            .coin {
+                width: 274px;
+                color: #666;
+            }
+            .status {
+                width: 134px;
+            }
+        }
+    }
+    .no-result {
+        padding-top: 100px;
+        p {
+            padding: 15px 0 0;
+        }
+    }
+}
+.popup-sign {
+	.popup {
+		width: 480px;
+		height: 280px;
+		padding: 0;
+		margin: -280px/2 0 0 -480px/2;
+	}
+	.tit {
+		padding: 70px 0 0;
+		p {
+			.blue {
+				margin: 0;
+			}
+		}
+	}
+	.icon-gou {
+		.dis(ib);
+		vertical-align: top;
+		width: 80px;
+		height: 80px;
+		line-height: 80px;
+		font-size: 26px;
+		background: @green;
+		.bdr(50%);
 	}
 }
