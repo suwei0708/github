@@ -89,12 +89,12 @@
                         </div>
                     </li>
                     <li>
-                        <a href="经验文章首页.html">经验文章<span class="nico nico-new"></span></a>
+                        <a href="VIP特权.html">VIP特权<span class="nico nico-new"></span></a>
                     </li>
-                    <li class="nav-more"><a href="VIP特权.html">VIP特权</a></li>
-                    <li class="nav-more"><a href="关于巧匠">关于巧匠</a></li>
+                    <li><a href="学员故事.html">学员故事</a></li>
+                    <li><a href="关于巧匠">关于巧匠</a></li>
                     <li>
-                        <a href="javascript:;">更多<span class="qjfont qj-xiangxiajiantou"></span></a>
+                        <a href="javascript:;"><span class="qjfont qj-gengduo"></span></a>
                         <ul class="nav-sub">
                             <li class="nav-more"><a href="VIP特权.html">VIP特权</a></li>
                             <li class="nav-more"><a href="关于巧匠">关于巧匠</a></li>
@@ -108,20 +108,8 @@
                 </ul>
             </div>
             <div class="fl search">
-                <div class="fl search-select">
-                    <span class="search-select-val">视频</span>
-                    <span class="qjfont qj-xiangxiajiantou"></span>
-                    <span class="line"></span>
-                    <div class="search-select-list">
-                        <ul>
-                            <li>视频</li>
-                            <li>文章</li>
-                            <li>老师</li>
-                        </ul>
-                    </div>
-                </div>
-                <input type="text" class="fl txt" id="searchkey" placeholder="搜索感兴趣的课程/讲师">
-                <button class="fl btn" id="bsearch"><span class="qjfont qj-fangdajing"></span></button>
+                <input type="text" class="fl txt" id="searchkey" autocomplete="off" placeholder="搜索感兴趣的课程/讲师">
+                <button class="fl btn" id="bsearch"><span class="qjfont qj-sousuo"></span></button>
                 <div class="search-tip">
                     <dl class="search-tip-his">
                         <dt><a href="javascript:;" class="fr clear-his"><span class="qjfont qj-shanchu"></span></a>最近搜索</dt>
@@ -146,16 +134,16 @@
                 </div>
             </div>
             <!-- 登录前 start -->
-            <div class="tips fr">
+            <div class="tips fr" style="display: none">
                 <a href="javascript:;" onclick="$('.popup-play').show();$('.mask').show();" class="qq">登录</a>
                 <a href="javascript:;" onclick="$('.popup-play').show();$('.mask').show();" class="wx">注册</a>
             </div>
             <!-- 登录前 end -->
             <!-- 登录后 非vip start -->
-            <div class="user-info fr" style="display: none">
-                <a href="消息页.html" class="fl message"><span class="ico4 ico-message"></span>消息<span class="num">30</span></a>
+            <div class="user-info fr">
+                <a href="消息页.html" class="fl message"><span class="qjfont qj-xiaoxi"></span>消息<span class="num">30</span></a>
                 <a href="#" target="_blank" class="fl img">
-                    <img src="images/drb-img.png" height="38" width="38" alt="">
+                    <img src="images/drb-img.png" height="44" width="44" alt="">
                     <!-- 非vip start -->
                     <img src="images/icon-novip.png" alt="vip" class="vip">
                     <!-- 非vip end -->
@@ -252,10 +240,10 @@
                 </div>
             </div>
             <!-- 登录后 非vip end -->
-            <a href="#" class="fr app">
+            <!-- <a href="#" class="fr app">
                 <span class="nico nico-app"></span>
                 <span class="txt">巧匠APP<br><span class="yellow">立即下载</span></span>
-            </a>
+            </a> -->
         </div>
         <!-- 头部 end -->
         <div class="box-sld">
@@ -263,37 +251,39 @@
                 <!-- 轮播图 start -->
                 <div id="sld">
                     <ul class="slides_container">
-                        <li><a href="#" target="_blank"><img src="images/banner.jpg" width="1220" height="380"/></a></li>
-                        <li><a href="#" target="_blank"><img src="images/banner.jpg" width="1220" height="380"/></a></li>
-                        <li><a href="#" target="_blank"><img src="images/banner.jpg" width="1220" height="380"/></a></li>
-                        <li><a href="#" target="_blank"><img src="images/banner.jpg" width="1220" height="380"/></a></li>
+                        <li><a href="#" target="_blank"><img src="images/banner.jpg" width="1920" height="340"/></a></li>
+                        <li><a href="#" target="_blank"><img src="images/banner.jpg" width="1920" height="340"/></a></li>
+                        <li><a href="#" target="_blank"><img src="images/banner.jpg" width="1920" height="340"/></a></li>
+                        <li><a href="#" target="_blank"><img src="images/banner.jpg" width="1920" height="340"/></a></li>
                     </ul>
                 </div>
                 <!-- 轮播图 end -->
-                <!-- list start -->
-                <div class="study">
-                    <ul>
-                        <li>
-                            <span class="qjfont qj-shipin1"></span>
-                            <p>原创教程<br>实用案例教学，学了立马能用</p>
-                        </li>
-                        <li>
-                            <span class="qjfont qj-ren"></span>
-                            <p>业内名师<br>平均经验7年的讲师团队</p>
-                        </li>
-                        <li>
-                            <span class="qjfont qj-yi"></span>
-                            <p>免费试学<br>每天免费观看1个视频教程</p>
-                        </li>
-                        <li>
-                            <span class="qjfont qj-shijian"></span>
-                            <p>每日10点更新<br>教程 : 1819个  7天 : 34个</p>
-                        </li>
-                    </ul>
-                </div>
-                <!-- list end -->
             </div>
-        </div>
+		</div>
+		<div class="wrap">
+			<!-- study start -->
+			<div class="study">
+			    <ul>
+			        <li>
+			            <span class="qjfont qj-shipin1"></span>
+			            <p>原创教程<br>实用案例教学，学了立马能用</p>
+			        </li>
+			        <li>
+			            <span class="qjfont qj-ren"></span>
+			            <p>业内名师<br>平均经验7年的讲师团队</p>
+			        </li>
+			        <li>
+			            <span class="qjfont qj-yi"></span>
+			            <p>免费试学<br>每天免费观看1个视频教程</p>
+			        </li>
+			        <li>
+			            <span class="qjfont qj-shijian"></span>
+			            <p>每日10点更新<br>教程 : 1819个 7天 : 34个</p>
+			        </li>
+			    </ul>
+			</div>
+			<!-- study end -->
+		</div>
 
         <!-- 为你推荐 start -->
         <div class="box-zxkc box-wntj">
@@ -6832,7 +6822,7 @@
 		<!--弹窗限时优惠 end -->
 
 		<!--弹窗缝10免费 start -->
-		<div class="popup-box popup-free" style="display: block">
+		<div class="popup-box popup-free" style="display: none">
 		    <div class="ico-close"></div>
 		    <img src="images/popup-free.png" class="img">
 		    <div class="tit">
@@ -6843,7 +6833,7 @@
 		</div>
 		<!--弹窗缝10免费 end -->
 
-        <div class="mask" style="display: block"></div>
+        <div class="mask" style="display: none"></div>
 
         <!--js调用 start -->
         <script src="js/jquery-1.9.1.min.js" type="text/javascript"></script>
