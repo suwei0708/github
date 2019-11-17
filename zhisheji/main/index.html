@@ -1928,14 +1928,36 @@
 		</div>
 		<!-- 5周年悬浮广告 end -->
 
-        <!-- 2018十强底部浮窗 start -->
-        <div class="fixed-sq" style="display: none;">
+		<!-- 2019十强底部浮窗 start -->
+		<style>
+			.fixed-sq {
+				height: 183px;
+				background: url(../images/2019shiqiang.png) no-repeat center 0;
+			}
+			.fixed-sq .wrap {
+				padding-top: 123px;
+			}
+			.fixed-sq p {
+				color: #ad9454;
+				font-size: 22px;
+			}
+			.fixed-sq .btn, .fixed-sq .btn:hover {
+				background: #ad9454;
+				color: #fff;
+			}
+			.fixed-sq .close {
+				margin-top: -6px;
+				color: #999;
+			}
+		</style>
+        <div class="fixed-sq" style="display: block;">
             <div class="wrap">
+				<p>《 致设计2019年度十强设计师 》正在进行</p>
                 <a href="#" class="btn">我要参选<span class="icon-youjiantou"></span></a>
                 <a href="javascript:;" class="close" onclick="jQuery('.fixed-sq').animate({'left': '-100%'}, 500);"><span class="icon-close"></span></a>
             </div>
         </div>
-		<!-- 2018十强底部浮窗 end -->
+		<!-- 2019十强底部浮窗 end -->
 
 		<!-- 六周年底部浮窗 start -->
 		<style>
@@ -2035,7 +2057,7 @@
 				background: #fff36d;
 			}
 		</style>
-		<div class="popup-box popup-6znzsfl" style="display: block">
+		<div class="popup-box popup-6znzsfl" style="display: none">
 			<div class="popup">
 				<span class="popup-close icon-guanbi1"></span>
 				<a href="#" class="btn"><strong>点击领取</strong></a>
@@ -2104,7 +2126,7 @@
 				background: #fff36d;
 			}
 		</style>
-		<div class="popup popup-zsfl" style="display: block">
+		<div class="popup popup-zsfl" style="display: none">
 			<a href="#" class="links"></a>
 			<span class="popup-close" onclick="$('.popup-zsfl').hide();"></span>
 			<a href="#" class="btn"><strong>点击领取</strong></a>
@@ -2172,18 +2194,6 @@
                     loadNumber($('#num3').attr('data-num'), 100, '#num3');
                 }
             });
-        </script>
-
-        <script>
-            $(function() {
-                var objTxt = ['体验为民，设计于心。', '设计的目的是为了创造价值。', '设计是为别人，艺术是为自己。', '设计源于生活且高于生活。', '戏剧化演绎差异化。', '激情与理性的碰撞才是设计的态度。', '设计唯一的捷径便是比别人多勤奋一点。', '设计是人与人，人与物，人与环境的关系。', '设计的本质是为了解决问题。'];
-                var randomNum = rnd(1, 9);
-                var randomDom = '<img src="../images/fixed-sq' + randomNum + '.png" class="img img2"><p>' + objTxt[randomNum - 1] + '</p>';
-                $('.fixed-sq').find('.wrap').prepend(randomDom);
-            });
-            function rnd(n, m) {
-                return Math.floor(Math.random() * (m - n + 1) + n)
-            };
         </script>
     </body>
 </html>
