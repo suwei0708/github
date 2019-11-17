@@ -6832,6 +6832,219 @@
 		</div>
 		<!--弹窗缝10免费 end -->
 
+		<!-- 双11浮窗 start -->
+		<style>
+		    .popup-shuang1 {
+		        overflow: hidden;
+		        position: fixed;
+		        left: 0;
+		        bottom: 100px;
+		        z-index: 999;
+		        padding-left: 50px;
+		        -webkit-transform: translateX(-100%);
+		        -moz-transform: translateX(-100%);
+		        -ms-transform: translateX(-100%);
+		        transform: translateX(-100%);
+		    }
+		    .popup-shuang1 img {
+		        display: block;
+		        width: 218px;
+		        cursor: pointer;
+		    }
+		    .popup-shuang2 {
+		        overflow: hidden;
+		        position: fixed;
+		        left: 0;
+		        bottom: 0;
+		        z-index: 999;
+		        width: 100%;
+		    }
+		    .popup-shuang2 .bg-img {
+		        position: relative;
+		        top: 0;
+		        left: 50%;
+		        width: 1920px;
+		        max-width: none;
+		        margin-left: -960px;
+		    }
+		    .popup-shuang2 .wrap {
+		        position: relative;
+		    }
+		    .popup-shuang2 .close {
+		        position: relative;
+		        width: 1220px;
+		        margin: 0 auto;
+		        height: 0;
+		    }
+		    .popup-shuang2 img {
+		        position: absolute;
+		        bottom: 0;
+		        left: 50%;
+		        display: block;
+		        width: 1920px;
+		        max-width: none;
+		        margin: 0 0 0 -960px;
+		    }
+		    .popup-shuang2 .times {
+				position: absolute;
+				top: 114px;
+				right: 245px;
+				width: 340px;
+				text-align: center;
+				line-height: 60px;
+				color: #fff;
+				font-size: 30px;
+				font-weight: 700;
+		    }
+		    .popup-shuang2 .qjfont {
+		        position: absolute;
+		        right: -66px;
+		        bottom: 160px;
+		        font-size: 30px;
+		        color: #ccc;
+		        cursor: pointer;
+		    }
+		    .popup-shuang2 .qjfont:hover {
+		        color: #999;
+		    }
+		    .left-out {
+		        -webkit-animation: left-out 1s ease-in-out 0s 1 both;
+		        -moz-animation: left-out 1s ease-in-out 0s 1 both;
+		        -ms-animation: left-out 1s ease-in-out 0s 1 both;
+		        animation: left-out 1s ease-in-out 0s 1 both;
+		    }
+		    @-moz-keyframes left-out {
+		        0% {
+		            opacity: 1;
+		            -moz-transform: translateX(0);
+		        }
+		        100% {
+		            -moz-transform: translateX(-100%);
+		        }
+		    }
+		    @-ms-keyframes left-out {
+		        0% {
+		            opacity: 1;
+		            -ms-transform: translateX(0);
+		        }
+		        100% {
+		            -ms-transform: translateX(-100%);
+		        }
+		    }
+		    @-webkit-keyframes left-out {
+		        0% {
+		            opacity: 1;
+		            -webkit-transform: translateX(0);
+		        }
+		        100% {
+		            -webkit-transform: translateX(-100%);
+		        }
+		    }
+		    @keyframes left-out {
+		        0% {
+		            transform: translateX(0);
+		        }
+		        100% {
+		            transform: translateX(-100%);
+		        }
+		    }
+
+		    .left-in {
+		        -webkit-animation: left-in 1s ease-in-out 0s 1 both;
+		        -moz-animation: left-in 1s ease-in-out 0s 1 both;
+		        -ms-animation: left-in 1s ease-in-out 0s 1 both;
+		        animation: left-in 1s ease-in-out 0s 1 both;
+		    }
+		    @-moz-keyframes left-in {
+		        0% {
+		            -moz-transform: translateX(-100%);
+		        }
+		        100% {
+		            -moz-transform: translateX(0);
+		        }
+		    }
+		    @-ms-keyframes left-in {
+		        0% {
+		            -ms-transform: translateX(-100%);
+		        }
+		        100% {
+		            -ms-transform: translateX(0);
+		        }
+		    }
+		    @-webkit-keyframes left-in {
+		        0% {
+		            -webkit-transform: translateX(-100%);
+		        }
+		        100% {
+		            -webkit-transform: translateX(0);
+		        }
+		    }
+		    @keyframes left-in {
+		        0% {
+		            transform: translateX(-100%);
+		        }
+		        100% {
+		            transform: translateX(0);
+		        }
+		    }
+
+		    .left-out2 {
+		        -webkit-animation: left-out2 1s ease-in-out 0s 1 both;
+		        -moz-animation: left-out2 1s ease-in-out 0s 1 both;
+		        -ms-animation: left-out2 1s ease-in-out 0s 1 both;
+		        animation: left-out2 1s ease-in-out 0s 1 both;
+		    }
+		    @-moz-keyframes left-out2 {
+		        0% {
+		            opacity: 1;
+		            -moz-transform: translateX(100%);
+		        }
+		        100% {
+		            -moz-transform: translateX(0);
+		        }
+		    }
+		    @-ms-keyframes left-out2 {
+		        0% {
+		            opacity: 1;
+		            -ms-transform: translateX(100%);
+		        }
+		        100% {
+		            -ms-transform: translateX(0);
+		        }
+		    }
+		    @-webkit-keyframes left-out2 {
+		        0% {
+		            opacity: 1;
+		            -webkit-transform: translateX(100%);
+		        }
+		        100% {
+		            -webkit-transform: translateX(0);
+		        }
+		    }
+		    @keyframes left-out2 {
+		        0% {
+		            transform: translateX(100%);
+		        }
+		        100% {
+		            transform: translateX(0);
+		        }
+		    }
+		</style>
+
+		<div class="popup-shuang1">
+		    <img src="images/shuang112-1.png" alt="">
+		</div>
+		<div class="popup-shuang2">
+		    <div class="wrap">
+		        <a href="#" target="_blank">
+		            <img class="bg-img" src="images/shuang112-2.png" alt="">
+		            <div class="times countdown" data-time="11/11/2019 00:00:00"><span class="days">00</span>天<span class="hours">00</span>时<span class="minutes">00</span>分<span class="seconds">00</span>秒</div>
+		        </a>
+		    </div>
+		    <div class="close"><span class="qjfont qj-guanbi1"></span></div>
+		</div>
+		<!-- 双11浮窗 end -->
+
         <div class="mask" style="display: none"></div>
 
         <!--js调用 start -->
@@ -6911,14 +7124,38 @@
             });
         </script>
 
-        <script src="js/timeCountDown.js"></script>
+        <!-- <script src="js/timeCountDown.js"></script>
         <script type="text/javascript">
             if($("#discount-times").length) {
                 $("#discount-times").timeCountDown($('#discount-times').data('end'), function() {
                     console.log('结束了');
                 });
             }
-        </script>
+		</script> -->
+
+		<!-- 倒计时插件 -->
+		<script src="https://www.qiaojiang.tv/Public/Static/js/jquery.downCount.js"></script>
+		<script type="text/javascript">
+		    $('.popup-shuang1').on('click', function() {
+		        $('.popup-shuang1').removeClass('left-in').addClass('left-out');
+		        setTimeout(function() {
+		            $('.popup-shuang2').removeClass('left-out').addClass('left-in');
+		        }, 1000);
+		    });
+		    $('.popup-shuang2').on('click', '.qj-guanbi1', function() {
+		        setTimeout(function() {
+		            $('.popup-shuang1').removeClass('left-out').addClass('left-in');
+		        }, 1000);
+		        $('.popup-shuang2').removeClass('left-in').addClass('left-out');
+			});
+
+			$('.countdown').downCount({
+				date: $('.countdown').data('time'),
+				offset: +8
+			}, function () {
+				$('.countdown').html('已结束')
+			});
+		</script>
         <!--js调用 end -->
     </body>
 </html>
