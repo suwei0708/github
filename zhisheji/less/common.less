@@ -2789,7 +2789,7 @@ body {
                     color: #666;
                     &:focus {
                         border: 1px solid @blue;
-                        .box-shadow(0, 0, 5px, rgba(0, 132, 255, .2));
+                        .box-shadow(0 0 5px rgba(0, 132, 255, .2));
                     }
                 }
                 label {
@@ -4315,7 +4315,7 @@ body .bd_weixin_popup {
         padding: 20px 16px 0;
         background: #fff;
         .bdr(4px);
-        .box-shadow(0, 0, 15px, rgba(0, 0, 0, .1));
+        .box-shadow(0 0 15px rgba(0, 0, 0, .1));
         &-arrow {
             .pos(a);
             bottom: -8px;
@@ -5660,5 +5660,125 @@ body .bd_weixin_popup {
 	a {
 		.dis(b);
 		color: #fff;
+	}
+}
+.fixed-wechat {
+	.dis(n);
+	.pos(f);
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 90px;
+	color: #fff;
+	z-index: 988;
+	font-size: 14px;
+	background: rgba(0, 0, 0, .5);
+	.popup-close {
+		.pos(a);
+		top: 13px;
+		right: 13px;
+		font-size: 13px;
+		color: #fff;
+		.anim;
+		&:hover {
+			.rotate(180deg);
+		}
+	}
+	dt, dd {
+		line-height: 30px;
+	}
+	dt {
+		padding: 18px 0 0;
+		font-size: 20px;
+	}
+	.fr {
+		padding: 25px 0 0;
+		line-height: 40px;
+	}
+	.icon-wx {
+		.dis(ib);
+		vertical-align: top;
+		width: 40px;
+		height: 40px;
+		margin-left: 18px;
+		line-height: 40px;
+		text-align: center;
+		font-size: 25px;
+		color: #fff;
+		background: #01cb01;
+		.bdr(50%);
+		cursor: pointer;
+		&:before {
+			.dis(ib);
+			vertical-align: middle;
+			line-height: 1;
+			margin: -5px 0 0 3px;
+		}
+		&:hover {
+			background: @green-h;
+		}
+	}
+}
+
+.popup-wechat {
+	.popup {
+		width: 390px;
+		height: 454px;
+		padding: 0;
+		margin: -454px/2 0 0 -380px/2;
+	}
+	.popup-ct {
+		padding: 66px 0 36px;
+		margin: 0;
+		text-align: center;
+		img {
+			width: 200px;
+			height: 200px;
+		}
+		p {
+			margin-top: 20px;
+			line-height: 38px;
+			font-size: 20px;
+			color: #333;
+			.icon-wx {
+				.dis(ib);
+				vertical-align: top;
+				margin-right: 12px;
+				font-size: 38px;
+				color: #41cb56;
+			}
+		}
+	}
+	.other-login {
+		padding: 36px 0 0;
+		border-top: 1px solid #f6f6f6;
+		a {
+			line-height: 24px;
+			.icon-qq, .icon-phone {
+				.dis(ib);
+				vertical-align: top;
+				width: auto;
+				height: auto;
+				line-height: 1;
+				font-size: 24px;
+				margin: 0 14px 0 0;
+				background: none;
+			}
+			.icon-qq {
+				color: @blue;
+			}
+			.icon-phone {
+				color: @yellow;
+			}
+			&:hover {
+				.icon-qq {
+					color: @blue-h;
+					background: none;
+				}
+				.icon-phone {
+					color: @yellow-h;
+				}
+			}
+		}
 	}
 }
