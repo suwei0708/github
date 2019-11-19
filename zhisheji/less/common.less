@@ -1211,41 +1211,44 @@ i {
                 }
             }
         }
-        .upload-box {
-            .pos(r);
-            float: none;
-            .dis(ib);
-            vertical-align: top;
-        }
-        .iup-list {
-            .dis(n);
-            .ov(h);
-            .pos(a);
-            top: 70px;
-            right: 0;
-            width: 140px;
-            padding: 0;
-            text-align: center;
-            .bdr(0, 0, 0, 4px);
-            font-size: 14px;
-            li {
-                float: none;
-                margin: 0;
-            }
-            a {
-                .dis(b);
-                color: #fff;
-                line-height: 45px;
-                height: 45px;
-                background: @green;
-                margin-top: -1px;
-                border-top: 1px solid #4dd060 ;
-                &:hover {
-                    background: @green-h;
-                }
-            }
-        }
-    }
+	}
+	.upload-box {
+	    .pos(r);
+	    float: none;
+	    .dis(ib);
+	    vertical-align: top;
+	}
+	.iup-list {
+	    .dis(n);
+	    .ov(h);
+	    .pos(a);
+	    top: 70px;
+	    right: 0;
+	    width: 140px;
+	    padding: 0;
+	    text-align: center;
+	    .bdr(0, 0, 0, 4px);
+	    font-size: 14px;
+	    li {
+			.ov(v) !important;
+	        float: none !important;
+	        height: auto !important;
+	        margin: 0 !important;
+	    }
+	    a {
+	        .dis(b) !important;
+	        color: #fff;
+	        line-height: 45px;
+	        height: 45px;
+	        background: @green;
+	        margin: -1px 0 0 !important;
+	        border-top: 1px solid #4dd060;
+	        &:hover {
+				text-decoration: none !important;
+	            background: @green-h;
+	        }
+	    }
+	}
     // 登录前
     .h-login {
         // .dis(n);
