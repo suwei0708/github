@@ -100,7 +100,7 @@
         });
 
         // 头部上传下拉
-        $('.h-user').on('mouseover', '.upload-box', function() {
+        $('.header').on('mouseover', '.upload-box', function() {
             $(this).find('.iup-list').show();
         }).on('mouseout', '.upload-box', function() {
             $(this).find('.iup-list').hide();
