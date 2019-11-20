@@ -494,8 +494,9 @@
         // 头部点击登录注册
         $('body').on('click', '.h-login .btn-lg, .popup-login .btn-lg, .popup-back .btn-lg, .popup-backbox .btn-lg, .popup-register .btn-lg', function() {
             $('.popup-box').hide();
-            $('.popup-login').show().find('.popup-tab li:eq(0)').click();
-            centerObj('.popup-login .popup');
+            // $('.popup-login').show().find('.popup-tab li:eq(0)').click();
+			// centerObj('.popup-login .popup');
+			$('.popup-wechat').show();
         });
         // 忘记密码
         $('.popup-login').on('click', '.btn-forget', function() {
@@ -506,8 +507,9 @@
         // 注册弹窗
         $('.h-login, .popup-login, .popup-establish').on('click', '.btn-rgs', function() {
             $('.popup-box').hide();
-            $('.popup-register').show();
-            centerObj('.popup-register .popup');
+            // $('.popup-register').show();
+			// centerObj('.popup-register .popup');
+			$('.popup-wechat').show();
         });
 
         $('.popup-establish').on('click', '.btn-bind', function() {

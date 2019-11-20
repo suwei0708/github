@@ -1298,7 +1298,8 @@
         <!--右边悬浮 start -->
         <ul class="talk">
 			<li class="ecode">
-			    <a href="http://www.qiaojiang.tv/app" target="_blank">
+				<a href="http://www.qiaojiang.tv/app" target="_blank">
+					<img src="../images/dot.gif" alt="" class="dot">
 					<span class="ecode-box"><span class="icon-erweima"></span><br>公众号</span>
 			    </a>
 			    <div class="ecode-popbox">
@@ -1949,7 +1950,7 @@
 				</div>
 				<div class="other-login">
 				    <a href="javascript:;"><span class="icon-qq2"></span>QQ登录</a>
-				    <a href="javascript:;" onclick="$('.btn-lg').trigger('click');$('.popup-login .popup-tab li:eq(1)').trigger('click');"><span class="icon-shouji1"></span>短信登录</a>
+				    <a href="javascript:;" onclick="$('.popup-wechat').hide();$('.popup-login').show().find('.popup-tab li:eq(1)').click();"><span class="icon-shouji1"></span>短信登录</a>
 				</div>
 			</div>
         </div>

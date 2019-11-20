@@ -420,7 +420,7 @@
                     <div class="input">
                         <textarea class="textarea" placeholder="据说认真交流的都成为大神了~"></textarea>
                         <!-- <div class="tips">
-                            你还没有登录，请先<a href="javascript:;" onclick="jq('.popup-login').show();centerObj('.popup-login .popup')">登录</a>或<a href="javascript:;" onclick="jq('.popup-login').show().find('.popup-tab li:eq(1)').click();centerObj('.popup-login .popup');">注册</a>！
+                            你还没有登录，请先<a href="javascript:;" onclick="$('.popup-wechat').show();">登录</a>或<a href="javascript:;" onclick="$('.popup-wechat').show();">注册</a>！
                         </div> -->
                         <span class="num-box"><span class="num">500</span></span>
                     </div>
@@ -2563,7 +2563,36 @@
                 </div>
             </div>
         </div>
-        <!-- 移动弹窗 end -->
+		<!-- 移动弹窗 end -->
+
+		<!-- 底部微信关注浮窗 start -->
+		<div class="fixed-wechat" style="display: block;">
+		    <div class="popup-close" onclick="$('.fixed-wechat').remove();"><span class="icon-close"></span></div>
+		    <div class="wrap">
+		        <dl class="fll">
+		            <dt>欢迎来到致设计</dt>
+		            <dd>百万电商设计师交流平台，展示你的作品，找到适合你的新灵感。</dd>
+		        </dl>
+		        <div class="fr">微信扫码关注即可登录<span class="icon-wx" onclick="$('.popup-wechat').show();"></span></div>
+		    </div>
+		</div>
+		<!-- 底部微信关注浮窗 end -->
+
+		<!-- 微信关注弹窗 start -->
+		<div class="popup-box popup-wechat">
+		    <div class="popup">
+		        <div class="popup-close"><span class="icon-close"></span></div>
+		        <div class="popup-ct">
+		            <img src="../images/ecode-bindwx.png" alt="">
+		            <p><span class="icon-wx"></span>微信扫码关注即可登录</p>
+		        </div>
+		        <div class="other-login">
+		            <a href="javascript:;"><span class="icon-qq2"></span>QQ登录</a>
+		            <a href="javascript:;" onclick="$('.popup-wechat').hide();$('.popup-login').show().find('.popup-tab li:eq(1)').click();"><span class="icon-shouji1"></span>短信登录</a>
+		        </div>
+		    </div>
+		</div>
+		<!-- 微信关注弹窗 end -->
 
         <!-- 通用js start-->
         <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
