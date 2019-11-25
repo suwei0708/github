@@ -266,6 +266,9 @@
 		font-size: 16px;
 		color: #333;
 		border-bottom: 1px solid #eee;
+		h3 {
+			font-size: 16px;
+		}
 	}
 	&-obtain {
 		.ct {
@@ -368,21 +371,22 @@
 					height: 34px;
 					line-height: 34px;
 					font-size: 14px;
-					color: #666;
+					color: #fff;
 					.bdr(4px);
-					border: 1px solid #dcdcdc;
+					border: 1px solid @blue;
+					background: @blue;
 					&:hover {
-						border: 1px solid @blue;
-						color: @blue;
+						border: 1px solid @blue-h;
+						background: @blue-h;
 					}
 					&-dis {
-						color: #999;
-						background: #eee;
-						border-color: #eee;
+						color: #ccc;
+						background: none;
+						border-color: #e8e8e8;
 						&:hover {
-							color: #999;
-							background: #eee;
-							border-color: #eee;
+							color: #ccc;
+							background: none;
+							border-color: #e8e8e8;
 						}
 					}
 					&-green {
@@ -502,63 +506,63 @@
         }
 	}
 	&-cjlist {
-	.bdr(4px);
-	padding: 0 0 30px;
-    background: #fff;
-    .list {
-        .ov(h);
-		height: 40px * 13;
-		padding: 0 30px;
-		margin: 16px 0 0;
-        li {
-            .height(40px);
-			color: #999;
-			font-size: 14px;
-			.icon-xiaoxi {
-				margin-right: 10px;
-				color: #ddd;
-			}
-            .name {
-                .ov(h);
-				.dis(ib);
-				max-width: 40px;
-                margin: 0 0 0 4px;
-				vertical-align: top;
-				span {
-					.text-e1;
+		.bdr(4px);
+		padding: 0 0 30px;
+		background: #fff;
+		.list {
+			.ov(h);
+			height: 40px * 13;
+			padding: 0 30px;
+			margin: 16px 0 0;
+			li {
+				.height(40px);
+				color: #999;
+				font-size: 14px;
+				.icon-xiaoxi {
+					margin-right: 10px;
+					color: #ddd;
+				}
+				.name {
+					.ov(h);
+					.dis(ib);
+					max-width: 40px;
+					margin: 0 0 0 4px;
+					vertical-align: top;
+					span {
+						.text-e1;
+					}
+				}
+				.text {
+					color: #666;
+					margin: 0 0 0 10px;
 				}
 			}
-			.text {
-				color: #666;
-                margin: 0 0 0 10px;
-			}
-        }
-	}
-	.btn {
-		.dis(b);
-		width: 232px;
-		height: 42px;
-		line-height: 42px;
-		margin: 14px auto 0;
- 		color: #666;
-		font-size: 14px;
-		.bdr(4px);
-		border: 1px solid #dcdcdc;
-		&:hover {
-			border-color: @blue;
-			color: @blue;
 		}
-		&-record {
-			background: @blue;
-			color: #fff;
-			margin-top: 21px;
+		.btn {
+			.dis(b);
+			width: 232px;
+			height: 42px;
+			line-height: 42px;
+			margin: 14px auto 0;
+			color: #666;
+			font-size: 14px;
+			.bdr(4px);
+			border: 1px solid #dcdcdc;
 			&:hover {
-				background: @blue-h;
+				border-color: @blue;
+				color: @blue;
+			}
+			&-record {
+				background: @blue;
 				color: #fff;
+				margin-top: 21px;
+				&:hover {
+					background: @blue-h;
+					color: #fff;
+				}
 			}
 		}
 	}
-}
 }
 .page-qd {
     padding: 30px 0;
@@ -567,7 +571,7 @@
 .prize {
 	.ov(h);
     width: 898px;
-	height: 748px;
+	height: 748px + 150;
 	padding: 6px;
     &-box {
         .pos(r);
@@ -578,8 +582,8 @@
         width: 590px;
         border-spacing: 19px;
         .luck-unit {
-            width: 270px;
-            height: 220px;
+            width: 196px;
+            height: 196px;
             text-align: center;
             background: #fff;
             border: 1px solid #eee;
@@ -592,17 +596,17 @@
         }
         .active {
 			.ov(h);
-            width: 268px;
-            height: 218px;
+            width: 194px;
+            height: 194px;
 			border: 2px solid @blue;
 			.cjimg {
-				margin-top: 39px;
+				margin-top: 29px;
 			}
         }
         .prize-btn {
             .dis(b);
-            width: 270px;
-			height: 220px;
+            width: 420px;
+			height: 416px;
 			background: @blue;
 			text-align: center;
 			.bdr(4px);
@@ -612,7 +616,7 @@
             strong {
 				.dis(b);
 				line-height: 60px;
-				padding: 65px 0 0;
+				padding: 160px 0 0;
 				font-size: 28px;
 				color: #fff;
 			}
@@ -628,35 +632,47 @@
 .cjimg {
     .dis(ib);
     vertical-align: top;
-    margin-top: 40px;
-    width: 148px;
-    height: 108px;
+    margin-top: 30px;
+    width: 141px;
+    height: 110px;
     background: url(../images/qiandao/icon-cj.png) no-repeat;
 }
 .cj {
-    &-quan100 {
+    &-sjb888 {
         background-position: 0 0;
     }
-    &-sjb5 {
+    &-baozhen {
         background-position: 0 -110px;
     }
-    &-ipad {
+    &-sjb50 {
         background-position: 0 -110px * 2;
     }
-    &-sjb50 {
+    &-ipad {
         background-position: 0 -110px * 3;
     }
-    &-sjb188 {
+    &-sjb5 {
         background-position: 0 -110px * 4;
     }
-    &-shu {
+    &-no {
         background-position: 0 -110px * 5;
     }
-    &-baozhen {
+    &-wacom {
         background-position: 0 -110px * 6;
     }
-    &-wacom {
+    &-gongzai {
         background-position: 0 -110px * 7;
+    }
+    &-sjb28 {
+        background-position: 0 -110px * 8;
+    }
+    &-shu {
+        background-position: 0 -110px * 9;
+    }
+    &-sjb2 {
+        background-position: 0 -110px * 10;
+    }
+    &-quan100 {
+        background-position: 0 -110px * 11;
     }
 }
 .popup-prize {
@@ -684,10 +700,10 @@
 		}
 	}
     .text {
-		padding-top: 20px;
+		padding-top: 28px;
         line-height: 30px;
-        color: #666;
-        font-size: 16px;
+        color: #333;
+        font-size: 14px;
     }
     .popup-btn {
         padding: 12px 0 0;

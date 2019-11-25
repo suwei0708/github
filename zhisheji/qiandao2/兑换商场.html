@@ -406,16 +406,27 @@
 
         <!--右边悬浮 start -->
         <ul class="talk">
+            <li class="ecode">
+                <a href="http://www.qiaojiang.tv/app" target="_blank">
+                    <img src="../images/dot.gif" alt="" class="dot">
+                    <span class="ecode-box"><span class="icon-erweima"></span><br>公众号</span>
+                </a>
+                <div class="ecode-popbox">
+                    <img src="../images/ecode-wechat.png" width="118">
+                    <p>微信扫码关注</p>
+                    <p><span>随时接收作品推荐结果<br>评论通知等</span></p>
+                </div>
+            </li>
             <li class="app">
                 <a href="#">
-                    <span class="app-box"><span class="icon-app"></span>APP</span>
+                    <span class="icon-app"></span>
                     <p>APP</p>
                 </a>
             </li>
             <li class="sign">
                 <a href="#">
                     <span class="icon-qiandao"></span>
-					<p>签到</p>
+                    <p>签到</p>
                 </a>
                 <a href="#" class="sign-box">
                     <span class="icon-shangcheng"></span>
@@ -634,7 +645,7 @@
 
 		<!-- 领取奖励提示窗 start -->
 		<div class="fixed-ftbar">
-		    <a href="#">恭喜完成浏览作品任务，快去领取奖励吧!</a>
+		    恭喜作品被选入首页推荐，快去领取奖励吧!<a href="#" class="btn">点击查看</a>
 		</div>
 		<!-- 领取奖励提示窗 end -->
 
@@ -703,9 +714,17 @@
 
 		<!-- js模拟领取奖励弹出消失 -->
 		<script>
+		    var popTimer;
 		    $('.fixed-ftbar').slideDown(400, function() {
-		        setTimeout(function() { $('.fixed-ftbar').slideUp() }, 2000)
+		        popTimer = setTimeout(function() { $('.fixed-ftbar').slideUp() }, 4000);
 		    });
+
+		    $('.fixed-ftbar').on('mouseenter', function() {
+				clearTimeout(popTimer);
+			})
+			.on('mouseleave', function() {
+				popTimer = setTimeout(function() { $('.fixed-ftbar').slideUp() }, 4000);
+			});
 		</script>
     </body>
 </html>

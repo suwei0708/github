@@ -86,7 +86,8 @@ $(function() {
 			luck.isClick = false;
 	        $('.qd-sjb span').text($('.qd-sjb span').text() - 20);
 			luck.speed = 100;
-			luck.prize = parseInt(Math.random() * 8); //中奖位置0~7顺时针
+			// luck.prize = parseInt(Math.random() * 8); //中奖位置0~7顺时针
+			luck.prize = 5;
 	        roll();
 	        return false;
 		}
@@ -160,7 +161,7 @@ $(function() {
 // 抽奖js
 var luck = {
     index: -1, // 当前转动到哪个位置，起点位置
-    count: 8, // 总共有多少个位置
+    count: 12, // 总共有多少个位置
     timer: 0, // setTimeout的ID，用clearTimeout清除
     speed: 20, // 初始转动速度
     times: 5, // 转动次数
@@ -170,36 +171,52 @@ var luck = {
     isClick: true,
     prizeData: [
         {
-			img: 'cjimg cj-quan100',
-			text: '恭喜获得 <span class="blue">巧匠课堂100元</span> 优惠券'
-		},
-        {
-            img: 'cjimg cj-sjb5',
-			text: '恭喜获得 <span class="blue">5</span> 设计币'
-		},
-        {
-            img: 'cjimg cj-ipad',
-			text: '恭喜获得 <span class="blue">iPad Pro</span>'
-		},
-        {
-            img: 'cjimg cj-sjb188',
-			text: '恭喜获得 <span class="blue">188设计币</span> 设计币'
-		},
-        {
-            img: 'cjimg cj-wacom',
-			text: '恭喜获得 <span class="blue">wacom数位板</span>'
+            img: 'cjimg cj-sjb888',
+			text: '恭喜获得 <span class="blue">888</span> 设计币'
 		},
         {
             img: 'cjimg cj-baozhen',
 			text: '恭喜获得 <span class="blue">小智抱枕(随机)</span>'
 		},
         {
-            img: 'cjimg cj-shu',
-			text: '恭喜获得 <span class="blue">设计书籍一本</span>'
-		},
-        {
             img: 'cjimg cj-sjb50',
 			text: '恭喜获得 <span class="blue">50</span> 设计币'
+		},
+        {
+            img: 'cjimg cj-ipad',
+			text: '恭喜获得 <span class="blue">iPad Pro</span>'
+		},
+		{
+		    img: 'cjimg cj-sjb5',
+		    text: '恭喜获得 <span class="blue">5设计币</span>'
+		},
+		{
+		    img: 'cjimg cj-no',
+		    text: '手抖了'
+		},
+        {
+            img: 'cjimg cj-wacom',
+			text: '恭喜获得 <span class="blue">wacom数位板</span>'
+		},
+        {
+            img: 'cjimg cj-gongzai',
+			text: '恭喜获得 <span class="blue">小致毛绒公仔</span>'
+		},
+		{
+		    img: 'cjimg cj-sjb28',
+		    text: '恭喜获得 <span class="blue">28</span> 设计币'
+		},
+		{
+		    img: 'cjimg cj-shu',
+		    text: '恭喜获得 <span class="blue">设计书籍一本（随机）</span>'
+		},
+		{
+		    img: 'cjimg cj-sjb2',
+		    text: '恭喜获得 <span class="blue">2</span> 设计币'
+		},
+		{
+		    img: 'cjimg cj-quan100',
+		    text: '恭喜获得 <span class="blue">巧匠课堂100元</span> 优惠券'
 		},
     ],
     init: function(id) {
@@ -235,45 +252,49 @@ function roll() {
     if (luck.times > luck.cycle + 10 && luck.prize == luck.index) {
         clearTimeout(luck.timer);
 		luck.times = 0;
-		luck.isClick = true;
+		setTimeout(function() {
+			luck.isClick = true;
 
-		// 中奖弹出窗
-		$('.popup-prize').find('.cjimg').attr('class', luck.prizeData[luck.prize].img);
-		$('.popup-prize').find('.text').html(luck.prizeData[luck.prize].text);
-		var link;
-		if (luck.prize == 1) {
-			// 中5设计币
-			$('.qd-sjb span').text(+$('.qd-sjb span').text() + 5);
-			link = '兑换商场.html';
-		}
-		else if (luck.prize == 3) {
-		    // 中188设计币
-		    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 188);
-		    link = '兑换商场.html';
-		}
-		else if (luck.prize == 7) {
-		    // 中50设计币
-		    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 50);
-		    link = '兑换商场.html';
-		}
-		else if (luck.prize == 0) {
-			// 中优惠券
-			link = 'https://www.qiaojiang.tv/';
-		}
-		else {
-			// 中实物 没有收货地址
-			// $('.popup-shinfos').show();
-			// 中实物 有收货地址
-			$('.popup-shdz').show();
-			return false;
-		}
-		// 按钮显示文字
-		if (+$('.qd-sjb span').text() >= 20) {
-		    $('.popup-prize').find('.btn-sure').html('去使用').attr('href', link);
-		} else {
-		    $('.popup-prize').find('.btn-sure').html('赚取设计币').attr('href', '签到有礼.html');
-		}
-		$('.popup-prize').show();
+			// 中奖弹出窗
+			$('.popup-prize').find('.cjimg').attr('class', luck.prizeData[luck.prize].img);
+			$('.popup-prize').find('.text').html(luck.prizeData[luck.prize].text);
+			var link;
+			if (luck.prize == 0) {
+			    // 中888设计币
+			    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 888);
+			    link = '兑换商场.html';
+			} else if (luck.prize == 2) {
+			    // 中50设计币
+			    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 50);
+			    link = '兑换商场.html';
+			} else if (luck.prize == 4) {
+			    // 中5设计币
+			    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 5);
+			    link = '兑换商场.html';
+			} else if (luck.prize == 5) {
+				// 中5设计币
+				link = 'javascript:;'
+			} else if (luck.prize == 0) {
+			    // 中优惠券
+			    link = 'https://www.qiaojiang.tv/';
+			} else {
+			    // 中实物 没有收货地址
+			    // $('.popup-shinfos').show();
+			    // 中实物 有收货地址
+			    $('.popup-shdz').show();
+			    return false;
+			}
+			// 按钮显示文字
+			if (luck.prize == 5) {
+				$('.popup-prize').one('.btn-sure').hide();
+			}
+			else if (+$('.qd-sjb span').text() >= 20) {
+			    $('.popup-prize').find('.btn-sure').html('去使用').attr('href', link);
+			} else {
+			    $('.popup-prize').find('.btn-sure').html('赚取设计币').attr('href', '签到有礼.html');
+			}
+			$('.popup-prize').show();
+		}, 1000)
 	}
 	else {
         if (luck.times < luck.cycle) {

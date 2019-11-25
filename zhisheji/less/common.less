@@ -5715,13 +5715,25 @@ body .bd_weixin_popup {
 	bottom: 0;
 	width: 100%;
 	line-height: 60px;
-	background: @blue;
+	background: #fff;
 	font-size: 16px;
+	color: #333;
 	text-align: center;
 	z-index: 980;
+	.box-shadow(0, 0, 5px, rgba(0, 0, 0,.3));
 	a {
-		.dis(b);
+		.dis(ib);
+		vertical-align: middle;
+		width: 130px;
+		line-height: 36px;
+		margin: -3px 0 0 65px;
+		font-size: 14px;
 		color: #fff;
+		background: @blue;
+		.bdr(4px);
+		&:hover {
+			background: @blue-h;
+		}
 	}
 }
 .fixed-wechat {
