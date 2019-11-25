@@ -77,6 +77,7 @@ $(function() {
 
 	// 抽奖
 	luck.init('luck');
+	var prizeI = 4;
 	$('#prize-btn').on('click', function() {
 		if (!luck.isClick) {
 			return false;
@@ -86,8 +87,9 @@ $(function() {
 			luck.isClick = false;
 	        $('.qd-sjb span').text($('.qd-sjb span').text() - 20);
 			luck.speed = 100;
-			// luck.prize = parseInt(Math.random() * 8); //中奖位置0~7顺时针
-			luck.prize = 5;
+			// luck.prize = parseInt(Math.random() * 12); //中奖位置0~11顺时针
+			luck.prize = prizeI;
+			prizeI++;
 	        roll();
 	        return false;
 		}
@@ -272,9 +274,17 @@ function roll() {
 			    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 5);
 			    link = '兑换商场.html';
 			} else if (luck.prize == 5) {
-				// 中5设计币
-				link = 'javascript:;'
-			} else if (luck.prize == 0) {
+			    // 手抖了
+			    link = 'javascript:;'
+			} else if (luck.prize == 8) {
+			    // 中28设计币
+			    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 28);
+			    link = '兑换商场.html';
+			} else if (luck.prize == 10) {
+			    // 中2设计币
+			    $('.qd-sjb span').text(+$('.qd-sjb span').text() + 2);
+			    link = '兑换商场.html';
+			} else if (luck.prize == 11) {
 			    // 中优惠券
 			    link = 'https://www.qiaojiang.tv/';
 			} else {
@@ -284,13 +294,20 @@ function roll() {
 			    $('.popup-shdz').show();
 			    return false;
 			}
+
 			// 按钮显示文字
 			if (luck.prize == 5) {
-				$('.popup-prize').one('.btn-sure').hide();
+				$('.popup-prize').find('.btn-sure').html('再抽一次').attr('href', link);
+				$('body').on('click', '.popup-prize .btn-sure', function() {
+					$('.popup-prize').hide();
+				});
 			}
 			else if (+$('.qd-sjb span').text() >= 20) {
-			    $('.popup-prize').find('.btn-sure').html('去使用').attr('href', link);
-			} else {
+				$('.popup-prize').find('.btn-sure').html('去使用').attr('href', link);
+				$('body').off('click', '.popup-prize .btn-sure');
+			}
+			else {
+				$('body').off('click', '.popup-prize .btn-sure');
 			    $('.popup-prize').find('.btn-sure').html('赚取设计币').attr('href', '签到有礼.html');
 			}
 			$('.popup-prize').show();
