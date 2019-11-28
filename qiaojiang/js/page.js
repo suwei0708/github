@@ -58,9 +58,7 @@ $(function() {
             generateNextPrev: true,
             play: 3000,
             pause: 2500,
-			hoverPause: true,
-			next: 'qj-youfanye',
-			prev: 'qj-zuofanye'
+            hoverPause: true
         });
     }
 
