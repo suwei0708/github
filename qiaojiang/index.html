@@ -7044,10 +7044,10 @@
 		    }
 		</style>
 
-		<div class="popup-shuang1">
+		<div class="popup-shuang1" style="display: none">
 		    <img src="images/shuang112-1.png" alt="">
 		</div>
-		<div class="popup-shuang2">
+		<div class="popup-shuang2" style="display: none">
 		    <div class="wrap">
 		        <a href="#" target="_blank">
 		            <img class="bg-img" src="images/shuang112-2.png" alt="">
@@ -7057,6 +7057,39 @@
 		    <div class="close"><span class="qjfont qj-guanbi1"></span></div>
 		</div>
 		<!-- 双11浮窗 end -->
+
+		<!-- 奖学金浮窗 start -->
+		<style>
+		    .popup-jiangxuejin {
+		        position: fixed;
+		        left: 0;
+		        bottom: 100px;
+		        z-index: 999;
+			}
+			.popup-jiangxuejin span {
+				position: absolute;
+				top: -14px;
+				right: 33px;
+				font-size: 22px;
+				color: #aeaeae;
+				cursor: pointer;
+				-webkit-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+				-moz-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+				-ms-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+				transition: all .3s cubic-bezier(.215, .61, .355, 1);
+			}
+			.popup-jiangxuejin span:hover {
+				-webkit-transform: rotate(180deg);
+				-moz-transform: rotate(180deg);
+				-ms-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+		</style>
+		<div class="popup-jiangxuejin">
+			<span class="qjfont qj-guanbi1" onclick="$('.popup-jiangxuejin').hide();"></span>
+		    <a href="#"><img src="images/popup-jiangxuejin.png" alt=""></a>
+		</div>
+		<!-- 奖学金浮窗 end -->
 
 		<div class="mask" style="display: none"></div>
 
