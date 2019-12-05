@@ -7061,6 +7061,7 @@
 		<!-- 奖学金浮窗 start -->
 		<style>
 		    .popup-jiangxuejin {
+				display: none;
 		        position: fixed;
 		        left: 0;
 		        bottom: 100px;
@@ -7090,6 +7091,96 @@
 		    <a href="#"><img src="images/popup-jiangxuejin.png" alt=""></a>
 		</div>
 		<!-- 奖学金浮窗 end -->
+
+		<!--红包未拆弹窗 start -->
+		<style>
+		    .ztpopup-packet {
+		        display: none;
+		        position: fixed;
+		        top: 0;
+		        left: 0;
+		        z-index: 999;
+		        width: 100%;
+		        height: 100%;
+		        text-align: center;
+		        background: rgba(0, 0, 0, 0.8)
+		    }
+		    .ztpopup-packet .qj-guanbi1 {
+		        position: absolute;
+		        top: -26px;
+		        right: -26px;
+		        color: #a8a8a8;
+		        font-size: 22px;
+		        -webkit-transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
+		        -moz-transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
+		        -ms-transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
+		        transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
+		        cursor: pointer
+		    }
+		    .ztpopup-packet .qj-guanbi1:hover {
+		        -webkit-transform: rotate(180deg);
+		        -moz-transform: rotate(180deg);
+		        -ms-transform: rotate(180deg);
+		        transform: rotate(180deg)
+		    }
+		    .ztpopup-packet .ztpopup {
+		        position: absolute;
+		        top: 50%;
+		        left: 50%;
+		        width: 370px;
+		        height: 383px;
+		        margin: -191.5px 0 0 -185px;
+		        background: url(images/packet.png) no-repeat center 0;
+		        -webkit-border-radius: 4px;
+		        -ms-border-radius: 4px;
+		        -moz-border-radius: 4px;
+		        border-radius: 4px
+		    }
+		    .ztpopup-packet .text {
+		        padding: 218px 0 0;
+		        line-height: 34px;
+		        font-size: 22px;
+		        color: #fff
+		    }
+		    .ztpopup-packet p {
+		        line-height: 30px;
+		        font-size: 16px;
+		        color: #fff
+		    }
+		    .ztpopup-packet p span {
+		        color: #fcdd28
+		    }
+		    .ztpopup-packet .btn-chai {
+		        position: absolute;
+		        top: 63px;
+		        left: 50%;
+		        width: 90px;
+		        height: 90px;
+		        margin-left: -45px;
+		        line-height: 90px;
+		        font-size: 36px;
+		        color: #fff;
+		        background: #ffa800;
+		        -webkit-border-radius: 50%;
+		        -ms-border-radius: 50%;
+		        -moz-border-radius: 50%;
+		        border-radius: 50%;
+		        cursor: pointer;
+		        -webkit-transition: 1s ease-in-out;
+		        -moz-transition: 1s ease-in-out;
+		        -ms-transition: 1s ease-in-out;
+		        transition: 1s ease-in-out
+		    }
+		</style>
+		<div class="ztpopup-packet" style="display: block;" onclick="$(this).hide();$('.popup-jiangxuejin').show();">
+		    <div class="ztpopup" onclick="event.stopPropagation();">
+		        <div class="qjfont qj-guanbi1" onclick="$(this).parents('.ztpopup-packet').hide();$('.popup-jiangxuejin').show();"></div>
+		        <div class="text">恭喜你获得奖学金红包</div>
+		        <p>奖学金<span>可提现</span>哦</p>
+		        <a href="#" class="btn-chai">拆</a>
+		    </div>
+		</div>
+		<!--红包未拆弹窗 end -->
 
 		<div class="mask" style="display: none"></div>
 
@@ -7202,6 +7293,7 @@
 		        $('.countdown').html('已结束')
 		    });
 		</script>
+
 		<!--js调用 end -->
     </body>
 </html>
