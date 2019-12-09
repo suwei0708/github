@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>公告首页-巧匠学院</title>
+        <meta name="keywords" content="" />
+        <meta name="description" content="" />
+        <link rel="stylesheet" href="../css/page.css">
+    </head>
+    <body>
+        <!-- 头部 start -->
+        <div class="header">
+            <a href="#" class="logo fl">巧匠课堂</a>
+            <div class="fl nav">
+                <ul>
+                    <li><a href="index.html">首页</a></li>
+                    <li class="cur">
+                        <a href="列表页.html">全部课程<span class="qjfont qj-xiangxiajiantou"></span></a></a>
+                        <ul class="nav-sub">
+                            <li><a href="列表页.html">全部课程</a></li>
+                            <li><a href="列表页.html">学习路径</a></li>
+                            <li><a href="列表页.html">系列课程</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:;">软件入门<span class="qjfont qj-xiangxiajiantou"></span></a>
+                        <div class="nav-sub rjrm-sub">
+                            <ul class="fl">
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft1"></span>
+                                        <span class="name">Photoshop</span>
+                                    </a>
+                                    <p>ps新手入门</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft2"></span>
+                                        <span class="name">Illustrator</span>
+                                    </a>
+                                    <p>Ai新手入门</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft3"></span>
+                                        <span class="name">Cinema 4D</span>
+                                    </a>
+                                    <p>C4D新手入门</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft4"></span>
+                                        <span class="name">After Effects</span>
+                                    </a>
+                                    <p>AE新手入门</p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <span class="fl in1 soft5"></span>
+                                        <span class="name">Premiere</span>
+                                    </a>
+                                    <p>PR新手入门</p>
+                                </li>
+                            </ul>
+                            <div class="fr">
+                                <div class="kt-vip">
+                                    <span class="in1 in1-vip"></span>
+                                    <p><a href="#" class="fr btn">开通会员</a>巧匠VIP</p>
+                                </div>
+                                <div class="kc">
+                                    <p>共<span class="yellow">1588</span>课程<br><span class="yellow">45</span>万人已学习<br>投资自己才能逆袭未来</p>
+                                </div>
+                                <a href="#" class="more">更多入门课程<span class="in1 in1-arrow"></span></a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="经验文章首页.html">经验文章<span class="nico nico-new"></span></a>
+                    </li>
+                    <li class="nav-more"><a href="VIP特权.html">VIP特权</a></li>
+                    <li class="nav-more"><a href="关于巧匠">关于巧匠</a></li>
+                    <li>
+                        <a href="javascript:;">更多<span class="qjfont qj-xiangxiajiantou"></span></a>
+                        <ul class="nav-sub">
+                            <li class="nav-more"><a href="VIP特权.html">VIP特权</a></li>
+                            <li class="nav-more"><a href="关于巧匠">关于巧匠</a></li>
+                            <li><a href="需求页-我的需求.html">需求</a></li>
+                            <li><a href="讲师列表.html">老师</a></li>
+                            <li><a href="学员作品.html">学员作品</a></li>
+                            <li><a href="QQ群联盟.html">QQ群联盟</a></li>
+                            <li><a href="公告首页.html">公告</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="fl search">
+                <input type="text" class="fl txt" placeholder="搜索感兴趣的课程/讲师">
+                <button class="fl btn"><span class="qjfont qj-fangdajing"></span></button>
+                <div class="search-tip">
+                    <dl class="search-tip-his">
+                        <dt><a href="javascript:;" class="fr clear-his"><span class="qjfont qj-shanchu"></span></a>历史搜索</dt>
+                        <dd><a href="#">PS合成教程</a></dd>
+                        <dd><a href="#">年货节</a></dd>
+                        <dd><a href="#">春节banner</a></dd>
+                    </dl>
+                    <dl class="search-tip-hot">
+                        <dt>热门搜索</dt>
+                        <dd><a href="#">PS合成教程</a></dd>
+                        <dd><a href="#">年货节</a></dd>
+                        <dd><a href="#">春节banner</a></dd>
+                        <dd><a href="#">春节banner</a></dd>
+                        <dd><a href="#">春节banner</a></dd>
+                    </dl>
+                </div>
+            </div>
+            <!-- 登录前 start -->
+            <div class="tips fr">
+                <a href="javascript:;" onclick="$('.popup-play').show();$('.mask').show();loginLine();" class="qq">登录</a>
+                <a href="javascript:;" onclick="$('.popup-play').show(); $('.popup-play').find('.popup-play-tit li:eq(1)').click();$('.mask').show();loginLine();" class="wx">注册</a>
+            </div>
+            <!-- 登录前 end -->
+            <!-- 登录后 非vip start -->
+            <div class="user-info fr" style="display: none">
+                <a href="消息页.html" class="fl message"><span class="ico4 ico-message"></span>消息<span class="num">30</span></a>
+                <a href="#" target="_blank" class="fl img">
+                    <img src="../images/drb-img.png" height="38" width="38" alt="">
+                    <!-- 非vip start -->
+                    <img src="../images/icon-novip.png" alt="vip" class="vip">
+                    <!-- 非vip end -->
+                    <!-- vip start -->
+                    <img src="../images/icon.png" alt="vip" class="vip">
+                    <!-- vip end -->
+                </a>
+                <div class="vip-tip">
+                    <!-- 非vip start -->
+                    <div class="fr kt">
+                        <div class="id">ID：5210</div>
+                        <a href="VIP页面.html" class="btn">我要开通</a>
+                    </div>
+                    <div class="info">
+                        <a href="#"><img src="../images/v-img2.jpg" height="52" width="52" alt="" class="vip-tip-img fl"></a>
+                        <div class="name"><a href="#" target="_blank">巧匠-潜云</a><img src="../images/icon-novip.png" alt="vip" class="vip"></div>
+                        <div class="date">你还不是会员</div>
+                    </div>
+                    <div class="privilege">
+                        <ul class="cl">
+                            <li>
+                                <a href="#"><span class="ico1803 ico1"></span>我的订阅<span class="dot dot-green"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico2"></span>我的消息<span class="dot dot-red"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico3"></span>观看历史</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico4"></span>我的收藏</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="exit"><a href="#" class="fr">退出</a><a href="#">个人中心</a></div>
+                    <!-- 非vip end -->
+
+                    <!-- vip start -->
+                    <div class="fr kt">
+                        <div class="id">ID：5210</div>
+                        <a href="VIP页面.html" class="btn btn-green">续费会员</a>
+                    </div>
+                    <div class="info">
+                        <a href="#"><img src="../images/v-img2.jpg" height="52" width="52" alt="" class="vip-tip-img fl"></a>
+                        <div class="name"><a href="#" target="_blank">巧匠-潜云</a><img src="../images/icon.png" alt="vip" class="vip"></div>
+                        <div class="date">2017-09-26到期</div>
+                    </div>
+                    <div class="privilege">
+                        <ul class="cl">
+                            <li>
+                                <a href="#"><span class="ico1803 ico1"></span>我的订阅<span class="dot dot-green"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico2"></span>我的消息<span class="dot dot-red"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico3"></span>观看历史</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico4"></span>我的收藏</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="exit"><a href="#" class="fr">退出</a><a href="#">个人中心</a></div>
+                    <!-- vip end -->
+
+                    <!-- 永久vip start -->
+                    <div class="fr kt">
+                        <div class="id">ID：5210</div>
+                    </div>
+                    <div class="info">
+                        <a href="#"><img src="../images/v-img2.jpg" height="52" width="52" alt="" class="vip-tip-img fl"></a>
+                        <div class="name"><a href="#" target="_blank">巧匠-潜云</a><img src="../images/icon.png" alt="vip" class="vip"></div>
+                        <div class="date">永久VIP</div>
+                    </div>
+                    <div class="privilege">
+                        <ul class="cl">
+                            <li>
+                                <a href="#"><span class="ico1803 ico1"></span>我的订阅<span class="dot dot-green"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico2"></span>我的消息<span class="dot dot-red"></span></a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico3"></span>观看历史</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="ico1803 ico4"></span>我的收藏</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="exit"><a href="#" class="fr">退出</a><a href="#">个人中心</a></div>
+                    <!-- 永久vip end -->
+                </div>
+            </div>
+            <!-- 登录后 非vip end -->
+            <a href="#" class="fr app">
+                <span class="nico nico-app"></span>
+                <span class="txt">巧匠APP<br><span class="yellow">立即下载</span></span>
+            </a>
+        </div>
+        <!-- 头部 end -->
+
+        <div class="wrap box-gg">
+            <!-- 公告 start -->
+            <div class="gg-tit">
+                <div class="fr">
+                    <button class="btn-bj"><span class="ico2 ico2-bj"></span>编辑</button>
+                    <a href="发布公告.html" class="btn-fb"><span class="ico2 ico2-fb"></span>发布</a>
+                </div>
+                <h1>标题标题标题标题标题标题标题标题标题</h1>
+                <div class="time">发布时间：2016-09-24</div>
+            </div>
+            <div class="gg-ct">
+                <p style="text-align: center"><img src="../images/index-sld1.jpg" width="1150" height="326" alt=""></p>
+                <p>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号<br>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号</p>
+                <p>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号<br>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号</p>
+                <p>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号<br>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号</p>
+            </div>
+
+            <!-- 评论区 start -->
+            <div class="wrap comment-box">
+                <div class="ny_pl">
+                    <h2>据说认真评论作品的以后都迅速成长为大神了（已有33个评价）</h2>
+                    <form method="post" autocomplete="off" class="design-tip-btn2" action="">
+                        <div class="ny_input">
+                            <p class="lead emoji_picker_container">
+                                <textarea name="" class="form_control textarea_control" rows="3" placeholder="请输入您的回复"></textarea>
+                            </p>
+                        </div>
+                        <div class="ny_pl_btn">
+                            <a href="javascript:void(0);" class="ny_pl_btn1">发表评论</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- 全部评论 start -->
+                <div class="ny_title">全部评论:(3)</div>
+                <!-- 单条评论 start -->
+                <div class="ny_pbox">
+                    <div class="cl">
+                        <div class="ny_pbox_img">
+                            <a href="space-uid-124556.html">
+                                <img src="http://www.zhisheji.com/uc_server/avatar.php?uid=124556&amp;size=small">
+                            </a>
+                        </div>
+                        <div class="ny_pbox_text">
+                            <h2>
+                                <a href="#">qdtld123</a>
+                                <span title="2016-6-17 09:50:30">7&nbsp;天前：</span>
+                            </h2>
+                            <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！</p>
+                            <!-- 回复某人评论 start -->
+                            <div class="ny_other">
+                                <span class="triangle-top"></span>
+                                <div class="ny_opl">
+                                    <form method="post" autocomplete="off" action="">
+                                        <h3>
+                                            <a href="#">做设计的面条</a> 回复:
+                                            <a href="#">qdtld123</a> 2016-06-17 10:23:54：
+                                        </h3>
+                                        <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。
+                                            <a href="javascript:;" class="ny_other_a ny_other_s" onclick="$(this).parent().next('.ny_other_sh').show()">[回复]</a>
+                                        </p>
+                                        <div class="ny_other_sh">
+                                            <div class="ny_input">
+                                                <p class="lead emoji-picker-container">
+                                                    <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                                </p>
+                                                <div class="gone_smile">
+                                                    <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                                </div>
+                                            </div>
+                                            <div class="ny_pl_btn">
+                                                <a href="javascript:void(0);" class="ny_pl_btn1 ny_other_h">发表评论</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="ny_opl">
+                                    <form method="post" autocomplete="off" action="">
+                                        <h3>
+                                            <a href="#">qdtld123</a> 回复:
+                                            <a href="#">做设计的面条</a> 2016-06-17 10:23:54：
+                                        </h3>
+                                        <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。
+                                            <a href="javascript:;" class="ny_other_a ny_other_s" onclick="$(this).parent().next('.ny_other_sh').show()">[回复]</a>
+                                        </p>
+                                        <div class="ny_other_sh">
+                                            <div class="ny_input">
+                                                <p class="lead emoji-picker-container">
+                                                    <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                                </p>
+                                                <div class="gone_smile">
+                                                    <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                                </div>
+                                            </div>
+                                            <div class="ny_pl_btn">
+                                                <a href="javascript:void(0);" class="ny_pl_btn1 ny_other_h">发表评论</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="ny_opl">
+                                    <form method="post" autocomplete="off" action="">
+                                        <h3>
+                                            <a href="#">做设计的面条</a> 回复:
+                                            <a href="#">qdtld123</a> 2016-06-17 10:23:54：
+                                        </h3>
+                                        <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。
+                                            <a href="javascript:;" class="ny_other_a ny_other_s" onclick="$(this).parent().next('.ny_other_sh').show()">[回复]</a>
+                                        </p>
+                                        <div class="ny_other_sh">
+                                            <div class="ny_input">
+                                                <p class="lead emoji-picker-container">
+                                                    <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                                </p>
+                                                <div class="gone_smile">
+                                                    <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                                </div>
+                                            </div>
+                                            <div class="ny_pl_btn">
+                                                <a href="javascript:void(0);" class="ny_pl_btn1 ny_other_h">发表评论</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- 回复某人评论 end -->
+                        </div>
+                    </div>
+
+                    <!-- 回复楼主评论 start -->
+                    <form method="post" autocomplete="off" action="#">
+                        <div class="ny_hf">
+                            <p class="ny_hf_p">
+                                <a href="javascript:void(0);" class="ny_s" onclick="$(this).parent().next('.ny_sh').show()">回复</a>
+                            |   <a href="#" title="0人支持">赞 <span> 0 </span></a>
+                            </p>
+                            <div class="ny_sh">
+                                <div class="ny_input">
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                    </p>
+                                    <div class="gone_smile">
+                                        <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                    </div>
+                                </div>
+                                <div class="ny_pl_btn">
+                                    <a href="javascript:void(0);" class="ny_pl_btn1 ny_h">发表评论</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 回复楼主评论 start -->
+                </div>
+                <!-- 单条评论 end -->
+                <!-- 单条评论 start -->
+                <div class="ny_pbox">
+                    <div class="cl">
+                        <div class="ny_pbox_img">
+                            <a href="space-uid-124556.html">
+                                <img src="http://www.zhisheji.com/uc_server/avatar.php?uid=124556&amp;size=small">
+                            </a>
+                        </div>
+                        <div class="ny_pbox_text">
+                            <h2>
+                                <a href="#">qdtld123</a>
+                                <span title="2016-6-17 09:50:30">7&nbsp;天前：</span>
+                            </h2>
+                            <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！</p>
+                        </div>
+                    </div>
+
+                    <!-- 回复楼主评论 start -->
+                    <form method="post" autocomplete="off" action="#">
+                        <div class="ny_hf">
+                            <p class="ny_hf_p">
+                                <a href="javascript:void(0);" class="ny_s" onclick="$(this).parent().next('.ny_sh').show()">回复</a>
+                            |   <a href="#" title="0人支持">赞 <span> 0 </span></a>
+                            </p>
+                            <div class="ny_sh">
+                                <div class="ny_input">
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                    </p>
+                                    <div class="gone_smile">
+                                        <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                    </div>
+                                </div>
+                                <div class="ny_pl_btn">
+                                    <a href="javascript:void(0);" class="ny_pl_btn1 ny_h">发表评论</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 回复楼主评论 start -->
+                </div>
+                <!-- 单条评论 end -->
+                <!-- 单条评论 start -->
+                <div class="ny_pbox">
+                    <div class="cl">
+                        <div class="ny_pbox_img">
+                            <a href="space-uid-124556.html">
+                                <img src="http://www.zhisheji.com/uc_server/avatar.php?uid=124556&amp;size=small">
+                            </a>
+                        </div>
+                        <div class="ny_pbox_text">
+                            <h2>
+                                <a href="#">qdtld123</a>
+                                <span title="2016-6-17 09:50:30">7&nbsp;天前：</span>
+                            </h2>
+                            <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！</p>
+                        </div>
+                    </div>
+
+                    <!-- 回复楼主评论 start -->
+                    <form method="post" autocomplete="off" action="#">
+                        <div class="ny_hf">
+                            <p class="ny_hf_p">
+                                <a href="javascript:void(0);" class="ny_s" onclick="$(this).parent().next('.ny_sh').show()">回复</a>
+                            |   <a href="#" title="0人支持">赞 <span> 0 </span></a>
+                            </p>
+                            <div class="ny_sh">
+                                <div class="ny_input">
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                    </p>
+                                    <div class="gone_smile">
+                                        <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                    </div>
+                                </div>
+                                <div class="ny_pl_btn">
+                                    <a href="javascript:void(0);" class="ny_pl_btn1 ny_h">发表评论</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 回复楼主评论 start -->
+                </div>
+                <!-- 单条评论 end -->
+                <!-- 单条评论 start -->
+                <div class="ny_pbox">
+                    <div class="cl">
+                        <div class="ny_pbox_img">
+                            <a href="space-uid-124556.html">
+                                <img src="http://www.zhisheji.com/uc_server/avatar.php?uid=124556&amp;size=small">
+                            </a>
+                        </div>
+                        <div class="ny_pbox_text">
+                            <h2>
+                                <a href="#">qdtld123</a>
+                                <span title="2016-6-17 09:50:30">7&nbsp;天前：</span>
+                            </h2>
+                            <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！</p>
+                        </div>
+                    </div>
+
+                    <!-- 回复楼主评论 start -->
+                    <form method="post" autocomplete="off" action="#">
+                        <div class="ny_hf">
+                            <p class="ny_hf_p">
+                                <a href="javascript:void(0);" class="ny_s" onclick="$(this).parent().next('.ny_sh').show()">回复</a>
+                            |   <a href="#" title="0人支持">赞 <span> 0 </span></a>
+                            </p>
+                            <div class="ny_sh">
+                                <div class="ny_input">
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                    </p>
+                                    <div class="gone_smile">
+                                        <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                    </div>
+                                </div>
+                                <div class="ny_pl_btn">
+                                    <a href="javascript:void(0);" class="ny_pl_btn1 ny_h">发表评论</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 回复楼主评论 start -->
+                </div>
+                <!-- 单条评论 end -->
+                <!-- 全部评论 end -->
+            </div>
+            <!-- 评论区 end -->
+            <!-- 翻页 start -->
+            <div class="commont-page">
+                <div class="page">
+                    <strong class="prev">上一页</strong>
+                    <strong class="cur">1</strong>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <strong>···</strong>
+                    <a href="#">130</a>
+                    <a href="#" class="next">下一页</a>
+                </div>
+            </div>
+            <!-- 翻页 end -->
+
+            <!-- 公告 end -->
+        </div>
+
+        <div class="wrap box-gg">
+            <!-- 公告 start -->
+            <div class="gg-tit">
+                <div class="fr">
+                    <button class="btn-bj"><span class="ico2 ico2-bj"></span>编辑</button>
+                    <a href="发布公告.html" class="btn-fb"><span class="ico2 ico2-fb"></span>发布</a>
+                </div>
+                <h1>标题标题标题标题标题标题标题标题标题</h1>
+                <div class="time">发布时间：2016-09-24</div>
+            </div>
+            <div class="gg-ct">
+                <p style="text-align: center"><img src="../images/index-sld1.jpg" width="1150" height="326" alt=""></p>
+                <p>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号<br>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号</p>
+                <p>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号<br>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号</p>
+                <p>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号<br>PSD素材以及资料： http://pan.baidu.com/s/1i36F481 密码: 5sa5更多精品视频关注微信号</p>
+            </div>
+
+            <!-- 评论区 start -->
+            <div class="wrap comment-box">
+                <div class="ny_pl">
+                    <h2>据说认真评论作品的以后都迅速成长为大神了（已有33个评价）</h2>
+                    <form method="post" autocomplete="off" class="design-tip-btn2" action="">
+                        <div class="ny_input">
+                            <p class="lead emoji_picker_container">
+                                <textarea name="" class="form_control textarea_control" rows="3" placeholder="请输入您的回复"></textarea>
+                            </p>
+                        </div>
+                        <div class="ny_pl_btn">
+                            <a href="javascript:void(0);" class="ny_pl_btn1">发表评论</a>
+                        </div>
+                    </form>
+                </div>
+                <!-- 全部评论 start -->
+                <div class="ny_title">全部评论:(3)</div>
+                <!-- 单条评论 start -->
+                <div class="ny_pbox">
+                    <div class="cl">
+                        <div class="ny_pbox_img">
+                            <a href="space-uid-124556.html">
+                                <img src="http://www.zhisheji.com/uc_server/avatar.php?uid=124556&amp;size=small">
+                            </a>
+                        </div>
+                        <div class="ny_pbox_text">
+                            <h2>
+                                <a href="#">qdtld123</a>
+                                <span title="2016-6-17 09:50:30">7&nbsp;天前：</span>
+                            </h2>
+                            <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！</p>
+                            <!-- 回复某人评论 start -->
+                            <div class="ny_other">
+                                <span class="triangle-top"></span>
+                                <div class="ny_opl">
+                                    <form method="post" autocomplete="off" action="">
+                                        <h3>
+                                            <a href="#">做设计的面条</a> 回复:
+                                            <a href="#">qdtld123</a> 2016-06-17 10:23:54：
+                                        </h3>
+                                        <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。
+                                            <a href="javascript:;" class="ny_other_a ny_other_s" onclick="$(this).parent().next('.ny_other_sh').show()">[回复]</a>
+                                        </p>
+                                        <div class="ny_other_sh">
+                                            <div class="ny_input">
+                                                <p class="lead emoji-picker-container">
+                                                    <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                                </p>
+                                                <div class="gone_smile">
+                                                    <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                                </div>
+                                            </div>
+                                            <div class="ny_pl_btn">
+                                                <a href="javascript:void(0);" class="ny_pl_btn1 ny_other_h">发表评论</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="ny_opl">
+                                    <form method="post" autocomplete="off" action="">
+                                        <h3>
+                                            <a href="#">qdtld123</a> 回复:
+                                            <a href="#">做设计的面条</a> 2016-06-17 10:23:54：
+                                        </h3>
+                                        <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。
+                                            <a href="javascript:;" class="ny_other_a ny_other_s" onclick="$(this).parent().next('.ny_other_sh').show()">[回复]</a>
+                                        </p>
+                                        <div class="ny_other_sh">
+                                            <div class="ny_input">
+                                                <p class="lead emoji-picker-container">
+                                                    <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                                </p>
+                                                <div class="gone_smile">
+                                                    <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                                </div>
+                                            </div>
+                                            <div class="ny_pl_btn">
+                                                <a href="javascript:void(0);" class="ny_pl_btn1 ny_other_h">发表评论</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+
+                                <div class="ny_opl">
+                                    <form method="post" autocomplete="off" action="">
+                                        <h3>
+                                            <a href="#">做设计的面条</a> 回复:
+                                            <a href="#">qdtld123</a> 2016-06-17 10:23:54：
+                                        </h3>
+                                        <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子。
+                                            <a href="javascript:;" class="ny_other_a ny_other_s" onclick="$(this).parent().next('.ny_other_sh').show()">[回复]</a>
+                                        </p>
+                                        <div class="ny_other_sh">
+                                            <div class="ny_input">
+                                                <p class="lead emoji-picker-container">
+                                                    <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                                </p>
+                                                <div class="gone_smile">
+                                                    <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                                </div>
+                                            </div>
+                                            <div class="ny_pl_btn">
+                                                <a href="javascript:void(0);" class="ny_pl_btn1 ny_other_h">发表评论</a>
+                                            </div>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <!-- 回复某人评论 end -->
+                        </div>
+                    </div>
+
+                    <!-- 回复楼主评论 start -->
+                    <form method="post" autocomplete="off" action="#">
+                        <div class="ny_hf">
+                            <p class="ny_hf_p">
+                                <a href="javascript:void(0);" class="ny_s" onclick="$(this).parent().next('.ny_sh').show()">回复</a>
+                            |   <a href="#" title="0人支持">赞 <span> 0 </span></a>
+                            </p>
+                            <div class="ny_sh">
+                                <div class="ny_input">
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                    </p>
+                                    <div class="gone_smile">
+                                        <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                    </div>
+                                </div>
+                                <div class="ny_pl_btn">
+                                    <a href="javascript:void(0);" class="ny_pl_btn1 ny_h">发表评论</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 回复楼主评论 start -->
+                </div>
+                <!-- 单条评论 end -->
+                <!-- 单条评论 start -->
+                <div class="ny_pbox">
+                    <div class="cl">
+                        <div class="ny_pbox_img">
+                            <a href="space-uid-124556.html">
+                                <img src="http://www.zhisheji.com/uc_server/avatar.php?uid=124556&amp;size=small">
+                            </a>
+                        </div>
+                        <div class="ny_pbox_text">
+                            <h2>
+                                <a href="#">qdtld123</a>
+                                <span title="2016-6-17 09:50:30">7&nbsp;天前：</span>
+                            </h2>
+                            <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！</p>
+                        </div>
+                    </div>
+
+                    <!-- 回复楼主评论 start -->
+                    <form method="post" autocomplete="off" action="#">
+                        <div class="ny_hf">
+                            <p class="ny_hf_p">
+                                <a href="javascript:void(0);" class="ny_s" onclick="$(this).parent().next('.ny_sh').show()">回复</a>
+                            |   <a href="#" title="0人支持">赞 <span> 0 </span></a>
+                            </p>
+                            <div class="ny_sh">
+                                <div class="ny_input">
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                    </p>
+                                    <div class="gone_smile">
+                                        <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                    </div>
+                                </div>
+                                <div class="ny_pl_btn">
+                                    <a href="javascript:void(0);" class="ny_pl_btn1 ny_h">发表评论</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 回复楼主评论 start -->
+                </div>
+                <!-- 单条评论 end -->
+                <!-- 单条评论 start -->
+                <div class="ny_pbox">
+                    <div class="cl">
+                        <div class="ny_pbox_img">
+                            <a href="space-uid-124556.html">
+                                <img src="http://www.zhisheji.com/uc_server/avatar.php?uid=124556&amp;size=small">
+                            </a>
+                        </div>
+                        <div class="ny_pbox_text">
+                            <h2>
+                                <a href="#">qdtld123</a>
+                                <span title="2016-6-17 09:50:30">7&nbsp;天前：</span>
+                            </h2>
+                            <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！</p>
+                        </div>
+                    </div>
+
+                    <!-- 回复楼主评论 start -->
+                    <form method="post" autocomplete="off" action="#">
+                        <div class="ny_hf">
+                            <p class="ny_hf_p">
+                                <a href="javascript:void(0);" class="ny_s" onclick="$(this).parent().next('.ny_sh').show()">回复</a>
+                            |   <a href="#" title="0人支持">赞 <span> 0 </span></a>
+                            </p>
+                            <div class="ny_sh">
+                                <div class="ny_input">
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                    </p>
+                                    <div class="gone_smile">
+                                        <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                    </div>
+                                </div>
+                                <div class="ny_pl_btn">
+                                    <a href="javascript:void(0);" class="ny_pl_btn1 ny_h">发表评论</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 回复楼主评论 start -->
+                </div>
+                <!-- 单条评论 end -->
+                <!-- 单条评论 start -->
+                <div class="ny_pbox">
+                    <div class="cl">
+                        <div class="ny_pbox_img">
+                            <a href="space-uid-124556.html">
+                                <img src="http://www.zhisheji.com/uc_server/avatar.php?uid=124556&amp;size=small">
+                            </a>
+                        </div>
+                        <div class="ny_pbox_text">
+                            <h2>
+                                <a href="#">qdtld123</a>
+                                <span title="2016-6-17 09:50:30">7&nbsp;天前：</span>
+                            </h2>
+                            <p>金嗓子没有和罗纳尔多签约，为此罗纳尔多状告金嗓子，金嗓子赔了几千万和罗纳尔尔多状告金嗓子，金嗓子赔了于是金嗓子这边才找的卡卡！</p>
+                        </div>
+                    </div>
+
+                    <!-- 回复楼主评论 start -->
+                    <form method="post" autocomplete="off" action="#">
+                        <div class="ny_hf">
+                            <p class="ny_hf_p">
+                                <a href="javascript:void(0);" class="ny_s" onclick="$(this).parent().next('.ny_sh').show()">回复</a>
+                            |   <a href="#" title="0人支持">赞 <span> 0 </span></a>
+                            </p>
+                            <div class="ny_sh">
+                                <div class="ny_input">
+                                    <p class="lead emoji-picker-container">
+                                        <textarea class="form-control textarea-control" rows="3" placeholder=""></textarea>
+                                    </p>
+                                    <div class="gone_smile">
+                                        <a href="javascript:;" class="fsml gone_smile_but"></a>
+                                    </div>
+                                </div>
+                                <div class="ny_pl_btn">
+                                    <a href="javascript:void(0);" class="ny_pl_btn1 ny_h">发表评论</a>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                    <!-- 回复楼主评论 start -->
+                </div>
+                <!-- 单条评论 end -->
+                <!-- 全部评论 end -->
+            </div>
+            <!-- 评论区 end -->
+            <!-- 翻页 start -->
+            <div class="commont-page">
+                <div class="page">
+                    <strong class="prev">上一页</strong>
+                    <strong class="cur">1</strong>
+                    <a href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">4</a>
+                    <strong>···</strong>
+                    <a href="#">130</a>
+                    <a href="#" class="next">下一页</a>
+                </div>
+            </div>
+            <!-- 翻页 end -->
+
+            <!-- 公告 end -->
+        </div>
+
+
+        <!--footer start -->
+        <div class="footer">
+            <div class="cl wrap">
+                <div class="ft-logo">
+                    <img src="../images/ft-logo.png" height="45" width="180" alt="巧匠学院">
+                </div>
+                <div class="ft-menu">
+                    <dl>
+                        <dt>频道</dt>
+                        <dd><a href="#">原创作品</a></dd>
+                        <dd><a href="#">经验教程</a></dd>
+                        <dd><a href="#">灵感欣赏</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>关于</dt>
+                        <dd><a href="#">关于我们</a></dd>
+                        <dd><a href="#">加入我们</a></dd>
+                        <dd><a href="#">免责声明</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>联系</dt>
+                        <dd><a href="#">联系我们</a></dd>
+                        <dd><a href="#">在线客服</a></dd>
+                    </dl>
+                </div>
+                <div class="ft-about">
+                    <img src="../images/ewm.jpg" height="132" width="132" alt="">
+                    <dl>
+                        <dt>平台简介</dt>
+                        <dd>致设计(zhisheji.com）,中国最大的电商设计师交流平台。最活跃的电商设计师学习交流分享社区。集原创作品+灵感图库+经验教程+设计专访+设计培训+社群活动为一体，全方位服务电商设计师。成立3年来，聚集20万电商设计师，定期线下设计沙龙...</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="ft-copy">
+            <div class="cl wrap">
+                <div class="fl">致设计 (中国最大的电商交流平台)© 2001-2015 Comsenz Inc</div>
+                <div class="fr">GMT+8, 2016-7-12 20:18, Processed in 0.100872 second(s), Total 7, Slave 7 queries, Gzip On, Memcache On.</div>
+            </div>
+        </div>
+        <!--footer end -->
+
+        <!--js调用 start -->
+        <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script src="../js/page.js" type="text/javascript"></script>
+        <!--js调用 end -->
+    </body>
+</html>
