@@ -1193,14 +1193,20 @@ body {
 				}
                 p {
 					.height(40px);
+					padding: 20px 15px 0;
 					.pos(a);
 					bottom: 0;
-					left: 15px;
+					left: 0;
 					z-index: 9;
 					width: 250px;
                     font-size: 15px;
 					color: #fff;
 					font-weight: 700;
+					background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.6) 100%);
+					background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.6) 100%);
+					background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.6) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#99000000', GradientType=0);
+					.text-e(1);
 				}
 				a:hover {
 					img {
@@ -1215,6 +1221,7 @@ body {
 	}
 
 	&-top {
+		padding: 0 0 25px;
 		.tit {
 			padding: 0 10px 0 20px;
 			line-height: 47px;
@@ -1395,22 +1402,21 @@ body {
 
     /* 最新课程 */
     &-zxkc {
-        padding: 10px 0;
-        background: #f8f8f8;
+        padding: 15px 0;
         min-width: @page-w;
         .ov(h);
 
         .tit {
-            margin: 0 0 22px;
+            margin: 0 0 15px;
             .cl();
 
             h2 {
                 line-height: 42px;
-                font-size: 30px;
+                font-size: 24px;
             }
             .h2 {
                 float: left;
-                font-size: 18px;
+                font-size: 24px;
                 margin-right: 32px;
                 &.cur {
                     color: @yellow;
@@ -1477,7 +1483,11 @@ body {
 
                 a {
                     color: #999;
-                    font-size: 14px;
+					font-size: 14px;
+					.qj-youjiantou {
+						font-size: 12px;
+						margin-left: 4px;
+					}
 
                     &:hover {
                         color: @yellow;
@@ -1520,7 +1530,8 @@ body {
                 float: left;
                 margin: 0 20px 20px 0;
                 background: #fff;
-                .bdr(5px);
+				.bdr(5px);
+				.anim;
                 &.first {
                     padding: 0;
                     .img {
@@ -1565,7 +1576,22 @@ body {
                         font-size: 16px;
                         .rotate(-45deg);
                     }
-                }
+				}
+				.times {
+					.pos(a);
+					bottom: 0;
+					left: 0;
+					z-index: 99;
+					width: 100%;
+					line-height: 40px;
+					padding: 0 14px;
+					color: #fff;
+					font-size: 12px;
+					background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.6) 100%);
+					background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.6) 100%);
+					background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.01) 1%, rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.6) 100%);
+					filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#00000000', endColorstr='#99000000', GradientType=0);
+				}
 
                 .img {
                     .pos(r);
@@ -1593,15 +1619,17 @@ body {
                 &:hover {
                     .img {
                         &:after {
-                            background: rgba(0 ,0 ,0, .1);
+                            background: rgba(0 ,0 ,0, .2);
                         }
-                    }
+					}
+					.translateY(-20px);
+					.box-shadow(0, 5px, 16px, rgba(187, 187, 187, .3));
                 }
                 .h3 {
                     .ov(h);
                     height: 23px;
                     line-height: 23px;
-                    margin: 20px 15px 12px;
+                    margin: 16px 15px 10px;
                     font-size: 16px;
                     h3 {
                         .dis(i);
@@ -1645,13 +1673,13 @@ body {
                 }
                 .info {
                     .cl();
-                    line-height: 25px;
-                    padding: 0 15px 16px;
+                    line-height: 22px;
+                    padding: 0 15px 13px;
                     font-size: 0;
                     span {
                         .dis(ib);
                         .ov(h);
-                        line-height: 23px;
+                        line-height: 22px;
                         vertical-align: top;
                         padding: 0 11px;
                         margin-right: 6px;
@@ -1672,7 +1700,7 @@ body {
                     .fr {
                         text-align: right;
                         color: #999;
-                        font-size: 12px;
+                        font-size: 14px;
                     }
                     .num {
                         padding: 0;
@@ -1689,10 +1717,9 @@ body {
                     }
                 }
                 .other {
-                    padding: 0 15px 12px;
+                    padding: 0 15px 14px;
                     line-height: 30px;
                     font-size: 14px;
-                    border-top: 1px solid #f8f8f8;
                     .cl();
                     .fr {
                         padding-top: 12px;
@@ -1710,144 +1737,9 @@ body {
         }
     }
 
-    /* 精品课程 */
-    &-jpkc {
-        background: #fff;
-        .wrap {
-            margin: 40px auto 20px;
-            .ov(h);
-        }
-        .ct {
-            width: 1350px;
-            a {
-                .dis(b);
-                float: left;
-                width: 267px;
-                margin-bottom: 30px;
-                &:hover {
-                    color: @yellow;
-                }
-            }
-            .icokc {
-                width: 60px;
-                height: 60px;
-                margin: -3px 20px 0 0;
-                &-ztsj {
-                    background-position: 0 0;
-                }
-                &-shsh {
-                    background-position: -60px 0;
-                }
-                &-sjll {
-                    background-position: -120px 0;
-                }
-                &-sjyx {
-                    background-position: -180px 0;
-                }
-                &-xtjc {
-                    background-position: -240px 0;
-                }
-                &-hchb {
-                    background-position: 0 -60px;
-                }
-                &-c4d {
-                    background-position: -60px -60px;
-                }
-                &-jrcx {
-                    background-position: -120px -60px;
-                }
-                &-txjq {
-                    background-position: -180px -60px;
-                }
-                &-xxlj {
-                    background-position: -240px -60px;
-                }
-            }
-        }
-    }
-
-    // 软件入门
-    &-rjrm {
-        padding: 28px 0 45px;
-        background: #fff;
-        min-width: @page-w;
-        border-bottom: 1px solid #f8f8f8;
-        .wrap {
-            overflow: hidden;
-        }
-        .tit {
-            line-height: 42px;
-            margin: 0 0 20px;
-            .cl();
-            h2 {
-                font-size: 18px;
-            }
-            .more {
-                color: #9a9a9a;
-                font-size: 14px;
-                &:hover {
-                    color: @yellow;
-                }
-            }
-        }
-        ul {
-            width: 1320px;
-            margin-left: -10px;
-        }
-        li {
-            .ov(h);
-            .pos(r);
-            float: left;
-            width: 84px;
-            margin: 0 81px 0 0;
-            font-size: 12px;
-            text-align: center;
-            .in1 {
-                width: 64px;
-                height: 62px;
-            }
-            .soft1 {
-                background-position: -192px -10px;
-            }
-            .soft2 {
-                background-position: -10px -170px;
-            }
-            .soft3 {
-                background-position: -276px -174px;
-            }
-            .soft4 {
-                background-position: -276px -92px;
-            }
-            .soft5 {
-                background-position: -276px -10px;
-            }
-            .soft6 {
-                background-position: -178px -170px;
-            }
-            .soft7 {
-                background-position: -108px -10px;
-            }
-            .soft8 {
-                background-position: -94px -170px;
-            }
-            p {
-                padding: 9px 0 0;
-                .height(25px);
-                color: #666;
-            }
-            a:hover {
-                color: @yellow;
-                p {
-                    color: @yellow;
-                }
-            }
-        }
-    }
-
     /* 直播课程 */
     &-zbkc {
         padding: 38px 0 45px;
-        background: #fff;
         min-width: @page-w;
         .ov(h);
         .wrap {
@@ -1909,14 +1801,6 @@ body {
                 }
             }
         }
-    }
-
-    /* VIP课程 */
-    &-vip {
-        .ov(h);
-        padding: 45px 0 30px;
-        background: #fff;
-        .ov(h);
     }
 
     /* 获取VIP */
@@ -2508,7 +2392,7 @@ body {
     }
     // 为你推荐
     &-wntj {
-        padding-bottom: 25px;
+        padding-bottom: 5px;
         .tit {
             margin-bottom: 7px;
         }
@@ -11429,47 +11313,30 @@ a.page-num{
     }
 }
 
-.imgmask {
-    .ov(h);
-    display: block;
-    position: relative;
-    &:after {
-        content: '';
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        -webkit-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-        -moz-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-        -ms-transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-        transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1) 0s;
-    }
-    &:hover {
-        &:after {
-            background: rgba(0, 0, 0 ,.3);
-        }
-    }
-}
 .list-xxlj {
     .cl();
-    padding-bottom: 80px;
     ul {
         margin-right: -20px;
     }
     li {
         float: left;
-        width: 393px;
+        width: 228px;
         margin-right: 20px;
-        img {
-            width: 393px;
-            height: 200px;
-            .bdr(4px);
+        .anim;
+        &:hover {
+            .translateY(-12px);
         }
+        img {
+            width: 228px;
+            height: 280px;
+            .bdr(4px);
+		}
     }
 }
 .box-xxlj {
-    margin-top: -40px;
+	padding: 50px 0 60px;
+	margin: 25px 0 0;
+	background: #fff;
 }
 
 .list-img {
