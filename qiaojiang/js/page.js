@@ -102,7 +102,7 @@ $(function() {
 	    var callbackIndex = 0;
 	    $('.slider-box2').mySilder({
 	        width: 53, //容器的宽度 必选参数!!!!!!
-	        height: 68, //容器的高度 必选参数!!!!!!
+	        height: 74, //容器的高度 必选参数!!!!!!
 	        auto: true, //是否自动滚动
 	        autoTime: 5, //自动滚动时，时间间隙，即多长滚动一次,单位(秒)
 	        direction: 'x', //滚动方向,默认X方向
@@ -147,17 +147,17 @@ $(function() {
         });
     }
 
-    // 名师介绍滑动效果
-    $('.box-msjs').on('mouseover', 'li', function() {
-            $(this).find('.post').stop().animate({
-                'height': '142px'
-            }, 400)
-        })
-        .on('mouseout', 'li', function() {
-            $(this).find('.post').stop().animate({
-                'height': '38px'
-            }, 200)
-        });
+    // 名师介绍滑动效果 改版去掉，采用css3动画
+    // $('.box-msjs').on('mouseover', 'li', function() {
+	// 	$(this).find('.post').stop().animate({
+	// 		'height': '142px'
+	// 	}, 400)
+	// })
+	// .on('mouseout', 'li', function() {
+	// 	$(this).find('.post').stop().animate({
+	// 		'height': '38px'
+	// 	}, 200)
+	// });
 
 
     // 滚动条
