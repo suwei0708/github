@@ -5,104 +5,243 @@
         <title>我的作业-巧匠学院</title>
         <meta name="keywords" content="" />
         <meta name="description" content="" />
-        <!-- 整站调用css start-->
-        <link rel="stylesheet" href="../css/page.css">
-        <!-- 整站调用css end-->
-        <link rel="stylesheet" href="../css/user.css">
+        <link rel="stylesheet" href="../css/gallery.css">
         <link rel="stylesheet" href="../css/iconfont.css">
+        <link rel="stylesheet" href="../css/page.css">
+        <link rel="stylesheet" href="../css/popup.css">
+        <link rel="stylesheet" href="../css/user.css">
     </head>
     <body>
         <!-- 头部 start -->
         <div class="header">
-            <a href="#" class="logo fl"><img src="../images/logo.png" height="50" width="193" alt="巧匠学院"></a>
-            <div class="fl nav">
-                <ul>
-                    <li><a href="../index.html">首页</a></li>
-                    <li><a href="../列表页.html">视频教程</a></li>
-                    <li>
-                        <a href="javascript:;">学习路径<span class="nico nico-new"></span><span class="nico nico-more"></span></a>
-                        <ul class="nav-sub">
-                            <li><a href="../学习路径.html">PS 零基础课程</a></li>
-                            <li><a href="../学习路径.html">AI 零基础课程</a></li>
-                            <li><a href="../学习路径.html">C4D 零基础课程</a></li>
-                            <li><a href="../学习路径.html">AE 零基础课程</a></li>
-                            <li><a href="../学习路径.html">手绘零基础课程</a></li>
-                            <li><a href="../学习路径.html">AU 零基础课程</a></li>
-                            <li><a href="../学习路径.html">PR 零基础课程</a></li>
-                            <li><a href="../学习路径.html">DW 零基础课程</a></li>
-                            <li><a href="../学习路径.html">3DMAX零基础课程</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="../VIP特权.html">VIP特权</a></li>
-                    <li><a href="../需求页-我的需求.html">需求</a></li>
-                    <li>
-                        <a href="javascript:;">更多<span class="nico nico-more"></span></a>
-                        <ul class="nav-sub">
-                            <li><a href="../讲师列表.html">老师</a></li>
-                            <li><a href="../学员作品.html">学员作品</a></li>
-                            <li><a href="../QQ群联盟.html">QQ群联盟</a></li>
-                            <li><a href="../公告首页.html">公告</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div>
-            <div class="fl search">
-                <input type="text" class="fl txt" placeholder="搜索感兴趣的课程/讲师">
-                <button class="fl btn"><span class="nico nico-so"></span></button>
-                <div class="search-tip">
-                    <dl class="search-tip-his">
-                        <dt><a href="javascript:;" class="fr clear-his"><span class="nico nico-his"></span></a>历史搜索</dt>
-                        <dd><a href="#">PS合成教程</a></dd>
-                        <dd><a href="#">年货节</a></dd>
-                        <dd><a href="#">春节banner</a></dd>
-                    </dl>
-                    <dl class="search-tip-hot">
-                        <dt>热门搜索</dt>
-                        <dd><a href="#">PS合成教程</a></dd>
-                        <dd><a href="#">年货节</a></dd>
-                        <dd><a href="#">春节banner</a></dd>
-                        <dd><a href="#">春节banner</a></dd>
-                        <dd><a href="#">春节banner</a></dd>
-                    </dl>
-                </div>
-            </div>
-            <!-- 登录前 start -->
-            <div class="tips fr" style="display: none">
-                <a href="用户登录.html" class="qq"><span class="bg-blue"><span class="nico nico-qq"></span></span>QQ登录</a>
-                <a href="用户登录.html" class="wx"><span class="bg-green"><span class="nico nico-wx"></span></span>微信登录</a>
-            </div>
-            <!-- 登录前 end -->
-            <!-- 登录后 非vip start -->
-            <div class="user-info fr">
-                <a href="消息页.html" class="fl message"><span class="ico4 ico-message"></span>消息<span class="num">30</span></a>
-                <a href="#" target="_blank" class="fl img">
-                    <img src="../images/drb-img.png" height="38" width="38" alt="">
-                    <!-- 非vip start -->
-                    <img src="../images/icon-novip.png" alt="vip" class="vip">
-                    <!-- 非vip end -->
-                    <!-- vip start -->
-                    <img src="../images/icon.png" alt="vip" class="vip">
-                    <!-- vip end -->
-                </a>
-                <div class="vip-tip vip-tip-lecturer">
-                    <div class="tit">讲师/管理员通用下拉</div>
+            <div class="wrap">
+                <a href="#" class="logo fl">巧匠课堂</a>
+
+                <!-- 导航 start -->
+                <div class="fl nav">
                     <ul>
-                        <li><a href="个人主页.html">个人中心</a></li>
-                        <li><a href="我的消息.html">我的消息</a></li>
-                        <li><a href="观看历史.html">观看历史</a></li>
-                        <li><a href="个人资料.html">个人资料</a></li>
-                        <li><a href="我的收藏.html">我的收藏</a></li>
-                        <li><a href="#">视频管理</a></li>
-                        <li><a href="#">课程管理</a></li>
-                        <li><a href="#">退出登录</a></li>
+                        <li class="cur"><a href="../main/index.html">首页</a></li>
+                        <li>
+                            <a href="../main/列表页.html">全部课程<span class="qjfont qj-xiangxiajiantou"></span></a></a>
+                            <ul class="nav-sub">
+                                <li><a href="../main/列表页.html">全部课程</a></li>
+                                <li><a href="../main/列表页.html">学习路径</a></li>
+                                <li><a href="../main/列表页.html">系列课程</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="javascript:;">软件入门<span class="qjfont qj-xiangxiajiantou"></span></a>
+                            <div class="nav-sub rjrm-sub">
+                                <ul class="fl">
+                                    <li>
+                                        <a href="#">
+                                            <span class="fl in1 soft1"></span>
+                                            <span class="name">Photoshop</span>
+                                        </a>
+                                        <p>ps新手入门</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="fl in1 soft2"></span>
+                                            <span class="name">Illustrator</span>
+                                        </a>
+                                        <p>Ai新手入门</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="fl in1 soft3"></span>
+                                            <span class="name">Cinema 4D</span>
+                                        </a>
+                                        <p>C4D新手入门</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="fl in1 soft4"></span>
+                                            <span class="name">After Effects</span>
+                                        </a>
+                                        <p>AE新手入门</p>
+                                    </li>
+                                    <li>
+                                        <a href="#">
+                                            <span class="fl in1 soft5"></span>
+                                            <span class="name">Premiere</span>
+                                        </a>
+                                        <p>PR新手入门</p>
+                                    </li>
+                                </ul>
+                                <div class="fr">
+                                    <div class="kt-vip">
+                                        <span class="in1 in1-vip"></span>
+                                        <p><a href="#" class="fr btn">开通会员</a>巧匠VIP</p>
+                                    </div>
+                                    <div class="kc">
+                                        <p>共<span class="yellow">1588</span>课程<br><span class="yellow">45</span>万人已学习<br>投资自己才能逆袭未来</p>
+                                    </div>
+                                    <a href="#" class="more">更多入门课程<span class="in1 in1-arrow"></span></a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="../main/经验文章首页.html">学员故事<span class="nico nico-new"></span></a>
+                        </li>
+                        <li class="nav-more"><a href="../main/VIP特权.html">VIP特权</a></li>
+                        <li class="nav-more"><a href="#">关于巧匠</a></li>
+                        <li>
+                            <a href="javascript:;"><span class="qjfont qj-gengduo"></span></a>
+                            <ul class="nav-sub">
+                                <li><a target="_blank" href="#">需求</a></li>
+                                <li><a href="#">老师</a></li>
+                                <li><a href="#">经验文章</a></li>
+                                <li class="nav-more"><a href="#">VIP特权</a></li>
+                                <li class="#"><a href="#">公告</a></li>
+                                <li class="nav-more"><a href="#">关于巧匠</a></li>
+                                <li><a href="#">QQ群联盟</a></li>
+                                <li><a href="#">加盟商</a></li>
+                            </ul>
+                        </li>
                     </ul>
                 </div>
+                <!-- 导航 end -->
+
+                <!-- 登录前 start -->
+                <div class="tips fr" style="display: none">
+                    <a href="javascript:;" onclick="$('.popup-play').show();$('.mask').show();" class="qq">登录</a>
+                    <a href="javascript:;" onclick="$('.popup-play').show();$('.mask').show();" class="wx">注册</a>
+                </div>
+                <!-- 登录前 end -->
+
+                <!-- 登录后 非vip start -->
+                <div class="user-info fr">
+                    <a href="#" class="fl message"><span class="qjfont qj-xiaoxi"></span>消息<span class="num">30</span></a>
+                    <a href="#" target="_blank" class="fl img">
+                        <img src="../images/drb-img.png" height="44" width="44" alt="">
+                        <!-- 非vip start -->
+                        <img src="../images/icon-novip.png" alt="vip" class="vip">
+                        <!-- 非vip end -->
+                        <!-- vip start -->
+                        <img src="../images/icon.png" alt="vip" class="vip">
+                        <!-- vip end -->
+                    </a>
+                    <div class="vip-tip">
+                        <!-- 非vip start -->
+                        <div class="fr kt">
+                            <div class="id">ID：5210</div>
+                            <a href="VIP页面.html" class="btn">我要开通</a>
+                        </div>
+                        <div class="info">
+                            <a href="#"><img src="../images/v-img2.jpg" height="52" width="52" alt="" class="vip-tip-img fl"></a>
+                            <div class="name"><a href="#" target="_blank">巧匠-潜云</a><img src="../images/icon-novip.png" alt="vip" class="vip"></div>
+                            <div class="date">你还不是会员</div>
+                        </div>
+                        <div class="privilege">
+                            <ul class="cl">
+                                <li>
+                                    <a href="#"><span class="ico1803 ico1"></span>我的订阅<span class="dot dot-green"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="ico1803 ico2"></span>我的消息<span class="dot dot-red"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="ico1803 ico3"></span>观看历史</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="ico1803 ico4"></span>我的收藏</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="exit"><a href="#" class="fr">退出</a><a href="#">个人中心</a></div>
+                        <!-- 非vip end -->
+
+                        <!-- vip start -->
+                        <div class="fr kt">
+                            <div class="id">ID：5210</div>
+                            <a href="VIP页面.html" class="btn btn-green">续费会员</a>
+                        </div>
+                        <div class="info">
+                            <a href="#"><img src="../images/v-img2.jpg" height="52" width="52" alt="" class="vip-tip-img fl"></a>
+                            <div class="name"><a href="#" target="_blank">巧匠-潜云</a><img src="../images/icon.png" alt="vip" class="vip"></div>
+                            <div class="date">2017-09-26到期</div>
+                        </div>
+                        <div class="privilege">
+                            <ul class="cl">
+                                <li>
+                                    <a href="#"><span class="ico1803 ico1"></span>我的订阅<span class="dot dot-green"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="ico1803 ico2"></span>我的消息<span class="dot dot-red"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="ico1803 ico3"></span>观看历史</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="ico1803 ico4"></span>我的收藏</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="exit"><a href="#" class="fr">退出</a><a href="#">个人中心</a></div>
+                        <!-- vip end -->
+
+                        <!-- 永久vip start -->
+                        <div class="fr kt">
+                            <div class="id">ID：5210</div>
+                        </div>
+                        <div class="info">
+                            <a href="#"><img src="../images/v-img2.jpg" height="52" width="52" alt="" class="vip-tip-img fl"></a>
+                            <div class="name"><a href="#" target="_blank">巧匠-潜云</a><img src="../images/icon.png" alt="vip" class="vip"></div>
+                            <div class="date">永久VIP</div>
+                        </div>
+                        <div class="privilege">
+                            <ul class="cl">
+                                <li>
+                                    <a href="#"><span class="ico1803 ico1"></span>我的订阅<span class="dot dot-green"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="ico1803 ico2"></span>我的消息<span class="dot dot-red"></span></a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="ico1803 ico3"></span>观看历史</a>
+                                </li>
+                                <li>
+                                    <a href="#"><span class="ico1803 ico4"></span>我的收藏</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="exit"><a href="#" class="fr">退出</a><a href="#">个人中心</a></div>
+                        <!-- 永久vip end -->
+                    </div>
+                </div>
+                <!-- 登录后 非vip end -->
+
+                <!-- 搜索 start -->
+                <div class="fr search">
+                    <input type="text" class="fl txt" id="searchkey" autocomplete="off" placeholder="搜索教程">
+                    <button class="fl btn" id="bsearch"><span class="qjfont qj-sousuo"></span></button>
+                    <div class="search-tip">
+                        <dl class="search-tip-his">
+                            <dt><a href="javascript:;" class="fr clear-his"><span class="qjfont qj-shanchu"></span></a>最近搜索</dt>
+                            <dd>
+                                <a href="#">PS合成教程</a>
+                                <a href="#">PS合成教程</a>
+                                <a href="#">字体设计</a>
+                                <a href="#">字体设计</a>
+                                <a href="#">字体设计</a>
+                                <a href="#">字体设计</a>
+                            </dd>
+                        </dl>
+                        <dl class="search-tip-hot">
+                            <dt>热门搜索</dt>
+                            <dd><a href="#"><span class="num bg-yellow">1</span>PS合成教程</a></dd>
+                            <dd><a href="#"><span class="num bg-yellow">2</span>年货节</a></dd>
+                            <dd><a href="#"><span class="num bg-yellow">3</span>春节banner</a></dd>
+                            <dd><a href="#"><span class="num bg-gray">4</span>春节banner</a></dd>
+                            <dd><a href="#"><span class="num bg-gray">5</span>春节banner</a></dd>
+                            <dd><a href="#"><span class="num bg-gray">6</span>春节banner</a></dd>
+                        </dl>
+                    </div>
+                </div>
+                <!-- 搜索 end -->
             </div>
-            <!-- 登录后 非vip end -->
-            <a href="#" class="fr app">
-                <span class="nico nico-app"></span>
-                <span class="txt">巧匠APP<br><span class="yellow">立即下载</span></span>
-            </a>
+
         </div>
         <!-- 头部 end -->
 
@@ -440,41 +579,50 @@
         <!--footer start -->
         <div class="footer">
             <div class="cl wrap">
-                <div class="ft-logo">
-                    <img src="../images/ft-logo.png" height="45" width="180" alt="巧匠学院">
-                </div>
                 <div class="ft-menu">
                     <dl>
-                        <dt>频道</dt>
-                        <dd><a href="#">原创作品</a></dd>
-                        <dd><a href="#">经验教程</a></dd>
-                        <dd><a href="#">灵感欣赏</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>关于</dt>
-                        <dd><a href="#">关于我们</a></dd>
-                        <dd><a href="#">加入我们</a></dd>
-                        <dd><a href="#">免责声明</a></dd>
-                    </dl>
-                    <dl>
-                        <dt>联系</dt>
+                        <dt>巧匠</dt>
+                        <dd><a href="#">关于巧匠</a></dd>
                         <dd><a href="#">联系我们</a></dd>
                         <dd><a href="#">在线客服</a></dd>
                     </dl>
+                    <dl>
+                        <dt>规则</dt>
+                        <dd><a href="#">服务条款</a></dd>
+                        <dd><a href="#">退款规则</a></dd>
+                        <dd><a href="#">版权声明</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>频道</dt>
+                        <dd><a href="#">视频教程</a></dd>
+                        <dd><a href="#">软件入门</a></dd>
+                        <dd><a href="#">学习路径</a></dd>
+                    </dl>
+                    <dl>
+                        <dt>学员</dt>
+                        <dd><a href="#">学员作品</a></dd>
+                        <dd><a href="#">学员专访</a></dd>
+                    </dl>
                 </div>
                 <div class="ft-about">
-                    <img src="../images/ewm.jpg" height="132" width="132" alt="">
-                    <dl>
-                        <dt>平台简介</dt>
-                        <dd>致设计(zhisheji.com）,中国最大的电商设计师交流平台。最活跃的电商设计师学习交流分享社区。集原创作品+灵感图库+经验教程+设计专访+设计培训+社群活动为一体，全方位服务电商设计师。成立3年来，聚集20万电商设计师，定期线下设计沙龙...</dd>
-                    </dl>
+                    <ul>
+                        <li><img src="../images/ecode-ftapp.jpg" alt="">
+                            <p>APP下载</p>
+                        </li>
+                        <li><img src="../images/ecode-ftgzh.jpg" alt="">
+                            <p>微信公众号</p>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </div>
         <div class="ft-copy">
             <div class="cl wrap">
-                <div class="fl">致设计 (中国最大的电商交流平台)© 2001-2015 Comsenz Inc</div>
-                <div class="fr">GMT+8, 2016-7-12 20:18, Processed in 0.100872 second(s), Total 7, Slave 7 queries, Gzip On, Memcache On.</div>
+                <div class="fl">巧匠课堂（qiaojiang.tv） 高端电商设计师培训品牌 © 2015-2017 备案号:京ICP备14060168号-4</div>
+                <div style="float: right"><a target="_blank" href="https://v.pinpaibao.com.cn/cert/site/?site=www.qiaojiang.tv&amp;at=realname"><img src="https://static.anquan.org/static/outer/image/aqkx_83x30.png" style="vertical-align: middle;margin-left: 10px;"></a></div>
+                <div class="fr">
+                    耗时:54毫秒 加载本页耗时 425 毫秒
+                </div>
             </div>
         </div>
         <!--footer end -->

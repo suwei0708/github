@@ -1068,7 +1068,8 @@ body {
     @h: 360px;
     .pos(r);
     width: @w;
-    height: @h;
+	height: @h;
+	margin: 0 auto;
 
     .slides_container {
         width: @w;
@@ -1118,7 +1119,7 @@ body {
         z-index: 990;
         text-indent: -999px;
         width: 52px;
-		height: 52px;
+		height: 52px !important;
 		margin-top: -36px;
 		.bdr(50%);
         cursor: pointer;
@@ -1584,7 +1585,6 @@ body {
 					.pos(a);
 					bottom: 0;
 					left: 0;
-					z-index: 99;
 					width: 100%;
 					line-height: 40px;
 					padding: 0 14px;
@@ -4786,7 +4786,8 @@ body {
 .popup-video {
     width: 726px;
     height: 465px;
-    margin-left: -726 / 2px;
+	margin-left: -726 / 2px;
+	padding: 0;
     .tit {
         padding-top: 0;
         height: 68px;
