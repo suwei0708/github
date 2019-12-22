@@ -1113,6 +1113,7 @@ body {
         }
     }
     .prev, .next {
+		.dis(n);
         position: absolute;
         top: 50%;
         .ov(h);
@@ -1137,7 +1138,12 @@ body {
         &:hover {
             background: rgba(0, 0, 0, .6) url(../images/iarrow-r.png) no-repeat center center;
         }
-    }
+	}
+	&:hover {
+		.prev, .next {
+			.dis(b);
+		}
+	}
 }
 
 .ico3-lz {
@@ -1485,6 +1491,11 @@ body {
             .more {
                 line-height: 42px;
 
+				.qj-shuaxin {
+					margin: 0 10px 0 0;
+					font-size: 15px;
+					color: #999;
+				}
                 a {
                     color: #999;
 					font-size: 14px;
@@ -1494,7 +1505,10 @@ body {
 					}
 
                     &:hover {
-                        color: @yellow;
+						color: @yellow;
+						.qj-shuaxin {
+							color: @yellow;
+						}
                     }
                 }
 
@@ -1844,8 +1858,17 @@ body {
             img {
                 width: 290px;
                 height: 145px;
-                .bdr(4px);
-            }
+				.bdr(4px);
+				.anim;
+			}
+			.imgmask {
+				.bdr(4px);
+				&:hover {
+					img {
+						.scale(1.05);
+					}
+				}
+			}
             strong {
                 .dis(b);
                 font-weight: 400;
@@ -2682,7 +2705,8 @@ body {
     text-align: center;
     z-index: 996;
     font-size: 12px;
-    .bdr(4px);
+	.bdr(4px);
+	border: 1px solid #f5f5f5;
 
     li {
 		.pos(r);
@@ -11230,7 +11254,8 @@ a.page-num{
         margin-right: 20px;
         .anim;
         &:hover {
-            .translateY(-12px);
+			.translateY(-12px);
+			.box-shadow(0, 5px, 16px, rgba(187, 187, 187, .3));
         }
         img {
             width: 228px;
