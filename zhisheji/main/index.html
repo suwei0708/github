@@ -1928,7 +1928,7 @@
 		<!-- 私信弹窗 end -->
 
 		<!-- 底部微信关注浮窗 start -->
-        <div class="fixed-wechat" style="display: block;">
+        <div class="fixed-wechat" style="display: none;">
 			<div class="popup-close" onclick="$('.fixed-wechat').remove();"><span class="icon-close"></span></div>
             <div class="wrap">
 				<dl class="fll">
@@ -1956,232 +1956,81 @@
         </div>
         <!-- 微信关注弹窗 end -->
 
-		<!-- 5周年悬浮广告 start -->
+		<!-- 2019年终总结浮窗 start -->
 		<style>
-		    .fixed-5zn {
-		        position: fixed;
-		        top: 50%;
-		        right: 123px;
-		        z-index: 980;
-		        margin-top: -86px;
-		        width: 162px;
-		    }
-		    .fixed-5zn img {
-		        width: 162px;
-		        height: 173px;
-		    }
-		</style>
-		<div class="fixed-5zn" style="display: none">
-		    <a href="http://www.zhisheji.com/yuanchuang/1049700.html" target="_blank">
-		        <img src="../images/fixed-5zn.png" width="162" alt="">
-		    </a>
-		</div>
-		<!-- 5周年悬浮广告 end -->
-
-		<!-- 2019十强底部浮窗 start -->
-		<style>
-			.fixed-sq {
-				height: 183px;
-				background: url(../images/2019shiqiang.png) no-repeat center 0;
-			}
-			.fixed-sq .wrap {
-				padding-top: 123px;
-			}
-			.fixed-sq p {
-				color: #ad9454;
-				font-size: 22px;
-			}
-			.fixed-sq .btn, .fixed-sq .btn:hover {
-				background: #ad9454;
-				color: #fff;
-			}
-			.fixed-sq .close {
-				margin-top: -6px;
-				color: #999;
-			}
-		</style>
-        <div class="fixed-sq" style="display: none;">
-            <div class="wrap">
-				<p>《 致设计2019年度十强设计师 》正在进行</p>
-                <a href="#" class="btn">我要参选<span class="icon-youjiantou"></span></a>
-                <a href="javascript:;" class="close" onclick="jQuery('.fixed-sq').animate({'left': '-100%'}, 500);"><span class="icon-close"></span></a>
-            </div>
-        </div>
-		<!-- 2019十强底部浮窗 end -->
-
-		<!-- 六周年底部浮窗 start -->
-		<style>
-			.fixed-6zn {
-				position: fixed;
-				bottom: 0;
-				left: 0;
-				z-index: 987;
-				width: 100%;
-				height: 100px;
-				background: #0084ff;
-			}
-			.fixed-6zn .wrap {
-				position: relative;
-				height: 100%;
-			}
-			.fixed-6zn .close {
-				position: absolute;
-				top: -55px;
-				right: -55px;
-				font-size: 28px;
-				color: #ccc
-			}
-			.fixed-6zn .close:hover {
-				color: #999
-			}
-			.fixed-6zn .img {
-				position: absolute;
-				top: -98px;
-				left: -136px;
-			}
-		</style>
-		<a href="http://www.zhisheji.com/6zn" target="_blank" class="fixed-6zn" style="display: none">
-		    <div class="wrap">
-				<img class="img" src="../images/fixed-6zn-figure.png" alt="">
-				<img src="../images/fixed-6zn.jpg" alt="">
-		        <div href="javascript:;" class="close" onclick="$('.fixed-6zn').animate({'left': '-100%'}, 500); return false;"><span class="icon-guanbi1"></span></div>
-		    </div>
-		</a>
-		<!-- 六周年底部浮窗 end -->
-
-		<!-- 六周年专属福利浮窗 start -->
-		<style>
-			.popup-6znzsfl .popup {
-				width: 526px;
-				height: 572px;
+			.popup-nianzhong1 .popup {
+				width: 384px;
+				height: 285px;
+				margin: -143px 0 0 -192px;
 				padding: 0;
-				margin: -250px 0 0 -220px;
-				background: url(../images/adv/popup-6znbg.png) no-repeat center 0;
+				background: url(../images/adv/popup-nianzhong1.png) no-repeat center 0;
 			}
-			.popup-6znzsfl .popup-close {
+			.popup-nianzhong1 .popup-close {
+				top: -26px;
+				right: -30px;
+				color: #da5618;
 				font-size: 40px;
-				color: #fff;
 			}
-			.popup-6znzsfl .btn {
-				position: absolute;
-				bottom: 40px;
-				left: 0;
-				margin-left: 60px;
-				font-size: 18px;
-				color: #4d2929;
-				text-align: center;
-				-webkit-border-radius: 52px;
-				border-radius: 52px;
+			.popup-nianzhong1 .popup-close:hover {
+				color: #ff6c27;
 			}
-			.popup-6znzsfl .btn strong {
-				position: relative;
-				z-index: 9;
+			.popup-nianzhong-btn {
 				display: block;
-				width: 320px;
-				height: 52px;
-				line-height: 52px;
-				-webkit-border-radius: 52px;
-				border-radius: 52px;
+				width: 180px;
+				height: 46px;
+				line-height: 46px;
+				margin: 220px 0 0 87px;
+				text-align: center;
+				font-size: 14px;
+				color: #dbf7d1;
+				background: #da5618;
+				background: -moz-linear-gradient(left, #da5618 0%, #186635 100%);
+				background: -webkit-linear-gradient(left, #da5618 0%, #186635 100%);
+				background: linear-gradient(to right, #da5618 0%, #186635 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da5618', endColorstr='#186635', GradientType=1);
 			}
-			.popup-6znzsfl .btn:link strong {
-				background: #ffdf48;
+			.popup-nianzhong-btn:hover {
+				background: #ff6c27;
+				background: -moz-linear-gradient(left, #ff6c27 0%, #1b9147 100%);
+				background: -webkit-linear-gradient(left, #ff6c27 0%, #1b9147 100%);
+				background: linear-gradient(to right, #ff6c27 0%, #1b9147 100%);
+				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6c27', endColorstr='#1b9147', GradientType=1);
 			}
-			.popup-6znzsfl .btn:link:after {
-				content: '';
-				position: absolute;
-				bottom: -8px;
-				left: 0;
-				width: 320px;
-				height: 52px;
-				background: #ff9600;
-				-webkit-border-radius: 52px;
-				border-radius: 52px;
+			.popup-nianzhong2 {
+				display: none;
+				position: fixed;
+				bottom: 50px;
+				left: 20px;
+				z-index: 988;
+				width: 278px;
+				height: 99px;
+				padding: 0;
+				background: url(../images/adv/popup-nianzhong2.png) no-repeat center 0;
 			}
-			.popup-6znzsfl .btn:visited strong {
-				background: #fff36d;
+			.popup-nianzhong2 .popup-nianzhong-btn {
+				margin: 27px 0 0 42px;
 			}
-			.popup-6znzsfl .btn:visited:after {
-				background: #0087ff;
+			.popup-nianzhong2 .popup-close {
+				top: -35px;
+				right: -35px;
+				font-size: 40px;
+				color: #da5618;
 			}
-			.popup-6znzsfl .btn:active strong {
-				background: #fff36d;
+			.popup-nianzhong2 .popup-close:hover {
+				color: #ff6c27;
 			}
 		</style>
-		<div class="popup-box popup-6znzsfl" style="display: none">
+		<div class="popup-box popup-nianzhong1" onclick="$('.popup-nianzhong2').show();" style="display: block;">
 			<div class="popup">
-				<span class="popup-close icon-guanbi1"></span>
-				<a href="#" class="btn"><strong>点击领取</strong></a>
+				<div class="popup-close" onclick="$('.popup-nianzhong2').show();"><span class="icon-guanbi1"></span></div>
+				<a href="#" class="popup-nianzhong-btn">查看我的年度总结</a>
 			</div>
 		</div>
-		<!-- 六周年专属福利浮窗 end -->
-
-		<!--专属福利小浮窗 start -->
-		<style>
-		    .popup-zsfl {
-				width: 163px;
-				height: 217px;
-				top: auto;
-				bottom: 43px;
-				left: 50px;
-				z-index: 960;
-				padding: 0;
-				margin: 0;
-				background: none;
-			}
-			.popup-zsfl .links {
-				display: block;
-				width: 163px;
-				height: 217px;
-				background: url(../images/adv/popup-zsfl.png) no-repeat center 0;
-			}
-		    .popup-zsfl .popup-close {
-		        width: 10px;
-		        height: 10px;
-		        top: 81px;
-		        right: 18px;
-			}
-		    .popup-zsfl .btn {
-		        position: absolute;
-		        bottom: -12px;
-		        left: 14px;
-		        font-size: 12px;
-		        color: #4d2929;
-				text-align: center;
-		        -webkit-border-radius: 36px;
-		        border-radius: 36px;
-		    }
-		    .popup-zsfl .btn strong {
-		        position: relative;
-		        z-index: 9;
-		        display: block;
-		        width: 120px;
-		        height: 36px;
-		        line-height: 36px;
-		        -webkit-border-radius: 36px;
-				border-radius: 36px;
-				background: #ffdf48;
-			}
-			.popup-zsfl .btn:after {
-				content: '';
-				position: absolute;
-				bottom: -8px;
-				left: 0;
-				width: 120px;
-				height: 36px;
-				background: #ff9600;
-				-webkit-border-radius: 36px;
-				border-radius: 36px;
-			}
-			.popup-zsfl .btn:hover strong {
-				background: #fff36d;
-			}
-		</style>
-		<div class="popup popup-zsfl" style="display: none">
-			<a href="#" class="links"></a>
-			<span class="popup-close" onclick="$('.popup-zsfl').hide();"></span>
-			<a href="#" class="btn"><strong>点击领取</strong></a>
-		</div>
-		<!--专属福利小浮窗 end -->
+		<div class="popup-nianzhong2">
+		        <div class="popup-close" onclick="$('.popup-nianzhong2').hide();"><span class="icon-guanbi1"></span></div>
+		        <a href="#" class="popup-nianzhong-btn">查看我的年度总结</a>
+		    </div>
+		<!-- 2019年终总结浮窗 end -->
 
         <!-- 通用js start-->
         <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
