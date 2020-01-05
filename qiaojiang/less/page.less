@@ -79,37 +79,37 @@ input::-moz-placeholder, textarea::-moz-placeholder { // Firefox19+
 @green-h: #48f579;
 @blue: #0097f8;
 @blue-h: #26a5ff;
-@yellow: #ffa800;
-@yellow-h: #ffba00;
+@yellow: #ff8a00;
+@yellow-h: #ffa800;
 @pink: #f85778;
 @pink-h: #ff3a3b;
 .btn {
     &-green {
         color: #fff;
-        background: #2ed25d !important;
+        background: @green !important;
         &:hover {
-            background: #21bb1d !important;
+            background: @green-h !important;
         }
     }
     &-yellow {
         color: #fff;
-        background: #ffa800 !important;
+        background: @yellow !important;
         &:hover {
-            background: #ffba00 !important;
+            background: @yellow-h !important;
         }
     }
     &-pink {
         color: #fff;
-        background: #f85778 !important;
+        background: @pink !important;
         &:hover {
-            background: #ff3a3b !important;
+            background: @pink-h !important;
         }
     }
     &-blue {
         color: #fff;
-        background: #0097f8 !important;
+        background: @blue !important;
         &:hover {
-            background: #0084ff !important;
+            background: @blue-h !important;
         }
     }
     &-gray {
@@ -1772,6 +1772,17 @@ body {
 						text-align: center;
 						font-size: 26px;
 					}
+					p {
+						.pos(a);
+						top: 80px;
+						left: 0;
+						z-index: 3;
+						width: 100%;
+						line-height: 1;
+						color: #fff;
+						text-align: center;
+						font-size: 15px;
+					}
 				}
 				.btn {
 					.pos(a);
@@ -1780,24 +1791,21 @@ body {
 					width: 242px;
 					line-height: 38px;
 					font-size: 14px;
-					color: #333;
-					background: #fff;
+					color: #fff;
+					background: @yellow;
 					.bdr(4px);
 					text-align: center;
+					font-weight: 700;
 					span {
 						.dis(ib);
 						vertical-align: middle;
 						margin: -2px 0 0 18px;
-						color: #999;
+						color: #fff;
 						font-size: 12px;
+						font-weight: 400;
 					}
 					&:hover {
-						color: @yellow;
-						font-weight: 700;
-						span {
-							font-weight: 400;
-							color: @yellow;
-						}
+						background: @yellow-h;
 					}
 				}
 				&:hover {
@@ -6684,7 +6692,7 @@ body {
             .bdr(3px);
             .box-shadow(0, 0, 20px, rgba(235, 235, 235, .3));
             &:hover {
-                border: 1px solid @y-h;
+                border: 1px solid @yellow-h;
             }
             .ico2 {
                 &-tj {
@@ -6728,7 +6736,7 @@ body {
                 line-height: 35px;
                 strong {
                     font-size: 22px;
-                    color: @y;
+                    color: @yellow;
                 }
                 del {
                     margin-left: 10px;
@@ -6751,17 +6759,17 @@ body {
                     color: #fff;
                     text-align: center;
                     .bdr(3px);
-                    background: @y;
+                    background: @yellow;
                     text-decoration: none;
                     margin-top: 8px;
                     &:hover {
-                        background: @y-h;
+                        background: @yellow-h;
                     }
                 }
                 .tip {
                     line-height: 34px;
                     font-size: 14px;
-                    color: @y;
+                    color: @yellow;
                 }
             }
         }
@@ -8985,8 +8993,6 @@ a.page-num{
 
 // 兑换入口
 .exchange {
-    @y: #ffa800;
-    @y-h: #ffba00;
     &-box {
         padding: 80px 0 150px;
     }
@@ -9034,12 +9040,12 @@ a.page-num{
             border: 0;
             cursor: pointer;
             color: #fff;
-            background: @y;
+            background: @yellow;
             font-size: 16px;
             font-weight: 700;
             .bdr(3px);
             &:hover {
-                background: @y-h;
+                background: @yellow-h;
             }
         }
     }
@@ -9093,7 +9099,7 @@ a.page-num{
                 line-height: 24px;
                 margin-top: 25px;
                 font-size: 22px;
-                color: @y;
+                color: @yellow;
                 font-weight: 700;
             }
             span {
@@ -9109,11 +9115,11 @@ a.page-num{
                 color: #fff;
                 text-align: center;
                 .bdr(3px);
-                background: @y;
+                background: @yellow;
                 text-decoration: none;
                 margin-top: 16px;
                 &:hover {
-                    background: @y-h;
+                    background: @yellow-h;
                 }
             }
         }
@@ -9139,11 +9145,11 @@ a.page-num{
             width: 160px;
             height: 44px;
             line-height: 44px;
-            background: @y;
+            background: @yellow;
             font-size: 16px;
             font-weight: 700;
             &:hover {
-                background: @y-h;
+                background: @yellow-h;
             }
         }
     }
@@ -9198,11 +9204,11 @@ a.page-num{
             width: 160px;
             height: 44px;
             line-height: 44px;
-            background: @y;
+            background: @yellow;
             font-size: 16px;
             font-weight: 700;
             &:hover {
-                background: @y-h;
+                background: @yellow-h;
             }
         }
     }
@@ -10119,7 +10125,7 @@ a.page-num{
                 border: 0;
                 cursor: pointer;
                 color: #fff;
-                background: @y;
+                background: @yellow;
                 font-size: 16px;
                 .bdr(3px);
             }
