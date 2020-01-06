@@ -1710,7 +1710,7 @@
         <!--弹窗砍价 end -->
 
         <!--弹窗限时优惠 start -->
-        <div class="popup-box popup-discount" style="display: none;">
+        <!-- <div class="popup-box popup-discount" style="display: none;">
             <div class="ico-close" onclick="$(this).off('click');$('.popup-discount').addClass('integral-right');$('.mask').hide();"></div>
             <img src="../images/popup-cong.png" class="img">
             <div class="tit">
@@ -1723,7 +1723,7 @@
                 <div class="sec"><span class="num-bg">0</span><span class="num-bg">0</span></div>
             </div>
             <a href="#" class="btn">享受优惠</a>
-        </div>
+        </div> -->
         <!--弹窗限时优惠 end -->
 
         <!--课程更新提醒 start -->
@@ -1817,7 +1817,7 @@
 		<!--弹窗入群交流 end -->
 
 		<!--弹窗限时优惠 start -->
-		<div class="popup-box popup-7vip" style="display: none">
+		<!-- <div class="popup-box popup-7vip" style="display: none">
 		    <div class="ico-close"></div>
 		    <img src="../images/popup-cong.png" class="img">
 		    <div class="tit">
@@ -1851,11 +1851,11 @@
 			    </li>
 			</ul>
 		    <a href="#" class="btn">领取素材</a>
-		</div>
+		</div> -->
 		<!--弹窗限时优惠 end -->
 
 		<!--弹窗缝10免费 start -->
-		<div class="popup-box popup-free" style="display: none">
+		<!-- <div class="popup-box popup-free" style="display: none">
 		    <div class="ico-close"></div>
 		    <img src="../images/popup-free.png" class="img">
 		    <div class="tit">
@@ -1863,10 +1863,347 @@
 		        <p>巧匠学习日，每月10号全站视频免费观看</p>
 		    </div>
 		    <a href="#" class="btn">开始学习</a>
-		</div>
+		</div> -->
 		<!--弹窗缝10免费 end -->
 
 		<div class="mask" style="display: none"></div>
+
+		<!-- 双11浮窗 start -->
+		<!-- <style>
+		    .popup-shuang1 {
+		        overflow: hidden;
+		        position: fixed;
+		        left: 0;
+		        bottom: 100px;
+		        z-index: 999;
+		        padding-left: 50px;
+		        -webkit-transform: translateX(-100%);
+		        -moz-transform: translateX(-100%);
+		        -ms-transform: translateX(-100%);
+		        transform: translateX(-100%);
+		    }
+		    .popup-shuang1 img {
+		        display: block;
+		        width: 218px;
+		        cursor: pointer;
+		    }
+		    .popup-shuang2 {
+		        overflow: hidden;
+		        position: fixed;
+		        left: 0;
+		        bottom: 0;
+		        z-index: 999;
+		        width: 100%;
+		    }
+		    .popup-shuang2 .bg-img {
+		        position: relative;
+		        top: 0;
+		        left: 50%;
+		        width: 1920px;
+		        max-width: none;
+		        margin-left: -960px;
+		    }
+		    .popup-shuang2 .wrap {
+		        position: relative;
+		    }
+		    .popup-shuang2 .close {
+		        position: relative;
+		        width: 1220px;
+		        margin: 0 auto;
+		        height: 0;
+		    }
+		    .popup-shuang2 img {
+		        position: absolute;
+		        bottom: 0;
+		        left: 50%;
+		        display: block;
+		        width: 1920px;
+		        max-width: none;
+		        margin: 0 0 0 -960px;
+		    }
+		    .popup-shuang2 .times {
+		        position: absolute;
+		        top: 114px;
+		        right: 245px;
+		        width: 340px;
+		        text-align: center;
+		        line-height: 60px;
+		        color: #fff;
+		        font-size: 30px;
+		        font-weight: 700;
+		    }
+		    .popup-shuang2 .qjfont {
+		        position: absolute;
+		        right: -66px;
+		        bottom: 160px;
+		        font-size: 30px;
+		        color: #ccc;
+		        cursor: pointer;
+		    }
+		    .popup-shuang2 .qjfont:hover {
+		        color: #999;
+		    }
+		    .left-out {
+		        -webkit-animation: left-out 1s ease-in-out 0s 1 both;
+		        -moz-animation: left-out 1s ease-in-out 0s 1 both;
+		        -ms-animation: left-out 1s ease-in-out 0s 1 both;
+		        animation: left-out 1s ease-in-out 0s 1 both;
+		    }
+		    @-moz-keyframes left-out {
+		        0% {
+		            opacity: 1;
+		            -moz-transform: translateX(0);
+		        }
+		        100% {
+		            -moz-transform: translateX(-100%);
+		        }
+		    }
+		    @-ms-keyframes left-out {
+		        0% {
+		            opacity: 1;
+		            -ms-transform: translateX(0);
+		        }
+		        100% {
+		            -ms-transform: translateX(-100%);
+		        }
+		    }
+		    @-webkit-keyframes left-out {
+		        0% {
+		            opacity: 1;
+		            -webkit-transform: translateX(0);
+		        }
+		        100% {
+		            -webkit-transform: translateX(-100%);
+		        }
+		    }
+		    @keyframes left-out {
+		        0% {
+		            transform: translateX(0);
+		        }
+		        100% {
+		            transform: translateX(-100%);
+		        }
+		    }
+
+		    .left-in {
+		        -webkit-animation: left-in 1s ease-in-out 0s 1 both;
+		        -moz-animation: left-in 1s ease-in-out 0s 1 both;
+		        -ms-animation: left-in 1s ease-in-out 0s 1 both;
+		        animation: left-in 1s ease-in-out 0s 1 both;
+		    }
+		    @-moz-keyframes left-in {
+		        0% {
+		            -moz-transform: translateX(-100%);
+		        }
+		        100% {
+		            -moz-transform: translateX(0);
+		        }
+		    }
+		    @-ms-keyframes left-in {
+		        0% {
+		            -ms-transform: translateX(-100%);
+		        }
+		        100% {
+		            -ms-transform: translateX(0);
+		        }
+		    }
+		    @-webkit-keyframes left-in {
+		        0% {
+		            -webkit-transform: translateX(-100%);
+		        }
+		        100% {
+		            -webkit-transform: translateX(0);
+		        }
+		    }
+		    @keyframes left-in {
+		        0% {
+		            transform: translateX(-100%);
+		        }
+		        100% {
+		            transform: translateX(0);
+		        }
+		    }
+
+		    .left-out2 {
+		        -webkit-animation: left-out2 1s ease-in-out 0s 1 both;
+		        -moz-animation: left-out2 1s ease-in-out 0s 1 both;
+		        -ms-animation: left-out2 1s ease-in-out 0s 1 both;
+		        animation: left-out2 1s ease-in-out 0s 1 both;
+		    }
+		    @-moz-keyframes left-out2 {
+		        0% {
+		            opacity: 1;
+		            -moz-transform: translateX(100%);
+		        }
+		        100% {
+		            -moz-transform: translateX(0);
+		        }
+		    }
+		    @-ms-keyframes left-out2 {
+		        0% {
+		            opacity: 1;
+		            -ms-transform: translateX(100%);
+		        }
+		        100% {
+		            -ms-transform: translateX(0);
+		        }
+		    }
+		    @-webkit-keyframes left-out2 {
+		        0% {
+		            opacity: 1;
+		            -webkit-transform: translateX(100%);
+		        }
+		        100% {
+		            -webkit-transform: translateX(0);
+		        }
+		    }
+		    @keyframes left-out2 {
+		        0% {
+		            transform: translateX(100%);
+		        }
+		        100% {
+		            transform: translateX(0);
+		        }
+		    }
+		</style>
+
+		<div class="popup-shuang1" style="display: none;">
+		    <img src="../images/shuang112-1.png" alt="">
+		</div>
+		<div class="popup-shuang2" style="display: none;">
+		    <div class="wrap">
+		        <a href="#" target="_blank">
+		            <img class="bg-img" src="../images/shuang112-2.png" alt="">
+		            <div class="times countdown" data-time="11/11/2019 00:00:00"><span class="days">00</span>天<span class="hours">00</span>时<span class="minutes">00</span>分<span class="seconds">00</span>秒</div>
+		        </a>
+		    </div>
+		    <div class="close"><span class="qjfont qj-guanbi1"></span></div>
+		</div> -->
+		<!-- 双11浮窗 end -->
+
+		<!-- 奖学金浮窗 start -->
+		<style>
+		    .popup-jiangxuejin {
+				display: none;
+		        position: fixed;
+		        left: 0;
+		        bottom: 100px;
+		        z-index: 999;
+			}
+			.popup-jiangxuejin span {
+				position: absolute;
+				top: -14px;
+				right: 33px;
+				font-size: 22px;
+				color: #aeaeae;
+				cursor: pointer;
+				-webkit-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+				-moz-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+				-ms-transition: all .3s cubic-bezier(.215, .61, .355, 1);
+				transition: all .3s cubic-bezier(.215, .61, .355, 1);
+			}
+			.popup-jiangxuejin span:hover {
+				-webkit-transform: rotate(180deg);
+				-moz-transform: rotate(180deg);
+				-ms-transform: rotate(180deg);
+				transform: rotate(180deg);
+			}
+		</style>
+		<div class="popup-jiangxuejin">
+			<span class="qjfont qj-guanbi1" onclick="$('.popup-jiangxuejin').hide();"></span>
+		    <a href="#"><img src="../images/popup-jiangxuejin.png" alt=""></a>
+		</div>
+		<!-- 奖学金浮窗 end -->
+
+		<!--红包未拆弹窗 start -->
+		<style>
+		    .ztpopup-packet {
+		        display: none;
+		        position: fixed;
+		        top: 0;
+		        left: 0;
+		        z-index: 999;
+		        width: 100%;
+		        height: 100%;
+		        text-align: center;
+		        background: rgba(0, 0, 0, 0.8)
+		    }
+		    .ztpopup-packet .qj-guanbi1 {
+		        position: absolute;
+		        top: -26px;
+		        right: -26px;
+		        color: #a8a8a8;
+		        font-size: 22px;
+		        -webkit-transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
+		        -moz-transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
+		        -ms-transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
+		        transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
+		        cursor: pointer
+		    }
+		    .ztpopup-packet .qj-guanbi1:hover {
+		        -webkit-transform: rotate(180deg);
+		        -moz-transform: rotate(180deg);
+		        -ms-transform: rotate(180deg);
+		        transform: rotate(180deg)
+		    }
+		    .ztpopup-packet .ztpopup {
+		        position: absolute;
+		        top: 50%;
+		        left: 50%;
+		        width: 370px;
+		        height: 383px;
+		        margin: -191.5px 0 0 -185px;
+		        background: url(../images/packet.png) no-repeat center 0;
+		        -webkit-border-radius: 4px;
+		        -ms-border-radius: 4px;
+		        -moz-border-radius: 4px;
+		        border-radius: 4px
+		    }
+		    .ztpopup-packet .text {
+		        padding: 218px 0 0;
+		        line-height: 34px;
+		        font-size: 22px;
+		        color: #fff
+		    }
+		    .ztpopup-packet p {
+		        line-height: 30px;
+		        font-size: 16px;
+		        color: #fff
+		    }
+		    .ztpopup-packet p span {
+		        color: #fcdd28
+		    }
+		    .ztpopup-packet .btn-chai {
+		        position: absolute;
+		        top: 63px;
+		        left: 50%;
+		        width: 90px;
+		        height: 90px;
+		        margin-left: -45px;
+		        line-height: 90px;
+		        font-size: 36px;
+		        color: #fff;
+		        background: #ffa800;
+		        -webkit-border-radius: 50%;
+		        -ms-border-radius: 50%;
+		        -moz-border-radius: 50%;
+		        border-radius: 50%;
+		        cursor: pointer;
+		        -webkit-transition: 1s ease-in-out;
+		        -moz-transition: 1s ease-in-out;
+		        -ms-transition: 1s ease-in-out;
+		        transition: 1s ease-in-out
+		    }
+		</style>
+		<div class="ztpopup-packet" onclick="$(this).hide();$('.popup-jiangxuejin').show();">
+		    <div class="ztpopup" onclick="event.stopPropagation();">
+		        <div class="qjfont qj-guanbi1" onclick="$(this).parents('.ztpopup-packet').hide();$('.popup-jiangxuejin').show();"></div>
+		        <div class="text">恭喜你获得奖学金红包</div>
+		        <p>奖学金<span>可提现</span>哦</p>
+		        <a href="#" class="btn-chai">拆</a>
+		    </div>
+		</div>
+		<!--红包未拆弹窗 end -->
 
 		<!-- 双11浮窗 start -->
 		<style>
@@ -2067,10 +2404,10 @@
 		    }
 		</style>
 
-		<div class="popup-shuang1" style="display: none">
+		<div class="popup-shuang1">
 		    <img src="../images/shuang112-1.png" alt="">
 		</div>
-		<div class="popup-shuang2" style="display: none">
+		<div class="popup-shuang2">
 		    <div class="wrap">
 		        <a href="#" target="_blank">
 		            <img class="bg-img" src="../images/shuang112-2.png" alt="">
@@ -2080,130 +2417,6 @@
 		    <div class="close"><span class="qjfont qj-guanbi1"></span></div>
 		</div>
 		<!-- 双11浮窗 end -->
-
-		<!-- 奖学金浮窗 start -->
-		<style>
-		    .popup-jiangxuejin {
-				display: none;
-		        position: fixed;
-		        left: 0;
-		        bottom: 100px;
-		        z-index: 999;
-			}
-			.popup-jiangxuejin span {
-				position: absolute;
-				top: -14px;
-				right: 33px;
-				font-size: 22px;
-				color: #aeaeae;
-				cursor: pointer;
-				-webkit-transition: all .3s cubic-bezier(.215, .61, .355, 1);
-				-moz-transition: all .3s cubic-bezier(.215, .61, .355, 1);
-				-ms-transition: all .3s cubic-bezier(.215, .61, .355, 1);
-				transition: all .3s cubic-bezier(.215, .61, .355, 1);
-			}
-			.popup-jiangxuejin span:hover {
-				-webkit-transform: rotate(180deg);
-				-moz-transform: rotate(180deg);
-				-ms-transform: rotate(180deg);
-				transform: rotate(180deg);
-			}
-		</style>
-		<div class="popup-jiangxuejin">
-			<span class="qjfont qj-guanbi1" onclick="$('.popup-jiangxuejin').hide();"></span>
-		    <a href="#"><img src="../images/popup-jiangxuejin.png" alt=""></a>
-		</div>
-		<!-- 奖学金浮窗 end -->
-
-		<!--红包未拆弹窗 start -->
-		<style>
-		    .ztpopup-packet {
-		        display: none;
-		        position: fixed;
-		        top: 0;
-		        left: 0;
-		        z-index: 999;
-		        width: 100%;
-		        height: 100%;
-		        text-align: center;
-		        background: rgba(0, 0, 0, 0.8)
-		    }
-		    .ztpopup-packet .qj-guanbi1 {
-		        position: absolute;
-		        top: -26px;
-		        right: -26px;
-		        color: #a8a8a8;
-		        font-size: 22px;
-		        -webkit-transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
-		        -moz-transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
-		        -ms-transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
-		        transition: all .3s cubic-bezier(.215, .61, .355, 1) 0s;
-		        cursor: pointer
-		    }
-		    .ztpopup-packet .qj-guanbi1:hover {
-		        -webkit-transform: rotate(180deg);
-		        -moz-transform: rotate(180deg);
-		        -ms-transform: rotate(180deg);
-		        transform: rotate(180deg)
-		    }
-		    .ztpopup-packet .ztpopup {
-		        position: absolute;
-		        top: 50%;
-		        left: 50%;
-		        width: 370px;
-		        height: 383px;
-		        margin: -191.5px 0 0 -185px;
-		        background: url(../images/packet.png) no-repeat center 0;
-		        -webkit-border-radius: 4px;
-		        -ms-border-radius: 4px;
-		        -moz-border-radius: 4px;
-		        border-radius: 4px
-		    }
-		    .ztpopup-packet .text {
-		        padding: 218px 0 0;
-		        line-height: 34px;
-		        font-size: 22px;
-		        color: #fff
-		    }
-		    .ztpopup-packet p {
-		        line-height: 30px;
-		        font-size: 16px;
-		        color: #fff
-		    }
-		    .ztpopup-packet p span {
-		        color: #fcdd28
-		    }
-		    .ztpopup-packet .btn-chai {
-		        position: absolute;
-		        top: 63px;
-		        left: 50%;
-		        width: 90px;
-		        height: 90px;
-		        margin-left: -45px;
-		        line-height: 90px;
-		        font-size: 36px;
-		        color: #fff;
-		        background: #ffa800;
-		        -webkit-border-radius: 50%;
-		        -ms-border-radius: 50%;
-		        -moz-border-radius: 50%;
-		        border-radius: 50%;
-		        cursor: pointer;
-		        -webkit-transition: 1s ease-in-out;
-		        -moz-transition: 1s ease-in-out;
-		        -ms-transition: 1s ease-in-out;
-		        transition: 1s ease-in-out
-		    }
-		</style>
-		<div class="ztpopup-packet" onclick="$(this).hide();$('.popup-jiangxuejin').show();">
-		    <div class="ztpopup" onclick="event.stopPropagation();">
-		        <div class="qjfont qj-guanbi1" onclick="$(this).parents('.ztpopup-packet').hide();$('.popup-jiangxuejin').show();"></div>
-		        <div class="text">恭喜你获得奖学金红包</div>
-		        <p>奖学金<span>可提现</span>哦</p>
-		        <a href="#" class="btn-chai">拆</a>
-		    </div>
-		</div>
-		<!--红包未拆弹窗 end -->
 
 		<div class="mask" style="display: none"></div>
 
