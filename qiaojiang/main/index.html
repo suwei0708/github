@@ -2003,10 +2003,10 @@
 				padding-left: 35px;
 				width: 257px;
 				height: 267px;
-		        /* -webkit-transform: translateX(-100%);
+		        -webkit-transform: translateX(-100%);
 		        -moz-transform: translateX(-100%);
 		        -ms-transform: translateX(-100%);
-		        transform: translateX(-100%); */
+		        transform: translateX(-100%);
 		    }
 		    .fixed-6zn1 img {
 		        display: block;
@@ -2212,11 +2212,13 @@
 		</div>
 		<div class="fixed-6zn2">
 		    <div class="wrap">
-		        <img class="bg-img" src="../images/adv/fixed-6zn2.png" alt="">
+				<a href="#">
+					<img class="bg-img" src="../images/adv/fixed-6zn2.png" alt="">
+					<div class="times countdown" data-time="2/17/2020 00:00:00">
+						<span class="days">00</span>天<span class="hours">00</span>时<span class="minutes">00</span>分<span class="seconds">00</span>秒
+					</div>
+				</a>
 		        <span class="qjfont qj-guanbi1"></span>
-		        <div class="times countdown" data-time="2/17/2020 00:00:00">
-		            <span class="days">00</span>天<span class="hours">00</span>时<span class="minutes">00</span>分<span class="seconds">00</span>秒
-		        </div>
 		    </div>
 		</div>
 		<!-- 6周年浮窗 end -->
@@ -2301,12 +2303,12 @@
 		<!-- 倒计时插件 -->
 		<script src="https://www.qiaojiang.tv/Public/Static/js/jquery.downCount.js"></script>
 		<script type="text/javascript">
-		    $('.fixed-6zn1').on('click', function() {
-		        $('.fixed-6zn1').removeClass('left-in').addClass('left-out');
-		        setTimeout(function() {
-		            $('.fixed-6zn2').removeClass('left-out').addClass('left-in');
-		        }, 1000);
-		    });
+		    // $('.fixed-6zn1').on('click', function() {
+		    //     $('.fixed-6zn1').removeClass('left-in').addClass('left-out');
+		    //     setTimeout(function() {
+		    //         $('.fixed-6zn2').removeClass('left-out').addClass('left-in');
+		    //     }, 1000);
+		    // });
 		    $('.fixed-6zn2').on('click', '.qj-guanbi1', function() {
 		        setTimeout(function() {
 		            $('.fixed-6zn1').removeClass('left-out').addClass('left-in');
