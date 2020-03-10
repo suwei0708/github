@@ -186,9 +186,11 @@ body {
 				height: 240px;
 				cursor: pointer;
 				.tags {
+					.dis(n);
 					.pos(a);
 					top: 0;
 					left: 0;
+					z-index: 99;
 					padding: 0 16px;
 					line-height: 30px;
 					font-size: 12px;
@@ -228,6 +230,9 @@ body {
 				}
 			}
 			&:hover {
+				.img .tags {
+					.dis(b);
+				}
 				.btn-box {
 					.dis(b);
 				}
