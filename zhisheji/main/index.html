@@ -58,28 +58,28 @@
             <!-- 导航 end -->
             <div id="loginhead">
                 <!-- 登录前 start -->
-                <div class="h-login fr" style="display: block">
+                <div class="h-login fr" style="display: none">
                     <ul class="fll">
                         <li><a href="javascript:;" class="btn-lg">登录</a></li>
                         <li><a href="javascript:;" class="btn-rgs">注册</a></li>
                     </ul>
                     <!-- <a href="javascript:;" class="fr btn-login" onclick="jQuery('.popup-establish').show();centerObj('.popup-establish .popup')">
                         <span class="ico icon-qq"></span><strong>快速登录</strong>
-					</a> -->
-					<div class="fr upload-box">
-					    <a href="#" class="btn-upload">
-					        <span class="ico icon-upload"></span>上传
-					    </a>
-					    <ul class="iup-list">
-					        <li><a href="#">原创作品</a></li>
-					        <li><a href="#">经验教程</a></li>
-					        <li><a href="#">设计欣赏</a></li>
-					    </ul>
-					</div>
+                    </a> -->
+                    <div class="fr upload-box">
+                        <a href="#" class="btn-upload">
+                            <span class="ico icon-upload"></span>上传
+                        </a>
+                        <ul class="iup-list">
+                            <li><a href="#">原创作品</a></li>
+                            <li><a href="#">经验教程</a></li>
+                            <li><a href="#">设计欣赏</a></li>
+                        </ul>
+                    </div>
                 </div>
                 <!-- 登录前 end -->
                 <!-- 登录后 start -->
-                <div class="h-user fr" style="display: none">
+                <div class="h-user fr" style="display: block">
                     <ul class="fll">
                         <li>
                             <a href="../user/我的关注-展开.html" class="img">
@@ -90,57 +90,67 @@
                         <li class="h-msg">
                             <a href="javascript:;" class="img">
                                 <span class="icon-msg"></span>
-                                <span class="num"></span>
+                                <span class="num">9</span>
                             </a>
                             <div class="h-msg-info">
                                 <div class="tt">
-                                    <ul>
-                                        <li><a class="cur" href="javascript:;">消息</a></li>
-                                        <li class="line"><a href="javascript:;">动态</a></li>
-                                    </ul>
+									<span>消息盒子</span>
                                 </div>
                                 <div class="list">
                                     <ul>
                                         <li>
                                             <a href="#">
                                                 <img src="../images/avatar.gif" height="34" width="34">
-                                                <spsan class="info">潜云关注了你</spsan>
+                                                <spsan class="info"><strong>潜云</strong> 赞了你的作品《作品的名称》</spsan>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <img src="../images/avatar.gif" height="34" width="34">
-                                                <span class="info">魏佺评论了你的原创作品《 天猫小黑盒 》</span>
+                                                <spsan class="info"><strong>潜云</strong> 关注了你</spsan>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <img src="../images/avatar.gif" height="34" width="34">
-                                                <span class="info">设计喵给你发了1条私信</span>
+                                                <spsan class="info"><strong>潜云</strong> 给你发来了一条私信</spsan>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <img src="../images/avatar.gif" height="34" width="34">
-                                            <span class="info">设计喵给你留言</span>
+                                                <spsan class="info"><strong>系统</strong> 你发布的作品《作品的名
+                                                    称》，被管理员设置为编辑精选</spsan>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <img src="../images/avatar.gif" height="34" width="34">
-                                                <span class="info">设计喵赞了你的作品《长得很可爱》</span>
+                                                <spsan class="info"><strong>系统</strong> 版本变更通知</spsan>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <img src="../images/avatar.gif" height="34" width="34">
-                                                <span class="info">设计喵赞了你的作品《长得很可爱》</span>
+                                                <spsan class="info"><strong>潜云</strong> 给你留言了</spsan>
                                             </a>
                                         </li>
                                         <li>
                                             <a href="#">
                                                 <img src="../images/avatar.gif" height="34" width="34">
-                                                <span class="info">设计喵赞了你的作品《长得很可爱》</span>
+                                                <spsan class="info"><strong>潜云</strong> 赞了你的作品《作品的名称》</spsan>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/avatar.gif" height="34" width="34">
+                                                <spsan class="info"><strong>潜云</strong> 关注了你</spsan>
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#">
+                                                <img src="../images/avatar.gif" height="34" width="34">
+                                                <spsan class="info"><strong>潜云</strong> 给你发来了一条私信</spsan>
                                             </a>
                                         </li>
                                     </ul>
@@ -151,7 +161,7 @@
                                         <p>空空如也 ~</p>
                                     </div>
                                 </div>
-                                <div class="more"><a href="#">全部消息</a></div>
+                                <div class="more"><a href="#">查看全部消息</a></div>
                             </div>
                         </li>
                         <li class="h-avatar">
@@ -250,7 +260,7 @@
         </div>
         <!-- 头部 end -->
         <div class="bg-white">
-            <!-- 轮播图 start -->
+			<!-- 轮播图 start -->
             <div id="sld">
                 <ul class="slides_container">
                     <li><a href="#"><img src="../images/banner.jpg" width="1220" height="340"/></a></li>
@@ -284,10 +294,11 @@
                 <div class="zsj-box">
                     <div class="tit">
                         <div class="fr">
-                            立即上传作品，开始你的致设计之旅吧！
-                            <div class="iup-box">
-                                <a class="btn" href="#">上传作品</a>
-                            </div>
+                            <div class="comment-scroll">
+								<ul>
+									<li><a href="#"><span class="icon-xiaoxi"></span><span>精彩评论</span>确认过眼神这绝对是一个大佬级别的人物，作品质量特别高而且很高产，已经关…</a></li>
+								</ul>
+							</div>
                         </div>
                         <h2><a href="javascript:;" class="cur">首页推荐</a></h2>
                         <h2><a href="fenlei/分类页-文章.html" target="_blank">编辑精选</a></h2>
@@ -1297,17 +1308,17 @@
 
         <!--右边悬浮 start -->
         <ul class="talk">
-			<li class="ecode">
-				<a href="http://www.qiaojiang.tv/app" target="_blank">
-					<img src="../images/dot.gif" alt="" class="dot">
-					<span class="ecode-box"><span class="icon-erweima"></span><br>公众号</span>
-			    </a>
-			    <div class="ecode-popbox">
-			        <img src="../images/ecode-wechat.png" width="118">
-			        <p>微信扫码关注</p>
-			        <p><span>随时接收作品推荐结果<br>评论通知等</span></p>
-			    </div>
-			</li>
+            <li class="ecode">
+                <a href="http://www.qiaojiang.tv/app" target="_blank">
+                    <img src="../images/dot.gif" alt="" class="dot">
+                    <span class="ecode-box"><span class="icon-erweima"></span><br>公众号</span>
+                </a>
+                <div class="ecode-popbox">
+                    <img src="../images/ecode-wechat.png" width="118">
+                    <p>微信扫码关注</p>
+                    <p><span>随时接收作品推荐结果<br>评论通知等</span></p>
+                </div>
+            </li>
             <li class="app">
                 <a href="#">
                     <span class="icon-app"></span>
@@ -1317,7 +1328,7 @@
             <li class="sign">
                 <a href="#">
                     <span class="icon-qiandao"></span>
-					<p>签到</p>
+                    <p>签到</p>
                 </a>
                 <a href="#" class="sign-box">
                     <span class="icon-shangcheng"></span>
@@ -1925,112 +1936,112 @@
                 </div>
             </div>
         </div>
-		<!-- 私信弹窗 end -->
+        <!-- 私信弹窗 end -->
 
-		<!-- 底部微信关注浮窗 start -->
+        <!-- 底部微信关注浮窗 start -->
         <div class="fixed-wechat" style="display: none;">
-			<div class="popup-close" onclick="$('.fixed-wechat').remove();"><span class="icon-close"></span></div>
+            <div class="popup-close" onclick="$('.fixed-wechat').remove();"><span class="icon-close"></span></div>
             <div class="wrap">
-				<dl class="fll">
-					<dt>欢迎来到致设计</dt>
-					<dd>百万电商设计师交流平台，展示你的作品，找到适合你的新灵感。</dd>
-				</dl>
-				<div class="fr">微信扫码关注即可登录<span class="icon-wx" onclick="$('.popup-wechat').show();"></span></div>
+                <dl class="fll">
+                    <dt>欢迎来到致设计</dt>
+                    <dd>百万电商设计师交流平台，展示你的作品，找到适合你的新灵感。</dd>
+                </dl>
+                <div class="fr">微信扫码关注即可登录<span class="icon-wx" onclick="$('.popup-wechat').show();"></span></div>
             </div>
         </div>
         <!-- 底部微信关注浮窗 end -->
 
         <!-- 微信关注弹窗 start -->
-		<div class="popup-box popup-wechat">
-			<div class="popup">
-				<div class="popup-close"><span class="icon-close"></span></div>
-				<div class="popup-ct">
-					<img src="../images/ecode-bindwx.png" alt="">
-					<p><span class="icon-wx"></span>微信扫码关注即可登录</p>
-				</div>
-				<div class="other-login">
-				    <a href="javascript:;"><span class="icon-qq2"></span>QQ登录</a>
-				    <a href="javascript:;" onclick="$('.popup-wechat').hide();$('.popup-login').show().find('.popup-tab li:eq(1)').click();"><span class="icon-shouji1"></span>短信登录</a>
-				</div>
-			</div>
+        <div class="popup-box popup-wechat">
+            <div class="popup">
+                <div class="popup-close"><span class="icon-close"></span></div>
+                <div class="popup-ct">
+                    <img src="../images/ecode-bindwx.png" alt="">
+                    <p><span class="icon-wx"></span>微信扫码关注即可登录</p>
+                </div>
+                <div class="other-login">
+                    <a href="javascript:;"><span class="icon-qq2"></span>QQ登录</a>
+                    <a href="javascript:;" onclick="$('.popup-wechat').hide();$('.popup-login').show().find('.popup-tab li:eq(1)').click();"><span class="icon-shouji1"></span>短信登录</a>
+                </div>
+            </div>
         </div>
         <!-- 微信关注弹窗 end -->
 
-		<!-- 2019年终总结浮窗 start -->
-		<style>
-			.popup-nianzhong1 .popup {
-				width: 384px;
-				height: 285px;
-				margin: -143px 0 0 -192px;
-				padding: 0;
-				background: url(../images/adv/popup-nianzhong1.png) no-repeat center 0;
-			}
-			.popup-nianzhong1 .popup-close {
-				top: -26px;
-				right: -30px;
-				color: #da5618;
-				font-size: 40px;
-			}
-			.popup-nianzhong1 .popup-close:hover {
-				color: #ff6c27;
-			}
-			.popup-nianzhong-btn {
-				display: block;
-				width: 180px;
-				height: 46px;
-				line-height: 46px;
-				margin: 220px 0 0 87px;
-				text-align: center;
-				font-size: 14px;
-				color: #dbf7d1;
-				background: #da5618;
-				background: -moz-linear-gradient(left, #da5618 0%, #186635 100%);
-				background: -webkit-linear-gradient(left, #da5618 0%, #186635 100%);
-				background: linear-gradient(to right, #da5618 0%, #186635 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da5618', endColorstr='#186635', GradientType=1);
-			}
-			.popup-nianzhong-btn:hover {
-				background: #ff6c27;
-				background: -moz-linear-gradient(left, #ff6c27 0%, #1b9147 100%);
-				background: -webkit-linear-gradient(left, #ff6c27 0%, #1b9147 100%);
-				background: linear-gradient(to right, #ff6c27 0%, #1b9147 100%);
-				filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6c27', endColorstr='#1b9147', GradientType=1);
-			}
-			.popup-nianzhong2 {
-				display: none;
-				position: fixed;
-				bottom: 50px;
-				left: 20px;
-				z-index: 988;
-				width: 278px;
-				height: 99px;
-				padding: 0;
-				background: url(../images/adv/popup-nianzhong2.png) no-repeat center 0;
-			}
-			.popup-nianzhong2 .popup-nianzhong-btn {
-				margin: 27px 0 0 42px;
-			}
-			.popup-nianzhong2 .popup-close {
-				top: -35px;
-				right: -35px;
-				font-size: 40px;
-				color: #da5618;
-			}
-			.popup-nianzhong2 .popup-close:hover {
-				color: #ff6c27;
-			}
-		</style>
-		<div class="popup-box popup-nianzhong1" onclick="$('.popup-nianzhong2').show();" style="display: block;">
-			<div class="popup">
-				<div class="popup-close" onclick="$('.popup-nianzhong2').show();"><span class="icon-guanbi1"></span></div>
-				<a href="#" class="popup-nianzhong-btn">查看我的年度总结</a>
-			</div>
-		</div>
-		<div class="popup-nianzhong2">
-		        <div class="popup-close" onclick="$('.popup-nianzhong2').hide();"><span class="icon-guanbi1"></span></div>
-		        <a href="#" class="popup-nianzhong-btn">查看我的年度总结</a>
-		    </div>
-		<!-- 2019年终总结浮窗 end -->
+        <!-- 2019年终总结浮窗 start -->
+        <style>
+            .popup-nianzhong1 .popup {
+                width: 384px;
+                height: 285px;
+                margin: -143px 0 0 -192px;
+                padding: 0;
+                background: url(../images/adv/popup-nianzhong1.png) no-repeat center 0;
+            }
+            .popup-nianzhong1 .popup-close {
+                top: -26px;
+                right: -30px;
+                color: #da5618;
+                font-size: 40px;
+            }
+            .popup-nianzhong1 .popup-close:hover {
+                color: #ff6c27;
+            }
+            .popup-nianzhong-btn {
+                display: block;
+                width: 180px;
+                height: 46px;
+                line-height: 46px;
+                margin: 220px 0 0 87px;
+                text-align: center;
+                font-size: 14px;
+                color: #dbf7d1;
+                background: #da5618;
+                background: -moz-linear-gradient(left, #da5618 0%, #186635 100%);
+                background: -webkit-linear-gradient(left, #da5618 0%, #186635 100%);
+                background: linear-gradient(to right, #da5618 0%, #186635 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#da5618', endColorstr='#186635', GradientType=1);
+            }
+            .popup-nianzhong-btn:hover {
+                background: #ff6c27;
+                background: -moz-linear-gradient(left, #ff6c27 0%, #1b9147 100%);
+                background: -webkit-linear-gradient(left, #ff6c27 0%, #1b9147 100%);
+                background: linear-gradient(to right, #ff6c27 0%, #1b9147 100%);
+                filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff6c27', endColorstr='#1b9147', GradientType=1);
+            }
+            .popup-nianzhong2 {
+                display: none;
+                position: fixed;
+                bottom: 50px;
+                left: 20px;
+                z-index: 988;
+                width: 278px;
+                height: 99px;
+                padding: 0;
+                background: url(../images/adv/popup-nianzhong2.png) no-repeat center 0;
+            }
+            .popup-nianzhong2 .popup-nianzhong-btn {
+                margin: 27px 0 0 42px;
+            }
+            .popup-nianzhong2 .popup-close {
+                top: -35px;
+                right: -35px;
+                font-size: 40px;
+                color: #da5618;
+            }
+            .popup-nianzhong2 .popup-close:hover {
+                color: #ff6c27;
+            }
+        </style>
+        <div class="popup-box popup-nianzhong1" onclick="$('.popup-nianzhong2').show();" style="display: none;">
+            <div class="popup">
+                <div class="popup-close" onclick="$('.popup-nianzhong2').show();"><span class="icon-guanbi1"></span></div>
+                <a href="#" class="popup-nianzhong-btn">查看我的年度总结</a>
+            </div>
+        </div>
+        <div class="popup-nianzhong2" style="display: none;">
+                <div class="popup-close" onclick="$('.popup-nianzhong2').hide();"><span class="icon-guanbi1"></span></div>
+                <a href="#" class="popup-nianzhong-btn">查看我的年度总结</a>
+            </div>
+        <!-- 2019年终总结浮窗 end -->
 
         <!-- 通用js start-->
         <script src="../js/jquery-1.9.1.min.js" type="text/javascript"></script>
@@ -2039,7 +2050,11 @@
 
         <!-- 幻灯片 start-->
         <script src="../js/slides.min.jquery.js" type="text/javascript"></script>
-        <!--幻灯片 end -->
+		<!--幻灯片 end -->
+
+		<!-- 通知滚动 start -->
+		<script src="../js/rollSlide.js" type="text/javascript"></script>
+		<!-- 通知滚动 end -->
 
         <!--js调用 start -->
         <script src="../js/page.js" type="text/javascript"></script>
