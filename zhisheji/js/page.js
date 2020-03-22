@@ -504,7 +504,19 @@ $(function() {
     // 首页文章
     $('.article-course .list').on('mouseover', 'li', function() {
         $(this).addClass('cur').siblings().removeClass('cur');
-	})
+    })
+
+    // 首页新增滚动
+    if ($('.index-scroll').length) {
+        $('.index-scroll').rollSlide({
+            orientation: 'top',
+            num: 1,
+            v: 1500,
+            //space: 500,
+            isRoll: true
+        });
+    }
+
 });
 })(jQuery);
 

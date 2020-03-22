@@ -1235,8 +1235,6 @@ input, textarea {
     /* 收到的赞 通用 */
     &-msg {
         margin: 20px auto 60px;
-        background: #fff;
-        .bdr(4px);
         &-list {
             .ov(h);
         }
@@ -1249,24 +1247,24 @@ input, textarea {
         }
         li {
             padding: 45px 41px 40px;
-            margin-top: -1px;
-            border-top: 1px solid #f6f6f6;
+            margin-top: 16px;
             line-height: 25px;
             color: #666;
+            background: #fff;
+            .bdr(4px);
             .cl();
-            .btn-del, .btn-report, .btn-selected {
-                .dis(n);
-            }
-            &:hover {
-                .btn-del, .btn-report, .btn-selected {
-                    .dis(i);
-                }
-            }
+            // .btn-del, .btn-report, .btn-selected {
+            //     .dis(n);
+            // }
+            // &:hover {
+            //     .btn-del, .btn-report, .btn-selected {
+            //         .dis(i);
+            //     }
+            // }
             .img {
                 .dis(ib);
                 vertical-align: top;
                 z-index: 9;
-                margin-left: 25px;
                 .bdr(4px);
                 img {
                     width: 180px;
@@ -1289,6 +1287,15 @@ input, textarea {
                     &:hover {
                         background: @blue-h;
                     }
+                    &.btn-dis {
+                        border: 1px solid #ddd;
+                        background: #fff;
+                        color: #333;
+                        &:hover {
+                            border-color: @blue;
+                            color: @blue;
+                        }
+                    }
                 }
             }
             .avatar {
@@ -1306,8 +1313,10 @@ input, textarea {
                 color: #666;
                 text-align: justify;
                 strong {
+                    font-size: 16px;
                     &.blue {
                         color: @blue;
+                        font-size: 16px;
                         a {
                             color: @blue;
                         }
@@ -1318,6 +1327,18 @@ input, textarea {
                     &:hover {
                         color: @blue;
                     }
+                }
+                .times {
+                    font-size: 12px;
+                    margin-top: 8px;
+                    color: #999;
+                }
+                span.times {
+                    margin-left: 20px;
+                }
+                .btn-box {
+                    .dis(ib);
+                    vertical-align: top;
                 }
             }
             .tt {
@@ -1330,12 +1351,36 @@ input, textarea {
                     width: 17px;
                     margin: -3px 0 0 6px;
                 }
-                .times {
+
+
+            }
+            .works-info {
+                margin-top: 25px;
+                margin-bottom: 30px;
+                background: #f8fafc;
+                font-size: 0;
+                .img {
+                    margin-right: 24px;
+                    vertical-align: middle;
+                }
+                .text {
                     .dis(ib);
                     vertical-align: middle;
-                    margin-left: 18px;
-                    font-size: 12px;
-                    color: #999;
+                    line-height: 25px;
+                    width: 915px;
+                    font-size: 16px;
+                    strong {
+                        color: #333;
+                    }
+                    a {
+                        color: @blue;
+                        &:hover {
+                            color: @blue-h;
+                            strong {
+                                color: @blue-h;
+                            }
+                        }
+                    }
                 }
             }
             .info {
@@ -1349,12 +1394,9 @@ input, textarea {
                 }
                 .btn-box {
                     line-height: 20px;
-                    padding-top: 30px;
+                    // padding-top: 30px;
                     font-size: 12px;
                     color: #999;
-                    .btn-replay {
-                        margin: 0;
-                    }
                 }
                 .btn-report {
                     .pos(a);
@@ -1466,6 +1508,11 @@ input, textarea {
                         line-height: 14px;
                         color: @blue;
                         white-space: nowrap;
+                    }
+                }
+                .btn-del {
+                    .icon-del {
+                        margin-right: 7px;
                     }
                 }
                 .btn-replay {
@@ -1581,8 +1628,6 @@ input, textarea {
                 &-box {
                     .pos(r);
                     margin: 20px 0 0 79px;
-                    padding: 10px 18px;
-                    background: #f6f6f6;
                     .bdr(4px);
                     .arrow {
                         .pos(a);
@@ -1660,7 +1705,6 @@ input, textarea {
             }
             .reply-box {
                 width: auto;
-                padding: 30px 40px;
                 .com-box {
                     .reply-form {
                         // width: 1074px - 40px;
@@ -1693,9 +1737,6 @@ input, textarea {
                             color: @red;
                         }
                     }
-                    .btn-box {
-                        padding: 8px 0 0;
-                    }
                 }
                 .time {
                     margin-left: 18px;
@@ -1723,7 +1764,7 @@ input, textarea {
             .more-comment {
                 .dis(b);
                 padding: 5px 0 0;
-                margin: 0 0 0 54px;
+                margin: 0 0 0 -79px;
                 line-height: 32px;
                 font-size: 14px;
                 color: #666;
@@ -1737,6 +1778,11 @@ input, textarea {
                     &-bottom {
                         .triangle(bottom, 5px, #ccc);
                     }
+                }
+            }
+            .com-box-replay {
+                .tt {
+                    font-size: 14px;
                 }
             }
         }
@@ -3407,4 +3453,114 @@ input, textarea {
 }
 .page-zhaopin {
 	padding: 40px 0 0;
+}
+
+.user-msg-box {
+    .cl();
+    background: #fff;
+    .bdr(4px);
+    .user-msgct {
+        margin-left: 280px;
+        border-left: 1px solid #f6f6f6;
+        padding: 0;
+        &-tit {
+            text-align: center;
+            .title {
+                font-size: 16px;
+                color: #666;
+                font-weight: 400;
+            }
+        }
+        .reply-form {
+            .text {
+                width: 705px;
+            }
+        }
+        &-ct {
+            .umsg {
+                .time {
+                    display: block;
+                    clear: both;
+                    float: none;
+                    line-height: 30px;
+                    margin: 0 94px 0 74px;
+                }
+                &-r {
+                    .time {
+                        text-align: right;
+                    }
+                }
+            }
+        }
+    }
+}
+.user-msglist {
+    width: 280px;
+    &-tit {
+        line-height: 64px;
+        font-size: 16px;
+        color: #666;
+        text-align: center;
+        border-bottom: 1px solid #f6f6f6;
+    }
+    &-list {
+        max-height: 516px;
+        .ovy(a);
+    }
+}
+.msglist {
+    &-tit {
+        text-align: center;
+    }
+    &-item {
+        padding: 28px 15px 20px 20px;
+        border-bottom: 1px solid #f6f6f6;
+        cursor: pointer;
+        &.cur, &:hover {
+            background: #ededed;
+        }
+    }
+    &-avatar {
+        .pos(r);
+        float: left;
+        width: 40px;
+        height: 40px;
+        img {
+            width: 40px;
+            height: 40px;
+            .bdr(50%);
+        }
+        .num {
+            .pos(a);
+            top: -2px;
+            left: 26px;
+            line-height: 17px;
+            background: @red;
+            padding: 0 5px;
+            color: #666;
+            color: #fff;
+            .bdr(17px);
+            font-size: 12px;
+            white-space: nowrap;
+        }
+    }
+    &-info {
+        margin-left: 54px;
+        &-tt {
+            line-height: 25px;
+            font-size: 14px;
+            color: #333;
+            .times {
+                color: #999;
+                font-size: 12px;
+            }
+        }
+        &-ct {
+            height: 25px;
+            line-height: 25px;
+            .text-e(1);
+            font-size: 14px;
+            color: #999;
+        }
+    }
 }
